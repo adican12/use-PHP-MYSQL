@@ -179,9 +179,9 @@ echo "<br>id = ".$idedit."<br>";
 	<input type="text" name="mobile" class="form-control" placeholder="<?php echo $row['mobile'];?>" required value="<?php echo $row['mobile'];?>">
 	</div>
 
-	<label class="col-sm-2 control-label">Designation<span style="color:red">*</span></label>
+	<label class="col-sm-2 control-label">User Type<span style="color:red">*</span></label>
 	<div class="col-sm-4">
-	<input type="text" name="designation" class="form-control" placeholder="<?php echo $row['designation'];?>" required value="<?php echo $row['designation'];?>">
+	<input type="text" name="designation" class="form-control" placeholder="<?php echo $row['user_type'];?>" required value="<?php echo $row['user_type'];?>">
 	</div>
 </div>
 <input type="text" name="editid" class="form-control" placeholder="<?php echo $row['id'];?>" required value="<?php echo $row['id'];?>">

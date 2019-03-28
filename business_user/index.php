@@ -1,44 +1,62 @@
 <?php
+//index of business users
 session_start();
 include('includes/config.php');
 echo "<br>config";
 
 if(isset($_POST['login']))
 {
-$status='1';
 $email=$_POST['username'];
-$password=md5($_POST['password']);
+// $password=md5($_POST['password']);
+$password=$_POST['password'];
 
+///////////////////
+/// new code
+///////////////////////////////////////////////////////////////////////
 echo "<br>email: ".$email ."		password: ".$password."<br>";
 
 
-$sql="SELECT * FROM `users` WHERE `email`='$email' AND `password`='$password' ";
+$sql="SELECT UserName,Password FROM `admin` WHERE `UserName`='$email' AND `Password`='$password' ";
 $result = $conn->query($sql);
 if($result === false)
 {
    user_error("Query failed: ".$conn->error."<br />$sql");
    echo "false";
-   //hello
 }
 if($result->num_rows == 0)
 {
   echo "<script>alert('Invalid Details Or Account Not Confirmed');</script>";
 }else{
-  $_SESSION['alogin']=$_POST['username'];
-  $row= $result->fetch_array();
-  if($row['user_type'] === 'business_type'){
-    $_SESSION['alogin']=$_POST['username'];
-    echo "<script type='text/javascript'> document.location = 'profile.php'; </script>";
-  }
 
   $_SESSION['alogin']=$_POST['username'];
+  echo "<script type='text/javascript'> document.location = 'dashboard.php'; </script>";
 
-  //$_SESSION['alogin2']="hererge";
-
-  echo "<script type='text/javascript'> document.location = 'profile.php'; </script>";
   }
+
+
+//////
+// original code
+//////////////////////////////////////////////////////////////////
+// $sql ="SELECT UserName,Password FROM admin WHERE UserName=:email and Password=:password";
+// $query= $dbh -> prepare($sql);
+// $query-> bindParam(':email', $email, PDO::PARAM_STR);
+// $query-> bindParam(':password', $password, PDO::PARAM_STR);
+// $query-> execute();
+// $results=$query->fetchAll(PDO::FETCH_OBJ);
+// if($query->rowCount() > 0)
+// {
+//
+// //////////////////////////////////////////////////////////////////
+// $_SESSION['alogin']=$_POST['username'];
+// echo "<script type='text/javascript'> document.location = 'dashboard.php'; </script>";
+// } else{
+//
+//   echo "<script>alert('Invalid Details');</script>";
+//
+// }
 
 }
+
 ?>
 <!doctype html>
 <html lang="en" class="no-js">
@@ -59,29 +77,26 @@ if($result->num_rows == 0)
 	<link rel="stylesheet" href="css/fileinput.min.css">
 	<link rel="stylesheet" href="css/awesome-bootstrap-checkbox.css">
 	<link rel="stylesheet" href="css/style.css">
-
 </head>
 
 <body>
-	<div class="login-page bk-img">
+	<div class="login-page bk-img" style="background-image: url(img/background.jpg);">
 		<div class="form-content">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6 col-md-offset-3">
-						<h1 class="text-center text-bold mt-4x">Login</h1>
+						<h1 class="text-center text-bold mt-4x">Business User Login</h1>
 						<div class="well row pt-2x pb-3x bk-light">
 							<div class="col-md-8 col-md-offset-2">
 								<form method="post">
 
-									<label for="" class="text-uppercase text-sm">Your Email</label>
+									<label for="" class="text-uppercase text-sm">Your Username </label>
 									<input type="text" placeholder="Username" name="username" class="form-control mb" required>
 
 									<label for="" class="text-uppercase text-sm">Password</label>
 									<input type="password" placeholder="Password" name="password" class="form-control mb" required>
 									<button class="btn btn-primary btn-block" name="login" type="submit">LOGIN</button>
 								</form>
-								<br>
-								<p>Don't Have an Account? <a href="register.php" >Signup</a></p>
 							</div>
 						</div>
 					</div>

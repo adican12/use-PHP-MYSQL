@@ -7,10 +7,10 @@ if(strlen($_SESSION['alogin'])==0)
 header('location:index.php');
 }
 else{
-?>
+
+ ?>
 
 <!doctype html>
-
 <html lang="en" class="no-js">
 
 <head>
@@ -21,7 +21,7 @@ else{
 	<meta name="author" content="">
 	<meta name="theme-color" content="#3e454c">
 
-	<title>Notifications</title>
+	<title>Deleted Users</title>
 
 	<!-- Font awesome -->
 	<link rel="stylesheet" href="css/font-awesome.min.css">
@@ -39,9 +39,8 @@ else{
 	<link rel="stylesheet" href="css/awesome-bootstrap-checkbox.css">
 	<!-- Admin Stye -->
 	<link rel="stylesheet" href="css/style.css">
+  <style>
 
-	<script type= "text/javascript" src="../vendor/countries.js"></script>
-	<style>
 	.errorWrap {
     padding: 10px;
     margin: 0 0 20px 0;
@@ -58,46 +57,59 @@ else{
     -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
     box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
 }
-		</style>
 
+		</style>
 
 </head>
 
 <body>
 	<?php include('includes/header.php');?>
+
 	<div class="ts-main-content">
-	<?php include('includes/leftbar.php');?>
+		<?php include('includes/leftbar.php');?>
 		<div class="content-wrapper">
 			<div class="container-fluid">
+
 				<div class="row">
 					<div class="col-md-12">
-						<h3 class="page-title">Notifications</h3>
-						<div class="row">
-							<div class="col-md-12">
-								<div class="panel panel-default">
-									<div class="panel-heading">Notification</div>
-									   <div class="panel-body">
-											<canvas id="line-chart" width="800" height="450"></canvas>
+
+						<h2 class="page-title">Deleted Users</h2>
+
+						<!-- Zero Configuration Table -->
+						<div class="panel panel-default">
+							<div class="panel-heading">List Users</div>
+							<div class="panel-body">
+							<?php if($error){?><div class="errorWrap" id="msgshow"><?php echo htmlentities($error); ?> </div><?php }
+				else if($msg){?><div class="succWrap" id="msgshow"><?php echo htmlentities($msg); ?> </div><?php }?>
+								<table id="zctb" class="display table table-striped table-bordered table-hover" cellspacing="0" width="100%">
+									<thead>
+										<tr>
+										       <th>#</th>
+												<th>Email</th>
+												<th>Delete Time</th>
+										</tr>
+									</thead>
+
+									<tbody>
+
 <?php
-$reciver = $_SESSION['alogin'];
 
-$sql = "SELECT * from  notification where notireciver = $reciver order by time DESC";
+$sql = "SELECT * from  deleteduser";
+
 $result = $conn->query($sql);
-if($result === false)
+if($results12 === false)
 {
-	 user_error("Query failed: ".$conn->error."<br />$sql");
-	 echo "false";
+   user_error("Query failed: ".$conn->error."<br />$sql");
+   echo "false";
 }
-
 //
-// $sql = "SELECT * from  notification where notireciver = (:reciver) order by time DESC";
+// $sql = "SELECT * from  deleteduser";
 // $query = $dbh -> prepare($sql);
-// $query-> bindParam(':reciver', $reciver, PDO::PARAM_STR);
 // $query->execute();
 // $results=$query->fetchAll(PDO::FETCH_OBJ);
 
 $cnt=1;
-
+//
 // if($query->rowCount() > 0)
 // {
 // foreach($results as $result)
@@ -105,22 +117,26 @@ $cnt=1;
 
 if(mysqli_num_rows($result) > 0)
 {
-	while($row = mysqli_fetch_assoc($result))
-	{
 
-	?>
-        <h5 style="background:#ededed;padding:20px;"><i class="fa fa-bell text-primary"></i>&nbsp;&nbsp;<b class="text-primary"><?php echo $row['time'];?></b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $row['notiuser'];?> ----->
-					<?php echo $row['notitype'];?></h5>
-                       <?php $cnt=$cnt+1; }} ?>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+	while($row = mysqli_fetch_assoc($result)) {
+		?>
+										<tr>
+											<td><?php echo htmlentities($cnt);?></td>
+                                            <td><?php echo $result['email'];?></td>
+											<td><?php echo $result['deltime'];?></td>
+										</tr>
+										<?php $cnt=$cnt+1; }} ?>
+
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
 
 	<!-- Loading Scripts -->
 	<script src="js/jquery.min.js"></script>
@@ -132,17 +148,13 @@ if(mysqli_num_rows($result) > 0)
 	<script src="js/fileinput.js"></script>
 	<script src="js/chartData.js"></script>
 	<script src="js/main.js"></script>
-	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 	<script type="text/javascript">
 				 $(document).ready(function () {
 					setTimeout(function() {
 						$('.succWrap').slideUp("slow");
 					}, 3000);
 					});
-	</script>
-	<script>
-	</script>
+		</script>
 </body>
 </html>
-<?php }?>
+<?php } ?>

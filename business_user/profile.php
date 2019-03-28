@@ -7,10 +7,33 @@ if(strlen($_SESSION['alogin'])==0)
 header('location:index.php');
 }
 else{
+
+if(isset($_POST['submit']))
+  {
+	$name=$_POST['name'];
+	$email=$_POST['email'];
+
+		$sql="UPDATE `users` SET username=$name, email=$email";
+
+		// $sql="UPDATE `users` SET name=$name, email=$email, gender=$gender, mobile=$mobileno, designation=$designation, Image=$image WHERE id=$idedit";
+		$query = $conn->query($sql);
+		if($result === false)
+		{
+			 user_error("Query failed: ".$conn->error."<br />$sql2");
+			 echo "false";
+		}
+
+
+	// $sql="UPDATE admin SET username=(:name), email=(:email)";
+	// $query = $dbh->prepare($sql);
+	// $query-> bindParam(':name', $name, PDO::PARAM_STR);
+	// $query-> bindParam(':email', $email, PDO::PARAM_STR);
+	// $query->execute();
+	$msg="Information Updated Successfully";
+}
 ?>
 
 <!doctype html>
-
 <html lang="en" class="no-js">
 
 <head>
@@ -21,7 +44,7 @@ else{
 	<meta name="author" content="">
 	<meta name="theme-color" content="#3e454c">
 
-	<title>Notifications</title>
+	<title>Edit Admin</title>
 
 	<!-- Font awesome -->
 	<link rel="stylesheet" href="css/font-awesome.min.css">
@@ -60,10 +83,26 @@ else{
 }
 		</style>
 
-
 </head>
 
 <body>
+<?php
+		$sql = "SELECT * from admin";
+		$query = $conn->query($sql);
+		if($query === false)
+		{
+			 user_error("Query failed: ".$conn->error."<br />$sql2");
+			 echo "false";
+		}
+		$result = mysqli_fetch_assoc($query);
+
+		// $sql = "SELECT * from admin;";
+		// $query = $dbh -> prepare($sql);
+		// $query->execute();
+		// $result=$query->fetch(PDO::FETCH_OBJ);
+
+		$cnt=1;
+?>
 	<?php include('includes/header.php');?>
 	<div class="ts-main-content">
 	<?php include('includes/leftbar.php');?>
@@ -71,56 +110,44 @@ else{
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col-md-12">
-						<h3 class="page-title">Notifications</h3>
+						<h3 class="page-title">Manage Admin</h3>
 						<div class="row">
 							<div class="col-md-12">
 								<div class="panel panel-default">
-									<div class="panel-heading">Notification</div>
-									   <div class="panel-body">
-											<canvas id="line-chart" width="800" height="450"></canvas>
-<?php
-$reciver = $_SESSION['alogin'];
+									<div class="panel-heading">Edit Info</div>
+<?php if($error){?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php }
+				else if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
 
-$sql = "SELECT * from  notification where notireciver = $reciver order by time DESC";
-$result = $conn->query($sql);
-if($result === false)
-{
-	 user_error("Query failed: ".$conn->error."<br />$sql");
-	 echo "false";
-}
+									<div class="panel-body">
+<form method="post" class="form-horizontal" enctype="multipart/form-data">
+<div class="form-group">
+<label class="col-sm-2 control-label">Username<span style="color:red">*</span></label>
+<div class="col-sm-4">
+<input type="text" name="name" class="form-control" required value="<?php echo $result['username'];?>">
+</div>
+<label class="col-sm-2 control-label">Email<span style="color:red">*</span></label>
+<div class="col-sm-4">
+<input type="email" name="email" class="form-control" required value="<?php echo $result['email'];?>">
+</div>
+</div>
 
-//
-// $sql = "SELECT * from  notification where notireciver = (:reciver) order by time DESC";
-// $query = $dbh -> prepare($sql);
-// $query-> bindParam(':reciver', $reciver, PDO::PARAM_STR);
-// $query->execute();
-// $results=$query->fetchAll(PDO::FETCH_OBJ);
 
-$cnt=1;
+<div class="form-group">
+	<div class="col-sm-8 col-sm-offset-2">
+		<button class="btn btn-primary" name="submit" type="submit">Save Changes</button>
+	</div>
+</div>
 
-// if($query->rowCount() > 0)
-// {
-// foreach($results as $result)
-// {
-
-if(mysqli_num_rows($result) > 0)
-{
-	while($row = mysqli_fetch_assoc($result))
-	{
-
-	?>
-        <h5 style="background:#ededed;padding:20px;"><i class="fa fa-bell text-primary"></i>&nbsp;&nbsp;<b class="text-primary"><?php echo $row['time'];?></b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $row['notiuser'];?> ----->
-					<?php echo $row['notitype'];?></h5>
-                       <?php $cnt=$cnt+1; }} ?>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+</form>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<!-- Loading Scripts -->
 	<script src="js/jquery.min.js"></script>
@@ -132,8 +159,6 @@ if(mysqli_num_rows($result) > 0)
 	<script src="js/fileinput.js"></script>
 	<script src="js/chartData.js"></script>
 	<script src="js/main.js"></script>
-	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 	<script type="text/javascript">
 				 $(document).ready(function () {
 					setTimeout(function() {
@@ -141,8 +166,6 @@ if(mysqli_num_rows($result) > 0)
 					}, 3000);
 					});
 	</script>
-	<script>
-	</script>
 </body>
 </html>
-<?php }?>
+<?php } ?>

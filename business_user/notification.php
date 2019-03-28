@@ -7,10 +7,30 @@ if(strlen($_SESSION['alogin'])==0)
 header('location:index.php');
 }
 else{
+
+if(isset($_POST['submit']))
+  {
+	$name=$_POST['name'];
+	$email=$_POST['email'];
+
+	$sql="UPDATE admin SET username=$name, email=$email";
+	$result = $conn->query($sql);
+	if($result === false)
+	{
+		 user_error("Query failed: ".$conn->error."<br />$sql");
+		 echo "false";
+	}
+
+	// $sql="UPDATE admin SET username=(:name), email=(:email)";
+	// $query = $dbh->prepare($sql);
+	// $query-> bindParam(':name', $name, PDO::PARAM_STR);
+	// $query-> bindParam(':email', $email, PDO::PARAM_STR);
+	// $query->execute();
+	$msg="Information Updated Successfully";
+}
 ?>
 
 <!doctype html>
-
 <html lang="en" class="no-js">
 
 <head>
@@ -77,11 +97,11 @@ else{
 								<div class="panel panel-default">
 									<div class="panel-heading">Notification</div>
 									   <div class="panel-body">
-											<canvas id="line-chart" width="800" height="450"></canvas>
 <?php
-$reciver = $_SESSION['alogin'];
+$reciver = 'Admin';
 
-$sql = "SELECT * from  notification where notireciver = $reciver order by time DESC";
+
+$sql = "SELECT * from  notification where notireciver = '$reciver' order by time DESC";
 $result = $conn->query($sql);
 if($result === false)
 {
@@ -89,15 +109,16 @@ if($result === false)
 	 echo "false";
 }
 
-//
+
 // $sql = "SELECT * from  notification where notireciver = (:reciver) order by time DESC";
 // $query = $dbh -> prepare($sql);
 // $query-> bindParam(':reciver', $reciver, PDO::PARAM_STR);
 // $query->execute();
 // $results=$query->fetchAll(PDO::FETCH_OBJ);
 
-$cnt=1;
 
+$cnt=1;
+//
 // if($query->rowCount() > 0)
 // {
 // foreach($results as $result)
@@ -105,12 +126,12 @@ $cnt=1;
 
 if(mysqli_num_rows($result) > 0)
 {
-	while($row = mysqli_fetch_assoc($result))
-	{
+
+	while($row = mysqli_fetch_assoc($result)) {
 
 	?>
-        <h5 style="background:#ededed;padding:20px;"><i class="fa fa-bell text-primary"></i>&nbsp;&nbsp;<b class="text-primary"><?php echo $row['time'];?></b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $row['notiuser'];?> ----->
-					<?php echo $row['notitype'];?></h5>
+        <h5 style="background:#ededed;padding:20px;"><i class="fa fa-bell text-primary"></i>&nbsp;&nbsp;<b class="text-primary"><?php echo $row['time'];?></b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<?php echo $row['notiuser'];?> -----> <?php echo $row['notitype'];?></h5>
                        <?php $cnt=$cnt+1; }} ?>
                                         </div>
                                     </div>
@@ -132,8 +153,6 @@ if(mysqli_num_rows($result) > 0)
 	<script src="js/fileinput.js"></script>
 	<script src="js/chartData.js"></script>
 	<script src="js/main.js"></script>
-	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 	<script type="text/javascript">
 				 $(document).ready(function () {
 					setTimeout(function() {
@@ -141,8 +160,6 @@ if(mysqli_num_rows($result) > 0)
 					}, 3000);
 					});
 	</script>
-	<script>
-	</script>
 </body>
 </html>
-<?php }?>
+<?php } ?>
