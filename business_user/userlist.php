@@ -307,7 +307,7 @@ function drawChart() {
 	}
 		/*while($row = mysqli_fetch_assoc($result)*/
 		$men = mysqli_fetch_assoc($result);
-		 echo "print someting". $men['COUNT(Gender'];
+		 echo "print someting". $men['COUNT(Gender)']."<br>";
 ?>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
