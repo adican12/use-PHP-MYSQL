@@ -89,7 +89,7 @@ if($result->num_rows == 0)
 // $bg=$query->rowCount();
 ///////////////////////////////////
 ?>
-													<div class="stat-panel-number h1 "><?php echo htmlentities($bg);?></div>
+													<div class="stat-panel-number h1 "></div>
 													<div class="stat-panel-title text-uppercase">Know your customers</div>
 												</div>
 											</div>
@@ -136,7 +136,7 @@ if($result1->num_rows == 0)
 /////////////////////
 ?>
 													<div class="stat-panel-number h1 "><?php echo htmlentities($regbd);?></div>
-													<div class="stat-panel-title text-uppercase">Feedback Messages</div>
+													<div class="stat-panel-title text-uppercase">Customization reports</div>
 												</div>
 											</div>
 											<a href="feedback.php" class="block-anchor panel-footer text-center">Full Detail &nbsp; <i class="fa fa-arrow-right"></i></a>
@@ -182,7 +182,7 @@ if($results12->num_rows == 0)
 //////////////////////////////
 ?>
 													<div class="stat-panel-number h1 "><?php echo htmlentities($regbd2);?></div>
-													<div class="stat-panel-title text-uppercase">Notifications</div>
+													<div class="stat-panel-title text-uppercase">advertisements the customers were exposed to</div>
 												</div>
 											</div>
 											<a href="notification.php" class="block-anchor panel-footer text-center">Full Detail &nbsp; <i class="fa fa-arrow-right"></i></a>
@@ -224,7 +224,7 @@ if($results123->num_rows == 0)
 //////////////////////////
 ?>
 													<div class="stat-panel-number h1 "><?php echo htmlentities($query);?></div>
-													<div class="stat-panel-title text-uppercase">Deleted Users</div>
+													<div class="stat-panel-title text-uppercase">achieving goals</div>
 												</div>
 											</div>
 											<a href="deleteduser.php" class="block-anchor panel-footer text-center">Full Detail &nbsp; <i class="fa fa-arrow-right"></i></a>

@@ -11,10 +11,11 @@ $final_file=str_replace(' ','-',$new_file_name);
 
 $name=$_POST['name'];
 $email=$_POST['email'];
-$password=md5($_POST['password']);
+$password=$_POST['password'];
 $gender=$_POST['gender'];
 $mobileno=$_POST['mobileno'];
-$designation=$_POST['designation'];
+$usertype=$_POST['usertype'];
+$birthday=$_POST['birthday'];
 
 // if(move_uploaded_file($file_loc,$folder.$final_file))
 	// {
@@ -35,8 +36,8 @@ $sender=$email;
 /////////////////////////////////////////////////
 echo "<br>start signup<br>";
 
-$sql = "INSERT INTO `users`(`name`, `email`, `password`, `gender`, `mobile`, `designation`, `image`,`status`)
-VALUES ('$name', '$email', '$password','$gender','$mobileno','$image','$designation',1)";
+$sql = "INSERT INTO `users`(`name`, `email`, `password`, `gender`, `mobile`, `image`,`user_type`, `birthday`,`status`)
+VALUES ('$name', '$email', '$password','$gender','$mobileno','$image','$usertype','$birthday',1)";
 
 if ($conn->query($sql) === TRUE) {
 	echo "<script type='text/javascript'>alert('Registration Sucessfull!');</script>";
@@ -121,12 +122,24 @@ $conn->close();
                             <div class="col-sm-5">
                             <input type="password" name="password" class="form-control" id="password" required >
                             </div>
-
-                            <label class="col-sm-1 control-label">Designation<span style="color:red">*</span></label>
+                            <label class="col-sm-1 control-label">User Type<span style="color:red">*</span></label>
                             <div class="col-sm-5">
-                            <input type="text" name="designation" class="form-control" required>
+															<select name="usertype" class="form-control" required>
+	                            <option value="">Select</option>
+	                            <option value="standard_user">Standard user</option>
+	                            <option value="business_user">Business User</option>
+															<option value="advertiser_user">Advertiser user</option>
+	                            </select>
                             </div>
-                            </div>
+														</div>
+
+														<div class="form-group">
+															<label class="col-sm-1 control-label">Birthday<span style="color:red">*</span></label>
+	                            <div class="col-sm-5">
+	                            <input type="date" name="birthday" class="form-control" required>
+	                            </div>
+														</div>
+
 
                              <div class="form-group">
                             <label class="col-sm-1 control-label">Gender<span style="color:red">*</span></label>

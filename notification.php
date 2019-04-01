@@ -132,6 +132,7 @@ if(mysqli_num_rows($result) > 0)
 	<script src="js/fileinput.js"></script>
 	<script src="js/chartData.js"></script>
 	<script src="js/main.js"></script>
+	<script src="js/function.js"></script>
 	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 	<script type="text/javascript">
@@ -142,6 +143,7 @@ if(mysqli_num_rows($result) > 0)
 					});
 	</script>
 	<script>
+
 	</script>
 </body>
 </html>

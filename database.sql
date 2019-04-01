@@ -77,10 +77,11 @@ CREATE TABLE `feedback` (
 
 CREATE TABLE `notification` (
   `id` int(11) NOT NULL,
-  `notiuser` varchar(50) NOT NULL,
+  `adnotif` varchar(50) NOT NULL,
   `notireciver` varchar(50) NOT NULL,
   `notitype` varchar(50) NOT NULL,
-  `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+  FOREIGN KEY (id) REFERENCES users(id)  ON UPDATE CASCADE
+  ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -90,7 +91,7 @@ CREATE TABLE `notification` (
 --
 
 CREATE TABLE `users` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL,
@@ -98,7 +99,9 @@ CREATE TABLE `users` (
   `mobile` varchar(50) NOT NULL,
   `user_type` varchar(50) NOT NULL,
   `image` varchar(50) NOT NULL,
-  `status` int(10) NOT NULL
+  `birthday` DATE,
+  `status` int(10) NOT NULL,
+  PRIMARY KEY(id)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --

@@ -7,7 +7,8 @@ if(isset($_POST['login']))
 {
 $status='1';
 $email=$_POST['username'];
-$password=md5($_POST['password']);
+// $password=md5($_POST['password']);
+$password=$_POST['password'];
 
 echo "<br>email: ".$email ."		password: ".$password."<br>";
 
@@ -26,9 +27,9 @@ if($result->num_rows == 0)
 }else{
   $_SESSION['alogin']=$_POST['username'];
   $row= $result->fetch_array();
-  if($row['user_type'] === 'business_type'){
+  if($row['user_type'] === 'business_user'){
     $_SESSION['alogin']=$_POST['username'];
-    echo "<script type='text/javascript'> document.location = 'profile.php'; </script>";
+    echo "<script type='text/javascript'> document.location = 'business_user/dashboard.php'; </script>";
   }
 
   $_SESSION['alogin']=$_POST['username'];

@@ -163,11 +163,11 @@ if(isset($_REQUEST['unconfirm']))
 				<div class="row">
 					<div class="col-md-12">
 
-						<h2 class="page-title">Manage Users</h2>
+						<h2 class="page-title">Knowledge of customers</h2>
 
 						<!-- Zero Configuration Table -->
 						<div class="panel panel-default">
-							<div class="panel-heading">List Users</div>
+							<div class="panel-heading">Knowledge of customers</div>
 							<div class="panel-body">
 							<?php if($error){?><div class="errorWrap" id="msgshow"><?php echo htmlentities($error); ?> </div><?php }
 				else if($msg){?><div class="succWrap" id="msgshow"><?php echo htmlentities($msg); ?> </div><?php }?>
@@ -175,10 +175,12 @@ if(isset($_REQUEST['unconfirm']))
 									<thead>
 										<tr>
 										<th>#</th>
+                                                <th>Image</th>
                                                 <th>Name</th>
                                                 <th>Email</th>
-                                                <th>Gender</th>
-																								<th>Age</th>
+																								<th>Gender</th>
+																								<th>Phoen Number</th>
+																								<th>Birthday</th>
 										</tr>
 								</thead>
 							<tbody>
@@ -189,7 +191,7 @@ if(isset($_REQUEST['unconfirm']))
 ///////////////////////////////
 ///// new code
 ///////////////////////////////
-$sql = "SELECT * from  users ";
+$sql = "SELECT * from  users WHERE user_type = 'standard_users'";
 $result = $conn->query($sql);
 if($result === false)
 {
@@ -219,12 +221,12 @@ if(mysqli_num_rows($result) > 0)
 				?>
 										<tr>
 											<td><?php echo $cnt;?></td>
-											<td><img src="../images/<?php echo $row['image'];?>" style="width:50px; border-radius:50%;"/></td>
+											<td><img src="images/user.jpg<?php echo $row['image'];?>" style="width:50px; border-radius:50%;"/></td>
                       <td><?php echo $row['name']; ?></td>
                       <td><?php echo $row['email'];?></td>
                       <td><?php echo $row['gender'];?></td>
                       <td><?php echo $row['mobile'];?></td>
-                      <td><?php echo $row['designation'] ;?>
+                      <td><?php echo $row['birthday'] ;?>
                       <td>
 
                                             <?php if($row['status'] == 1)
@@ -296,7 +298,7 @@ function drawChart() {
 </script>
 <!-- php query for the pie chreat -->
 <?php
-	$sql = "SELECT Gender FROM users; ";
+	$sql = "SELECT COUNT(Gender) FROM users WHERE gender= 'male'";
 	$result = $conn->query($sql);
 	if($result === false)
 	{
@@ -304,12 +306,8 @@ function drawChart() {
 	 	echo "false";
 	}
 		/*while($row = mysqli_fetch_assoc($result)*/
-		$row = mysqli_fetch_assoc($result);
-		if($row['Gender'] === 'men'){
-			$men = $men+1;
-		}else {
-			$famle = $famle+1;
-		}
+		$men = mysqli_fetch_assoc($result);
+		 echo "print someting". $men['COUNT(Gender'];
 ?>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 

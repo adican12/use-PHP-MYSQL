@@ -260,7 +260,7 @@ if(mysqli_num_rows($result) > 0)
 		 chart.data(data);
 
 		 // set the chart title
-		 chart.title("advertisements the customers were exposed to ");
+		 chart.title("The deadliest earthquakes in the XXth century");
 
 		 // draw
 		 chart.container("container");
