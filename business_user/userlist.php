@@ -274,7 +274,30 @@ if(mysqli_num_rows($result) > 0)
 					});
 		</script>
 		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<?php
 
+$sql = "SELECT COUNT(Gender) FROM users WHERE gender= 'male'";
+$result = $conn->query($sql);
+if($result === false)
+{
+	user_error("Query failed: ".$conn->error."<br />$sql");
+	echo "false";
+}
+	/*while($row = mysqli_fetch_assoc($result)*/
+	$row= mysqli_fetch_assoc($result);
+	 echo "print someting". $row['COUNT(Gender)']."<br>";
+
+	$sql = "SELECT COUNT(Gender) FROM users WHERE gender= 'Famle'";
+	$result = $conn->query($sql);
+	if($result === false)
+	{
+		user_error("Query failed: ".$conn->error."<br />$sql");
+		echo "false";
+	}
+		/*while($row = mysqli_fetch_assoc($result)*/
+		$row1= mysqli_fetch_assoc($result);
+		 echo "print someting1". $row1['COUNT(Gender)']."<br>";
+	?>
 <script type="text/javascript">
 // Load google charts
 google.charts.load('current', {'packages':['corechart']});
@@ -284,8 +307,8 @@ google.charts.setOnLoadCallback(drawChart);
 function drawChart() {
   var data = google.visualization.arrayToDataTable([
   ['Task', 'Hours per Day'],
-  ['Men', 8],
-  ['Famle', 2]
+  ['Men', <?php echo $row['COUNT(Gender)'];?>],
+  ['Famle', <?php echo $row1['COUNT(Gender)'];?>]
 ]);
 
   // Optional; add a title and set the width and height of the chart
@@ -297,7 +320,7 @@ function drawChart() {
 }
 </script>
 <!-- php query for the pie chreat -->
-<?php
+<!--
 	$sql = "SELECT COUNT(Gender) FROM users WHERE gender= 'male'";
 	$result = $conn->query($sql);
 	if($result === false)
@@ -306,9 +329,9 @@ function drawChart() {
 	 	echo "false";
 	}
 		/*while($row = mysqli_fetch_assoc($result)*/
-		$men = mysqli_fetch_assoc($result);
-		 echo "print someting". $men['COUNT(Gender)']."<br>";
-?>
+		$row= mysqli_fetch_assoc($result);
+		 echo "print someting". $row['COUNT(Gender)']."<br>";
+-->
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
 <script type="text/javascript">

@@ -30,7 +30,6 @@ if($result->num_rows == 0)
 
   $_SESSION['alogin']=$_POST['username'];
   echo "<script type='text/javascript'> document.location = 'dashboard.php'; </script>";
-
   }
 
 
