@@ -20,4 +20,4 @@ handlers:
   login: admin
 
 - url: /.*
-  script: pageerror.php
+  script: not_found.php
