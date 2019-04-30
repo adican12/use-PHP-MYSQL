@@ -3,10 +3,10 @@ api_version: 1
 
 handlers:
 - url: /
-  script: home.php
+  script: index.php
 
 - url: /index\.html
-  script: home.php
+  script: index.php
 
 - url: /stylesheets
   static_dir: stylesheets
