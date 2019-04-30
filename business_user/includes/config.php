@@ -16,7 +16,7 @@
 
 $servername = "localhost";
 $username = "root";
-$password = "";
+$password = "1234catwifi";
 $dbname = "adbasewifi";
 
 // Create connection

@@ -3,36 +3,43 @@ session_start();
 error_reporting(0);
 include('includes/config.php');
 if(strlen($_SESSION['alogin'])==0)
-	{
+{
 header('location:index.php');
 }
 else{
 
 if(isset($_POST['submit']))
-  {
+  {;
 	// $file = $_FILES['image']['name'];
 	// $file_loc = $_FILES['image']['tmp_name'];
 	// $folder="images/";
 	// $new_file_name = strtolower($file);
 	// $final_file=str_replace(' ','-',$new_file_name);
-	echo "<br>id POST= ".$_POST['editid']."<br>";
+  //	echo "<br>id POST= ".$row['id']."<br>";
 
 	$name=$_POST['name'];
 	$email=$_POST['email'];
+	$password = $_POST['password'];
+	$gender = $_POST['gender'];
 	$mobileno=$_POST['mobile'];
-	$designation=$_POST['designation'];
-	$idedit=$_POST['editid'];
+	$birthday=$_POST['birthday'];
+	//$idedit=$_POST['editid'];
 	// $image=$_POST['image'];
 	$image='asdasd';
 
+  $sql="SELECT * FROM `users` WHERE `email`='$email' AND `password`='$password' ";
+  $result = $conn->query($sql);
+  $row= $result->fetch_array();
+  $id=$row['id'];
 	// if(move_uploaded_file($file_loc,$folder.$final_file))
 	// 	{
 	// 		$image=$final_file;
 	// 	}
 	//
 
-echo "<br>id = ".$idedit."<br>";
-	$sql = "UPDATE `users` SET name='$name', email='$email', mobile='$mobileno', designation='$designation', Image='$image' WHERE id='$idedit' ";
+//echo "<br>id = ".$idedit."<br>";
+
+	$sql = "UPDATE `users` SET name='$name', email='$email',password='$password',gender='$gender', mobile='$mobileno', birthday='$birthday', Image='$image',status=1 WHERE id='$id' ";
 
 	if ($conn->query($sql) === TRUE) {
 		echo "<script type='text/javascript'>alert('UPDATE Sucessfull!');</script>";
@@ -179,13 +186,32 @@ echo "<br>id = ".$idedit."<br>";
 	<input type="text" name="mobile" class="form-control" placeholder="<?php echo $row['mobile'];?>" required value="<?php echo $row['mobile'];?>">
 	</div>
 
-	<label class="col-sm-2 control-label">User Type<span style="color:red">*</span></label>
+	<label class="col-sm-2 control-label">Password<span style="color:red">*</span></label>
 	<div class="col-sm-4">
-	<input type="text" name="designation" class="form-control" placeholder="<?php echo $row['user_type'];?>" required value="<?php echo $row['user_type'];?>">
+	<input type="password" name="password" class="form-control" placeholder="<?php echo $row['password'];?>" required value="<?php echo $row['password'];?>">
+	</div>
+
+	<label class="col-sm-2 control-label">Images<span style="color:red">*</span></label>
+	<div class="col-sm-4">
+	<input type="file" name="image" style="margin-top:10px;" class="form-control" placeholder="<?php echo $row['image'];?>" required value="<?php echo $row['image'];?>">
 	</div>
 </div>
-<input type="text" name="editid" class="form-control" placeholder="<?php echo $row['id'];?>" required value="<?php echo $row['id'];?>">
 
+<div class="form-group">
+	<label class="col-sm-2 control-label">Gender<span style="color:red">*</span></label>
+	<div class="col-sm-4">
+		<select name="gender" class="form-control" required>
+		<option value="">Select</option>
+		<option value="Male">Male</option>
+		<option value="Female">Female</option>
+	</select>
+	</div>
+	<label class="col-sm-2 control-label">birthday<span style="color:red">*</span></label>
+	<div class="col-sm-4">
+			<input type="date" name="birthday" class="form-control" placeholder="<?php echo $row['image'];?>" required value="<?php echo $row['image'];?>">
+	</div>
+
+</div>
 <div class="form-group">
 	<div class="col-sm-8 col-sm-offset-2">
 		<button class="btn btn-primary" name="submit" type="submit">Save Changes</button>

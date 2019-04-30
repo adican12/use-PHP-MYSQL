@@ -49,6 +49,7 @@ else{
 	color:#fff;
     -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
     box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
+
 }
 .succWrap{
     padding: 10px;
@@ -58,6 +59,46 @@ else{
     -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
     box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
 }
+.card{
+
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+	margin-left: 350px;
+  text-align: center;
+  font-family: arial;
+	height: 400px;
+	padding: 10px;
+ border: 5px solid gray;
+}
+
+.card1{
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	 max-width: 300px;
+	 margin: auto;
+	 margin-left: 350px;
+	 text-align: center;
+	 font-family: arial;
+	 height: 400px;
+	 padding: 10px;
+   border: 5px solid gray;
+	 margin-top: 45px;
+
+ }
+
+.card2{
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	 max-width: 300px;
+	 margin: auto;
+	 margin-left: 350px;
+	 text-align: center;
+	 font-family: arial;
+	 height: 400px;
+	 padding: 10px;
+ border: 5px solid gray;
+  margin-top: 45px;
+}
+
 		</style>
 
 
@@ -77,11 +118,70 @@ else{
 								<div class="panel panel-default">
 									<div class="panel-heading">Notification</div>
 									   <div class="panel-body">
+											 <div class="card">
+														 <img src="https://firebasestorage.googleapis.com/v0/b/firecatwifi.appspot.com/o/images%2Fcoffee.jpg?alt=media&token=40ea715d-e4de-4d34-9ece-1c1cd247ff79" id="img" style="width:100%">
+														 <h1 id="header">Coffee</h1>
+													   <p class="price" id="price">$4</p>
+													   <p id="details">the best new coffee</p>
+												 </div>
+											<div class="card1">
+													<img src="https://firebasestorage.googleapis.com/v0/b/firecatwifi.appspot.com/o/images%2Fsuit.jpg?alt=media&token=b57664cf-84ff-4892-b1f1-c70dc8e1513b" id="img1" style="width:100%">
+													<h1 id="header">groom's suit</h1>
+													<p class="price" id="price">$120</p>
+													<p id="details">A groom's suit now</p>
+											</div>
+											<div class="card2" id="img2" style="width:100%">
+												<img src="https://firebasestorage.googleapis.com/v0/b/firecatwifi.appspot.com/o/images%2Ftelescope.jpg?alt=media&token=68aefae6-8052-44d7-8561-67340cbd2c56" style="width:100%">
+												<h1 id="header"> the best telescope!</h1>
+												<p class="price" id="price">$80</p>
+												<p id="details">Only now the cheapest  telescope!</p>
+											</div>
 											<canvas id="line-chart" width="800" height="450"></canvas>
+<?php
+$sql = " SELECT * FROM   ad WHERE id =2";
+$result = $conn->query($sql);
+if($result === false)
+{
+	 user_error("Query failed: ".$conn->error."<br />$sql");
+	 echo "false";
+}
+	$row= mysqli_fetch_assoc($result);
+
+$result = $conn->query($sql);
+if($result === false)
+{
+	 user_error("Query failed: ".$conn->error."<br />$sql");
+	 echo "false";
+}
+	$row= mysqli_fetch_assoc($result);
+?>
+
+<script type="text/javascript">
+//document.getElementById("img").addEventListener("click", changeDetails);
+document.getElementById("img1").addEventListener("click", changeDetails);
+document.getElementById("img2").addEventListener("click", changeDetails);
+
+function changeDetails(){
+	//change the price
+	var x = <?php echo $row['price'];?>;
+	document.getElementById("price").innerHTML =  x + " $ ";
+	//change the header
+	var x = "<?php echo $row['header'];?>";
+	document.getElementById("header").innerHTML = x;
+//change the text
+	var x = "<?php$row['text'];?>";
+	document.getElementById("details").innerHTML =x;
+//change the image
+	var x = "<?php echo $row['image'];?>";
+ 	//alert(x);
+  document.getElementById("img").src= x;
+}
+</script>
+
 <?php
 $reciver = $_SESSION['alogin'];
 
-$sql = "SELECT * from  notification where notireciver = $reciver order by time DESC";
+$sql = "SELECT * from  ad where id in(2,32,33)";
 $result = $conn->query($sql);
 if($result === false)
 {
@@ -103,15 +203,15 @@ $cnt=1;
 // foreach($results as $result)
 // {
 
-if(mysqli_num_rows($result) > 0)
-{
-	while($row = mysqli_fetch_assoc($result))
-	{
-
-	?>
-        <h5 style="background:#ededed;padding:20px;"><i class="fa fa-bell text-primary"></i>&nbsp;&nbsp;<b class="text-primary"><?php echo $row['time'];?></b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $row['notiuser'];?> ----->
-					<?php echo $row['notitype'];?></h5>
-                       <?php $cnt=$cnt+1; }} ?>
+// if(mysqli_num_rows($result) > 0)
+// {
+// 	while($row = mysqli_fetch_assoc($result))
+// 	{
+//
+// 	?>
+<!-- //         <h5 style="background:#ededed;padding:20px;"><i class="fa fa-bell text-primary"></i>&nbsp;&nbsp;<b class="text-primary"><?php echo $row['time'];?></b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $row['notiuser'];?> ----->
+<!-- // 					<?php echo $row['text'];?></h5> -->
+<!-- //                        <?php.$cnt=$cnt+1; }} ?> -->
                                         </div>
                                     </div>
                                 </div>
@@ -120,6 +220,7 @@ if(mysqli_num_rows($result) > 0)
                     </div>
                 </div>
             </div>
+
         </div>
 
 	<!-- Loading Scripts -->

@@ -107,9 +107,9 @@ if(isset($_REQUEST['unconfirm']))
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-	<meta name="description" content="">
+	<!-- <meta name="description" content="">
 	<meta name="author" content="">
-	<meta name="theme-color" content="#3e454c">
+	<meta name="theme-color" content="#3e454c"> -->
 
 	<title>Manage Users</title>
 
@@ -130,7 +130,21 @@ if(isset($_REQUEST['unconfirm']))
 	<!-- Admin Stye -->
 	<link rel="stylesheet" href="css/style.css">
   <style>
+	/* button {display: inline-block; padding: 1px 2px;font-size: 15px;cursor: pointer;text-align: center;text-decoration: none; outline: none;
+	  color: #fff;
+	  background-color: #4CAF50;
+	  border: none;
+	  border-radius: 15px;
+	  box-shadow: 0 9px #999;
+		margin-left: 420px;
+		margin-bottom: 25px;
+	} */
+	input[type=search]{width: 30%; margin-left: 400px;}
+	input {padding: 5px;}
 
+	/* button:hover {background-color: #3e8e41} */
+
+	/* button:active {background-color: #3e8e41;box-shadow: 0 5px #666;transform: translateY(4px);}
 	.errorWrap {
     padding: 10px;
     margin: 0 0 20px 0;
@@ -138,7 +152,36 @@ if(isset($_REQUEST['unconfirm']))
 	color:#fff;
     -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
     box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
+} */
+
+button {
+	-moz-box-shadow: 9px -2px 23px -8px #91b8b3;
+	-webkit-box-shadow: 9px -2px 23px -8px #91b8b3;
+	box-shadow: 9px -2px 23px -8px #91b8b3;
+	background-color:#768d87;
+	-moz-border-radius:18px;
+	-webkit-border-radius:18px;
+	border-radius:18px;
+	border:2px solid #566963;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Trebuchet MS;
+	font-size:18px;
+	font-weight:bold;
+	padding:14px 39px;
+	text-decoration:none;
+	text-shadow:0px 0px 0px #2b665e;
+	margin-left: 360px;
 }
+button:hover {
+	background-color:#6c7c7c;
+}
+button:active {
+	position:relative;
+	top:1px;
+}
+
 .succWrap{
     padding: 10px;
     margin: 0 0 20px 0;
@@ -147,6 +190,48 @@ if(isset($_REQUEST['unconfirm']))
     -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
     box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
 }
+.myButton {
+	-moz-box-shadow: 1px 0px 10px 2px #9fb4f2;
+	-webkit-box-shadow: 1px 0px 10px 2px #9fb4f2;
+	box-shadow: 1px 0px 10px 2px #9fb4f2;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #7892c2), color-stop(1, #476e9e));
+	background:-moz-linear-gradient(top, #7892c2 5%, #476e9e 100%);
+	background:-webkit-linear-gradient(top, #7892c2 5%, #476e9e 100%);
+	background:-o-linear-gradient(top, #7892c2 5%, #476e9e 100%);
+	background:-ms-linear-gradient(top, #7892c2 5%, #476e9e 100%);
+	background:linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#7892c2', endColorstr='#476e9e',GradientType=0);
+	background-color:#7892c2;
+	-moz-border-radius:15px;
+	-webkit-border-radius:15px;
+	border-radius:15px;
+	border:1px solid #4e6096;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Courier New;
+	font-size:20px;
+	padding:12px 38px;
+	text-decoration:none;
+	text-shadow:0px 0px 0px #283966;
+	margin-left: 430px;
+	margin-top: 10px;
+}
+.myButton:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #476e9e), color-stop(1, #7892c2));
+	background:-moz-linear-gradient(top, #476e9e 5%, #7892c2 100%);
+	background:-webkit-linear-gradient(top, #476e9e 5%, #7892c2 100%);
+	background:-o-linear-gradient(top, #476e9e 5%, #7892c2 100%);
+	background:-ms-linear-gradient(top, #476e9e 5%, #7892c2 100%);
+	background:linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#476e9e', endColorstr='#7892c2',GradientType=0);
+	background-color:#476e9e;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
 
 		</style>
 
@@ -163,7 +248,31 @@ if(isset($_REQUEST['unconfirm']))
 				<div class="row">
 					<div class="col-md-12">
 
+
 						<h2 class="page-title">Knowledge of customers</h2>
+						 <button type="button" id="mybutton"  onclick="myFunction()" > Do you want to look for someone? </button>
+						<div id="myDIV">
+						<form method="post" class="form-horizontal" enctype="multipart/form-data">
+							<label for="" class="text-uppercase text-sm"></label>
+							<input type="search" placeholder="Search: " name="search_customers_fame" class="form-control" required>
+							<button class="myButton" name="submit" type="submit">Search! </button>
+						</form>
+					</div>
+					<?php
+					$name = $_POST['search_customers_fame'];
+						$sql = "SELECT * FROM  users WHERE name='$name'";
+						$result = $conn->query($sql);
+						if($result === false)
+						{
+							 user_error("Query failed: ".$conn->error."<br />$sql");
+							 echo "false";
+						}
+						$row= mysqli_fetch_assoc($result);
+
+						$cnt=1;
+
+					?>
+
 
 						<!-- Zero Configuration Table -->
 						<div class="panel panel-default">
@@ -191,7 +300,7 @@ if(isset($_REQUEST['unconfirm']))
 ///////////////////////////////
 ///// new code
 ///////////////////////////////
-$sql = "SELECT * from  users WHERE user_type = 'standard_users'";
+$sql = "SELECT * FROM  users WHERE user_type = 'standard_users' OR 'standard_user'";
 $result = $conn->query($sql);
 if($result === false)
 {
@@ -249,6 +358,7 @@ if(mysqli_num_rows($result) > 0)
 								</table>
 							</div>
 						</div>
+
 					</div>
 				</div>
 
@@ -271,6 +381,10 @@ if(mysqli_num_rows($result) > 0)
 					setTimeout(function() {
 						$('.succWrap').slideUp("slow");
 					}, 3000);
+
+
+
+
 					});
 		</script>
 		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -285,9 +399,9 @@ if($result === false)
 }
 	/*while($row = mysqli_fetch_assoc($result)*/
 	$row= mysqli_fetch_assoc($result);
-	 echo "print someting". $row['COUNT(Gender)']."<br>";
+	 //echo "print someting". $row['COUNT(Gender)']."<br>";
 
-	$sql = "SELECT COUNT(Gender) FROM users WHERE gender= 'Famle'";
+	$sql = "SELECT COUNT(Gender) FROM users WHERE gender= 'Female'  OR   gender = 'Famle' ";
 	$result = $conn->query($sql);
 	if($result === false)
 	{
@@ -296,7 +410,7 @@ if($result === false)
 	}
 		/*while($row = mysqli_fetch_assoc($result)*/
 		$row1= mysqli_fetch_assoc($result);
-		 echo "print someting1". $row1['COUNT(Gender)']."<br>";
+		 //echo "print someting1". $row1['COUNT(Gender)']."<br>";
 	?>
 <script type="text/javascript">
 // Load google charts
@@ -306,7 +420,7 @@ google.charts.setOnLoadCallback(drawChart);
 // Draw the chart and set the chart values
 function drawChart() {
   var data = google.visualization.arrayToDataTable([
-  ['Task', 'Hours per Day'],
+  ['Gender', 'How many people use the system'],
   ['Men', <?php echo $row['COUNT(Gender)'];?>],
   ['Famle', <?php echo $row1['COUNT(Gender)'];?>]
 ]);
@@ -319,6 +433,41 @@ function drawChart() {
   chart.draw(data, options);
 }
 </script>
+<?php
+	$sql = "SELECT COUNT(birthday) FROM users WHERE birthday BETWEEN '1989-12-01' AND '1999-12-01'";
+	$result = $conn->query($sql);
+	if($result === false)
+	{
+		user_error("Query failed: ".$conn->error."<br />$sql");
+		echo "false";
+	}
+	$row3= mysqli_fetch_assoc($result);
+	 //echo "print someting". $row3['COUNT(birthday)']."<br>";
+
+	 $sql= "SELECT COUNT(birthday) FROM users WHERE birthday BETWEEN '1979-12-01' AND '1989-12-01'";
+	 $res=$conn->query($sql);
+	 if(res === false)
+	 {
+		 user_error("Query failed: ".$conn->error."<br />$sql");
+		 echo "false";
+	 }
+	 $row4= mysqli_fetch_assoc($res);
+ 	 //echo "print someting". $row4['COUNT(birthday)']."<br>";
+
+
+	 	 $sql= "SELECT COUNT(birthday) FROM users WHERE birthday BETWEEN '1969-12-01' AND '1979-12-01'";
+	 	 $res=$conn->query($sql);
+	 	 if(res === false)
+	 	 {
+	 		 user_error("Query failed: ".$conn->error."<br />$sql");
+	 		 echo "false";
+	 	 }
+	 	 $row5= mysqli_fetch_assoc($res);
+	  	 //echo "print someting". $row5['COUNT(birthday)']."<br>";
+
+
+  ?>
+
 <!-- php query for the pie chreat -->
 <!--
 	$sql = "SELECT COUNT(Gender) FROM users WHERE gender= 'male'";
@@ -343,9 +492,9 @@ google.charts.setOnLoadCallback(drawChart);
 function drawChart() {
 var data = google.visualization.arrayToDataTable([
 ['Task', 'Hours per Day'],
-['20-30', 8],
-['30-40', 2],
-['40-50', 4]
+['20-30', <?php echo $row3['COUNT(birthday)'];?>],
+['30-40', <?php echo $row4['COUNT(birthday)'];?>],
+['40-50', <?php echo $row5['COUNT(birthday)'];?>]
 ]);
 
 // Optional; add a title and set the width and height of the chart
@@ -359,23 +508,25 @@ chart.draw(data, options);
 
 <!-- php query for the pie chreat for age -->
 <?php
-	$sql = "SELECT Age FROM users; ";
-	$result = $conn->query($sql);
-	if($result === false)
-	{
-	 	user_error("Query failed: ".$conn->error."<br />$sql");
-	 	echo "false";
-	}
-		/*while($row = mysqli_fetch_assoc($result)*/
-		$row = mysqli_fetch_assoc($result);
-		if($row['Age'] >= 20 && $row['Age'] <= 30 ){
-			$young = 1;
-		}if($row['Age'] > 30 && $row['Age'] <= 40 ) {
-			$adult = 1;
-		}else {
-			$old = 1;
-		}
+
 ?>
+
+
+
+<script type="text/javascript">
+// function toggle
+
+
+function myFunction() {
+  var x = document.getElementById("myDIV");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+
+</script>
 
 </body>
 </html>

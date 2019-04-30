@@ -7,22 +7,40 @@ if(strlen($_SESSION['alogin'])==0)
 header('location:index.php');
 }
 else{
-if(isset($_GET['del']))
+if(isset($_GET['del']) && isset($_GET['name']))
 {
 $id=$_GET['del'];
+$name=$_GET['name'];
 
-$sql = "delete from users WHERE id=$id";
-$query = $conn->query($sql);
-if($query === false)
+echo "id: $id , name: $name";
+
+$sql="delete from `users` WHERE id='$id' ";
+$result = $conn->query($sql);
+if($result === false)
 {
-	 user_error("Query failed: ".$conn->error."<br />$sql2");
-	 echo "false";
+   user_error("Query failed: ".$conn->error."<br />$sql");
+   echo "false";
 }
-
+//
 // $sql = "delete from users WHERE id=:id";
 // $query = $dbh->prepare($sql);
 // $query -> bindParam(':id',$id, PDO::PARAM_STR);
 // $query -> execute();
+
+$sql2 = "insert into deleteduser (email) values ($name)";
+// $sql="delete from `users` WHERE id='$id' ";
+$result = $conn->query($sql2);
+if($result === false)
+{
+   user_error("Query failed: ".$conn->error."<br />$sql2");
+   echo "false";
+}
+
+//
+// $sql2 = "insert into deleteduser (email) values (:name)";
+// $query2 = $dbh->prepare($sql2);
+// $query2 -> bindParam(':name',$name, PDO::PARAM_STR);
+// $query2 -> execute();
 
 $msg="Data Deleted successfully";
 }
@@ -32,20 +50,30 @@ if(isset($_REQUEST['unconfirm']))
 	$aeid=intval($_GET['unconfirm']);
 	$memstatus=1;
 
-	$sql = "UPDATE users SET status=$memstatus WHERE  id=$aeid";
-	$query = $conn->query($sql);
-	if($query === false)
+
+
+	$sql2 = "insert into deleteduser (email) values ($name)";
+	// $sql="delete from `users` WHERE id='$id' ";
+	$result = $conn->query($sql2);
+	if($result === false)
 	{
-		 user_error("Query failed: ".$conn->error."<br />$sql2");
-		 echo "false";
+	   user_error("Query failed: ".$conn->error."<br />$sql2");
+	   echo "false";
 	}
 
+	//
+	$sql="UPDATE `users`SET status=$aeid WHERE  id=$aeid' ";
+	$result = $conn->query($sql);
+	if($result === false)
+	{
+	   user_error("Query failed: ".$conn->error."<br />$sql2");
+	   echo "false";
+	}
 	// $sql = "UPDATE users SET status=:status WHERE  id=:aeid";
 	// $query = $dbh->prepare($sql);
 	// $query -> bindParam(':status',$memstatus, PDO::PARAM_STR);
 	// $query-> bindParam(':aeid',$aeid, PDO::PARAM_STR);
 	// $query -> execute();
-
 	$msg="Changes Sucessfully";
 	}
 
@@ -54,9 +82,9 @@ if(isset($_REQUEST['unconfirm']))
 	$aeid=intval($_GET['confirm']);
 	$memstatus=0;
 
-	$sql = "UPDATE users SET status=$memstatus WHERE  id=$aeid";
-	$query = $conn->query($sql);
-	if($query === false)
+	$sql="UPDATE `users`SET status=$aeid WHERE  id=$aeid' ";
+	$result = $conn->query($sql);
+	if($result === false)
 	{
 		 user_error("Query failed: ".$conn->error."<br />$sql2");
 		 echo "false";
@@ -68,15 +96,9 @@ if(isset($_REQUEST['unconfirm']))
 	// $query -> bindParam(':status',$memstatus, PDO::PARAM_STR);
 	// $query-> bindParam(':aeid',$aeid, PDO::PARAM_STR);
 	// $query -> execute();
-
 	$msg="Changes Sucessfully";
 	}
-
-
-
-
-
- ?>
+?>
 
 <!doctype html>
 <html lang="en" class="no-js">
@@ -89,8 +111,7 @@ if(isset($_REQUEST['unconfirm']))
 	<meta name="author" content="">
 	<meta name="theme-color" content="#3e454c">
 
-	<title id="title-anim-1"> advertisements the customers were exposed to </title>
-
+	<title>Manage Users</title>
 
 	<!-- Font awesome -->
 	<link rel="stylesheet" href="css/font-awesome.min.css">
@@ -142,35 +163,34 @@ if(isset($_REQUEST['unconfirm']))
 				<div class="row">
 					<div class="col-md-12">
 
-						<h2 class="page-title">advertisements the customers were exposed to </h2>
+						<h2 class="page-title">Manage Users</h2>
 
 						<!-- Zero Configuration Table -->
 						<div class="panel panel-default">
-							<div class="panel-heading">advertisements the customers were exposed to</div>
-							<div id="container" style="width: 100%; height: 100%"></div>
+							<div class="panel-heading">List Users</div>
 							<div class="panel-body">
 							<?php if($error){?><div class="errorWrap" id="msgshow"><?php echo htmlentities($error); ?> </div><?php }
 				else if($msg){?><div class="succWrap" id="msgshow"><?php echo htmlentities($msg); ?> </div><?php }?>
 								<table id="zctb" class="display table table-striped table-bordered table-hover" cellspacing="0" width="100%">
-									 <thead>
-										 <tr>
-										    <th>ID</th>
-												<th>User Name</th>
-												<th>Email</th>
-                        <th>Gender</th>
-                        <th>Attachment</th>
-											  <th>Action</th>
+									<thead>
+										<tr>
+										<th>#</th>
+												<th>Image</th>
+                                                <th>Name</th>
+                                                <th>Email</th>
+                                                <th>Gender</th>
+                                                <th>Phone</th>
+                                                <th>Designation</th>
+                                                <th>Account</th>
+											<th>Action</th>
 										</tr>
-									</thead>
-
-									<tbody>
-										<br><br><br><br>
-
+								</thead>
+							<tbody>
 <?php
-$reciver = 'standard_users';
-
-
-$sql = "SELECT * FROM  users WHERE user_type = 'standard_users' OR 'standard_user'";
+///////////////////////////////
+///// new code
+///////////////////////////////
+$sql = "SELECT * from  users ";
 $result = $conn->query($sql);
 if($result === false)
 {
@@ -178,33 +198,48 @@ if($result === false)
 	 echo "false";
 }
 
+// $result = $result->fetch_array();
 
-// $sql = "SELECT * from  feedback where reciver = (:reciver)";
+///////////////////////////////
+//// original code
+///////////////////////////////
+// $sql = "SELECT * from  users ";
 // $query = $dbh -> prepare($sql);
-// $query-> bindParam(':reciver', $reciver, PDO::PARAM_STR);
 // $query->execute();
 // $results=$query->fetchAll(PDO::FETCH_OBJ);
-
-
+///////////////////////////////
 $cnt=1;
-// if($query->rowCount() > 0)
-// {
-// foreach($results as $result)
-// {
+
+///////////////////////////////
+
 
 if(mysqli_num_rows($result) > 0)
 {
 
 	while($row = mysqli_fetch_assoc($result)) {
-				?>						<tr>
-											<td><?php echo htmlentities($cnt);?></td>
-                      <td><?php echo $row['name'];?></td>
-											<td><?php echo $row['email'];?></td>
+				?>
+										<tr>
+											<td><?php echo $cnt;?></td>
+											<td><img src="../images/<?php echo $row['image'];?>" style="width:50px; border-radius:50%;"/></td>
+                      <td><?php echo $row['name']; ?></td>
+                      <td><?php echo $row['email'];?></td>
                       <td><?php echo $row['gender'];?></td>
-                      <td><a href="../attachment/<?php echo $row['attachment'];?>" ><?php echo $row['attachment'];?></a></td>
+                      <td><?php echo $row['mobile'];?></td>
+                      <td><?php echo $row['designation'] ;?>
+                      <td>
+
+                                            <?php if($row['status'] == 1)
+                                                    {?>
+                                                    <a href="userlist.php?confirm=<?php echo $row['id'];?>" onclick="return confirm('Do you really want to Un-Confirm the Account')">Confirmed <i class="fa fa-check-circle"></i></a>
+                                                    <?php } else {?>
+                                                    <a href="userlist.php?unconfirm=<?php echo $row['id'];?>" onclick="return confirm('Do you really want to Confirm the Account')">Un-Confirmed <i class="fa fa-times-circle"></i></a>
+                                                    <?php } ?>
+</td>
+                                            </td>
 
 <td>
-<a href="sendreply.php?reply=<?php echo $result->sender;?>">&nbsp; <i class="fa fa-mail-reply"></i></a>&nbsp;&nbsp;
+<a href="edit-user.php?edit=<?php echo  $row['id'];?>" onclick="return confirm('Do you want to Edit');">&nbsp; <i class="fa fa-pencil"></i></a>&nbsp;&nbsp;
+<a href="userlist.php?del=<?php echo  $row['id'];?>&name=<?php echo $row['email'];?>" onclick="return confirm('Do you want to Delete');"><i class="fa fa-trash" style="color:red"></i></a>&nbsp;&nbsp;
 </td>
 										</tr>
 										<?php $cnt=$cnt+1; }} ?>
@@ -226,7 +261,6 @@ if(mysqli_num_rows($result) > 0)
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/jquery.dataTables.min.js"></script>
 	<script src="js/dataTables.bootstrap.min.js"></script>
-	 <script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-base.min.js"></script>
 	<script src="js/Chart.min.js"></script>
 	<script src="js/fileinput.js"></script>
 	<script src="js/chartData.js"></script>
@@ -238,37 +272,6 @@ if(mysqli_num_rows($result) > 0)
 					}, 3000);
 					});
 		</script>
-		<script>
-
-		anychart.onDocumentReady(function() {
-
-		 // set the data
-		 var data = {
-				 header: ["Name", "Death toll"],
-				 rows: [
-					 ["Coffee ", 100000],
-					 ["Movies", 87000],
-					 ["Clothing", 175000],
-					 ["Show", 10000],
-					 ["Restaurants", 242000]
-		 ]};
-
-		 // create the chart
-		 var chart = anychart.bar();
-		 chart = anychart.column();
-		 // add the data
-		 chart.data(data);
-
-		 // set the chart title
-		 chart.title("advertisements the customers were exposed to");
-
-		 // draw
-		 chart.container("container");
-		 chart.draw();
-	 });
-
-		</script>
-
 </body>
 </html>
 <?php } ?>

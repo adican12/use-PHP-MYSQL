@@ -2,76 +2,57 @@
 session_start();
 error_reporting(0);
 include('includes/config.php');
-
 if(strlen($_SESSION['alogin'])==0)
 	{
-		echo"someting in if";
-		header('location:index.php');
+header('location:index.php');
 }
 else{
-	echo "session alogin: ".$_SESSION['alogin'];
 
-if(isset($_POST['submit']))
+	if(isset($_GET['reply']))
+	{
+	$replyto=$_GET['reply'];
+	}
+
+	if(isset($_POST['submit']))
   {
-		$title=$_POST['title'];
-	  $description=$_POST['description'];
-		$sender=$_SESSION['alogin'];
-		$reciver = 'Admin';
-		//$reciver= 'standard_user';
-	  //$notitype='Send Feedback';
-	   $attachment='sdsdds';
-		 $sql = "INSERT INTO `feedback` (`sender`, `reciver`, `title`,`feedbackdata`,`attachment`) VALUES ('$sender','$reciver','$title','$description','$attachment')";
-		 if ($conn->query($sql) === TRUE) {
-	 		echo "<script type='text/javascript'>alert('INSERT INTO feedback Sucessfull!');</script>";
-	 	} else {
-	 		echo "Error: " . $sql . "<br>" . $conn->error;
-	 		echo "<script type='text/javascript'>alert('ERROR   Registration!');</script>";
-	 		$error="Something went wrong. Please try again";
-	 	}
+	$reciver=$_POST['email'];
+  $message=$_POST['message'];
+	$notitype='Send Message';
+	$sender='Admin';
 
-	 	$msg="Information Updated Successfully";
-	 }
-		// $result = $conn->query($sql);
-		/////////////// to print the data//////////
-		//  $row= $result->fetch_array();
-		//  if(mysqli_num_rows($result) > 0)
-		//  {
-		//  	while($row = mysqli_fetch_assoc($result)) {
-	 //
-		//    echo "title: ".$row['title']."<br>";
-		// 	 echo "description: ".$row['description']."<br>";
-		//  }
-	 // }
-	// $file = $_FILES['attachment']['name'];
-	// $file_loc = $_FILES['attachment']['tmp_name'];
-	// $folder="attachment/";
-	// $new_file_name = strtolower($file);
-	// $final_file=str_replace(' ','-',$new_file_name);
-	//
+	$sqlnoti="insert into notification (notiuser,notireciver,notitype) values ($notiuser,$notireciver,$notitype)";
+	// $sql = "SELECT * from  notification where notireciver = $reciver order by time DESC";
+	$querynoti = $conn->query($sqlnoti);
+	if($querynoti === false)
+	{
+		 user_error("Query failed: ".$conn->error."<br />$sqlnoti");
+		 echo "false";
+	}
 
-	// if(move_uploaded_file($file_loc,$folder.$final_file))
-	// 	{
-	// 		$attachment=$final_file;
-	// 	}
-	// $notireciver = 'Admin';
-  //   $querynoti = $dbh->prepare($sqlnoti);
-	// $querynoti-> bindParam(':notiuser', $user, PDO::PARAM_STR);
-	// $querynoti-> bindParam(':notireciver', $notireciver, PDO::PARAM_STR);
-  //   $querynoti-> bindParam(':notitype', $notitype, PDO::PARAM_STR);
-  //   $querynoti->execute();
-	//
-	// $sql="insert into feedback (sender, reciver, title,feedbackdata,attachment) values (:user,:reciver,:title,:description,:attachment)";
+	// $sqlnoti="insert into notification (notiuser,notireciver,notitype) values (:notiuser,:notireciver,:notitype)";
+  // $querynoti = $dbh->prepare($sqlnoti);
+	// $querynoti-> bindParam(':notiuser', $sender, PDO::PARAM_STR);
+	// $querynoti-> bindParam(':notireciver',$reciver, PDO::PARAM_STR);
+  // $querynoti-> bindParam(':notitype', $notitype, PDO::PARAM_STR);
+  // $querynoti->execute();
+
+	$sqlfeed="insert into feedback (sender, reciver, feedbackdata) values ($user,$reciver,$description)";
+	$queryfeed = $conn->query($sqlfeed);
+	if($queryfeed === false)
+	{
+		 user_error("Query failed: ".$conn->error."<br />$sqlfeed");
+		 echo "false";
+	}
+
+	// $sql="insert into feedback (sender, reciver, feedbackdata) values (:user,:reciver,:description)";
 	// $query = $dbh->prepare($sql);
-	// $query-> bindParam(':user', $user, PDO::PARAM_STR);
+	// $query-> bindParam(':user', $sender, PDO::PARAM_STR);
 	// $query-> bindParam(':reciver', $reciver, PDO::PARAM_STR);
-	// $query-> bindParam(':title', $title, PDO::PARAM_STR);
-	// $query-> bindParam(':description', $description, PDO::PARAM_STR);
-	// $query-> bindParam(':attachment', $attachment, PDO::PARAM_STR);
-  //   $query->execute();
-	// $msg="Feedback Send";
-		}
+	// $query-> bindParam(':description', $message, PDO::PARAM_STR);
+  // $query->execute();
 
-
+	$msg="Feedback Send";
+  }
 ?>
 
 <!doctype html>
@@ -85,7 +66,7 @@ if(isset($_POST['submit']))
 	<meta name="author" content="">
 	<meta name="theme-color" content="#3e454c">
 
-	<title>Feedback</title>
+	<title>Edit Profile</title>
 
 	<!-- Font awesome -->
 	<link rel="stylesheet" href="css/font-awesome.min.css">
@@ -129,9 +110,25 @@ if(isset($_POST['submit']))
 
 <body>
 <?php
+
+		$sql = "SELECT * from users;";
+		$result = $conn->query($sql);
+		if($result === false)
+		{
+			 user_error("Query failed: ".$conn->error."<br />$sql");
+			 echo "false";
+		}
+
+
+
 		// $sql = "SELECT * from users;";
-		// $result = $conn->query($sql);
-		// $row= $result->fetch_array();
+		// $query = $dbh -> prepare($sql);
+		// $query->execute();
+		// $result=$query->fetch(PDO::FETCH_OBJ);
+
+		$row = mysqli_fetch_assoc($result);
+
+		$cnt=1;
 ?>
 	<?php include('includes/header.php');?>
 	<div class="ts-main-content">
@@ -141,40 +138,35 @@ if(isset($_POST['submit']))
 				<div class="row">
 					<div class="col-md-12">
 						<div class="row">
-
 							<div class="col-md-12">
-                            <h2>Give us Feedback</h2>
+                            <h2>Reply Feedback</h2>
 								<div class="panel panel-default">
 									<div class="panel-heading">Edit Info</div>
 <?php if($error){?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php }
 				else if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
 
-<div class="panel-body">
+									<div class="panel-body">
 <form method="post" class="form-horizontal" enctype="multipart/form-data">
 
 <div class="form-group">
-    <input type="hidden" name="user" value="<?php// echo htmlentities($result->email); ?>">
-	<label class="col-sm-2 control-label">Title<span style="color:red">*</span></label>
+	<label class="col-sm-2 control-label">Email<span style="color:red">*</span></label>
 	<div class="col-sm-4">
-	<input type="text" name="title" class="form-control" required>
-	</div>
-
-	<label class="col-sm-2 control-label">Attachment<span style="color:red"></span></label>
-	<div class="col-sm-4">
-	<input type="file" name="attachment" class="form-control">
+	<input type="text" name="email" class="form-control" readonly required value="<?php echo $row['replyto'];?>">
 	</div>
 </div>
 
 <div class="form-group">
-	<label class="col-sm-2 control-label">Description<span style="color:red">*</span></label>
-	<div class="col-sm-10">
-	<textarea class="form-control" rows="5" name="description"></textarea>
+	<label class="col-sm-2 control-label">Message<span style="color:red">*</span></label>
+	<div class="col-sm-6">
+	<textarea name="message" class="form-control" cols="30" rows="10"></textarea>
 	</div>
 </div>
+
+<input type="hidden" name="editid" class="form-control" required value="<?php echo $row['id'];?>">
 
 <div class="form-group">
 	<div class="col-sm-8 col-sm-offset-2">
-		<button class="btn btn-primary" name="submit" type="submit">Send</button>
+		<button class="btn btn-primary" name="submit" type="submit">Send Reply</button>
 	</div>
 </div>
 
@@ -208,4 +200,4 @@ if(isset($_POST['submit']))
 	</script>
 </body>
 </html>
-<?php?>
+<?php } ?>

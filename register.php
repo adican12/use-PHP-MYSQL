@@ -4,10 +4,13 @@ if(isset($_POST['submit']))
 {
 
 $file = $_FILES['image']['name'];
-$file_loc = $_FILES['image']['tmp_name'];
-$folder="images/";
-$new_file_name = strtolower($file);
-$final_file=str_replace(' ','-',$new_file_name);
+// $file_loc = $_FILES['image']['tmp_name'];
+// $folder="images/".basename($file);
+// $new_file_name = strtolower($file);
+// $final_file=str_replace(' ','-',$new_file_name);
+
+
+
 
 $name=$_POST['name'];
 $email=$_POST['email'];
@@ -20,7 +23,8 @@ $birthday=$_POST['birthday'];
 // if(move_uploaded_file($file_loc,$folder.$final_file))
 	// {
 		// $image=$final_file;
-		$image="asdasdasdasdasdasd";
+		//$image="asdasdasdasdasdasd";
+		$imgContent = addslashes(file_get_contents($file));
 
     // }
 $notitype='Create Account';
@@ -37,7 +41,7 @@ $sender=$email;
 echo "<br>start signup<br>";
 
 $sql = "INSERT INTO `users`(`name`, `email`, `password`, `gender`, `mobile`, `image`,`user_type`, `birthday`,`status`)
-VALUES ('$name', '$email', '$password','$gender','$mobileno','$image','$usertype','$birthday',1)";
+VALUES ('$name', '$email', '$password','$gender','$mobileno','$imgContent','$usertype','$birthday',1)";
 
 if ($conn->query($sql) === TRUE) {
 	echo "<script type='text/javascript'>alert('Registration Sucessfull!');</script>";
