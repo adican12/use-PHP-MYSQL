@@ -7,6 +7,10 @@
 
 </header>
 <body>
+<?php  echo 'Current PHP version: ' . phpversion();  ?>
+
+
 <div class="error">yaron hatol</div>
+
 </body>
 </html>
