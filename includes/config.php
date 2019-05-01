@@ -9,9 +9,21 @@
 echo "<br>welcome congif!<br>";
 /////////////////////////////////////////////////
 // Connect to CloudSQL from App Engine.
-$dsn = getenv('MYSQL_DSN');
-$user = getenv('MYSQL_USER');
-$password = getenv('MYSQL_PASSWORD');
+
+env_variables:
+  # Replace USER, PASSWORD, DATABASE, and CONNECTION_NAME with the
+  # values obtained when configuring your Cloud SQL instance.
+  // MYSQL_DSN: mysql:unix_socket=/cloudsql/catifi2;dbname=catifi
+  // MYSQL_USER: catwifi808
+  // MYSQL_PASSWORD: 1
+// $dsn = getenv('MYSQL_DSN');
+// $user = getenv('MYSQL_USER');
+// $password = getenv('MYSQL_PASSWORD');
+
+
+$dsn = "mysql:unix_socket=/cloudsql/catifi2;dbname=catifi";
+$user = "catwifi808";
+$password = "1";
 echo "dns: ".$dsn." , user: ".$user." , password: ".$password;
 if (!isset($dsn, $user) || false === $password) {
     throw new Exception('Set MYSQL_DSN, MYSQL_USER, and MYSQL_PASSWORD environment variables');
