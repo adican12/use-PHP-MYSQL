@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('includes/config.php');
+// include('includes/config.php');
 echo "<br>config";
 
 if(isset($_POST['login']))
