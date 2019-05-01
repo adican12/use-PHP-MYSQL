@@ -12,7 +12,7 @@ echo "<br>welcome congif!<br>";
 $dsn = getenv('MYSQL_DSN');
 $user = getenv('MYSQL_USER');
 $password = getenv('MYSQL_PASSWORD');
-echo "dns: ".$dsn" , user: ".$user." , password: ".$password;
+echo "dns: ".$dsn." , user: ".$user." , password: ".$password;
 if (!isset($dsn, $user) || false === $password) {
     throw new Exception('Set MYSQL_DSN, MYSQL_USER, and MYSQL_PASSWORD environment variables');
 }
