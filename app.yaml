@@ -21,3 +21,11 @@ handlers:
 
 - url: /.*
   script: not_found.php
+
+
+env_variables:
+  # Replace USER, PASSWORD, DATABASE, and CONNECTION_NAME with the
+  # values obtained when configuring your Cloud SQL instance.
+  MYSQL_DSN: mysql:unix_socket=/cloudsql/catifi2;dbname=catifi
+  MYSQL_USER: catwifi808
+  MYSQL_PASSWORD: 1
