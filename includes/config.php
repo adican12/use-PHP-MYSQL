@@ -1,16 +1,19 @@
 ﻿<?php
 // DB credentials.
 // define('DB_HOST','localhost');
-// define('DB_USER','root');
-// define('DB_PASS','');
-// define('DB_NAME','2520448_armentum');
+
+define('DB_HOST','35.233.17.192');
+
+define('DB_USER','catwifi808');
+define('DB_PASS','1');
+define('DB_NAME','catifi2');
 //
 // Establish database connection.
 echo "<br>welcome congif!<br>";
 /////////////////////////////////////////////////
 // Connect to CloudSQL from App Engine.
 
-env_variables:
+// env_variables:
   # Replace USER, PASSWORD, DATABASE, and CONNECTION_NAME with the
   # values obtained when configuring your Cloud SQL instance.
   // MYSQL_DSN: mysql:unix_socket=/cloudsql/catifi2;dbname=catifi
@@ -21,13 +24,14 @@ env_variables:
 // $password = getenv('MYSQL_PASSWORD');
 
 
-$dsn = "mysql:unix_socket=/cloudsql/catifi2;dbname=catifi";
-$user = "catwifi808";
-$password = "1";
-echo "dns: ".$dsn." , user: ".$user." , password: ".$password;
-if (!isset($dsn, $user) || false === $password) {
-    throw new Exception('Set MYSQL_DSN, MYSQL_USER, and MYSQL_PASSWORD environment variables');
-}
+// $dsn = "mysql:unix_socket=/cloudsql/catifi2;dbname=catifi";
+// $user = "catwifi808";
+// $password = "1";
+// echo "dns: ".$dsn." , user: ".$user." , password: ".$password;
+//
+// if (!isset($dsn, $user) || false === $password) {
+//     throw new Exception('Set MYSQL_DSN, MYSQL_USER, and MYSQL_PASSWORD environment variables');
+// }
 
 /////////////////////////////////////////////////
 //
@@ -52,9 +56,9 @@ try {
   // $password='';
   // $dbh = new PDO("mysql:host=$hostname;dbname=stickercollections",$username,$password);
 ///////////////////////////////////////////
-$db = new PDO($dsn, $user, $password);
+// $db = new PDO($dsn, $user, $password);
 
-// $dbh = new PDO("mysql:host=".DB_HOST.";dbname=".DB_NAME,DB_USER, DB_PASS,array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'"));
+$dbh = new PDO("mysql:host=".DB_HOST.";dbname=".DB_NAME,DB_USER, DB_PASS,array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'"));
 echo 'Connected to Database<br/>';
 
 }
