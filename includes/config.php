@@ -1,12 +1,15 @@
 ﻿<?php
 // DB credentials.
+
 // define('DB_HOST','localhost');
+
+// dbname - catifi2
 
 define('DB_HOST','35.233.17.192');
 
 define('DB_USER','catwifi808');
 define('DB_PASS','1');
-define('DB_NAME','catifi2');
+define('DB_NAME','catifi');
 //
 // Establish database connection.
 echo "<br>welcome congif!<br>";
