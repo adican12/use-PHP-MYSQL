@@ -24,14 +24,14 @@ echo "<br>welcome congif!<br>";
 // $password = getenv('MYSQL_PASSWORD');
 
 
-// $dsn = "mysql:unix_socket=/cloudsql/catifi2;dbname=catifi";
-// $user = "catwifi808";
-// $password = "1";
-// echo "dns: ".$dsn." , user: ".$user." , password: ".$password;
-//
-// if (!isset($dsn, $user) || false === $password) {
-//     throw new Exception('Set MYSQL_DSN, MYSQL_USER, and MYSQL_PASSWORD environment variables');
-// }
+$dsn = "mysql:unix_socket=/cloudsql/catifi2;dbname=catifi";
+$user = "catwifi808";
+$password = "1";
+echo "dns: ".$dsn." , user: ".$user." , password: ".$password;
+// //
+if (!isset($dsn, $user) || false === $password) {
+    throw new Exception('Set MYSQL_DSN, MYSQL_USER, and MYSQL_PASSWORD environment variables');
+}
 
 /////////////////////////////////////////////////
 //
@@ -51,14 +51,14 @@ try {
 //
 // ///////////////////////////////////////////
   //test
-  //   $hostname='localhost';
+  // $hostname='localhost';
   // $username='root';
   // $password='';
   // $dbh = new PDO("mysql:host=$hostname;dbname=stickercollections",$username,$password);
 ///////////////////////////////////////////
-// $db = new PDO($dsn, $user, $password);
+$db = new PDO($dsn, $user, $password);
 
-$dbh = new PDO("mysql:host=".DB_HOST.";dbname=".DB_NAME,DB_USER, DB_PASS);
+// $dbh = new PDO("mysql:host=".DB_HOST.";dbname=".DB_NAME,DB_USER, DB_PASS,array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'"));
 echo 'Connected to Database<br/>';
 
 }
