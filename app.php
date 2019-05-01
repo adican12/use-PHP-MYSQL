@@ -1,3 +1,4 @@
+<?php
 use Silex\Application;
 use Silex\Provider\TwigServiceProvider;
 use Symfony\Component\HttpFoundation\Request;
@@ -53,3 +54,4 @@ $app['database'] = function () use ($app) {
 
     return $db;
 };
+?>
