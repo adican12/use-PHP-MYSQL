@@ -8,12 +8,13 @@ $password = "1";
 $dbname = "catif";
 echo "dns: ".$dsn." , user: ".$user." , password: ".$password." ,db:".$dbname."<br>";
 
+echo @mysql_ping() ? 'true' : 'false';
 
-$conn = new mysqli($dsn, $user, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+// $conn = new mysqli($dsn, $user, $password, $dbname);
+// // Check connection
+// if ($conn->connect_error) {
+//     die("Connection failed: " . $conn->connect_error);
+// }
 
 echo 'Connected to Database<br/>';
 
