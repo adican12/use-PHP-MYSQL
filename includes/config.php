@@ -10,11 +10,11 @@ echo "servername: $servername , user: $username , password: $password , db: $dbn
 
 // try{
 // Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+// $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+// if ($conn->connect_error) {
+    // die("Connection failed: " . $conn->connect_error);
+// }
 // }catch{
 //   echo "not working";
 //
