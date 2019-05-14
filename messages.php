@@ -3,7 +3,7 @@ session_start();
 error_reporting(0);
 include('includes/config.php');
 if(strlen($_SESSION['alogin'])==0)
-	{	
+	{
 header('location:index.php');
 }
 else{
@@ -20,7 +20,7 @@ else{
 	<meta name="description" content="">
 	<meta name="author" content="">
 	<meta name="theme-color" content="#3e454c">
-	
+
 	<title>Messages</title>
 
 	<!-- Font awesome -->
@@ -79,7 +79,7 @@ else{
 						<div class="panel panel-default">
 							<div class="panel-heading">List Users</div>
 							<div class="panel-body">
-							<?php if($error){?><div class="errorWrap" id="msgshow"><?php echo htmlentities($error); ?> </div><?php } 
+							<?php if($error){?><div class="errorWrap" id="msgshow"><?php echo htmlentities($error); ?> </div><?php }
 				else if($msg){?><div class="succWrap" id="msgshow"><?php echo htmlentities($msg); ?> </div><?php }?>
 								<table id="zctb" class="display table table-striped table-bordered table-hover" cellspacing="0" width="100%">
 									<thead>
@@ -89,10 +89,10 @@ else{
 												<th>Message</th>
 										</tr>
 									</thead>
-									
+
 									<tbody>
 
-<?php 
+<?php
 $reciver = $_SESSION['alogin'];
 $sql = "SELECT * from  feedback where reciver = (:reciver)";
 $query = $dbh -> prepare($sql);
@@ -103,14 +103,14 @@ $cnt=1;
 if($query->rowCount() > 0)
 {
 foreach($results as $result)
-{				?>	
+{				?>
 										<tr>
 											<td><?php echo htmlentities($cnt);?></td>
                                             <td><?php echo htmlentities($result->sender);?></td>
 											<td><?php echo htmlentities($result->feedbackdata);?></td>
 										</tr>
 										<?php $cnt=$cnt+1; }} ?>
-										
+
 									</tbody>
 								</table>
 							</div>
@@ -133,7 +133,7 @@ foreach($results as $result)
 	<script src="js/chartData.js"></script>
 	<script src="js/main.js"></script>
 	<script type="text/javascript">
-				 $(document).ready(function () {          
+				 $(document).ready(function () {
 					setTimeout(function() {
 						$('.succWrap').slideUp("slow");
 					}, 3000);
