@@ -8,17 +8,17 @@ $password = "1";
 $dbname = "catifi";
 echo "servername: $servername , user: $username , password: $password , db: $dbname<br>";
 
-try{
+// try{
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-}catch{
-  echo "not working";
-
-}
+// }catch{
+//   echo "not working";
+//
+// }
 echo 'Connected to Database<br/>';
 
 
