@@ -27,8 +27,8 @@ echo "<br>welcome congif!<br>";
 // $password = getenv('MYSQL_PASSWORD');
 
 
-$dsn = "mysql:unix_socket=/cloudsql/catifi2;dbname=catifi";
-$user = "catwifi808";
+$dsn = "35.237.162.70";
+$user = "root";
 $password = "1";
 echo "dns: ".$dsn." , user: ".$user." , password: ".$password;
 // //
@@ -44,13 +44,13 @@ if (!isset($dsn, $user) || false === $password) {
 // $dbname = "adbasewifi";
 //
 // // Create connection
-// $conn = new mysqli($servername, $username, $password, $dbname);
-// // Check connection
-// if ($conn->connect_error) {
-//     die("Connection failed: " . $conn->connect_error);
-// }
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
 
-try {
+// try {
 //
 // ///////////////////////////////////////////
   //test
@@ -59,15 +59,15 @@ try {
   // $password='';
   // $dbh = new PDO("mysql:host=$hostname;dbname=stickercollections",$username,$password);
 ///////////////////////////////////////////
-$db = new PDO($dsn, $user, $password);
+// $db = new PDO($dsn, $user, $password);
 
 // $dbh = new PDO("mysql:host=".DB_HOST.";dbname=".DB_NAME,DB_USER, DB_PASS,array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'"));
 echo 'Connected to Database<br/>';
 
-}
-catch (PDOException $e)
-{
-exit("Error: " . $e->getMessage());
-}
+// }
+// catch (PDOException $e)
+// {
+// exit("Error: " . $e->getMessage());
+// }
 
 ?>
