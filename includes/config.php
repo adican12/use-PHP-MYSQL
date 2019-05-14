@@ -2,19 +2,18 @@
 
 echo "<br>welcome congif!<br>";
 
-$dsn = "35.237.162.70";
-$user = "root";
+$servername = "35.237.162.70";
+$username = "root";
 $password = "1";
 $dbname = "catif";
-echo "dns: ".$dsn." , user: ".$user." , password: ".$password." ,db:".$dbname."<br>";
+echo "servername: $servername , user: $username , password: $password , db: $dbname<br>";
 
-echo @mysql_ping() ? 'true' : 'false';
-
-// $conn = new mysqli($dsn, $user, $password, $dbname);
-// // Check connection
-// if ($conn->connect_error) {
-//     die("Connection failed: " . $conn->connect_error);
-// }
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
 
 echo 'Connected to Database<br/>';
 
