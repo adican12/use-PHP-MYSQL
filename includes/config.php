@@ -6,7 +6,7 @@ $servername = "localhost";
 $username = "root";
 $password = "1";
 $dbname = "catifi";
-echo "servername: $servername , user: $username , password: $password , db: $dbname<br>";
+// echo "servername: $servername , user: $username , password: $password , db: $dbname<br>";
 
 // try{
 // Create connection
