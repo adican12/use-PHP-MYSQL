@@ -52,7 +52,7 @@ if($result->num_rows == 0)
 ?>
 <!doctype html>
 <html lang="en" class="no-js">
-
+<!--  catifi 2019-->
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
