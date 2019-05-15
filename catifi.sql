@@ -38,9 +38,9 @@ CREATE TABLE IF NOT EXISTS `admin` (
 -- Dumping data for table `admin`
 --
 
-INSERT INTO `admin` (`id`, `username`, `email`, `password`) VALUES
-(1, 'admin', 'admin@admin.com', '9ae2be73b58b565bce3e47493a56e26a'),
-(2, 'root', 'root@gmail.com', '1');
+INSERT INTO `admin` (`username`, `email`, `password`) VALUES
+( 'admin', 'admin@admin.com', '9ae2be73b58b565bce3e47493a56e26a'),
+( 'root', 'root@gmail.com', '1');
 
 -- --------------------------------------------------------
 
@@ -137,10 +137,10 @@ ALTER TABLE `notification`
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
 CREATE TABLE `ad`(
-`id` INT(11) NOT NULL AUTO_INCREMENT,
+`adID` INT(11) NOT NULL AUTO_INCREMENT,
 `image` TEXT NOT NULL,
 `text` VARCHAR(50) NOT NULL,
 `price` VARCHAR(50) NOT NULL,
 `header` VARCHAR(50) NOT NULL,
-PRIMARY KEY(`id`)
+PRIMARY KEY(`adId`)
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
