@@ -300,7 +300,7 @@ if(mysqli_num_rows($result) > 0)
 <div id="demo"</div>
 	<?php
 
-	$sql = "SELECT * FROM ad WHERE id =2";
+	$sql = "SELECT * FROM ad WHERE adID =2";
 	$result = $conn->query($sql);
 	if($result === false)
 	{

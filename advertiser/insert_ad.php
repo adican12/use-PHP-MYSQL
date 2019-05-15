@@ -3,7 +3,7 @@ session_start();
 include('includes/config.php');
 //gloab var
 // $msg = "";
-// 
+//
 //   echo "we inside the function <br>";
 //   //this is the path to where the sotrge the images
 //   $target_name = "images/";
@@ -33,7 +33,7 @@ $header= $_POST['header'];
 
 
 
-$sql = "INSERT INTO ad (image, price,text,header)
+$sql = "INSERT INTO ad (`image`, `price`,`text`,`header`)
 VALUES ('$image', '$price', '$text','$header')";
 
 if ($conn->query($sql) === TRUE) {
@@ -43,7 +43,7 @@ if ($conn->query($sql) === TRUE) {
 }
 
 ///////////////////////////////////////upload a image and save it in Database/////////////////////////
-$table = 'image';
+//$table = 'image';
 
 $conn->close();
 
