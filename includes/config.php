@@ -2,7 +2,7 @@
 
 echo "<br>welcome congif!<br>";
 
-$servername = "10.142.0.3";
+$servername = "localhost";
 $username = "root";
 $password = "1";
 $dbname = "catifi";
