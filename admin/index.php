@@ -1,7 +1,7 @@
 <?php
 session_start();
 include('includes/config.php');
-echo "<br>config";
+//echo "<br>config";
 
 if(isset($_POST['login']))
 {
@@ -12,7 +12,7 @@ $password=$_POST['password'];
 ///////////////////
 /// new code
 ///////////////////////////////////////////////////////////////////////
-echo "<br>email: ".$email ."		password: ".$password."<br>";
+// echo "<br>email: ".$email ."		password: ".$password."<br>";
 
 
 $sql="SELECT UserName,Password FROM `admin` WHERE `UserName`='$email' AND `Password`='$password' ";

@@ -300,7 +300,7 @@ if(mysqli_num_rows($result) > 0)
 <div id="demo"</div>
 	<?php
 
-	$sql = "SELECT* FROM ad WHERE id =2";
+	$sql = "SELECT * FROM ad WHERE id =2";
 	$result = $conn->query($sql);
 	if($result === false)
 	{
@@ -354,7 +354,7 @@ function changeDetails(){
 	document.getElementById("details").innerHTML =x;
 //change the image
 	var x = "<?php echo $row['image'];?>";
- 	//alert(x);
+ 	console.log(x);
   document.getElementById("img").src= x;
 
 }/*
