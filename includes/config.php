@@ -2,7 +2,7 @@
 
 echo "<br>welcome congif!<br>";
 
-$servername = "35.231.143.183";
+$servername = "10.142.0.3";
 $username = "root";
 $password = "1";
 $dbname = "catifi";
