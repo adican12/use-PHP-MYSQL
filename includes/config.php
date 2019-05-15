@@ -1,6 +1,6 @@
 ﻿<?php
 
-echo "<br>welcome congif!<br>";
+// echo "<br>welcome congif!<br>";
 
 $servername = "localhost";
 $username = "root";
