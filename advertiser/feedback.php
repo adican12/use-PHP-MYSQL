@@ -309,15 +309,15 @@ if(mysqli_num_rows($result) > 0)
 	}
 		$row= mysqli_fetch_assoc($result);
 
-	$query= "SELECT * FROM images";
-	$res = $conn->query($query);
-	if($res === false){
-		user_error("Query failed: ".$conn->error."<br />$sql");
-		echo "false";
-	}
-	$new_row = mysqli_fetch_assoc($res);
-	 echo "print the image form db: ".$new_row['image']."<br>";
-	 echo "print the text of the image form db: ".$new_row['text']."<br>";
+	// $query= "SELECT * FROM images";
+	// $res = $conn->query($query);
+	// if($res === false){
+	// 	user_error("Query failed: ".$conn->error."<br />$sql");
+	// 	echo "false";
+	// }
+	// $new_row = mysqli_fetch_assoc($res);
+	//  echo "print the image form db: ".$new_row['image']."<br>";
+	//  echo "print the text of the image form db: ".$new_row['text']."<br>";
 
 
 
