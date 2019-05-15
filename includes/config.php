@@ -12,7 +12,7 @@ $dbname = "catifi";
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 // // Check connection
-echo "pass conn<br>";
+//echo "pass conn<br>";
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
@@ -20,7 +20,7 @@ if ($conn->connect_error) {
 //   echo "not working";
 //
 // }
-echo 'Connected to Database<br/>';
+// echo 'Connected to Database<br/>';
 
 
 ?>
