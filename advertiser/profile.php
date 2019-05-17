@@ -184,7 +184,7 @@ var secretkey = config.SECRET_KEY;
 	var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
 	}
 	</script>
-	<script src="https://maps.googleapis.com/maps/api/js?key=secretkey&callback=myMap"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHvF0bJ9dQXEqbBpy5DGf-9r9ZFt7CHk&callback=myMap"></script>
 	<!--
 // 	var marker_array = [];
 // 	var map,marker,info_window;
