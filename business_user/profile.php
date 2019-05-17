@@ -137,7 +137,8 @@ if(isset($_POST['submit']))
 		<button class="btn btn-primary" name="submit" type="submit">Save Changes</button>
 	</div>
 </div>
-
+<div id="piechart" style="width: 100%; height: 100%"></div>
+<div id="piechart1" style="width: 100%; height: 100%"></div>
 </form>
 									</div>
 								</div>
