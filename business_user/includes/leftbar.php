@@ -6,7 +6,7 @@
 
 			<li><a href="userlist.php"><i class="fa fa-users"></i> Knowledge of customers</a>
 			</li>
-			<li><a href="profile.php"><i class="fa fa-chart-line" aria-hidden="true"></i> &nbsp;Statics</a>
+			<li><a href="profile.php"><i class="fas fa-chart-pie" aria-hidden="true"></i> &nbsp;Statics</a>
 			</li>
 			<li><a href="feedback.php"><i class="fa fa-adn" aria-hidden="true"></i> &nbsp;exposed to</a>
 			</li>
