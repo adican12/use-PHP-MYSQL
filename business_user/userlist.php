@@ -250,7 +250,7 @@ button:active {
 
 
 						<h2 class="page-title">Knowledge of customers</h2>
-						 <button type="button" id="mybutton"  onclick="myFunction()" > Do you want to look for someone? </button>
+						 <button type="button" id="mybutton"  onclick="myFunction()" > <i class="fa fa-search"></i>Do you want to look for someone? </button>
 						<div id="myDIV">
 						<form method="post" class="form-horizontal" enctype="multipart/form-data">
 							<label for="" class="text-uppercase text-sm"></label>
@@ -268,6 +268,7 @@ button:active {
 							 echo "false";
 						}
 						$row= mysqli_fetch_assoc($result);
+						echo($row['name']);
 
 						$cnt=1;
 
@@ -276,7 +277,7 @@ button:active {
 
 						<!-- Zero Configuration Table -->
 						<div class="panel panel-default">
-							<div class="panel-heading">Knowledge of customers</div>
+							<div class="panel-heading"> Knowledge of customers</div>
 							<div class="panel-body">
 							<?php if($error){?><div class="errorWrap" id="msgshow"><?php echo htmlentities($error); ?> </div><?php }
 				else if($msg){?><div class="succWrap" id="msgshow"><?php echo htmlentities($msg); ?> </div><?php }?>
