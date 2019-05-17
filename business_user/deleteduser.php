@@ -58,6 +58,7 @@ else{
     box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
 }
 .marketing p { font-family: 'Amatic SC', cursive; }
+.marketing h3 {background-color:powderblue;font-size: 40%;background: rgb(244,224,160);}
 
 		</style>
 
