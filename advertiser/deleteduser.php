@@ -21,7 +21,7 @@ else{
 	<meta name="author" content="">
 	<meta name="theme-color" content="#3e454c">
 
-	<title>Deleted Users</title>
+	<title>Business insights</title>
 
 	<!-- Font awesome -->
 	<link rel="stylesheet" href="css/font-awesome.min.css">
@@ -73,7 +73,7 @@ else{
 				<div class="row">
 					<div class="col-md-12">
 
-						<h2 class="page-title">Deleted Users</h2>
+						<h2 class="page-title">Business insights</h2>
 
 						<!-- Zero Configuration Table -->
 						<div class="panel panel-default">
