@@ -110,7 +110,7 @@ if(isset($_POST['submit']))
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col-md-12">
-						<h3 class="page-title">Manage Admin</h3>
+						<h3 class="page-title">Statics</h3>
 						<div class="row">
 							<div class="col-md-12">
 								<div class="panel panel-default">
@@ -120,16 +120,7 @@ if(isset($_POST['submit']))
 
 									<div class="panel-body">
 <form method="post" class="form-horizontal" enctype="multipart/form-data">
-<div class="form-group">
-<label class="col-sm-2 control-label">Username<span style="color:red">*</span></label>
-<div class="col-sm-4">
-<input type="text" name="name" class="form-control" required value="<?php echo $result['username'];?>">
-</div>
-<label class="col-sm-2 control-label">Email<span style="color:red">*</span></label>
-<div class="col-sm-4">
-<input type="email" name="email" class="form-control" required value="<?php echo $result['email'];?>">
-</div>
-</div>
+
 
 
 <div class="form-group">
