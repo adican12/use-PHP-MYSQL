@@ -154,6 +154,7 @@ if(isset($_POST['submit']))
 
 	<!-- Loading Scripts -->
 	<script src="js/jquery.min.js"></script>
+	<script src = "../config.js"></script>
 	<script src="js/bootstrap-select.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/jquery.dataTables.min.js"></script>
@@ -173,38 +174,48 @@ if(isset($_POST['submit']))
 	<div id="googleMap" style="width:100%;height:400px;"></div>
  <!-- onclick = "getLocation()" -->
 	<script>
+	var mykey = config.MY_KEY;
+var secretkey = config.SECRET_KEY;
 	// this function to open a google maps , set marker and open a info window
-
-	var marker_array = [];
-	var map,marker,info_window;
-	var red_icon = "http://maps.google.com/mapfiles/ms/icons/red-dot.png" ;
-	var blue_icon = "http://maps.google.com/mapfiles/ms/icons/blue-dot.png";
-	var location;
-		function initMap() {
-		map = new google.maps.Map(document.getElementById('googleMap'), {
-			center: {lat: 32.089643, lng: 34.8016837},
-			zoom: 8
-
-		});
-
-google.maps.event.addListener(map, 'click', function(event) {
-  placeMarker(map, event.latLng);
-});
-
-function placeMarker(map, location) {
-  var marker = new google.maps.Marker({
-    position: location,
-    map: map,
-		icon: {url :"http://maps.google.com/mapfiles/ms/icons/blue-dot.png"}
-  });
-  var infowindow = new google.maps.InfoWindow({
-    content: 'Latitude: ' + location.lat() +
-    '<br>Longitude: ' + location.lng() + ' you can publish here ! ',
-  });
-  infowindow.open(map,marker);
-}
-}
+	var mapProp= {
+	  center:new google.maps.LatLng(51.508742,-0.120850),
+	  zoom:5,
+	};
+	var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+	}
 	</script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=secretkey&callback=myMap"></script>
+	<!--
+// 	var marker_array = [];
+// 	var map,marker,info_window;
+// 	var red_icon = "http://maps.google.com/mapfiles/ms/icons/red-dot.png" ;
+// 	var blue_icon = "http://maps.google.com/mapfiles/ms/icons/blue-dot.png";
+// 	var location;
+// 		function initMap() {
+// 		map = new google.maps.Map(document.getElementById('googleMap'), {
+// 			center: {lat: 32.089643, lng: 34.8016837},
+// 			zoom: 8
+//
+// 		});
+//
+// google.maps.event.addListener(map, 'click', function(event) {
+//   placeMarker(map, event.latLng);
+// });
+//
+// function placeMarker(map, location) {
+//   var marker = new google.maps.Marker({
+//     position: location,
+//     map: map,
+// 		icon: {url :"http://maps.google.com/mapfiles/ms/icons/blue-dot.png"}
+<!- //   }); -->
+<!-- //   var infowindow = new google.maps.InfoWindow({ -->
+<!-- //     content: 'Latitude: ' + location.lat() + -->
+<!-- //     '<br>Longitude: ' + location.lng() + ' you can publish here ! ', -->
+<!-- //   }); -->
+<!-- //   infowindow.open(map,marker); -->
+<!-- // } -->
+<!-- // } --> -->
+	<!-- </script> -->
 
 
 </body>
