@@ -60,6 +60,7 @@ else{
 .marketing p { font-family: 'Amatic SC', cursive; }
 .marketing h3 {background-color:powderblue;background: rgb(244,224,160);}
 footer h4 {text-align: center;}
+img {margin-right: 130px;}
 
 		</style>
 
