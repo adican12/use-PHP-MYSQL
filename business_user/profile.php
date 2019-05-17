@@ -166,6 +166,124 @@ if(isset($_POST['submit']))
 					}, 3000);
 					});
 	</script>
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<?php
+
+$sql = "SELECT COUNT(Gender) FROM users WHERE gender= 'male'";
+$result = $conn->query($sql);
+if($result === false)
+{
+user_error("Query failed: ".$conn->error."<br />$sql");
+echo "false";
+}
+/*while($row = mysqli_fetch_assoc($result)*/
+$row= mysqli_fetch_assoc($result);
+ //echo "print someting". $row['COUNT(Gender)']."<br>";
+
+$sql = "SELECT COUNT(Gender) FROM users WHERE gender= 'Female'  OR   gender = 'Famle' ";
+$result = $conn->query($sql);
+if($result === false)
+{
+	user_error("Query failed: ".$conn->error."<br />$sql");
+	echo "false";
+}
+	/*while($row = mysqli_fetch_assoc($result)*/
+	$row1= mysqli_fetch_assoc($result);
+	 //echo "print someting1". $row1['COUNT(Gender)']."<br>";
+?>
+<script type="text/javascript">
+// Load google charts
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+// Draw the chart and set the chart values
+function drawChart() {
+var data = google.visualization.arrayToDataTable([
+['Gender', 'How many people use the system'],
+['Men', <?php echo $row['COUNT(Gender)'];?>],
+['Famle', <?php echo $row1['COUNT(Gender)'];?>]
+]);
+
+// Optional; add a title and set the width and height of the chart
+var options = {'title':'Gender', 'width':550, 'height':400};
+
+// Display the chart inside the <div> element with id="piechart"
+var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+chart.draw(data, options);
+}
+</script>
+<?php
+$sql = "SELECT COUNT(birthday) FROM users WHERE birthday BETWEEN '1989-12-01' AND '1999-12-01'";
+$result = $conn->query($sql);
+if($result === false)
+{
+	user_error("Query failed: ".$conn->error."<br />$sql");
+	echo "false";
+}
+$row3= mysqli_fetch_assoc($result);
+ //echo "print someting". $row3['COUNT(birthday)']."<br>";
+
+ $sql= "SELECT COUNT(birthday) FROM users WHERE birthday BETWEEN '1979-12-01' AND '1989-12-01'";
+ $res=$conn->query($sql);
+ if(res === false)
+ {
+	 user_error("Query failed: ".$conn->error."<br />$sql");
+	 echo "false";
+ }
+ $row4= mysqli_fetch_assoc($res);
+ //echo "print someting". $row4['COUNT(birthday)']."<br>";
+
+
+	 $sql= "SELECT COUNT(birthday) FROM users WHERE birthday BETWEEN '1969-12-01' AND '1979-12-01'";
+	 $res=$conn->query($sql);
+	 if(res === false)
+	 {
+		 user_error("Query failed: ".$conn->error."<br />$sql");
+		 echo "false";
+	 }
+	 $row5= mysqli_fetch_assoc($res);
+		 //echo "print someting". $row5['COUNT(birthday)']."<br>";
+
+
+?>
+
+<!-- php query for the pie chreat -->
+<!--
+$sql = "SELECT COUNT(Gender) FROM users WHERE gender= 'male'";
+$result = $conn->query($sql);
+if($result === false)
+{
+	user_error("Query failed: ".$conn->error."<br />$sql");
+	echo "false";
+}
+	/*while($row = mysqli_fetch_assoc($result)*/
+	$row= mysqli_fetch_assoc($result);
+	 echo "print someting". $row['COUNT(Gender)']."<br>";
+-->
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<script type="text/javascript">
+// Load google charts
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+// Draw the chart and set the chart values
+function drawChart() {
+var data = google.visualization.arrayToDataTable([
+['Task', 'Hours per Day'],
+['20-30', <?php echo $row3['COUNT(birthday)'];?>],
+['30-40', <?php echo $row4['COUNT(birthday)'];?>],
+['40-50', <?php echo $row5['COUNT(birthday)'];?>]
+]);
+
+// Optional; add a title and set the width and height of the chart
+var options = {'title':'Age', 'width':550, 'height':400};
+
+// Display the chart inside the <div> element with id="piechart"
+var chart = new google.visualization.PieChart(document.getElementById('piechart1'));
+chart.draw(data, options);
+}
+</script>
 </body>
 </html>
 <?php } ?>
