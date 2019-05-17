@@ -101,6 +101,7 @@ footer h4 {text-align: center;}
 For short and long term
 Short-term: Short-term goals can be achieved in a period of weeks to a year
 Long-term goals can be five, 10 or even 20 years; They should be bigger than short-term goals, but still need to be reality</p>
+<img src="images/goals.jpg" width="200" height="178">
 				</div>
 				<div class="marketing">
 						<h3>Step 5: Set your marketing budget</h3>
