@@ -268,7 +268,7 @@ button:active {
 							 echo "false";
 						}
 						$row= mysqli_fetch_assoc($result);
-						echo($row['name']);
+						//echo($row['name']);
 
 						$cnt=1;
 
