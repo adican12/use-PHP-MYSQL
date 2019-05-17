@@ -73,62 +73,15 @@ else{
 				<div class="row">
 					<div class="col-md-12">
 
-						<h2 class="page-title">Deleted Users</h2>
+						<h2 class="page-title">Building a marketing strategy</h2>
 
 						<!-- Zero Configuration Table -->
 						<div class="panel panel-default">
-							<div class="panel-heading">List Users</div>
+							<div class="panel-heading">Building a marketing strategy</div>
 							<div class="panel-body">
 							<?php if($error){?><div class="errorWrap" id="msgshow"><?php echo htmlentities($error); ?> </div><?php }
 				else if($msg){?><div class="succWrap" id="msgshow"><?php echo htmlentities($msg); ?> </div><?php }?>
-								<table id="zctb" class="display table table-striped table-bordered table-hover" cellspacing="0" width="100%">
-									<thead>
-										<tr>
-										       <th>#</th>
-												<th>Email</th>
-												<th>Delete Time</th>
-										</tr>
-									</thead>
 
-									<tbody>
-
-<?php
-
-$sql = "SELECT * from  deleteduser";
-
-$result = $conn->query($sql);
-if($results12 === false)
-{
-   user_error("Query failed: ".$conn->error."<br />$sql");
-   echo "false";
-}
-//
-// $sql = "SELECT * from  deleteduser";
-// $query = $dbh -> prepare($sql);
-// $query->execute();
-// $results=$query->fetchAll(PDO::FETCH_OBJ);
-
-$cnt=1;
-//
-// if($query->rowCount() > 0)
-// {
-// foreach($results as $result)
-// {
-
-if(mysqli_num_rows($result) > 0)
-{
-
-	while($row = mysqli_fetch_assoc($result)) {
-		?>
-										<tr>
-											<td><?php echo htmlentities($cnt);?></td>
-                                            <td><?php echo $result['email'];?></td>
-											<td><?php echo $result['deltime'];?></td>
-										</tr>
-										<?php $cnt=$cnt+1; }} ?>
-
-									</tbody>
-								</table>
 							</div>
 						</div>
 					</div>
