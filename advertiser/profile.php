@@ -117,7 +117,7 @@ if(isset($_POST['submit']))
 						<div class="row">
 							<div class="col-md-12">
 								<div class="panel panel-default">
-									<div class="panel-heading">Edit Info</div>
+									<div class="panel-heading">See places</div>
 <?php if($error){?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php }
 				else if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
 
@@ -177,14 +177,15 @@ if(isset($_POST['submit']))
 	var mykey = config.MY_KEY;
 var secretkey = config.SECRET_KEY;
 	// this function to open a google maps , set marker and open a info window
-	var mapProp= {
-	  center:new google.maps.LatLng(51.508742,-0.120850),
-	  zoom:5,
-	};
-	var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
-	}
+	function myMap() {
+var mapProp= {
+  center:new google.maps.LatLng(51.508742,-0.120850),
+  zoom:5,
+};
+var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+}
 	</script>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHvF0bJ9dQXEqbBpy5DGf-9r9ZFt7CHk&callback=myMap"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=secretkey&callback=myMap"></script>
 	<!--
 // 	var marker_array = [];
 // 	var map,marker,info_window;
