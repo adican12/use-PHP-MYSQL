@@ -114,7 +114,7 @@ if(isset($_POST['submit']))
 						<div class="row">
 							<div class="col-md-12">
 								<div class="panel panel-default">
-									<div class="panel-heading">Edit Info</div>
+									<div class="panel-heading">Statics</div>
 <?php if($error){?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php }
 				else if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
 
@@ -123,11 +123,7 @@ if(isset($_POST['submit']))
 
 
 
-<div class="form-group">
-	<div class="col-sm-8 col-sm-offset-2">
-		<button class="btn btn-primary" name="submit" type="submit">Save Changes</button>
-	</div>
-</div>
+
 <div id="piechart" style="width: 100%; height: 100%"></div>
 <div id="piechart1" style="width: 100%; height: 100%"></div>
 </form>
