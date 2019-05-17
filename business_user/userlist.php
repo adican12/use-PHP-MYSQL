@@ -293,8 +293,8 @@ button:active {
 										</tr>
 								</thead>
 							<tbody>
-								 <div id="piechart" style="width: 100%; height: 100%"></div>
-								 <div id="piechart1" style="width: 100%; height: 100%"></div>
+								 <!-- <div id="piechart" style="width: 100%; height: 100%"></div>
+								 <div id="piechart1" style="width: 100%; height: 100%"></div> -->
 
 <?php
 ///////////////////////////////
