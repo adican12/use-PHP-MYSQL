@@ -85,6 +85,7 @@ footer h4 {text-align: center;}
 							<?php if($error){?><div class="errorWrap" id="msgshow"><?php echo htmlentities($error); ?> </div><?php }
 				else if($msg){?><div class="succWrap" id="msgshow"><?php echo htmlentities($msg); ?> </div><?php }?>
 				<div class="marketing">
+					<img src="images/goals.jpg" width="200" height="178">
 						<h3>Step 1: Take a snapshot of your company’s current situation.</h3>
 						<p>This first section defines your company and its products or services then shows how the benefits you provide set you apart from your competition. It's called a “situation analysis.”
 								Target audiences have become extremely specialized and segmented. No matter your industry, from restaurants to professional services to retail clothing stores, positioning your product or service competitively requires an understanding of your niche market. Not only do you need to be able to describe what you market, but you must also have a clear understanding of what your competitors are offering and be able to show how your product or service provides a better value.</p>
