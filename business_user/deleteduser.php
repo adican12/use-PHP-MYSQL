@@ -59,6 +59,7 @@ else{
 }
 .marketing p { font-family: 'Amatic SC', cursive; }
 .marketing h3 {background-color:powderblue;background: rgb(244,224,160);}
+footer h4 {text-align: center;}
 
 		</style>
 
@@ -132,6 +133,9 @@ Long-term goals can be five, 10 or even 20 years; They should be bigger than sho
 					}, 3000);
 					});
 		</script>
+		<footer>
+			<h4> Credit to entrepreneur</h4>
+		</footer>
 </body>
 </html>
 <?php } ?>
