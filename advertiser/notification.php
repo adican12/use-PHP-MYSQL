@@ -164,7 +164,7 @@ if(mysqli_num_rows($result) > 0)
 	</script>
 	<div class="containerForm">
 		<form method="post" class="campaignform">
-			<label class="w3-text-blue"><b> Campaign Name</b></label>
+			<label class="w3-text-blue"><b> Campaign Name : </b></label>
 			 <input type="text" name="campaignName" placeholder="Campaign Name" required value="campaignName"><br>
 			 <input type="radio" name="gender" value="male"> Male<br>
 	   		<input type="radio" name="gender" value="female"> Female<br>

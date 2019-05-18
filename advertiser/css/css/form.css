@@ -2,4 +2,4 @@
 .campaignform {box-sizing: border-box;}
 input [type=text] {width: 60%;padding: 12px 20px;margin: 8px 0;box-sizing: border-box;}
 input[type=text]:focus {border: 3px solid #555;}
-label {color:blue;}  
+label {color:#80ccff;}  
