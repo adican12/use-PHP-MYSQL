@@ -80,6 +80,7 @@ if(isset($_POST['submit']))
 }
 .form-group p { border-style: dashed; margin-right: 300px;margin-left: 300px}
 .form-control { margin-right: 300px;margin-left: 300px;}
+.col-sm-1 control-label {margin-right: 300px;margin-left: 300px;}
 		</style>
 
 
