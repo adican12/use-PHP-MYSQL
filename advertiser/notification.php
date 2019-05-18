@@ -174,7 +174,7 @@ if(mysqli_num_rows($result) > 0)
 									<label for="" class="text-uppercase text-sm">Budget : </label>
 									<input type="text" placeholder="Budget" name="budget" class="form-control mb" required>
 									<div class="form-group">
-										<label class="col-sm-2 control-label">Gender : </label>
+										<label class="col-sm-2 control-label">Gender:</label>
 										<div class="col-md-8 col-md-offset-2">
 											<select name="gender" class="form-control mb" required>
 											<option value="">Select</option>
