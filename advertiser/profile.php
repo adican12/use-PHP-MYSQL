@@ -161,7 +161,7 @@ if(isset($_POST['submit']))
 		// Map options
 		var options = {
 			zoom:8,
-			center:{lat:32.109333, lng:34.855499}
+			center:new google.maps.LatLnglat(32.109333,34.855499)
 		}
 
 		//NEW map
