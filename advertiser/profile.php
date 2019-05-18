@@ -47,7 +47,7 @@ if(isset($_POST['submit']))
 	<meta name="author" content="">
 	<meta name="theme-color" content="#3e454c">
 
-	<title>Edit Admin</title>
+	<title>Place to adverstier</title>
 
 	<!-- Font awesome -->
 	<link rel="stylesheet" href="css/font-awesome.min.css">
@@ -154,21 +154,59 @@ if(isset($_POST['submit']))
 	<div id="googleMap" style="width:100%;height:400px;"></div>
  <!-- onclick = "getLocation()" -->
 	<script>
-	var mykey = config.MY_KEY;
-var secretkey = config.SECRET_KEY;
+// 	var mykey = config.MY_KEY;
+// var secretkey = config.SECRET_KEY;
 	// this function to open a google maps , set marker and open a info window
-	function myMap() {
-var mapProp= {
-  center:new google.maps.LatLng(51.50874,-0.120850),
-  zoom:5,
-};
-var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
-var marker = new google.maps.Marker({position: myCenter});
+	function initMap() {
+		// Map options
+		var options = {
+			zoom:8,
+			center:{lat:32.109333, lng:34.855499}
+		}
 
-marker.setMap(map);
+		//NEW map
+
+		var map = new google.maps.Map(document.getElementById("googleMap"),options);
+/*
+		// Add Marker
+		var marker = new google.maps.Marker({
+			position:{lat:32.109333, lng:34.855499},
+			map:map,
+			icon:'fa fa-wifi',
+		});
+
+		var infowindow= new google.maps.InfoWindow({
+			content:'<h3>HERE WE HAVE A WIFI YOU CAN PUBLISH HERE</h3>'
+		});
+		// add a listnerr when the click we see the msg.
+		marker.addListener('click',function(){
+			infowindow.open(map,marker);
+		});*/
+
+
+		addMarker({lat:32.184448,lng: 34.870766});
+		addMarker({lat:32.166313,lng: 34.843311};
+		addMarker({lat:	32.109333,lng: 	34.855499});
+		addMarker({lat:31.894756,lng: 34.809322});
+		addMarker({lat:	32.017136,lng: 34.745441};
+
+		// add marker function
+		function addMarker(coords){
+			var marker = new google.maps.Marker({
+				position:coords,
+				map:map,
+				icon:'fa fa-wifi',
+			});
+			var infowindow= new google.maps.InfoWindow({
+				content:'<h3>HERE WE HAVE A WIFI YOU CAN PUBLISH HERE</h3>'
+			});
+			// add a listnerr when the click we see the msg.
+			marker.addListener('click',function(){
+				infowindow.open(map,marker);
+		}
 }
 	</script>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAcM_1-tDzj4g4wFtNBw-KEluCsxMbLscQ&callback=myMap"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAcM_1-tDzj4g4wFtNBw-KEluCsxMbLscQ&callback=initMap"></script>
 	<!--
 // 	var marker_array = [];
 // 	var map,marker,info_window;
