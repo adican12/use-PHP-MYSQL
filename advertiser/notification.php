@@ -171,8 +171,17 @@ if(mysqli_num_rows($result) > 0)
 									<label for="" class="text-uppercase text-sm">Campaign Name:</label>
 									<input type="text" placeholder="Campaign Name:" name="campaignName" class="form-control mb" required>
 
-									<label for="" class="text-uppercase text-sm">Budget</label>
+									<label for="" class="text-uppercase text-sm">Budget : </label>
 									<input type="text" placeholder="Budget" name="budget" class="form-control mb" required>
+									<div class="form-group">
+										<label class="col-sm-2 control-label">Gender<span style="color:red">*</span></label>
+										<div class="col-sm-4">
+											<select name="gender" class="form-control" required>
+											<option value="">Select</option>
+											<option value="Male">Male</option>
+											<option value="Female">Female</option>
+										</select>
+										</div>
 									<button class="btn btn-primary btn-block" name="creatCampin" type="submit"></button>
 								</form>
 								<br>
