@@ -183,6 +183,7 @@ if(mysqli_num_rows($result) > 0)
 										</select>
 										</div>
 									</div>
+									<br>
 									<button class="btn btn-primary btn-block" name="creatCampin" type="submit"></button>
 								</form>
 								<br>
