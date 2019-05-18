@@ -1,6 +1,4 @@
 .containerForm {border: 4px double black;width: 450px;height: 600px;padding: 50px;margin-left: 600px;box-sizing: border-box; box-shadow:4px 4px grey;}
 .campaignform {box-sizing: border-box;}
-input [type="text"],[type="radio"] {width: 60%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;}
+input [type="text"] {width: 60%;padding: 12px 20px;margin: 8px 0;box-sizing: border-box;}
+  input[type=text]:focus {border: 3px solid #555;}
