@@ -105,7 +105,7 @@ Short-term: Short-term goals can be achieved in a period of weeks to a year
 Long-term goals can be five, 10 or even 20 years; They should be bigger than short-term goals, but still need to be reality</p>
 				</div>
 				<div class="marketing">
-						<h3>Step 5: Set your marketing budget</h3>
+						<h3>Step 4: Set your marketing budget</h3>
 						<p>You’ll need to devote a percentage of projected gross sales to your annual marketing budget. Of course, when starting a business, this may mean using newly acquired funding, borrowing or self-financing. Just bear this in mind -- marketing is absolutely essential to the success of your business. And with so many different kinds of tactics available for reaching out to every conceivable audience niche, there’s a mix to fit even the tightest budget.</p>
 
 				</div>
