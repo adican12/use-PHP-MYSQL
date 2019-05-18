@@ -162,7 +162,7 @@ if(mysqli_num_rows($result) > 0)
 					}, 3000);
 					});
 	</script>
-	<div class="container">
+	<div class="containerForm">
 		<form method="post" class="campaignform">
 		</form>
 	</div>
