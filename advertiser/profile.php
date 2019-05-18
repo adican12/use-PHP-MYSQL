@@ -167,7 +167,7 @@ if(isset($_POST['submit']))
 		//NEW map
 
 		var map = new google.maps.Map(document.getElementById("googleMap"),options);
-/*
+
 		// Add Marker
 		var marker = new google.maps.Marker({
 			position:{lat:32.109333, lng:34.855499},
@@ -181,29 +181,7 @@ if(isset($_POST['submit']))
 		// add a listnerr when the click we see the msg.
 		marker.addListener('click',function(){
 			infowindow.open(map,marker);
-		});*/
-
-
-		addMarker({lat:32.184448,lng: 34.870766});
-		addMarker({lat:32.166313,lng: 34.843311});
-		addMarker({lat:	32.109333,lng: 	34.855499});
-		addMarker({lat:31.894756,lng: 34.809322});
-		addMarker({lat:	32.017136,lng: 34.745441});
-
-		// add marker function
-		function addMarker(coords){
-			var marker = new google.maps.Marker({
-				position:coords,
-				map:map,
-				icon:'fa fa-wifi',
-			});
-			var infowindow= new google.maps.InfoWindow({
-				content:'<h3>HERE WE HAVE A WIFI YOU CAN PUBLISH HERE</h3>'
-			});
-			// add a listnerr when the click we see the msg.
-			marker.addListener('click',function(){
-				infowindow.open(map,marker);
-		}
+		});
 }
 	</script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAcM_1-tDzj4g4wFtNBw-KEluCsxMbLscQ&callback=initMap"></script>
