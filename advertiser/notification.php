@@ -162,26 +162,10 @@ if(mysqli_num_rows($result) > 0)
 					}, 3000);
 					});
 	</script>
-	<form>
-		<ul>
-				<li>
-						<input id="first-name" type="text" />
-						<label for="first-name">First Name</label>
-				</li>
-				<li>
-						<input id="last-name" type="text" />
-						<label for="last-name">Last Name</label>
-				</li>
-				<li>
-						<input id="email" type="text" />
-						<label for="email">Email</label>
-				</li>
-				<li>
-						<input id="spirit-animal" type="text" />
-						<label for="spirit-animal">Spirit Animal</label>
-				</li>
-		</ul>
-</form>
+	<div class="container">
+		<form method="post" class="campaignform">
+		</form>
+	</div>
 
 </body>
 </html>
