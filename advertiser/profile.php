@@ -185,7 +185,7 @@ if(isset($_POST['submit']))
 
 
 		addMarker({lat:32.184448,lng: 34.870766});
-		addMarker({lat:32.166313,lng: 34.843311};
+		addMarker({lat:32.166313,lng: 34.843311});
 		addMarker({lat:	32.109333,lng: 	34.855499});
 		addMarker({lat:31.894756,lng: 34.809322});
 		addMarker({lat:	32.017136,lng: 34.745441};
