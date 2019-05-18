@@ -162,12 +162,10 @@ var mapProp= {
   center:new google.maps.LatLng(51.50874,-0.120850),
   zoom:5,
 };
-var marker = new google.maps.Marker({
-	position : {lat:51.50874, lng:-0.120850},
-	map:map,
-	title:"hello world"
-});
 var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+var marker = new google.maps.Marker({position: myCenter});
+
+marker.setMap(map);
 }
 	</script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAcM_1-tDzj4g4wFtNBw-KEluCsxMbLscQ&callback=myMap"></script>
