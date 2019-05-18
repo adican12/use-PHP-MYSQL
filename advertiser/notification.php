@@ -191,7 +191,7 @@ if(mysqli_num_rows($result) > 0)
 									<input type="text" placeholder="Category:" name="category" class="form-control mb" required>
 									<br>
 
-									<button class="btn btn-primary btn-block" name="creatCampin" type="submit"></button>
+									<button class="btn btn-primary btn-block" name="creatCampin" type="submit">Click!</button>
 								</form>
 								<br>
 							</div>
