@@ -164,6 +164,7 @@ if(mysqli_num_rows($result) > 0)
 	</script>
 	<div class="containerForm">
 		<form method="post" class="campaignform">
+			<input type="text" name="campaignName" placeholder="Campaign Name" required>
 		</form>
 	</div>
 
