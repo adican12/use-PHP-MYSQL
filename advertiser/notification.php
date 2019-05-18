@@ -77,9 +77,6 @@ if(isset($_POST['submit']))
     -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
     box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
 }
-.form-group p { border-style: dashed; margin-right: 300px;margin-left: 300px}
-.form-control { margin-right: 300px;margin-left: 300px;}
-.col-sm-1 control-label {margin-right: 300px;margin-left: 300px;}
 		</style>
 
 
@@ -166,7 +163,7 @@ if(mysqli_num_rows($result) > 0)
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6 col-md-offset-3">
-						<h1 class="text-center text-bold mt-4x">Create Campaign</h1>
+						<h1 class="text-center text-bold mt-4x"> Create Campaign</h1>
 						<div class="well row pt-2x pb-3x bk-light">
 							<div class="col-md-8 col-md-offset-2">
 								<form method="post">
@@ -179,7 +176,6 @@ if(mysqli_num_rows($result) > 0)
 									<button class="btn btn-primary btn-block" name="creatCampin" type="submit"></button>
 								</form>
 								<br>
-								<p>Don't Have an Account? <a href="register.php" >Signup</a></p>
 							</div>
 						</div>
 					</div>
