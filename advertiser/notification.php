@@ -37,14 +37,13 @@ if(isset($_POST['submit']))
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-	<meta name="description" content="">
-	<meta name="author" content="">
 	<meta name="theme-color" content="#3e454c">
 
 	<title> Creat campaign </title>
 
 	<!-- Font awesome -->
 	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/css/form.css"
 	<!-- Sandstone Bootstrap CSS -->
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<!-- Bootstrap Datatables -->
@@ -163,13 +162,27 @@ if(mysqli_num_rows($result) > 0)
 					}, 3000);
 					});
 	</script>
-	<from class="form-horizontal" enctype="multipart/form-data" name="regform" onSubmit="return validate();" method="post">
-		<div class="form-group">
-			<div class="col-sm-5">
-			 Campaign Name : <input type="text" name="name" class="form-control" required>
-			</div>
-		</div>
-	</form>
+	<form>
+		<ul>
+				<li>
+						<input id="first-name" type="text" />
+						<label for="first-name">First Name</label>
+				</li>
+				<li>
+						<input id="last-name" type="text" />
+						<label for="last-name">Last Name</label>
+				</li>
+				<li>
+						<input id="email" type="text" />
+						<label for="email">Email</label>
+				</li>
+				<li>
+						<input id="spirit-animal" type="text" />
+						<label for="spirit-animal">Spirit Animal</label>
+				</li>
+		</ul>
+</form>
+
 </body>
 </html>
 <?php } ?>
