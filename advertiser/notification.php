@@ -1,3 +1,26 @@
+-\
+<?php
+if(isset($_POST['sumbit'])) {
+	$campaignName = $_POST['campaignName'];
+	$budget = $_POST['budget'];
+	$gender = $_POST['gender'];
+	$stratDate = $_POST['stratDate'];
+	$endDate = $_POST['endDate'];
+	$category =$_POST['category'];
+	$sql = "INSERT INTO `campaign`(`campaignName`,`budget`,`gender`,`stratingDate`,`endDate`,`category`)
+	VALUES('$campaignName','$budget','$gender','$stratDate','$endDate','$category');";
+	if ($conn->query($sql) === TRUE) {
+		echo "<script type='text/javascript'>alert('Insert  Sucessfull!');</script>";
+		echo "<script type='text/javascript'> document.location = 'notification.php'; </script>";
+	} else {
+		echo "Error: " . $sql . "<br>" . $conn->error;
+		echo "<script type='text/javascript'>alert('ERROR   INSTERT!');</script>";
+		$error="Something went wrong. Please try again";
+	}
+
+	$conn->close();
+}
+?>
 
 
 
@@ -13,42 +36,23 @@ else{
 
 if(isset($_POST['submit']))
   {
-		$campaignName = $_POST['campaignName'];
-		$budget = $_POST['budget'];
-		$gender = $_POST['gender'];
-		$stratDate = $_POST['stratDate'];
-		$endDate = $_POST['endDate'];
-		$category =$_POST['category'];
-		$sql = "INSERT INTO `campaign`(`campaignName`,`budget`,`gender`,`stratingDate`,`endDate`,`category`)
-		VALUES('$campaignName','$budget','$gender','$stratDate','$endDate','$category');";
-		if ($conn->query($sql) === TRUE) {
-			echo "<script type='text/javascript'>alert('Insert  Sucessfull!');</script>";
-			echo "<script type='text/javascript'> document.location = 'notification.php'; </script>";
-		} else {
-			echo "Error: " . $sql . "<br>" . $conn->error;
-			echo "<script type='text/javascript'>alert('ERROR   INSTERT!');</script>";
-			$error="Something went wrong. Please try again";
-		}
+	$name=$_POST['name'];
+	$email=$_POST['email'];
 
-		$conn->close();
+	$sql="UPDATE admin SET username=$name, email=$email";
+	$result = $conn->query($sql);
+	if($result === false)
+	{
+		 user_error("Query failed: ".$conn->error."<br />$sql");
+		 echo "false";
 	}
-	// $name=$_POST['name'];
-	// $email=$_POST['email'];
-	//
-	// $sql="UPDATE admin SET username=$name, email=$email";
-	// $result = $conn->query($sql);
-	// if($result === false)
-	// {
-	// 	 user_error("Query failed: ".$conn->error."<br />$sql");
-	// 	 echo "false";
-	// }
 
 	// $sql="UPDATE admin SET username=(:name), email=(:email)";
 	// $query = $dbh->prepare($sql);
 	// $query-> bindParam(':name', $name, PDO::PARAM_STR);
 	// $query-> bindParam(':email', $email, PDO::PARAM_STR);
 	// $query->execute();
-	// $msg="Information Updated Successfully";
+	$msg="Information Updated Successfully";
 }
 
 ?>
@@ -211,7 +215,7 @@ if(mysqli_num_rows($result) > 0)
 
 
 									<label for="" class="text-uppercase text-sm">Category: </label>
-									<input type="text" placeholder="Fashion\Restaurant\movie\And more..." name="category" class="form-control mb" required>
+									<input type="text" placeholder="Fashion\Restaurant\movie\And more..."name="category" class="form-control mb" required>
 									<br>
 
 									<button class="btn btn-primary btn-block" name="creatCampin" type="submit">Click!</button>
