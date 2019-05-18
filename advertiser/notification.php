@@ -78,6 +78,7 @@ if(isset($_POST['submit']))
     -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
     box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
 }
+.form-group p { border-style: dashed;}
 		</style>
 
 
@@ -161,7 +162,7 @@ if(mysqli_num_rows($result) > 0)
 					});
 	</script>
 	<from class="form-horizontal" enctype="multipart/form-data" name="regform" onSubmit="return validate();" method="post">
-		<div class="form-group"></div>
+		<div class="form-group"><p style=""> here form</p></div>
 	</form>
 </body>
 </html>
