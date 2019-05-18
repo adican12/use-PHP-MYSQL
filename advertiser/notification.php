@@ -174,9 +174,9 @@ if(mysqli_num_rows($result) > 0)
 									<label for="" class="text-uppercase text-sm">Campaign Name:</label>
 									<input type="text" placeholder="Campaign Name:" name="campaignName" class="form-control mb" required>
 
-									<label for="" class="text-uppercase text-sm">Password</label>
-									<input type="password" placeholder="Password" name="password" class="form-control mb" required>
-									<button class="btn btn-primary btn-block" name="login" type="submit">LOGIN</button>
+									<label for="" class="text-uppercase text-sm">Budget</label>
+									<input type="text" placeholder="Budget" name="budget" class="form-control mb" required>
+									<button class="btn btn-primary btn-block" name="creatCampin" type="submit"></button>
 								</form>
 								<br>
 								<p>Don't Have an Account? <a href="register.php" >Signup</a></p>
