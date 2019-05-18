@@ -166,13 +166,13 @@ if(mysqli_num_rows($result) > 0)
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6 col-md-offset-3">
-						<h1 class="text-center text-bold mt-4x">Login</h1>
+						<h1 class="text-center text-bold mt-4x">Create Campaign</h1>
 						<div class="well row pt-2x pb-3x bk-light">
 							<div class="col-md-8 col-md-offset-2">
 								<form method="post">
 
-									<label for="" class="text-uppercase text-sm">Your Email</label>
-									<input type="text" placeholder="Email" name="email" class="form-control mb" required>
+									<label for="" class="text-uppercase text-sm">Campaign Name:</label>
+									<input type="text" placeholder="Campaign Name:" name="campaignName" class="form-control mb" required>
 
 									<label for="" class="text-uppercase text-sm">Password</label>
 									<input type="password" placeholder="Password" name="password" class="form-control mb" required>
