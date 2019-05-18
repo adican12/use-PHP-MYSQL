@@ -164,7 +164,7 @@ if(mysqli_num_rows($result) > 0)
 	</script>
 	<from class="form-horizontal" enctype="multipart/form-data" name="regform" onSubmit="return validate();" method="post">
 		<div class="form-group">
-			<label class="col-sm-1 control-label"> Campaign Name : <span style="color:red">*</span></label>
+			<label class="col-sm-1 control-label"> Campaign Name : <span style="color:red;margin-right: 300px;margin-left: 300px;">*</span></label>
 			<div class="col-sm-5">
 			<input type="text" name="name" class="form-control" required>
 			</div>
