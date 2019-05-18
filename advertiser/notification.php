@@ -181,11 +181,11 @@ if(mysqli_num_rows($result) > 0)
 
 									<label for="" class="text-uppercase text-sm">Strat Date : </label>
 									<input type="date" placeholder="Strat Date:" name="stratDate" class="form-control mb" required>
-									<br>
+
 									<label for="" class="text-uppercase text-sm">End Date : </label>
 									<input type="date" placeholder="End Date:" name="endDate" class="form-control mb" required>
 
-									<br>
+									
 									<label for="" class="text-uppercase text-sm">Category: </label>
 									<input type="text" placeholder="Category:" name="category" class="form-control mb" required>
 									<br>
