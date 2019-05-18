@@ -79,6 +79,7 @@ if(isset($_POST['submit']))
     box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
 }
 .form-group p { border-style: dashed; margin-right: 300px;margin-left: 300px}
+.form-control { margin-right: 300px;margin-left: 300px;}
 		</style>
 
 
