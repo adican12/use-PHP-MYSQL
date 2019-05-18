@@ -5,4 +5,4 @@ input[type=text]:focus {border: 3px solid #f5f5f0;}
 label {color:#80ccff; margin-left: 20px;}
 .radioForm {padding: 30px;}
 .radioForm p {padding: 30px;font-size: 15px;text-align: center;}
-input[type=radio] {padding: 12px 20px;margin: 8px 0;}
+input[type=radio] {}
