@@ -160,68 +160,9 @@ if(mysqli_num_rows($result) > 0)
 					}, 3000);
 					});
 	</script>
-	<form method="post" class="form-horizontal" enctype="multipart/form-data" name="regform" onSubmit="return validate();">
-		 <div class="form-group">
-		 <label class="col-sm-1 control-label">Name<span style="color:red">*</span></label>
-		 <div class="col-sm-5">
-		 <input type="text" name="name" class="form-control" required>
-		 </div>
-		 <label class="col-sm-1 control-label">Email<span style="color:red">*</span></label>
-		 <div class="col-sm-5">
-		 <input type="text" name="email" class="form-control" required>
-		 </div>
-		 </div>
-
-		 <div class="form-group">
-		 <label class="col-sm-1 control-label">Password<span style="color:red">*</span></label>
-		 <div class="col-sm-5">
-		 <input type="password" name="password" class="form-control" id="password" required >
-		 </div>
-		 <label class="col-sm-1 control-label">User Type<span style="color:red">*</span></label>
-		 <div class="col-sm-5">
-			 <select name="usertype" class="form-control" required>
-			 <option value="">Select</option>
-			 <option value="standard_user">Standard user</option>
-			 <option value="business_user">Business User</option>
-			 <option value="advertiser_user">Advertiser user</option>
-			 </select>
-		 </div>
-		 </div>
-
-		 <div class="form-group">
-			 <label class="col-sm-1 control-label">Birthday<span style="color:red">*</span></label>
-			 <div class="col-sm-5">
-			 <input type="date" name="birthday" class="form-control" required>
-			 </div>
-		 </div>
-
-
-			<div class="form-group">
-		 <label class="col-sm-1 control-label">Gender<span style="color:red">*</span></label>
-		 <div class="col-sm-5">
-		 <select name="gender" class="form-control" required>
-		 <option value="">Select</option>
-		 <option value="Male">Male</option>
-		 <option value="Female">Female</option>
-		 </select>
-		 </div>
-
-		 <label class="col-sm-1 control-label">Phone<span style="color:red">*</span></label>
-		 <div class="col-sm-5">
-		 <input type="number" name="mobileno" class="form-control" required>
-		 </div>
-		 </div>
-
-			<div class="form-group">
-		 <label class="col-sm-1 control-label">Avtar<span style="color:red">*</span></label>
-		 <div class="col-sm-5">
-		 <div><input type="file" name="image" class="form-control"></div>
-		 </div>
-		 </div>
-
-<br>
-				 <button class="btn btn-primary" name="submit" type="submit">Register</button>
-				 </form>
+	<from class="form-horizontal" enctype="multipart/form-data" name="regform" onSubmit="return validate();" method="post">
+		<div class="form-group"></div>
+	</form>
 </body>
 </html>
 <?php } ?>
