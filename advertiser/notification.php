@@ -166,12 +166,9 @@ if(mysqli_num_rows($result) > 0)
 		<form method="post" class="campaignform">
 			<label class="w3-text-blue"><b> Campaign Name</b></label>
 			 <input type="text" name="campaignName" placeholder="Campaign Name" required value="campaignName">
-			 <label>Male</label>
-			 <input type="radio" name="gender" value="male" checked> Male <br>
-			 	<label>Female</label>
-  		<input type="radio" name="gender" value="female"> Female<br>
-			<label>Both</label>
-  		<input type="radio" name="gender" value="other"> both
+			 <input type="radio" name="gender" value="male"> Male<br>
+	   		<input type="radio" name="gender" value="female"> Female<br>
+	   		<input type="radio" name="gender" value="both"> Both<br>
 
 		</form>
 	</div>
