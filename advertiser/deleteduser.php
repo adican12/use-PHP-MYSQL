@@ -21,7 +21,7 @@ else{
 	<meta name="author" content="">
 	<meta name="theme-color" content="#3e454c">
 
-	<title>Business insights</title>
+	<title>Creat campaign</title>
 
 	<!-- Font awesome -->
 	<link rel="stylesheet" href="css/font-awesome.min.css">
@@ -73,11 +73,11 @@ else{
 				<div class="row">
 					<div class="col-md-12">
 
-						<h2 class="page-title">Business insights</h2>
+						<h2 class="page-title">Creat campaign</h2>
 
 						<!-- Zero Configuration Table -->
 						<div class="panel panel-default">
-							<div class="panel-heading">List Users</div>
+							<div class="panel-heading">List campaign</div>
 							<div class="panel-body">
 							<?php if($error){?><div class="errorWrap" id="msgshow"><?php echo htmlentities($error); ?> </div><?php }
 				else if($msg){?><div class="succWrap" id="msgshow"><?php echo htmlentities($msg); ?> </div><?php }?>
@@ -85,11 +85,15 @@ else{
 									<thead>
 										<tr>
 										       <th>#</th>
-												<th>Email</th>
-												<th>Delete Time</th>
+												<th>Campaign ID</th>
+												<th>Campaign Name</th>
+												<th>Category</th>
+												<th>Strat Date</th>
+												<th>End Date</th>
 										</tr>
 									</thead>
 
+								
 									<tbody>
 
 <?php
