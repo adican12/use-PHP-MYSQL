@@ -167,8 +167,11 @@ if(mysqli_num_rows($result) > 0)
 			<label class="w3-text-blue"><b> Campaign Name : </b></label>
 			 <input type="text" name="campaignName" placeholder="Campaign Name" required value="campaignName"><br>
 			 <div class="radioForm">
+				 <label><b> Male : </b></label>
 			 <input type="radio" name="gender" value="male"> Male<br>
+			 <label><b> Famle : </b></label>
 	   		<input type="radio" name="gender" value="female"> Female<br>
+				<label><b> Both : </b></label>
 	   		<input type="radio" name="gender" value="both"> Both<br>
 			</div>
 		</form>
