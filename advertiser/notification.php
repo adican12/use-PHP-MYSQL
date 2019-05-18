@@ -159,6 +159,7 @@ if(mysqli_num_rows($result) > 0)
 					}, 3000);
 					});
 	</script>
+<div class="main">
 	<div class="form-content">
 			<div class="container">
 				<div class="row">
@@ -198,7 +199,7 @@ if(mysqli_num_rows($result) > 0)
 				</div>
 			</div>
 		</div>
-
+</div>
 </body>
 </html>
 <?php } ?>
