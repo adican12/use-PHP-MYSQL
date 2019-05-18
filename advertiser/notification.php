@@ -173,16 +173,10 @@ if(mysqli_num_rows($result) > 0)
 
 									<label for="" class="text-uppercase text-sm">Budget : </label>
 									<input type="text" placeholder="Budget" name="budget" class="form-control mb" required>
-									<div class="form-group">
-										<label class="col-sm-2 control-label">Gender:</label>
-										<div class="col-md-8 col-md-offset-2">
-											<select name="gender" class="form-control mb" required>
-											<option value="Male">Male</option>
-											<option value="Female">Female</option>
-											<option value="Both">Both</option>
-										</select>
-										</div>
-									</div>
+
+									<label for="" class="text-uppercase text-sm">Gender: </label>
+									<input type="text" placeholder="Male/Famle/Both" name="gender" class="form-control mb" required>
+
 
 									<label for="" class="text-uppercase text-sm">Strat Date : </label>
 									<input type="date" placeholder="Strat Date:" name="stratDate" class="form-control mb" required>
@@ -192,9 +186,9 @@ if(mysqli_num_rows($result) > 0)
 
 									<br>
 									<label for="" class="text-uppercase text-sm">Category: </label>
-									<input type="date" placeholder="Category:" name="category" class="form-control mb" required>
+									<input type="text" placeholder="Category:" name="category" class="form-control mb" required>
 									<br>
-									
+
 									<button class="btn btn-primary btn-block" name="creatCampin" type="submit"></button>
 								</form>
 								<br>
