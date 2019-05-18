@@ -159,7 +159,7 @@ var secretkey = config.SECRET_KEY;
 	// this function to open a google maps , set marker and open a info window
 	function myMap() {
 var mapProp= {
-  center:new google.maps.LatLng(32.083523,34.785918),
+  center:new google.maps.LatLng(51.50874,-0.120850),
   zoom:5,
 };
 var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
