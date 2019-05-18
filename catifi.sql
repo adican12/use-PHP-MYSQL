@@ -177,3 +177,20 @@ CREATE TABLE `ar`(
   PRIMARY KEY(`arID`),
   FOREIGN KEY (businessID) REFERENCES business(businessID) ON DELETE CASCADE
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
+
+
+CREATE TABLE `campaign`(
+  `campaignID`INT(11) NOT NULL AUTO_INCREMENT,
+  `campaignName` VARCHAR(50) NOT NULL,
+  `id` INT(11) NOT NULL,
+  `adID` INT(11) NOT NULL,
+  `gender` varchar(50) NOT NULL,
+  `ageMin` INT(6) NOT NULL,
+  `ageMax` INT(6) NOT NULL,
+  `budget` FLOAT(6) NOT NULL,
+  `category` VARCHAR(50) NOT NULL,
+  `stratingDate` DATE,
+  `endDate` DATE,
+  PRIMARY KEY(campaignID),
+  FOREIGN KEY(id) REFERENCES users(id) ON DELETE CASCADE
+)ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12;
