@@ -122,26 +122,7 @@ if(isset($_POST['submit']))
 				else if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
 
 									<div class="panel-body">
-<form method="post" class="form-horizontal" enctype="multipart/form-data">
-<div class="form-group">
-<label class="col-sm-2 control-label">Username<span style="color:red">*</span></label>
-<div class="col-sm-4">
-<input type="text" name="name" class="form-control" required value="<?php echo $result['username'];?>">
-</div>
-<label class="col-sm-2 control-label">Email<span style="color:red">*</span></label>
-<div class="col-sm-4">
-<input type="email" name="email" class="form-control" required value="<?php echo $result['email'];?>">
-</div>
-</div>
-
-
-<div class="form-group">
-	<div class="col-sm-8 col-sm-offset-2">
-		<button class="btn btn-primary" name="submit" type="submit">Save Changes</button>
-	</div>
-</div>
-
-</form>
+<
 									</div>
 								</div>
 							</div>
