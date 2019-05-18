@@ -175,13 +175,14 @@ if(mysqli_num_rows($result) > 0)
 									<input type="text" placeholder="Budget" name="budget" class="form-control mb" required>
 									<div class="form-group">
 										<label class="text-uppercase text-sm">Gender<span style="color:red">*</span></label>
-										<div class="col-md-6 col-md-offset-3">
+										<div class="col-md-8 col-md-offset-2">
 											<select name="gender" class="form-control mb" required>
 											<option value="">Select</option>
 											<option value="Male">Male</option>
 											<option value="Female">Female</option>
 										</select>
 										</div>
+									</div>
 									<button class="btn btn-primary btn-block" name="creatCampin" type="submit"></button>
 								</form>
 								<br>
