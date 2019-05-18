@@ -177,13 +177,24 @@ if(mysqli_num_rows($result) > 0)
 										<label class="col-sm-2 control-label">Gender:</label>
 										<div class="col-md-8 col-md-offset-2">
 											<select name="gender" class="form-control mb" required>
-											<option value="">Select</option>
 											<option value="Male">Male</option>
 											<option value="Female">Female</option>
+											<option value="Both">Both</option>
 										</select>
 										</div>
 									</div>
+
+									<label for="" class="text-uppercase text-sm">Strat Date : </label>
+									<input type="date" placeholder="Strat Date:" name="stratDate" class="form-control mb" required>
 									<br>
+									<label for="" class="text-uppercase text-sm">End Date : </label>
+									<input type="date" placeholder="End Date:" name="endDate" class="form-control mb" required>
+
+									<br>
+									<label for="" class="text-uppercase text-sm">Category: </label>
+									<input type="date" placeholder="Category:" name="category" class="form-control mb" required>
+									<br>
+									
 									<button class="btn btn-primary btn-block" name="creatCampin" type="submit"></button>
 								</form>
 								<br>
