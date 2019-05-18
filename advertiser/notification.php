@@ -162,21 +162,30 @@ if(mysqli_num_rows($result) > 0)
 					}, 3000);
 					});
 	</script>
-	<div class="containerForm">
-		<form method="post" class="campaignform">
-			<label class="w3-text-blue"><b> Campaign Name : </b></label>
-			 <input type="text" name="campaignName" placeholder="Campaign Name" required value="campaignName"><br>
-			 <div class="radioForm">
-				 <p>To whom advertisements are suitable</p>
-				 <label><b> Male : </b></label>
-			 <input type="radio" name="gender" value="male"> Male<br>
-			 <label><b> Famle : </b></label>
-	   		<input type="radio" name="gender" value="female"> Female<br>
-				<label><b> Both : </b></label>
-	   		<input type="radio" name="gender" value="both"> Both<br>
+	<div class="form-content">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 col-md-offset-3">
+						<h1 class="text-center text-bold mt-4x">Login</h1>
+						<div class="well row pt-2x pb-3x bk-light">
+							<div class="col-md-8 col-md-offset-2">
+								<form method="post">
+
+									<label for="" class="text-uppercase text-sm">Your Email</label>
+									<input type="text" placeholder="Email" name="email" class="form-control mb" required>
+
+									<label for="" class="text-uppercase text-sm">Password</label>
+									<input type="password" placeholder="Password" name="password" class="form-control mb" required>
+									<button class="btn btn-primary btn-block" name="login" type="submit">LOGIN</button>
+								</form>
+								<br>
+								<p>Don't Have an Account? <a href="register.php" >Signup</a></p>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
-		</form>
-	</div>
+		</div>
 
 </body>
 </html>
