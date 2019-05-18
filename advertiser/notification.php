@@ -41,7 +41,7 @@ if(isset($_POST['submit']))
 	<meta name="author" content="">
 	<meta name="theme-color" content="#3e454c">
 
-	<title> Advertising campaigns </title>
+	<title> Creat campaign </title>
 
 	<!-- Font awesome -->
 	<link rel="stylesheet" href="css/font-awesome.min.css">
@@ -91,13 +91,13 @@ if(isset($_POST['submit']))
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col-md-12">
-						<h3 class="page-title"> Advertising campaigns </h3>
+						<h3 class="page-title"> Creat campaign </h3>
 						<div class="row">
 							<div class="col-md-12">
 								<div class="panel panel-default">
-									<div class="panel-heading"> Advertising campaigns </div>
+									<div class="panel-heading"> Creat campaign </div>
 									   <div class="panel-body">
-<?php
+<?php 
 $reciver = 'Admin';
 
 

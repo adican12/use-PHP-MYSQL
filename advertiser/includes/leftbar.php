@@ -10,9 +10,9 @@
 			</li>
 			<li><a href="feedback.php"><i class="fa fa-paint-brush" aria-hidden="true"></i>&nbsp;creating banners</a>
 			</li>
-			<li><a href="notification.php"><i class="fa fa-building" aria-hidden="true"></i>  &nbsp;Advertising campaigns </a>
+			<li><a href="notification.php"><i class="fa fa-paint-brush" aria-hidden="true"></i>  &nbsp; Creat campaign </a>
 			</li>
-			<li><a href="deleteduser.php"><i class="fa fa-paint-brush" aria-hidden="true"></i> &nbsp;Creat campaign</a>
+			<li><a href="deleteduser.php"><i class=" fa fa-building" aria-hidden="true"></i> &nbsp; Advertising campaign</a>
 			</li>
 			<!-- <li><a href="download.php"><i class="fa fa-download"></i> &nbsp;Download Users-List</a> -->
 			<!-- </li> -->

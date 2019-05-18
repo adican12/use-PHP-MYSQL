@@ -21,7 +21,7 @@ else{
 	<meta name="author" content="">
 	<meta name="theme-color" content="#3e454c">
 
-	<title>Creat campaign</title>
+	<title>Advertising campaigns</title>
 
 	<!-- Font awesome -->
 	<link rel="stylesheet" href="css/font-awesome.min.css">
@@ -73,7 +73,7 @@ else{
 				<div class="row">
 					<div class="col-md-12">
 
-						<h2 class="page-title">Creat campaign</h2>
+						<h2 class="page-title">Advertising campaigns</h2>
 
 						<!-- Zero Configuration Table -->
 						<div class="panel panel-default">
@@ -93,7 +93,7 @@ else{
 										</tr>
 									</thead>
 
-								
+
 									<tbody>
 
 <?php
