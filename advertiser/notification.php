@@ -159,11 +159,12 @@ if(mysqli_num_rows($result) > 0)
 					}, 3000);
 					});
 	</script>
-<div class="main">
+
 	<div class="form-content">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6 col-md-offset-3">
+						<div class="main">
 						<h1 class="text-center text-bold mt-4x"> Create Campaign</h1>
 						<div class="well row pt-2x pb-3x bk-light">
 							<div class="col-md-8 col-md-offset-2">
@@ -185,7 +186,7 @@ if(mysqli_num_rows($result) > 0)
 									<label for="" class="text-uppercase text-sm">End Date : </label>
 									<input type="date" placeholder="End Date:" name="endDate" class="form-control mb" required>
 
-									
+
 									<label for="" class="text-uppercase text-sm">Category: </label>
 									<input type="text" placeholder="Category:" name="category" class="form-control mb" required>
 									<br>
