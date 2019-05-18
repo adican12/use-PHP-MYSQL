@@ -122,7 +122,6 @@ if(isset($_POST['submit']))
 				else if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
 
 									<div class="panel-body">
-<
 									</div>
 								</div>
 							</div>
@@ -160,7 +159,7 @@ var secretkey = config.SECRET_KEY;
 	// this function to open a google maps , set marker and open a info window
 	function myMap() {
 var mapProp= {
-  center:new google.maps.LatLng(51.508742,-0.120850),
+  center:new google.maps.LatLng(32.083523,34.785918),
   zoom:5,
 };
 var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
