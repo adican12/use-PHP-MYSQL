@@ -117,7 +117,7 @@ $adID=$adID+1;
   echo "the strat date of the campaign is : ".$stratDate."<br>"."the end date of the campaign is : ".$endDate."<br>";
   echo "the category is : " .$category;
 
-	$sql = "INSERT INTO `campaign`(`campaignName`,`id`,`adID`,`gender`,`ageMin`,`ageMax`,`bugdet`,`category`,`stratingDate`,`endDate`)
+	$sql = "INSERT INTO `campaign`(`campaignName`,`id`,`adID`,`gender`,`ageMin`,`ageMax`,`budget`,`category`,`stratingDate`,`endDate`)
 	VALUES('$campaignName','$id','$adID','$gender','$ageMin','$ageMax','$budget','$category','$stratDate','$endDate');";
 	if ($conn->query($sql) === TRUE) {
 		echo "<script type='text/javascript'>alert('Insert  Sucessfull!');</script>";
