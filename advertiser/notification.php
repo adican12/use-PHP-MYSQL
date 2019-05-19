@@ -100,7 +100,7 @@ if(isset($_POST['submit']))
 									<div class="panel-heading"> Creat campaign </div>
 									   <div class="panel-body">
 <?php
-if(iseet($_POST['sumbit'])){
+
 // echo "hello form here";
 $id=$id+1;
 $adID=$adID+1;
@@ -129,7 +129,6 @@ echo "the adID is = ".$adID;
 		echo "<script type='text/javascript'>alert('ERROR   INSTERT!');</script>";
 		$error="Something went wrong. Please try again";
 	}
-}
 
 // $sql = "SELECT * from  notification where notireciver = '$reciver' order by time DESC";
 // $result = $conn->query($sql);
