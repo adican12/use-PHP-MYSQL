@@ -107,10 +107,6 @@ session_start();
 $_SESSION['id'];
 $_SESSION['adID'];
 error_reporting(0);
-echo "hello form here"."<br>";
-$button = $_POST['creatCampin'];
-if(isset($button)){
-"<script type='text/javascript'>alert('we in the if ');</script>";
 $id = $_SESSION['id'] +1;
 $adID = $_SESSION['adID'] +1;
 
@@ -138,7 +134,7 @@ echo "the adID is = ".$adID;
 		echo "<script type='text/javascript'>alert('ERROR   INSTERT!');</script>";
 		$error="Something went wrong. Please try again";
  	}
- }
+
 
 
 
