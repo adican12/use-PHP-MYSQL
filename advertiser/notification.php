@@ -189,7 +189,7 @@ if(mysqli_num_rows($result) > 0)
 					$("button").prop('disabled', true);
 					var formData = new FormData(this);
 					$.ajax({
-						url:     'insert_ad.php',
+						url:     'notification.php',
 						type:    'POST',
 						data:    formData,
 						async:   false,
@@ -213,7 +213,7 @@ if(mysqli_num_rows($result) > 0)
 						<h1 class="text-center text-bold mt-4x"> Create Campaign</h1>
 						<div class="well row pt-2x pb-3x bk-light">
 							<div class="col-md-8 col-md-offset-2">
-								<form method="post"id="createCampaign">
+								<form method="post" id="createCampaign">
 
 									<label for="" class="text-uppercase text-sm">Campaign Name:</label>
 									<input type="text" placeholder="Campaign Name:" name="campaignName" class="form-control mb" required>
