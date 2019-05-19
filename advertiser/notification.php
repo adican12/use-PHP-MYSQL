@@ -113,7 +113,7 @@ $adID=$adID+1;
 	$ageMin = $_POST['ageMin'];
 	$ageMax = $_POST['ageMax'];
 echo "the id is = ".$id;
-echo "the adID is = ".$adID; 
+echo "the adID is = ".$adID;
   // echo "Campagin Name:".$campaignName."<br>"."the budget is : ".$budget."<br>"."the gender is: ".$gender."<br>";
   // echo "the strat date of the campaign is : ".$stratDate."<br>"."the end date of the campaign is : ".$endDate."<br>";
   // echo "the category is : " .$category;
@@ -199,10 +199,10 @@ if(mysqli_num_rows($result) > 0)
 						type:    'POST',
 						data:    formData,
 						async:   false,
-						success: function(data) {
-							alert("success");
-							$("button").prop('disabled', false);
-						},
+						// success: function(data) {
+						// 	alert("success");
+						// 	$("button").prop('disabled', false);
+						// },
 						cache: false,
 						contentType: false,
 						processData: false
