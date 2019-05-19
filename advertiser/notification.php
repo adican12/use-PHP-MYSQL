@@ -109,6 +109,7 @@ if($result === false)
 {
 	 user_error("Query failed: ".$conn->error."<br />$sql");
 	 echo "false";
+	 echo "here the false2";
 }
 
 
