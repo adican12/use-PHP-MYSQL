@@ -1,9 +1,6 @@
 
 <?php
-session_start();
-$_SESSION['id']=+1;
-$_SESSION['adID']=+1;
-echo "Session variables are set.";
+
 error_reporting(0);
 include('includes/config.php');
 if(strlen($_SESSION['alogin'])==0)
