@@ -104,11 +104,13 @@ if(isset($_POST['submit']))
 									   <div class="panel-body">
 <?php
 session_start();
+$_SESSION['id']=+1;
+$_SESSION['adID']=+1;
 error_reporting(0);
 include('includes/config.php');
 // echo "hello form here";
-$id=$id+1;
-$adID=$adID+1;
+$id =$_SESSION['id'];
+$adID=$_SESSION['adID'];
 
 	$campaignName = $_POST['campaignName'];
 	$budget = $_POST['budget'];
