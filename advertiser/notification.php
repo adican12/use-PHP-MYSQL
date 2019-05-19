@@ -109,7 +109,7 @@ $_SESSION['adID'];
 error_reporting(0);
 include('includes/config.php');
 echo "hello form here1"."<br>";
-if(isset($_POST['createCampaign'] && $_POST['sumbit'])){
+if(isset($_POST['sumbit'])){
 	 echo "hello form here2"."<br>";
 $id =$_SESSION['id'] +1;
 $adID=$_SESSION['adID'] +1;
