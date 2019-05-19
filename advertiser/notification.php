@@ -101,7 +101,6 @@ if(isset($_POST['submit']))
 									   <div class="panel-body">
 <?php
 echo "hello form here";
-if(isset($_POST['sumbit'])) {
 	$campaignName = $_POST['campaignName'];
 	$budget = $_POST['budget'];
 	$gender = $_POST['gender'];
@@ -122,7 +121,6 @@ if(isset($_POST['sumbit'])) {
 		echo "<script type='text/javascript'>alert('ERROR   INSTERT!');</script>";
 		$error="Something went wrong. Please try again";
 	}
-}
 
 
 // $sql = "SELECT * from  notification where notireciver = '$reciver' order by time DESC";
