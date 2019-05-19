@@ -258,13 +258,12 @@ if(mysqli_num_rows($result) > 0)
 				var formData = new FormData(this);
 				$.ajax({
 					url:     'insert_campin.php',
-					// url:     'notification.php',
 					type:    'POST',
 					data:    formData,
 					async:   false,
 					 success: function(data) {
 						alert("success");
-						
+						$(".panel-body"),html(data);
 						$("button").prop('disabled', false);
 					},
 					cache: false,
