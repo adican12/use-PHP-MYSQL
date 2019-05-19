@@ -109,7 +109,7 @@ $_SESSION['adID'];
 error_reporting(0);
 include('includes/config.php');
 echo "hello form here1"."<br>";
-if(isset($_POST['sumbit'])){
+if(isset($_POST['submit'])){
 echo "hello form here2"."<br>";
 $id =$_SESSION['id'] +1;
 $adID=$_SESSION['adID'] +1;
@@ -196,33 +196,7 @@ if(mysqli_num_rows($result) > 0)
 	<script src="js/fileinput.js"></script>
 	<script src="js/chartData.js"></script>
 	<script src="js/main.js"></script>
-	<script type="text/javascript">
-				 $(document).ready(function () {
-					setTimeout(function() {
-						$('.succWrap').slideUp("slow");
-					}, 3000);
-					});
 
-					$("#createCampaign").submit(function(){
-					//alert("signup_form");
-					$("button").prop('disabled', true);
-					var formData = new FormData(this);
-					$.ajax({
-						url:     'notification.php',
-						type:    'POST',
-						data:    formData,
-						async:   false,
-						 success: function(data) {
-							alert("success");
-							$("button").prop('disabled', false);
-						},
-						cache: false,
-						contentType: false,
-						processData: false
-					});
-					return false;
-			});
-	</script>
 
 	<div class="form-content">
 			<div class="container">
@@ -271,6 +245,33 @@ if(mysqli_num_rows($result) > 0)
 			</div>
 		</div>
 </div>
+<script type="text/javascript">
+			 $(document).ready(function () {
+				setTimeout(function() {
+					$('.succWrap').slideUp("slow");
+				}, 3000);
+				});
+
+				$("#createCampaign").submit(function(){
+				//alert("signup_form");
+				$("button").prop('disabled', true);
+				var formData = new FormData(this);
+				$.ajax({
+					url:     'notification.php',
+					type:    'POST',
+					data:    formData,
+					async:   false,
+					 success: function(data) {
+						alert("success");
+						$("button").prop('disabled', false);
+					},
+					cache: false,
+					contentType: false,
+					processData: false
+				});
+				return false;
+		});
+</script>
 </body>
 </html>
 <?php } ?>
