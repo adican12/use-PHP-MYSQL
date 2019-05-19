@@ -110,9 +110,9 @@ error_reporting(0);
 include('includes/config.php');
 echo "hello form here1"."<br>";
 if(isset($_POST['submit'])){
-echo "hello form here2"."<br>";
-$id =$_SESSION['id'] +1;
-$adID=$_SESSION['adID'] +1;
+"<script type='text/javascript'>alert('we in the if ');</script>";
+$id = $_SESSION['id'] +1;
+$adID = $_SESSION['adID'] +1;
 
 	$campaignName = $_POST['campaignName'];
 	$budget = $_POST['budget'];
