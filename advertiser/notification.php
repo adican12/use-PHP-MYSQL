@@ -109,8 +109,7 @@ $_SESSION['adID'];
 error_reporting(0);
 include('includes/config.php');
 echo "hello form here1"."<br>";
-if(isset($_POST['sumbit'])){
-	 echo "hello form here2"."<br>";
+echo "hello form here2"."<br>";
 $id =$_SESSION['id'] +1;
 $adID=$_SESSION['adID'] +1;
 
@@ -124,21 +123,25 @@ $adID=$_SESSION['adID'] +1;
 	$ageMax = $_POST['ageMax'];
 echo "the id is = ".$id."<br>";
 echo "the adID is = ".$adID;
+
   // echo "Campagin Name:".$campaignName."<br>"."the budget is : ".$budget."<br>"."the gender is: ".$gender."<br>";
   // echo "the strat date of the campaign is : ".$stratDate."<br>"."the end date of the campaign is : ".$endDate."<br>";
   // echo "the category is : " .$category;
 
-	$sql = "INSERT INTO `campaign`(`campaignName`,`id`,`adID`,`gender`,`ageMin`,`ageMax`,`budget`,`category`,`stratingDate`,`endDate`)
-	VALUES('$campaignName','$id','$adID','$gender','$ageMin','$ageMax','$budget','$category','$stratDate','$endDate');";
-	if ($conn->query($sql) === TRUE) {
-		echo "<script type='text/javascript'>alert('Insert  Sucessfull!');</script>";
-		echo "<script type='text/javascript'> document.location = 'notification.php'; </script>";
-	} else {
-		echo "Error: " . $sql . "<br>" . $conn->error;
-		echo "<script type='text/javascript'>alert('ERROR   INSTERT!');</script>";
-		$error="Something went wrong. Please try again";
-	}
-}
+// 	$sql = "INSERT INTO `campaign`(`campaignName`,`id`,`adID`,`gender`,`ageMin`,`ageMax`,`budget`,`category`,`stratingDate`,`endDate`)
+// 	VALUES('$campaignName','$id','$adID','$gender','$ageMin','$ageMax','$budget','$category','$stratDate','$endDate');";
+// 	if ($conn->query($sql) === TRUE) {
+// 		echo "<script type='text/javascript'>alert('Insert  Sucessfull!');</script>";
+// 		echo "<script type='text/javascript'> document.location = 'notification.php'; </script>";
+// 	} else {
+// 		echo "Error: " . $sql . "<br>" . $conn->error;
+// 		echo "<script type='text/javascript'>alert('ERROR   INSTERT!');</script>";
+// 		$error="Something went wrong. Please try again";
+// 	}
+// }
+
+
+
 // $sql = "SELECT * from  notification where notireciver = '$reciver' order by time DESC";
 // $result = $conn->query($sql);
 // if($result === false)
