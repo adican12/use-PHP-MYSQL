@@ -120,7 +120,7 @@ $adID=$_SESSION['adID'];
 	$category = $_POST['category'];
 	$ageMin = $_POST['ageMin'];
 	$ageMax = $_POST['ageMax'];
-echo "the id is = ".$id;
+echo "the id is = ".$id."<br>";
 echo "the adID is = ".$adID;
   // echo "Campagin Name:".$campaignName."<br>"."the budget is : ".$budget."<br>"."the gender is: ".$gender."<br>";
   // echo "the strat date of the campaign is : ".$stratDate."<br>"."the end date of the campaign is : ".$endDate."<br>";
