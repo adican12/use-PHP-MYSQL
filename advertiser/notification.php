@@ -109,6 +109,7 @@ $_SESSION['adID'];
 error_reporting(0);
 include('includes/config.php');
 // echo "hello form here";
+if(isset($_POST['createCampaign'])){
 $id =$_SESSION['id'] +1;
 $adID=$_SESSION['adID'] +1;
 
@@ -136,7 +137,7 @@ echo "the adID is = ".$adID;
 		echo "<script type='text/javascript'>alert('ERROR   INSTERT!');</script>";
 		$error="Something went wrong. Please try again";
 	}
-
+}
 // $sql = "SELECT * from  notification where notireciver = '$reciver' order by time DESC";
 // $result = $conn->query($sql);
 // if($result === false)
@@ -226,7 +227,7 @@ if(mysqli_num_rows($result) > 0)
 						<h1 class="text-center text-bold mt-4x"> Create Campaign</h1>
 						<div class="well row pt-2x pb-3x bk-light">
 							<div class="col-md-8 col-md-offset-2">
-								<form method="post" id="createCampaign">
+								<form method="post" id="createCampaign" enctype="multipart/form-data" name="createCampaign">
 
 									<label for="" class="text-uppercase text-sm">Campaign Name:</label>
 									<input type="text" placeholder="Campaign Name:" name="campaignName" class="form-control mb" required>
