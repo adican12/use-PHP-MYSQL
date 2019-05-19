@@ -109,6 +109,7 @@ $_SESSION['adID'];
 error_reporting(0);
 include('includes/config.php');
 echo "hello form here1"."<br>";
+if(isset($_POST['sumbit'])){
 echo "hello form here2"."<br>";
 $id =$_SESSION['id'] +1;
 $adID=$_SESSION['adID'] +1;
@@ -123,7 +124,7 @@ $adID=$_SESSION['adID'] +1;
 	$ageMax = $_POST['ageMax'];
 echo "the id is = ".$id."<br>";
 echo "the adID is = ".$adID;
-
+}
   // echo "Campagin Name:".$campaignName."<br>"."the budget is : ".$budget."<br>"."the gender is: ".$gender."<br>";
   // echo "the strat date of the campaign is : ".$stratDate."<br>"."the end date of the campaign is : ".$endDate."<br>";
   // echo "the category is : " .$category;
