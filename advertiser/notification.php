@@ -104,8 +104,8 @@ if(isset($_POST['submit']))
 									   <div class="panel-body">
 <?php
 session_start();
-++$_SESSION['id'];
-++$_SESSION['adID'];
+$_SESSION['id'];
+$_SESSION['adID'];
 error_reporting(0);
 $id = $_SESSION['id'] +1;
 $adID = $_SESSION['adID'] +1;
