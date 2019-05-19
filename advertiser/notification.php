@@ -100,6 +100,7 @@ if(isset($_POST['submit']))
 									<div class="panel-heading"> Creat campaign </div>
 									   <div class="panel-body">
 <?php
+echo "hello form here";
 if(isset($_POST['sumbit'])) {
 	$campaignName = $_POST['campaignName'];
 	$budget = $_POST['budget'];
