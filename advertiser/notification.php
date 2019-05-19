@@ -109,37 +109,36 @@ $_SESSION['adID'];
 error_reporting(0);
 include('includes/config.php');
 echo "hello form here1"."<br>";
+if(isset($_POST['submit'])){
+"<script type='text/javascript'>alert('we in the if ');</script>";
+$id = $_SESSION['id'] +1;
+$adID = $_SESSION['adID'] +1;
 
-// if(isset($_POST['submit'])){
-// "<script type='text/javascript'>alert('we in the if ');</script>";
-// $id = $_SESSION['id'] +1;
-// $adID = $_SESSION['adID'] +1;
-//
-// 	$campaignName = $_POST['campaignName'];
-// 	$budget = $_POST['budget'];
-// 	$gender = $_POST['gender'];
-// 	$stratDate = $_POST['stratDate'];
-// 	$endDate = $_POST['endDate'];
-// 	$category = $_POST['category'];
-// 	$ageMin = $_POST['ageMin'];
-// 	$ageMax = $_POST['ageMax'];
-// echo "the id is = ".$id."<br>";
-// echo "the adID is = ".$adID;
-//
-//   // echo "Campagin Name:".$campaignName."<br>"."the budget is : ".$budget."<br>"."the gender is: ".$gender."<br>";
-//   // echo "the strat date of the campaign is : ".$stratDate."<br>"."the end date of the campaign is : ".$endDate."<br>";
-//   // echo "the category is : " .$category;
-//
-//  	$sql = "INSERT INTO `campaign`(`campaignName`,`id`,`adID`,`gender`,`ageMin`,`ageMax`,`budget`,`category`,`stratingDate`,`endDate`)
-//  	VALUES('$campaignName','$id','$adID','$gender','$ageMin','$ageMax','$budget','$category','$stratDate','$endDate');";
-//  	if ($conn->query($sql) === TRUE) {
-//  		echo "<script type='text/javascript'>alert('Insert  Sucessfull!');</script>";
-//  		echo "<script type='text/javascript'> document.location = 'notification.php'; </script>";
-//  	} else { 		echo "Error: " . $sql . "<br>" . $conn->error;
-// 		echo "<script type='text/javascript'>alert('ERROR   INSTERT!');</script>";
-// 		$error="Something went wrong. Please try again";
-//  	}
-//  }
+	$campaignName = $_POST['campaignName'];
+	$budget = $_POST['budget'];
+	$gender = $_POST['gender'];
+	$stratDate = $_POST['stratDate'];
+	$endDate = $_POST['endDate'];
+	$category = $_POST['category'];
+	$ageMin = $_POST['ageMin'];
+	$ageMax = $_POST['ageMax'];
+echo "the id is = ".$id."<br>";
+echo "the adID is = ".$adID;
+
+  // echo "Campagin Name:".$campaignName."<br>"."the budget is : ".$budget."<br>"."the gender is: ".$gender."<br>";
+  // echo "the strat date of the campaign is : ".$stratDate."<br>"."the end date of the campaign is : ".$endDate."<br>";
+  // echo "the category is : " .$category;
+
+ 	$sql = "INSERT INTO `campaign`(`campaignName`,`id`,`adID`,`gender`,`ageMin`,`ageMax`,`budget`,`category`,`stratingDate`,`endDate`)
+ 	VALUES('$campaignName','$id','$adID','$gender','$ageMin','$ageMax','$budget','$category','$stratDate','$endDate');";
+ 	if ($conn->query($sql) === TRUE) {
+ 		echo "<script type='text/javascript'>alert('Insert  Sucessfull!');</script>";
+ 		echo "<script type='text/javascript'> document.location = 'notification.php'; </script>";
+ 	} else { 		echo "Error: " . $sql . "<br>" . $conn->error;
+		echo "<script type='text/javascript'>alert('ERROR   INSTERT!');</script>";
+		$error="Something went wrong. Please try again";
+ 	}
+ }
 
 
 
@@ -257,13 +256,12 @@ if(mysqli_num_rows($result) > 0)
 				$("button").prop('disabled', true);
 				var formData = new FormData(this);
 				$.ajax({
-					url:     'insert_campin.php',
+					url:     'notification.php',
 					type:    'POST',
 					data:    formData,
 					async:   false,
 					 success: function(data) {
 						alert("success");
-						$(".panel-body"),html(data);
 						$("button").prop('disabled', false);
 					},
 					cache: false,
