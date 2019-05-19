@@ -1,6 +1,9 @@
 
 <?php
 session_start();
+$_SESSION['id']=+1;
+$_SESSION['adID']=+1;
+echo "Session variables are set.";
 error_reporting(0);
 include('includes/config.php');
 if(strlen($_SESSION['alogin'])==0)
@@ -100,7 +103,9 @@ if(isset($_POST['submit']))
 									<div class="panel-heading"> Creat campaign </div>
 									   <div class="panel-body">
 <?php
-
+session_start();
+error_reporting(0);
+include('includes/config.php');
 // echo "hello form here";
 $id=$id+1;
 $adID=$adID+1;
