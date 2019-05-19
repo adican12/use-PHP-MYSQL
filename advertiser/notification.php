@@ -107,9 +107,9 @@ session_start();
 $_SESSION['id'];
 $_SESSION['adID'];
 error_reporting(0);
-include('includes/config.php');
-echo "hello form here1"."<br>";
-if(isset($_POST['submit'])){
+echo "hello form here"."<br>";
+$button = $_POST['creatCampin'];
+if(isset($button)){
 "<script type='text/javascript'>alert('we in the if ');</script>";
 $id = $_SESSION['id'] +1;
 $adID = $_SESSION['adID'] +1;
