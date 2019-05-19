@@ -1,5 +1,6 @@
 -\
 <?php
+session_start();
 if(isset($_POST['sumbit'])) {
 	$campaignName = $_POST['campaignName'];
 	$budget = $_POST['budget'];
@@ -52,7 +53,7 @@ if(isset($_POST['submit']))
 	// $query-> bindParam(':name', $name, PDO::PARAM_STR);
 	// $query-> bindParam(':email', $email, PDO::PARAM_STR);
 	// $query->execute();
-	$msg="Information Updated Successfully";
+	// $msg="Information Updated Successfully";
 }
 
 ?>
@@ -185,6 +186,26 @@ if(mysqli_num_rows($result) > 0)
 						$('.succWrap').slideUp("slow");
 					}, 3000);
 					});
+
+					$("#createCampaign").submit(function(){
+					//alert("signup_form");
+					$("button").prop('disabled', true);
+					var formData = new FormData(this);
+					$.ajax({
+						url:     'insert_ad.php',
+						type:    'POST',
+						data:    formData,
+						async:   false,
+						success: function(data) {
+							alert("success");
+							$("button").prop('disabled', false);
+						},
+						cache: false,
+						contentType: false,
+						processData: false
+					});
+					return false;
+			});
 	</script>
 
 	<div class="form-content">
@@ -195,7 +216,7 @@ if(mysqli_num_rows($result) > 0)
 						<h1 class="text-center text-bold mt-4x"> Create Campaign</h1>
 						<div class="well row pt-2x pb-3x bk-light">
 							<div class="col-md-8 col-md-offset-2">
-								<form method="post">
+								<form method="post"id="createCampaign">
 
 									<label for="" class="text-uppercase text-sm">Campaign Name:</label>
 									<input type="text" placeholder="Campaign Name:" name="campaignName" class="form-control mb" required>
