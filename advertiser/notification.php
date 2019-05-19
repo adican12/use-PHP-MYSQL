@@ -100,7 +100,7 @@ if(isset($_POST['submit']))
 									<div class="panel-heading"> Creat campaign </div>
 									   <div class="panel-body">
 <?php
-echo "hello form here";
+// echo "hello form here";
 $id=$id+1;
 $adID=$adID+1;
 
@@ -112,10 +112,11 @@ $adID=$adID+1;
 	$category = $_POST['category'];
 	$ageMin = $_POST['ageMin'];
 	$ageMax = $_POST['ageMax'];
-
-  echo "Campagin Name:".$campaignName."<br>"."the budget is : ".$budget."<br>"."the gender is: ".$gender."<br>";
-  echo "the strat date of the campaign is : ".$stratDate."<br>"."the end date of the campaign is : ".$endDate."<br>";
-  echo "the category is : " .$category;
+echo "the id is = ".$id;
+echo "the adID is = ".$adID; 
+  // echo "Campagin Name:".$campaignName."<br>"."the budget is : ".$budget."<br>"."the gender is: ".$gender."<br>";
+  // echo "the strat date of the campaign is : ".$stratDate."<br>"."the end date of the campaign is : ".$endDate."<br>";
+  // echo "the category is : " .$category;
 
 	$sql = "INSERT INTO `campaign`(`campaignName`,`id`,`adID`,`gender`,`ageMin`,`ageMax`,`budget`,`category`,`stratingDate`,`endDate`)
 	VALUES('$campaignName','$id','$adID','$gender','$ageMin','$ageMax','$budget','$category','$stratDate','$endDate');";
