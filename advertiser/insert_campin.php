@@ -1,8 +1,7 @@
 <?php
-
-session_start();
+// session_start();
 include('includes/config.php');
-if(isset($_POST['sumbit'])) {
+// if(isset($_POST['sumbit'])) {
 	$campaignName = $_POST['campaignName'];
 	$budget = $_POST['budget'];
 	$gender = $_POST['gender'];
@@ -12,7 +11,7 @@ if(isset($_POST['sumbit'])) {
   echo "Campagin Name:".$campaignName."<br>"."the budget is : ".$budget."<br>"."the gender is: ".$gender."<br>";
   echo "the strat date of the campaign is : ".$stratDate."<br>"."the end date of the campaign is : ".$endDate."<br>";
   echo "the category is : " .$category;
-  
+
 	$sql = "INSERT INTO `campaign`(`campaignName`,`budget`,`gender`,`stratingDate`,`endDate`,`category`)
 	VALUES('$campaignName','$budget','$gender','$stratDate','$endDate','$category');";
 	if ($conn->query($sql) === TRUE) {
@@ -25,5 +24,7 @@ if(isset($_POST['sumbit'])) {
 	}
 
 	$conn->close();
-}
+// }
+
+
 ?>
