@@ -20,6 +20,7 @@ if(isset($_POST['submit']))
 	{
 		 user_error("Query failed: ".$conn->error."<br />$sql");
 		 echo "false";
+		 echo "here the false";
 	}
 
 	// $sql="UPDATE admin SET username=(:name), email=(:email)";
