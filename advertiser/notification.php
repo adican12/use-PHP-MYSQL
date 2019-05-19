@@ -101,18 +101,24 @@ if(isset($_POST['submit']))
 									   <div class="panel-body">
 <?php
 echo "hello form here";
+$id=$id+1;
+$adID=$adID+1;
+
 	$campaignName = $_POST['campaignName'];
 	$budget = $_POST['budget'];
 	$gender = $_POST['gender'];
 	$stratDate = $_POST['stratDate'];
 	$endDate = $_POST['endDate'];
-	$category =$_POST['category'];
+	$category = $_POST['category'];
+	$ageMin = $_POST['ageMin'];
+	$ageMax = $_POST['ageMax'];
+
   echo "Campagin Name:".$campaignName."<br>"."the budget is : ".$budget."<br>"."the gender is: ".$gender."<br>";
   echo "the strat date of the campaign is : ".$stratDate."<br>"."the end date of the campaign is : ".$endDate."<br>";
   echo "the category is : " .$category;
 
-	$sql = "INSERT INTO `campaign`(`campaignName`,`budget`,`gender`,`stratingDate`,`endDate`,`category`)
-	VALUES('$campaignName','$budget','$gender','$stratDate','$endDate','$category');";
+	$sql = "INSERT INTO `campaign`(`campaignName`,`id`,`adID`,`gender`,`ageMin`,`ageMax`,`bugdet`,`category`,`stratingDate`,`endDate`)
+	VALUES('$campaignName','$id','$adID','$gender','$ageMin','$ageMax','$budget','$category','$stratDate','$endDate');";
 	if ($conn->query($sql) === TRUE) {
 		echo "<script type='text/javascript'>alert('Insert  Sucessfull!');</script>";
 		echo "<script type='text/javascript'> document.location = 'notification.php'; </script>";
@@ -222,6 +228,12 @@ if(mysqli_num_rows($result) > 0)
 
 									<label for="" class="text-uppercase text-sm">Gender: </label>
 									<input type="text" placeholder="Male/Famle/Both" name="gender" class="form-control mb" required>
+
+									<label for="" class="text-uppercase text-sm"> ageMin: </label>
+									<input type="text" placeholder="25-" name="ageMin" class="form-control mb" required>
+
+									<label for="" class="text-uppercase text-sm"> ageMax: </label>
+									<input type="text" placeholder="-30" name="ageMax" class="form-control mb" required>
 
 
 									<label for="" class="text-uppercase text-sm">Strat Date : </label>
