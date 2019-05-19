@@ -200,10 +200,10 @@ if(mysqli_num_rows($result) > 0)
 						type:    'POST',
 						data:    formData,
 						async:   false,
-						// success: function(data) {
-						// 	alert("success");
-						// 	$("button").prop('disabled', false);
-						// },
+						 success: function(data) {
+							alert("success");
+							$("button").prop('disabled', false);
+						},
 						cache: false,
 						contentType: false,
 						processData: false
