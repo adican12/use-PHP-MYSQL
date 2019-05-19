@@ -1,29 +1,3 @@
--\
-<?php
-session_start();
-if(isset($_POST['sumbit'])) {
-	$campaignName = $_POST['campaignName'];
-	$budget = $_POST['budget'];
-	$gender = $_POST['gender'];
-	$stratDate = $_POST['stratDate'];
-	$endDate = $_POST['endDate'];
-	$category =$_POST['category'];
-	$sql = "INSERT INTO `campaign`(`campaignName`,`budget`,`gender`,`stratingDate`,`endDate`,`category`)
-	VALUES('$campaignName','$budget','$gender','$stratDate','$endDate','$category');";
-	if ($conn->query($sql) === TRUE) {
-		echo "<script type='text/javascript'>alert('Insert  Sucessfull!');</script>";
-		echo "<script type='text/javascript'> document.location = 'notification.php'; </script>";
-	} else {
-		echo "Error: " . $sql . "<br>" . $conn->error;
-		echo "<script type='text/javascript'>alert('ERROR   INSTERT!');</script>";
-		$error="Something went wrong. Please try again";
-	}
-
-	$conn->close();
-}
-?>
-
-
 
 <?php
 session_start();
