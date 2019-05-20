@@ -109,13 +109,14 @@ if(isset($_POST['submit']))
 														 <tr>
 														 <th>#</th>
 																 <th>Image</th>
-																												 <th>Name</th>
-																												 <th>Email</th>
+																												 <th> Campagin Name</th>
+																												 <th>Budget</th>
 																												 <th>Gender</th>
-																												 <th>Phone</th>
-																												 <th>Designation</th>
-																												 <th>Account</th>
-															 <th>Action</th>
+																												 <th>from which age</th>
+																												 <th>Until what age</th>
+																												 <th>Category</th>
+																												 <th>Campaign start date</th>
+																												 <th>Campaign end date</th>
 														 </tr>
 												 </thead>
 											 <tbody>
