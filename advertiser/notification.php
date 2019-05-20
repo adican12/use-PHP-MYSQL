@@ -161,17 +161,7 @@ $cnt=1;
 // {
 // foreach($results as $result)
 // {
-$sql = "SELECT * FROM campaign";
-$result = $conn->query($sql);
 
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-        echo "campaign Name: " . $row["campaignName"]. " - Gender: " . $row["gender"]. " From age : " . $row["ageMin"]. "To Age:".$row["ageMax"].
-				"the budget is : " .$row['budget']." the category is : ".$row['category']."From : ".$row['stratingDate']." Until : ".$row['endDate'];
-    }
-else {
-    echo "0 results";
-}
 	?>
         <h5 style="background:#ededed;padding:20px;"><i class="fa fa-bell text-primary"></i>&nbsp;&nbsp;<b class="text-primary"><?php echo $row['time'];?></b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					<?php echo $row['notiuser'];?> -----> <?php echo $row["campaignName"];?></h5>
