@@ -1,10 +1,10 @@
 <?php
-// session_start();
-// ++$_SESSION['id'];
-// ++$_SESSION['adID'];
+ session_start();
+ ++$_SESSION['id'];
+++$_SESSION['adID'];
 // error_reporting(0);
-//  $id = $_SESSION['id'];
-// $adID = $_SESSION['adID'];
+  $id = $_SESSION['id'];
+ $adID = $_SESSION['adID'];
 
 	$campaignName = $_POST['campaignName'];
 	$budget = $_POST['budget'];
@@ -15,8 +15,8 @@
 	$ageMin = $_POST['ageMin'];
 	$ageMax = $_POST['ageMax'];
 
-	// echo "the id is = ".$id."<br>";
-	// echo "the adID is = ".$adID."<br>";
+	echo "the id is = ".$id."<br>";
+	 echo "the adID is = ".$adID."<br>";
    echo "Campagin Name:".$campaignName."<br>"."the budget is : ".$budget."<br>"."the gender is: ".$gender."<br>";
    echo "the strat date of the campaign is : ".$stratDate."<br>"."the end date of the campaign is : ".$endDate."<br>";
    echo "the category is : " .$category;
