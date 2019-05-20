@@ -33,19 +33,8 @@ include('includes/config.php');
 		echo "<script type='text/javascript'>alert('ERROR   INSTERT!');</script>";
 	$error="Something went wrong. Please try again";
  	}
-	echo "<table border='4' class='stats' cellspacing='0'>
 
-            <tr>
-            <td class='hed' colspan='8'>WELCOME TO HTML TABLES</td>
-              </tr>
-            <tr>
-            <th>ID</th>
-            <th>FIRST NAME</th>
-            <th>LAST NAME</th>
-            <th>ADDRESS</th>
-            <th>TELEPHONE</th>
-
-            </tr>";
+	
 
 
 ?>
