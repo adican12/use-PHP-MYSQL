@@ -34,7 +34,7 @@ include('includes/config.php');
 	$error="Something went wrong. Please try again";
  	}
 
-	sql = "SELECT * FROM campaign";
+	$sql = "SELECT * FROM campaign";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -47,15 +47,4 @@ if ($result->num_rows > 0) {
     echo "0 results";
 }
 
-`campaignID`INT(11) NOT NULL AUTO_INCREMENT,
-`campaignName` VARCHAR(50) NOT NULL,
-`id` INT(11) NOT NULL,
-`adID` INT(11) NOT NULL,
-`gender` varchar(50) NOT NULL,
-`ageMin` INT(6) NOT NULL,
-`ageMax` INT(6) NOT NULL,
-`budget` FLOAT(6) NOT NULL,
-`category` VARCHAR(50) NOT NULL,
-`stratingDate` DATE,
-`endDate
 ?>
