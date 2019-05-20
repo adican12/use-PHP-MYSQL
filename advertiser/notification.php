@@ -102,30 +102,7 @@ if(isset($_POST['submit']))
 								<div class="panel panel-default">
 									<div class="panel-heading"> Creat campaign </div>
 									   <div class="panel-body" id="panel-body">
-											 <table>
-															 <tr>
-														    <th>Campagin Name</th>
-														    <th>Gender</th>
-														    <th>from which age</th>
-																<th>Until what age</th>
-																<th>Category</th>
-																<th>Budget</th>
-																<th>From what date</th>
-																<th>till what date</th>
-
-														  </tr>
-
-														  <tr>
-														    <td><?php echo "$row['campaignName']"?></td>
-														    <td><?php echo "$row['gedner']"?></td>
-														    <td><?php echo "$row['ageMin']"?></td>
-																<td><?php echo "$row['ageMax']"?></td>
-																<td><?php echo "$row['category']"?></td>
-																<td><?php echo "$row['budget']"?></td>
-																<td><?php echo "$row['stratDate']"?></td>
-																<td><?php echo "$row['endDate']"?></td>
-														  </tr>
-										</table>
+											 
 <?php
 // session_start();
 // ++$_SESSION['id'];
