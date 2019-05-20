@@ -162,9 +162,14 @@ $cnt=1;
 // foreach($results as $result)
 // {
 
+if(mysqli_num_rows($result) > 0)
+{
+
+	while($row = mysqli_fetch_assoc($result)) {
+
 	?>
         <h5 style="background:#ededed;padding:20px;"><i class="fa fa-bell text-primary"></i>&nbsp;&nbsp;<b class="text-primary"><?php echo $row['time'];?></b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<?php echo $row['notiuser'];?> -----> <?php echo $row["campaignName"];?></h5>
+					<?php echo $row['notiuser'];?> -----> <?php echo $row['notitype'];?></h5>
                        <?php $cnt=$cnt+1; }} ?>
                                         </div>
                                     </div>
