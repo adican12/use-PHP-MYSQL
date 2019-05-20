@@ -34,7 +34,28 @@ include('includes/config.php');
 	$error="Something went wrong. Please try again";
  	}
 
-	
+	sql = "SELECT * FROM campaign";
+$result = $conn->query($sql);
 
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        echo "campaign Name: " . $row["campaignName"]. " - Gender: " . $row["gender"]. " From age : " . $row["ageMin"]. "To Age:".$row["ageMax"].
+				"the budget is : " .$row['budget']." the category is : ".$row['category']."From : ".$row['stratingDate']." Until : ".$row['endDate'];
+    }
+} else {
+    echo "0 results";
+}
 
+`campaignID`INT(11) NOT NULL AUTO_INCREMENT,
+`campaignName` VARCHAR(50) NOT NULL,
+`id` INT(11) NOT NULL,
+`adID` INT(11) NOT NULL,
+`gender` varchar(50) NOT NULL,
+`ageMin` INT(6) NOT NULL,
+`ageMax` INT(6) NOT NULL,
+`budget` FLOAT(6) NOT NULL,
+`category` VARCHAR(50) NOT NULL,
+`stratingDate` DATE,
+`endDate
 ?>
