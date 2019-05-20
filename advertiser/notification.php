@@ -102,8 +102,86 @@ if(isset($_POST['submit']))
 								<div class="panel panel-default">
 									<div class="panel-heading"> Creat campaign </div>
 									   <div class="panel-body" id="panel-body">
-											 
-<?php
+											 <?php if($error){?><div class="errorWrap" id="msgshow"><?php echo htmlentities($error); ?> </div><?php }
+								 else if($msg){?><div class="succWrap" id="msgshow"><?php echo htmlentities($msg); ?> </div><?php }?>
+												 <table id="zctb" class="display table table-striped table-bordered table-hover" cellspacing="0" width="100%">
+													 <thead>
+														 <tr>
+														 <th>#</th>
+																 <th>Image</th>
+																												 <th>Name</th>
+																												 <th>Email</th>
+																												 <th>Gender</th>
+																												 <th>Phone</th>
+																												 <th>Designation</th>
+																												 <th>Account</th>
+															 <th>Action</th>
+														 </tr>
+												 </thead>
+											 <tbody>
+				 <?php
+				 ///////////////////////////////
+				 ///// new code
+				 ///////////////////////////////
+				 $sql = "SELECT * from  campaign ";
+				 $result = $conn->query($sql);
+				 if($result === false)
+				 {
+						user_error("Query failed: ".$conn->error."<br />$sql");
+						echo "false";
+				 }
+
+				 // $result = $result->fetch_array();
+
+				 ///////////////////////////////
+				 //// original code
+				 ///////////////////////////////
+				 // $sql = "SELECT * from  users ";
+				 // $query = $dbh -> prepare($sql);
+				 // $query->execute();
+				 // $results=$query->fetchAll(PDO::FETCH_OBJ);
+				 ///////////////////////////////
+				 $cnt=1;
+
+				 ///////////////////////////////
+
+
+				 if(mysqli_num_rows($result) > 0)
+				 {
+
+					 while($row = mysqli_fetch_assoc($result)) {
+								 ?>
+														 <tr>
+															 <td><?php echo $cnt;?></td>
+															 <td><?php echo $row['campaignName']; ?></td>
+															 <td><?php echo $row['budget'];?></td>
+															 <td><?php echo $row['gender'];?></td>
+															 <td><?php echo $row['ageMin'];?></td>
+															 <td><?php echo $row['ageMax'];?></td>
+															 <td><?php echo $row['category'];?></td>
+															 <td><?php echo $row['stratDate'];?></td>
+															 <td><?php echo $row['endDate'];?></td>
+															 <td>
+
+																										 <?php if($row['status'] == 1)
+																														 {?>
+																														 <a href="userlist.php?confirm=<?php echo $row['id'];?>" onclick="return confirm('Do you really want to Un-Confirm the Account')">Confirmed <i class="fa fa-check-circle"></i></a>
+																														 <?php } else {?>
+																														 <a href="userlist.php?unconfirm=<?php echo $row['id'];?>" onclick="return confirm('Do you really want to Confirm the Account')">Un-Confirmed <i class="fa fa-times-circle"></i></a>
+																														 <?php } ?>
+				 </td>
+																										 </td>
+
+				 <td>
+				 <a href="edit-user.php?edit=<?php echo  $row['id'];?>" onclick="return confirm('Do you want to Edit');">&nbsp; <i class="fa fa-pencil"></i></a>&nbsp;&nbsp;
+				 <a href="userlist.php?del=<?php echo  $row['id'];?>&name=<?php echo $row['email'];?>" onclick="return confirm('Do you want to Delete');"><i class="fa fa-trash" style="color:red"></i></a>&nbsp;&nbsp;
+				 </td>
+														 </tr>
+														 <?php $cnt=$cnt+1; }} ?>
+
+													 </tbody>
+												 </table>
+<!-- <?php
 // session_start();
 // ++$_SESSION['id'];
 // ++$_SESSION['adID'];
@@ -181,7 +259,7 @@ if(mysqli_num_rows($result) > 0)
 	?>
         <h5 style="background:#ededed;padding:20px;"><i class="fa fa-bell text-primary"></i>&nbsp;&nbsp;<b class="text-primary"><?php echo $row['time'];?></b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					<?php echo $row['notiuser'];?> -----> <?php echo $row['notitype'];?></h5>
-                       <?php $cnt=$cnt+1; }} ?>
+                       <?php $cnt=$cnt+1; }} ?> -->
                                         </div>
                                     </div>
                                 </div>
@@ -241,7 +319,7 @@ if(mysqli_num_rows($result) > 0)
 									<input type="text" placeholder="Fashion\Restaurant\movie\And more..."name="category" class="form-control mb" required>
 									<br>
 
-									<button class="btn btn-primary btn-block" name="addCampin" type="submit">Click!</button>
+									<button class="btn btn-primary btn-block" name="addCampin" type="submit" onload="loadCamp()">Click!</button>
 								</form>
 								<br>
 							</div>
@@ -278,6 +356,8 @@ if(mysqli_num_rows($result) > 0)
 				});
 				return false;
 		});
+
+
 </script>
 </body>
 </html>
