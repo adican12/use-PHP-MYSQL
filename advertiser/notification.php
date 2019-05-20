@@ -178,16 +178,16 @@ if(isset($_POST['submit']))
 // $query->execute();
 // $results=$query->fetchAll(PDO::FETCH_OBJ);
 
-$sql = "SELECT * FROM campaign";
-if ($result = $conn->query($sql) === TRUE) {
- 	echo "<script type='text/javascript'>alert('Insert  Sucessfull!');</script>";
- 	echo "<script type='text/javascript'> document.location = 'notification.php'; </script>";
- 	} else {
-		echo "Error: " . $sql . "<br>" . $conn->error;
-		echo "<script type='text/javascript'>alert('ERROR   INSTERT!');</script>";
-  }
-
-$row = $result->fetch_assoc()) ;
+// $sql = "SELECT * FROM campaign";
+// if ($result = $conn->query($sql) === TRUE) {
+//  	echo "<script type='text/javascript'>alert('Insert  Sucessfull!');</script>";
+//  	echo "<script type='text/javascript'> document.location = 'notification.php'; </script>";
+//  	} else {
+// 		echo "Error: " . $sql . "<br>" . $conn->error;
+// 		echo "<script type='text/javascript'>alert('ERROR   INSTERT!');</script>";
+//   }
+//
+// $row = $result->fetch_assoc()) ;
 
 $cnt=1;
 //
