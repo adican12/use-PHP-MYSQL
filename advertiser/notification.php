@@ -101,7 +101,7 @@ if(isset($_POST['submit']))
 							<div class="col-md-12">
 								<div class="panel panel-default">
 									<div class="panel-heading"> Creat campaign </div>
-									   <div class="panel-body">
+									   <div class="panel-body" id="panel-body">
 <?php
 // session_start();
 // ++$_SESSION['id'];
@@ -258,6 +258,7 @@ if(mysqli_num_rows($result) > 0)
 					async:   false,
 					 success: function(data) {
 						alert("success");
+						$("#panel-body").html(data);
 						$("button").prop('disabled', false);
 					},
 					cache: false,
