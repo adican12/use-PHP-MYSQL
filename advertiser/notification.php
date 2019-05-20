@@ -164,13 +164,12 @@ $cnt=1;
 $sql = "SELECT * FROM campaign";
 $result = $conn->query($sql);
 
-if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
         echo "campaign Name: " . $row["campaignName"]. " - Gender: " . $row["gender"]. " From age : " . $row["ageMin"]. "To Age:".$row["ageMax"].
 				"the budget is : " .$row['budget']." the category is : ".$row['category']."From : ".$row['stratingDate']." Until : ".$row['endDate'];
     }
-} else {
+else {
     echo "0 results";
 }
 	?>
