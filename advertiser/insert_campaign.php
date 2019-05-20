@@ -1,5 +1,7 @@
 <?php
+include('includes/config.php');
  session_start();
+
  ++$_SESSION['id'];
 ++$_SESSION['adID'];
 // error_reporting(0);
@@ -21,14 +23,14 @@
    echo "the strat date of the campaign is : ".$stratDate."<br>"."the end date of the campaign is : ".$endDate."<br>";
    echo "the category is : " .$category;
 
- 	// $sql = "INSERT INTO `campaign`(`campaignName`,`id`,`adID`,`gender`,`ageMin`,`ageMax`,`budget`,`category`,`stratingDate`,`endDate`)
- 	// VALUES('$campaignName','$id','$adID','$gender','$ageMin','$ageMax','$budget','$category','$stratDate','$endDate');";
- 	// if ($conn->query($sql) === TRUE) {
- 	// 	echo "<script type='text/javascript'>alert('Insert  Sucessfull!');</script>";
- 	// 	echo "<script type='text/javascript'> document.location = 'notification.php'; </script>";
- 	// } else { 		echo "Error: " . $sql . "<br>" . $conn->error;
-	// 	echo "<script type='text/javascript'>alert('ERROR   INSTERT!');</script>";
-	// 	$error="Something went wrong. Please try again";
- 	// }
+ $sql = "INSERT INTO `campaign`(`campaignName`,`id`,`adID`,`gender`,`ageMin`,`ageMax`,`budget`,`category`,`stratingDate`,`endDate`)
+ 	 VALUES('$campaignName','$id','$adID','$gender','$ageMin','$ageMax','$budget','$category','$stratDate','$endDate');";
+ 	if ($conn->query($sql) === TRUE) {
+ 	echo "<script type='text/javascript'>alert('Insert  Sucessfull!');</script>";
+ 	echo "<script type='text/javascript'> document.location = 'notification.php'; </script>";
+ 	}else { 		echo "Error: " . $sql . "<br>" . $conn->error;
+		echo "<script type='text/javascript'>alert('ERROR   INSTERT!');</script>";
+	$error="Something went wrong. Please try again";
+ 	}
 
 ?>
