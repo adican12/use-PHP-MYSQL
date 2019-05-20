@@ -230,7 +230,7 @@ if(mysqli_num_rows($result) > 0)
 									<input type="text" placeholder="Fashion\Restaurant\movie\And more..."name="category" class="form-control mb" required>
 									<br>
 
-									<button class="btn btn-primary btn-block" name="creatCampin" type="submit">Click!</button>
+									<button class="btn btn-primary btn-block" name="addCampin" type="submit">Click!</button>
 								</form>
 								<br>
 							</div>
