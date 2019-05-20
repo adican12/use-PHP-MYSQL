@@ -252,7 +252,7 @@ if(mysqli_num_rows($result) > 0)
 				$("button").prop('disabled', true);
 				var formData = new FormData(this);
 				$.ajax({
-					url:     'insert_campaign.php',
+					url:     'advertiser/insert_campaign.php',
 					type:    'POST',
 					data:    formData,
 					async:   false,
