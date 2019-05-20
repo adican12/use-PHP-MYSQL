@@ -108,7 +108,6 @@ if(isset($_POST['submit']))
 													 <thead>
 														 <tr>
 														 <th>#</th>
-																 <th>Image</th>
 																												 <th> Campagin Name</th>
 																												 <th>Budget</th>
 																												 <th>Gender</th>
