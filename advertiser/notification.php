@@ -102,6 +102,30 @@ if(isset($_POST['submit']))
 								<div class="panel panel-default">
 									<div class="panel-heading"> Creat campaign </div>
 									   <div class="panel-body" id="panel-body">
+											 <table>
+															 <tr>
+														    <th>Campagin Name</th>
+														    <th>Gender</th>
+														    <th>from which age</th>
+																<th>Until what age</th>
+																<th>Category</th>
+																<th>Budget</th>
+																<th>From what date</th>
+																<th>till what date</th>
+
+														  </tr>
+
+														  <tr>
+														    <td><?php echo "$row['campaignName']"?></td>
+														    <td><?php echo "$row['gedner']"?></td>
+														    <td><?php echo "$row['ageMin']"?></td>
+																<td><?php echo "$row['ageMax']"?></td>
+																<td><?php echo "$row['category']"?></td>
+																<td><?php echo "$row['budget']"?></td>
+																<td><?php echo "$row['stratDate']"?></td>
+																<td><?php echo "$row['endDate']"?></td>
+														  </tr>
+										</table>
 <?php
 // session_start();
 // ++$_SESSION['id'];
@@ -154,6 +178,23 @@ if(isset($_POST['submit']))
 // $query->execute();
 // $results=$query->fetchAll(PDO::FETCH_OBJ);
 
+$sql = "SELECT * FROM campaign";
+if ($result = $conn->query($sql) === TRUE) {
+ 	echo "<script type='text/javascript'>alert('Insert  Sucessfull!');</script>";
+ 	echo "<script type='text/javascript'> document.location = 'notification.php'; </script>";
+ 	} else {
+		echo "Error: " . $sql . "<br>" . $conn->error;
+		echo "<script type='text/javascript'>alert('ERROR   INSTERT!');</script>";
+  }
+
+  if ($result->num_rows > 0) {
+   // output data of each row
+   while($row = $result->fetch_assoc()) {
+       //echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
+   }
+} else {
+   echo "0 results";
+}
 
 $cnt=1;
 //
