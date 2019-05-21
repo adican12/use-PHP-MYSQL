@@ -302,10 +302,10 @@ if(mysqli_num_rows($result) > 0)
 									<input type="text" placeholder="Male/Famle/Both" name="gender" class="form-control mb" required>
 
 									<label for="" class="text-uppercase text-sm"> ageMin: </label>
-									<input type="text" placeholder="25-" name="ageMin" class="form-control mb" required>
+									<input type="number" placeholder="25-" name="ageMin" class="form-control mb" required>
 
 									<label for="" class="text-uppercase text-sm"> ageMax: </label>
-									<input type="text" placeholder="-30" name="ageMax" class="form-control mb" required>
+									<input type="number" placeholder="-30" name="ageMax" class="form-control mb" required>
 
 
 									<label for="" class="text-uppercase text-sm">Strat Date : </label>
