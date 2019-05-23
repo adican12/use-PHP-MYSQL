@@ -154,12 +154,28 @@ if(isset($_POST['submit']))
 	<div id="googleMap" style="width:100%;height:400px;"></div>
  <!-- onclick = "getLocation()" -->
 	<script>
+	var customLabel = {
+			restaurant: {
+				label: 'R'
+			},
+			bar: {
+				label: 'B'
+			}
+			hotel:{
+				label:'H'
+			},
+			ShoppingMalls: {
+				label:'sM'
+			},
 
+
+		};
 // 	var mykey = config.MY_KEY;
 // var secretkey = config.SECRET_KEY;
 	// this function to open a google maps , set marker and open a info window
 	function initMap() {
 		var map;
+		var bounds = new google.maps.LatLngBounds();
 		// Map options
 		var options = {
 			mapTypeId = 'roadmap',
@@ -173,27 +189,12 @@ if(isset($_POST['submit']))
 
 		// Add Marker
 		var marker = new google.maps.Marker({
-			<?php
-			include('includes/config.php');
-			$sql = "SELECT * FROM locations WHERE location_id = 1";
-			$result = $conn->query($sql);
-			if($result === false)
-			{
-				 user_error("Query failed: ".$conn->error."<br />$sql");
-				 echo "false";
-			}
-			if(mysqli_num_rows($result) > 0){
-				while($row = mysqli_fetch_assoc($result){
-					echo $row['lat'].$row['lng'].$row['name'];
-				}
-			}
-			?>
-			position:{lat:<?php echo $row['lat']?>, lng:<?php echo $row['lng']?>},
+			position:{lat:32.109333, lng:34.855499},
 			map:map
 		});
 
 		var infowindow= new google.maps.InfoWindow({
-			content:<?php echo $row['info']?>
+			content:'<h3>HERE WE HAVE A WIFI YOU CAN PUBLISH HERE</h3>'
 		});
 		// add a listnerr when the click we see the msg.
 		marker.addListener('click',function(){
@@ -203,7 +204,17 @@ if(isset($_POST['submit']))
 	</script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAcM_1-tDzj4g4wFtNBw-KEluCsxMbLscQ&callback=initMap"></script>
 
-
+<?php
+include('includes/config.php');
+$id =$_SESSION['id']+1;
+$sql = "SELECT * FROM locations";
+$result = $conn->query($sql);
+if($result === false)
+{
+	 user_error("Query failed: ".$conn->error."<br />$sql");
+	 echo "false";
+}
+?>
 
 	<!--
 // 	var marker_array = [];
