@@ -175,7 +175,7 @@ if(isset($_POST['submit']))
 		var marker = new google.maps.Marker({
 			<?php
 			include('includes/config.php');
-			$sql = "SELECT * FROM locations";
+			$sql = "SELECT * FROM locations WHERE location_id = 1";
 			$result = $conn->query($sql);
 			if($result === false)
 			{
