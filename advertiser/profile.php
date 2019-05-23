@@ -174,14 +174,11 @@ if(isset($_POST['submit']))
 // var secretkey = config.SECRET_KEY;
 	// this function to open a google maps , set marker and open a info window
 	function initMap() {
-		var map;
-		var bounds = new google.maps.LatLngBounds();
 		// Map options
 		var options = {
-			mapTypeId = 'roadmap',
 			zoom:8,
 			center:new google.maps.LatLng(32.109333,34.855499)
-		};
+		}
 
 		//NEW map
 
@@ -206,14 +203,10 @@ if(isset($_POST['submit']))
 
 <?php
 include('includes/config.php');
-$id =$_SESSION['id']+1;
 $sql = "SELECT * FROM locations";
-$result = $conn->query($sql);
-if($result === false)
-{
-	 user_error("Query failed: ".$conn->error."<br />$sql");
-	 echo "false";
-}
+
+
+
 ?>
 
 	<!--
