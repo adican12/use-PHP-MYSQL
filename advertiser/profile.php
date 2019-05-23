@@ -160,7 +160,6 @@ if(isset($_POST['submit']))
 	// this function to open a google maps , set marker and open a info window
 	function initMap() {
 		var map;
-		var bounds = new google.maps.LatLngBounds();
 		// Map options
 		var options = {
 			mapTypeId = 'roadmap',
@@ -176,7 +175,6 @@ if(isset($_POST['submit']))
 		var marker = new google.maps.Marker({
 			<?php
 			include('includes/config.php');
-			$id =$_SESSION['id']+1;
 			$sql = "SELECT * FROM locations";
 			$result = $conn->query($sql);
 			if($result === false)
