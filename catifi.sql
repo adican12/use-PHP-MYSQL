@@ -194,3 +194,27 @@ CREATE TABLE `campaign`(
   PRIMARY KEY(campaignID),
   FOREIGN KEY(id) REFERENCES users(id) ON DELETE CASCADE
 )ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12;
+
+
+CREATE TABLE `locations`(
+  `location_id` INT(11) NOT NULL AUTO_INCREMENT,
+  `lat` FLOAT(6) NOT NULL,
+  `lng` FLOAT(6) NOT NULL,
+  `info` VARCHAR(256) NOT NULL,
+  `id` INT(11) NOT NULL,
+  `name` VARCHAR(256),
+  PRIMARY KEY(location_id),
+  FOREIGN KEY(id) REFERENCES users(id) ON DELETE CASCADE
+)ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=20;
+
+
+
+
+INSERT INTO `locations` ( `lat`, `lng`, `info`, `id`, `name`) VALUES
+( 48.175628, 16.4200, 'H - smalle rooms,free wifi', 1, 'jafa-Hotel'),
+(31.783412,35.216902,'H - free wifi,Childrens Activities',2,'Bells-Hotel'),
+(31.782438,35.216754,'H - free wifi,Childrens Activities,Air conditioning',3,'City Center-Hotel'),
+(32.072866,34.765616,'H - free wifi,Childrens Activities,Air conditioning,Bar',4,'Bal basic-Hotel'),
+(32.983082,35.195394,'R - Druze food',5,'completely'),
+(32.050939,34.760524,'R - Cheaper, meat',6,'Vigosha'),
+(32.165313,34.823261,'M - Fashion, restaurants, bars',7,'Seven Star Mall');
