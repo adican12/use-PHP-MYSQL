@@ -154,22 +154,6 @@ if(isset($_POST['submit']))
 	<div id="googleMap" style="width:100%;height:400px;"></div>
  <!-- onclick = "getLocation()" -->
 	<script>
-	var customLabel = {
-			restaurant: {
-				label: 'R'
-			},
-			bar: {
-				label: 'B'
-			}
-			hotel:{
-				label:'H'
-			},
-			ShoppingMalls: {
-				label:'sM'
-			},
-
-
-		};
 // 	var mykey = config.MY_KEY;
 // var secretkey = config.SECRET_KEY;
 	// this function to open a google maps , set marker and open a info window
@@ -200,15 +184,6 @@ if(isset($_POST['submit']))
 }
 	</script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAcM_1-tDzj4g4wFtNBw-KEluCsxMbLscQ&callback=initMap"></script>
-
-<?php
-include('includes/config.php');
-$sql = "SELECT * FROM locations";
-
-
-
-?>
-
 	<!--
 // 	var marker_array = [];
 // 	var map,marker,info_window;
