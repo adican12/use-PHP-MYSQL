@@ -296,7 +296,7 @@ if(mysqli_num_rows($result) > 0)
 									<input type="text" placeholder="Campaign Name:" name="campaignName" class="form-control mb" required>
 
 									<label for="" class="text-uppercase text-sm">Budget : </label>
-									<input type="text" placeholder="Budget" name="budget" class="form-control mb" required>
+									<input type="number" placeholder="Budget" name="budget" class="form-control mb" required>
 
 									<label for="" class="text-uppercase text-sm">Gender: </label>
 									<input type="text" placeholder="Male/Famle/Both" name="gender" class="form-control mb" required>
