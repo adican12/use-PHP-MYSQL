@@ -174,6 +174,7 @@ if(isset($_POST['submit']))
 		var lat = <?php echo $row['lat'];?>
 		var lng = <?php echo $row['lng'];?>
 		var info = <?php echo $row['info'];?>
+		console.log( lat + info + lng);
 		var options = {
 			zoom:8,
 			center:new google.maps.LatLng(32.109333,34.855499)
