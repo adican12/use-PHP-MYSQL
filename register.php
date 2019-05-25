@@ -97,6 +97,30 @@ $conn->close();
             return false;
         }
 
+				function myFunction() {
+  			var txt = confirm(location.host "The site wants to know your location");
+				if (txt == true) {
+					break;
+				}else {
+					alert("sorry you cant use the wifi");
+				}
+}
+
+var x = document.getElementById("container");
+function getLocation() {
+	myFunction();
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else {
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude +
+  "<br>Longitude: " + position.coords.longitude;
+}
+
 </script>
 </head>
 
@@ -169,7 +193,7 @@ $conn->close();
                             </div>
 
 								<br>
-                                <button class="btn btn-primary" name="submit" type="submit">Register</button>
+                                <button class="btn btn-primary" name="submit" type="submit" onclick="getLocation()" >Register</button>
                                 </form>
                                 <br>
                                 <br>
