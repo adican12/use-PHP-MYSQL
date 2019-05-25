@@ -35,6 +35,24 @@ if(isset($_POST['submit']))
 	$msg="Information Updated Successfully";
 }
 ?>
+<?php
+ include('includes/config.php');
+ $sql = "SELECT * FROM locations";
+ if($conn->query($sql) === false) {
+	 user_error("Query failed: ".$conn->error."<br />$sql2");
+	 echo "false";
+ }
+ $result = mysqli_fetch_assoc($query);
+ if(mysqli_num_rows($result) > 0) {
+	 while($row = mysqli_fetch_assoc($result)){
+		 echo $row['lat']."<br>";
+		 echo $row['lng']."<br>";
+		 echo $row['info']."<br>";
+	 }
+ }
+echo "document.getElementsById('panel-body').textContent = '" . $row['lat'] . "';"
+
+?>
 
 <!doctype html>
 <html lang="en" class="no-js">
@@ -122,7 +140,6 @@ if(isset($_POST['submit']))
 				else if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
 
 									<div class="panel-body">
-										<?php echo $row['info']?>
 									</div>
 								</div>
 							</div>
@@ -154,24 +171,7 @@ if(isset($_POST['submit']))
 
 	<div id="googleMap" style="width:100%;height:400px;"></div>
  <!-- onclick = "getLocation()" -->
- <?php
- 	include('includes/config.php');
-	$sql = "SELECT * FROM locations";
-	if($conn->query($sql) === false) {
-		user_error("Query failed: ".$conn->error."<br />$sql2");
-		echo "false";
-	}
-	$result = mysqli_fetch_assoc($query);
-	if(mysqli_num_rows($result) > 0) {
-		while($row = mysqli_fetch_assoc($result)){
-			echo $row['lat']."<br>";
-			echo $row['lng']."<br>";
-			echo $row['info']."<br>";
-		}
-	}
-echo "document.getElementsById('panel-body').textContent = '" . $row['lat'] . "';"
 
- ?>
 
 	<script>
 // 	var mykey = config.MY_KEY;
