@@ -172,7 +172,7 @@ if(isset($_POST['submit']))
 
  ?>
  <script>
-  getElementById('panel-body').innerHTML = <?php echo $row['lat'];?>;
+  getElementById('panel-body').innerHTML = '<?php echo $row['lat'];?>';
 
  </script>
 	<script>
