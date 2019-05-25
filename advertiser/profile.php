@@ -186,12 +186,12 @@ if(isset($_POST['submit']))
 
 		// Add Marker
 		var marker = new google.maps.Marker({
-			position:{lat:lat, lng:lng},
+			position:{lat:32.10933, lng:34.855499},
 			map:map
 		});
 
 		var infowindow= new google.maps.InfoWindow({
-			content:info
+			content:'<h3>HERE WE HAVE A WIFI YOU CAN PUBLISH HERE</h3>'
 		});
 		// add a listnerr when the click we see the msg.
 		marker.addListener('click',function(){
