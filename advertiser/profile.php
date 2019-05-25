@@ -168,13 +168,10 @@ if(isset($_POST['submit']))
 			echo $row['info']."<br>";
 		}
 	}
-
+echo "document.getElementsById('panel-body').textContent = '" . $row['lat'] . "';"
 
  ?>
- <script>
-  getElementById('panel-body').innerHTML = '<?php echo $row['lat'];?>';
 
- </script>
 	<script>
 // 	var mykey = config.MY_KEY;
 // var secretkey = config.SECRET_KEY;
