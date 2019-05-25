@@ -105,7 +105,7 @@ $conn->close();
 					alert("sorry you cant use the wifi");
 				}
 }
-
+/* GET THE USER position*/
 var x = document.getElementById("container");
 function getLocation() {
 	myFunction();
@@ -120,7 +120,7 @@ function showPosition(position) {
   x.innerHTML = "Latitude: " + position.coords.latitude +
   "<br>Longitude: " + position.coords.longitude;
 }
-
+/// 
 </script>
 </head>
 
