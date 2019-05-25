@@ -122,7 +122,7 @@ if(isset($_POST['submit']))
 				else if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
 
 									<div class="panel-body">
-										<p>Hello</p>
+										<?php echo $row['info']?>
 									</div>
 								</div>
 							</div>
