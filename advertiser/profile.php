@@ -140,6 +140,7 @@ echo "document.getElementsById('panel-body').textContent = '" . $row['lat'] . "'
 				else if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
 
 									<div class="panel-body">
+										<?php echo $row['info'];?>
 									</div>
 								</div>
 							</div>
@@ -235,7 +236,7 @@ echo "document.getElementsById('panel-body').textContent = '" . $row['lat'] . "'
 <!-- //   }); -->
 <!-- //   infowindow.open(map,marker); -->
 <!-- // } -->
-<!-- // } --> -->
+<!-- // } -->
 	<!-- </script> -->
 
 
