@@ -163,7 +163,8 @@ if(isset($_POST['submit']))
 	$result = mysqli_fetch_assoc($query);
 	if(mysqli_num_rows($result) > 0) {
 		while($row = mysqli_fetch_assoc($result)){
-	}
+
+
  ?>
 	<script>
 // 	var mykey = config.MY_KEY;
@@ -199,7 +200,7 @@ if(isset($_POST['submit']))
 			infowindow.open(map,marker);
 		});
 }
-<?php  } ?>
+<?php  }} ?>
 	</script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAcM_1-tDzj4g4wFtNBw-KEluCsxMbLscQ&callback=initMap"></script>
 	<!--
