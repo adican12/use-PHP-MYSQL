@@ -163,6 +163,11 @@ if(isset($_POST['submit']))
 	$result = mysqli_fetch_assoc($query);
 	if(mysqli_num_rows($result) > 0) {
 		while($row = mysqli_fetch_assoc($result)){
+			echo $row['lat']."<br>";
+			echo $row['lng']."<br>";
+			echo $row['info']."<br>";
+		}
+	}
 
 
  ?>
@@ -172,10 +177,6 @@ if(isset($_POST['submit']))
 	// this function to open a google maps , set marker and open a info window
 	function initMap() {
 		// Map options
-		var lat = <?php echo $row['lat'];?>
-		var lng = <?php echo $row['lng'];?>
-		var info = <?php echo $row['info'];?>
-		console.log( lat + info + lng);
 		var options = {
 			zoom:8,
 			center:new google.maps.LatLng(32.109333,34.855499)
@@ -200,7 +201,7 @@ if(isset($_POST['submit']))
 			infowindow.open(map,marker);
 		});
 }
-<?php  }} ?>
+
 	</script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAcM_1-tDzj4g4wFtNBw-KEluCsxMbLscQ&callback=initMap"></script>
 	<!--
