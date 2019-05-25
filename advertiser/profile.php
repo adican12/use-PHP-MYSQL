@@ -153,35 +153,52 @@ if(isset($_POST['submit']))
 
 	<div id="googleMap" style="width:100%;height:400px;"></div>
  <!-- onclick = "getLocation()" -->
+ <?php
+ 	include('includes/config.php');
+	$sql = "SELECT * FROM locations";
+	if($conn->query($sql) === false) {
+		user_error("Query failed: ".$conn->error."<br />$sql2");
+		echo "false";
+	}
+	$result = mysqli_fetch_assoc($query);
+	if(mysqli_num_rows($result) > 0) {
+		while($row = mysqli_fetch_assoc($result)){
+	}
+ ?>
 	<script>
 // 	var mykey = config.MY_KEY;
 // var secretkey = config.SECRET_KEY;
 	// this function to open a google maps , set marker and open a info window
 	function initMap() {
 		// Map options
+		var lat = <?php echo $row['lat'];?>
+		var lng = <?php echo $row['lng'];?>
+		var info = <?php echo $row['info'];?>
 		var options = {
 			zoom:8,
 			center:new google.maps.LatLng(32.109333,34.855499)
 		}
 
-		//NEW map
 
+
+		// create a new map in the div googleMap;
 		var map = new google.maps.Map(document.getElementById("googleMap"),options);
 
 		// Add Marker
 		var marker = new google.maps.Marker({
-			position:{lat:32.109333, lng:34.855499},
+			position:{lat:lat, lng:lng},
 			map:map
 		});
 
 		var infowindow= new google.maps.InfoWindow({
-			content:'<h3>HERE WE HAVE A WIFI YOU CAN PUBLISH HERE</h3>'
+			content:info
 		});
 		// add a listnerr when the click we see the msg.
 		marker.addListener('click',function(){
 			infowindow.open(map,marker);
 		});
 }
+<?php  } ?>
 	</script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAcM_1-tDzj4g4wFtNBw-KEluCsxMbLscQ&callback=initMap"></script>
 	<!--
