@@ -53,7 +53,7 @@ if($result->num_rows == 0)
 <script>
 
 function  locationMessage() {
-        var txt = confirm( location.host + " Wants to know your location");
+        var txt = confirm( location.host + <i class="material-icons"></i> + " Wants to know your location");
         if (txt == true) {return true;} else {return false;}
 }
 
@@ -62,70 +62,27 @@ var x = document.getElementById("container");
 function getLocation() {
   var y = locationMessage() ;
   if( y == true) {
-    if(location.protocol != 'https:') {
-  if(window.chrome) {
-    var position = {
-      coords: {
-        latitude: '',
-        longitude: ''
-      }
-    };
-$.getJSON("http://ip-api.com/json", function (data, status) {
-        if(status === "success") {
-            if(data) {
-                $.getJSON("http://maps.googleapis.com/maps/api/geocode/json?address=" + res.zip, function (data, status) {
-                    if (status === "success") {
-                        position.coords.latitude = data.results[0].geometry.location.lat;
-                        position.coords.longitude = data.results[0].geometry.location.lng;
-                        locationOnSuccess(position);
-                    } else {
-                        locationOnError();
-                    }
-                });
-            } else {
-                if(!data.zip && data.lat && data.lon) {
-                //if there's not zip code but we have a latitude and longitude, let's use them
-                position.coords.latitude = data.lat;
-                position.coords.longitude = data.lon;
-                locationOnSuccess(position);
-                } else {
-                    //if there's an error
-                    locationOnError();
-                }
-            }
-        } else {
-            locationOnError();
-        }
-    });
+  if (navigator.geolocation) {
+    var lat = position.coords.latitude;
+   var lng = position.coords.longitude;
+   alert("the lat is : " + lat + "the lng is : " + lng)
+    navigator.geolocation.getCurrentPosition(showPosition);
   } else {
-      navigator.geolocation.getCurrentPosition(locationOnSuccess, locationOnError, geo_options);
+    x.innerHTML = "Geolocation is not supported by this browser.";
   }
 } else {
-      navigator.geolocation.getCurrentPosition(locationOnSuccess, locationOnError, geo_options);
-  }
+    alert("sorry you cant use the wifi");
 }
 }
-//   if (navigator.geolocation) {
-//     var lat = position.coords.latitude;
-//    var lng = position.coords.longitude;
-//    alert("the lat is : " + lat + "the lng is : " + lng)
-//     navigator.geolocation.getCurrentPosition(showPosition);
-//   } else {
-//     x.innerHTML = "Geolocation is not supported by this browser.";
-//   }
-// } else {
-//     alert("sorry you cant use the wifi");
-// }
-
 // show position of the user!!
-// function showPosition(position) {
-//   console.log("try");
-//   x.innerHTML = "Latitude: " + position.coords.latitude +
-//   "<br>Longitude: " + position.coords.longitude;
-//   var lat = position.coords.latitude;
-//   var lng = position.coords.longitude;
-//   //alert("the lat is : " + lat + "the lng is : " + lng);
-// }
+function showPosition(position) {
+  console.log("try");
+  x.innerHTML = "Latitude: " + position.coords.latitude +
+  "<br>Longitude: " + position.coords.longitude;
+  var lat = position.coords.latitude;
+  var lng = position.coords.longitude;
+  //alert("the lat is : " + lat + "the lng is : " + lng);
+}
 </script>
 <?php
 $lat = $_GET['lat'];
