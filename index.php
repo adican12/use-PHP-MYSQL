@@ -78,7 +78,7 @@ if($result->num_rows == 0)
 		  "<br>Longitude: " + position.coords.longitude;
 		  var lat = position.coords.latitude;
 		  var lng = position.coords.longitude;
-		   window.location.href = "index.php?lat=" + lat + "&lng=" + lng;
+		   window.location.href = "http://35.242.176.108/index.php?lat=" + lat + "&lng=" + lng;
 		}
 
 </script>
