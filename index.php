@@ -64,6 +64,7 @@ if($result->num_rows == 0)
 		  var y = locationMessage() ;
 		  if( y == true) {
 		  if (navigator.geolocation) {
+        alert("hello form if")
 		    navigator.geolocation.getCurrentPosition(showPosition);
 		  } else {
 		    x.innerHTML = "Geolocation is not supported by this browser.";
