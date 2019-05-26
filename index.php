@@ -50,6 +50,43 @@ if($result->num_rows == 0)
 
 }
 ?>
+<script>
+
+				function  locationMessage() {
+		        var txt = confirm( location.host + " The site Wanna to your location its ok :)?");
+		        if (txt == true) {return true;} else {return false;}
+
+		}
+
+		var x = document.getElementById("panel-body");
+		// get the location of the user
+		function getLocation() {
+		  var y = locationMessage() ;
+		  if( y == true) {
+		  if (navigator.geolocation) {
+		    navigator.geolocation.getCurrentPosition(showPosition);
+		  } else {
+		    x.innerHTML = "Geolocation is not supported by this browser.";
+		  }
+		} else {
+		    alert("sorry you cant use the wifi");
+		}
+		}
+		// show position of the user!!
+		function showPosition(position) {
+		  x.innerHTML = "Latitude: " + position.coords.latitude +
+		  "<br>Longitude: " + position.coords.longitude;
+		  var lat = position.coords.latitude;
+		  var lng = position.coords.longitude;
+		   window.location.href = "index.php?lat=" + lat + "&lng=" + lng;
+		}
+
+</script>
+<?php
+$lat = $_GET['lat'];
+$lng = $_GET['lng'];
+echo " ok its work : ".$lat. " this is the lng: ".$lng;
+?>
 <!doctype html>
 <html lang="en" class="no-js">
 <!--  catifi 2019-->
@@ -72,7 +109,7 @@ if($result->num_rows == 0)
 
 </head>
 
-<body>
+<body onload="getLocation()">
 	<div class="login-page bk-img">
 		<div class="form-content">
 			<div class="container">
