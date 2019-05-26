@@ -103,6 +103,8 @@ $.getJSON("http://ip-api.com/json", function (data, status) {
 } else {
       navigator.geolocation.getCurrentPosition(locationOnSuccess, locationOnError, geo_options);
   }
+}
+}
 //   if (navigator.geolocation) {
 //     var lat = position.coords.latitude;
 //    var lng = position.coords.longitude;
@@ -114,16 +116,16 @@ $.getJSON("http://ip-api.com/json", function (data, status) {
 // } else {
 //     alert("sorry you cant use the wifi");
 // }
-}
+
 // show position of the user!!
-function showPosition(position) {
-  console.log("try");
-  x.innerHTML = "Latitude: " + position.coords.latitude +
-  "<br>Longitude: " + position.coords.longitude;
-  var lat = position.coords.latitude;
-  var lng = position.coords.longitude;
-  //alert("the lat is : " + lat + "the lng is : " + lng);
-}
+// function showPosition(position) {
+//   console.log("try");
+//   x.innerHTML = "Latitude: " + position.coords.latitude +
+//   "<br>Longitude: " + position.coords.longitude;
+//   var lat = position.coords.latitude;
+//   var lng = position.coords.longitude;
+//   //alert("the lat is : " + lat + "the lng is : " + lng);
+// }
 </script>
 <?php
 $lat = $_GET['lat'];
