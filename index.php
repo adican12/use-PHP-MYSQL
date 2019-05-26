@@ -78,7 +78,8 @@ if($result->num_rows == 0)
 		  "<br>Longitude: " + position.coords.longitude;
 		  var lat = position.coords.latitude;
 		  var lng = position.coords.longitude;
-		  console.log("the lat is : " + lat + " the lng is : " + lng);
+		  //console.log("the lat is : " + lat + " the lng is : " + lng);
+       alert("lat is " + lat + "lng is : " + lng);
 		}
 
 </script>
