@@ -58,7 +58,7 @@ function  locationMessage() {
 
 }
 
-var x = document.getElementById("panel-body");
+var x = document.getElementById("container");
 // get the location of the user
 function getLocation() {
   var y = locationMessage() ;
