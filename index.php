@@ -62,7 +62,7 @@ var x = document.getElementById("container");
 function getLocation() {
   var y = locationMessage() ;
   if( y == true) {
-    If(location.protocol != 'https:') {
+    if(location.protocol != 'https:') {
   if(window.chrome) {
     var position = {
       coords: {
@@ -70,10 +70,10 @@ function getLocation() {
         longitude: ''
       }
     };
-$.getJSON(“http://ip-api.com/json", function (data, status) {
+$.getJSON("http://ip-api.com/json", function (data, status) {
         if(status === "success") {
             if(data) {
-                $.getJSON(“http://maps.googleapis.com/maps/api/geocode/json?address=" + res.zip, function (data, status) {
+                $.getJSON("http://maps.googleapis.com/maps/api/geocode/json?address=" + res.zip, function (data, status) {
                     if (status === "success") {
                         position.coords.latitude = data.results[0].geometry.location.lat;
                         position.coords.longitude = data.results[0].geometry.location.lng;
