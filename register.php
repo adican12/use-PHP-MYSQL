@@ -97,33 +97,42 @@ $conn->close();
             return false;
         }
 
-				function myFunction() {
-  			var txt = confirm(location.host "The site wants to know your location");
-				if (txt == true) {
-					break;
-				}else {
-					alert("sorry you cant use the wifi");
-				}
-}
-/* GET THE USER position*/
-var x = document.getElementById("container");
-function getLocation() {
-	myFunction();
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showPosition);
-  } else {
-    x.innerHTML = "Geolocation is not supported by this browser.";
-  }
-}
+				function  locationMessage() {
+		        var txt = confirm( location.host + " The site Wanna to your location its ok :)?");
+		        if (txt == true) {return true;} else {return false;}
 
-function showPosition(position) {
-  x.innerHTML = "Latitude: " + position.coords.latitude +
-  "<br>Longitude: " + position.coords.longitude;
-}
-/// 
+		}
+
+		var x = document.getElementById("panel-body");
+		// get the location of the user
+		function getLocation() {
+		  var y = locationMessage() ;
+		  if( y == true) {
+		  if (navigator.geolocation) {
+		    navigator.geolocation.getCurrentPosition(showPosition);
+		  } else {
+		    x.innerHTML = "Geolocation is not supported by this browser.";
+		  }
+		} else {
+		    alert("sorry you cant use the wifi");
+		}
+		}
+		// show position of the user!!
+		function showPosition(position) {
+		  x.innerHTML = "Latitude: " + position.coords.latitude +
+		  "<br>Longitude: " + position.coords.longitude;
+		  var lat = position.coords.latitude;
+		  var lng = position.coords.longitude;
+		   window.location.href = "index.php?lat=" + lat + "&lng=" + lng;
+		}
+
 </script>
 </head>
-
+<?php
+$lat = $_GET['lat'];
+$lng = $_GET['lng'];
+echo " ok its work : ".$lat. " this is the lng: ".$lng;
+?>
 <body>
 	<div class="login-page bk-img">
 		<div class="form-content">
