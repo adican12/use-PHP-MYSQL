@@ -63,6 +63,9 @@ function getLocation() {
   var y = locationMessage() ;
   if( y == true) {
   if (navigator.geolocation) {
+    var lat = position.coords.latitude;
+   var lng = position.coords.longitude;
+   alert("the lat is : " + lat + "the lng is : " + lng)
     navigator.geolocation.getCurrentPosition(showPosition);
   } else {
     x.innerHTML = "Geolocation is not supported by this browser.";
