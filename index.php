@@ -55,7 +55,6 @@ if($result->num_rows == 0)
 function  locationMessage() {
         var txt = confirm( location.host + " The site Wanna to your location its ok :)?");
         if (txt == true) {return true;} else {return false;}
-
 }
 
 var x = document.getElementById("container");
@@ -74,11 +73,12 @@ function getLocation() {
 }
 // show position of the user!!
 function showPosition(position) {
+  console.log("try");
   x.innerHTML = "Latitude: " + position.coords.latitude +
   "<br>Longitude: " + position.coords.longitude;
   var lat = position.coords.latitude;
   var lng = position.coords.longitude;
-  alert("the lat is : " + lat + "the lng is : " + lng);
+  //alert("the lat is : " + lat + "the lng is : " + lng);
 }
 </script>
 <?php
