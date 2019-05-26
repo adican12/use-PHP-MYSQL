@@ -78,14 +78,12 @@ if($result->num_rows == 0)
 		  "<br>Longitude: " + position.coords.longitude;
 		  var lat = position.coords.latitude;
 		  var lng = position.coords.longitude;
-		   window.location.href = "http://35.242.176.108/index.php?lat=" + lat + "&lng=" + lng;
+		  console.log("the lat is : " + lat + " the lng is : " + lng);
 		}
 
 </script>
 <?php
-$lat = $_GET['lat'];
-$lng = $_GET['lng'];
-echo " ok its work : ".$lat. " this is the lng: ".$lng;
+
 ?>
 <!doctype html>
 <html lang="en" class="no-js">
