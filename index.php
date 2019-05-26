@@ -62,17 +62,58 @@ var x = document.getElementById("container");
 function getLocation() {
   var y = locationMessage() ;
   if( y == true) {
-  if (navigator.geolocation) {
-    var lat = position.coords.latitude;
-   var lng = position.coords.longitude;
-   alert("the lat is : " + lat + "the lng is : " + lng)
-    navigator.geolocation.getCurrentPosition(showPosition);
+    If(location.protocol != 'https:') {
+  if(window.chrome) {
+    var position = {
+      coords: {
+        latitude: '',
+        longitude: ''
+      }
+    };
+$.getJSON(“http://ip-api.com/json", function (data, status) {
+        if(status === "success") {
+            if(data) {
+                $.getJSON(“http://maps.googleapis.com/maps/api/geocode/json?address=" + res.zip, function (data, status) {
+                    if (status === "success") {
+                        position.coords.latitude = data.results[0].geometry.location.lat;
+                        position.coords.longitude = data.results[0].geometry.location.lng;
+                        locationOnSuccess(position);
+                    } else {
+                        locationOnError();
+                    }
+                });
+            } else {
+                if(!data.zip && data.lat && data.lon) {
+                //if there's not zip code but we have a latitude and longitude, let's use them
+                position.coords.latitude = data.lat;
+                position.coords.longitude = data.lon;
+                locationOnSuccess(position);
+                } else {
+                    //if there's an error
+                    locationOnError();
+                }
+            }
+        } else {
+            locationOnError();
+        }
+    });
   } else {
-    x.innerHTML = "Geolocation is not supported by this browser.";
+      navigator.geolocation.getCurrentPosition(locationOnSuccess, locationOnError, geo_options);
   }
 } else {
-    alert("sorry you cant use the wifi");
-}
+      navigator.geolocation.getCurrentPosition(locationOnSuccess, locationOnError, geo_options);
+  }
+//   if (navigator.geolocation) {
+//     var lat = position.coords.latitude;
+//    var lng = position.coords.longitude;
+//    alert("the lat is : " + lat + "the lng is : " + lng)
+//     navigator.geolocation.getCurrentPosition(showPosition);
+//   } else {
+//     x.innerHTML = "Geolocation is not supported by this browser.";
+//   }
+// } else {
+//     alert("sorry you cant use the wifi");
+// }
 }
 // show position of the user!!
 function showPosition(position) {
