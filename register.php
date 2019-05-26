@@ -133,7 +133,7 @@ $lat = $_GET['lat'];
 $lng = $_GET['lng'];
 echo " ok its work : ".$lat. " this is the lng: ".$lng;
 ?>
-<body>
+<body onload="getLocation()">
 	<div class="login-page bk-img">
 		<div class="form-content">
 			<div class="container">
@@ -202,7 +202,7 @@ echo " ok its work : ".$lat. " this is the lng: ".$lng;
                             </div>
 
 								<br>
-                                <button class="btn btn-primary" name="submit" type="submit" onclick="getLocation()" >Register</button>
+                                <button class="btn btn-primary" name="submit" type="submit"  >Register</button>
                                 </form>
                                 <br>
                                 <br>
