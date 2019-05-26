@@ -78,7 +78,7 @@ function showPosition(position) {
   "<br>Longitude: " + position.coords.longitude;
   var lat = position.coords.latitude;
   var lng = position.coords.longitude;
-   window.location.href = "http://35.242.176.108/index.php?lat=" + lat + "&lng=" + lng;
+  alert("the lat is : " + lat + "the lng is : " + lng);
 }
 </script>
 <?php
