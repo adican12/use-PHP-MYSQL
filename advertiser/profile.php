@@ -20,7 +20,7 @@ if(isset($_POST['submit']))
 
 		// $sql="UPDATE `users` SET name=$name, email=$email, gender=$gender, mobile=$mobileno, designation=$designation, Image=$image WHERE id=$idedit";
 		$query = $conn->query($sql);
-		if($result === false)
+		if($query === false)
 		{
 			 user_error("Query failed: ".$conn->error."<br />$sql2");
 			 echo "false";

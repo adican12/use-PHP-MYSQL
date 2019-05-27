@@ -15,6 +15,7 @@ if (($handle = fopen("business.csv", "r")) !== FALSE) {
 
         // }
         echo " befor:"."<br>";
+        #LEST TRY THIS
         $catgory = $data[3];
         $copunID = intval($data[4]);
         $bus_name = $data[0];

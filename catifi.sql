@@ -164,9 +164,8 @@ CREATE TABLE `business`(
   `category` VARCHAR(50) NOT NULL,
   `couponID`INT(11) NOT NULL,
   PRIMARY KEY(`businessID`),
-  FOREIGN KEY (arID) REFERENCES ar(arID) ON DELETE CASCADE
-  FOREIGN KEY (couponID) REFERENCES coupon(couponID) ON DELETE CASCADE
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
+
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=209 ;
 
 
 CREATE TABLE `ar`(
@@ -261,3 +260,17 @@ INSERT INTO `business` ( `category`, `couponID`, `business_name`, `bus_latitude`
 ('Government',34,'Abbey House Museum',53.82238406,-1.607118964),
 ('Government',35,'Abbey House Museum',53.82238406,-1.607118964),
 (32.165313,34.823261,'M - Fashion, restaurants, bars',7,'Seven Star Mall');
+
+
+
+DROP TABLE IF EXISTS `business`;
+
+CREATE TABLE IF NOT EXISTS `business`(
+  `businessID`INT(11) NOT NULL AUTO_INCREMENT,
+  `category`VARCHAR(250) NOT NULL,
+  `couponID` INT(11) NOT NULL,
+  `business_name` VARCHAR(250),
+  `bus_latitude` FLOAT(6) NOT NULL,
+  `bus_longitude` FLOAT(6)NOT NULL,
+   PRIMARY KEY(`businessID`),
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=209 ;
