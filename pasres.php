@@ -14,10 +14,23 @@ if (($handle = fopen("business.csv", "r")) !== FALSE) {
 
         // }
         echo $data[0]."<br>";
-        echo $data[1]."<br>";
-        echo $data[2]."<br>";
-        echo $data[3]."<br>";
-        echo $data[4]."<br>";
+        $catgory = $data[3];
+        $copunID = $data[4];
+        $bus_name = $data[0];
+        $bus_lat = $data[1];
+        $bus_long = $data[2];
+        $sql = "INSERT INTO `business` ( `category`, `couponID`, `business_name`, `bus_latitude`, `bus_longitude`) VALUES
+        ('$catgory','$copunID', '$bus_name','$bus_lat', '$bus_long');";
+        if($conn->query($sql) === false) {
+          user_error("Query failed: ".$conn->error."<br />$sql");
+          echo "false";
+        } else {
+          	echo "<script type='text/javascript'>alert('INSERT INTO feedback Sucessfull!');</script>";
+        }
+        // echo $data[1]."<br>";
+        // echo $data[2]."<br>";
+        // echo $data[3]."<br>";
+        // echo $data[4]."<br>";
 
     }
     fclose($handle);
