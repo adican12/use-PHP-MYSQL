@@ -53,36 +53,65 @@ if($result->num_rows == 0)
 <script>
 
 function  locationMessage() {
-        var txt = confirm( location.host +  "Wants to know your location");
-        if (txt == true) {return true;} else {return false;}
-}
+  function geoFindMe() {
+  var output = document.getElementById("container");
 
-var x = document.getElementById("container");
-// get the location of the user
-function getLocation() {
-  var y = locationMessage() ;
-  if( y == true) {
-  if (navigator.geolocation) {
-    var lat = position.coords.latitude;
-   var lng = position.coords.longitude;
-   alert("the lat is : " + lat + "the lng is : " + lng)
-    navigator.geolocation.getCurrentPosition(showPosition);
-  } else {
-    x.innerHTML = "Geolocation is not supported by this browser.";
+  if (!navigator.geolocation){
+    output.innerHTML = "<p>Geolocation is not supported by your browser</p>";
+    return;
   }
-} else {
-    alert("sorry you cant use the wifi");
+
+  function success(position) {
+    var latitude  = position.coords.latitude;
+    var longitude = position.coords.longitude;
+
+    output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p>';
+
+    // var img = new Image();
+    // img.src = "http://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom=13&size=300x300&sensor=false";
+    //
+    // output.appendChild(img);
+  };
+
+  function error() {
+    output.innerHTML = "Unable to retrieve your location";
+  };
+
+  output.innerHTML = "<p>Locating…</p>";
+
+  navigator.geolocation.getCurrentPosition(success, error);
 }
 }
-// show position of the user!!
-function showPosition(position) {
-  console.log("try");
-  x.innerHTML = "Latitude: " + position.coords.latitude +
-  "<br>Longitude: " + position.coords.longitude;
-  var lat = position.coords.latitude;
-  var lng = position.coords.longitude;
-  //alert("the lat is : " + lat + "the lng is : " + lng);
-}
+//         var txt = confirm( location.host +  "Wants to know your location");
+//         if (txt == true) {return true;} else {return false;}
+// }
+//
+// var x = document.getElementById("container");
+// // get the location of the user
+// function getLocation() {
+//   var y = locationMessage() ;
+//   if( y == true) {
+//   if (navigator.geolocation) {
+//     var lat = position.coords.latitude;
+//    var lng = position.coords.longitude;
+//    alert("the lat is : " + lat + "the lng is : " + lng)
+//     navigator.geolocation.getCurrentPosition(showPosition);
+//   } else {
+//     x.innerHTML = "Geolocation is not supported by this browser.";
+//   }
+// } else {
+//     alert("sorry you cant use the wifi");
+// }
+// }
+// // show position of the user!!
+// function showPosition(position) {
+//   console.log("try");
+//   x.innerHTML = "Latitude: " + position.coords.latitude +
+//   "<br>Longitude: " + position.coords.longitude;
+//   var lat = position.coords.latitude;
+//   var lng = position.coords.longitude;
+//   //alert("the lat is : " + lat + "the lng is : " + lng);
+// }
 </script>
 <?php
 $lat = $_GET['lat'];
