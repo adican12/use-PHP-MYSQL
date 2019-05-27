@@ -158,7 +158,7 @@ if(isset($_POST['submit']))
 
 
 	<script>
-	 var mykey = constOne.mykey;
+	 var mykey = constOne.key;
 // 	var mykey = config.MY_KEY;
 // var secretkey = config.SECRET_KEY;
 	// this function to open a google maps , set marker and open a info window
@@ -191,7 +191,7 @@ if(isset($_POST['submit']))
 
 	</script>
 
-	<script src="https://maps.googleapis.com/maps/api/js?key=mykey&callback=initMap"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=key&callback=initMap"></script>
 	<!--
 // 	var marker_array = [];
 // 	var map,marker,info_window;
