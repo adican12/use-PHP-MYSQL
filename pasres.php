@@ -14,17 +14,19 @@ if (($handle = fopen("business.csv", "r")) !== FALSE) {
             // echo $data[$c] . "<br />\n";
 
         // }
+        echo " befor:"."<br>";
         $catgory = $data[3];
-        $copunID = $data[4];
+        $copunID = intval($data[4]);
         $bus_name = $data[0];
-        $bus_lat = $data[1];
-        $bus_long = $data[2];
+        $bus_lat = floatval ($data[1]);
+        $bus_long = floatval ($data[2]);
         echo $catgory."<br>";
         echo $copunID."<br>";
         echo $bus_name."<br>";
         echo $bus_lat."<br>";
         echo $bus_long."<br>";
-        $sql = "INSERT INTO `business` ( `category`, `couponID`, `business_name`, `bus_latitude`, `bus_longitude`)
+        echo " after : <br>";
+        $sql = "INSERT INTO `business` ( `category`, `couponID`, `business_name`, `bus_latitude`,`bus_longitude`)
          VALUES ('$catgory','$copunID', '$bus_name','$bus_lat', '$bus_long');";
          // echo "after the sql querys"."<br>";
         if($conn->query($sql) === TURE) {
