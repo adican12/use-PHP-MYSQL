@@ -9,8 +9,8 @@ if (($handle = fopen("business.csv", "r")) !== FALSE) {
         for ($c=0; $c < $num; $c++) {
             // $catgory =explode(","$data);
           // echo $catgory[$c] . "<br />\n";
-            echo $data[$c] . "<br />\n";
-            print_r(explode('|', $data, 4));
+            echo "category".$data[$c] . "<br />\n";
+
         }
     }
     fclose($handle);
