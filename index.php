@@ -52,7 +52,7 @@ if($result->num_rows == 0)
 ?>
 <script>
 
-function  locationMessage() {
+// function  locationMessage() {
   function geoFindMe() {
   var output = document.getElementById("container");
 
@@ -81,7 +81,7 @@ function  locationMessage() {
 
   navigator.geolocation.getCurrentPosition(success, error);
 }
-}
+// }
 //         var txt = confirm( location.host +  "Wants to know your location");
 //         if (txt == true) {return true;} else {return false;}
 // }
@@ -116,7 +116,7 @@ function  locationMessage() {
 <?php
 $lat = $_GET['lat'];
 $lng = $_GET['lng'];
-echo " ok its work : ".$lat. " this is the lng: ".$lng;
+// echo " ok its work : ".$lat. " this is the lng: ".$lng;
 ?>
 <!doctype html>
 <html lang="en" class="no-js">
@@ -140,7 +140,7 @@ echo " ok its work : ".$lat. " this is the lng: ".$lng;
 
 </head>
 
-<body onload="getLocation()">
+<body onload="geoFindMe()">
 	<div class="login-page bk-img">
 		<div class="form-content">
 			<div class="container">
