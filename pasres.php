@@ -26,7 +26,7 @@ if (($handle = fopen("business.csv", "r")) !== FALSE) {
         echo $bus_long."<br>";
         $sql = "INSERT INTO `business` ( `category`, `couponID`, `business_name`, `bus_latitude`, `bus_longitude`)
          VALUES ('$catgory','$copunID', '$bus_name','$bus_lat', '$bus_long');";
-         echo "after the sql querys";
+         // echo "after the sql querys"."<br>";
         if($conn->query($sql) === TURE) {
           echo "<script type='text/javascript'>alert('INSERT INTO feedback Sucessfull!');</script>";
         } else {
