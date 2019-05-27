@@ -6,12 +6,18 @@ if (($handle = fopen("business.csv", "r")) !== FALSE) {
         $num = count($data);
         echo "<p> $num fields in line $row: <br /></p>\n";
         $row++;
-        for ($c=0; $c < $num; $c++) {
+        // for ($c=0; $c < $num; $c++) {
+
             // $catgory =explode(","$data);
           // echo $catgory[$c] . "<br />\n";
-            echo $data[$c] . "<br />\n";
+            // echo $data[$c] . "<br />\n";
 
-        }
+        // }
+        echo $data[0];
+        echo $data[1];
+        echo $data[2];
+        echo $data[3];
+
     }
     fclose($handle);
 }
