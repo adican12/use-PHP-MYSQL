@@ -134,7 +134,7 @@ if(isset($_POST['submit']))
 	</div>
 
 	<!-- Loading Scripts -->
-	<script src="../constOne.js"></script>
+	<script src="js/constOne.js"></script>
 	<script src="js/jquery.min.js"></script>
 	<!-- <script src = "../config.js"></script> -->
 	<script src="js/bootstrap-select.min.js"></script>
