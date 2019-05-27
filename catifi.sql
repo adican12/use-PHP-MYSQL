@@ -82,7 +82,7 @@ CREATE TABLE IF NOT EXISTS `notification` (
   `adnotif` varchar(50) NOT NULL,
   `notireciver` varchar(50) NOT NULL,
   `notitype` varchar(50) NOT NULL,
-  KEY `id` (`id`)
+  PRIMARY KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -273,4 +273,4 @@ CREATE TABLE IF NOT EXISTS `business`(
   `bus_latitude` FLOAT(6) NOT NULL,
   `bus_longitude` FLOAT(6)NOT NULL,
    PRIMARY KEY(`businessID`),
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=209 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=0 ;
