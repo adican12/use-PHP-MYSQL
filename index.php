@@ -79,8 +79,8 @@ function showPosition(position) {
   console.log("try");
   x.innerHTML = "Latitude: " + position.coords.latitude +
   "<br>Longitude: " + position.coords.longitude;
-  var lat = position.coords.latitude;
-  var lng = position.coords.longitude;
+  // var lat = position.coords.latitude;
+  // var lng = position.coords.longitude;
   //alert("the lat is : " + lat + "the lng is : " + lng);
 }
 </script>
