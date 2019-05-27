@@ -102,6 +102,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `image` varchar(50) NOT NULL,
   `birthday` date DEFAULT NULL,
   `status` int(10) NOT NULL,
+  `user_category` VARCHAR(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
 
