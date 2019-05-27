@@ -31,7 +31,7 @@ if (($handle = fopen("business.csv", "r")) !== FALSE) {
           echo "<script type='text/javascript'>alert('INSERT INTO feedback Sucessfull!');</script>";
         } else {
             user_error("Query failed: ".$conn->error."<br />$sql");
-            echo "false";
+            echo "false"."<br>";
         }
         // echo $data[1]."<br>";
         // echo $data[2]."<br>";
