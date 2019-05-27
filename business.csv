@@ -1,283 +1,207 @@
-Name,Latitude,Longitude,sub-categories
-Apex Centre,53.78518769,-1.543707039,Antiques
-St George House,53.80084414,-1.550266385,Art and craft supplies
-Leeds Civic Hall,53.80226965,-1.548494218,Art dealers and galleries
-Carriageworks Theatre,53.80122324,-1.547895253,Camera and photographic supplies
-Garforth Library and One Stop Centre,53.79191339,-1.388125926,Digital art
-Abbey House Museum,53.82238406,-1.607118964,Memorabilia
-Aberfield Gate Housing Office (BITMO),53.7567338,-1.527326286,Music store (instruments and sheet music
-Acorn Lodge Children's Unit,53.80147842,-1.58962661,"Sewing, needlework, and fabrics"
-Adams Court,53.79056567,-1.568253994,Stamp and coin
-Aireborough Leisure Centre,53.87262861,-1.707903028,"Stationary, printing and writing paper"
-Ardsley and Tingley Library,53.72558195,-1.550794692,Vintage and collectibles
-The Arium,53.8393213,-1.43424998,Clothing
-Leeds Industrial Museum at Armley Mills,53.80294145,-1.582877042,Furniture
-Armley Moor Early Years Centre,53.79607605,-1.593990314,Baby products (other)
-Armley Leisure Centre,53.79576747,-1.591446417,Safety and health
-Armley One Stop Centre and Library,53.79712966,-1.588046426,Bath and body
-Leeds Art Gallery,53.79996232,-1.548108697,Fragrances and perfumes
-Artemis,53.78904976,-1.551485658,Makeup and cosmetics
-Farnley Hall,53.78744697,-1.627525187,Audio books
-Barleyfields Community Centre,53.93133555,-1.388850588,Digital content
-Beeston Hill Community Health Centre,53.77829584,-1.555921922,Educational and textbooks
-Beeston Library,53.77254437,-1.566524497,Fiction and nonfiction
-Belle Isle Foundation (Breeze),53.76646766,-1.522968804,Magazines
-Boston Spa Children's Centre,53.90814829,-1.358257444,Publishing and printing
-Boston Spa Library,53.90540059,-1.346497019,Rare and used books
-Bramley Childrens Centre,53.8086,-1.6379,Accounting
-Bramley Library,53.81045345,-1.630177784,Advertising
-Bramley Housing Office,53.81253207,-1.628363146,Agricultural
-The Brownlee Centre,53.84305138,-1.590701295,"Architectural, engineering, and surveying services."
-Burley Park Children's Centre,53.80713873,-1.58010753,Chemicals and allied products
-Burmantofts Housing Office,53.80043425,-1.522880642,"Commercial photography, art, and graphics."
-Bramley Fulfilling Lives,53.80637534,-1.630091778,Construction
-Broomhill Community Centre,53.80258074,-1.50112315,Consulting services
-Calverley Library,53.82928798,-1.686914928,Educational services
-Carr Manor Children's Centre,53.8350381,-1.552765476,Equipment rentals and leasing services
-Leeds Central Library,53.80033801,-1.548701341,Equipment repair services
-Technorth Family Learning Centre,53.8252492,-1.534391721,Hiring services
-Chapel Allerton Library,53.82874729,-1.537532594,Industrial and manufacturing supplies
-Chapeltown Children's Centre,53.81199386,-1.529704399,Mailing lists
-Leeds City Museum,53.80161266,-1.546908629,Marketing
-Cottingley Children's Centre,53.76823713,-1.5818308,Multi-level marketing
-Cottingley Court Transitional Housing Unit,53.76757181,-1.581009556,Office and commercial furniture
-Crossgates Library,53.80758972,-1.45316624,Office supplies and equipment
-Crossgates Community Centre,53.80756916,-1.461965256,Publishing and printing
-Gipton South Children's Centre,53.80704201,-1.491077552,Quick copy and reproduction services
-Deacon House,53.82303848,-1.45986516,Shipping and packing
-Dewsbury Road One Stop Centre and Library,53.77903662,-1.54564239,Stenographic and secretarial support services
-Doreen Hamilton Early Years Centre,53.7975474,-1.495181203,Wholesale
-Farsley Library,53.81007324,-1.673209544,Children & clothing
-Fearnville Leisure Centre,53.81491271,-1.48708427,Men  & clothing
-Firthfields Early Years Centre,53.79320037,-1.370586872,Women  & clothing
-Garforth Leisure Centre,53.79175481,-1.376084665,Shoes
-Gildersome Library,53.7582108,-1.629091139,Military and civil service uniforms
-Gipton North Housing Office,53.80941227,-1.495039233,Accessories
-Gipton North Children's Centre,53.81430594,-1.497979883,Retail (fine jewelry and watches)
-Guiseley Library,53.87313789,-1.710293996,Wholesale (precious stones and metals)
-Halton Library,53.79665052,-1.468851432,Fashion jewelry
-Harehills Children's Centre,53.80909233,-1.510300877,Computer and data processing services
-Hawksworth Wood Children's Centre,53.83154336,-1.616735023,"Desktops, laptops, and notebooks"
-Headingley Library,53.82099619,-1.578372771,Commerce services
-Herd Farm Activity Centre,53.87417314,-1.529404612,Maintenance and repair services
-Holt Park Active,53.85548953,-1.608168595,Monitors and projectors
-Holt Park Library,53.85510535,-1.609787792,Networking
-Horsforth Clinic,53.84020316,-1.638387817,Online gaming
-Horsforth Library,53.83995469,-1.637760989,Parts and accessories
-Hough Top Court,53.79868951,-1.643061979,Peripherals
-Hough Lane Centre,53.81028411,-1.631345773,Software
-Hunslet Children's Centre,53.77751243,-1.529487172,Training services
-Hunslet Library,53.78000771,-1.527595977,Web hosting and design
-Middleton Park Visitor Centre,53.75429084,-1.545143102,Business and secretarial schools
-John Smeaton Leisure Centre,53.81324739,-1.432558915,Child daycare services
-Kentmere Children's Centre,53.82773339,-1.470044551,Colleges and universities
-Kernel House,53.80555285,-1.48144508,"Dance halls, studios, and schools"
-Kippax Health Centre,53.77305912,-1.369720695,Elementary and secondary schools
-Kippax Leisure Centre,53.76385942,-1.379608002,Vocational and trade schools
-Kippax Library,53.76751519,-1.371183825,"Cameras, camcorders, and equipment"
-Kirkstall Leisure Centre,53.81650528,-1.601564169,"Cell phones, PDAs, and pagers"
-Kirkstall Recycling Centre,53.80589969,-1.584711313,General electronic accessories
-Landmark Court,53.77883558,-1.564916481,Home audio
-Lavender Walk,53.79548437,-1.52127633,Home electronics
-Lincoln Fields Day Centre,53.80172376,-1.527609091,Security and surveillance
-Lineham Farm Children's Centre,53.88211348,-1.57399869,Telecommunication equipment and sales
-Little London Housing Office,53.80853674,-1.540692925,Telecommunication services
-Lotherton Hall,53.81897753,-1.319399953,Telephone cards
-Leeds Magistrates,53.79986101,-1.552267194,Memorabilia
-Leeds Kirkgate Market,53.79737214,-1.538758291,Movie tickets
-Mears,53.79108269,-1.595219358,"Movies (DVDs, videotapes)"
-Middleton Highways,53.74835297,-1.536705828,"Music (CDs, cassettes and albums)"
-St Georges One stop Centre,53.7478,-1.5326,"Cable, satellite, and other pay TV and radio"
-Middleton Play and Learning Centre,53.74200784,-1.548848835,Adult digital content
-Middleton Leisure Centre,53.74706585,-1.537544019,Concert tickets
-Moor Allerton Library,53.84557354,-1.549224027,Theater tickets
-Morley Health Centre,53.74465771,-1.606116325,Toys and games
-Morley Leisure Centre,53.74596175,-1.605990907,Slot machines
-Morley Leisure Centre-Gym Only,53.74594668,-1.605898369,Digital content
-Morley Library,53.7465575,-1.601139826,Entertainers
-Morley Town Hall,53.74524523,-1.601563094,Gambling
-Navigation House,53.77644458,-1.515478718,Online games
-Oakwood Library,53.82715501,-1.503606004,Video games and systems
-Osmondthorpe One Stop Centre and Job Shop,53.7965564,-1.491105947,Accounting
-Cross Green Community Centre,53.90610931,-1.689498133,Collection agency
-Otley Library and Tourist Information Centre,53.9049241,-1.691531604,Commodities and futures exchange
-Prince Phillip Community Centre,53.81887323,-1.542593294,Consumer credit reporting agencies
-Seacroft Recycling Centre,53.82761848,-1.463587287,Debt counseling service
-Pudsey Health Centre,53.79486554,-1.664026064,Credit union
-Pudsey Civic Hall,53.80748276,-1.681327982,Currency dealer and currency exchange
-Pudsey Leisure Centre,53.79543145,-1.662248048,Escrow
-Pudsey Library,53.79579503,-1.663950358,Finance company
-Pudsey Community Hub,53.79658668,-1.662488892,Financial and investment advice
-Quarry Mount Children's Centre,53.81587799,-1.554256148,Insurance (auto and home)
-Queenswood Education Centre,53.82273022,-1.592957204,Insurance (life and annuity)
-Richmond Hill Children's Centre,53.79393251,-1.522975509,Investments (general)
-The Rose Lund Centre,53.75713451,-1.466701222,Money service business
-Rothwell Children's Centre,53.75376496,-1.485078734,Mortgage brokers or dealers
-Rothwell Leisure Centre,53.74449011,-1.451913357,Online gaming currency
-Rothwell Community Hub,53.74715084,-1.479090426,Paycheck lender or cash advance
-Scholes Library,53.82521075,-1.429484963,Prepaid and stored value cards
-Scott Hall Leisure Centre,53.82597709,-1.545846946,Real estate agent
-South Seacroft One Stop Centre,53.81060046,-1.471477032,Remittance
-Seacroft Children's Centre,53.81506915,-1.47135949,Rental property management
-Shire View,53.8190253,-1.572975778,ecurity brokers and dealers
-South Pudsey Community Centre,53.78962725,-1.652824998,Wire transfer and money order
-Spen Croft,53.83140673,-1.603846939,Alcoholic beverages
-St James Hospital,53.80287564,-1.524367231,Catering services
-Stocks Hill Hub,53.797,-1.5868,Coffee and tea
-Suffolk Court,53.86657676,-1.684693575,Gourmet foods
-Swarcliffe Community Centre,53.81981575,-1.443455049,Specialty and miscellaneous food stores
-Housing Leeds Swarcliffe,53.82291049,-1.442839026,Restaurant
-Temple Newsham Golf club,53.79103106,-1.472663999,Tobacco
-Thwaite Mills,53.77623385,-1.504032016,Vitamins and supplements
-Tropical World Roundhay Park,53.84051168,-1.505093336,Florist
-West Yorkshire Joint Services,53.74779566,-1.625783801,"Gift, card, novelty, and souvenir shops"
-West Yorkshire History Centre,53.67973711,-1.491534595,Gourmet foods
-"Westgate 4th, 5th and 6th Floors",53.79958123,-1.551024079,Nursery plants and flowers
-Wetherby One Stop Centre,53.92993563,-1.388537049,Party supplies
-Wetherby Childrens Centre,53.92882586,-1.380358019,Government services (not elsewhere classified)
-Wetherby Health Centre,53.92835653,-1.381341285,Drugstore (excluding prescription drugs)
-Wetherby Leisure Centre,53.92600385,-1.389490604,Drugstore (including prescription drugs)
-Wetherby Library and Tourist Information Centre,53.92867648,-1.387554691,Dental care
-Whinmoor Library,53.83711794,-1.455219436,Medical care
-Hyde Park Surgery,53.80678027,-1.567647114,Medical equipment and supplies
-Housing Leeds Wortley,53.79608453,-1.616153922,Vision care
-Wykebeck Valley Road Day Centre,53.80671741,-1.487641399,Vitamins and supplements
-Yeadon Library and One Stop Centre,53.86607667,-1.684114752,Antiques
-Yeadon Community Health Centre,53.86522254,-1.684020117,Appliances
-Yeadon Tarn,53.86969643,-1.673554459,Art dealers and galleries
-Leeds YOS,53.77843262,-1.533616909,Bed and bath
-Spring Gardens Home for Older People,53.90079921,-1.709257321,Construction material
-Temple Newsham House,53.78434008,-1.459725976,"Drapery, window covering, and upholstery"
-The Green Home for Older People,53.81961898,-1.460222335,Exterminating and disinfecting services
-Leeds City Council Fleet Services,53.79947442,-1.510948539,"Fireplace, and fireplace screens"
-Tribeca House,53.81019101,-1.528548479,Furniture
-Vale Circles,53.7759859,-1.543244958,Garden supplies
-Westfield Chambers,53.78388613,-1.598433018,"Glass, paint, and wallpaper"
-Woodsley Green Skills Centre,53.80744189,-1.56672895,Hardware and tools
-Suffolk Court Yeadon Extra Care,53.86658244,-1.683818689,Home decor
-Beeston Road Adult Social Care,53.78098315,-1.553115964,Housewares
-Holbeck and City Childrens Centre,53.78137606,-1.547222972,Kitchenware
-Hunslet Hall,53.78184527,-1.547688961,Landscaping
-Hunslet Childrens Centre,53.77736941,-1.529058439,Rugs and carpets
-Calverlands Day Centre,53.84069579,-1.640251746,Security and surveillance equipment
-Assisted Living Leeds,53.78950753,-1.530461108,Swimming pools and spas
-Knowsthorpe Gate,53.78482256,-1.501115352,Charity
-Cross Heath Grove IL,53.7713,-1.5749,Political
-Easdale Childrens Home,53.81927877,-1.470190788,Religious
-Inner East Cluster Family Resource Centre,53.80165545,-1.52768626,Other
-Enterprise House,53.7981437,-1.550734605,Personal
-Farfield Drive Independent Living Centre,53.8106,-1.6788,Educational
-West Leeds Contact Centre,53.82272405,-1.593677382,Medication and supplements
-Frederick Hurdle Day Centre,53.816994,-1.532117,"Pet shops, pet food, and supplies"
-West Leeds Family Resource Centre,53.81806023,-1.630574118,Specialty or rare pets
-Mears Office-Great Eastern House,53.7717,-1.5171,Veterinary services
-Hawksworth Wood community Association,53.8287,-1.616,Membership services
-Henshaw Lane Bin Depot,53.85859136,-1.686739769,Merchandise
-Killingbeck Court,53.81270236,-1.46924901,Services (not elsewhere classified)
-Lanshaw Childrens Home,53.7512247,-1.529682994,Chemicals and allied products
-Lazer Childrens Centre,53.81066912,-1.606621027,Department store
-Lingfield Childrens Home,53.84892408,-1.547254762,Discount store
-Little London Childrens Centre,53.80882523,-1.540025711,Durable goods
-Lovell Park Hub,53.80570239,-1.53671205,Non-durable goods
-Meanwood Children's Centre,53.82439059,-1.547124028,Used and secondhand store
-Middleton Under 3 Children Centre,53.7410816,-1.548136247,Variety store
-Laurel Bank Day Centre,53.74064694,-1.54783584,Shopping services and buying clubs
-Middleton Health Centre,53.7430231,-1.546650052,Career services
-Millshaw,53.76634616,-1.578377962,Carpentry
-Museum Discovery Centre,53.78874202,-1.530914254,Child care services
-New Bewerley Children's Centre,53.77996706,-1.546842166,Cleaning and maintenance
-Nowell Mount,53.80256751,-1.506956966,Commercial photography
-Osmondthorpe Resource Centre,53.7998107,-1.498482138,Computer and data processing services
-Pinfolds Childrens Centre,53.7999,-1.4659,Computer network services
-Potternewton Childrens Centre,53.82438021,-1.5471,Consulting services
-Rainbow House Children's Centre,53.81255887,-1.617056038,Courier services
-Ireland Wood Childrens Centre,53.85198565,-1.604666472,Dental care
-The Reginald Centre,53.817709,-1.5317,eCommerce services
-Richmond Hill NHO,53.79442603,-1.523034518,Electrical and small appliance repair
-Richmond House Care Home,53.80867721,-1.678724898,Entertainment
-Rothwell Fulfilling Lives Home for Older People,53.75605669,-1.461077145,Equipment rental and leasing services
-Rutland Lodge,53.82466071,-1.539861197,Event and wedding planning
-SEC Swillington,53.7628,-1.4149,General contractors
-SKiLs- Lingfield Childrens Centre,53.8491534,-1.544402682,Graphic and commercial design
-South Leeds Independent Centre,53.76847508,-1.556463502,Health and beauty spas
-Scott Hall Emergency Respite Centre,53.82438021,-1.547066472,"IDs, licenses, and passports"
-Shannon House,53.8310751,-1.60378408,Importing and exporting
-Shepherds Lane Early Years Centre,53.81468427,-1.51960221,Information retrieval services
-Leeds Town Hall,53.80014278,-1.549834137,Landscaping and horticultural
-Merrion House,53.80266028,-1.545121551,Legal services and attorneys
-,,,Local delivery service
-,,,Lottery and contests
-,,,Medical care
-,,,Membership clubs and organizations
-,,,Misc. publishing and printing
-,,,Moving and storage
-,,,Online dating
-,,,Photofinishing
-,,,Photographic studios - portraits
-,,,Protective and security services
-,,,Quick copy and reproduction services
-,,,"Radio, television, and stereo repair"
-,,,Real estate agent
-,,,Rental property management.
-,,,Reupholstery and furniture repair
-,,,Shipping and packing
-,,,Swimming pool services
-,,,Tailors and alterations
-,,,Telecommunication service
-,,,Utilities
-,,,Vision care
-,,,"Watch, clock, and jewelry repair"
-,,,Athletic shoes
-,,,"Bicycle shop, service, and repair"
-,,,"Boating, sailing and accessories"
-,,,Camping and outdoors
-,,,"Dance halls, studios, and schools"
-,,,Exercise and fitness
-,,,Fan gear and memorabilia
-,,,Firearm accessories
-,,,Firearms
-,,,Hunting
-,,,Knives
-,,,Martial arts weapons
-,,,Sport games and toys
-,,,Sporting equipment
-,,,Swimming pools and spas
-,,,Arts and crafts
-,,,Camera and photographic supplies
-,,,"Hobby, toy, and game shops"
-,,,Memorabilia
-,,,"Stationary, printing, and writing paper"
-,,,Airline
-,,,Auto rental
-,,,Bus line
-,,,Cruises
-,,,Lodging and accommodations
-,,,Luggage and leather goods
-,,,Recreational services
-,,,Sporting and recreation camps
-,,,Taxicabs and limousines
-,,,Timeshares
-,,,Tours
-,,,Trailer parks or campgrounds
-,,,Transportation services - other
-,,,Travel agency
-,,,Auto dealer - new and used
-,,,Auto dealer - used only
-,,,Aviation
-,,,Boat dealer
-,,,Mobile home dealer
-,,,Motorcycle dealer
-,,,Recreational and utility trailer dealer
-,,,Recreational vehicle dealer
-,,,Audio and video
-,,,Auto body repair and paint
-,,,Auto rental
-,,,Auto service
-,,,Automotive tire supply and service
-,,,Boat rental and leases
-,,,Car wash
-,,,Motor home and recreational vehicle rental
-,,,Tools and equipment
-,,,Towing service
-,,,Truck and utility trailer rental
-,,,Accessories
+Name,Latitude,Longitude,sub-categories,CopunID
+Apex Centre,53.78518769,-1.543707039,Antiques,1
+St George House,53.80084414,-1.550266385,Art and craft supplies,2
+Leeds Civic Hall,53.80226965,-1.548494218,Art dealers and galleries,3
+Carriageworks Theatre,53.80122324,-1.547895253,Camera and photographic supplies,4
+Garforth Library and One Stop Centre,53.79191339,-1.388125926,Digital art,5
+Abbey House Museum,53.82238406,-1.607118964,Memorabilia,6
+Aberfield Gate Housing Office (BITMO),53.7567338,-1.527326286,Music store (instruments and sheet music,7
+Acorn Lodge Children's Unit,53.80147842,-1.58962661,"Sewing, needlework, and fabrics",8
+Adams Court,53.79056567,-1.568253994,Stamp and coin,9
+Aireborough Leisure Centre,53.87262861,-1.707903028,"Stationary, printing and writing paper",10
+Ardsley and Tingley Library,53.72558195,-1.550794692,Vintage and collectibles,11
+The Arium,53.8393213,-1.43424998,Clothing,12
+Leeds Industrial Museum at Armley Mills,53.80294145,-1.582877042,Furniture,13
+Armley Moor Early Years Centre,53.79607605,-1.593990314,Baby products (other),14
+Armley Leisure Centre,53.79576747,-1.591446417,Safety and health,15
+Armley One Stop Centre and Library,53.79712966,-1.588046426,Bath and body,16
+Leeds Art Gallery,53.79996232,-1.548108697,Fragrances and perfumes,17
+Artemis,53.78904976,-1.551485658,Makeup and cosmetics,18
+Farnley Hall,53.78744697,-1.627525187,Audio books,19
+Barleyfields Community Centre,53.93133555,-1.388850588,Digital content,20
+Beeston Hill Community Health Centre,53.77829584,-1.555921922,Educational and textbooks,21
+Beeston Library,53.77254437,-1.566524497,Fiction and nonfiction,22
+Belle Isle Foundation (Breeze),53.76646766,-1.522968804,Magazines,23
+Boston Spa Children's Centre,53.90814829,-1.358257444,Publishing and printing,24
+Boston Spa Library,53.90540059,-1.346497019,Rare and used books,25
+Bramley Childrens Centre,53.8086,-1.6379,Accounting,26
+Bramley Library,53.81045345,-1.630177784,Advertising,27
+Bramley Housing Office,53.81253207,-1.628363146,Agricultural,28
+The Brownlee Centre,53.84305138,-1.590701295,"Architectural, engineering, and surveying services.",29
+Burley Park Children's Centre,53.80713873,-1.58010753,Chemicals and allied products,30
+Burmantofts Housing Office,53.80043425,-1.522880642,"Commercial photography, art, and graphics.",31
+Bramley Fulfilling Lives,53.80637534,-1.630091778,Construction,32
+Broomhill Community Centre,53.80258074,-1.50112315,Consulting services,33
+Calverley Library,53.82928798,-1.686914928,Educational services,34
+Carr Manor Children's Centre,53.8350381,-1.552765476,Equipment rentals and leasing services,35
+Leeds Central Library,53.80033801,-1.548701341,Equipment repair services,36
+Technorth Family Learning Centre,53.8252492,-1.534391721,Hiring services,37
+Chapel Allerton Library,53.82874729,-1.537532594,Industrial and manufacturing supplies,38
+Chapeltown Children's Centre,53.81199386,-1.529704399,Mailing lists,39
+Leeds City Museum,53.80161266,-1.546908629,Marketing,40
+Cottingley Children's Centre,53.76823713,-1.5818308,Multi-level marketing,41
+Cottingley Court Transitional Housing Unit,53.76757181,-1.581009556,Office and commercial furniture,42
+Crossgates Library,53.80758972,-1.45316624,Office supplies and equipment,43
+Crossgates Community Centre,53.80756916,-1.461965256,Publishing and printing,44
+Gipton South Children's Centre,53.80704201,-1.491077552,Quick copy and reproduction services,45
+Deacon House,53.82303848,-1.45986516,Shipping and packing,46
+Dewsbury Road One Stop Centre and Library,53.77903662,-1.54564239,Stenographic and secretarial support services,47
+Doreen Hamilton Early Years Centre,53.7975474,-1.495181203,Wholesale,48
+Farsley Library,53.81007324,-1.673209544,Children & clothing,50
+Fearnville Leisure Centre,53.81491271,-1.48708427,Men  & clothing,51
+Firthfields Early Years Centre,53.79320037,-1.370586872,Women  & clothing,52
+Garforth Leisure Centre,53.79175481,-1.376084665,Shoes,53
+Gildersome Library,53.7582108,-1.629091139,Military and civil service uniforms,54
+Gipton North Housing Office,53.80941227,-1.495039233,Accessories,55
+Gipton North Children's Centre,53.81430594,-1.497979883,Retail (fine jewelry and watches),56
+Guiseley Library,53.87313789,-1.710293996,Wholesale (precious stones and metals),57
+Halton Library,53.79665052,-1.468851432,Fashion jewelry,58
+Harehills Children's Centre,53.80909233,-1.510300877,Computer and data processing services,59
+Hawksworth Wood Children's Centre,53.83154336,-1.616735023,"Desktops, laptops, and notebooks",60
+Headingley Library,53.82099619,-1.578372771,Commerce services,61
+Herd Farm Activity Centre,53.87417314,-1.529404612,Maintenance and repair services,62
+Holt Park Active,53.85548953,-1.608168595,Monitors and projectors,63
+Holt Park Library,53.85510535,-1.609787792,Networking,64
+Horsforth Clinic,53.84020316,-1.638387817,Online gaming,65
+Horsforth Library,53.83995469,-1.637760989,Parts and accessories,66
+Hough Top Court,53.79868951,-1.643061979,Peripherals,67
+Hough Lane Centre,53.81028411,-1.631345773,Software,68
+Hunslet Children's Centre,53.77751243,-1.529487172,Training services,69
+Hunslet Library,53.78000771,-1.527595977,Web hosting and design,70
+Middleton Park Visitor Centre,53.75429084,-1.545143102,Business and secretarial schools,71
+John Smeaton Leisure Centre,53.81324739,-1.432558915,Child daycare services,72
+Kentmere Children's Centre,53.82773339,-1.470044551,Colleges and universities,73
+Kernel House,53.80555285,-1.48144508,"Dance halls, studios, and schools",74
+Kippax Health Centre,53.77305912,-1.369720695,Elementary and secondary schools,75
+Kippax Leisure Centre,53.76385942,-1.379608002,Vocational and trade schools,76
+Kippax Library,53.76751519,-1.371183825,"Cameras, camcorders, and equipment",78
+Kirkstall Leisure Centre,53.81650528,-1.601564169,"Cell phones, PDAs, and pagers",79
+Kirkstall Recycling Centre,53.80589969,-1.584711313,General electronic accessories,80
+Landmark Court,53.77883558,-1.564916481,Home audio,81
+Lavender Walk,53.79548437,-1.52127633,Home electronics,82
+Lincoln Fields Day Centre,53.80172376,-1.527609091,Security and surveillance,83
+Lineham Farm Children's Centre,53.88211348,-1.57399869,Telecommunication equipment and sales,84
+Little London Housing Office,53.80853674,-1.540692925,Telecommunication services,85
+Lotherton Hall,53.81897753,-1.319399953,Telephone cards,86
+Leeds Magistrates,53.79986101,-1.552267194,Memorabilia,87
+Leeds Kirkgate Market,53.79737214,-1.538758291,Movie tickets,88
+Mears,53.79108269,-1.595219358,"Movies (DVDs, videotapes)",89
+Middleton Highways,53.74835297,-1.536705828,"Music (CDs, cassettes and albums)",90
+St Georges One stop Centre,53.7478,-1.5326,"Cable, satellite, and other pay TV and radio",91
+Middleton Play and Learning Centre,53.74200784,-1.548848835,Adult digital content,92
+Middleton Leisure Centre,53.74706585,-1.537544019,Concert tickets,93
+Moor Allerton Library,53.84557354,-1.549224027,Theater tickets,94
+Morley Health Centre,53.74465771,-1.606116325,Toys and games,95
+Morley Leisure Centre,53.74596175,-1.605990907,Slot machines,96
+Morley Leisure Centre-Gym Only,53.74594668,-1.605898369,Digital content,97
+Morley Library,53.7465575,-1.601139826,Entertainers,98
+Morley Town Hall,53.74524523,-1.601563094,Gambling,99
+Navigation House,53.77644458,-1.515478718,Online games,100
+Oakwood Library,53.82715501,-1.503606004,Video games and systems,101
+Osmondthorpe One Stop Centre and Job Shop,53.7965564,-1.491105947,Accounting,102
+Cross Green Community Centre,53.90610931,-1.689498133,Collection agency,103
+Otley Library and Tourist Information Centre,53.9049241,-1.691531604,Commodities and futures exchange,104
+Prince Phillip Community Centre,53.81887323,-1.542593294,Consumer credit reporting agencies,105
+Seacroft Recycling Centre,53.82761848,-1.463587287,Debt counseling service,106
+Pudsey Health Centre,53.79486554,-1.664026064,Credit union,107
+Pudsey Civic Hall,53.80748276,-1.681327982,Currency dealer and currency exchange,108
+Pudsey Leisure Centre,53.79543145,-1.662248048,Escrow,109
+Pudsey Library,53.79579503,-1.663950358,Finance company,110
+Pudsey Community Hub,53.79658668,-1.662488892,Financial and investment advice,111
+Quarry Mount Children's Centre,53.81587799,-1.554256148,Insurance (auto and home),112
+Queenswood Education Centre,53.82273022,-1.592957204,Insurance (life and annuity),113
+Richmond Hill Children's Centre,53.79393251,-1.522975509,Investments (general),114
+The Rose Lund Centre,53.75713451,-1.466701222,Money service business,115
+Rothwell Children's Centre,53.75376496,-1.485078734,Mortgage brokers or dealers,116
+Rothwell Leisure Centre,53.74449011,-1.451913357,Online gaming currency,117
+Rothwell Community Hub,53.74715084,-1.479090426,Paycheck lender or cash advance,118
+Scholes Library,53.82521075,-1.429484963,Prepaid and stored value cards,119
+Scott Hall Leisure Centre,53.82597709,-1.545846946,Real estate agent,120
+South Seacroft One Stop Centre,53.81060046,-1.471477032,Remittance,121
+Seacroft Children's Centre,53.81506915,-1.47135949,Rental property management,122
+Shire View,53.8190253,-1.572975778,ecurity brokers and dealers,123
+South Pudsey Community Centre,53.78962725,-1.652824998,Wire transfer and money order,124
+Spen Croft,53.83140673,-1.603846939,Alcoholic beverages,125
+St James Hospital,53.80287564,-1.524367231,Catering services,126
+Stocks Hill Hub,53.797,-1.5868,Coffee and tea,127
+Suffolk Court,53.86657676,-1.684693575,Gourmet foods,128
+Swarcliffe Community Centre,53.81981575,-1.443455049,Specialty and miscellaneous food stores,129
+Housing Leeds Swarcliffe,53.82291049,-1.442839026,Restaurant,130
+Temple Newsham Golf club,53.79103106,-1.472663999,Tobacco,131
+Thwaite Mills,53.77623385,-1.504032016,Vitamins and supplements,132
+Tropical World Roundhay Park,53.84051168,-1.505093336,Florist,133
+West Yorkshire Joint Services,53.74779566,-1.625783801,"Gift, card, novelty, and souvenir shops",134
+West Yorkshire History Centre,53.67973711,-1.491534595,Gourmet foods,135
+"Westgate 4th, 5th and 6th Floors",53.79958123,-1.551024079,Nursery plants and flowers,136
+Wetherby One Stop Centre,53.92993563,-1.388537049,Party supplies,137
+Wetherby Childrens Centre,53.92882586,-1.380358019,Government services (not elsewhere classified),138
+Wetherby Health Centre,53.92835653,-1.381341285,Drugstore (excluding prescription drugs),139
+Wetherby Leisure Centre,53.92600385,-1.389490604,Drugstore (including prescription drugs),140
+Wetherby Library and Tourist Information Centre,53.92867648,-1.387554691,Dental care,142
+Whinmoor Library,53.83711794,-1.455219436,Medical care,143
+Hyde Park Surgery,53.80678027,-1.567647114,Medical equipment and supplies,144
+Housing Leeds Wortley,53.79608453,-1.616153922,Vision care,145
+Wykebeck Valley Road Day Centre,53.80671741,-1.487641399,Vitamins and supplements,146
+Yeadon Library and One Stop Centre,53.86607667,-1.684114752,Antiques,147
+Yeadon Community Health Centre,53.86522254,-1.684020117,Appliances,148
+Yeadon Tarn,53.86969643,-1.673554459,Art dealers and galleries,149
+Leeds YOS,53.77843262,-1.533616909,Bed and bath,150
+Spring Gardens Home for Older People,53.90079921,-1.709257321,Construction material,151
+Temple Newsham House,53.78434008,-1.459725976,"Drapery, window covering, and upholstery",152
+The Green Home for Older People,53.81961898,-1.460222335,Exterminating and disinfecting services,153
+Leeds City Council Fleet Services,53.79947442,-1.510948539,"Fireplace, and fireplace screens",154
+Tribeca House,53.81019101,-1.528548479,Furniture,155
+Vale Circles,53.7759859,-1.543244958,Garden supplies,156
+Westfield Chambers,53.78388613,-1.598433018,"Glass, paint, and wallpaper",157
+Woodsley Green Skills Centre,53.80744189,-1.56672895,Hardware and tools,158
+Suffolk Court Yeadon Extra Care,53.86658244,-1.683818689,Home decor,159
+Beeston Road Adult Social Care,53.78098315,-1.553115964,Housewares,160
+Holbeck and City Childrens Centre,53.78137606,-1.547222972,Kitchenware,161
+Hunslet Hall,53.78184527,-1.547688961,Landscaping,162
+Hunslet Childrens Centre,53.77736941,-1.529058439,Rugs and carpets,163
+Calverlands Day Centre,53.84069579,-1.640251746,Security and surveillance equipment,164
+Assisted Living Leeds,53.78950753,-1.530461108,Swimming pools and spas,165
+Knowsthorpe Gate,53.78482256,-1.501115352,Charity,166
+Cross Heath Grove IL,53.7713,-1.5749,Political,167
+Easdale Childrens Home,53.81927877,-1.470190788,Religious,168
+Inner East Cluster Family Resource Centre,53.80165545,-1.52768626,Other,169
+Enterprise House,53.7981437,-1.550734605,Personal,170
+Farfield Drive Independent Living Centre,53.8106,-1.6788,Educational,171
+West Leeds Contact Centre,53.82272405,-1.593677382,Medication and supplements,172
+Frederick Hurdle Day Centre,53.816994,-1.532117,"Pet shops, pet food, and supplies",173
+West Leeds Family Resource Centre,53.81806023,-1.630574118,Specialty or rare pets,174
+Mears Office-Great Eastern House,53.7717,-1.5171,Veterinary services,175
+Hawksworth Wood community Association,53.8287,-1.616,Membership services,176
+Henshaw Lane Bin Depot,53.85859136,-1.686739769,Merchandise,177
+Killingbeck Court,53.81270236,-1.46924901,Personal,178
+Lanshaw Childrens Home,53.7512247,-1.529682994,Chemicals and allied products,179
+Lazer Childrens Centre,53.81066912,-1.606621027,Department store,180
+Lingfield Childrens Home,53.84892408,-1.547254762,Discount store,181
+Little London Childrens Centre,53.80882523,-1.540025711,Durable goods,182
+Lovell Park Hub,53.80570239,-1.53671205,Non-durable goods,183
+Meanwood Children's Centre,53.82439059,-1.547124028,Used and secondhand store,184
+Middleton Under 3 Children Centre,53.7410816,-1.548136247,Variety store,185
+Laurel Bank Day Centre,53.74064694,-1.54783584,Shopping services and buying clubs,186
+Middleton Health Centre,53.7430231,-1.546650052,Career services,187
+Millshaw,53.76634616,-1.578377962,Carpentry,188
+Museum Discovery Centre,53.78874202,-1.530914254,Child care services,189
+New Bewerley Children's Centre,53.77996706,-1.546842166,Cleaning and maintenance,190
+Nowell Mount,53.80256751,-1.506956966,Commercial photography,191
+Osmondthorpe Resource Centre,53.7998107,-1.498482138,Computer and data processing services,192
+Pinfolds Childrens Centre,53.7999,-1.4659,Computer network services,193
+Potternewton Childrens Centre,53.82438021,-1.5471,Consulting services,194
+Rainbow House Children's Centre,53.81255887,-1.617056038,Courier services,195
+Ireland Wood Childrens Centre,53.85198565,-1.604666472,Dental care,196
+The Reginald Centre,53.817709,-1.5317,eCommerce services,197
+Richmond Hill NHO,53.79442603,-1.523034518,Electrical and small appliance repair,198
+Richmond House Care Home,53.80867721,-1.678724898,Entertainment,199
+Rothwell Fulfilling Lives Home for Older People,53.75605669,-1.461077145,Equipment rental and leasing services,200
+Rutland Lodge,53.82466071,-1.539861197,Event and wedding planning,201
+SEC Swillington,53.7628,-1.4149,General contractors,202
+SKiLs- Lingfield Childrens Centre,53.8491534,-1.544402682,Graphic and commercial design,203
+South Leeds Independent Centre,53.76847508,-1.556463502,Health and beauty spas,204
+Scott Hall Emergency Respite Centre,53.82438021,-1.547066472,"IDs, licenses, and passports",205
+Shannon House,53.8310751,-1.60378408,Importing and exporting,206
+Shepherds Lane Early Years Centre,53.81468427,-1.51960221,Information retrieval services,207
+Leeds Town Hall,53.80014278,-1.549834137,Landscaping and horticultural,208
+Merrion House,53.80266028,-1.545121551,Legal services and attorneys,209
