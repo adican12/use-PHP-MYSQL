@@ -212,10 +212,52 @@ CREATE TABLE `locations`(
 
 
 INSERT INTO `locations` ( `lat`, `lng`, `info`, `id`, `name`) VALUES
-( 48.175628, 16.4200, 'H - smalle rooms,free wifi', 1, 'jafa-Hotel'),
+(48.175628, 16.4200, 'H - smalle rooms,free wifi', 1, 'jafa-Hotel'),
 (31.783412,35.216902,'H - free wifi,Childrens Activities',2,'Bells-Hotel'),
 (31.782438,35.216754,'H - free wifi,Childrens Activities,Air conditioning',3,'City Center-Hotel'),
 (32.072866,34.765616,'H - free wifi,Childrens Activities,Air conditioning,Bar',4,'Bal basic-Hotel'),
 (32.983082,35.195394,'R - Druze food',5,'completely'),
 (32.050939,34.760524,'R - Cheaper, meat',6,'Vigosha'),
+(32.165313,34.823261,'M - Fashion, restaurants, bars',7,'Seven Star Mall');
+
+
+
+
+
+INSERT INTO `business` ( `category`, `couponID`, `business_name`, `bus_latitude`, `bus_longitude`) VALUES
+('Baby',1, 'Apex Centre',53.78518769, -1.543707039),
+('Beauty and fragrances',2,'St George House',53.80084414,-1.550266385),
+('Books and magazines',3,'Leeds Civic Hall',53.80226965,-1.548494218),
+('Computers',4,'Carriageworks Theatre',53.80122324,-1.547895253),
+('Education',5,'Garforth Library and One Stop Centre',53.79191339,-1.388125926),
+('Government',6,'Abbey House Museum',53.82238406,-1.607118964),
+('Toys and hobbies',7,'Aberfield Gate Housing Office (BITMO)',53.7567338,-1.527326286),
+('Travel',8,'Acorn Lodge Childrens Unit',53.80147842,1.58962661),
+('Audio books',9,'Adams Court',53.79056567,-1.568253994),
+('Advertising',10,'Aireborough Leisure Centre',53.87262861,-1.707903028),
+('Clothing',11,'Ardsley and Tingley',53.72558195,-1.550794692),
+('Furniture',12,'The Arium',53.8393213,-1.550794692),
+('Food retail and service',13,'The Arium',53.8393213,-1.43424998),
+('Magazines',14,'Armley Moor Early Years Centre',53.79607605,-1.593990314),
+('Educational services',15,'Armley Leisure Centre',53.79576747,-1.591446417),
+('Marketing',16,'Armley One Stop Centre and Library',53.79712966,-1.588046426),
+('Government',17,'Abbey House Museum',53.82238406,-1.607118964),
+('Art',18,'Leeds Art Gallery',53.79996232,-1.548108697),
+('Makeup and cosmetics',19,'Artemis',53.78904976,-1.551485658),
+('Audio books',20,'Farnley Hall',53.78744697,-1.627525187),
+('Digital content',21,'Barleyfields Community Centre',53.93133555,-1.388850588),
+('Government',22,'Abbey House Museum',53.82238406,-1.607118964),
+('Government',23,'Abbey House Museum',53.82238406,-1.607118964),
+('Government',24,'Abbey House Museum',53.82238406,-1.607118964),
+('Government',25,'Abbey House Museum',53.82238406,-1.607118964),
+('Government',26,'Abbey House Museum',53.82238406,-1.607118964),
+('Government',27,'Abbey House Museum',53.82238406,-1.607118964),
+('Government',28,'Abbey House Museum',53.82238406,-1.607118964),
+('Government',29,'Abbey House Museum',53.82238406,-1.607118964),
+('Government',30,'Abbey House Museum',53.82238406,-1.607118964),
+('Government',31,'Abbey House Museum',53.82238406,-1.607118964),
+('Government',32,'Abbey House Museum',53.82238406,-1.607118964),
+('Government',33,'Abbey House Museum',53.82238406,-1.607118964),
+('Government',34,'Abbey House Museum',53.82238406,-1.607118964),
+('Government',35,'Abbey House Museum',53.82238406,-1.607118964),
 (32.165313,34.823261,'M - Fashion, restaurants, bars',7,'Seven Star Mall');
