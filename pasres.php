@@ -17,6 +17,7 @@ if (($handle = fopen("business.csv", "r")) !== FALSE) {
         echo $data[1]."<br>";
         echo $data[2]."<br>";
         echo $data[3]."<br>";
+        echo $data[4]."<br>";
 
     }
     fclose($handle);
