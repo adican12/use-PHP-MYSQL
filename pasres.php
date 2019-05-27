@@ -18,6 +18,11 @@ if (($handle = fopen("business.csv", "r")) !== FALSE) {
         $bus_name = $data[0];
         $bus_lat = $data[1];
         $bus_long = $data[2];
+        echo $catgory."<br>";
+        echo $copunID."<br>";
+        echo $bus_name."<br>";
+        echo $bus_lat."<br>";
+        echo $bus_long."<br>";
         $sql = "INSERT INTO `business` ( `category`, `couponID`, `business_name`, `bus_latitude`, `bus_longitude`) VALUES
         ('$catgory','$copunID', '$bus_name','$bus_lat', '$bus_long');";
         if($conn->query($sql) === false) {
