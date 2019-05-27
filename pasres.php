@@ -8,6 +8,7 @@ if (($handle = fopen("business.csv", "r")) !== FALSE) {
         $row++;
         for ($c=0; $c < $num; $c++) {
             echo $data[$c] . "<br />\n";
+            echo $data['Name'];
         }
     }
     fclose($handle);
