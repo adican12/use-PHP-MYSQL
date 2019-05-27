@@ -10,6 +10,7 @@ if (($handle = fopen("business.csv", "r")) !== FALSE) {
             // $catgory =explode(","$data);
           // echo $catgory[$c] . "<br />\n";
             echo $data[$c] . "<br />\n";
+            print_r(explode('|', $data, 4));
         }
     }
     fclose($handle);
