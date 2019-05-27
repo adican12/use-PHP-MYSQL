@@ -1,5 +1,6 @@
 <?php
 include('includes/config.php');
+
 $row = 1;
 if (($handle = fopen("business.csv", "r")) !== FALSE) {
     while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
@@ -23,8 +24,9 @@ if (($handle = fopen("business.csv", "r")) !== FALSE) {
         echo $bus_name."<br>";
         echo $bus_lat."<br>";
         echo $bus_long."<br>";
-        $sql = "INSERT INTO `business` ( `category`, `couponID`, `business_name`, `bus_latitude`, `bus_longitude`) VALUES
-        ('$catgory','$copunID', '$bus_name','$bus_lat', '$bus_long');";
+        $sql = "INSERT INTO `business` ( `category`, `couponID`, `business_name`, `bus_latitude`, `bus_longitude`)
+         VALUES ('$catgory','$copunID', '$bus_name','$bus_lat', '$bus_long');";
+         echo "after the sql querys"
         if($conn->query($sql) === TURE) {
           echo "<script type='text/javascript'>alert('INSERT INTO feedback Sucessfull!');</script>";
         } else {
