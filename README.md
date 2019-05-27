@@ -26,8 +26,8 @@ PHP User Management System is a powerful PHP script that offers a secure user ma
 * Notification
 * View Delelted Users
 * Search Users, Feedback Messages
-* Download User Excel File 
-* Sorting 
+* Download User Excel File
+* Sorting
 
 ## Wireframe
 
@@ -45,22 +45,17 @@ PHP User Management System is a powerful PHP script that offers a secure user ma
 
 * Edit Database (includes/config.php) and (admin/includes/config.php)
 
-* Login to Admin
-* Url: http://www.yourdomain.com/admin/
-* Username : admin
-* Password : 963852741
+
+
 
 ### Database Files are included in Project. (database.sql)
 
 ### Author
 
-Ajay Randhawa
 
  ## Donate
 If you appreciate that, please consider donating to the Developer.
 
-[![Donate](https://cdn.pbrd.co/images/HyQFKkP.png)](https://www.paypal.me/ajayrandhawa) 
+[![Donate](https://cdn.pbrd.co/images/HyQFKkP.png)](https://www.paypal.me/ajayrandhawa)
 
 #### Happy Open Source....
-
-
