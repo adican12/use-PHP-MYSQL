@@ -13,7 +13,6 @@ if (($handle = fopen("business.csv", "r")) !== FALSE) {
             // echo $data[$c] . "<br />\n";
 
         // }
-        echo $data[0]."<br>";
         $catgory = $data[3];
         $copunID = $data[4];
         $bus_name = $data[0];
