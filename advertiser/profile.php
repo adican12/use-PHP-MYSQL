@@ -134,6 +134,7 @@ if(isset($_POST['submit']))
 	</div>
 
 	<!-- Loading Scripts -->
+	<script src="js/const.js"></script>
 	<script src="js/jquery.min.js"></script>
 	<script src = "../config.js"></script>
 	<script src="js/bootstrap-select.min.js"></script>
@@ -157,6 +158,7 @@ if(isset($_POST['submit']))
 
 
 	<script>
+	 var mykey = const.MY_KEY;
 // 	var mykey = config.MY_KEY;
 // var secretkey = config.SECRET_KEY;
 	// this function to open a google maps , set marker and open a info window
@@ -188,7 +190,8 @@ if(isset($_POST['submit']))
 }
 
 	</script>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAcM_1-tDzj4g4wFtNBw-KEluCsxMbLscQ&callback=initMap"></script>
+
+	<script src="https://maps.googleapis.com/maps/api/js?key=mykey&callback=initMap"></script>
 	<!--
 // 	var marker_array = [];
 // 	var map,marker,info_window;

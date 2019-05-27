@@ -53,7 +53,7 @@ if($result->num_rows == 0)
 <script>
 
 function  locationMessage() {
-        var txt = confirm( location.host +  " Wants to know your location");
+        var txt = confirm( location.host +  "Wants to know your location");
         if (txt == true) {return true;} else {return false;}
 }
 

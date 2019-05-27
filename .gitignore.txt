@@ -1,1 +1,2 @@
-config.js
+*.const.js
+*.config.js
