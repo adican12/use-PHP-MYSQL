@@ -19,6 +19,7 @@ $gender=$_POST['gender'];
 $mobileno=$_POST['mobileno'];
 $usertype=$_POST['usertype'];
 $birthday=$_POST['birthday'];
+$userCategory = $_POST['category'];
 
 // if(move_uploaded_file($file_loc,$folder.$final_file))
 	// {
@@ -40,8 +41,8 @@ $sender=$email;
 /////////////////////////////////////////////////
 echo "<br>start signup<br>";
 
-$sql = "INSERT INTO `users`(`name`, `email`, `password`, `gender`, `mobile`, `image`,`user_type`, `birthday`,`status`)
-VALUES ('$name', '$email', '$password','$gender','$mobileno','$imgContent','$usertype','$birthday',1)";
+$sql = "INSERT INTO `users`(`name`, `email`, `password`, `gender`, `mobile`, `image`,`user_type`, `birthday`,`status`,`user_category`)
+VALUES ('$name', '$email', '$password','$gender','$mobileno','$imgContent','$usertype','$birthday',1,'$userCategory')";
 
 if ($conn->query($sql) === TRUE) {
 	echo "<script type='text/javascript'>alert('Registration Sucessfull!');</script>";
