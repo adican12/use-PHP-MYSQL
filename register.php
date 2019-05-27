@@ -166,9 +166,9 @@ echo " ok its work : ".$lat. " this is the lng: ".$lng;
                             </div>
 
                              <div class="form-group">
-                            <label class="col-sm-1 control-label">Avtar<span style="color:red">*</span></label>
+                            <label class="col-sm-1 control-label">Category<span style="color:red">*</span></label>
                             <div class="col-sm-5">
-                            <div><input type="file" name="image" class="form-control"></div>
+                            <div><input type="text" name="category" class="form-control" placeholder="Fashion/Restaurants/.."></div>
                             </div>
                             </div>
 
