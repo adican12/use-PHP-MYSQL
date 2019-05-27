@@ -13,10 +13,10 @@ if (($handle = fopen("business.csv", "r")) !== FALSE) {
             // echo $data[$c] . "<br />\n";
 
         // }
-        echo $data[0];
-        echo $data[1];
-        echo $data[2];
-        echo $data[3];
+        echo $data[0]."<br>";
+        echo $data[1]."<br>";
+        echo $data[2]."<br>";
+        echo $data[3]."<br>";
 
     }
     fclose($handle);
