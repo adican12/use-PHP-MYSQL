@@ -66,7 +66,7 @@ if($result->num_rows == 0)
     var longitude = position.coords.longitude;
 
     output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p>';
-
+    alert("the lat is : " + latitude + " the lon is : " + longitude);
     // var img = new Image();
     // img.src = "http://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom=13&size=300x300&sensor=false";
     //
