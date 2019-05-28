@@ -25,20 +25,20 @@ include('includes/config.php');
 // }
 // // retrieve image form database and display it on html webpage
 //
-// function displayImageFromDatabase() {
-//   $sql = "SELECT * FROM ad;";
-//   if($res=$conn->query($sql)){
-//     while($row = mysqli_fetch_assoc($res)){
-//       echo "the text is : ".$row['text']."<br> /";
-//       echo "the price is : ".$row['price']."<br> /";
-//       echo "the header is : ".$row['header']."<br> /";
-//       echo "the id is : ".$row['id']."<br> /";
-//       echo '<img height = "250px" width="250px;" src=data:image;base64'.$row['image']."<br> /";
-//     }
-//
-//   }
-// }
-// displayImageFromDatabase();
+ function displayImageFromDatabase() {
+   $sql = "SELECT * FROM ad WHERE adID =4;";
+  if($res=$conn->query($sql)){
+     while($row = mysqli_fetch_assoc($res)){
+       echo "the text is : ".$row['text']."<br> /";
+       echo "the price is : ".$row['price']."<br> /";
+       echo "the header is : ".$row['header']."<br> /";
+       echo "the id is : ".$row['id']."<br> /";
+       echo '<img height = "250px" width="250px;" src=data:image;base64'.$row['image']."<br> /";
+     }
+
+   }
+ }
+ displayImageFromDatabase();
 ?>
 
 <!DOCTYPE html>
