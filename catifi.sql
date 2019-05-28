@@ -177,12 +177,18 @@ ALTER TABLE `notification`
 
 CREATE TABLE `ad`(
 `adID` INT(11) NOT NULL AUTO_INCREMENT,
-`image` TEXT NOT NULL,
 `text` VARCHAR(50) NOT NULL,
 `price` VARCHAR(50) NOT NULL,
 `header` VARCHAR(50) NOT NULL,
-PRIMARY KEY(`adId`)
+`id` INT(11) NOT NULL,
+`image`  BLOB(1024) NOT NULL,
+PRIMARY KEY(`adId`),
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*LOAD_FILE its function to insret image to DB */
+
+INSERT INTO `ad`(`text`,`price`,`header`,`id`,`image`) VALUES
+('antique  is an item perceived as having value',10333,'The beautiful antique is now for sale',1,LOAD_FILE('newImages/Antique.jpg'));
 
 
 
