@@ -53,6 +53,6 @@ $result = $conn->query($sql);
   	echo "false";
   }
   $row3= mysqli_fetch_assoc($result);
-  echo $row3['image']."<br>";
+  echo "this is the image : ".$row3['image']."<br>";
 
 ?>
