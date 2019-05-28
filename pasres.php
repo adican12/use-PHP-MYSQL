@@ -81,7 +81,7 @@ include('includes/config.php');
   	// image file directory
   	$target = "images/".basename($image);
 
-  	$sql = "INSERT INTO images (image, image_text) VALUES ('$image', '$image_text')";
+  	$sql = "INSERT INTO `ad`(`text`,`price`,`header`,`id`,`image`) VALUES ('$image_text', 10234,'This beautiful antiques item for sale',1,'$image_text')";
   	// execute query
   	mysqli_query($db, $sql);
 
@@ -91,7 +91,7 @@ include('includes/config.php');
   		$msg = "Failed to upload image";
   	}
   }
-  $result = mysqli_query($db, "SELECT * FROM images");
+  $result = mysqli_query($db, "SELECT * FROM ad");
 ?>
 <!DOCTYPE html>
 <html>
