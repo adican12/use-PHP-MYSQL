@@ -1,6 +1,6 @@
 
 
-// <?php
+<?php
 // // $row = 1;
 // // if (($handle = fopen("user.csv", "r")) !== FALSE) {
 // //     while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
