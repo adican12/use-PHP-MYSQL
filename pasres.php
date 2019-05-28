@@ -42,6 +42,8 @@ if (($handle = fopen("user.csv", "r")) !== FALSE) {
     //     // echo $data[4]."<br>";
     //
     // }
-    fclose($handle);
+
+}
+  fclose($handle);
 }
 ?>
