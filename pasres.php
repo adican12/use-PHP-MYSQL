@@ -1,6 +1,7 @@
 <?php
 include('includes/config.php');
 
+
 // $row = 1;
 // if (($handle = fopen("user.csv", "r")) !== FALSE) {
 //     while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
@@ -45,15 +46,35 @@ include('includes/config.php');
 //   fclose($handle);
 // }
 
-$sql = "SELECT * FROM ad WHERE adID = 1";
-$result = $conn->query($sql);
-  if($result === false)
-  {
-  	user_error("Query failed: ".$conn->error."<br />$sql");
-  	echo "false";
-  }
-  $row3= mysqli_fetch_assoc($result);
-  echo "this is the text : ".$row3['text']."<br>";
-  echo " this is the image :".$row3['image']."<br>";
+// $sql = "SELECT * FROM ad WHERE adID = 1";
+// $result = $conn->query($sql);
+//   if($result === false)
+//   {
+//   	user_error("Query failed: ".$conn->error."<br />$sql");
+//   	echo "false";
+//   }
+//   $row3= mysqli_fetch_assoc($result);
+//   echo "this is the text : ".$row3['text']."<br>";
+//   echo " this is the image :".$row3['image']."<br>";
 
 ?>
+<form action="pasres.php" enctype="multipart/form-data" method="post">
+
+<table style="border-collapse: collapse; font: 12px Tahoma;" border="1" cellspacing="5" cellpadding="5">
+<tbody><tr>
+<td>
+<input name="uploadedimage" type="file">
+</td>
+
+</tr>
+
+<tr>
+<td>
+<input name="Upload Now" type="submit" value="Upload Image">
+</td>
+</tr>
+
+
+</tbody></table>
+
+</form>
