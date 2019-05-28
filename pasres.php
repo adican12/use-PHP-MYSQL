@@ -21,7 +21,7 @@ if (($handle = fopen("user.csv", "r")) !== FALSE) {
         $user_type = $data[6];
         $image = $data[7];
         $birthday = $data[8];
-        $status = $data[9];
+        $status = intval($data[9]);
         $user_category = $data[10];
 
         // $at = floatval ($data[1]);
