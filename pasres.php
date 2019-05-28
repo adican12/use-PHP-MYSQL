@@ -25,7 +25,6 @@ include('includes/config.php');
 // }
 // // retrieve image form database and display it on html webpage
 //
- function displayImageFromDatabase() {
    $sql = "SELECT * FROM ad WHERE adID =4;";
   if($res=$conn->query($sql)){
      while($row = mysqli_fetch_assoc($res)){
@@ -37,8 +36,6 @@ include('includes/config.php');
      }
 
    }
- }
- displayImageFromDatabase();
 ?>
 
 <!DOCTYPE html>
