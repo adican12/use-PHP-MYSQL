@@ -55,7 +55,7 @@ if (($handle = fopen("user.csv", "r")) !== FALSE) {
 
     }
 
-}
   fclose($handle);
 }
+
 ?>
