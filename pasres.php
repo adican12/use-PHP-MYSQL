@@ -54,5 +54,5 @@ $result = $conn->query($sql);
   }
   $row3= mysqli_fetch_assoc($result);
   echo $row3['image']."<br>";
-}
+
 ?>
