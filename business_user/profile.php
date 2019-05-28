@@ -202,7 +202,7 @@ chart.draw(data, options);
 }
 </script>
 <?php
-$sql = "SELECT COUNT(birthday) FROM users WHERE birthday BETWEEN '1989-12-01' AND '1999-12-01'";
+$sql = "SELECT COUNT(birthday) FROM users WHERE birthday BETWEEN '1989/12/01' AND '1999/12/01'";
 $result = $conn->query($sql);
 if($result === false)
 {
@@ -212,7 +212,7 @@ if($result === false)
 $row3= mysqli_fetch_assoc($result);
  //echo "print someting". $row3['COUNT(birthday)']."<br>";
 
- $sql= "SELECT COUNT(birthday) FROM users WHERE birthday BETWEEN '1979-12-01' AND '1989-12-01'";
+ $sql= "SELECT COUNT(birthday) FROM users WHERE birthday BETWEEN '1979/12/01' AND '1989/12/01'";
  $res=$conn->query($sql);
  if(res === false)
  {
@@ -223,7 +223,7 @@ $row3= mysqli_fetch_assoc($result);
  //echo "print someting". $row4['COUNT(birthday)']."<br>";
 
 
-	 $sql= "SELECT COUNT(birthday) FROM users WHERE birthday BETWEEN '1969-12-01' AND '1979-12-01'";
+	 $sql= "SELECT COUNT(birthday) FROM users WHERE birthday BETWEEN '1969/12/01' AND '1979/12/01'";
 	 $res=$conn->query($sql);
 	 if(res === false)
 	 {
