@@ -65,78 +65,56 @@
 
 <?php
 include('includes/config.php');
-echo " inside php";
-$image = addslashes(file_get_contents($_FILES['image']['tmp_name'])); //SQL Injection defence!
-$image_name = addslashes($_FILES['image']['name']);
-$sql = "INSERT INTO `ad` (`text`,`price`,`header`,`id`,`image`) VALUES ('test',10000,'its test','1', '{$image}')";
-if (!mysql_query($sql)) { // Error handling
-    echo "Something went wrong! :(";
+if(isset($_POST['submit'])) {
+  if(getimagesize($_FILES['imagefile']['tmp_name']) == false){
+    echo "<br/> Please Select An Image,";
+  } else {
+    //declare variables
+    $image = $_FILES['imagefile']['tmp_name'];
+    $name = $_FILES['imagefile']['name'];
+    $image = base64_decode(file_get_contents(addslashes($image)));
+    //sql query
+    $sql = "INSERT INTO `ad`(`text`,`price`,`header`,`id`,`image`) VALUES ('TEST',1000,'TEST1',1,'$image')";
+    if($conn->query($sql)) {
+      echo " <br/> Image uploaded Successfully";
+    } else {
+      echo " <br/> Image Failed to uploaded";
+    }
+
+  }
+
+} else {
+  # code..
 }
-  $result = mysqli_query($dbname, "SELECT * FROM ad");
+// retrieve image form database and display it on html webpage
+
+function displayImageFromDatabase() {
+  $sql = "SELECT * FROM ad;";
+  if($res=$conn->query($sql)){
+    while($row = mysqli_fetch_assoc($res)){
+      echo "the text is : ".$row['text']."<br> /";
+      echo "the price is : ".$row['price']."<br> /";
+      echo "the header is : ".$row['header']."<br> /";
+      echo "the id is : ".$row['id']."<br> /";
+      echo '<img height = "250px" width="250px;" src=data:image;base64'.$row['image']."<br> /";
+    }
+
+  }
+}
+displayImageFromDatabase();
 ?>
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-<title>Image Upload</title>
-<style type="text/css">
-   #content{
-   	width: 50%;
-   	margin: 20px auto;
-   	border: 1px solid #cbcbcb;
-   }
-   form{
-   	width: 50%;
-   	margin: 20px auto;
-   }
-   form div{
-   	margin-top: 5px;
-   }
-   #img_div{
-   	width: 80%;
-   	padding: 5px;
-   	margin: 15px auto;
-   	border: 1px solid #cbcbcb;
-   }
-   #img_div:after{
-   	content: "";
-   	display: block;
-   	clear: both;
-   }
-   img{
-   	float: left;
-   	margin: 5px;
-   	width: 300px;
-   	height: 140px;
-   }
-</style>
+    <title>TRY TO UPLOAD A IMAGE</title>
 </head>
 <body>
-<div id="content">
-  <?php
-    while ($row = mysqli_fetch_array($result)) {
-      echo "<div id='img_div'>";
-      	echo "<img src='images/".$row['image']."' >";
-      	echo "<p>".$row['text']."</p>";
-      echo "</div>";
-    }
-  ?>
-  <form method="post" action="pasres.php" enctype="multipart/form-data">
-  	<input type="hidden" name="size" value="1000000">
-  	<div>
-  	  <input type="file" name="image">
-  	</div>
-  	<div>
-      <textarea
-      	id="text"
-      	cols="40"
-      	rows="4"
-      	name="image_text"
-      	placeholder="Say something about this image..."></textarea>
-  	</div>
-  	<div>
-  		<button type="submit" name="upload">POST</button>
-  	</div>
+  <form action="" method="post" enctype="multipart/form-data">
+    <input type="file" name="imagefile">
+    <br />
+    <input type="submit" name="submit" value="upload">
+
+
   </form>
-</div>
 </body>
 </html>
