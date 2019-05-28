@@ -28,11 +28,11 @@ include('includes/config.php');
    $sql = "SELECT * FROM ad WHERE adID =4;";
   if($res=$conn->query($sql)){
      while($row = mysqli_fetch_assoc($res)){
-       echo "the text is : ".$row['text']."<br> /";
-       echo "the price is : ".$row['price']."<br> /";
-       echo "the header is : ".$row['header']."<br> /";
-       echo "the id is : ".$row['id']."<br> /";
-       echo '<img height = "250px" width="250px;" src=$row['image']'.$row['image']."<br> /";
+       echo "the text is : ".$row['text']."<br> ";
+       echo "the price is : ".$row['price']."<br> ";
+       echo "the header is : ".$row['header']."<br> ";
+       echo "the id is : ".$row['id']."<br> ";
+       echo '<img height = "250px" width="250px;" src='.$row['image']."<br> ";
      }
 
    }
