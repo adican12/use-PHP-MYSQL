@@ -39,8 +39,8 @@ if (($handle = fopen("user.csv", "r")) !== FALSE) {
         echo $status."<br>";
         echo $user_category."<br>";
         // echo " after : <br>";
-        $sql = "INSERT INTO `users`(`name`, `email`, `password`, `gender`, `mobile`, `image`,`user_type`, `birthday`,`status`,`user_category`)
-        VALUES ('$name', '$email', '$password','$gender','$mobile','$image','$user_type','$birthday','$status','$user_category')";
+        $sql = "INSERT INTO `users`(`name`, `email`, `password`, `gender`, `mobile`, `image`,`user_type`,`status`,`user_category`,`birthday`)
+        VALUES ('$name', '$email', '$password','$gender','$mobile','$image','$user_type','$status','$user_category','$birthday')";
         //  // echo "after the sql querys"."<br>";
          if($conn->query($sql) === TURE) {
            echo "<script type='text/javascript'>alert('INSERT INTO feedback Sucessfull!');</script>";
