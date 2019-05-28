@@ -58,7 +58,7 @@ $result = $conn->query($sql);
   echo " this is the image :".$row3['image']."<br>";
 
 ?>
-<!-- <form action="pasres.php" enctype="multipart/form-data" method="post">
+ <form action="pasres.php" enctype="multipart/form-data" method="post">
 
 <table style="border-collapse: collapse; font: 12px Tahoma;" border="1" cellspacing="5" cellpadding="5">
 <tbody><tr>
@@ -77,4 +77,4 @@ $result = $conn->query($sql);
 
 </tbody></table>
 
-</form> -->
+</form> 
