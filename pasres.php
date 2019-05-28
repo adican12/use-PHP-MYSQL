@@ -5,20 +5,20 @@ include('includes/config.php');
 // if(isset($_POST['submit'])) {
   if(getimagesize($_FILES['imagefile']['tmp_name']) == false){
       echo "<br/> Please Select An Image,";
-  } else {}
-//     //declare variables
-//     $image = $_FILES['imagefile']['tmp_name'];
-//     $name = $_FILES['imagefile']['name'];
-//     $image = base64_decode(file_get_contents(addslashes($image)));
-//     //sql query
-//     $sql = "INSERT INTO `ad`(`text`,`price`,`header`,`id`,`image`) VALUES ('TEST',1000,'TEST1',1,'$image')";
-//     if($conn->query($sql)) {
-//       echo " <br/> Image uploaded Successfully";
-//     } else {
-//       echo " <br/> Image Failed to uploaded";
-//     }
-//
-//   }
+  } else {
+              //  declare variables
+        $image = $_FILES['imagefile']['tmp_name'];
+        $name = $_FILES['imagefile']['name'];
+        $image = base64_decode(file_get_contents(addslashes($image)));
+              //sql query
+        $sql = "INSERT INTO `ad`(`text`,`price`,`header`,`id`,`image`) VALUES ('TEST',1000,'TEST1',1,'$image')";
+        if($conn->query($sql)) {
+          echo " <br/> Image uploaded Successfully";
+       }else {
+         echo " <br/> Image Failed to uploaded";
+       }
+
+ }
 //
 // } else {
 //   # code..
