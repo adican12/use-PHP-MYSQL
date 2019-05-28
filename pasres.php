@@ -32,7 +32,7 @@ include('includes/config.php');
        echo "the price is : ".$row['price']."<br> /";
        echo "the header is : ".$row['header']."<br> /";
        echo "the id is : ".$row['id']."<br> /";
-       echo '<img height = "250px" width="250px;" src=data:image;base64'.$row['image']."<br> /";
+       echo '<img height = "250px" width="250px;" src=$row['image']'.$row['image']."<br> /";
      }
 
    }
