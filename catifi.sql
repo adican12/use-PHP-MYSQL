@@ -188,7 +188,7 @@ PRIMARY KEY(`adId`),
 /*LOAD_FILE its function to insret image to DB */
 
 INSERT INTO `ad`(`text`,`price`,`header`,`id`,`image`) VALUES
-('antique  is an item perceived as having value',10333,'The beautiful antique is now for sale',1,LOAD_FILE('newImages/Antique.jpg'));
+('antique  is an item perceived as having value',10333,'The beautiful antique is now for sale',1,'newImages/Antique.jpg');
 
 
 
