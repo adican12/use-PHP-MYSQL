@@ -65,32 +65,11 @@
 
 <?php
 include('includes/config.php');
-  // Create database connection
-  // $db = mysqli_connect("localhost", "root", "", "image_upload");
-
-  // Initialize message variable
-  $msg = "";
-
-  // If upload button is clicked ...
-  if (isset($_POST['upload'])) {
-  	// Get image name
-  	$image = $_FILES['image']['name'];
-  	// Get text
-  	$image_text = mysqli_real_escape_string($dbname, $_POST['image_text']);
-
-  	// image file directory
-  	$target = "images/".basename($image);
-
-  	$sql = "INSERT INTO `ad`(`text`,`price`,`header`,`id`,`image`) VALUES ('$image_text', 10234,'This beautiful antiques item for sale',1,'$image_text')";
-  	// execute query
-  	if($conn->query($sql) === TRUE) {
-
-  	if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
-  		$msg = "Image uploaded successfully";
-  	}else{
-  		$msg = "Failed to upload image";
-  	}
-  }
+$image = addslashes(file_get_contents($_FILES['image']['tmp_name'])); //SQL Injection defence!
+$image_name = addslashes($_FILES['image']['name']);
+$sql = "INSERT INTO `ad` (`text`,`price`,`header`,`id`,`image`) VALUES ('test',10000,'its test','1', '{$image}')";
+if (!mysql_query($sql)) { // Error handling
+    echo "Something went wrong! :(";
 }
   $result = mysqli_query($dbname, "SELECT * FROM ad");
 ?>
