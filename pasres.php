@@ -1,7 +1,7 @@
 
 <?php
 include('includes/config.php');
- echo " befor if";
+ //echo " befor if";
 // if(isset($_POST['submit'])) {
   if(getimagesize($_FILES['imagefile']['tmp_name']) == false){
       echo "<br/> Please Select An Image,";
@@ -34,7 +34,8 @@ include('includes/config.php');
        echo "the price is : ".$row['price']."<br> ";
        echo "the header is : ".$row['header']."<br> ";
        echo "the id is : ".$row['id']."<br> ";
-       echo '<img height = "250px" width="250px;" src='.$row['image']."<br> ";
+       // echo '<img height = "250px" width="250px;" src='.$row['image']."<br> ";
+       echo '<img  height="250px" "width=250px" src="' . $row['image'] . '" alt="error"."<br> ">'
      }
 
    }
