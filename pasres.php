@@ -27,17 +27,17 @@ if (($handle = fopen("user.csv", "r")) !== FALSE) {
         // $at = floatval ($data[1]);
         // $bus_long = floatval ($data[2]);
 
-        echo $id."<br>";
-        echo $name."<br>";
-        echo $email."<br>";
-        echo $password."<br>";
-        echo $gender."<br>";
-        echo $mobile."<br>";
-        echo $user_type."<br>";
-        echo $image."<br>";
-        echo $birthday."<br>";
-        echo $status."<br>";
-        echo $user_category."<br>";
+        echo "the id is: ".$id."<br>";
+        echo "the name is: ".$name."<br>";
+        echo "the email is: ".$email."<br>";
+        echo "the password is: ".$password."<br>";
+        echo "the gender is: ".$gender."<br>";
+        echo "the moblie is: ".$mobile."<br>";
+        echo "the user Type is: ".$user_type."<br>";
+        echo "the image is: ".$image."<br>";
+        echo "the birthday is: ".$birthday."<br>";
+        echo "the status is: ".$status."<br>";
+        echo "the user Category is: ".$user_category."<br>";
         // echo " after : <br>";
         $sql = "INSERT INTO `users`(`name`, `email`, `password`, `gender`, `mobile`, `image`,`user_type`,`status`,`user_category`,`birthday`)
         VALUES ('$name', '$email', '$password','$gender','$mobile','$image','$user_type','$status','$user_category','$birthday')";
