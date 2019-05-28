@@ -3,9 +3,9 @@
 include('includes/config.php');
  echo " befor if";
 // if(isset($_POST['submit'])) {
-//   if(getimagesize($_FILES['imagefile']['tmp_name']) == false){
-//     echo "<br/> Please Select An Image,";
-//   } else {
+  if(getimagesize($_FILES['imagefile']['tmp_name']) == false){
+      echo "<br/> Please Select An Image,";
+  } else {
 //     //declare variables
 //     $image = $_FILES['imagefile']['tmp_name'];
 //     $name = $_FILES['imagefile']['name'];
