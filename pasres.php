@@ -65,6 +65,7 @@
 
 <?php
 include('includes/config.php');
+echo " inside php";
 $image = addslashes(file_get_contents($_FILES['image']['tmp_name'])); //SQL Injection defence!
 $image_name = addslashes($_FILES['image']['name']);
 $sql = "INSERT INTO `ad` (`text`,`price`,`header`,`id`,`image`) VALUES ('test',10000,'its test','1', '{$image}')";
