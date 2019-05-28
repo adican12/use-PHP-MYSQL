@@ -119,7 +119,7 @@ if (!mysql_query($sql)) { // Error handling
       echo "</div>";
     }
   ?>
-  <form method="POST" action="pasres.php" enctype="multipart/form-data">
+  <form method="post" action="pasres.php" enctype="multipart/form-data">
   	<input type="hidden" name="size" value="1000000">
   	<div>
   	  <input type="file" name="image">
