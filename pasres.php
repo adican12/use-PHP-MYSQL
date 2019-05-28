@@ -76,14 +76,14 @@ include('includes/config.php');
   	// Get image name
   	$image = $_FILES['image']['name'];
   	// Get text
-  	$image_text = mysqli_real_escape_string($db, $_POST['image_text']);
+  	$image_text = mysqli_real_escape_string($dbname, $_POST['image_text']);
 
   	// image file directory
   	$target = "images/".basename($image);
 
   	$sql = "INSERT INTO `ad`(`text`,`price`,`header`,`id`,`image`) VALUES ('$image_text', 10234,'This beautiful antiques item for sale',1,'$image_text')";
   	// execute query
-  	mysqli_query($db, $sql);
+  	\if($conn->query($sql) === TRUE) {
 
   	if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
   		$msg = "Image uploaded successfully";
@@ -91,7 +91,8 @@ include('includes/config.php');
   		$msg = "Failed to upload image";
   	}
   }
-  $result = mysqli_query($db, "SELECT * FROM ad");
+}
+  $result = mysqli_query($dbname, "SELECT * FROM ad");
 ?>
 <!DOCTYPE html>
 <html>
