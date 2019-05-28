@@ -83,7 +83,7 @@ include('includes/config.php');
 
   	$sql = "INSERT INTO `ad`(`text`,`price`,`header`,`id`,`image`) VALUES ('$image_text', 10234,'This beautiful antiques item for sale',1,'$image_text')";
   	// execute query
-  	\if($conn->query($sql) === TRUE) {
+  	if($conn->query($sql) === TRUE) {
 
   	if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
   		$msg = "Image uploaded successfully";
