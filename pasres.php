@@ -12,12 +12,14 @@ include('includes/config.php');
         $image = base64_decode(file_get_contents(addslashes($image)));
               //sql query
         $sql = "INSERT INTO `ad`(`text`,`price`,`header`,`id`,`image`) VALUES ('TEST',1000,'TEST1',1,'$image')";
+        if($image == ''){
+          echo " its not good ematy image";
         if($conn->query($sql)) {
-          echo " <br/> Image uploaded Successfully";
+          echo "  Image uploaded Successfully <br>";
        }else {
          echo " <br/> Image Failed to uploaded";
        }
-
+}
  }
 //
 // } else {
