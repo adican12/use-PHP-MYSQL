@@ -1,7 +1,7 @@
 
 <?php
-// include('includes/config.php');
-// echo " befor if";
+include('includes/config.php');
+ echo " befor if";
 // if(isset($_POST['submit'])) {
 //   if(getimagesize($_FILES['imagefile']['tmp_name']) == false){
 //     echo "<br/> Please Select An Image,";
