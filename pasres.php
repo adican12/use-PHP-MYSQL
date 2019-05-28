@@ -35,7 +35,8 @@ include('includes/config.php');
        echo "the header is : ".$row['header']."<br> ";
        echo "the id is : ".$row['id']."<br> ";
        // echo '<img height = "250px" width="250px;" src='.$row['image']."<br> ";
-       echo "<img src='".$row['image']."' >";
+       // echo "<img src='".$row['image']."' >";
+       echo "<img src='newImage/".$row['image']."' />";
        //echo '<img  height="250px" "width=250px" src="' . $row['image'] . '" alt="error"';
      }
 
