@@ -46,7 +46,7 @@ include("php/config.php");
         echo "Sorry, your file was not uploaded.";
     // if everything is ok, try to upload file
     } else {
-        if (file_put_contents($_FILES["file"]["tmp_name"], $target_file)) {
+        if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
             echo "The file ". basename( $_FILES["file"]["name"]). " has been uploaded.";
         } else {
             echo "Sorry, there was an error uploading your file.";
