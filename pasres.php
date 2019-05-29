@@ -1,27 +1,16 @@
 
 <?php
-namespace Google\Cloud\Storage;
-  use Google\Cloud\Core\ArrayTrait;
-  use Google\Cloud\Core\Exception\GoogleException;
-  use Google\Cloud\Core\Exception\NotFoundException;
-  use Google\Cloud\Core\Exception\ServiceException;
-  use Google\Cloud\Core\Iam\Iam;
-  use Google\Cloud\Core\Iterator\ItemIterator;
-  use Google\Cloud\Core\Iterator\PageIterator;
-  use Google\Cloud\Core\Timestamp;
-  use Google\Cloud\Core\Upload\ResumableUploader;
-  use Google\Cloud\Core\Upload\StreamableUploader;
-  use Google\Cloud\PubSub\Topic;
-  use Google\Cloud\Storage\Connection\ConnectionInterface;
-  use Google\Cloud\Storage\Connection\IamBucket;
-  use Google\Cloud\Storage\SigningHelper;
-  use GuzzleHttp\Psr7;
-  use Psr\Http\Message\StreamInterface;
+/*--------------------includes--------------*/
+require 'vendor/autoload.php';
+use Google\Cloud\Storage\StorageClient;
 
-  include("php/config.php");
+include("php/config.php");
   if(isset($_FILES['file'])) {
     $file = $_FILES['file'];
+    $storage = new StorageClient();
+    $storage->registerStreamWrapper();
 
+    $contents = file_get_contents('gs://catifi1/newImages/{$file}');
     // File Details
 
     //name of file
@@ -35,8 +24,9 @@ namespace Google\Cloud\Storage;
 
     try {
 
-    } catch(Exception $e) {
-      die("There was an error uploading that file.");
+
+    } catch(GoogleException $ex) {
+      $ex->getMessage();
     }
   }
 ?>
