@@ -151,6 +151,10 @@ if(isset($_REQUEST['unconfirm']))
   color: grey;
   font-size: 22px;
 }
+#demo {
+	padding: 2px 16px;
+	border: 2px solid black;
+}
 .card p{}
 
 .card button {
@@ -275,6 +279,7 @@ if(mysqli_num_rows($result) > 0)
 		<input type="text" name="price" value="price"><br>
 		<input type="text" name="text" value="text"><br>
 		<input type="text" name="header" value="header"><br>
+		<input type = "number" name="user_id" value="user id"><br>
 		<button name="submit" type="submit">Click me!</button>
 	</form>
 </div>
@@ -297,10 +302,10 @@ if(mysqli_num_rows($result) > 0)
   <p class="price" id="price">$price</p>
   <p id="details">Some text about the jeans..</p>
 </div>
-<div id="demo"</div>
+<div id="demo"></div>
 	<?php
 
-	$sql = "SELECT * FROM ad WHERE adID =1";
+	$sql = "SELECT MAX(user_id) FROM ad;";
 	$result = $conn->query($sql);
 	if($result === false)
 	{
@@ -356,6 +361,8 @@ function changeDetails(){
 	var x = "<?php echo $row['image'];?>";
  	console.log(x);
   document.getElementById("img").src= x;
+	var user_id = <?php echo $row['MAX(user_id)'];?>;
+	document.getElementById('demo').innerHTML = "the id of the campaing is " + user_id;
 
 }/*
 function changePrice(){

@@ -29,12 +29,13 @@ $image= $_POST['image'];
 $price= $_POST['price'];
 $text = $_POST['text'];
 $header= $_POST['header'];
+$user_id= $_POST['user_id'];
+$image = 1;
 
 
 
-
-$sql = "INSERT INTO ad (`image`, `price`,`text`,`header`)
-VALUES ('$image', '$price', '$text','$header')";
+$sql = "INSERT INTO `ad`(`text`,`price`,`header`,`user_id`,`image`)
+VALUES('$text','$price','$header','$user_id','$image');";
 
 if ($conn->query($sql) === TRUE) {
     //echo "New record $text user  created successfully";
