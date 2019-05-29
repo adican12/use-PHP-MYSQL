@@ -204,7 +204,7 @@ if(isset($_REQUEST['unconfirm']))
 						<!-- Zero Configuration Table -->
 						<div class="panel panel-default">
 							<div class="panel-heading">Create banners</div>
-							<div class="panel-body">
+							<div class="panel-body" id="panel-body">
 							<?php if($error){?><div class="errorWrap" id="msgshow"><?php echo htmlentities($error); ?> </div><?php }
 				else if($msg){?><div class="succWrap" id="msgshow"><?php echo htmlentities($msg); ?> </div><?php }?>
 				<form method="post">
@@ -352,7 +352,7 @@ if(mysqli_num_rows($result) > 0)
 	<script>
 	function getTheLastId(){
 		var x = "<?php echo $row1['MAX(user_id)'];?>";
-		document.getElementById("inside-panel-body").innerHTML= " you banner ID is : " + x + " plese save it for the campaign";
+		document.getElementById("panel-body").innerHTML= " you banner ID is : " + x + " plese save it for the campaign";
 	}
 	</script>
 <script type="text/javascript">
