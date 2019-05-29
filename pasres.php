@@ -10,6 +10,7 @@ include("php/config.php");
     $target_dir = "gs://catifi1/";
     $target_file = $target_dir . basename($_FILES["file"]["name"]);
     $uploadOk = 1;
+    $tempFile = fopen($target_dir, "w") or die("Error: Unable to open file.");
     $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
     $ex = explode('.',$target_file);
     print_r($ex);
