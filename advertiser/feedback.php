@@ -213,7 +213,7 @@ if(isset($_REQUEST['unconfirm']))
 					<div class="col-sm-5">
 					<input type="text" name="email" class="form-control"  placeholder="user@gmail.com" required>
 					</div>
-					<button type="submit" onclick="getTheLastId()" class="btn btn-primary">Click me to get the banner ID</button>
+					<button type="submit" onclick="getTheLastId()" class="btn btn-primary" name="submitOne">Click me to get the banner ID</button>
 				</form>
 
 								<!-- <table id="zctb" class="display table table-striped table-bordered table-hover" cellspacing="0" width="100%">
@@ -318,7 +318,7 @@ if(mysqli_num_rows($result) > 0)
 </div>
 <div id="demo"></div>
 	<?php
-
+if(isset($_POST['submitOne'])){
 	$email = $_POST['email'];
 	echo $email;
 	$sql = "SELECT MAX(user_id),email FROM ad,users WHERE email ='$email';";
@@ -329,7 +329,9 @@ if(mysqli_num_rows($result) > 0)
 		 echo "false";
 	}
 		$row1= mysqli_fetch_assoc($result);
-
+} else {
+	echo "___ERROR___SOMETING__BAD__HAPPEND <br>";
+}
 	// $query= "SELECT * FROM images";
 	// $res = $conn->query($query);
 	// if($res === false){
@@ -352,7 +354,8 @@ if(mysqli_num_rows($result) > 0)
 	<script>
 	function getTheLastId(){
 		var x = "<?php echo $row1['MAX(user_id)'];?>";
-		document.getElementById("panel-body").innerHTML= " you banner ID is : " + x + " plese save it for the campaign";
+		document.getElementById("panel-body").style.textAlign = "center";
+		document.getElementById("panel-body").innerHTML= " Your banner ID is:  " + x + " Please keep your ID in order to use a platform for the campaign";
 	}
 	</script>
 <script type="text/javascript">
