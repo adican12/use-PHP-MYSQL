@@ -169,9 +169,8 @@ if(isset($_REQUEST['unconfirm']))
 .card button:hover {
   opacity: 0.7;
 }
-.myButton {border-radius: 30px;font-size: 16px; box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);background-color:#F4F6F9;color:black;margin-left: 45px;}
-.myButton:hover {
-color:#fff;background-color: black;}
+.myButton {border-radius: 30px;font-size: 16px; box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);background-color:#F4F6F9;color:black;margin-left:85px;}
+.myButton:hover {color:#fff;}
 .myButton:active {}
 .inside-panel-body{ border: none;
 outline: 0;
