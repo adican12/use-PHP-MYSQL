@@ -322,7 +322,7 @@ if(mysqli_num_rows($result) > 0)
 
 	$email = $_POST['email'];
 	echo $email;
-	$sql = "SELECT MAX(user_id)FROM ad";
+	$sql = "SELECT MAX(user_id),email FROM ad,users WHERE email=$email; ";
 	$result = $conn->query($sql);
 	if($result === false)
 	{
@@ -331,7 +331,6 @@ if(mysqli_num_rows($result) > 0)
 	}
 		$row1= mysqli_fetch_assoc($result);
 
-	echo "___ERROR___SOMETING__BAD__HAPPEND <br>";
 
 	// $query= "SELECT * FROM images";
 	// $res = $conn->query($query);
