@@ -331,7 +331,7 @@ if(mysqli_num_rows($result) > 0)
 	}
 		$row1= mysqli_fetch_assoc($result);
 } else {
-	echo "ERROR"
+	echo "ERROR";
 }
 
 	// $query= "SELECT * FROM images";
