@@ -320,6 +320,7 @@ if(mysqli_num_rows($result) > 0)
 	<?php
 
 	$email = $_POST['email'];
+	echo $email;
 	$sql = "SELECT MAX(user_id),email FROM ad,users WHERE email ='$email';";
 	$result = $conn->query($sql);
 	if($result === false)
