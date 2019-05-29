@@ -235,7 +235,7 @@ if(isset($_REQUEST['unconfirm']))
 						<!-- Zero Configuration Table -->
 						<div class="panel panel-default">
 							<div class="panel-heading">Create banners</div>
-							<div class="panel-body"> <button type="submit" onclick="getTheLastId()" class="myButton">Click me to get the banner ID</button>
+							<div class="panel-body" id="panel-body"> <button type="submit" onclick="getTheLastId()" class="myButton">Click me to get the banner ID</button>
 							<?php if($error){?><div class="errorWrap" id="msgshow"><?php echo htmlentities($error); ?> </div><?php }
 				else if($msg){?><div class="succWrap" id="msgshow"><?php echo htmlentities($msg); ?> </div><?php }?>
 								<!-- <table id="zctb" class="display table table-striped table-bordered table-hover" cellspacing="0" width="100%">
