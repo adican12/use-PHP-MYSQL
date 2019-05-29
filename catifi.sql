@@ -180,10 +180,14 @@ CREATE TABLE `ad`(
 `text` VARCHAR(50) NOT NULL,
 `price` VARCHAR(50) NOT NULL,
 `header` VARCHAR(50) NOT NULL,
-`id` INT(11) NOT NULL,
+`user_id` INT(11) NOT NULL,
 `image`  BLOB(1024) NOT NULL,
 PRIMARY KEY(`adId`),
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- ALTER TABLE `ad`
+--   ADD CONSTRAINT `user_id` FOREIGN KEY (`id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
 
 /*LOAD_FILE its function to insret image to DB */
 
