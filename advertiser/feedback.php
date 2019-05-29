@@ -206,7 +206,7 @@ if(isset($_REQUEST['unconfirm']))
 						<div class="panel panel-default">
 							<div class="panel-heading">Create banners</div>
 							<div class="panel-body">
-								<div class="inside-panel-body" id="inside-panel-body"><button type="submit" onclick="getTheLastId()" class="myButton">Click me to get the banner ID</button></div>
+								<div class="inside-panel-body" id="inside-panel-body"><button type="button" onclick="getTheLastId()" class="myButton">Click me to get the banner ID</button></div>
 							<?php if($error){?><div class="errorWrap" id="msgshow"><?php echo htmlentities($error); ?> </div><?php }
 				else if($msg){?><div class="succWrap" id="msgshow"><?php echo htmlentities($msg); ?> </div><?php }?>
 								<!-- <table id="zctb" class="display table table-striped table-bordered table-hover" cellspacing="0" width="100%">
