@@ -23,7 +23,7 @@
 <form action="" method="post" enctype="multipart/form-data">
     Select image to upload:
     <input type="file" name="file" id="fileToUpload">
-    <input type="submit" value="UploadImage" name="submit">
+    <input type="submit" value="" name="submit">
 </form>
 
 </body>
