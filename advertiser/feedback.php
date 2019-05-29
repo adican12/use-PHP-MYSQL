@@ -170,7 +170,7 @@ if(isset($_REQUEST['unconfirm']))
   opacity: 0.7;
 }
 .myButton {border-radius: 30px;font-size: 16px; box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);background-color:#F4F6F9;color:black;margin-right:120px;}
-.myButton:hover {color:#fff;}
+.myButton:hover {color:#3e8e41;}
 .myButton:active {}
 .inside-panel-body{
   max-width: 300px;
