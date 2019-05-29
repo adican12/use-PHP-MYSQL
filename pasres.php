@@ -12,13 +12,13 @@ include("php/config.php");
     $uploadOk = 1;
     //$tempFile = fopen($target_dir, "w") or die("Error: Unable to open file.");
     $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-    $ex = explode('.',$target_file);
-    print_r($ex);
+    //$ex = explode('.',$target_file);
+    //print_r($ex);
     // Check if image file is a actual image or fake image
     if(isset($_POST["submit"])) {
         $check = getimagesize($_FILES["file"]["tmp_name"]);
         if($check !== false) {
-            echo "File is an image - " . $check["mime"] . ".";
+            echo "File is an image - " . $check["mime"] . ".<br>";
             $uploadOk = 1;
         } else {
             echo "File is not an image.<br>";
