@@ -10,6 +10,7 @@ include("php/config.php");
     $target_dir = "gs://catifi1/newimages/";
     $target_file = $target_dir . basename($_FILES["file"]["name"]);
     $uploadOk = 1;
+    $name=$_FILES["file"]["name"];
     //$tempFile = fopen($target_dir, "w") or die("Error: Unable to open file.");
     $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
     //$ex = explode('.',$target_file);
@@ -18,7 +19,7 @@ include("php/config.php");
     if(isset($_POST["submit"])) {
         $check = getimagesize($_FILES["file"]["tmp_name"]);
         if($check !== false) {
-            echo "File is an image - " . $check["mime"] . ".<br>";
+            echo "File is an image - " . $check["mime"] . ".<br>".$name."<br>";
             $uploadOk = 1;
         } else {
             echo "File is not an image.<br>";
