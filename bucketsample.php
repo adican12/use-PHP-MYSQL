@@ -27,7 +27,7 @@
   }
   // Check file size
   if ($_FILES["fileToUpload"]["size"] > 500000) {
-    
+
       echo "Sorry, your file is too large.";
       $uploadOk = 0;
   }
@@ -52,7 +52,7 @@
 
 <h1>bucket</h1>
 
-<form action="upload.php" method="post" enctype="multipart/form-data">
+<form action="" method="post" enctype="multipart/form-data">
     Select image to upload:
     <input type="file" name="fileToUpload" id="fileToUpload">
     <input type="submit" value="Upload Image" name="submit">
