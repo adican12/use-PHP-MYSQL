@@ -1,8 +1,7 @@
 
 <?php
 /*--------------------includes--------------*/
-require 'vendor/autoload.php';
-use Google\Cloud\Storage\StorageClient;
+
 
 include("php/config.php");
 
