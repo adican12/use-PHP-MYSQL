@@ -319,7 +319,7 @@ if(mysqli_num_rows($result) > 0)
 <div id="demo"></div>
 	<?php
 
-
+	if(isset($_POST['submitOne'])){
 	$email = $_POST['email'];
 	echo "the email is :" .$email."<br>";
 	$sql = "SELECT MAX(user_id),email FROM ad,users WHERE email='$email'; ";
@@ -330,7 +330,9 @@ if(mysqli_num_rows($result) > 0)
 		 echo "false";
 	}
 		$row1= mysqli_fetch_assoc($result);
-
+} else {
+	echo "ERROR"
+}
 
 	// $query= "SELECT * FROM images";
 	// $res = $conn->query($query);
