@@ -169,6 +169,45 @@ if(isset($_REQUEST['unconfirm']))
 .card button:hover {
   opacity: 0.7;
 }
+.myButton {
+	-moz-box-shadow: 3px 4px 0px 0px #899599;
+	-webkit-box-shadow: 3px 4px 0px 0px #899599;
+	box-shadow: 3px 4px 0px 0px #899599;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffffff), color-stop(1, #f0edf0));
+	background:-moz-linear-gradient(top, #ffffff 5%, #f0edf0 100%);
+	background:-webkit-linear-gradient(top, #ffffff 5%, #f0edf0 100%);
+	background:-o-linear-gradient(top, #ffffff 5%, #f0edf0 100%);
+	background:-ms-linear-gradient(top, #ffffff 5%, #f0edf0 100%);
+	background:linear-gradient(to bottom, #ffffff 5%, #f0edf0 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f0edf0',GradientType=0);
+	background-color:#ffffff;
+	-moz-border-radius:15px;
+	-webkit-border-radius:15px;
+	border-radius:15px;
+	border:1px solid #f0cef0;
+	display:inline-block;
+	cursor:pointer;
+	color:#308296;
+	font-family:Arial;
+	font-size:17px;
+	padding:7px 25px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #a3a7d6;
+}
+.myButton:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f0edf0), color-stop(1, #ffffff));
+	background:-moz-linear-gradient(top, #f0edf0 5%, #ffffff 100%);
+	background:-webkit-linear-gradient(top, #f0edf0 5%, #ffffff 100%);
+	background:-o-linear-gradient(top, #f0edf0 5%, #ffffff 100%);
+	background:-ms-linear-gradient(top, #f0edf0 5%, #ffffff 100%);
+	background:linear-gradient(to bottom, #f0edf0 5%, #ffffff 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f0edf0', endColorstr='#ffffff',GradientType=0);
+	background-color:#f0edf0;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
 .information {margin-left:510px;margin-bottom: 10px;padding: 20px;display:none;}
 .information input{width: 30%;padding: 12px 20px;text-align: center;margin: 8px 0;}
 .information button{border-radius: 30px;font-size: 16px; box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);background-color:#F4F6F9;color:black;margin-left: 45px;}
@@ -196,7 +235,7 @@ if(isset($_REQUEST['unconfirm']))
 						<!-- Zero Configuration Table -->
 						<div class="panel panel-default">
 							<div class="panel-heading">Create banners</div>
-							<div class="panel-body"> <button type="submit" onclick="getTheLastId()" class="informatio">Click me to get the banner ID</button>
+							<div class="panel-body"> <button type="submit" onclick="getTheLastId()" class="myButton">Click me to get the banner ID</button>
 							<?php if($error){?><div class="errorWrap" id="msgshow"><?php echo htmlentities($error); ?> </div><?php }
 				else if($msg){?><div class="succWrap" id="msgshow"><?php echo htmlentities($msg); ?> </div><?php }?>
 								<!-- <table id="zctb" class="display table table-striped table-bordered table-hover" cellspacing="0" width="100%">
