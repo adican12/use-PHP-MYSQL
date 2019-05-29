@@ -383,7 +383,7 @@ document.getElementById("img").addEventListener("click", changeDetails);
 
 }
 */
-getTheLastId(){
+function getTheLastId(){
 	getElementById("panel-body").innerHTML="<?php echo $row['MAX(user_id)'];?>";
 }
 function changeDetails(){
