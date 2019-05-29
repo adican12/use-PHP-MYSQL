@@ -357,7 +357,7 @@ function changeDetails(){
 	var x = "<?php echo $row['image'];?>";
  	console.log(x);
   document.getElementById("img").src= x;
-	var user_id = <?php echo $row['MAX(user_id)'];?>
+	var user_id = <?php echo $row['MAX(user_id)'];?>;
 	document.getElementById('demo').innerHTML = "the id of the campaing is " + user_id;
 
 }/*
