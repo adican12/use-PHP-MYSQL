@@ -206,9 +206,9 @@ if(isset($_REQUEST['unconfirm']))
 							<div class="panel-heading">Create banners</div>
 							<div class="panel-body">
 								<div class="inside-panel-body" id="inside-panel-body">
-									<form action="" method="post" enctype="multipart/form-data">
-										<input type="email" placeholder="Plese enter you email user" required name="email">
-										<input type="submit" onclick="getTheLastId()" class="myButton">Click me to get the banner ID</button>
+									<form  method="post">
+										<input type="email" name="email"   placeholder="Plese enter you email user" required><br>
+										<input type="submit" onclick="getTheLastId()" class="myButton" name="sumbitOne">Click me to get the banner ID</button>
 									</form>
 							</div>
 							<?php if($error){?><div class="errorWrap" id="msgshow"><?php echo htmlentities($error); ?> </div><?php }
