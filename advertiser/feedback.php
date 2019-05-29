@@ -172,7 +172,7 @@ if(isset($_REQUEST['unconfirm']))
 .myButton {border-radius: 30px;font-size: 16px; box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);background-color:#F4F6F9;color:black;margin-left: 45px;}
 .myButton:hover {color:#fff;}
 .myButton:active {}
-.inside-panel-body{   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+.inside-panel-body{ 
   max-width: 300px;
   margin: auto;
 	margin-left: 450px;
