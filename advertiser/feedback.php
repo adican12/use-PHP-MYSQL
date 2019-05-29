@@ -213,7 +213,6 @@ if(isset($_REQUEST['unconfirm']))
 					<div class="col-sm-5">
 					<input type="text" name="email" class="form-control"  placeholder="user@gmail.com" required>
 					</div>
-					<br>
 					<button type="submit" onclick="getTheLastId()" class="btn btn-primary">Click me to get the banner ID</button>
 				</form>
 
