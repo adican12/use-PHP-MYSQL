@@ -136,6 +136,7 @@ if(isset($_POST['submit']))
 	<!-- Loading Scripts -->
 	<script src="js/constOne.js"></script>
 	<script src="js/jquery.min.js"></script>
+	<script src="js/const.js"></script>
 	<!-- <script src = "../config.js"></script> -->
 	<script src="js/bootstrap-select.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
@@ -158,7 +159,7 @@ if(isset($_POST['submit']))
 
 
 	<script>
-	 var mykey = constOne.key;
+	 var mykey = const.key;
 // 	var mykey = config.MY_KEY;
 // var secretkey = config.SECRET_KEY;
 	// this function to open a google maps , set marker and open a info window
