@@ -297,7 +297,7 @@ if(mysqli_num_rows($result) > 0)
   <p class="price" id="price">$price</p>
   <p id="details">Some text about the jeans..</p>
 </div>
-<div id="demo"</div>
+<div id="demo"></div>
 	<?php
 
 	$sql = "SELECT * FROM ad WHERE adID =1";
