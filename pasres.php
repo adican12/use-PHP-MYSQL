@@ -59,6 +59,7 @@ include("php/config.php");
 <body>
 
 <form action="" method="post" enctype="multipart/form-data">
+  <br>
     Select image to upload:
     <input type="file" name="file">
     <input type="submit" value="Upload" name="submit">
