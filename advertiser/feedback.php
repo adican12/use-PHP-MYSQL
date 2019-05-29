@@ -177,7 +177,6 @@ color:#fff;background-color: black;}
 outline: 0;
 padding: 4px;
 color: white;
-background-color: #000;
 text-align: center;
 cursor: pointer;
 width: 20%;
