@@ -322,7 +322,7 @@ if(mysqli_num_rows($result) > 0)
 if(isset($_POST['submitOne'])){
 	$email = $_POST['email'];
 	echo $email;
-	$sql = "SELECT MAX(user_id),email FROM ad,users WHERE email =$email;";
+	$sql = "SELECT MAX(user_id)FROM ad";
 	$result = $conn->query($sql);
 	if($result === false)
 	{
