@@ -151,6 +151,10 @@ if(isset($_REQUEST['unconfirm']))
   color: grey;
   font-size: 22px;
 }
+#demo {
+	padding: 2px 16px;
+	border: 2px solid black;
+}
 .card p{}
 
 .card button {
