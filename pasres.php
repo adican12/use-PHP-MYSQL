@@ -13,7 +13,7 @@
     $tmp_name =$file['tmp_name'];
     $extension = explode('.',$name);
     print_r($extension);
-    $extension = mb_strtolower(end($extension));
+    $extension = strtolower(end($extension));
   }
 ?>
 
