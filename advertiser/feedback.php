@@ -172,10 +172,7 @@ if(isset($_REQUEST['unconfirm']))
 .myButton {border-radius: 30px;font-size: 16px; box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);background-color:#F4F6F9;color:black;margin-left: 45px;}
 .myButton:hover {
 color:#fff;background-color: black;}
-.myButton:active {
-	position:relative;
-	top:1px;
-}
+.myButton:active {}
 .inside-panel-body{ border: none;
 outline: 0;
 padding: 4px;
@@ -184,7 +181,7 @@ background-color: #000;
 text-align: center;
 cursor: pointer;
 width: 20%;
-font-size: 10px;} 
+font-size: 10px;}
 .information {margin-left:510px;margin-bottom: 10px;padding: 20px;display:none;}
 .information input{width: 30%;padding: 12px 20px;text-align: center;margin: 8px 0;}
 .information button{border-radius: 30px;font-size: 16px; box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);background-color:#F4F6F9;color:black;margin-left: 45px;}
