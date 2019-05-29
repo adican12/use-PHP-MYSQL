@@ -171,7 +171,6 @@ if(isset($_REQUEST['unconfirm']))
 }
 .myButton {border-radius: 30px;font-size: 16px; box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);background-color:#F4F6F9;color:black;margin-right:120px;text-align: center;}
 .myButton:hover {color:#3e8e41;}
-.myButton:active {}
 .inside-panel-body{
   max-width: 300px;
   margin: auto;
@@ -343,7 +342,7 @@ if(mysqli_num_rows($result) > 0)
 	<script>
 	function getTheLastId(){
 		var x = "<?php echo $row['MAX(user_id)'];?>";
-		getElementById("inside-panel-body").innerHTML=x;
+		getElementById("inside-panel-body").innerHTML=x + "you banner ID";
 	}
 	</script>
 <script type="text/javascript">
