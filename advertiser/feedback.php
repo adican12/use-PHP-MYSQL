@@ -207,7 +207,7 @@ if(isset($_REQUEST['unconfirm']))
 							<div class="panel-body" id="panel-body">
 							<?php if($error){?><div class="errorWrap" id="msgshow"><?php echo htmlentities($error); ?> </div><?php }
 				else if($msg){?><div class="succWrap" id="msgshow"><?php echo htmlentities($msg); ?> </div><?php }?>
-				<form method="post">
+				<form method="post" enctype="multipart/form-data">
 					<br>
 					<label class="col-sm-1 control-label"> Please enter the email <span style="color:red">*</span></label>
 					<div class="col-sm-5">
@@ -293,7 +293,7 @@ if(mysqli_num_rows($result) > 0)
 		<input type="text" name="price" value="price"><br>
 		<input type="text" name="text" value="text"><br>
 		<input type="text" name="header" value="header"><br>
-		<input type = "number" name="user_id" value="user id"><br>
+		<input type = "number" name="user_id" value="user_id"><br>
 		<button name="submit" type="submit">Click me!</button>
 	</form>
 </div>
