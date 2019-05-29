@@ -12,7 +12,7 @@
     //tmp_name
     $tmp_name =$file['tmp_name'];
     $extension = explode('.',$name);
-    var_dumb($extension);
+    print_r($extension);
   }
 ?>
 
@@ -22,7 +22,7 @@
 
 <form action="" method="post" enctype="multipart/form-data">
     Select image to upload:
-    <input type="file" name="file" id="fileToUpload">
+    <input type="file" name="file">
     <input type="submit" value="" name="submit">
 </form>
 
