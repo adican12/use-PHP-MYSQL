@@ -5,8 +5,7 @@ require 'vendor/autoload.php';
 use Google\Cloud\Storage\StorageClient;
 
 include("php/config.php");
-  if(isset($_FILES['file'])) {
-    $file = $_FILES['file'];
+
     $storage = new StorageClient();
     $storage->registerStreamWrapper();
 
