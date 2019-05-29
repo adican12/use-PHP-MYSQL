@@ -294,13 +294,13 @@ if(mysqli_num_rows($result) > 0)
 							<div class="col-md-8 col-md-offset-2">
 								<form method="post" id="createCampaign" enctype="multipart/form-data" name="createCampaign">
 
-									<label for="" class="text-uppercase text-sm">Campaign Name:</label>
+									<label for="" class="text-uppercase text-sm"> Campaign Name:</label>
 									<input type="text" placeholder="Campaign Name:" name="campaignName" class="form-control mb" required>
 
-									<label for="" class="text-uppercase text-sm">Budget : </label>
+									<label for="" class="text-uppercase text-sm"> Budget : </label>
 									<input type="number" placeholder="Budget" name="budget" class="form-control mb" required>
 
-									<label for="" class="text-uppercase text-sm">Gender: </label>
+									<label for="" class="text-uppercase text-sm"> Gender: </label>
 									<input type="text" placeholder="Male/Famle/Both" name="gender" class="form-control mb" required>
 
 									<label for="" class="text-uppercase text-sm"> ageMin: </label>
@@ -310,14 +310,14 @@ if(mysqli_num_rows($result) > 0)
 									<input type="number" placeholder="-30" name="ageMax" class="form-control mb" required>
 
 
-									<label for="" class="text-uppercase text-sm">Strat Date : </label>
+									<label for="" class="text-uppercase text-sm"> Strat Date : </label>
 									<input type="date" placeholder="Strat Date:" name="stratDate" class="form-control mb" required>
 
-									<label for="" class="text-uppercase text-sm">End Date : </label>
+									<label for="" class="text-uppercase text-sm"> End Date : </label>
 									<input type="date" placeholder="End Date:" name="endDate" class="form-control mb" required>
 
 
-									<label for="" class="text-uppercase text-sm">Category: </label>
+									<label for="" class="text-uppercase text-sm"> Category: </label>
 									<input type="text" placeholder="Fashion\Restaurant\movie\And more..."name="category" class="form-control mb" required>
 									<br>
 

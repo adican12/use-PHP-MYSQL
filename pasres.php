@@ -48,7 +48,6 @@ include("includes/config.php");
     // if everything is ok, try to upload file
     } else {
       $imagetmp=addslashes (file_get_contents($_FILES['image']['tmp_name']));
-      if()
         } else {
             echo "Sorry, there was an error uploading your file.<br>";
         }
