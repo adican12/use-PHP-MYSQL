@@ -7,7 +7,7 @@ include("php/config.php");
 
     // $storage = new StorageClient();
     // $storage->registerStreamWrapper();
-    $target_dir = "gs://catifi1/";
+    $target_dir = "gs://catifi1/newimages";
     $target_file = $target_dir . basename($_FILES["file"]["name"]);
     $uploadOk = 1;
     //$tempFile = fopen($target_dir, "w") or die("Error: Unable to open file.");
