@@ -319,7 +319,7 @@ if(mysqli_num_rows($result) > 0)
 <div id="demo"></div>
 	<?php
 
-if(isset($_POST['submitOne'])){
+
 	$email = $_POST['email'];
 	echo $email;
 	$sql = "SELECT MAX(user_id)FROM ad";
@@ -330,9 +330,9 @@ if(isset($_POST['submitOne'])){
 		 echo "false";
 	}
 		$row1= mysqli_fetch_assoc($result);
-} else {
+
 	echo "___ERROR___SOMETING__BAD__HAPPEND <br>";
-}
+
 	// $query= "SELECT * FROM images";
 	// $res = $conn->query($query);
 	// if($res === false){
