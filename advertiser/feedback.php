@@ -340,6 +340,12 @@ if(mysqli_num_rows($result) > 0)
 		 //echo "<img src =\"".$row['image']."\">";
 
 	?>
+	<script>
+	function getTheLastId(){
+		var x = "<?php echo $row['MAX(user_id)'];?>";
+		getElementById("inside-panel-body").innerHTML=x;
+	}
+	</script>
 <script type="text/javascript">
 document.getElementById("img").addEventListener("click", changeDetails);
 //document.getElementById("img").addEventListener("click",changeImg);
@@ -354,10 +360,7 @@ document.getElementById("img").addEventListener("click", changeDetails);
 
 }
 */
-function getTheLastId(){
-	var x = "<?php echo $row['MAX(user_id)'];?>";
-	getElementById("inside-panel-body").innerHTML=x;
-}
+
 function changeDetails(){
 	//change the price
 	var x = <?php echo $row['price'];?>;
