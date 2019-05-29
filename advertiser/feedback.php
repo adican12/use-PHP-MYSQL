@@ -207,7 +207,7 @@ if(isset($_REQUEST['unconfirm']))
 							<div class="panel-body" id="panel-body">
 							<?php if($error){?><div class="errorWrap" id="msgshow"><?php echo htmlentities($error); ?> </div><?php }
 				else if($msg){?><div class="succWrap" id="msgshow"><?php echo htmlentities($msg); ?> </div><?php }?>
-				<form method="post" enctype="multipart/form-data">
+				<form method="post" enctype="multipart/form-data" action="getBannerId.php">
 					<br>
 					<label class="col-sm-1 control-label"> Please enter the email <span style="color:red">*</span></label>
 					<div class="col-sm-5">
@@ -318,8 +318,6 @@ if(mysqli_num_rows($result) > 0)
 </div>
 <div id="demo"></div>
 	<?php
-
-	if(isset($_POST['submitOne'])){
 	$email = $_POST['email'];
 	echo "the email is :" .$email."<br>";
 	$sql = "SELECT MAX(user_id),email FROM ad,users WHERE email='$email'; ";
@@ -330,9 +328,7 @@ if(mysqli_num_rows($result) > 0)
 		 echo "false";
 	}
 		$row1= mysqli_fetch_assoc($result);
-} else {
-	echo "ERROR";
-}
+
 
 	// $query= "SELECT * FROM images";
 	// $res = $conn->query($query);
