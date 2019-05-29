@@ -7,14 +7,14 @@ include("includes/config.php");
 
     // $storage = new StorageClient();
     // $storage->registerStreamWrapper();
-    // $target_dir = "gs://catifi1/newimages/";
-    // $target_file = $target_dir . basename($_FILES["image"]["name"]);
-    // $uploadOk = 1;
-    // $name=$_FILES["image"]["name"];
-    // //$tempFile = fopen($target_dir, "w") or die("Error: Unable to open file.");
-    // $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-    //$ex = explode('.',$target_file);
-    //print_r($ex);
+    $target_dir = "/";
+    $target_file = $target_dir . basename($_FILES["image"]["name"]);
+    $uploadOk = 1;
+    $name=$_FILES["image"]["name"];
+    //$tempFile = fopen($target_dir, "w") or die("Error: Unable to open file.");
+    $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+    $ex = explode('.',$target_file);
+    print_r($ex);
     // Check if image file is a actual image or fake image
     if(isset($_POST["submit"])) {
         $check = getimagesize($_FILES["image"]["tmp_name"]);
@@ -47,7 +47,8 @@ include("includes/config.php");
         echo "Sorry, your file was not uploaded.<br>";
     // if everything is ok, try to upload file
     } else {
-      $imagetmp=addslashes (file_get_contents($_FILES['image']['tmp_name']));
+        if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
+            echo "The file ". basename( $_FILES["image"]["name"]). " has been uploaded.<br>";
         } else {
             echo "Sorry, there was an error uploading your file.<br>";
         }
