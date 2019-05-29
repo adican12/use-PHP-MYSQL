@@ -3,21 +3,21 @@
 /*--------------------includes--------------*/
 
 
-include("php/config.php");
+include("includes/config.php");
 
     // $storage = new StorageClient();
     // $storage->registerStreamWrapper();
-    $target_dir = "gs://catifi1/newimages/";
-    $target_file = $target_dir . basename($_FILES["file"]["name"]);
-    $uploadOk = 1;
-    $name=$_FILES["file"]["name"];
-    //$tempFile = fopen($target_dir, "w") or die("Error: Unable to open file.");
-    $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+    // $target_dir = "gs://catifi1/newimages/";
+    // $target_file = $target_dir . basename($_FILES["image"]["name"]);
+    // $uploadOk = 1;
+    // $name=$_FILES["image"]["name"];
+    // //$tempFile = fopen($target_dir, "w") or die("Error: Unable to open file.");
+    // $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
     //$ex = explode('.',$target_file);
     //print_r($ex);
     // Check if image file is a actual image or fake image
     if(isset($_POST["submit"])) {
-        $check = getimagesize($_FILES["file"]["tmp_name"]);
+        $check = getimagesize($_FILES["image"]["tmp_name"]);
         if($check !== false) {
             echo "File is an image - " . $check["mime"] . ".<br>".$name."<br>";
             $uploadOk = 1;
@@ -32,7 +32,7 @@ include("php/config.php");
         $uploadOk = 0;
     }
     // Check file size
-    if ($_FILES["file"]["size"] > 500000) {
+    if ($_FILES["image"]["size"] > 500000) {
         echo "Sorry, your file is too large.<br>";
         $uploadOk = 0;
     }
@@ -47,8 +47,8 @@ include("php/config.php");
         echo "Sorry, your file was not uploaded.<br>";
     // if everything is ok, try to upload file
     } else {
-        if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
-            echo "The file ". basename( $_FILES["file"]["name"]). " has been uploaded.<br>";
+      $imagetmp=addslashes (file_get_contents($_FILES['image']['tmp_name']));
+      if()
         } else {
             echo "Sorry, there was an error uploading your file.<br>";
         }
@@ -62,7 +62,7 @@ include("php/config.php");
 <form action="" method="post" enctype="multipart/form-data">
   <br>
     Select image to upload:
-    <input type="file" name="file">
+    <input type="file" name="image">
     <input type="submit" value="Upload" name="submit">
 </form>
 

@@ -116,6 +116,7 @@ if(isset($_POST['submit']))
 																												 <th>Category</th>
 																												 <th>Campaign start date</th>
 																												 <th>Campaign end date</th>
+																												 <th>Location</th>
 														 </tr>
 												 </thead>
 											 <tbody>
@@ -161,6 +162,7 @@ if(isset($_POST['submit']))
 															 <td><?php echo $row['category'];?></td>
 															 <td><?php echo $row['stratingDate'];?></td>
 															 <td><?php echo $row['endDate'];?></td>
+															 <td><?php echo $row['location_id'];?></td>
 															 <td>
 
 																										 <?php if($row['status'] == 1)
@@ -317,6 +319,10 @@ if(mysqli_num_rows($result) > 0)
 
 									<label for="" class="text-uppercase text-sm">Category: </label>
 									<input type="text" placeholder="Fashion\Restaurant\movie\And more..."name="category" class="form-control mb" required>
+									<br>
+
+									<label for="" class="text-uppercase text-sm"> Location: </label>
+									<input type="number" placeholder="Select the location you want to advertise" name="category" class="form-control mb" required>
 									<br>
 
 									<button class="btn btn-primary btn-block" name="addCampin" type="submit" onload="loadCamp()">Click!</button>
