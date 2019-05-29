@@ -275,6 +275,7 @@ if(mysqli_num_rows($result) > 0)
 		<input type="text" name="price" value="price"><br>
 		<input type="text" name="text" value="text"><br>
 		<input type="text" name="header" value="header"><br>
+		<input type = "number" name="user_id" value="user id"><br>
 		<button name="submit" type="submit">Click me!</button>
 	</form>
 </div>
