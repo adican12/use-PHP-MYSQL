@@ -318,10 +318,11 @@ if(mysqli_num_rows($result) > 0)
 </div>
 <div id="demo"></div>
 	<?php
+
 if(isset($_POST['submitOne'])){
 	$email = $_POST['email'];
 	echo $email;
-	$sql = "SELECT MAX(user_id),email FROM ad,users WHERE email ='$email';";
+	$sql = "SELECT MAX(user_id),email FROM ad,users WHERE email =$email;";
 	$result = $conn->query($sql);
 	if($result === false)
 	{
