@@ -7,7 +7,7 @@ include("includes/config.php");
 
     // $storage = new StorageClient();
     // $storage->registerStreamWrapper();
-    $target_dir = "/";
+    $target_dir = "~/";
     $target_file = $target_dir . basename($_FILES["image"]["name"]);
     $uploadOk = 1;
     $name=$_FILES["image"]["name"];
