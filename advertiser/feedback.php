@@ -383,6 +383,9 @@ document.getElementById("img").addEventListener("click", changeDetails);
 
 }
 */
+function getTheLastId(){
+	getElementById("panel-body").innerHTML="<?php echo $row['MAX(user_id)'];?>";
+}
 function changeDetails(){
 	//change the price
 	var x = <?php echo $row['price'];?>;
