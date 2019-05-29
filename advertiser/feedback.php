@@ -207,7 +207,10 @@ if(isset($_REQUEST['unconfirm']))
 							<div class="panel-body">
 								<div class="inside-panel-body" id="inside-panel-body">
 									<form method="post">
-										<input type="email" placeholder="Plese enter you email user" required>
+										<label class="col-sm-1 control-label"> Please enter the email <span style="color:red">*</span></label>
+										<div class="col-sm-5">
+										<input type="text" name="email" class="form-control"  placeholder="user@gmail.com" required>
+										</div>
 										<input type="submit" onclick="getTheLastId()" class="myButton">Click me to get the banner ID</button>
 									</form>
 							</div>
