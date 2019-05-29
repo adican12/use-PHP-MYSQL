@@ -62,29 +62,14 @@ var x = document.getElementById("container");
 function getLocation() {
   var y = locationMessage() ;
   if( y == true) {
-  // if (navigator.geolocation) {
-  //  //  var lat = position.coords.latitude;
-  //  // var lng = position.coords.longitude;
-  //  // alert("the lat is : " + lat + "the lng is : " + lng)
-  //   navigator.geolocation.getCurrentPosition(showPosition);
-  // } else {
-  //   x.innerHTML = "Geolocation is not supported by this browser.";
-  // }
-  if (navigator.geolocation)
-    {
-        navigator.geolocation.getCurrentPosition(showGPS);
-    }
-    else
-    {
-        gpsText.innerText = "No GPS Functionality.";
-    }
-}
-function showGPS(position)
-{
-    alert('Wow!');
-    document.cookie="latitude="+position.coords.latitude;
-    document.cookie="longitude="+position.coords.longitude;
-}
+  if (navigator.geolocation) {
+   //  var lat = position.coords.latitude;
+   // var lng = position.coords.longitude;
+   // alert("the lat is : " + lat + "the lng is : " + lng)
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else {
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
 } else {
     alert("sorry you cant use the wifi");
 }
@@ -92,8 +77,10 @@ function showGPS(position)
 // show position of the user!!
 function showPosition(position) {
   console.log("try");
-  x.innerHTML = "Latitude: " + position.coords.latitude +
-  "<br>Longitude: " + position.coords.longitude;
+  // x.innerHTML = "Latitude: " + position.coords.latitude +
+  // "<br>Longitude: " + position.coords.longitude;
+  x.innerHTML = document.cookie="latitude="+position.coords.latitude+
+    document.cookie="longitude="+position.coords.longitude;
   var lat = position.coords.latitude;
    var lng = position.coords.longitude;
   //alert("the lat is : " + lat + "the lng is : " + lng);
