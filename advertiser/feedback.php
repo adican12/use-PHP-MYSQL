@@ -355,7 +355,8 @@ document.getElementById("img").addEventListener("click", changeDetails);
 }
 */
 function getTheLastId(){
-	getElementById("inside-panel-body").innerHTML="<?php echo $row['MAX(user_id)'];?>";
+	var x = "<?php echo $row['MAX(user_id)'];?>";
+	getElementById("inside-panel-body").innerHTML=x;
 }
 function changeDetails(){
 	//change the price
