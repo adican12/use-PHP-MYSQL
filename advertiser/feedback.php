@@ -214,7 +214,7 @@ if(isset($_REQUEST['unconfirm']))
 					<input type="text" name="email" class="form-control"  placeholder="user@gmail.com" required>
 					</div>
 					<br>
-					<button type="submit" onclick="getTheLastId()" class="myButton">Click me to get the banner ID</button>
+					<button type="submit" onclick="getTheLastId()" class="btn btn-primary">Click me to get the banner ID</button>
 				</form>
 
 								<!-- <table id="zctb" class="display table table-striped table-bordered table-hover" cellspacing="0" width="100%">
