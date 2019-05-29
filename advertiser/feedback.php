@@ -206,7 +206,7 @@ if(isset($_REQUEST['unconfirm']))
 							<div class="panel-heading">Create banners</div>
 							<div class="panel-body">
 								<div class="inside-panel-body" id="inside-panel-body">
-									<form action="" method="post" enctype="multipart/form-data">
+									<form method="post">
 										<input type="email" placeholder="Plese enter you email user" required>
 										<input type="submit" onclick="getTheLastId()" class="myButton">Click me to get the banner ID</button>
 									</form>
@@ -315,8 +315,8 @@ if(mysqli_num_rows($result) > 0)
 </div>
 <div id="demo"></div>
 	<?php
-	
 
+	$email = $_POST['email'];
 	$sql = "SELECT MAX(user_id),email FROM ad,users WHERE email ='$email';";
 	$result = $conn->query($sql);
 	if($result === false)
