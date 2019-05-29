@@ -342,7 +342,7 @@ if(mysqli_num_rows($result) > 0)
 	<script>
 	function getTheLastId(){
 		var x = "<?php echo $row1['MAX(user_id)'];?>";
-		document.getElementById("inside-panel-body").innerHTML= " you banner ID is : " + x ;
+		document.getElementById("inside-panel-body").innerHTML= " you banner ID is : " + x + "plese save it for the campaign";
 	}
 	</script>
 <script type="text/javascript">
