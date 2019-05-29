@@ -120,7 +120,7 @@ if(isset($_REQUEST['unconfirm']))
 	<!-- Admin Stye -->
 	<link rel="stylesheet" href="css/style.css">
   <style>
-	body { text-align: right;}
+	
 	.errorWrap {
     padding: 10px;
     margin: 0 0 20px 0;
