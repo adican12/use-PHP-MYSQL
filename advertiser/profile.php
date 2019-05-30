@@ -168,6 +168,7 @@ if(isset($_POST['submit']))
 	<script>
 	 var mykey = <?php echo $row['apikey'];?>;
 	 console.log(mykey);
+
 // 	var mykey = config.MY_KEY;
 // var secretkey = config.SECRET_KEY;
 	// this function to open a google maps , set marker and open a info window
@@ -200,7 +201,7 @@ if(isset($_POST['submit']))
 
 	</script>
 
-	<script src="https://maps.googleapis.com/maps/api/js?key=" + mykey +  "&callback=initMap"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=" + mykey +  "&callback=initMap">console.log("https://maps.googleapis.com/maps/api/js?key=" + mykey +  "&callback=initMap")</script>
 	<!--
 // 	var marker_array = [];
 // 	var map,marker,info_window;
