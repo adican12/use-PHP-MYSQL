@@ -138,6 +138,7 @@ if(isset($_POST['submit']))
 	<script src="js/jquery.min.js"></script>
 	<!-- <script src="js/const.js"></script> -->
 	<!-- <script src = "../config.js"></script> -->
+	<script src ="cons.js"></script>
 	<script src="js/bootstrap-select.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/jquery.dataTables.min.js"></script>
@@ -156,18 +157,10 @@ if(isset($_POST['submit']))
 
 	<div id="googleMap" style="width:100%;height:400px;"></div>
  <!-- onclick = "getLocation()" -->
-<?php
-	include('includes/config.php');
-	$sql = "SELECT * FROM apiKey WHERE id = 1";
-	if($res = $conn->query($sql)) {
-		echo "its working";
-	}
-	$row = mysqli_fetch_assoc($res);
-?>
+
 
 	<script>
-	 var mykey = <?php echo $row['apikey'];?>;
-	 var key = mykey.toString();
+	 var mykey =cons.key;
 	 // console.log(mykey);
 
 // 	var mykey = config.MY_KEY;
