@@ -37,9 +37,8 @@ CREATE TABLE IF NOT EXISTS `admin` (
 --
 -- Dumping data for table `admin`
 --
-
+/*UPADETE 30/5 CHANE ADMIN only 1 admin*/
 INSERT INTO `admin` (`username`, `email`, `password`) VALUES
-( 'admin', 'admin@admin.com', '9ae2be73b58b565bce3e47493a56e26a'),
 ( 'root', 'root@gmail.com', '1');
 
 -- --------------------------------------------------------
