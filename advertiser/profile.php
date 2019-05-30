@@ -92,7 +92,7 @@ if(isset($_POST['submit']))
 
 <body>
 <?php
-		$sql = "SELECT * from locations WHERE location_id=1";
+		$sql = "SELECT * from locations WHERE location_id=8";
 		$query = $conn->query($sql);
 		if($query === false)
 		{
