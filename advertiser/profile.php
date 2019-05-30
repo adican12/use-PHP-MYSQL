@@ -161,7 +161,7 @@ if(isset($_POST['submit']))
 
 	<script>
 	 var mykey = key;
-
+	 var a="gg";
 
 
 // 	var mykey = config.MY_KEY;
