@@ -5,6 +5,7 @@
 session_start();
 error_reporting(0);
 include('includes/config.php');
+include('cons.php');
 if(strlen($_SESSION['alogin'])==0)
 	{
 header('location:index.php');
@@ -138,7 +139,7 @@ if(isset($_POST['submit']))
 	<script src="js/jquery.min.js"></script>
 	<!-- <script src="js/const.js"></script> -->
 	<!-- <script src = "../config.js"></script> -->
-	<script src ="../cons.js"></script>
+
 	<script src="js/bootstrap-select.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/jquery.dataTables.min.js"></script>
