@@ -4,6 +4,7 @@
 
 
 include("includes/config.php");
+
 if(iseet($_POST["insert"])){
   $image = addslashes(file_get_contents($_FILES["image"]["tmp_name"]));
   $sql = "INSERT INTO `image`(`image`)VALUES('$image');"
