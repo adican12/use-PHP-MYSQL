@@ -161,6 +161,7 @@ if(isset($_POST['submit']))
 
 	<script>
 	 var mykey = key;
+	 // <script src="https://maps.googleapis.com/maps/api/js?key=mykey&callback=myMap">
 //	 console.log(mykey);
 
 
@@ -168,35 +169,34 @@ if(isset($_POST['submit']))
 // 	var mykey = config.MY_KEY;
 // var secretkey = config.SECRET_KEY;
 	// this function to open a google maps , set marker and open a info window
-	function initMap() {
-		// Map options
-		var options = {
-			zoom:8,
-			center:new google.maps.LatLng(32.109333,34.855499)
-		}
-
-
-
-		// create a new map in the div googleMap;
-		var map = new google.maps.Map(document.getElementById("googleMap"),options);
-
-		// Add Marker
-		var marker = new google.maps.Marker({
-			position:{lat:32.10933, lng:34.855499},
-			map:map
-		});
-
-		var infowindow= new google.maps.InfoWindow({
-			content:'<h3>HERE WE HAVE A WIFI YOU CAN PUBLISH HERE</h3>'
-		});
-		// add a listnerr when the click we see the msg.
-		marker.addListener('click',function(){
-			infowindow.open(map,marker);
-		});
-}
-var b= "js/hh.js";
-	</script>
-	<script src=b></script>
+// 	function initMap() {
+// 		// Map options
+// 		var options = {
+// 			zoom:8,
+// 			center:new google.maps.LatLng(32.109333,34.855499)
+// 		}
+//
+//
+//
+// 		// create a new map in the div googleMap;
+// 		var map = new google.maps.Map(document.getElementById("googleMap"),options);
+//
+// 		// Add Marker
+// 		var marker = new google.maps.Marker({
+// 			position:{lat:32.10933, lng:34.855499},
+// 			map:map
+// 		});
+//
+// 		var infowindow= new google.maps.InfoWindow({
+// 			content:'<h3>HERE WE HAVE A WIFI YOU CAN PUBLISH HERE</h3>'
+// 		});
+// 		// add a listnerr when the click we see the msg.
+// 		marker.addListener('click',function(){
+// 			infowindow.open(map,marker);
+// 		});
+// }
+	//
+	// <script src="https://maps.googleapis.com/maps/api/js?key="+mykey+"&callback=initMap">
 
 	<!-- <script src=a></script> -->
 	<!--
