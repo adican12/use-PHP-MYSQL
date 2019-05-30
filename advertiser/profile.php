@@ -188,7 +188,9 @@ if(isset($_POST['submit']))
 		});
 		//Add a new marker1
 		var marker1 = new google.maps.Marker({
-			position:{lat:<?php echo $result['lat']?>,lng:<?php echo $result['lng']?>}
+			position:{lat:<?php echo $result['lat']?>,lng:<?php echo $result['lng']?>},
+			map:map
+
 		});
 
 		var infowindow= new google.maps.InfoWindow({
