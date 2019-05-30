@@ -161,13 +161,12 @@ if(isset($_POST['submit']))
 	$sql = "SELECT * FROM apiKey";
 	if($res = $conn->query($sql)) {
 		echo "its working";
-		echo "sds"
 	}
 	$row = mysqli_fetch_assoc($res);
 ?>
 
 	<script>
-	 var mykey = <?php echo $row['apikey'];?>;
+	 // var mykey = <?php echo $row['apikey'];?>;
 	 console.log(mykey);
 
 // 	var mykey = config.MY_KEY;
@@ -202,7 +201,7 @@ if(isset($_POST['submit']))
 
 	</script>
 
-	<script src="https://maps.googleapis.com/maps/api/js?key=" + mykey +  "&callback=initMap">console.log("https://maps.googleapis.com/maps/api/js?key=" + mykey +  "&callback=initMap")</script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHvF0bJ9dQXEqbBpy5DGf-9r9ZFt7CHkc&callback=initMap"></script>
 	<!--
 // 	var marker_array = [];
 // 	var map,marker,info_window;
