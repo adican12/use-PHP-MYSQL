@@ -166,7 +166,7 @@ if(isset($_POST['submit']))
 ?>
 
 	<script>
-	 var mykey = '<?php echo $row['apikey'];?>';
+	 var mykey = <?php echo $row['apikey'];?>;
 	 // console.log(mykey);
 
 // 	var mykey = config.MY_KEY;
