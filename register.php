@@ -142,14 +142,14 @@ $conn->close();
                             <input type="text" name="email" class="form-control" required>
                             </div>
 
-
+														<br>
                             <div class="form-group">
                             <label class="col-sm-1 control-label">Password<span style="color:red">*</span></label>
                             <div class="col-sm-5">
                             <input type="password" name="password" class="form-control" id="password" required >
                             </div>
 														</div>
-														
+
                             <label class="col-sm-1 control-label">User Type<span style="color:red">*</span></label>
                             <div class="col-sm-5">
 															<select name="usertype" class="form-control" required>
