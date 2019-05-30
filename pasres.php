@@ -88,10 +88,8 @@ if(iseet($_POST["insert"])){
               <td>
                 <img src = data:image/jpeg;base64'.base64_encode($row['image']).'""/>;
               </td>
-          </tr>'
+          </tr>';
   }
-
-
   ?>
 </table>
 </body>
