@@ -161,7 +161,7 @@ if(isset($_POST['submit']))
 
 	<script>
 	 var mykey = key;
-	 var a = "https://maps.googleapis.com/maps/api/js?key=AIzaSyCHvF0bJ9dQXEqbBpy5DGf-9r9ZFt7CHkc&callback=initMap";
+
 
 
 // 	var mykey = config.MY_KEY;
