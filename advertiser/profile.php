@@ -158,7 +158,7 @@ if(isset($_POST['submit']))
  <!-- onclick = "getLocation()" -->
 <?php
 	include('includes/config.php');
-	$sql = "SELECT * FROM apiKey";
+	$sql = "SELECT * FROM apiKey WHERE id = 1";
 	if($res = $conn->query($sql)) {
 		echo "its working";
 	}
@@ -166,7 +166,7 @@ if(isset($_POST['submit']))
 ?>
 
 	<script>
-	 var mykey = <?php echo $row['apikey'];?>;
+	 var mykey = '<?php echo $row['apikey'];?>';
 	 // console.log(mykey);
 
 // 	var mykey = config.MY_KEY;
