@@ -55,6 +55,22 @@ if ($conn->query($sql) === TRUE) {
 
 $conn->close();
 }
+$filename=$_FILES['uploadfile']['name'];
+    $filetempname=$_FILES['uploadfile']['tmp_name'];
+    $folder = 'images/';
+    move_uploaded_file($filetempname,$folder.$filename);
+  $sql = "INSERT INTO `image`(`image`)VALUES('$filename');";
+  if($qry = $conn->query($sql)) {
+    echo "image uploaded";
+  }
+}
+$sql = "SELECT * FROM image WHERE image_id =";
+if($res = $conn->query($sql)) {
+  echo '<script>alert("ok the query is working work")</script>';
+}
+while($row =  mysqli_fetch_assoc($res)) {
+  echo '<img height = 150px width=100px src="'.$row['image'].'">';
+}
 ?>
 
 <!doctype html>
@@ -140,6 +156,11 @@ echo " ok its work : ".$lat. " this is the lng: ".$lng;
 															<option value="advertiser_user">Advertiser user</option>
 	                            </select>
                             </div>
+														<label class="col-sm-1 control-label">Image<span style="color:red">*</span></label>
+														<div class="col-sm-5">
+														<input type="file" name="uploadfile" class="form-control" id="uploadfile" required >
+														</div>
+
 														</div>
 
 														<div class="form-group">
