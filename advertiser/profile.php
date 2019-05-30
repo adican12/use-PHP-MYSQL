@@ -161,7 +161,7 @@ if(isset($_POST['submit']))
 
 	<script>
 	 var mykey = key;
-	  
+
 
 // 	var mykey = config.MY_KEY;
 // var secretkey = config.SECRET_KEY;
@@ -195,7 +195,8 @@ if(isset($_POST['submit']))
 
 	</script>
 
-	<script src="https://maps.googleapis.com/maps/api/js?key="+mykey+"&callback=initMap"></script>
+	<!-- <script src="https://maps.googleapis.com/maps/api/js?key="+mykey+"&callback=initMap"></script> -->
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHvF0bJ9dQXEqbBpy5DGf-9r9ZFt7CHkc&callback=initMap"></script>
 	<!--
 // 	var marker_array = [];
 // 	var map,marker,info_window;
