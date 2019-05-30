@@ -121,12 +121,8 @@ $conn->close();
 
 </script>
 </head>
-<?php
-$lat = $_GET['lat'];
-$lng = $_GET['lng'];
-echo " ok its work : ".$lat. " this is the lng: ".$lng;
-?>
-<body onload="getLocation()">
+
+<body onload=>
 	<div class="login-page bk-img">
 		<div class="form-content">
 			<div class="container">
