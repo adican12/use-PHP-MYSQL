@@ -89,7 +89,7 @@ if(isset($_POST['submit']))
 
 </head>
 
-<body>
+<body onload="initMap()">
 <?php
 		$sql = "SELECT * from admin";
 		$query = $conn->query($sql);
@@ -198,7 +198,7 @@ if(isset($_POST['submit']))
 	// <script src="https://maps.googleapis.com/maps/api/js?key="+mykey+"&callback=initMap">
 
 
-	
+
 // 	var marker_array = [];
 // 	var map,marker,info_window;
 // 	var red_icon = "http://maps.google.com/mapfiles/ms/icons/red-dot.png" ;
