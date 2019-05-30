@@ -126,11 +126,11 @@ if(mysqli_num_rows($result) > 0)
 		?>
 										<tr>
 											<td><?php echo htmlentities($cnt);?></td>
-                                            <td><?php echo $result['campaignName'];?></td>
-																						<td><?php echo $result['budget'];?></td>
-																						<td><?php echo $result['category'];?></td>
-																						<td><?php echo $result['stratingDate'];?></td>
-																						<td><?php echo $result['endDate'];?></td>
+                                            <td><?php echo $row['campaignName'];?></td>
+																						<td><?php echo $row['budget'];?></td>
+																						<td><?php echo $row['category'];?></td>
+																						<td><?php echo $row['stratingDate'];?></td>
+																						<td><?php echo $row['endDate'];?></td>
 										</tr>
 										<?php $cnt=$cnt+1; }} ?>
 
