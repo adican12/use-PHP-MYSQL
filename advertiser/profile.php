@@ -159,10 +159,9 @@ if(isset($_POST['submit']))
  <!-- onclick = "getLocation()" -->
 
 
-	<script>
-	 var mykey = key;
-	 // <script src="https://maps.googleapis.com/maps/api/js?key=mykey&callback=myMap">
-//	 console.log(mykey);
+
+	 <!-- // <script src="https://maps.googleapis.com/maps/api/js?key=mykey&callback=myMap"> -->
+<!-- //	 console.log(mykey);
 
 
 
@@ -198,8 +197,8 @@ if(isset($_POST['submit']))
 	//
 	// <script src="https://maps.googleapis.com/maps/api/js?key="+mykey+"&callback=initMap">
 
-	<!-- <script src=a></script> -->
-	<!--
+
+	
 // 	var marker_array = [];
 // 	var map,marker,info_window;
 // 	var red_icon = "http://maps.google.com/mapfiles/ms/icons/red-dot.png" ;
@@ -221,7 +220,7 @@ if(isset($_POST['submit']))
 //     position: location,
 //     map: map,
 // 		icon: {url :"http://maps.google.com/mapfiles/ms/icons/blue-dot.png"}
-<!- //   }); -->
+//   }); -->
 <!-- //   var infowindow = new google.maps.InfoWindow({ -->
 <!-- //     content: 'Latitude: ' + location.lat() + -->
 <!-- //     '<br>Longitude: ' + location.lng() + ' you can publish here ! ', -->
@@ -229,9 +228,9 @@ if(isset($_POST['submit']))
 <!-- //   infowindow.open(map,marker); -->
 <!-- // } -->
 <!-- // } -->
-	<!-- </script> -->
+	<!-- </script>
 
-
+-->
 </body>
 </html>
 <?php } ?>
