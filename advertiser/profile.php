@@ -92,7 +92,7 @@ if(isset($_POST['submit']))
 
 <body>
 <?php
-		$sql = "SELECT * from admin";
+		$sql = "SELECT * from locations WHERE location_id=1";
 		$query = $conn->query($sql);
 		if($query === false)
 		{
@@ -186,13 +186,24 @@ if(isset($_POST['submit']))
 			position:{lat:32.10933, lng:34.855499},
 			map:map
 		});
+		//Add a new marker1
+		var marker1 = new google.maps.Marker({
+			position:{lat:<?php echo $result['lat']?>,lng:<?php echo $result['lng']?>}
+		});
 
 		var infowindow= new google.maps.InfoWindow({
 			content:'<h3>HERE WE HAVE A WIFI YOU CAN PUBLISH HERE</h3>'
 		});
+		//adding a new infowindow
+		var infowindow1 = new google.maps.InfoWindow({
+			content: '<h3><?php echo $result['info'].$result['name']?>;</h3>'
+		});
 		// add a listnerr when the click we see the msg.
 		marker.addListener('click',function(){
 			infowindow.open(map,marker);
+		});
+		marker1.addListener('click',function(){
+			infowindow1.open(map,marker);
 		});
 }
 
