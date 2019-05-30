@@ -195,7 +195,7 @@ if(isset($_POST['submit']))
 
 	</script>
 
-	<script src="https://maps.googleapis.com/maps/api/js?key="+"mykey"+"&callback=initMap"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key="+mykey+"&callback=initMap"></script>
 	<!--
 // 	var marker_array = [];
 // 	var map,marker,info_window;
