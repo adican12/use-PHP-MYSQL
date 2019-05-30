@@ -1,0 +1,170 @@
+﻿/**************************************************
+                data.gov.il
+**************************************************/
+function isIE() {
+    var ua = window.navigator.userAgent;
+    var msie = ua.indexOf('MSIE ');
+    if (msie > 0) {
+        // IE 10 or older => return version number
+        return parseInt(ua.substring(msie + 5, ua.indexOf('.', msie)), 10);
+    }
+    var trident = ua.indexOf('Trident/');
+    if (trident > 0) {
+        // IE 11 => return version number
+        var rv = ua.indexOf('rv:');
+        return parseInt(ua.substring(rv + 3, ua.indexOf('.', rv)), 10);
+    }
+    var edge = ua.indexOf('Edge/');
+    if (edge > 0) {
+        // Edge (IE 12+) => return version number
+        return parseInt(ua.substring(edge + 5, ua.indexOf('.', edge)), 10);
+    }
+    // other browser
+    return false;
+}
+
+function masterPage() {
+
+    //remove extra back to top if exist more than 1
+    if ($('a[data-wcag="back-to-top"]').length > 1) {
+
+        $('footer a[data-wcag="back-to-top"]').remove();
+    }
+    // magarey meida - focus on order by after changing order by
+    if (window.location.href.substring(window.location.href.lastIndexOf("&") + 1) == "sort=score+desc%2C+metadata_modified+desc" || window.location.href.substring(window.location.href.lastIndexOf("&") + 1) == "sort=title_string+asc" || window.location.href.substring(window.location.href.lastIndexOf("&") + 1) == "sort=title_string+desc" || window.location.href.substring(window.location.href.lastIndexOf("&") + 1) == "sort=metadata_modified+desc" || window.location.href.substring(window.location.href.lastIndexOf("&") + 1) == "sort=views_recent+desc") $('#field-order-by').focus();
+
+    $('.search-input').attr('role', 'search');
+    $('.icon-ic-datagov').attr('title', 'data.gov.il')
+    $('.search').attr('role', 'search');
+    $('.secondary').attr('data-wcag', 'sub-menu');
+    $('#field-name, #field-email, #field-content').attr('aria-label', 'שדה חובה');
+
+    $('.btn').each(function () {
+        $(this).attr('role','button');
+    });
+
+    $('.pull-right').on('click', function () {
+
+        $($(this).attr('href')).attr('tabindex', -1).focus().keydown(function (e) {
+            if (e.which == 27) {
+                $('.pull-right').focus();
+            }
+            $('input,a')
+        });
+    });
+
+    if ($('.modal').length)
+        wcag_modal($('.modal'), $('.pull-right'));
+
+    if ($('iframe').length) {
+        wcag_iframes();
+    }
+
+    $('.alert').each(function () {
+        $(this).attr('role','alert');
+    });
+
+    
+    if (!$('h1').length) {
+        $('header:last').next().prepend($('<h1>אתר מאגרי המידע הממשלתיים</h1>').css('font-size','0'));
+    }
+    $('nav.navigation').attr('data-wcag', 'main-menu');
+
+    $('.search').attr('role', 'search');
+
+    if (isIE()) {
+        $('.open_accessibility_panel').css('right','20px');
+    }
+}
+
+function wcag_modal(dialog, btnDialog) {
+    var lastFocus;
+    $(dialog).attr({ 'role': 'dialog', 'tabindex': '-1' });
+    $(btnDialog).click(function () {
+        lastFocus = document.activeElement,
+        dialog.focus();
+    });
+
+    var tmpTitle = jQuery.trim($(dialog).find('h3').text());
+    if (tmpTitle != '' && typeof tmpTitle != typeof undefined)
+        $(dialog).attr('aria-label', tmpTitle);
+    $(dialog).focus(function (e) {
+        if (!$(dialog)[0].contains(e.target)) {
+            e.stopPropagation();
+            dialog.focus();
+        }
+    }).keydown(function (e) {
+        if (e.which == 27) {
+            e.preventDefault()
+            $(dialog).find('.close').trigger('click');
+            btnDialog.focus();
+        }
+    });
+}
+
+
+function setScriptToFrame(url, frame, callback) {
+    //console.log(url);
+    // adding the script tag to the head as suggested before
+    var head = frame.document.getElementsByTagName('head')[0];
+    var script = frame.document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = url;
+    
+    //script.setAttribute('id', 'wcag-main-script');
+    if (!callback) callback = function () { }; // ★★★★★★★★★ JUST ADD THIS LINE!
+
+    // bind the event to the callback function
+    if (script.addEventListener) {
+        script.addEventListener("load", callback, false); // IE9+, Chrome, Firefox
+    }
+    else if (script.readyState) {
+        script.onreadystatechange = callback; // IE8
+    }
+
+    // fire the loading
+    head.appendChild(script);
+}
+
+function controllFromTopAccessibility_panel(frame) {
+    var tmpframe = frame;
+    
+    //controll from top 
+    $(".accessibility_panel_list").find('a').each(function (index, element) {
+        var i = index;
+        $(element).click(function () {
+            //console.log($(element).attr('id'));
+            tmpframe.window.$('#' + $(element).attr('id')).click();
+            //resize height of Top frame TODO
+            //$('#Top').css('height', '' + $(top.Top.document).height() + 'px');
+        });
+    });
+}
+
+function wcag_iframes() {
+    $('iframe').each(function () {
+        var iframe = $(this)[0];
+        var iframewindow = iframe.contentWindow ? iframe.contentWindow : iframe.contentDocument.defaultView;
+        if (iframewindow.location.host != top.location.host)
+            return;
+        setScriptToFrame($('[src*="avcp.js"]').attr('src'), iframewindow, controllFromTopAccessibility_panel(iframewindow));
+        var frameInterval = setInterval(removePanel, 200);
+        function removePanel(){
+            if(iframewindow.$('.open_accessibility_panel').length){
+                iframewindow.$('.open_accessibility_panel').attr('style', 'display: none !important;');
+                iframewindow.$('#wcag-skip-to').prepend('<a data-wcag="skip-after-display" class="skip_to wcag-dynamic-font" href="javascript:void(0)"; title="דלג מאיזור התצוגה" data-wcag-org-font-size="16" style="padding:0px;">דלג מאיזור התצוגה</a>');
+                iframewindow.$('[data-wcag="skip-after-display"]').on('keyup keypress', function (e) {
+                    if (e.which == 13) {
+                        top.$('.module-content:last').attr('tabindex', '-1').focus();
+                    }  
+                });
+                clearInterval(frameInterval);
+            }
+        }
+    });
+}
+
+
+jQuery(document).ready(function () {
+    masterPage();
+});

@@ -291,7 +291,7 @@ CREATE TABLE `locations`(
   `name` VARCHAR(256),
   PRIMARY KEY(location_id),
   FOREIGN KEY(id) REFERENCES users(id) ON DELETE CASCADE
-)ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=20;
+)ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1;
 
 
 
@@ -303,7 +303,19 @@ INSERT INTO `locations` ( `lat`, `lng`, `info`, `id`, `name`) VALUES
 (32.072866,34.765616,'H - free wifi,Childrens Activities,Air conditioning,Bar',4,'Bal basic-Hotel'),
 (32.983082,35.195394,'R - Druze food',5,'completely'),
 (32.050939,34.760524,'R - Cheaper, meat',6,'Vigosha'),
-(32.165313,34.823261,'M - Fashion, restaurants, bars',7,'Seven Star Mall');
+(32.165313,34.823261,'M - Fashion, restaurants, bars',7,'Seven Star Mall'),
+(45.421611,12.376187,'H - Good location away from the crouds',8,'Hotel Russo Palace'),
+(40.68973,-95.788826,'H - Great view',9,'Americas Best Value Inn'),
+(34.664684,-120.115036,'H - Loved this Wonderful Boutique Hotel!',10,'Intermezzo'),
+(34.664684,-120.115036,'H - Loved this Wonderful Boutique Hotel!',11,'Intermezzo'),
+(34.569931,31.680927,'R - Pizza',12,'Pizza Agvania'),
+(34.569944,31.668077,'R - Pizza',13,'Pizza Domino'),
+(34.570004,31.667669,'R - Excellent coffee and cheap',14,'Cofix'),
+(34.570179,31.680931,'R - Excellent coffee And pastries',15,'Roladin'),
+(34.570179,31.668081,'R - Best Pizza',16,'Pizza Hut'),
+(34.570179,31.683613,'R - Best Coffe',17,'Anona Bistro'),
+(34.577431,31.669886,'R - Coffe And breakfasts',18,'Cafe Jow'),
+(34.585051,31.656246,'R - Chip Pizza',19,'Pizza Shemesh');
 
 
 

@@ -1,0 +1,485 @@
+/* An auto-complete module for select and input elements that can pull in
+ * a list of terms from an API endpoint (provided using data-module-source).
+ *
+ * source   - A url pointing to an API autocomplete endpoint.
+ * interval - The interval between requests in milliseconds (default: 1000).
+ * items    - The max number of items to display (default: 10)
+ * tags     - Boolean attribute if true will create a tag input.
+ * key      - A string of the key you want to be the form value to end up on
+ *            from the ajax returned results
+ * label    - A string of the label you want to appear within the dropdown for
+ *            returned results
+ *
+ * Examples
+ *
+ *   // <input name="tags" data-module="autocomplete" data-module-source="http://" />
+ *
+ */
+this.ckan.module('autocompletecustum', function (jQuery) {
+  return {
+    /* Options for the module */
+    options: {
+      tags: false,
+      key: false,
+      label: false,
+      items: 10,
+      source: null,
+      interval: 300,
+      dropdownClass: '',
+      containerClass: ''
+    },
+
+    /* Sets up the module, binding methods, creating elements etc. Called
+     * internally by ckan.module.initialize();
+     *
+     * Returns nothing.
+     */
+    initialize: function () {
+      jQuery.proxyAll(this, /_on/, /format/);
+      this.setupAutoCompletecustum();
+    },
+
+    /* Sets up the auto complete plugin.
+     *
+     * Returns nothing.
+     */
+    setupAutoCompletecustum: function () {
+      var settings = {
+        width: 'resolve',
+        formatResult: this.formatResult,
+        formatNoMatches: this.formatNoMatches,
+        formatInputTooShort: this.formatInputTooShort,
+        dropdownCssClass: this.options.dropdownClass,
+        containerCssClass: this.options.containerClass
+      };
+
+      // Different keys are required depending on whether the select is
+      // tags or generic completion.
+      if (!this.el.is('select')) {
+        if (this.options.tags) {
+          settings.tags = this._onQuery;
+        } else {
+          settings.query = this._onQuery;
+          settings.createSearchChoice = this.formatTerm;
+        }
+        settings.initSelection = this.formatInitialValue;
+      }
+      else {
+        if (/MSIE (\d+\.\d+);/.test(navigator.userAgent)) {
+            var ieversion=new Number(RegExp.$1);
+            if (ieversion<=7) {return}
+         }
+      }
+
+      var select2 = this.el.select2(settings).data('select2');
+
+      if (this.options.tags && select2 && select2.search) {
+        // find the "fake" input created by select2 and add the keypress event.
+        // This is not part of the plugins API and so may break at any time.
+        select2.search.on('keydown', this._onKeydown);
+      }
+
+      // This prevents Internet Explorer from causing a window.onbeforeunload
+      // even from firing unnecessarily
+      $('.select2-choice', select2.container).on('click', function() {
+        return false;
+      });
+
+      this._select2 = select2;
+    },
+
+    /* Looks up the completions for the current search term and passes them
+     * into the provided callback function.
+     *
+     * The results are formatted for use in the select2 autocomplete plugin.
+     *
+     * string - The term to search for.
+     * fn     - A callback function.
+     *
+     * Examples
+     *
+     *   module.getCompletions('cake', function (results) {
+     *     results === {results: []}
+     *   });
+     *
+     * Returns a jqXHR promise.
+     */
+    getCompletions: function (string, fn) {
+      var parts  = this.options.source.split('?');
+      var end    = parts.pop();
+      var source = parts.join('?') + encodeURIComponent(string) + end;
+      var client = this.sandbox.client;
+      var options = {
+        format: function(data) {
+          var completion_options = jQuery.extend(options, {objects: true});
+          return {
+            results: client.parseCompletions(data, completion_options)
+          }
+        },
+        key: this.options.key,
+        label: this.options.label
+      };
+
+      return client.getCompletions(source, options, fn);
+    },
+
+    /* Looks up the completions for the provided text but also provides a few
+     * optimisations. If there is no search term it will automatically set
+     * an empty array. Ajax requests will also be debounced to ensure that
+     * the server is not overloaded.
+     *
+     * string - The term to search for.
+     * fn     - A callback function.
+     *
+     * Returns nothing.
+     */
+    lookup: function (string, fn) {
+      var module = this;
+
+      // Cache the last searched term otherwise we'll end up searching for
+      // old data.
+      this._lastTerm = string;
+
+      // Kills previous timeout
+      clearTimeout(this._debounced);
+
+      // OK, wipe the dropdown before we start ajaxing the completions
+      fn({results:[]});
+
+      if (string) {
+        // Set a timer to prevent the search lookup occurring too often.
+        this._debounced = setTimeout(function () {
+          var term = module._lastTerm;
+
+          // Cancel the previous request if it hasn't yet completed.
+          if (module._last && typeof module._last.abort == 'function') {
+            module._last.abort();
+          }
+
+          module._last = module.getCompletions(term, fn);
+        }, this.options.interval);
+
+        // This forces the ajax throbber to appear, because we've called the
+        // callback already and that hides the throbber
+        $('.select2-search input', this._select2.dropdown).addClass('select2-active');
+      }
+    },
+
+    /* Formatter for the select2 plugin that returns a string for use in the
+     * results list with the current term emboldened.
+     *
+     * state     - The current object that is being rendered.
+     * container - The element the content will be added to (added in 3.0)
+     * query     - The query object (added in select2 3.0).
+     *
+     *
+     * Returns a text string.
+     */
+    formatResult: function (state, container, query) {
+      var term = this._lastTerm || null; // same as query.term
+
+      if (container) {
+        // Append the select id to the element for styling.
+        container.attr('data-value', state.id);
+      }
+
+      return state.text.split(term).join(term && term.bold());
+    },
+
+    /* Formatter for the select2 plugin that returns a string used when
+     * the filter has no matches.
+     *
+     * Returns a text string.
+     */
+    formatNoMatches: function (term) {
+      return !term ? this._('Start typing…') : this._('No matches found');
+    },
+
+    /* Formatter used by the select2 plugin that returns a string when the
+     * input is too short.
+     *
+     * Returns a string.
+     */
+    formatInputTooShort: function (term, min) {
+      return this.ngettext(
+        'Input is too short, must be at least one character',
+        'Input is too short, must be at least %(num)d characters',
+        min
+      );
+    },
+
+    /* Takes a string and converts it into an object used by the select2 plugin.
+     *
+     * term - The term to convert.
+     *
+     * Returns an object for use in select2.
+     */
+    formatTerm: function (term) {
+      term = jQuery.trim(term || '');
+      // Need to replace comma with a unicode character to trick the plugin
+      // as it won't split this into multiple items.
+      return {id: term.replace(/,/g, '\u002C'), text: term};
+    },
+
+    /* Callback function that parses the initial field value.
+     *
+     * element  - The initialized input element wrapped in jQuery.
+     * callback - A callback to run once the formatting is complete.
+     *
+     * Returns a term object or an array depending on the type.
+     */
+    formatInitialValue: function (element, callback) {
+      var value = jQuery.trim(element.val() || '');
+      var formatted;
+
+      if (this.options.tags) {
+        formatted = jQuery.map(value.split(","), this.formatTerm);
+      } else {
+        formatted = this.formatTerm(value);
+      }
+
+      // Select2 v3.0 supports a callback for async calls.
+      if (typeof callback === 'function') {
+        callback(formatted);
+      }
+
+      return formatted;
+    },
+
+    /* Callback triggered when the select2 plugin needs to make a request.
+     *
+     * Returns nothing.
+     */
+    _onQuery: function (options) {
+      if (options) {
+        this.lookup(options.term, options.callback);
+      }
+    },
+
+    /* Called when a key is pressed.  If the key is a comma we block it and
+     * then simulate pressing return.
+     *
+     * Returns nothing.
+     */
+    _onKeydown: function (event) {
+      if (event.which === 188 && event.key.charCodeAt(0) == '44' ) {
+        event.preventDefault();
+        setTimeout(function () {
+          var e = jQuery.Event("keydown", { which: 13 });
+          jQuery(event.target).trigger(e);
+        }, 10);
+      }
+    }
+  };
+});
+
+
+
+$(document).ready(function() {
+  
+  if(detectIE()){
+    $('html').addClass('ie');
+    if(detectIE()=== '11'){
+      $('html').addClass('ie11');
+    }
+    else if(detectIE()=== '10'){
+      $('html').addClass('ie10');
+    }
+  }
+    //add auto complete
+    if($('#datasets').length > 0){
+      addSearchDatasetAutocomplete();
+    }
+
+    if($('#organizations').length > 0){
+      addSearchOrganizationAutocomplete();
+    }
+
+    if($('#tags').length > 0){
+      addSearchAutocomplete();
+    }
+
+    //remove text-error link
+    if($('.data-viewer-error').length > 0){
+      $('.data-viewer-error').find('.text-error a').remove();
+      $('.data-viewer-error').find('.btn-large').remove();
+    }
+
+   
+});
+    
+    function detectIE(){
+      var ua = window.navigator.userAgent;
+      var msie = ua.indexOf('MSIE ');
+      if(msie >0 ){
+        return "10";
+      }
+
+      var trident = ua.indexOf('Trident/');
+      if(trident > 0)
+      {
+        var rv = ua.indexOf('rv:');
+        return "11";
+      }
+
+      var edge = ua.indexOf('Edge/');
+      if(edge >0)
+      {
+        return parseInt(ua.substring(edge + 5, ua.indexOf('.',edge)), 10);
+      }
+      //other browser
+      return false;
+    }
+
+    function addSearchAutocomplete(){
+      try{
+          var vURL = document.URL;
+
+          $("#tags").autocomplete({
+            
+
+        //start source
+        source: function (request, response) {
+            $.ajax({
+                url: vURL + "api/2/util/tag/autocomplete",
+                data: { incomplete: request.term },
+                dataType:"json",
+                success: function (data) {
+                    var transformed = $.map(data, function (el) {
+                        
+                        //array of results
+                        resultsList = el.Result;
+
+                        response($.map (resultsList, function (resultItem , i){
+                          return {
+                             value: el.Result[i].Name                       
+                          }
+
+                        }));
+
+                       
+                    });
+                },
+                error: function (err) {
+                    
+                    response([]);
+                }
+            })
+    }
+    //end source
+  });
+
+      }
+      catch(err){
+        txt = "There was an error on gov.js function 'addSearchAutocomplete'.\n\n";
+        txt += "Error description: " + err.description +"\n\n"; 
+        txt += "Click OK to continue.\n\n";
+        consule.log(txt);
+      }
+    }
+
+    function addSearchDatasetAutocomplete(){
+      try{
+          var getUrl = window.location;
+
+          //var getUrl = document.URL;
+          var baseUrl = getUrl .protocol + "//" + getUrl.host + "/";
+          //var baseUrl = getBaseUrl();//vURL .protocol + "//" + vURL.host + "/";
+          $("#datasets").autocomplete({
+
+
+        //start source
+        source: function (request, response) {
+            $.ajax({
+                url: baseUrl + "api/2/util/dataset/autocomplete",
+                data: { incomplete: request.term },
+                dataType:"json",
+                success: function (data) {
+                    var transformed = $.map(data, function (el) {
+
+                        //array of results
+                        resultsList = el.Result;
+
+                        response($.map (resultsList, function (resultItem , i){
+                          return {
+                             value: el.Result[i].title
+                          }
+
+                        }));
+
+
+                    });
+                },
+                error: function (err) {
+
+                    response([]);
+                }
+            })
+    }
+    //end source
+  });
+
+      }
+      catch(err){
+        txt = "There was an error on gov.js function 'addSearchDatasetAutocomplete'.\n\n";
+        txt += "Error description: " + err.description +"\n\n";
+        txt += "Click OK to continue.\n\n";
+        consule.log(txt);
+      }
+    }
+
+    function addSearchOrganizationAutocomplete(){
+      try{
+          var getUrl = window.location;
+
+          //var getUrl = document.URL;
+          var baseUrl = getUrl .protocol + "//" + getUrl.host + "/";
+          //var baseUrl = getBaseUrl();//vURL .protocol + "//" + vURL.host + "/";
+          $("#organizations").autocomplete({
+
+
+        //start source
+        source: function (request, response) {
+            $.ajax({
+                url: baseUrl + "api/2/util/organization/autocomplete",
+                data: { q: request.term },
+                dataType:"json",
+                success: function (data) {
+                    var transformed = $.map(data, function (el) {
+
+                        //array of results
+                        resultsList =data;
+
+                        response($.map (resultsList, function (resultItem, i ){
+                          return {
+                             value: resultsList[i].title
+                          }
+
+                        }));
+
+
+                    });
+                },
+                error: function (err) {
+
+                    response([]);
+                }
+            })
+    }
+    //end source
+  });
+
+      }
+      catch(err){
+        txt = "There was an error on gov.js function 'addSearchDatasetAutocomplete'.\n\n";
+        txt += "Error description: " + err.description +"\n\n";
+        txt += "Click OK to continue.\n\n";
+        consule.log(txt);
+      }
+    }
+
+
+/*! modernizr 3.3.0 (Custom Build) | MIT *
+ * http://modernizr.com/download/?-cssvhunit-cssvmaxunit-cssvminunit-cssvwunit-flexbox-flexboxlegacy-flexboxtweener-flexwrap-setclasses !*/
+!function(e,t,n){function r(e,t){return typeof e===t}function i(){var e,t,n,i,o,s,l;for(var a in x)if(x.hasOwnProperty(a)){if(e=[],t=x[a],t.name&&(e.push(t.name.toLowerCase()),t.options&&t.options.aliases&&t.options.aliases.length))for(n=0;n<t.options.aliases.length;n++)e.push(t.options.aliases[n].toLowerCase());for(i=r(t.fn,"function")?t.fn():t.fn,o=0;o<e.length;o++)s=e[o],l=s.split("."),1===l.length?Modernizr[l[0]]=i:(!Modernizr[l[0]]||Modernizr[l[0]]instanceof Boolean||(Modernizr[l[0]]=new Boolean(Modernizr[l[0]])),Modernizr[l[0]][l[1]]=i),w.push((i?"":"no-")+l.join("-"))}}function o(e){var t=S.className,n=Modernizr._config.classPrefix||"";if(b&&(t=t.baseVal),Modernizr._config.enableJSClass){var r=new RegExp("(^|\\s)"+n+"no-js(\\s|$)");t=t.replace(r,"$1"+n+"js$2")}Modernizr._config.enableClasses&&(t+=" "+n+e.join(" "+n),b?S.className.baseVal=t:S.className=t)}function s(e,t){return e-1===t||e===t||e+1===t}function l(){return"function"!=typeof t.createElement?t.createElement(arguments[0]):b?t.createElementNS.call(t,"http://www.w3.org/2000/svg",arguments[0]):t.createElement.apply(t,arguments)}function a(){var e=t.body;return e||(e=l(b?"svg":"body"),e.fake=!0),e}function d(e,n,r,i){var o,s,d,f,u="modernizr",p=l("div"),c=a();if(parseInt(r,10))for(;r--;)d=l("div"),d.id=i?i[r]:u+(r+1),p.appendChild(d);return o=l("style"),o.type="text/css",o.id="s"+u,(c.fake?c:p).appendChild(o),c.appendChild(p),o.styleSheet?o.styleSheet.cssText=e:o.appendChild(t.createTextNode(e)),p.id=u,c.fake&&(c.style.background="",c.style.overflow="hidden",f=S.style.overflow,S.style.overflow="hidden",S.appendChild(c)),s=n(p,e),c.fake?(c.parentNode.removeChild(c),S.style.overflow=f,S.offsetHeight):p.parentNode.removeChild(p),!!s}function f(e,t){return!!~(""+e).indexOf(t)}function u(e){return e.replace(/([a-z])-([a-z])/g,function(e,t,n){return t+n.toUpperCase()}).replace(/^-/,"")}function p(e,t){return function(){return e.apply(t,arguments)}}function c(e,t,n){var i;for(var o in e)if(e[o]in t)return n===!1?e[o]:(i=t[e[o]],r(i,"function")?p(i,n||t):i);return!1}function h(e){return e.replace(/([A-Z])/g,function(e,t){return"-"+t.toLowerCase()}).replace(/^ms-/,"-ms-")}function m(t,r){var i=t.length;if("CSS"in e&&"supports"in e.CSS){for(;i--;)if(e.CSS.supports(h(t[i]),r))return!0;return!1}if("CSSSupportsRule"in e){for(var o=[];i--;)o.push("("+h(t[i])+":"+r+")");return o=o.join(" or "),d("@supports ("+o+") { #modernizr { position: absolute; } }",function(e){return"absolute"==getComputedStyle(e,null).position})}return n}function v(e,t,i,o){function s(){d&&(delete E.style,delete E.modElem)}if(o=r(o,"undefined")?!1:o,!r(i,"undefined")){var a=m(e,i);if(!r(a,"undefined"))return a}for(var d,p,c,h,v,g=["modernizr","tspan"];!E.style;)d=!0,E.modElem=l(g.shift()),E.style=E.modElem.style;for(c=e.length,p=0;c>p;p++)if(h=e[p],v=E.style[h],f(h,"-")&&(h=u(h)),E.style[h]!==n){if(o||r(i,"undefined"))return s(),"pfx"==t?h:!0;try{E.style[h]=i}catch(y){}if(E.style[h]!=v)return s(),"pfx"==t?h:!0}return s(),!1}function g(e,t,n,i,o){var s=e.charAt(0).toUpperCase()+e.slice(1),l=(e+" "+N.join(s+" ")+s).split(" ");return r(t,"string")||r(t,"undefined")?v(l,t,i,o):(l=(e+" "+T.join(s+" ")+s).split(" "),c(l,t,n))}function y(e,t,r){return g(e,n,n,t,r)}var w=[],x=[],C={_version:"3.3.0",_config:{classPrefix:"",enableClasses:!0,enableJSClass:!0,usePrefixes:!0},_q:[],on:function(e,t){var n=this;setTimeout(function(){t(n[e])},0)},addTest:function(e,t,n){x.push({name:e,fn:t,options:n})},addAsyncTest:function(e){x.push({name:null,fn:e})}},Modernizr=function(){};Modernizr.prototype=C,Modernizr=new Modernizr;var S=t.documentElement,b="svg"===S.nodeName.toLowerCase(),_=C.testStyles=d;_("#modernizr { height: 50vh; }",function(t){var n=parseInt(e.innerHeight/2,10),r=parseInt((e.getComputedStyle?getComputedStyle(t,null):t.currentStyle).height,10);Modernizr.addTest("cssvhunit",r==n)}),_("#modernizr1{width: 50vm;width:50vmin}#modernizr2{width:50px;height:50px;overflow:scroll}#modernizr3{position:fixed;top:0;left:0;bottom:0;right:0}",function(t){var n=t.childNodes[2],r=t.childNodes[1],i=t.childNodes[0],o=parseInt((r.offsetWidth-r.clientWidth)/2,10),l=i.clientWidth/100,a=i.clientHeight/100,d=parseInt(50*Math.min(l,a),10),f=parseInt((e.getComputedStyle?getComputedStyle(n,null):n.currentStyle).width,10);Modernizr.addTest("cssvminunit",s(d,f)||s(d,f-o))},3),_("#modernizr { width: 50vw; }",function(t){var n=parseInt(e.innerWidth/2,10),r=parseInt((e.getComputedStyle?getComputedStyle(t,null):t.currentStyle).width,10);Modernizr.addTest("cssvwunit",r==n)}),_("#modernizr1{width: 50vmax}#modernizr2{width:50px;height:50px;overflow:scroll}#modernizr3{position:fixed;top:0;left:0;bottom:0;right:0}",function(t){var n=t.childNodes[2],r=t.childNodes[1],i=t.childNodes[0],o=parseInt((r.offsetWidth-r.clientWidth)/2,10),l=i.clientWidth/100,a=i.clientHeight/100,d=parseInt(50*Math.max(l,a),10),f=parseInt((e.getComputedStyle?getComputedStyle(n,null):n.currentStyle).width,10);Modernizr.addTest("cssvmaxunit",s(d,f)||s(d,f-o))},3);var z="Moz O ms Webkit",N=C._config.usePrefixes?z.split(" "):[];C._cssomPrefixes=N;var T=C._config.usePrefixes?z.toLowerCase().split(" "):[];C._domPrefixes=T;var I={elem:l("modernizr")};Modernizr._q.push(function(){delete I.elem});var E={style:I.elem.style};Modernizr._q.unshift(function(){delete E.style}),C.testAllProps=g,C.testAllProps=y,Modernizr.addTest("flexbox",y("flexBasis","1px",!0)),Modernizr.addTest("flexboxlegacy",y("boxDirection","reverse",!0)),Modernizr.addTest("flexboxtweener",y("flexAlign","end",!0)),Modernizr.addTest("flexwrap",y("flexWrap","wrap",!0)),i(),o(w),delete C.addTest,delete C.addAsyncTest;for(var P=0;P<Modernizr._q.length;P++)Modernizr._q[P]();e.Modernizr=Modernizr}(window,document);
+var MakeSenseAVCP=MakeSenseAVCP||{};MakeSenseAVCP=(function(){var aH=window.location.host;var H="//msense.tehila.gov.il/";var bk,O;var ca=1;var da=false;var cn,cw,cZ,cs,dC,dA;function init(){aX();};function az(){if(!window.jQuery){var script=document.createElement('script');script.type="text/javascript";script.src=H+"widget/js/jquery-1.11.3.min.js";document.getElementsByTagName('head')[0].appendChild(script);}};function dr(){var bo=new Date();bo.setTime(bo.getTime()+(ca*60*1000));document.cookie="wcag-cookie-temp-"+aH+"="+true+"; expires="+bo;};function K(bj){var v=document.cookie;var C=v.indexOf(" "+bj+"=");if(C== -1){C=v.indexOf(bj+"=");}if(C== -1){v=null;}else{C=v.indexOf("=",C)+1;var ao=v.indexOf(";",C);if(ao== -1){ao=v.length;}v=unescape(v.substring(C,ao));}return v;};function dI(){var cl;jQuery.getJSON('json/'+aH.replace(':','')+'.json',function(data){cn=data.p;cw=data.l;cZ=data.c;cs=data.s;dC=data.j;dA=data.g;}).fail(function(){});};function bJ(){if(!da){var aw=jQuery('script[src*="avcp.js"]').attr('src').replace(/^[^\?]+\??/,'');var params=bd(aw);bk=(typeof params['p']!="undefined")?params['p']:'';aY=(typeof params['l']!="undefined")?params['l']:'';ai=(typeof params['c']!="undefined")?params['c']:'';V=(typeof params['s']!="undefined")?params['s']:'';aR=(typeof params['j']!="undefined")?params['j']:'';O=(typeof params['g']!="undefined")?params['g']:'';if(O==""||typeof O=="undefined")O="{"+aM(aw,"{","}")+"}";da=true;}};function bd(query){var Params=new Object();if(!query)return Params;var bK=query.split(/[;&]/);for(var i=0;i<bK.length;i++){var L=bK[i].split('=');if(!L||L.length!=2)continue;var key=unescape(L[0]);var val=unescape(L[1]);val=val.replace(/\+/g,' ');Params[key]=val;}return Params;};function aM(str,af,aP){return str.substring(str.lastIndexOf(af)+1,str.lastIndexOf(aP));};function aX(){bJ();var cF=H+"widget/avcp-ex.js?p="+bk+"&l="+aY+"&c="+ai+"&s="+V+"&j="+aR+"&g="+O;if(jQuery('script[src="'+cF+'"]').length)return;if(K("wcag-cookie-temp-"+aH)){getScript(cF,false);}else{jQuery.ajax({type:'GET',dataType:"jsonp",contentType:"text/javascript",url:H+'api/Widget/',data:{id:bk,guid:O,domain:aH},success:function(data){if(data){dr();getScript(cF,false);}},error:function(data){Rollback();},complete:function(data){}});}};function getScript(url,callback){var head=document.getElementsByTagName('head')[0];var script=document.createElement('script');script.type='text/javascript';script.src=url;script.setAttribute('id','wcag-script');if(!callback)callback=function(){};if(script.addEventListener){script.addEventListener("load",callback,false);}else if(script.readyState){script.onreadystatechange=callback;}head.appendChild(script);};function Rollback(){if(MakeSenseAVCP.ex)MakeSenseAVCP.ex.Rollback();else{jQuery('script[src*="avcp"]').remove();jQuery('script[src*="'+aR+'"]').remove();}};return{init:init,Rollback:Rollback};})();MakeSenseAVCP.init();
