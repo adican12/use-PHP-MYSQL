@@ -161,7 +161,8 @@ if(isset($_POST['submit']))
 
 	<script>
 	 var mykey = key;
-	 var a="gg";
+//	 console.log(mykey);
+
 
 
 // 	var mykey = config.MY_KEY;
@@ -193,11 +194,11 @@ if(isset($_POST['submit']))
 			infowindow.open(map,marker);
 		});
 }
-
+var b= "js/hh.js";
 	</script>
+	<script src=b></script>
 
-	<!-- <script src="https://maps.googleapis.com/maps/api/js?key="+mykey+"&callback=initMap"></script> -->
-	<script src=a></script>
+	<!-- <script src=a></script> -->
 	<!--
 // 	var marker_array = [];
 // 	var map,marker,info_window;
