@@ -161,6 +161,7 @@ if(isset($_POST['submit']))
 	$sql = "SELECT * FROM apiKey";
 	if($res = $conn->query($sql)) {
 		echo "its working";
+		echo "sds"
 	}
 	$row = mysqli_fetch_assoc($res);
 ?>
