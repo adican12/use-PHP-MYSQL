@@ -138,7 +138,7 @@ if(isset($_POST['submit']))
 	<script src="js/jquery.min.js"></script>
 	<!-- <script src="js/const.js"></script> -->
 	<!-- <script src = "../config.js"></script> -->
-	<script src ="cons.js"></script>
+	<script src ="../cons.js"></script>
 	<script src="js/bootstrap-select.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/jquery.dataTables.min.js"></script>
@@ -160,7 +160,7 @@ if(isset($_POST['submit']))
 
 
 	<script>
-	 var mykey =key;
+	 var mykey =cons.key;
 	 // console.log(mykey);
 
 // 	var mykey = config.MY_KEY;
