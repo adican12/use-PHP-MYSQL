@@ -167,6 +167,7 @@ if(isset($_POST['submit']))
 
 	<script>
 	 var mykey = <?php echo $row['apikey'];?>;
+	 var key = mykey.toString();
 	 // console.log(mykey);
 
 // 	var mykey = config.MY_KEY;
@@ -201,7 +202,7 @@ if(isset($_POST['submit']))
 
 	</script>
 
-	<script src="https://maps.googleapis.com/maps/api/js?key=" + mykey +  "&callback=initMap"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=" + key +  "&callback=initMap"></script>
 	<!--
 // 	var marker_array = [];
 // 	var map,marker,info_window;
