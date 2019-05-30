@@ -130,7 +130,7 @@ $conn->close();
 					<div class="col-md-12">
 						<h1 class="text-center text-bold mt-2x">Register</h1>
                         <div class="hr-dashed"></div>
-						<div class="well row pt-2x pb-3x bk-light text-center">
+												<div class="well row pt-2x pb-3x bk-light text-center">
                          <form method="post" class="form-horizontal" enctype="multipart/form-data" name="regform" onSubmit="return validate();">
                             <div class="form-group">
                             <label class="col-sm-1 control-label">Name<span style="color:red">*</span></label>
@@ -141,13 +141,15 @@ $conn->close();
                             <div class="col-sm-5">
                             <input type="text" name="email" class="form-control" required>
                             </div>
-                            </div>
+
 
                             <div class="form-group">
                             <label class="col-sm-1 control-label">Password<span style="color:red">*</span></label>
                             <div class="col-sm-5">
                             <input type="password" name="password" class="form-control" id="password" required >
                             </div>
+														</div>
+														
                             <label class="col-sm-1 control-label">User Type<span style="color:red">*</span></label>
                             <div class="col-sm-5">
 															<select name="usertype" class="form-control" required>
