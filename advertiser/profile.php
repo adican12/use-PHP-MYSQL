@@ -161,7 +161,7 @@ if(isset($_POST['submit']))
 
 
 	<script>
-	 var mykey = key;
+	 // var mykey = key;
 //	 console.log(mykey);
 
 
