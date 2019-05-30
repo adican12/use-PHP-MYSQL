@@ -160,7 +160,7 @@ if(isset($_POST['submit']))
 
 
 	<script>
-	 var mykey =cons.key;
+	 var mykey =key;
 	 // console.log(mykey);
 
 // 	var mykey = config.MY_KEY;
