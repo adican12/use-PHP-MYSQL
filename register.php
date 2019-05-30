@@ -53,25 +53,28 @@ if ($conn->query($sql) === TRUE) {
 	$error="Something went wrong. Please try again";
 }
 
-
+$conn->close();
 }
-$filename=$_FILES['uploadfile']['name'];
-    $filetempname=$_FILES['uploadfile']['tmp_name'];
-    $folder = 'images/';
-    move_uploaded_file($filetempname,$folder.$filename);
-  $sql = "INSERT INTO `image`(`image`)VALUES('$filename');";
-  if($qry = $conn->query($sql)) {
-    echo "image uploaded";
-  }
-}
-/* this the code to SHOW images*/
-// $sql = "SELECT * FROM image WHERE image_id =";
-// if($res = $conn->query($sql)) {
-//   echo '<script>alert("ok the query is working work")</script>';
-// }
-// while($row =  mysqli_fetch_assoc($res)) {
-//   echo '<img height = 150px width=100px src="'.$row['image'].'">';
-// }
+?>
+<?php
+include('includes/config.php');
+if(isset($_POST['submit'])) {
+	$filename=$_FILES['uploadfile']['name'];
+	    $filetempname=$_FILES['uploadfile']['tmp_name'];
+	    $folder = 'images/';
+	    move_uploaded_file($filetempname,$folder.$filename);
+	  $sql = "INSERT INTO `image`(`image`)VALUES('$filename');";
+	  if($qry = $conn->query($sql)) {
+	    echo "image uploaded";
+	  }
+	}
+	$sql = "SELECT * FROM image WHERE image_id =";
+	if($res = $conn->query($sql)) {
+	  echo '<script>alert("ok the query is working work")</script>';
+	}
+	while($row =  mysqli_fetch_assoc($res)) {
+	  echo '<img height = 150px width=100px src="'.$row['image'].'">';
+	}
 $conn->close();
 ?>
 
