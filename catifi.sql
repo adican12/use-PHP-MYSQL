@@ -239,9 +239,47 @@ CREATE TABLE `campaign`(
   `category` VARCHAR(50) NOT NULL,
   `stratingDate` DATE,
   `endDate` DATE,
+  `location_id` INT(11) NOT NULL,
   PRIMARY KEY(campaignID),
   FOREIGN KEY(id) REFERENCES users(id) ON DELETE CASCADE
-)ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12;
+)ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1;
+
+
+INSERT INTO `campaign` (`campaignName`,`id`,`adID`,`gender`,`ageMin`,`ageMax`,`budget`,`category`,`stratingDate`,`endDate`,`location_id`) VALUES
+("A tour of the ancient caves",3,9,"male&famle",58,37,87,"Antiques","2024-08-07","2024-12-12",9),
+("Digital",2,4,"male",49,61,190,"Digital art","2019-11-14","2024-02-12",2),
+("Store souvenirs",6,4,"famle",20,26,185,"Memorabilia","2026-02-22","2023-06-12",8),
+("A new drug",1,3,"male",31,63,252,"Safety and health","2018-08-25","2021-12-31",3),
+("Bath soaps",7,5,"famle",16,72,100,"Bath and body","2020-08-29","2026-09-08",6),
+("crib",6,1,"male",24,59,384,"Baby products (other)","2027-04-06","2028-05-18",8),
+("Button-down shirts",6,4,"male",21,59,200,"Clothing","2027-04-12","2020-01-28",6),
+("An exhibition of collectible cars",3,7,"male",18,26,164,"Vintage and collectibles","2021-02-27","2020-01-07",13),
+("perfume",8,9,"famle",29,75,107,"Fragrances and perfumes","2021-08-20","2022-03-10",11),
+("makeup set",8,1,"famle",46,65,195,"Makeup and cosmetics","2023-08-03","2024-10-06",4);
+INSERT INTO `campaign` (`campaignName`,`id`,`adID`,`gender`,`ageMin`,`ageMax`,`budget`,`category`,`stratingDate`,`endDate`,`location_id`) VALUES
+("New printers",7,9,"male&famle",54,54,177,"Publishing and printing","2022-12-22","2025-07-21",5),
+("Forbes Magazine",9,8,"male&famle",43,67,397,"Magazines","2018-12-26","2020-09-24 23:38:14",5),
+("Teachers are required",4,4,"male&famle",16,57,170,"Educational and textbooks","2024-06-25","2025-09-19",5),
+("How to publish",7,6,"male&famle",20,25,156,"Advertising","2027-12-07","2020-04-30",2),
+("Safety conference on the construction site",3,8,"male",63,72,121,"Construction","2020-09-12","2023-11-16",3),
+("Guitars for sale",9,1,"male&famle",23,45,195,"Music store (instruments and sheet music)","2021-09-18","2022-07-15",4),
+("Sale of old stamps",9,5,"male&famle",39,62,213,"Clothing","2020-08-05","2023-10-07 14:28:39",8),
+("Create site content",3,2,"famle",32,38,220,"Digital content","2019-03-13","2021-04-10",7),
+("Exhibition of paintings",4,3,"male&famle",20,27,360,"Commercial photography, art, and graphics","2019-07-08","2022-05-14 06:45:56",3),
+("New Camera",9,4,"male&famle",30,32,145,"Commercial photography, art, and graphics","2020-05-25","2023-09-23",1);
+INSERT INTO `campaign` (`campaignName`,`id`,`adID`,`gender`,`ageMin`,`ageMax`,`budget`,`category`,`stratingDate`,`endDate`,`location_id`) VALUES
+("An old comics exhibition",9,3,"male",28,34,338,"Rare and used books","2020-11-20","2023-04-04",2),
+("A tour of the farmers' fields",6,6,"famle",18,23,279,"Agricultural","2021-05-07","2022-01-10 19:19:21",8),
+("Degree in Architecture",15,8,"male&famle",22,39,338,"Architectural, engineering, and surveying services.","2022-04-30","2028-03-13",6),
+("Vegetables straight from the parts",37,8,"male&famle",62,59,295,"Agricultural","2019-12-10","2021-05-05",6),
+("Let's learn how to write digital content",24,4,"male&famle",39,52,222,"Digital content","2020-11-24","2020-12-12",8),
+("Multi-level marketing course",35,4,"male",31,34,125,"Multi-level marketing","2018-12-02","2026-07-30",3),
+("Designer clothes for Children",33,4,"famle",28,30,226,"Children & clothing","2018-02-19","2019-07-09",7),
+("Wholesale sweets",21,7,"male",23,36,160,"Wholesale","2018-01-28","2019-04-12",6),
+("Designer clothes for men",16,2,"male",26,26,217,"Men & clothing","2019-04-14","2020-01-21",7),
+("Order Packing & Shipping Supplies",17,9,"male",21,67,270,"Shipping and packing","2023-09-18 ","2023-12-28",3);
+
+
 
 
 CREATE TABLE `locations`(

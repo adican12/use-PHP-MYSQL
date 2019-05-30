@@ -85,8 +85,8 @@ else{
 									<thead>
 										<tr>
 										       <th>#</th>
-												<th>Campaign ID</th>
 												<th>Campaign Name</th>
+												<th>Budget</th>
 												<th>Category</th>
 												<th>Strat Date</th>
 												<th>End Date</th>
@@ -98,7 +98,7 @@ else{
 
 <?php
 
-$sql = "SELECT * from  deleteduser";
+$sql = "SELECT * FROM campaign WHERE campaignID BETWEEN 10 and 22";
 
 $result = $conn->query($sql);
 if($results12 === false)
@@ -126,8 +126,11 @@ if(mysqli_num_rows($result) > 0)
 		?>
 										<tr>
 											<td><?php echo htmlentities($cnt);?></td>
-                                            <td><?php echo $result['email'];?></td>
-											<td><?php echo $result['deltime'];?></td>
+                                            <td><?php echo $result['campaignName'];?></td>
+																						<td><?php echo $result['budget'];?></td>
+																						<td><?php echo $result['category'];?></td>
+																						<td><?php echo $result['stratingDate'];?></td>
+																						<td><?php echo $result['endDate'];?></td>
 										</tr>
 										<?php $cnt=$cnt+1; }} ?>
 
