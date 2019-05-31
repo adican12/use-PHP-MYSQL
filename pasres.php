@@ -4,8 +4,8 @@
   if(isset($_POST['uploadfilesub'])) {
     $filename=$_FILES['uploadfile']['name'];
     $filetempname=$_FILES['uploadfile']['tmp_name'];
-    $folder = 'C:\wamp64\www\use-PHP-MYSQL\images';
-    move_uploaded_file($filetempname,$folder);
+    $folder = 'images/';
+    move_uploaded_file($filetempname,$folder.$filename);
   $sql = "INSERT INTO `image`(`image`)VALUES('$filename');";
   if($qry = $conn->query($sql)) {
     //echo "image uploaded";
