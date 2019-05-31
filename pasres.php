@@ -12,6 +12,8 @@
   }
 } else {
   echo "ERROR_THE_FILE_NOT_IN_FOLDER";
+  echo "the name of the folder is : " .$folder."<br>";
+  echo "the name of the filename is : " .$filename."<br>";
 }
 }
 $sql = "SELECT * FROM image";
