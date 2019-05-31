@@ -16,9 +16,9 @@ if(isset($_POST['submit'])) {
             //} //else {
                   //  echo "Image Failed to upload";
             //}
-    } else {
-      echo "we here";
     }
+} else {
+  echo "we here";
 }
 ?>
 
