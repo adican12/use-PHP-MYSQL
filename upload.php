@@ -4,7 +4,7 @@ include 'includes/config.php';
 $statusMsg = '';
 
 // File upload path
-$targetDir = "images/";
+$targetDir = "newImages/";
 $fileName = basename($_FILES["file"]["name"]);
 $targetFilePath = $targetDir . $fileName;
 $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
