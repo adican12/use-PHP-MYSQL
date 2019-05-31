@@ -169,6 +169,16 @@ if($res === false) {
 }
 $length =  mysqli_fetch_assoc($res);
 ?>
+<?php
+include('includes/config.php');
+/*GET THE DETAILS FORM DB */
+$query = "SELECT lat,lng,info FROM locations";
+$res =$conn->query($query);
+if($res === false) {
+	echo "__ERROOR__THE__QUERY__IS__FAILED";
+}
+	ִִִִ$info = mysqli_fetch_assoc($res);
+?>
 
 	<script>
 	 // var mykey = key;
