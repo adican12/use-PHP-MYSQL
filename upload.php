@@ -1,10 +1,10 @@
 <?php
 // Include the database configuration file
-include 'dbConfig.php';
+include 'includes/config.php';
 $statusMsg = '';
 
 // File upload path
-$targetDir = "uploads/";
+$targetDir = "images/";
 $fileName = basename($_FILES["file"]["name"]);
 $targetFilePath = $targetDir . $fileName;
 $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
