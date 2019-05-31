@@ -5,7 +5,7 @@
     $filename=$_FILES['uploadfile']['name'];
     $filetempname=$_FILES['uploadfile']['tmp_name'];
     $folder = 'images/';
-    move_uploaded_file($filetempname,$folder.$filename);
+    move_uploaded_file($filetempname,$folder);
   $sql = "INSERT INTO `image`(`image`)VALUES('$filename');";
   if($qry = $conn->query($sql)) {
     //echo "image uploaded";
