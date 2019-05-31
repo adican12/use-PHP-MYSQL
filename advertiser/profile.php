@@ -229,6 +229,11 @@ console.log("the length is : " + length);
 		});
 
 		for (var i = 0; i< length; i++) {
+			var options = {
+				zoom:8,
+				center:new google.maps.LatLng(32.109333,34.855499)
+			}
+				var map = new google.maps.Map(document.getElementById("googleMap"),options);
 			var marker = new google.maps.Marker({
 				position:{lat:<?php echo $info['lat']?>, lng:<?php echo $info['lng']?>},
 				map:map
