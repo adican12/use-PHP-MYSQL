@@ -226,7 +226,7 @@ console.log("the length is : " + length);
 			content: '<h3><?php echo $result['info'].$result['name']?>;</h3>'
 		});
 		var infowindow2 = new google.maps.InfoWindow({
-			content: '<h3><?php echo $info['info']?>;</h3>'
+			content: '<h3><?php echo $result['info'].$result['name']?>;</h3>'
 		});
 		// add a listnerr when the click we see the msg.
 		marker.addListener('click',function(){
@@ -235,11 +235,6 @@ console.log("the length is : " + length);
 		marker1.addListener('click',function(){
 			infowindow1.open(map,marker);
 		});
-		marker2.addListener('click',function(){
-			infowindow.open(map,marker);
-		});
-
-		
 }
 
 	</script>
