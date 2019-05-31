@@ -239,21 +239,7 @@ console.log("the length is : " + length);
 			infowindow.open(map,marker);
 		});
 
-		for (var i =0;i<length;i++) {
-			//adding markers
-			var marker3 = new google.maps.Marker({
-				position:{lat:<?php echo $info['lat']?>, lng:<?php $info['lng']?>},
-				map:map
-			});
-			//adding the info window
-			var infowindow3 = new google.maps.InfoWindow({
-				content: '<h3><?php echo $info['info']?>;</h3>'
-			});
-			// adding the funciton
-			marker3.addListener('click',function(){
-				infowindow.open(map,marker);
-			});
-		}
+		
 }
 
 	</script>
