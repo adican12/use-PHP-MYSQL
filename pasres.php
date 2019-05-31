@@ -11,7 +11,8 @@
     echo "image uploaded";
   }
 }
-$sql = "SELECT * FROM image WHERE image_id =23";
+$image_id = 1;
+$sql = "SELECT * FROM image WHERE image_id ='$image_id';";
 if($res = $conn->query($sql)) {
   echo '<script>alert("ok the query is working work")</script>';
 }
