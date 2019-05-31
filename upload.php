@@ -1,37 +1,13 @@
 <?php
-// Include the database configuration file
+
 include 'includes/config.php';
-$statusMsg = '';
+$imagename=$_FILES["myimage"]["name"];
 
-// File upload path
-$targetDir = "newImages/";
-$fileName = basename($_FILES["file"]["name"]);
-$targetFilePath = $targetDir . $fileName;
-$fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
+//Get the content of the image and then add slashes to it
+$imagetmp=addslashes (file_get_contents($_FILES['myimage']['tmp_name']));
 
-if(isset($_POST["submit"]) && !empty($_FILES["file"]["name"])){
-    // Allow certain file formats
-    $allowTypes = array('jpg','png','jpeg','gif','pdf');
-    if(in_array($fileType, $allowTypes)){
-        // Upload file to server
-        if(move_uploaded_file($_FILES["file"]["tmp_name"], $targetFilePath)){
-            // Insert image file name into database
-            $insert = $db->query("INSERT into images (file_name, uploaded_on) VALUES ('".$fileName."', NOW())");
-            if($insert){
-                $statusMsg = "The file ".$fileName. " has been uploaded successfully.";
-            }else{
-                $statusMsg = "File upload failed, please try again.";
-            }
-        }else{
-            $statusMsg = "Sorry, there was an error uploading your file.";
-        }
-    }else{
-        $statusMsg = 'Sorry, only JPG, JPEG, PNG, GIF, & PDF files are allowed to upload.';
-    }
-}else{
-    $statusMsg = 'Please select a file to upload.';
-}
+//Insert the image name and image content in image_table
+$insert_image="INSERT INTO image VALUES('$imagetmp','$imagename')";
 
-// Display status message
-echo $statusMsg;
+mysql_query($insert_image);
 ?>
