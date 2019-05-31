@@ -6,8 +6,8 @@ if(isset($_POST['submit'])) {
     } else {
       echo "hello";
             // declare Variables
-            // $image =$_FILES['imagefile']['tmp_name'];
-            // $name = $_FILES['imagefile']['name'];
+            $image =$_FILES['imagefile']['tmp_name'];
+            $name = $_FILES['imagefile']['name'];
             // $image = base64_encode(file_get_contents(addslashes($image)));
             //Query
             //$sql = "INSERT INTO `image`(`name`,`image`)VALUES('$name','$image')";
