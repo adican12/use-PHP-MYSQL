@@ -221,21 +221,7 @@ console.log("the length is : " + length);
 		var infowindow1 = new google.maps.InfoWindow({
 			content: '<h3><?php echo $result['info'].$result['name']?>;</h3>'
 		});
-		var marker, i;
-
-	for (i = 0; i < length; i++) {
-		marker = new google.maps.Marker({
-			position: new google.maps.LatLng(<?php echo $info['lat']?>, <?php echo $info['lng']?>),
-			map: map
-		});
-
-		google.maps.event.addListener(marker, 'click', (function(marker, i) {
-			return function() {
-				//infowindow.setContent(locations[i][0]);
-				infowindow.open(map, marker);
-			}
-		})(marker, i));
-	}
+		
 		// add a listnerr when the click we see the msg.
 		marker.addListener('click',function(){
 			infowindow.open(map,marker);
