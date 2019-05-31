@@ -186,54 +186,17 @@ var length = <?php echo $length['MAX(location_id)']?>;
 console.log("the length is : " + length);
 
 
-// 	var mykey = config.MY_KEY;
-// var secretkey = config.SECRET_KEY;
+
 	// this function to open a google maps , set marker and open a info window
 	function initMap() {
 		// Map options
-		var options = {
-			zoom:8,
-			center:new google.maps.LatLng(32.109333,34.855499)
-		}
-
-
-
-		// create a new map in the div googleMap;
-		var map = new google.maps.Map(document.getElementById("googleMap"),options);
-
-		// Add Marker
-		var marker = new google.maps.Marker({
-			position:{lat:32.10933, lng:34.855499},
-			map:map
-		});
-		//Add a new marker1
-		var marker1 = new google.maps.Marker({
-			position:{lat:<?php echo $result['lat']?>,lng:<?php echo $result['lng']?>},
-			map:map
-
-		});
-
-		var infowindow= new google.maps.InfoWindow({
-			content:'<h3>HERE WE HAVE A WIFI YOU CAN PUBLISH HERE</h3>'
-		});
-		//adding a new infowindow
-		var infowindow1 = new google.maps.InfoWindow({
-			content: '<h3><?php echo $result['info'].$result['name']?>;</h3>'
-		});
-		// add a listnerr when the click we see the msg.
-		marker.addListener('click',function(){
-			infowindow.open(map,marker);
-		});
-		marker1.addListener('click',function(){
-			infowindow1.open(map,marker);
-		});
-
 		for (var i = 0; i< length; i++) {
 			var options = {
 				zoom:8,
 				center:new google.maps.LatLng(32.109333,34.855499)
 			}
-				var map = new google.maps.Map(document.getElementById("googleMap"),options);
+			var map = new google.maps.Map(document.getElementById("googleMap"),options);
+
 			var marker = new google.maps.Marker({
 				position:{lat:<?php echo $info['lat']?>, lng:<?php echo $info['lng']?>},
 				map:map
