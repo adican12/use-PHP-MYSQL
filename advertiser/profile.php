@@ -171,7 +171,7 @@ $length =  mysqli_fetch_assoc($res);
 	<script>
 	 // var mykey = key;
 //	 console.log(mykey);
-var length = <?php echo $length[MAX(location_id)]?>;
+var length = <?php echo $length['MAX(location_id)']?>;
 console.log("the length is : " + length);
 
 
