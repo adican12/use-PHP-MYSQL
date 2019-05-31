@@ -6,17 +6,17 @@
     $filetempname=$_FILES['uploadfile']['tmp_name'];
     $folder = "images/";
     if(move_uploaded_file($filetempname,$folder) === TRUE){
-  $sql = "INSERT INTO `image`(`image`)VALUES('$filename');";
-  if($qry = $conn->query($sql)) {
-    echo "image uploaded";
+      $sql = "INSERT INTO `image`(`image`)VALUES('$filename');";
+        if($qry = $conn->query($sql)) {
+          echo "image uploaded";
+        }
+      } else {
+                echo "ERROR_THE_FILE_NOT_IN_FOLDER <br>";
+                echo "the name of the folder is : " .$folder."<br>";
+                echo "the name of the temp name  is : " .$filetempname."<br>";
+                echo "the name of the filename is : " .$filename."<br>";
+              }
   }
-} else {
-  echo "ERROR_THE_FILE_NOT_IN_FOLDER <br>";
-  echo "the name of the folder is : " .$folder."<br>";
-  echo "the name of the temp name  is : " .$filetempname."<br>";
-  echo "the name of the filename is : " .$filename."<br>";
-}
-}
 $sql = "SELECT * FROM image";
 if($res = $conn->query($sql)) {
   //echo '<script>alert("ok the query is working work")</script>';
