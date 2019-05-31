@@ -159,7 +159,15 @@ if(isset($_POST['submit']))
 	<div id="googleMap" style="width:100%;height:400px;"></div>
  <!-- onclick = "getLocation()" -->
 
-
+<?php
+include('includes/config.php');
+$query="SELECT MAX(location_id) FROM locations";
+$res =$conn->query($query);
+if($res === false) {
+	echo "the query is not working";
+}
+$length =  mysqli_fetch_assoc($res);
+?>
 	<script>
 	 // var mykey = key;
 //	 console.log(mykey);
