@@ -40,7 +40,7 @@ if ($uploadOk == 0) {
 } else {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
         echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
-        $sql = "INSERT INTO `image`(`image`)VALUES('$filename');";
+        $sql = "INSERT INTO `image`(`image`)VALUES('$target_file');";
         if($qry = $conn->query($sql)) {
           echo "image uploaded";
         }
