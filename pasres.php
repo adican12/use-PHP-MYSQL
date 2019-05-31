@@ -5,11 +5,14 @@
     $filename=$_FILES['uploadfile']['name'];
     $filetempname=$_FILES['uploadfile']['tmp_name'];
     $folder = 'images/';
-    move_uploaded_file($filetempname,$folder.$filename);
+    if(move_uploaded_file($filetempname,$folder.$filename) === TRUE){
   $sql = "INSERT INTO `image`(`image`)VALUES('$filename');";
   if($qry = $conn->query($sql)) {
     //echo "image uploaded";
   }
+} else {
+  echo "error we not move the image";
+}
 }
 $image_id = 1;
 $sql = "SELECT * FROM image";
