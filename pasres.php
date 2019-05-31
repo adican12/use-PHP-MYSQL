@@ -16,7 +16,7 @@ $sql = "SELECT * FROM image WHERE image_id = 1;";
 if($res = $conn->query($sql)) {
   //echo '<script>alert("ok the query is working work")</script>';
   while($row =  mysqli_fetch_assoc($res)) {
-    echo '<img height = 150px width=250px src="'.$row['image'].'">';
+    echo '<img height = 150px width=250px src=data:image;base64;"'.$row['image'].'">';
   }
 }
 
@@ -37,7 +37,7 @@ if($res = $conn->query($sql)) {
     <td><?php echo $row['image'];?></td>
   </tr>
   <tr>
-    <img src="images/banner3.jpg">
+    <!-- <img src="images/banner3.jpg"> -->
   </tr>
 </table>
 </body>
