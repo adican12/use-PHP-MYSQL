@@ -35,7 +35,6 @@ if(isset($_POST['submit']))
 	// $query->execute();
 	$msg="Information Updated Successfully";
 }
-
 ?>
 
 
@@ -162,7 +161,13 @@ if(isset($_POST['submit']))
 
 
 	<script>
+	 // var mykey = key;
+//	 console.log(mykey);
 
+
+
+// 	var mykey = config.MY_KEY;
+// var secretkey = config.SECRET_KEY;
 	// this function to open a google maps , set marker and open a info window
 	function initMap() {
 		// Map options
