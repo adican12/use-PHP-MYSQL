@@ -35,11 +35,7 @@ if(isset($_POST['submit']))
 	// $query->execute();
 	$msg="Information Updated Successfully";
 }
-$query = "SELECT MAX(location_id) FROM locations";
-if($res = $conn->query($query)){
-	echo $res;
-}
-$length=  mysqli_fetch_assoc($query);
+
 ?>
 
 
@@ -105,6 +101,12 @@ $length=  mysqli_fetch_assoc($query);
 			 echo "false";
 		}
 		$result = mysqli_fetch_assoc($query);
+		
+		$query = "SELECT MAX(location_id) FROM locations";
+		if($res = $conn->query($query)){
+			echo $res;
+		}
+		$length=  mysqli_fetch_assoc($query);
 
 		// $sql = "SELECT * from admin;";
 		// $query = $dbh -> prepare($sql);
