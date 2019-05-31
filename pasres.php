@@ -37,7 +37,7 @@ if($res = $conn->query($sql)) {
     <td><?php echo $row['image'];?></td>
   </tr>
   <tr>
-    <img src="image/banner3.jpg">
+    <img src="images/banner3.jpg">
   </tr>
 </table>
 </body>
