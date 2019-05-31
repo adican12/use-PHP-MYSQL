@@ -238,6 +238,7 @@ console.log("the length is : " + length);
 		marker2.addListener('click',function(){
 			infowindow.open(map,marker);
 		});
+
 		for (var i =0;i<length;i++) {
 			//adding markers
 			var marker3 = new google.maps.Marker({
@@ -245,7 +246,7 @@ console.log("the length is : " + length);
 				map:map
 			});
 			//adding the info window
-			var infowindow2 = new google.maps.InfoWindow({
+			var infowindow3 = new google.maps.InfoWindow({
 				content: '<h3><?php echo $info['info']?>;</h3>'
 			});
 			// adding the funciton
