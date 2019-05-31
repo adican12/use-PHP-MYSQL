@@ -199,10 +199,11 @@ console.log("the length is : " + length);
 
 
 		// create a new map in the div googleMap;
-		var map = new google.maps.Map(document.getElementById("googleMap"),options);
+
 
 		// Add Marker
 		for(var i =0; i < length; i++) {
+			var map = new google.maps.Map(document.getElementById("googleMap"),options);
 			var marker = new google.maps.Marker({
 						position:{lat:<?php echo $info['lat']?>, lng:<?php echo $info['lng']?>},
 						map:map
