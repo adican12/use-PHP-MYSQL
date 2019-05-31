@@ -5,10 +5,10 @@
     $filename=$_FILES['uploadfile']['name'];
     $filetempname=$_FILES['uploadfile']['tmp_name'];
     $folder = "images/";
-    if(move_uploaded_file($filetempname,$folder.$filename) === TRUE){
+    if(move_uploaded_file($filetempname,$folder) === TRUE){
   $sql = "INSERT INTO `image`(`image`)VALUES('$filename');";
   if($qry = $conn->query($sql)) {
-    //echo "image uploaded";
+    echo "image uploaded";
   }
 } else {
   echo "ERROR_THE_FILE_NOT_IN_FOLDER <br>";
