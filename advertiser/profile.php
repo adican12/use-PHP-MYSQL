@@ -186,7 +186,8 @@ var length = <?php echo $length['MAX(location_id)']?>;
 console.log("the length is : " + length);
 
 
-
+// 	var mykey = config.MY_KEY;
+// var secretkey = config.SECRET_KEY;
 	// this function to open a google maps , set marker and open a info window
 	function initMap() {
 		// Map options
