@@ -227,6 +227,16 @@ console.log("the length is : " + length);
 		marker1.addListener('click',function(){
 			infowindow1.open(map,marker);
 		});
+
+		for (var i = 0; i< length; i++) {
+			var marker = new google.maps.Marker({
+				position:{lat:<?php echo $info['lat']?>, lng:<?php echo $info['lng']?>},
+				map:map
+			});
+			var infowindow =  new google.maps.InfoWindow({
+				content: '<h3><?php echo $info['info']?>;</h3>'
+			});
+		}
 }
 
 	</script>
