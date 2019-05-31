@@ -101,12 +101,6 @@ if(isset($_POST['submit']))
 			 echo "false";
 		}
 		$result = mysqli_fetch_assoc($query);
-		
-		$query = "SELECT MAX(location_id) FROM locations";
-		if($res = $conn->query($query)){
-			echo $res;
-		}
-		$length=  mysqli_fetch_assoc($query);
 
 		// $sql = "SELECT * from admin;";
 		// $query = $dbh -> prepare($sql);
@@ -168,8 +162,7 @@ if(isset($_POST['submit']))
 
 
 	<script>
-	var length = <?php echo $length?>;
-	console.log("the limit is : " + length);
+
 	// this function to open a google maps , set marker and open a info window
 	function initMap() {
 		// Map options
