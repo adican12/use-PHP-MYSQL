@@ -171,6 +171,7 @@ $length =  mysqli_fetch_assoc($res);
 ?>
 <?php
 include('includes/config.php');
+/*GET ALL THE INFO  WE HAVE IN DB*/
 $query = "SELECT lat,lng info FROM locations";
 $res = $conn->query($query);
 if($res === false) {
