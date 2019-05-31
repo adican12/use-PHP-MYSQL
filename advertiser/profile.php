@@ -232,6 +232,9 @@ console.log("the length is : " + length);
 		marker1.addListener('click',function(){
 			infowindow1.open(map,marker);
 		});
+		marker2.addListener('click',function(){
+			infowindow1.open(map,marker);
+		});
 }
 
 	</script>
