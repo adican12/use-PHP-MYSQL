@@ -11,5 +11,7 @@ $insert_image="INSERT INTO image VALUES('$imagetmp','$imagename')";
 
 if(mysql_query($insert_image)){
   echo "we add the image to table;";
+} else {
+  echo "error";
 }
 ?>
