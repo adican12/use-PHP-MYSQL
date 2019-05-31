@@ -14,7 +14,6 @@
   echo "ERROR_THE_FILE_NOT_IN_FOLDER";
 }
 }
-$image_id = 1;
 $sql = "SELECT * FROM image";
 if($res = $conn->query($sql)) {
   //echo '<script>alert("ok the query is working work")</script>';
