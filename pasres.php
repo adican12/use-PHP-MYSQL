@@ -1,65 +1,24 @@
 
 <?php
-/*--------------------includes--------------*/
-
-
-include("includes/config.php");
-
-if(iseet($_POST["insert"])){
-  $image = addslashes(file_get_contents($_FILES["image"]["tmp_name"]));
-  $sql = "INSERT INTO `image`(`image`)VALUES('$image');"
-  if($conn->query($sql)) {
-    echo '<script>alert("Image Inserted into Database")</script>';
-  }
-}
-    // $storage = new StorageClient();
-    // $storage->registerStreamWrapper();
-    // $target_dir = "~/";
-    // $target_file = $target_dir . basename($_FILES["image"]["name"]);
-    // $uploadOk = 1;
-    // $name=$_FILES["image"]["name"];
-    // //$tempFile = fopen($target_dir, "w") or die("Error: Unable to open file.");
-    // $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-    // $ex = explode('.',$target_file);
-    // print_r($ex);
-    // // Check if image file is a actual image or fake image
-    // if(isset($_POST["submit"])) {
-    //     $check = getimagesize($_FILES["image"]["tmp_name"]);
-    //     if($check !== false) {
-    //         echo "File is an image - " . $check["mime"] . ".<br>".$name."<br>";
-    //         $uploadOk = 1;
-    //     } else {
-    //         echo "File is not an image.<br>";
-    //         $uploadOk = 0;
-    //     }
-    // }
-    // // Check if file already exists
-    // if (file_exists($target_file)) {
-    //     echo "Sorry, file already exists.<br>";
-    //     $uploadOk = 0;
-    // }
-    // // Check file size
-    // if ($_FILES["image"]["size"] > 500000) {
-    //     echo "Sorry, your file is too large.<br>";
-    //     $uploadOk = 0;
-    // }
-    // // Allow certain file formats
-    // if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-    // && $imageFileType != "gif" ) {
-    //     echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.<br>";
-    //     $uploadOk = 0;
-    // }
-    // // Check if $uploadOk is set to 0 by an error
-    // if ($uploadOk == 0) {
-    //     echo "Sorry, your file was not uploaded.<br>";
-    // // if everything is ok, try to upload file
-    // } else {
-    //     if (move_uploaded_file($_FILES["image"]["name"], $target_file)) {
-    //         echo "The file ". basename( $_FILES["image"]["name"]). " has been uploaded.<br>";
-    //     } else {
-    //         echo "Sorry, there was an error uploading your file.<br>";
-    //     }
-    // }
+include('includes/config.php');
+if(isset($_POST['submit'])) {
+	$filename=$_FILES['uploadfile']['name'];
+	    $filetempname=$_FILES['uploadfile']['tmp_name'];
+	    $folder = 'images/';
+	    move_uploaded_file($filetempname,$folder.$filename);
+	  $sql = "INSERT INTO `image`(`image`)VALUES('$filename');";
+	  if($qry = $conn->query($sql)) {
+	    echo "image uploaded";
+	  }
+	}
+	$sql = "SELECT * FROM image WHERE image_id =";
+	if($res = $conn->query($sql)) {
+	  echo '<script>alert("ok the query is working work")</script>';
+	}
+	while($row =  mysqli_fetch_assoc($res)) {
+	  echo '<img height = 150px width=100px src="'.$row['image'].'">';
+	}
+$conn->close();
 ?>
 
 <!DOCTYPE html>
@@ -69,7 +28,7 @@ if(iseet($_POST["insert"])){
 <form method="post" enctype="multipart/form-data">
   <br>
     Select image to upload:
-    <input type="file" name="image" id="image">
+    <input type="file" name="uploadfile" id="uploadfile">
     <input type="submit" value="Insert" name="insert" id="insert">
 </form>
 <br>
@@ -86,8 +45,8 @@ if(iseet($_POST["insert"])){
   }
   while($row = mysqli_fetch_assoc($res)) {
     echo '<tr>
-              <td>
-                <img src = data:image/jpeg;base64'.base64_encode($row['image']).'""/>;
+              <td>'
+              echo '<img height = 150px width=100px src="'.$row['image'].'">;
               </td>
           </tr>';
   }
