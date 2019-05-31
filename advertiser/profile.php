@@ -161,12 +161,21 @@ if(isset($_POST['submit']))
 
 <?php
 include('includes/config.php');
+/*GET THE HOW MUCE LOCATIONS WE HAVE IN DB*/
 $query="SELECT MAX(location_id) FROM locations";
 $res =$conn->query($query);
 if($res === false) {
 	echo "the query is not working";
 }
 $length =  mysqli_fetch_assoc($res);
+
+/*GET THE DETAILS FORM DB */
+$query = "SELECT lat,lng,info FROM locations";
+$res =$conn->query($query);
+if($res === false) {
+	echo "__ERROOR__THE__QUERY__IS__FAILED";
+}
+	ִִִִ$info = mysqli_fetch_assoc($res);
 ?>
 	<script>
 	 // var mykey = key;
