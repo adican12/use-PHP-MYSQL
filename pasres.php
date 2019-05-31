@@ -4,10 +4,11 @@ if(isset($_POST['submit'])) {
     if(getimagesize($_FILES['imagefile']['tmp_name']) == false){
           echo ' <br> Please Select An Image.<br>';
     } else {
-      // declare Variables
-            $image =$_FILES['imagefile']['tmp_name'];
-            $name = $_FILES['imagefile']['name'];
-            $image = base64_encode(file_get_contents(addslashes($image)));
+      echo "hello";
+            // declare Variables
+            // $image =$_FILES['imagefile']['tmp_name'];
+            // $name = $_FILES['imagefile']['name'];
+            // $image = base64_encode(file_get_contents(addslashes($image)));
             //Query
             //$sql = "INSERT INTO `image`(`name`,`image`)VALUES('$name','$image')";
             //$result = $conn->query($sql);
