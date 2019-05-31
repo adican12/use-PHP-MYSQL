@@ -36,6 +36,9 @@ if($res = $conn->query($sql)) {
   <tr>
     <td><?php echo $row['image'];?></td>
   </tr>
+  <tr>
+    <img src="image/banner3.jpg">
+  </tr>
 </table>
 </body>
 </html>
