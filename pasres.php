@@ -8,17 +8,18 @@
     move_uploaded_file($filetempname,$folder.$filename);
   $sql = "INSERT INTO `image`(`image`)VALUES('$filename');";
   if($qry = $conn->query($sql)) {
-    echo "image uploaded";
+    //echo "image uploaded";
   }
 }
 $image_id = 1;
-$sql = "SELECT * FROM image WHERE image_id =1;";
+$sql = "SELECT * FROM image WHERE image_id = 1;";
 if($res = $conn->query($sql)) {
-  echo '<script>alert("ok the query is working work")</script>';
+  //echo '<script>alert("ok the query is working work")</script>';
+  while($row =  mysqli_fetch_assoc($res)) {
+    echo '<img height = 150px width=250px src="'.$row['image'].'">';
+  }
 }
-while($row =  mysqli_fetch_assoc($res)) {
-  echo '<img height = 150px width=250px src="'.$row['image'].'">';
-}
+
 
 ?>
 <!DOCTYPE html>
