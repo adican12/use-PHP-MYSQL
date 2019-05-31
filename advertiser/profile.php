@@ -171,7 +171,8 @@ $length =  mysqli_fetch_assoc($res);
 	<script>
 	 // var mykey = key;
 //	 console.log(mykey);
-
+var length = <?php echo $length?>;
+console.log("the length is : " + length);
 
 
 // 	var mykey = config.MY_KEY;
