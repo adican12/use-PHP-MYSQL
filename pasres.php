@@ -11,8 +11,9 @@
     //echo "image uploaded";
   }
 } else {
-  echo "ERROR_THE_FILE_NOT_IN_FOLDER";
+  echo "ERROR_THE_FILE_NOT_IN_FOLDER <br>";
   echo "the name of the folder is : " .$folder."<br>";
+  echo "the name of the temp name  is : " .$filetempname."<br>";
   echo "the name of the filename is : " .$filename."<br>";
 }
 }
