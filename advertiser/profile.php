@@ -179,7 +179,6 @@ if($res === false) {
 }
 	ִִִִ$info = mysqli_fetch_assoc($res);
 ?>
-
 	<script>
 	 // var mykey = key;
 //	 console.log(mykey);
