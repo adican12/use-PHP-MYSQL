@@ -27,23 +27,8 @@ if($res = $conn->query($sql)) {
 
 
 ?>
-<!DOCTYPE html>
-<html>
-<body>
-    <form action="" method="post" enctype="multipart/form-data">
-      <input type="file" name="uploadfile" />
-      <input type="submit" name="uploadfilesub" value="upload" />
-    </form>
-    <table style="width:100%">
-  <tr>
-    <th>Image</th>
-  </tr>
-  <tr>
-    <td><?php echo $row['image'];?></td>
-  </tr>
-  <tr>
-    <!-- <img src="images/banner3.jpg"> -->
-  </tr>
-</table>
-</body>
-</html>
+<form action="upload.php" method="post" enctype="multipart/form-data">
+    Select Image File to Upload:
+    <input type="file" name="file">
+    <input type="submit" name="submit" value="Upload">
+</form>
