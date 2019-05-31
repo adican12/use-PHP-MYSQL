@@ -12,7 +12,7 @@
   }
 }
 $image_id = 1;
-$sql = "SELECT * FROM image WHERE image_id = 2;";
+$sql = "SELECT * FROM image";
 if($res = $conn->query($sql)) {
   //echo '<script>alert("ok the query is working work")</script>';
   while($row =  mysqli_fetch_assoc($res)) {
