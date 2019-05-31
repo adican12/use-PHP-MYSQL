@@ -5,6 +5,7 @@
     $filename=$_FILES['uploadfile']['name'];
     $filetempname=$_FILES['uploadfile']['tmp_name'];
     $folder = 'images/';
+    echo $folder;
     move_uploaded_file($filetempname,$folder.$filename);
   $sql = "INSERT INTO `image`(`image`)VALUES('$filename');";
   if($qry = $conn->query($sql)) {
@@ -16,7 +17,7 @@ $sql = "SELECT * FROM image WHERE image_id = 1;";
 if($res = $conn->query($sql)) {
   //echo '<script>alert("ok the query is working work")</script>';
   while($row =  mysqli_fetch_assoc($res)) {
-    echo '<img height = 150px width=250px src='.$row['image'].'>';
+    echo '<img height = 150px width=250px src="'.$row['image'].'">';
   }
 }
 
