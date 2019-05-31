@@ -7,15 +7,15 @@ if(isset($_POST['submit'])) {
       // declare Variables
             $image =$_FILES['imagefile']['tmp_name'];
             $name = $_FILES['imagefile']['name'];
-          //  $image = base64_encode(file_get_contents(addslashes($image)));
+            $image = base64_encode(file_get_contents(addslashes($image)));
             //Query
-            $sql = "INSERT INTO `image`(`name`,`image`)VALUES('$name','$image')";
-            $result = $conn->query($sql);
-            if($result) {
-                    echo "Image uploaded Successfully";
-            } else {
-                    echo "Image Failed to upload";
-            }
+            //$sql = "INSERT INTO `image`(`name`,`image`)VALUES('$name','$image')";
+            //$result = $conn->query($sql);
+            //if($result) {
+                    //echo "Image uploaded Successfully";
+            //} //else {
+                  //  echo "Image Failed to upload";
+            //}
     } else {
       echo "we here";
     }
