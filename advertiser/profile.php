@@ -209,7 +209,10 @@ console.log("the length is : " + length);
 		var marker1 = new google.maps.Marker({
 			position:{lat:<?php echo $result['lat']?>,lng:<?php echo $result['lng']?>},
 			map:map
-
+		});
+		var marker2 = new google.maps.Marker({
+			position:{lat:<?php echo $info['lat']?>,lng:<?php echo $info['lng']?>},
+			map:map
 		});
 
 		var infowindow= new google.maps.InfoWindow({
@@ -218,6 +221,9 @@ console.log("the length is : " + length);
 		//adding a new infowindow
 		var infowindow1 = new google.maps.InfoWindow({
 			content: '<h3><?php echo $result['info'].$result['name']?>;</h3>'
+		});
+		var infowindow2 = new google.maps.InfoWindow({
+			content: '<h3><?php echo $info['info'].$info['name']?>;</h3>'
 		});
 		// add a listnerr when the click we see the msg.
 		marker.addListener('click',function(){
