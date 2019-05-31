@@ -166,8 +166,8 @@ $length=  mysqli_fetch_assoc($query);
 
 
 	<script>
-	var limit = <?php echo $limit?>
-	console.log("the limit is : " + limit);
+	var length = <?php echo $length?>
+	console.log("the limit is : " + length);
 	// this function to open a google maps , set marker and open a info window
 	function initMap() {
 		// Map options
