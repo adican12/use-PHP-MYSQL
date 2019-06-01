@@ -225,7 +225,7 @@ console.log("the length is : " + length);
 
 		});
 		var marker3 = new google.maps.Marker({
-			position:{lat:<?php echo $row1['lat']?>,lng:<?php echo $row1['lng']?>},
+			position:{lat:34.5702,lng:31.6836},
 			map:map
 
 		});
@@ -242,7 +242,7 @@ console.log("the length is : " + length);
 
 
 		var infowindow= new google.maps.InfoWindow({
-			content:'<h3>HERE WE HAVE A WIFI YOU CAN PUBLISH HERE</h3>'
+			content:'<h3>H - Good location away from the crouds</h3>'
 		});
 		//adding a new infowindow
 		var infowindow1 = new google.maps.InfoWindow({
@@ -252,7 +252,7 @@ console.log("the length is : " + length);
 			content: '<h3><?php echo $info['info']?>;</h3>'
 		});
 		var infowindow3 = new google.maps.InfoWindow({
-			content: '<h3><?php echo $row1['info']?>;</h3>'
+			content: '<h3>R - Best Coffe </h3>'
 		});
 		var infowindow5 = new google.maps.InfoWindow({
 			content: '<h3><?php echo $info['info']?>;</h3>'
