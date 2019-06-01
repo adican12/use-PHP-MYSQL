@@ -44,8 +44,9 @@ include('includes/config.php');
 echo " hello from here <br>";
 // Retrieve image form database and display it on html webpage
    $sql= "SELECT * FROM `image`";
-   echo " after the select querys <br>";
-  // $res=$conn->query($sql);
+
+   $res=$conn->query($sql);
+   echo " after the res = querys <br>";
   // if($res === true){
   //   while($row=mysqli_fetch_assoc($res))
   //   echo "<img height=250px width=250px src=data:image;base64,'.$row['image'].' />";
