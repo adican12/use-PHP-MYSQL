@@ -4,7 +4,6 @@ if(isset($_POST['submit'])) {
     if(getimagesize($_FILES['imagefile']['tmp_name']) == false){
           echo ' <br> Please Select An Image.<br>';
     } else {
-
             // declare Variables
             $image =$_FILES['imagefile']['tmp_name'];
             $name = $_FILES['imagefile']['name'];
@@ -20,7 +19,7 @@ if(isset($_POST['submit'])) {
                         }
 }
  else {
-  echo "we here";
+  echo "__ERROR_PLEASE__SELECT__A__PICTURE__";
 }
 
 
@@ -50,18 +49,9 @@ echo " hello from here <br>";
      echo "___ERROR__WE__CANT__DISPLAY__IMAGE__FROM__DB";
    } else {
      while($row=mysqli_fetch_assoc($res)){
-       //echo " we in the while";
       echo '<img height = 150px width=100px src=data:image;base64,'.$row['image'].'>';
-      // echo "what happend";
       }
    }
-  //   while($row=mysqli_fetch_assoc($res))
-  //   echo "<img height=250px width=250px src=data:image;base64,'.$row['image'].' />";
-   //echo '<img height = 150px width=100px src="'.$row['image'].'">';
-  // } else {
-  //
-  //   echo "___ERROR__WE__CANT__DISPLAY__IMAGE__FROM__DB";
-  // }
 
 ?>
 <table style="width:100%">
