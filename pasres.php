@@ -7,7 +7,7 @@ if(isset($_POST['submit'])) {
       echo "hello.<br>";
             // declare Variables
             $image =$_FILES['imagefile']['tmp_name'];
-            $name = 'image';
+            $name = $_FILES['imagefile']['name'];
             $images = base64_encode(file_get_contents(addslashes($image)));
 
             /*Query insert into db*/
@@ -16,9 +16,10 @@ if(isset($_POST['submit'])) {
             if($result == false) {
                     echo "Image Failed to upload";
                   }
-            //} //else {
-                  //  echo "Image Failed to upload";
             //}
+            else {
+                    echo "Image Failed to upload";
+            }
     }
 } else {
   echo "we here";
