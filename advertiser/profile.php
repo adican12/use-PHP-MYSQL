@@ -251,15 +251,6 @@ console.log("the length is : " + length);
 		var infowindow2 = new google.maps.InfoWindow({
 			content: '<h3><?php echo $info['info']?>;</h3>'
 		});
-		var infowindow3 = new google.maps.InfoWindow({
-			content: '<h3>R - Best Coffe </h3>'
-		});
-		var infowindow5 = new google.maps.InfoWindow({
-			content: '<h3><?php echo $info['info']?>;</h3>'
-		});
-		var infowindow5 = new google.maps.InfoWindow({
-			content: '<h3><?php echo $info['info']?>;</h3>'
-		});
 		// add a listnerr when the click we see the msg.
 		marker.addListener('click',function(){
 			infowindow.open(map,marker);
@@ -270,15 +261,7 @@ console.log("the length is : " + length);
 		marker2.addListener('click',function(){
 			infowindow2.open(map,marker);
 		});
-		marker3.addListener('click',function(){
-			infowindow3.open(map,marker);
-		});
-		marker4.addListener('click',function(){
-			infowindow4.open(map,marker);
-		});
-		marker5.addListener('click',function(){
-			infowindow5.open(map,marker);
-		});
+
 
 
 }
