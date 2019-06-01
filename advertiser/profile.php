@@ -214,7 +214,7 @@ console.log("the length is : " + length);
 
 		});
 		var marker2 = new google.maps.Marker({
-			position:{lat:<?php echo $result['lat']?>,lng:<?php echo $result['lng']?>},
+			position:{lat:<?php echo $result['lat']?>,lng:<?php echo $info['lng']?>},
 			map:map
 
 		});
