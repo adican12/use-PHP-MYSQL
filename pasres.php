@@ -1,5 +1,5 @@
 <?php
-include('inclueds/config.php');
+include('includes/config.php');
 if(isset($_POST['submit'])) {
     if(getimagesize($_FILES['imagefile']['tmp_name']) == false){
           echo ' <br> Please Select An Image.<br>';
