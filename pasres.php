@@ -11,7 +11,7 @@ if(isset($_POST['submit'])) {
             $images = base64_encode(file_get_contents(addslashes($image)));
 
             /*Query insert into db*/
-            $sql = "INSERT INTO `image`(`name`,`image`)VALUES('$name','$image')";
+            $sql = "INSERT INTO `image`(`name`,`image`)VALUES('$name','$images')";
             if($conn->query($sql) == false) {
                     echo "Image Failed to upload";
                   } else {
@@ -51,8 +51,7 @@ echo " hello from here <br>";
    } else {
      while($row=mysqli_fetch_assoc($res)){
        //echo " we in the while";
-       echo base64_decode($row['image']);
-      echo '<img height = 150px width=100px src=data:image;base64_decode,'.$row['image'].'>';
+      echo '<img height = 150px width=100px src=data:image;base64,'.$row['image'].'>';
       echo "what happend";
       }
    }
