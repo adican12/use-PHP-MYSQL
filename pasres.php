@@ -23,7 +23,7 @@ if(isset($_POST['submit'])) {
 
     // Retrieve image form database and display it on html webpage
     function displayImageFromDatabase(){
-      $sql= "SELECT * FROM image";
+      $sql= "SELECT * FROM `image`";
       $res=$conn->query($sql);
       if($res == false){
           echo "___ERROR__WE__CANT__DISPLAY__IMAGE__FROM__DB";
