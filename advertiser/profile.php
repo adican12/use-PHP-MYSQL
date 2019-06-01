@@ -172,12 +172,18 @@ $length =  mysqli_fetch_assoc($res);
 <?php
 include('includes/config.php');
 /*GET ALL THE INFO  WE HAVE IN DB*/
-$query = "SELECT lat,lng ,info FROM locations where id IN(13,14,15,16,17);";
+$query = "SELECT lat,lng ,info FROM locations where id =13;";
 $res = $conn->query($query);
 if($res === false) {
 	echo "____ERROR___THE__QUERY__FAIELD";
 }
 $info = mysqli_fetch_assoc($res);
+$sql = "SELECT lat,lng ,info FROM locations where id =14; "
+$res = $conn->query($sql);
+if($res === false) {
+		echo "____ERROR___THE__QUERY__FAIELD__1__";
+}
+$row1=mysqli_fetch_assoc($res);
 ?>
 	<script>
 	 // var mykey = key;
@@ -219,7 +225,7 @@ console.log("the length is : " + length);
 
 		});
 		var marker3 = new google.maps.Marker({
-			position:{lat:<?php echo $info['lat']?>,lng:<?php echo $info['lng']?>},
+			position:{lat:<?php echo $row1['lat']?>,lng:<?php echo $row1['lng']?>},
 			map:map
 
 		});
@@ -246,7 +252,7 @@ console.log("the length is : " + length);
 			content: '<h3><?php echo $info['info']?>;</h3>'
 		});
 		var infowindow3 = new google.maps.InfoWindow({
-			content: '<h3><?php echo $info['info']?>;</h3>'
+			content: '<h3><?php echo $row1['info']?>;</h3>'
 		});
 		var infowindow5 = new google.maps.InfoWindow({
 			content: '<h3><?php echo $info['info']?>;</h3>'
