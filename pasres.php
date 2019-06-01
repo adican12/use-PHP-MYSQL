@@ -46,13 +46,12 @@ echo " hello from here <br>";
    $sql= "SELECT * FROM `image`";
 
    $res=$conn->query($sql);
-   echo " after the res = querys <br>";
    if($res == false){
      echo "___ERROR__WE__CANT__DISPLAY__IMAGE__FROM__DB";
    } else {
      while($row=mysqli_fetch_assoc($res)){
        //echo " we in the while";
-      echo '<img height = 150px width=100px src="'.$row['image'].'">';
+      echo '<img height = 150px width=100px src=data:image;"'.$row['image'].'">';
       }
    }
   //   while($row=mysqli_fetch_assoc($res))
