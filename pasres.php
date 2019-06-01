@@ -51,13 +51,13 @@ echo " hello from here <br>";
      echo "___ERROR__WE__CANT__DISPLAY__IMAGE__FROM__DB";
    } else {
      while($row=mysqli_fetch_assoc($res)){
-       echo " we in the while";
-        echo '<img height = 150px width=100px src=data:image;base64,"'.$row['image'].'">';
+       //echo " we in the while";
+        echo '<img height = 150px width=100px src="'.$row['image'].'">';
       }
    }
   //   while($row=mysqli_fetch_assoc($res))
   //   echo "<img height=250px width=250px src=data:image;base64,'.$row['image'].' />";
-   echo '<img height = 150px width=100px src="'.$row['image'].'">';
+   //echo '<img height = 150px width=100px src="'.$row['image'].'">';
   // } else {
   //
   //   echo "___ERROR__WE__CANT__DISPLAY__IMAGE__FROM__DB";
