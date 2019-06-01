@@ -52,7 +52,7 @@ echo " hello from here <br>";
    } else {
      while($row=mysqli_fetch_assoc($res)){
        //echo " we in the while";
-      echo '<img height = 150px width=100px src=data:image/jpg;base64;"'.$row['image'].'">';
+      echo '<img height = 150px width=100px src="'.$row['image'].'">';
       }
    }
   //   while($row=mysqli_fetch_assoc($res))
@@ -63,7 +63,14 @@ echo " hello from here <br>";
   //   echo "___ERROR__WE__CANT__DISPLAY__IMAGE__FROM__DB";
   // }
 
-
 ?>
+<table style="width:100%">
+<tr>
+<th>Image</th>
+</tr>
+<tr>
+<td><?php echo $row['image'];?></td>
+</tr>
+</table>
 </body>
 </html>
