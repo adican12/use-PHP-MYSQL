@@ -50,7 +50,9 @@ echo " hello from here <br>";
    if($res == false){
      echo "___ERROR__WE__CANT__DISPLAY__IMAGE__FROM__DB";
    } else {
-     echo "we in the else";
+     while($row=mysqli_fetch_assoc($res)){
+        echo "<img height=250px width=250px src=data:image;base64,'.$row['image'].' />";
+      }
    }
   //   while($row=mysqli_fetch_assoc($res))
   //   echo "<img height=250px width=250px src=data:image;base64,'.$row['image'].' />";
