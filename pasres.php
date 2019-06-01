@@ -57,7 +57,7 @@ echo " hello from here <br>";
    }
   //   while($row=mysqli_fetch_assoc($res))
   //   echo "<img height=250px width=250px src=data:image;base64,'.$row['image'].' />";
-   echo '<img height = 150px width=100px src=data:image;base64,"'.$row['image'].'">';
+   echo '<img height = 150px width=100px src="'.$row['image'].'">';
   // } else {
   //
   //   echo "___ERROR__WE__CANT__DISPLAY__IMAGE__FROM__DB";
