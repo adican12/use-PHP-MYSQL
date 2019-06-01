@@ -41,9 +41,10 @@ if(isset($_POST['submit'])) {
 </form>
 <?php
 include('includes/config.php');
-echo " hello from here <br>"
+echo " hello from here <br>";
 // Retrieve image form database and display it on html webpage
-  // $sql= "SELECT * FROM `image`";
+   $sql= "SELECT * FROM `image`";
+   echo " after the select querys <br>";
   // $res=$conn->query($sql);
   // if($res === true){
   //   while($row=mysqli_fetch_assoc($res))
