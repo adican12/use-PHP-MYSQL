@@ -209,12 +209,12 @@ console.log("the length is : " + length);
 		});
 		//Add a new marker1
 		var marker1 = new google.maps.Marker({
-			position:{lat:<?php echo $info['lat']?>,lng:<?php echo $info['lng']?>},
+			position:{lat:<?php echo $result['lat']?>,lng:<?php echo $result['lng']?>},
 			map:map
 
 		});
 		var marker2 = new google.maps.Marker({
-			position:{lat:<?php echo $result['lat']?>,lng:<?php echo $info['lng']?>},
+			position:{lat:<?php echo $info['lat']?>,lng:<?php echo $info['lng']?>},
 			map:map
 
 		});
