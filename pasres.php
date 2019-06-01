@@ -7,7 +7,7 @@ if(isset($_POST['submit'])) {
       echo "hello.<br>";
             // declare Variables
             $image =$_FILES['imagefile']['tmp_name'];
-            $name = $_FILES['imagefile']['name'];
+            $name = 'image';
             $images = base64_encode(file_get_contents(addslashes($image)));
 
             /*Query insert into db*/
