@@ -190,6 +190,8 @@ console.log("the length is : " + length);
 // var secretkey = config.SECRET_KEY;
 	// this function to open a google maps , set marker and open a info window
 	function initMap() {
+		var marker,i;
+		for(i = 0;i<length;++i) {
 		// Map options
 		var options = {
 			zoom:8,
@@ -228,6 +230,7 @@ console.log("the length is : " + length);
 			infowindow1.open(map,marker);
 		});
 
+}
 }
 
 	</script>
