@@ -40,7 +40,6 @@ if(isset($_POST['submit'])) {
 </form>
 <?php
 include('includes/config.php');
-echo " hello from here <br>";
 // Retrieve image form database and display it on html webpage
    $sql= "SELECT * FROM `image`";
 
