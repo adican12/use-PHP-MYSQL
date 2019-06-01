@@ -12,8 +12,7 @@ if(isset($_POST['submit'])) {
 
             /*Query insert into db*/
             $sql = "INSERT INTO `image`(`name`,`image`)VALUES('$name','$image')";
-            $result = $conn->query($sql);
-            if($result == false) {
+            if($conn->query($sql) == false) {
                     echo "Image Failed to upload";
                   }
             //}
