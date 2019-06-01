@@ -218,6 +218,22 @@ console.log("the length is : " + length);
 			map:map
 
 		});
+		var marker3 = new google.maps.Marker({
+			position:{lat:<?php echo $info['lat']?>,lng:<?php echo $info['lng']?>},
+			map:map
+
+		});
+		var marker4 = new google.maps.Marker({
+			position:{lat:<?php echo $info['lat']?>,lng:<?php echo $info['lng']?>},
+			map:map
+
+		});
+		var marker5 = new google.maps.Marker({
+			position:{lat:<?php echo $info['lat']?>,lng:<?php echo $info['lng']?>},
+			map:map
+
+		});
+
 
 		var infowindow= new google.maps.InfoWindow({
 			content:'<h3>HERE WE HAVE A WIFI YOU CAN PUBLISH HERE</h3>'
@@ -226,7 +242,16 @@ console.log("the length is : " + length);
 		var infowindow1 = new google.maps.InfoWindow({
 			content: '<h3><?php echo $result['info'].$result['name']?>;</h3>'
 		});
-		var infowindow1 = new google.maps.InfoWindow({
+		var infowindow2 = new google.maps.InfoWindow({
+			content: '<h3><?php echo $info['info']?>;</h3>'
+		});
+		var infowindow3 = new google.maps.InfoWindow({
+			content: '<h3><?php echo $info['info']?>;</h3>'
+		});
+		var infowindow5 = new google.maps.InfoWindow({
+			content: '<h3><?php echo $info['info']?>;</h3>'
+		});
+		var infowindow5 = new google.maps.InfoWindow({
 			content: '<h3><?php echo $info['info']?>;</h3>'
 		});
 		// add a listnerr when the click we see the msg.
@@ -237,7 +262,16 @@ console.log("the length is : " + length);
 			infowindow1.open(map,marker);
 		});
 		marker2.addListener('click',function(){
-			infowindow1.open(map,marker);
+			infowindow2.open(map,marker);
+		});
+		marker3.addListener('click',function(){
+			infowindow3.open(map,marker);
+		});
+		marker4.addListener('click',function(){
+			infowindow4.open(map,marker);
+		});
+		marker5.addListener('click',function(){
+			infowindow5.open(map,marker);
 		});
 
 
