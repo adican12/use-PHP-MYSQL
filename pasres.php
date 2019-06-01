@@ -52,7 +52,7 @@ echo " hello from here <br>";
      while($row=mysqli_fetch_assoc($res)){
        //echo " we in the while";
       echo '<img height = 150px width=100px src=data:image;base64,'.$row['image'].'>';
-      echo "what happend";
+      // echo "what happend";
       }
    }
   //   while($row=mysqli_fetch_assoc($res))
