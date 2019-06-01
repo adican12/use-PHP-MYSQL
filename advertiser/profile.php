@@ -172,7 +172,7 @@ $length =  mysqli_fetch_assoc($res);
 <?php
 include('includes/config.php');
 /*GET ALL THE INFO  WE HAVE IN DB*/
-$query = "SELECT lat,lng ,info FROM locations where id=13;";
+$query = "SELECT lat,lng ,info FROM locations where id IN(13,14,15,16,17);";
 $res = $conn->query($query);
 if($res === false) {
 	echo "____ERROR___THE__QUERY__FAIELD";
