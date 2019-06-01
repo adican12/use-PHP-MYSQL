@@ -39,6 +39,21 @@ if(isset($_POST['submit'])) {
  <br>
  <input type="submit" name="submit" value="Upload">
 </form>
+<?php
+include('includes/config.php');
+// Retrieve image form database and display it on html webpage
+function displayImageFromDatabase(){
+  $sql= "SELECT * FROM `image`";
+  $res=$conn->query($sql);
+  if($res == false){
+      echo "___ERROR__WE__CANT__DISPLAY__IMAGE__FROM__DB";
+  } else {
+    while($row=mysqli_fetch_assoc($res))
+    echo "<img height=250px width=250px src=data:image;base64,'.$row['image'].' />";
+  }
+}
 
+ displayImageFromDatabase();
+?>
 </body>
 </html>
