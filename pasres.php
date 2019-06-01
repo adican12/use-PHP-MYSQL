@@ -19,7 +19,7 @@ if(isset($_POST['submit'])) {
                         }
 }
  else {
-  echo "__ERROR_PLEASE__SELECT__A__PICTURE__";
+  echo "__ERROR_PLEASE__SELECT__A__PICTURE__<br>";
 }
 
 
