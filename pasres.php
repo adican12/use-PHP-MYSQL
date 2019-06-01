@@ -42,18 +42,17 @@ if(isset($_POST['submit'])) {
 <?php
 include('includes/config.php');
 // Retrieve image form database and display it on html webpage
-function displayImageFromDatabase(){
   $sql= "SELECT * FROM `image`";
   $res=$conn->query($sql);
-  if($res == false){
-      echo "___ERROR__WE__CANT__DISPLAY__IMAGE__FROM__DB";
-  } else {
+  if($res === true){
     while($row=mysqli_fetch_assoc($res))
     echo "<img height=250px width=250px src=data:image;base64,'.$row['image'].' />";
-  }
-}
+  } else {
 
- displayImageFromDatabase();
+    echo "___ERROR__WE__CANT__DISPLAY__IMAGE__FROM__DB";
+  }
+
+
 ?>
 </body>
 </html>
