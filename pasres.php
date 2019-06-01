@@ -14,12 +14,13 @@ if(isset($_POST['submit'])) {
             $sql = "INSERT INTO `image`(`name`,`image`)VALUES('$name','$image')";
             if($conn->query($sql) == false) {
                     echo "Image Failed to upload";
-                  }
-            //}
-            else {
-                    echo "Image uploaded successfully";
-            }
-    }
+                  } else {
+                            echo "Image uploaded successfully";
+                          }
+                        }
+}
+ else {
+  echo "we here";
 }
 // Retrieve image form database and display it on html webpage
 function displayImageFromDatabase(){
@@ -34,9 +35,7 @@ function displayImageFromDatabase(){
 }
 
  displayImageFromDatabase();
- else {
-  echo "we here";
-}
+
 ?>
 
 
