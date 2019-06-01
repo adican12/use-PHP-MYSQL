@@ -178,7 +178,7 @@ if($res === false) {
 	echo "____ERROR___THE__QUERY__FAIELD";
 }
 $info = mysqli_fetch_assoc($res);
-$sql = "SELECT lat,lng ,info FROM locations where id =14; ";
+$sql = "SELECT lat,lng ,info FROM locations where id =15; ";
 $res = $conn->query($sql);
 if($res === false) {
 		echo "____ERROR___THE__QUERY__FAIELD__1__";
