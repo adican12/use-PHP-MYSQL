@@ -9,7 +9,7 @@ if(isset($_POST['submit'])) {
             $image =$_FILES['imagefile']['tmp_name'];
             $name = $_FILES['imagefile']['name'];
             $images = base64_encode(file_get_contents(addslashes($image)));
-
+              echo "we go here";
             /*Query insert into db*/
             $sql = "INSERT INTO `image`(`name`,`image`)VALUES('$name','$image')";
             $result = $conn->query($sql);
