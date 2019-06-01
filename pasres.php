@@ -41,16 +41,17 @@ if(isset($_POST['submit'])) {
 </form>
 <?php
 include('includes/config.php');
+echo " hello from here <br>"
 // Retrieve image form database and display it on html webpage
-  $sql= "SELECT * FROM `image`";
-  $res=$conn->query($sql);
-  if($res === true){
-    while($row=mysqli_fetch_assoc($res))
-    echo "<img height=250px width=250px src=data:image;base64,'.$row['image'].' />";
-  } else {
-
-    echo "___ERROR__WE__CANT__DISPLAY__IMAGE__FROM__DB";
-  }
+  // $sql= "SELECT * FROM `image`";
+  // $res=$conn->query($sql);
+  // if($res === true){
+  //   while($row=mysqli_fetch_assoc($res))
+  //   echo "<img height=250px width=250px src=data:image;base64,'.$row['image'].' />";
+  // } else {
+  //
+  //   echo "___ERROR__WE__CANT__DISPLAY__IMAGE__FROM__DB";
+  // }
 
 
 ?>
