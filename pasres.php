@@ -18,7 +18,7 @@ if(isset($_POST['submit'])) {
                   }
             //}
             else {
-                    echo "Image Failed to upload";
+                    echo "Image uploaded successfully";
             }
     }
 } else {
