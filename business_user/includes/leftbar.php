@@ -14,7 +14,7 @@
 			</li>
 			<li><a href="deleteduser.php"><i class="fa fa-clipboard" aria-hidden="true"></i> &nbsp;Building a marketing strategy</a>
 			</li>
-			<!-- <li><a href="download.php"><i class="fa fa-download"></i> &nbsp;Download Users-List</a> -->
-			<!-- </li> -->
+			<li><a href="download.php"><i class="fa fa-list-alt"></i> &nbsp;Time to stay in the commercial</a> 
+			 </li>
 			</ul>
 		</nav>
