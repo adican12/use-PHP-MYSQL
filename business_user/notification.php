@@ -140,15 +140,18 @@ if(isset($_POST['addCoupon'])) {
 $reciver = 'Admin';
 
 
-$sql = "SELECT * from  notification where notireciver = '$reciver' order by time DESC";
+$sql = "SELECT image,url, from  coupun WHERE couponID=1";
 $result = $conn->query($sql);
 if($result === false)
 {
 	 user_error("Query failed: ".$conn->error."<br />$sql");
 	 echo "false";
+} else {
+	while($row=mysqli_fetch_assoc($res)){
+	 echo '<img height = 150px width=100px src=data:image;base64,'.$row['image'].'>';
+	 echo $row['url'];
+	 }
 }
-
-
 // $sql = "SELECT * from  notification where notireciver = (:reciver) order by time DESC";
 // $query = $dbh -> prepare($sql);
 // $query-> bindParam(':reciver', $reciver, PDO::PARAM_STR);
