@@ -392,8 +392,7 @@ function changeDetails(){
 //change the image
 	var x = "<?php echo $row['image'];?>";
  	console.log(x);
-  document.getElementById("img").src= '<?php echo '<img height = 150px width=100px src=data:image;base64,'.$row['image'].'>'';
-	}?>;
+  document.getElementById("img").src= x;
 	var user_id = <?php echo $row['MAX(user_id)'];?>;
 	document.getElementById('demo').innerHTML = "the id of the campaing is " + user_id;
 
