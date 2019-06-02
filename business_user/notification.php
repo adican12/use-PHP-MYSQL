@@ -90,6 +90,8 @@ if(isset($_POST['addCoupon'])) {
 	<link rel="stylesheet" href="css/awesome-bootstrap-checkbox.css">
 	<!-- Admin Stye -->
 	<link rel="stylesheet" href="css/style.css">
+	<!-- adding w3schools card -->
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 	<script type= "text/javascript" src="../vendor/countries.js"></script>
 	<style>
