@@ -17,14 +17,14 @@ if(strlen($_SESSION['alogin'])==0)
 											<th>Email</th>
 											<th>Gender</th>
 											<th>Phone</th>
-											<th>Designation</th>
+											<th>Image</th>
 										</tr>
 									</thead>
 
 <?php
 $filename="Users list";
 
-$sql = "SELECT * from users";
+$sql = "SELECT * FROM `users`";
 $result = $conn->query($sql);
 if($result === false)
 {
