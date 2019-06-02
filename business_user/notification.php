@@ -48,9 +48,9 @@ if(isset($_POST['submit'])) {
             	/*Query insert into db*/
             $sql = "INSERT INTO `coupon`( `id`, `image`, `url`, `counter`, `couponName`) VALUES('$id','$images','$url','$counter','$couponName');";
             if($conn->query($sql) == false) {
-                    echo "Image Failed to upload";
+                    echo "<script>alert('Image Failed to upload')</script>";
                   } else {
-                            echo "Insert uploaded successfully";
+                            echo "<script>alert('Insert uploaded successfully')</script>";
                           }
                         }
 }
