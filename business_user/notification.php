@@ -161,6 +161,11 @@ if(mysqli_num_rows($result) > 0)
 					}, 3000);
 					});
 	</script>
+	<form method="post" action="" enctype="multipart/form-data">
+	 <input type="file" name="imagefile">
+	 <br>
+	 <input type="submit" name="submit" value="Upload">
+	</form>
 </body>
 </html>
 <?php } ?>

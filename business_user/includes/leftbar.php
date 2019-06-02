@@ -10,7 +10,7 @@
 			</li>
 			<li><a href="feedback.php"><i class="fa fa-adn" aria-hidden="true"></i> &nbsp;exposed to</a>
 			</li>
-			<li><a href="notification.php"><i class="fa fa-bullseye" aria-hidden="true"></i> &nbsp; Coupon </a>
+			<li><a href="notification.php"><i class="fa fa-bullseye" aria-hidden="true"></i> &nbsp;  Creat Coupon </a>
 			</li>
 			<li><a href="deleteduser.php"><i class="fa fa-clipboard" aria-hidden="true"></i> &nbsp;Building a marketing strategy</a>
 			</li>
