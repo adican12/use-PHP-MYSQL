@@ -174,7 +174,7 @@ if(mysqli_num_rows($result) > 0)
 
 	?>
         <h5 style="background:#ededed;padding:20px;"><i class="fa fa-bell text-primary"></i>&nbsp;&nbsp;<b class="text-primary"><?php echo $row['time'];?></b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<?php echo $row['img'];?> -----> <?php echo $row['url'];?></h5>
+					<?php echo '<img height = 150px width=100px src=data:image;base64,'.$row['image'].'>';?> -----> <?php echo $row['url'];?></h5>
                        <?php $cnt=$cnt+1; }} ?>
                                         </div>
                                     </div>
