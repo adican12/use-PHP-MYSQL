@@ -244,7 +244,7 @@ if(mysqli_num_rows($result) > 0)
 
 		 // set the data
 		 var data = {
-				 header: ["Name", "Death toll"],
+				 header: ["Name", "Favorite categories"],
 				 rows: [
 					 ["Coffee ", 100000],
 					 ["Movies", 87000],
