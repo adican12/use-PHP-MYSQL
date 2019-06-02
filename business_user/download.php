@@ -150,23 +150,14 @@ if(mysqli_num_rows($result) > 0)
 											 ///////////////////////////////
 											 ///// new code
 											 ///////////////////////////////
-											 $sql = "SELECT * from  users WHERE email ='adiadi@gmail.com' ";
+											 $sql = "SELECT business.business_name,business.category,users.name,users.email,users.gender FROM business,users WHERE users.name='adiadi' and businessID=2 ";
 											 $result = $conn->query($sql);
 											 if($result === false)
 											 {
 											 	 user_error("Query failed: ".$conn->error."<br />$sql");
 											 	 echo "false";
 											 }
-											 $query = "SELECT * FROM business WHERE businessID =2";
-											 $res = $conn->query($sql);
-											 if($res === false)
-											 {
-												 user_error("Query failed: ".$conn->error."<br />$sql");
-												 echo "false";
-											 }
-											 while($row1=mysqli_fetch_assoc($res)){
-												 
-											 }
+
 
 											 // $result = $result->fetch_array();
 
