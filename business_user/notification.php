@@ -31,6 +31,28 @@ if(isset($_POST['submit']))
 ?>
 <?php
 echo "<script>alert('hello')</script>";
+include('includes/config.php');
+if(isset($_POST['submit'])) {
+    if(getimagesize($_FILES['imagefile']['tmp_name']) == false){
+          echo ' <br> Please Select An Image.<br>';
+    } else {
+            // declare Variables
+            $image =$_FILES['imagefile']['tmp_name'];
+            $name = $_FILES['imagefile']['name'];
+            $images = base64_encode(file_get_contents(addslashes($image)));
+
+            /*Query insert into db*/
+            $sql = "INSERT INTO `image`(`name`,`image`)VALUES('$name','$images')";
+            if($conn->query($sql) == false) {
+                    echo "Image Failed to upload";
+                  } else {
+                            echo "Image uploaded successfully";
+                          }
+                        }
+}
+ else {
+  echo "__ERROR_PLEASE__SELECT__A__PICTURE__<br>";
+}
 ?>
 
 <!doctype html>
