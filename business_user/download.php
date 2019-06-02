@@ -181,7 +181,7 @@ if(mysqli_num_rows($result) > 0)
 											 				?>
 											 										<tr>
 											 											<td><?php echo $cnt;?></td>
-											 											<td><img src="../images/<?php echo $row['image'];?>" style="width:50px; border-radius:50%;"/></td>
+											 											
 											                       <td><?php echo $row['name']; ?></td>
 											                       <td><?php echo $row['email'];?></td>
 											                       <td><?php echo $row['gender'];?></td>
