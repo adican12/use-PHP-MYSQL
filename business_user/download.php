@@ -41,7 +41,7 @@ if(isset($_POST['submit']))
 	<meta name="author" content="">
 	<meta name="theme-color" content="#3e454c">
 
-	<title>Notifications</title>
+	<title>Time to stay in the commercial</title>
 
 	<!-- Font awesome -->
 	<link rel="stylesheet" href="css/font-awesome.min.css">
@@ -91,11 +91,11 @@ if(isset($_POST['submit']))
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col-md-12">
-						<h3 class="page-title">Notifications</h3>
+						<h3 class="page-title">Time to stay in the commercial</h3>
 						<div class="row">
 							<div class="col-md-12">
 								<div class="panel panel-default">
-									<div class="panel-heading">Notification</div>
+									<div class="panel-heading">Time to stay in the commercial</div>
 									   <div class="panel-body">
 <?php
 $reciver = 'Admin';
@@ -160,6 +160,57 @@ if(mysqli_num_rows($result) > 0)
 					}, 3000);
 					});
 	</script>
+<div id="chart_div" style="width: 900px; height: 500px;"></div>
 </body>
 </html>
 <?php } ?>
+
+
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable
+            ([['X', 'lineDashStyle: [1, 1]', 'lineDashStyle: [2, 2]',
+               'lineDashStyle: [4, 4]', 'lineDashStyle: [5, 1, 3]',
+               'lineDashStyle: [4, 1]',
+               'lineDashStyle: [10, 2]', 'lineDashStyle: [14, 2, 7, 2]',
+               'lineDashStyle: [14, 2, 2, 7]',
+               'lineDashStyle: [2, 2, 20, 2, 20, 2]'],
+              [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+              [2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+              [3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+              [4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
+              [5, 6, 7, 8, 9, 10, 11, 12, 13, 14],
+              [6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+              [7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
+              [8, 9, 10, 11, 12, 13, 14, 15, 16, 17],
+              [9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+        ]);
+
+        var options = {
+          hAxis: { maxValue: 10 },
+          vAxis: { maxValue: 18 },
+          chartArea: { width: 380 },
+          lineWidth: 4,
+          series: {
+            0: { lineDashStyle: [1, 1] },
+            1: { lineDashStyle: [2, 2] },
+            2: { lineDashStyle: [4, 4] },
+            3: { lineDashStyle: [5, 1, 3] },
+            4: { lineDashStyle: [4, 1] },
+            5: { lineDashStyle: [10, 2] },
+            6: { lineDashStyle: [14, 2, 7, 2] },
+            7: { lineDashStyle: [14, 2, 2, 7] },
+            8: { lineDashStyle: [2, 2, 20, 2, 20, 2] }
+          },
+          colors: ['#e2431e', '#f1ca3a', '#6f9654', '#1c91c0',
+                   '#4374e0', '#5c3292', '#572a1a', '#999999', '#1a1a1a'],
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
