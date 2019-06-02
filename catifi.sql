@@ -317,8 +317,30 @@ INSERT INTO `locations` ( `lat`, `lng`, `info`, `id`, `name`) VALUES
 (34.570179,31.683613,'R - Best Coffe',17,'Anona Bistro'),
 (34.577431,31.669886,'R - Coffe And breakfasts',18,'Cafe Jow'),
 (34.585051,31.656246,'R - Chip Pizza',19,'Pizza Shemesh');
-
-
+INSERT INTO `locations`(`lat`,`lng`,`info`,`id`,`name`) VALUES
+(32.187217,34.792008,'R-Excellent coffee and cheap',20,'Beta Coffee'),
+(32.164837,34.781041,'R-Coffe And breakfasts',21,'Hustco'),
+(32.120992,34.773103,'R-restaurants',22,'TOTO'),
+(32.092712,34.783845,'R-Very Good Food Nice Place',23,'AMORA MIA'),
+(32.125556,34.792376,'R-Good Food Great View',24,'THE RESTAURANT'),
+(31.82981,35.213579,'R-Coffe And breakfasts',25,'MODREN'),
+(31.835016,35.203752,'R-Coffe And breakfasts',26,'MAHNA-YHEDA'),
+(32.889647,34.986638,'R-Coffe',27,'VIVINO'),
+(32.919405,35.002212,'R-Good Food Great View',28,'THE-PROT-24'),
+(32.135178,34.781334,'H - Loved this Wonderful Boutique Hotel!',29,'Grand-Beach'),
+(34.141084,34.797801,'H - Great View 5 Stars',30,'Crowne Plaza Hotel'),
+(32.134968,34.761612,'H - Good location away from the crouds',31,'Dan-Hotel'),
+(32.139363,34.836722,'H - Good location away from the crouds',32,'Leonardo Boutique Hotel'),
+(31.815342,35.169466,'H - Good location ,Great View ',33,'The Rimonim Hotel'),
+(31.835906,35.214997,'H - Good location ,Great View ,Great Food',34,'The ABB Hotel'),
+(32.891758,34.941509,'H - Loved this Wonderful Boutique Hotel!',35,'Leonardo Boutique Hotel'),
+(32.903532,34.991884,'H - Great View 5 Stars',36,'Beway Hotel'),
+(32.101797,34.826884,'M - Fashion, restaurants, bars',37,'Azrieli Ayalon Mall'),
+(32.113282,34.796149,'M - Fashion, restaurants, bars',38,'Ofer Mall'),
+(32.184225,34.905302,'M - Fashion, restaurants, bars',39,'Arim Mall Kfar Saba'),
+(32.095107,34.865602,'M - Fashion, restaurants, bars',40,'Ofer Shopping Center'),
+(32.067370,34.809359,'M - Fashion, restaurants, bars',41,'The Givatayim Azrieli Mall'),
+(31.994869,34.774416,'M - Fashion, restaurants, bars',42,'The Golden Mall');
 
 
 
