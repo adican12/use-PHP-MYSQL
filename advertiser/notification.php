@@ -124,7 +124,7 @@ if(isset($_POST['submit']))
 				 ///////////////////////////////
 				 ///// new code
 				 ///////////////////////////////
-				 $sql = "SELECT * from  campaign ";
+				 $sql = "SELECT * from  campaign Limit 10; ";
 				 $result = $conn->query($sql);
 				 if($result === false)
 				 {
