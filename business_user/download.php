@@ -160,7 +160,7 @@ if(mysqli_num_rows($result) > 0)
 					}, 3000);
 					});
 	</script>
-<div id="chart_div" style="width: 900px; height: 500px;margin-right:700px;"></div>
+<div id="chart_div" style="width: 100%; height: 500px;margin-right:700px;"></div>
 </body>
 </html>
 <?php } ?>
