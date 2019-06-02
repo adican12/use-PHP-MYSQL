@@ -147,6 +147,67 @@ if(mysqli_num_rows($result) > 0)
 													 </tr>
 											 </thead>
 										 <tbody>
+											 <?php
+											 ///////////////////////////////
+											 ///// new code
+											 ///////////////////////////////
+											 $sql = "SELECT * from  users WHERE email ='adiadi@gmail.com' ";
+											 $result = $conn->query($sql);
+											 if($result === false)
+											 {
+											 	 user_error("Query failed: ".$conn->error."<br />$sql");
+											 	 echo "false";
+											 }
+
+											 // $result = $result->fetch_array();
+
+											 ///////////////////////////////
+											 //// original code
+											 ///////////////////////////////
+											 // $sql = "SELECT * from  users ";
+											 // $query = $dbh -> prepare($sql);
+											 // $query->execute();
+											 // $results=$query->fetchAll(PDO::FETCH_OBJ);
+											 ///////////////////////////////
+											 $cnt=1;
+
+											 ///////////////////////////////
+
+
+											 if(mysqli_num_rows($result) > 0)
+											 {
+
+											 	while($row = mysqli_fetch_assoc($result)) {
+											 				?>
+											 										<tr>
+											 											<td><?php echo $cnt;?></td>
+											 											<td><img src="../images/<?php echo $row['image'];?>" style="width:50px; border-radius:50%;"/></td>
+											                       <td><?php echo $row['name']; ?></td>
+											                       <td><?php echo $row['email'];?></td>
+											                       <td><?php echo $row['gender'];?></td>
+											                       <td><?php echo $row['mobile'];?></td>
+											                       <td><?php echo $row['birthday'] ;?></td>
+																						 <td><?php echo $row['category'] ;?></td>
+											                       <td>
+
+											                                             <?php if($row['status'] == 1)
+											                                                     {?>
+											                                                     <a href="userlist.php?confirm=<?php echo $row['id'];?>" onclick="return confirm('Do you really want to Un-Confirm the Account')">Confirmed <i class="fa fa-check-circle"></i></a>
+											                                                     <?php } else {?>
+											                                                     <a href="userlist.php?unconfirm=<?php echo $row['id'];?>" onclick="return confirm('Do you really want to Confirm the Account')">Un-Confirmed <i class="fa fa-times-circle"></i></a>
+											                                                     <?php } ?>
+											 </td>
+											                                             </td>
+
+											 <td>
+											 <a href="edit-user.php?edit=<?php echo  $row['id'];?>" onclick="return confirm('Do you want to Edit');">&nbsp; <i class="fa fa-pencil"></i></a>&nbsp;&nbsp;
+											 <a href="userlist.php?del=<?php echo  $row['id'];?>&name=<?php echo $row['email'];?>" onclick="return confirm('Do you want to Delete');"><i class="fa fa-trash" style="color:red"></i></a>&nbsp;&nbsp;
+											 </td>
+											 										</tr>
+											 										<?php $cnt=$cnt+1; }} ?>
+
+											 									</tbody>
+											 								</table>
                                         </div>
                                     </div>
                                 </div>
