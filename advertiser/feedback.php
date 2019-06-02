@@ -293,9 +293,17 @@ if(mysqli_num_rows($result) > 0)
 				<input type="file" name="imagefile" value="image" style="padding:10px"><br>
 				<label for="" class="text-uppercase text-sm"> Price:</label>
 				<input type="text" placeholder="Price:" name="price" class="form-control mb" required>
-				<input type="text" name="text" value="text"><br>
-				<input type="text" name="header" value="header"><br>
-				<input type = "number" name="user_id" value="user_id"><br>
+
+				<label for="" class="text-uppercase text-sm"> Text: </label>
+				<input type="text" placeholder="Text" name="text" class="form-control mb" required>
+
+				<label for="" class="text-uppercase text-sm"> Header: </label>
+				<input type="text" placeholder="header" name="header" class="form-control mb" required>
+
+				<label for="" class="text-uppercase text-sm"> User ID: </label>
+				<input type="number" placeholder="user ID:" name="user_id" class="form-control mb" required>
+
+				
 				<button name="submit" type="submit">Click me!</button>
 			</form>
 	</div>
