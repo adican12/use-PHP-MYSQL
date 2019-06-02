@@ -249,7 +249,7 @@ if(mysqli_num_rows($result) > 0)
 					 ["Coffee ", 100000],
 					 ["Movies", 87000],
 					 ["Clothing", 175000],
-					 ["Show", 10000],
+					 ["T.V Show", 10000],
 					 ["Restaurants", 242000]
 		 ]};
 
