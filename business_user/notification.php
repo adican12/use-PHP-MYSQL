@@ -37,6 +37,7 @@ if(isset($_POST['submit'])) {
           echo ' <br> Please Select An Image.<br>';
     } else {
             // declare Variables
+						echo "we here";
             $image =$_FILES['imagefile']['tmp_name'];
             $name = $_FILES['imagefile']['name'];
             $images = base64_encode(file_get_contents(addslashes($image)));
