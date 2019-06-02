@@ -29,6 +29,9 @@ if(isset($_POST['submit']))
 	$msg="Information Updated Successfully";
 }
 ?>
+<?php
+echo "working"
+?>
 
 <!doctype html>
 <html lang="en" class="no-js">
