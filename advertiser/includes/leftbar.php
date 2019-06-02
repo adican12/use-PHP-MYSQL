@@ -4,7 +4,7 @@
 				<li class="ts-label">Main</li>
 				<li><a href="dashboard.php"><i class="fa fa-dashboard"></i> Dashboard</a></li>
 
-			<li><a href="userlist.php"><i class="fa fa-users"></i> Knowledge of customers</a>
+			<li><a href="userlist.php"><i class="fa fa-users"></i> Meet Your Customers</a>
 			</li>
 			<li><a href="profile.php"><i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp;Maps- See places to publish</a>
 			</li>
