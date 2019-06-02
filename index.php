@@ -50,45 +50,6 @@ if($result->num_rows == 0)
 
 }
 ?>
-<script>
-
-function  locationMessage() {
-        var txt = confirm( location.host +  " Wants to know your location");
-        if (txt == true) {return true;} else {return false;}
-}
-
-var x = document.getElementById("container");
-// get the location of the user
-function getLocation() {
-  var y = locationMessage() ;
-  if( y == true) {
-  if (navigator.geolocation) {
-   //  var lat = position.coords.latitude;
-   // var lng = position.coords.longitude;
-   // alert("the lat is : " + lat + "the lng is : " + lng)
-    navigator.geolocation.getCurrentPosition(showPosition);
-  } else {
-    x.innerHTML = "Geolocation is not supported by this browser.";
-  }
-} else {
-    alert("sorry you cant use the wifi");
-}
-}
-// show position of the user!!
-function showPosition(position) {
-  console.log("try");
-  x.innerHTML = "Latitude: " + position.coords.latitude +
-  "<br>Longitude: " + position.coords.longitude;
-  var lat = position.coords.latitude;
-   var lng = position.coords.longitude;
-  //alert("the lat is : " + lat + "the lng is : " + lng);
-}
-</script>
-<?php
-$lat = $_GET['lat'];
-$lng = $_GET['lng'];
-//echo " ok its work : ".$lat. " this is the lng: ".$lng;
-?>
 <!doctype html>
 <html lang="en" class="no-js">
 <!--  catifi 2019-->
