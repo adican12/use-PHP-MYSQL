@@ -171,42 +171,16 @@ if(mysqli_num_rows($result) > 0)
 							<div class="col-md-8 col-md-offset-2">
 								<form method="post" id="createCampaign" enctype="multipart/form-data" name="createCampaign">
 
-									<label for="" class="text-uppercase text-sm"> Campaign Name:</label>
-									<input type="text" placeholder="Campaign Name:" name="campaignName" class="form-control mb" required>
+									<label for="" class="text-uppercase text-sm"> Coupon Name:</label>
+									<input type="text" placeholder="Campaign Name:" name="couponName" class="form-control mb" required>
 
-									<label for="" class="text-uppercase text-sm"> Budget : </label>
-									<input type="number" placeholder="Budget" name="budget" class="form-control mb" required>
+									<label for="" class="text-uppercase text-sm"> Image : </label>
+									<input type="file" placeholder="Image" name="imagefile" class="form-control mb" required>
 
-									<label for="" class="text-uppercase text-sm"> Gender: </label>
-									<input type="text" placeholder="Male/Famle/Both" name="gender" class="form-control mb" required>
+									<label for="" class="text-uppercase text-sm"> Url: </label>
+									<input type="text" placeholder="www.url.com" name="url" class="form-control mb" required>
 
-									<label for="" class="text-uppercase text-sm"> ageMin: </label>
-									<input type="number" placeholder="25-" name="ageMin" class="form-control mb" required>
-
-									<label for="" class="text-uppercase text-sm"> ageMax: </label>
-									<input type="number" placeholder="-30" name="ageMax" class="form-control mb" required>
-
-
-									<label for="" class="text-uppercase text-sm"> Strat Date : </label>
-									<input type="date" placeholder="Strat Date:" name="stratDate" class="form-control mb" required>
-
-									<label for="" class="text-uppercase text-sm"> End Date : </label>
-									<input type="date" placeholder="End Date:" name="endDate" class="form-control mb" required>
-
-
-									<label for="" class="text-uppercase text-sm"> Category: </label>
-									<input type="text" placeholder="Fashion\Restaurant\movie\And more..."name="category" class="form-control mb" required>
-									<br>
-
-									<label for="" class="text-uppercase text-sm"> Location: </label>
-									<input type="number" placeholder="Select the location you want to advertise" name="category" class="form-control mb" required>
-									<br>
-
-									<label for="" class="text-uppercase text-sm"> Banner: </label>
-									<input type="number" placeholder="Select the banner You Create" name="category" class="form-control mb" required>
-									<br>
-
-									<button class="btn btn-primary btn-block" name="addCampin" type="submit" onload="loadCamp()">Click!</button>
+									<button class="btn btn-primary btn-block" name="addCoupon" type="submit" onload="loadCamp()">Click!</button>
 								</form>
 								<br>
 							</div>
