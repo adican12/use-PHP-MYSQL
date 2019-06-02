@@ -132,7 +132,7 @@ if(mysqli_num_rows($result) > 0)
 
 	?>
         <h5 style="background:#ededed;padding:20px;"><i class="fa fa-bell text-primary"></i>&nbsp;&nbsp;<b class="text-primary"><?php echo $row['time'];?></b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<?php echo $row['notiuser'];?> -----> <?php echo $row['notitype'];?></h5>
+					<?php echo $row['notiuser'];?> <?php echo $row['notitype'];?></h5>
                        <?php $cnt=$cnt+1; }} ?>
 											 <table id="zctb" class="display table table-striped table-bordered table-hover" cellspacing="0" width="100%">
 												 <thead>
@@ -144,7 +144,7 @@ if(mysqli_num_rows($result) > 0)
 																											 <th>Phoen:</th>
 																											 <th>Birthday:</th>
 																											 <th>Image:</th>
-																										
+
 													 </tr>
 											 </thead>
 										 <tbody>
