@@ -288,30 +288,16 @@ if(mysqli_num_rows($result) > 0)
 <div class="information" id="information">
 	 <h6><strong>Please enter information to create an advertisement</strong></h6>
 	 <div class="form-content">
-		 <div class="main">
-		 	<div class="row">
-			 	<div class="col-md-6 col-md-offset-3">
-				 	<h1 class="text-center text-bold mt-4x"> Create Campaign</h1>
-				 		<div class="well row pt-2x pb-3x bk-light">
-					 		<div class="col-md-8 col-md-offset-2">
-									<form id="ad" method="post">
-					<!-- <input type="file" name="file" value="Please select a picture" id="fileToUpload"> -->
-											<input type="file" name="imagefile" value="image" style="padding:10px"><br>
-
-											<label for="" class="text-uppercase text-sm"> Price:</label>
-											<input type="text" placeholder="Campaign Name:" name="campaignName" class="form-control mb" required>
-											
-											<input type="text" name="text" value="text"><br>
-											<input type="text" name="header" value="header"><br>
-											<input type = "number" name="user_id" value="user_id"><br>
-											<button name="submit" type="submit">Click me!</button>
-								</form>
-							</div>
-						</div>
-				</div>
-		</div>
+			<form id="ad" method="post">
+				<!-- <input type="file" name="file" value="Please select a picture" id="fileToUpload"> -->
+				<input type="file" name="imagefile" value="image" style="padding:10px"><br>
+				<input type="text" name="price" value="price"><br>
+				<input type="text" name="text" value="text"><br>
+				<input type="text" name="header" value="header"><br>
+				<input type = "number" name="user_id" value="user_id"><br>
+				<button name="submit" type="submit">Click me!</button>
+			</form>
 	</div>
-</div>
 </div>
 
 <div id="result_ad"></div>
