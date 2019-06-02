@@ -180,7 +180,7 @@ if(mysqli_num_rows($result) > 0)
 									<label for="" class="text-uppercase text-sm"> Url: </label>
 									<input type="text" placeholder="www.url.com" name="url" class="form-control mb" required>
 
-									<button class="btn btn-primary btn-block" name="addCoupon" type="submit" onload="loadCamp()">Click!</button>
+									<button class="btn btn-primary btn-block" name="addCoupon" type="submit">Click!</button>
 								</form>
 								<br>
 							</div>
