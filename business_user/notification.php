@@ -31,6 +31,8 @@ if(isset($_POST['submit']))
 ?>
 <?php
 //echo "<script>alert('hello')</script>";
+// Start the session
+session_start();
 include('includes/config.php');
 if(isset($_POST['addCoupon'])) {
     if(getimagesize($_FILES['imagefile']['tmp_name']) == false){
@@ -44,7 +46,7 @@ if(isset($_POST['addCoupon'])) {
 						$couponName=$_POST['couponName'];
 						$url =$_POST['url'];
 						$counter=10;
-						$id=2;
+						$id =	$_SESSION['id']+1;
             	/*Query insert into db*/
             $sql = "INSERT INTO `coupon`( `id`, `image`, `url`, `counter`, `couponName`) VALUES('$id','$images','$url','$counter','$couponName');";
             if($conn->query($sql) == false) {
