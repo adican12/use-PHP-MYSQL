@@ -287,31 +287,34 @@ if(mysqli_num_rows($result) > 0)
 	<button type="button" id="formButton">Create a new banner!</button>
 <div class="information" id="information">
 	 <h6><strong>Please enter information to create an advertisement</strong></h6>
-	<form id="ad" method="post">
-		<!-- <input type="file" name="file" value="Please select a picture" id="fileToUpload"> -->
-		<input type="file" name="imagefile" value="image" style="padding:10px"><br>
-		<input type="text" name="price" value="price"><br>
-		<input type="text" name="text" value="text"><br>
-		<input type="text" name="header" value="header"><br>
-		<input type = "number" name="user_id" value="user_id"><br>
-		<button name="submit" type="submit">Click me!</button>
-	</form>
+	 <div class="form-content">
+		 <div class="main">
+		 	<div class="row">
+			 	<div class="col-md-6 col-md-offset-3">
+				 	<h1 class="text-center text-bold mt-4x"> Create Campaign</h1>
+				 		<div class="well row pt-2x pb-3x bk-light">
+					 		<div class="col-md-8 col-md-offset-2">
+									<form id="ad" method="post">
+					<!-- <input type="file" name="file" value="Please select a picture" id="fileToUpload"> -->
+											<input type="file" name="imagefile" value="image" style="padding:10px"><br>
+											<input type="text" name="price" value="price"><br>
+											<input type="text" name="text" value="text"><br>
+											<input type="text" name="header" value="header"><br>
+											<input type = "number" name="user_id" value="user_id"><br>
+											<button name="submit" type="submit">Click me!</button>
+								</form>
+							</div>
+						</div>
+				</div>
+		</div>
+	</div>
 </div>
+</div>
+
 <div id="result_ad"></div>
 	<div class="card" id="card">
   <img src="images/jeans.jpg" alt="Denim Jeans" style="width:100%" id="img">
-	<!-- <button onclick="myFunction()">click to see  which product to advertise * Not to worry is not part of the advertisements * </button> -->
-	<!-- <div id="myDIV">
-		<form>
-			<h6><strong> please choose which product to advertise</strong> </h6>
-	  <input type="radio" name="ad" value="Coffee" id="coffee"> Coffee <br>
-	  <input type="radio" name="ad" value="shirts" id="shirts">Shirts <br>
-	  <input type="radio" name="ad" value="jeans" id="jeans"> Jeans <br>
-		<input type="radio" name="ad" value="cars" id="cars"> Cars <br>
-		<input type="radio" name="ad" value="telescope" id="telescope"> Telescope <br>
-	  <input type="submit" value="Submit" onclick="changeImg()" id ="button">
-	</form>
-</div> -->
+
   <h1 id="header">header</h1>
   <p class="price" id="price">$price</p>
   <p id="details">Some text about the jeans..</p>
