@@ -32,7 +32,7 @@ if(isset($_POST['submit']))
 <?php
 //echo "<script>alert('hello')</script>";
 include('includes/config.php');
-if(isset($_POST['submit'])) {
+if(isset($_POST['addCoupon'])) {
     if(getimagesize($_FILES['imagefile']['tmp_name']) == false){
           echo ' <br> Please Select An Image.<br>';
     } else {
