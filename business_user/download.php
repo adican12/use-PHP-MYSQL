@@ -235,7 +235,7 @@ if(mysqli_num_rows($result) > 0)
 					}, 3000);
 					});
 	</script>
-<div id="curve_chart" style="width: 200%; height: 500px;"></div>
+<div id="curve_chart" style="width: 100%; height: 500px;margin-left:250px;"></div>
 </body>
 </html>
 <?php } ?>
