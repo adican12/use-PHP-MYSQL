@@ -140,8 +140,7 @@ if(mysqli_num_rows($result) > 0)
 																											 <th> Name:</th>
 																											 <th>Email:</th>
 																											 <th>Gender:</th>
-																											 <th>Phoen:</th>
-																											 <th>Birthday:</th>
+																											 <th>business name:</th>
 																											 <th>category:</th>
 
 													 </tr>
@@ -195,7 +194,7 @@ if(mysqli_num_rows($result) > 0)
 											                       <td><?php echo $row['gender'];?></td>
 											                       <td><?php echo $row1['business_name'];?></td>
 											                       <td><?php echo $row1['category'] ;?></td>
-																						 <td><?php echo $row['user_category'] ;?></td>
+																						
 											                       <td>
 
 											                                             <?php if($row['status'] == 1)
