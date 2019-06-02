@@ -187,7 +187,7 @@ if(mysqli_num_rows($result) > 0)
 											                       <td><?php echo $row['gender'];?></td>
 											                       <td><?php echo $row['mobile'];?></td>
 											                       <td><?php echo $row['birthday'] ;?></td>
-																						 <td><?php echo $row['category'] ;?></td>
+																						 <td><?php echo $row['user_category'] ;?></td>
 											                       <td>
 
 											                                             <?php if($row['status'] == 1)
