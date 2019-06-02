@@ -181,7 +181,7 @@ if(mysqli_num_rows($result) > 0)
 			 ]);
 
 			 var options = {
-				 title: 'ad Performance',
+				 title: 'People',
 				 curveType: 'function',
 				 legend: { position: 'bottom' }
 			 };
