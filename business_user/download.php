@@ -145,16 +145,6 @@ if(mysqli_num_rows($result) > 0)
 																											 <th>Image:</th>
 
 													 </tr>
-													 <tr>
-													<th>#</th>
-																											<th> Name:</th>
-																											<th>Email:</th>
-																											<th>Gender:</th>
-																											<th>Phoen:</th>
-																											<th>Birthday:</th>
-																											<th>Image:</th>
-
-													</tr>
 											 </thead>
 										 <tbody>
                                         </div>
