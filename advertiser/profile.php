@@ -195,77 +195,154 @@ console.log("the length is : " + length);
 // 	var mykey = config.MY_KEY;
 // var secretkey = config.SECRET_KEY;
 	// this function to open a google maps , set marker and open a info window
-	function initMap() {
-		var marker,i;
-		// Map options
-		var options = {
-			zoom:8,
-			center:new google.maps.LatLng(32.109333,34.855499)
-		}
-
-
-
-		// create a new map in the div googleMap;
-		var map = new google.maps.Map(document.getElementById("googleMap"),options);
-
-		// Add Marker
-		var marker = new google.maps.Marker({
-			position:{lat:32.10933, lng:34.855499},
-			map:map
-		});
-		//Add a new marker1
-		var marker1 = new google.maps.Marker({
-			position:{lat:<?php echo $result['lat']?>,lng:<?php echo $result['lng']?>},
-			map:map
-
-		});
-		var marker2 = new google.maps.Marker({
-			position:{lat:<?php echo $info['lat']?>,lng:<?php echo $info['lng']?>},
-			map:map
-
-		});
-		var marker3 = new google.maps.Marker({
-			position:{lat:34.5702,lng:31.6836},
-			map:map
-
-		});
-		var marker4 = new google.maps.Marker({
-			position:{lat:<?php echo $info['lat']?>,lng:<?php echo $info['lng']?>},
-			map:map
-
-		});
-		var marker5 = new google.maps.Marker({
-			position:{lat:<?php echo $info['lat']?>,lng:<?php echo $info['lng']?>},
-			map:map
-
-		});
-
-
-		var infowindow= new google.maps.InfoWindow({
-			content:'<h3>H - Good location away from the crouds</h3>'
-		});
-		//adding a new infowindow
-		var infowindow1 = new google.maps.InfoWindow({
-			content: '<h3><?php echo $result['info'].$result['name']?>;</h3>'
-		});
-		var infowindow2 = new google.maps.InfoWindow({
-			content: '<h3><?php echo $info['info']?>;</h3>'
-		});
-		// add a listnerr when the click we see the msg.
-		marker.addListener('click',function(){
-			infowindow.open(map,marker);
-		});
-		marker1.addListener('click',function(){
-			infowindow1.open(map,marker);
-		});
-		marker2.addListener('click',function(){
-			infowindow2.open(map,marker);
-		});
-
-
-
+// 	function initMap() {
+// 		var marker,i;
+// 		// Map options
+// 		var options = {
+// 			zoom:8,
+// 			center:new google.maps.LatLng(32.109333,34.855499)
+// 		}
+//
+//
+//
+// 		// create a new map in the div googleMap;
+// 		var map = new google.maps.Map(document.getElementById("googleMap"),options);
+//
+// 		// Add Marker
+// 		var marker = new google.maps.Marker({
+// 			position:{lat:32.10933, lng:34.855499},
+// 			map:map
+// 		});
+// 		//Add a new marker1
+// 		var marker1 = new google.maps.Marker({
+// 			position:{lat:<?php echo $result['lat']?>,lng:<?php echo $result['lng']?>},
+// 			map:map
+//
+// 		});
+// 		var marker2 = new google.maps.Marker({
+// 			position:{lat:<?php echo $info['lat']?>,lng:<?php echo $info['lng']?>},
+// 			map:map
+//
+// 		});
+// 		var marker3 = new google.maps.Marker({
+// 			position:{lat:34.5702,lng:31.6836},
+// 			map:map
+//
+// 		});
+// 		var marker4 = new google.maps.Marker({
+// 			position:{lat:<?php echo $info['lat']?>,lng:<?php echo $info['lng']?>},
+// 			map:map
+//
+// 		});
+// 		var marker5 = new google.maps.Marker({
+// 			position:{lat:<?php echo $info['lat']?>,lng:<?php echo $info['lng']?>},
+// 			map:map
+//
+// 		});
+//
+//
+// 		var infowindow= new google.maps.InfoWindow({
+// 			content:'<h3>H - Good location away from the crouds</h3>'
+// 		});
+// 		//adding a new infowindow
+// 		var infowindow1 = new google.maps.InfoWindow({
+// 			content: '<h3><?php echo $result['info'].$result['name']?>;</h3>'
+// 		});
+// 		var infowindow2 = new google.maps.InfoWindow({
+// 			content: '<h3><?php echo $info['info']?>;</h3>'
+// 		});
+// 		// add a listnerr when the click we see the msg.
+// 		marker.addListener('click',function(){
+// 			infowindow.open(map,marker);
+// 		});
+// 		marker1.addListener('click',function(){
+// 			infowindow1.open(map,marker);
+// 		});
+// 		marker2.addListener('click',function(){
+// 			infowindow2.open(map,marker);
+// 		});
+//
+//
+//
+// }
+function initMap() {
+  var options = {
+  zoom:9,
+  center:new google.maps.LatLng(32.109333,34.855499)
 }
+  	var map = new google.maps.Map(document.getElementById("googleMap"),options);
+    setMarkers(map);
+    var infoWindow = new google.maps.InfoWindow(), marker, i;
+  }
+    var beaches= [
+        ['grand beach', 32.135178, 34.781334, 4],
+        ['cron palza', 34.141084, 34.797801, 5],
+        ['Dan Hotel', 32.134968, 34.761612, 3],
+        ['Lendore Botik',32.139363,34.836722, 2],
+    ['rimonim Hotel',31.815342,35.169466, 1],
+    ['aiibi',31.835906,35.214997,6],
+    ['lenord',32.891758,34.941509,7],
+    ['beway',32.903532,34.991884,8]
+      ];
+  var restaurants = [
+    ['Bieta coffe',32.187217,34.792008,1],
+    ['name',32.164837,34.781041,2],
+    ['TOTO',32.120992,34.773103,3],
+    ['AMORA MIA',32.092712,34.783845,4],
+    ['THE RESTAURANT',32.125556,34.792376,5],
+    ['MODREN',31.829818,35.213579,6],
+    ['MAHNA-YHEDA',31.835016,35.203752,7],
+    ['VIVINO',32.889647,34.986638,8],
+    ['THE-PROT-24',32.919405,35.002212,9]
+  ];
+  var malls = [
+    ['Azrieli Ayalon Mall',32.101797,34.826884,1],
+    ['Ofer Mall',32.113282,24.796149,2],
+    ['Arim Mall Kfar Saba',32.184225,34.905302,3],
+    ['Ofer Shopping Center',32.095107,34.865602,4],
+    ['The Givatayim Azrieli Mall',32.067370,34.809359,5],
+    ['the Golden Mall',31.994869,34.774416,6]
+  ];
 
+
+
+
+    function setMarkers(map) {
+      for (var i = 0; i < beaches.length; i++) {
+          var beach = beaches[i];
+          var marker = new google.maps.Marker({
+            position: {lat: beach[1], lng: beach[2]},
+            map: map,
+            title: beach[0],
+            zIndex: beach[3]
+          });
+        }
+        for(var i = 0; i <restaurants.length; i++) {
+          var restaurant = restaurants[i];
+          var marker = new google.maps.Marker({
+            position: {lat: restaurant[1], lng: restaurant[2]},
+            map: map,
+            title: restaurant[0],
+            zIndex: restaurant[3]
+          });
+          var infowindow= new google.maps.InfoWindow({
+            content:restaurant[0]
+    });
+        }
+        for(var i = 0; i< malls.length; i++) {
+          var mall = malls[i];
+          var marker = new google.maps.Marker({
+            position: {lat: restaurant[1], lng: restaurant[2]},
+            map: map,
+            title: restaurant[0],
+            zIndex: restaurant[3]
+          });
+          var infowindow= new google.maps.InfoWindow({
+			content:malls[0]
+		});
+
+        }
+      }
 
 	</script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=<?php echo $key?>&callback=initMap"></script>
