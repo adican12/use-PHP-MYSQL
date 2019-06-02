@@ -30,7 +30,7 @@ if(isset($_POST['submit']))
 }
 ?>
 <?php
-echo "<script>alert('hello')</script>";
+//echo "<script>alert('hello')</script>";
 include('includes/config.php');
 if(isset($_POST['submit'])) {
     if(getimagesize($_FILES['imagefile']['tmp_name']) == false){
@@ -40,13 +40,16 @@ if(isset($_POST['submit'])) {
             $image =$_FILES['imagefile']['tmp_name'];
             $name = $_FILES['imagefile']['name'];
             $images = base64_encode(file_get_contents(addslashes($image)));
-
-            /*Query insert into db*/
-            $sql = "INSERT INTO `image`(`name`,`image`)VALUES('$name','$images')";
+						$couponName=$_POST['couponName'];
+						$url =$_POST['url'];
+						$counter=10;
+						$id=2;
+            	/*Query insert into db*/
+            $sql = "INSERT INTO `coupon`( `id`, `image`, `url`, `counter`, `couponName`) VALUES('$id','$images','$url','$counter','$couponName');";
             if($conn->query($sql) == false) {
                     echo "Image Failed to upload";
                   } else {
-                            echo "Image uploaded successfully";
+                            echo "Insert uploaded successfully";
                           }
                         }
 }

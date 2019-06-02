@@ -199,11 +199,11 @@ INSERT INTO `ad`(`text`,`price`,`header`,`id`,`image`) VALUES
 CREATE TABLE `coupon`(
   `couponID`INT(11) NOT NULL AUTO_INCREMENT,
   `id` INT(11) NOT NULL,
-  `image` BLOB(50) NOT NULL,
+  `image` BLOB NOT NULL,
   `url` VARCHAR(50) NOT NULL,
   `counter` INT(6) NOT NULL,
+  `couponName` VARCHAR(255) NOT NULL,
   PRIMARY KEY(couponID),
-  FOREIGN KEY(id) REFERENCES users(id) ON UPDATE CASCADE
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1;
 /* Max limit show */
 
