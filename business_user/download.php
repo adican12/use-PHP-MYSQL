@@ -24,7 +24,7 @@ if(strlen($_SESSION['alogin'])==0)
 <?php
 $filename="Users list";
 
-$sql = "SELECT * from Users";
+$sql = "SELECT * from users";
 $result = $conn->query($sql);
 if($result === false)
 {
@@ -57,7 +57,7 @@ echo '
 <td>'.$Email= $row['email'].'</td>
 <td>'.$Gender= $row['gender'].'</td>
 <td>'.$Phone= $row['mobile'].'</td>
-<td>'.$Designation= $row['designation'].'</td>
+<td>'.$Designation= $row['image'].'</td>
 </tr>
 ';
 header("Content-type: application/octet-stream");
