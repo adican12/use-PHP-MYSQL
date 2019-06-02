@@ -173,7 +173,7 @@ if(mysqli_num_rows($result) > 0)
 
 		 function drawChart() {
 			 var data = google.visualization.arrayToDataTable([
-				 ['Year', 'Sales', 'Expenses'],
+				 ['time', 'Male', 'Famle'],
 				 ['2004',  1000,      400],
 				 ['2005',  1170,      460],
 				 ['2006',  660,       1120],
@@ -181,7 +181,7 @@ if(mysqli_num_rows($result) > 0)
 			 ]);
 
 			 var options = {
-				 title: 'Company Performance',
+				 title: 'ad Performance(s)',
 				 curveType: 'function',
 				 legend: { position: 'bottom' }
 			 };
