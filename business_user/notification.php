@@ -18,7 +18,7 @@ if(isset($_POST['submit']))
 	if($result === false)
 	{
 		 user_error("Query failed: ".$conn->error."<br />$sql");
-		 echo "false";
+		 //echo "false";
 	}
 
 	// $sql="UPDATE admin SET username=(:name), email=(:email)";
@@ -41,7 +41,7 @@ if(isset($_POST['submit']))
 	<meta name="author" content="">
 	<meta name="theme-color" content="#3e454c">
 
-	<title>Notifications</title>
+	<title>Coupon</title>
 
 	<!-- Font awesome -->
 	<link rel="stylesheet" href="css/font-awesome.min.css">
@@ -80,6 +80,16 @@ if(isset($_POST['submit']))
 }
 		</style>
 
+		<!-- Loading Scripts -->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap-select.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/jquery.dataTables.min.js"></script>
+		<script src="js/dataTables.bootstrap.min.js"></script>
+		<script src="js/Chart.min.js"></script>
+		<script src="js/fileinput.js"></script>
+		<script src="js/chartData.js"></script>
+		<script src="js/main.js"></script>
 
 </head>
 
@@ -91,11 +101,11 @@ if(isset($_POST['submit']))
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col-md-12">
-						<h3 class="page-title">Notifications</h3>
+						<h3 class="page-title">Coupon</h3>
 						<div class="row">
 							<div class="col-md-12">
 								<div class="panel panel-default">
-									<div class="panel-heading">Notification</div>
+									<div class="panel-heading">Coupon</div>
 									   <div class="panel-body">
 <?php
 $reciver = 'Admin';
@@ -143,16 +153,7 @@ if(mysqli_num_rows($result) > 0)
             </div>
         </div>
 
-	<!-- Loading Scripts -->
-	<script src="js/jquery.min.js"></script>
-	<script src="js/bootstrap-select.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/jquery.dataTables.min.js"></script>
-	<script src="js/dataTables.bootstrap.min.js"></script>
-	<script src="js/Chart.min.js"></script>
-	<script src="js/fileinput.js"></script>
-	<script src="js/chartData.js"></script>
-	<script src="js/main.js"></script>
+
 	<script type="text/javascript">
 				 $(document).ready(function () {
 					setTimeout(function() {
