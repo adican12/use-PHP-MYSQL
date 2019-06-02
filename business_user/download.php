@@ -98,10 +98,10 @@ if(isset($_POST['submit']))
 									<div class="panel-heading">Time to stay in the commercial</div>
 									   <div class="panel-body">
 <?php
-$reciver = 'Admin';
+$email='adiadi@gmail.com';
 
 
-$sql = "SELECT * from  notification where notireciver = '$reciver' order by time DESC";
+$sql = "SELECT * from users where notireciver = '$email' order by time DESC";
 $result = $conn->query($sql);
 if($result === false)
 {
