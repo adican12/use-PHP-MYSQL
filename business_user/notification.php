@@ -142,7 +142,7 @@ if(isset($_POST['addCoupon'])) {
 $reciver = 'Admin';
 
 
-$sql = "SELECT image,url FROM coupon WHERE couponID =1";
+$sql = "SELECT image,url FROM coupon";
 $result = $conn->query($sql);
 if($result === false)
 {
