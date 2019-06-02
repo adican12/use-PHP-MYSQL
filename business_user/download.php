@@ -106,7 +106,8 @@ $result = $conn->query($sql);
 if($result === false)
 {
 	 user_error("Query failed: ".$conn->error."<br />$sql");
-	 echo "false";
+	 echo "false <br>";
+	 echo "here the false <br>";
 }
 
 
