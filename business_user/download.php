@@ -166,51 +166,28 @@ if(mysqli_num_rows($result) > 0)
 <?php } ?>
 
 
-
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load("current", {packages:["corechart"]});
-      google.charts.setOnLoadCallback(drawChart);
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable
-            ([['X', 'Average ages: [1, 1]', 'lineDashStyle: [2, 2]',
-               'lineDashStyle: [4, 4]', 'lineDashStyle: [5, 1, 3]',
-               'lineDashStyle: [4, 1]',
-               'lineDashStyle: [10, 2]', 'lineDashStyle: [14, 2, 7, 2]',
-               'lineDashStyle: [14, 2, 2, 7]',
-               'lineDashStyle: [2, 2, 20, 2, 20, 2]'],
-              [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-              [2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
-              [3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
-              [4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
-              [5, 6, 7, 8, 9, 10, 11, 12, 13, 14],
-              [6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
-              [7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
-              [8, 9, 10, 11, 12, 13, 14, 15, 16, 17],
-              [9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
-        ]);
+	 <script type="text/javascript">
+		 google.charts.load('current', {'packages':['corechart']});
+		 google.charts.setOnLoadCallback(drawChart);
 
-        var options = {
-          hAxis: { maxValue: 10 },
-          vAxis: { maxValue: 18 },
-          chartArea: { width: 380 },
-          lineWidth: 4,
-          series: {
-            0: { lineDashStyle: [1, 1] },
-            1: { lineDashStyle: [2, 2] },
-            2: { lineDashStyle: [4, 4] },
-            3: { lineDashStyle: [5, 1, 3] },
-            4: { lineDashStyle: [4, 1] },
-            5: { lineDashStyle: [10, 2] },
-            6: { lineDashStyle: [14, 2, 7, 2] },
-            7: { lineDashStyle: [14, 2, 2, 7] },
-            8: { lineDashStyle: [2, 2, 20, 2, 20, 2] }
-          },
-          colors: ['#e2431e', '#f1ca3a', '#6f9654', '#1c91c0',
-                   '#4374e0', '#5c3292', '#572a1a', '#999999', '#1a1a1a'],
-        };
+		 function drawChart() {
+			 var data = google.visualization.arrayToDataTable([
+				 ['Year', 'Sales', 'Expenses'],
+				 ['2004',  1000,      400],
+				 ['2005',  1170,      460],
+				 ['2006',  660,       1120],
+				 ['2007',  1030,      540]
+			 ]);
 
-        var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
-        chart.draw(data, options);
-      }
-    </script>
+			 var options = {
+				 title: 'Company Performance',
+				 curveType: 'function',
+				 legend: { position: 'bottom' }
+			 };
+
+			 var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+			 chart.draw(data, options);
+		 }
+	 </script>
