@@ -178,7 +178,8 @@ if(mysqli_num_rows($result) > 0)
 
 	?>
 
-				<div class="w3-card-4" style="width:50%"><center><br><?php echo '<img height = 150px width=100px src=data:image;base64,'.$row['image'].'>';?> <div class="w3-container w3-center"><?php echo "<br>".$row['url'];?></div></h5></br></center></div>
+			<div class="w3-container"><div class="w3-card-4" style="width:50%"><center><br><?php echo '<img height = 150px width=100px src=data:image;base64,'.$row['image'].'>';?> <div class="w3-container w3-center"><?php echo "<br>".$row['url'];?></div></h5></br></center></div>
+		</div>
                        <?php $cnt=$cnt+1; }} ?>
                                         </div>
                                     </div>
