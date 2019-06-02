@@ -303,7 +303,7 @@ if(mysqli_num_rows($result) > 0)
 				<label for="" class="text-uppercase text-sm"> User ID: </label>
 				<input type="number" placeholder="user ID:" name="user_id" class="form-control mb" required>
 
-				
+
 				<button name="submit" type="submit">Click me!</button>
 			</form>
 	</div>
@@ -329,6 +329,12 @@ if(mysqli_num_rows($result) > 0)
 		 echo "false";
 	}
 		$row1= mysqli_fetch_assoc($result);
+		$query = "SELECT image,text,price,header FROM ad WHERE adID = (SELECT MAX(adID) FROM ad)";
+		$res = $conn->query($query);
+		if($res == false) {
+			echo "error the query not good";
+		}
+		$row = mysqli_fetch_assoc($res);
 
 
 	// $query= "SELECT * FROM images";
@@ -384,7 +390,8 @@ function changeDetails(){
 	var x = "<?php$row['text'];?>";
 	document.getElementById("details").innerHTML =x;
 //change the image
-	var x = "<?php echo $row['image'];?>";
+	var x = "echo '<img height = 150px width=100px src=data:image;base64,'.$row['image'].'>';
+	}";
  	console.log(x);
   document.getElementById("img").src= x;
 	var user_id = <?php echo $row['MAX(user_id)'];?>;
@@ -442,6 +449,7 @@ function myFunction() {
 						$('.succWrap').slideUp("slow");
 					}, 3000);
 //add to database new ad
+
 			$("#ad").submit(function(){
 			//alert("signup_form");
 			$("button").prop('disabled', true);
