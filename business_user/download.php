@@ -174,10 +174,10 @@ if(mysqli_num_rows($result) > 0)
 		 function drawChart() {
 			 var data = google.visualization.arrayToDataTable([
 				 ['time', 'Male', 'Famle'],
-				 ['10 min',  100,      400],
-				 ['5 min',  1170,      460],
-				 ['2 min',  660,       1120],
-				 ['1 min',  1030,      540]
+				 ['10 min',  100,      50],
+				 ['5 min',  120,      80],
+				 ['2 min',  300,       0],
+				 ['1 min',  110,      20]
 			 ]);
 
 			 var options = {
