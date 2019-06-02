@@ -185,8 +185,8 @@ if(mysqli_num_rows($result) > 0)
 											                       <td><?php echo $row['name']; ?></td>
 											                       <td><?php echo $row['email'];?></td>
 											                       <td><?php echo $row['gender'];?></td>
-											                       <td><?php echo $row1['business_name'];?></td>
-											                       <td><?php echo $row1['category'] ;?></td>
+											                       <td><?php echo $row['business_name'];?></td>
+											                       <td><?php echo $row['category'] ;?></td>
 
 											                       <td>
 
