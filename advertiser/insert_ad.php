@@ -30,12 +30,16 @@ $price= $_POST['price'];
 $text = $_POST['text'];
 $header= $_POST['header'];
 $user_id= $_POST['user_id'];
-$image = 1;
+      // declare Variables
+						echo "we here";
+            $image =$_FILES['imagefile']['tmp_name'];
+            $name = $_FILES['imagefile']['name'];
+            $images = base64_encode(file_get_contents(addslashes($image)));
 
 
 
 $sql = "INSERT INTO `ad`(`text`,`price`,`header`,`user_id`,`image`)
-VALUES('$text','$price','$header','$user_id','$image');";
+VALUES('$text','$price','$header','$user_id','$images');";
 
 if ($conn->query($sql) === TRUE) {
     //echo "New record $text user  created successfully";

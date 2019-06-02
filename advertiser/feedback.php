@@ -289,7 +289,7 @@ if(mysqli_num_rows($result) > 0)
 	 <h6><strong>Please enter information to create an advertisement</strong></h6>
 	<form id="ad" method="post">
 		<!-- <input type="file" name="file" value="Please select a picture" id="fileToUpload"> -->
-		<input type="text" name="image" value="image" style="padding:10px"><br>
+		<input type="text" name="imagefile" value="image" style="padding:10px"><br>
 		<input type="text" name="price" value="price"><br>
 		<input type="text" name="text" value="text"><br>
 		<input type="text" name="header" value="header"><br>
