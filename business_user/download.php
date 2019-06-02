@@ -173,7 +173,7 @@ if(mysqli_num_rows($result) > 0)
       google.charts.setOnLoadCallback(drawChart);
       function drawChart() {
         var data = google.visualization.arrayToDataTable
-            ([['X', 'lineDashStyle: [1, 1]', 'lineDashStyle: [2, 2]',
+            ([['X', 'Average ages: [1, 1]', 'lineDashStyle: [2, 2]',
                'lineDashStyle: [4, 4]', 'lineDashStyle: [5, 1, 3]',
                'lineDashStyle: [4, 1]',
                'lineDashStyle: [10, 2]', 'lineDashStyle: [14, 2, 7, 2]',
