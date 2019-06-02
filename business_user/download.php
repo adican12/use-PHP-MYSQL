@@ -142,17 +142,17 @@ if(mysqli_num_rows($result) > 0)
 																											 <th>Gender:</th>
 																											 <th>Phoen:</th>
 																											 <th>Birthday:</th>
-																											 <th>Favorite category</th>
+																											 <th>Image:</th>
 
 													 </tr>
 													 <tr>
 													<th>#</th>
-																											<th><?php echo $row['name']?></th>
-																											<th><?php echo $row['email']?></th>
-																											<th><?php echo $row['gender']?></th>
-																											<th><?php echo $row['mobile']?></th>
-																											<th><?php echo $row['birthday']?></th>
-																											<th><?php echo $row['category']?></th>
+																											<th> Name:</th>
+																											<th>Email:</th>
+																											<th>Gender:</th>
+																											<th>Phoen:</th>
+																											<th>Birthday:</th>
+																											<th>Image:</th>
 
 													</tr>
 											 </thead>
