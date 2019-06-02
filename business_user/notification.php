@@ -145,7 +145,8 @@ $result = $conn->query($sql);
 if($result === false)
 {
 	 user_error("Query failed: ".$conn->error."<br />$sql");
-	 echo "false";
+	 echo "false <br>";
+	 echo"the false is here <br>";
 } else {
 	while($row=mysqli_fetch_assoc($res)){
 	 echo '<img height = 150px width=100px src=data:image;base64,'.$row['image'].'>';
