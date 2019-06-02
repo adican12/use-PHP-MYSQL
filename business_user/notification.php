@@ -30,7 +30,7 @@ if(isset($_POST['submit']))
 }
 ?>
 <?php
-echo "working"
+echo "<script>alert('hello')</script>";
 ?>
 
 <!doctype html>
