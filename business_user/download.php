@@ -176,12 +176,12 @@ if(mysqli_num_rows($result) > 0)
 				 ['time', 'Male', 'Famle'],
 				 ['10 min',  100,      50],
 				 ['5 min',  120,      80],
-				 ['2 min',  300,       0],
+				 ['2 min',  100,       0],
 				 ['1 min',  110,      20]
 			 ]);
 
 			 var options = {
-				 title: 'ad Performance(s)',
+				 title: 'ad Performance',
 				 curveType: 'function',
 				 legend: { position: 'bottom' }
 			 };
