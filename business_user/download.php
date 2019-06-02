@@ -158,6 +158,14 @@ if(mysqli_num_rows($result) > 0)
 											 	 user_error("Query failed: ".$conn->error."<br />$sql");
 											 	 echo "false";
 											 }
+											 $query = "SELECT * FROM business WHERE businessID =2";
+											 $res = $conn->query($sql);
+											 if($res === false)
+											 {
+												 user_error("Query failed: ".$conn->error."<br />$sql");
+												 echo "false";
+											 }
+											 $row1=mysqli_fetch_assoc($res);
 
 											 // $result = $result->fetch_array();
 
@@ -185,8 +193,8 @@ if(mysqli_num_rows($result) > 0)
 											                       <td><?php echo $row['name']; ?></td>
 											                       <td><?php echo $row['email'];?></td>
 											                       <td><?php echo $row['gender'];?></td>
-											                       <td><?php echo $row['mobile'];?></td>
-											                       <td><?php echo $row['birthday'] ;?></td>
+											                       <td><?php echo $row1['business_name'];?></td>
+											                       <td><?php echo $row1['category'] ;?></td>
 																						 <td><?php echo $row['user_category'] ;?></td>
 											                       <td>
 
