@@ -101,7 +101,7 @@ if(isset($_POST['submit']))
 $email='adiadi@gmail.com';
 
 
-$sql = "SELECT * from users where notireciver = '$email' order by time DESC";
+$sql = "SELECT * from users where email = '$email' order by time DESC";
 $result = $conn->query($sql);
 if($result === false)
 {
