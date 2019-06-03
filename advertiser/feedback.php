@@ -392,7 +392,7 @@ function changeDetails(){
 
 //---------------change the image---------------
 	let x = "<?php echo $new_row['image'];?>";
-  // document.getElementById("img").src=  <?php echo '<img src=data:image;base64,'.$new_row['image'].'>';?>
+   document.getElementById("img").src;
 
 	//----------------change the banner id----------------
 	var user_id = <?php echo $row['MAX(user_id)'];?>;
