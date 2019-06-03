@@ -181,7 +181,7 @@ if(isset($_REQUEST['unconfirm']))
   font-family: arial;}
 .information {margin-left:520px;margin-bottom: 10px;padding: 20px;display:none;}
 .information input{width: 30%;padding: 12px 20px;text-align: center;margin: 8px 0;}
-.information button{border-radius: 30px;font-size: 16px; box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);background-color:#F4F6F9;color:black;margin-left: 45px;}
+.information button{border-radius: 30px; box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);background-color:#F4F6F9;color:black;margin-left: 45px;}
 .information button:hover {color:#fff;background-color: black;}
 .information .button:active {background-color: #3e8e41;box-shadow: 0 5px #666;transform: translateY(4px);}
 #formButton {border-radius: 30px;font-size: 16px; box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);background-color:#F4F6F9;color:black;margin-left:520px; padding: 20px;margin-bottom: 10px;}
@@ -309,7 +309,7 @@ if(mysqli_num_rows($result) > 0)
 
 
 				<button name="submit" type="submit" class="showDemo" style="margin-right:300px;"> Upload!</button>
-				<button name="submit_one" type="submit" class="showDemo" onclick="changeDetails()" style="margin-right:350px;margin-top:10px;">Show Demo </button>
+				<button name="submit_one" type="submit" class="showDemo" onclick="changeDetails()" style="margin-right:310px;margin-top:10px;"> Show Demo </button>
 			</form>
 	</div>
 </div>
