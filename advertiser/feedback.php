@@ -292,7 +292,8 @@ if(mysqli_num_rows($result) > 0)
 			<form id="ad" method="post">
 				<!-- <input type="file" name="file" value="Please select a picture" id="fileToUpload"> -->
 					<label for="" class="text-uppercase text-sm"> Image:</label>
-				<input type="file" name="imagefile" value="image" style="padding:10px"><br>
+				<input type="file" name="imagefile" value="image" style="padding:10px;" class="form-control mb" required> <br>
+
 				<label for="" class="text-uppercase text-sm"> Price:</label>
 				<input type="text" placeholder="Price:" name="price" class="form-control mb" required>
 
