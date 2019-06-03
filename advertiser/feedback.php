@@ -337,9 +337,9 @@ if(mysqli_num_rows($result) > 0)
 			user_error("Query failed: ".$conn->error."<br />$sql");
 			echo "false";
 	 	}
-	$new_row = mysqli_fetch_assoc($res);
-	 echo "print the image form db: ".$new_row['image']."<br>";
-	 echo "print the text of the image form db: ".$new_row['text']."<br>";
+	/$new_row = mysqli_fetch_assoc($res);
+	 echo '<img src=data:image;base64,'.$new_row['image'].'>';
+	 echo " <br> print the text of the image form db: ".$new_row['text']."<br>";
 	 echo "print the text of the image form db: ".$new_row['price']."<br>";
 	 echo "print the text of the image form db: ".$new_row['header']."<br>";
 
