@@ -364,7 +364,12 @@ if(mysqli_num_rows($result) > 0)
 			document.getElementById("price").innerHTML =  price + " $ ";
 			//change the text;
 			var x = "<?php$new_row['text'];?>";
+			console.log(x);
 			document.getElementById("details").innerHTML =x;
+
+			//change the header
+			var x = "<?php echo $new_row['header'];?>";
+			document.getElementById("header").innerHTML = x;
 
 
 	}
@@ -396,9 +401,7 @@ function changeDetails(){
 	console.log("Hey from function ShowDemo");
 	var x = <?php echo $new_row['price'];?>;
 	document.getElementById("price").innerHTML =  x + " $ ";
-	//change the header
-	var x = "<?php echo $new_row['header'];?>";
-	document.getElementById("header").innerHTML = x;
+
 //change the text
 
 //change the image
