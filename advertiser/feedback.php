@@ -371,7 +371,7 @@ if(mysqli_num_rows($result) > 0)
 			document.getElementById("header").innerHTML = header;
 
 
-			document.getElementById("img").src= '<?php echo '<img src="data:image;base64,'.$new_row['image'].'"/>';?>'
+			document.getElementById("img").src= '<?php echo $new_row['image'];?>'
 
 
 	}
@@ -397,23 +397,23 @@ if(mysqli_num_rows($result) > 0)
 
 }
 */
-function changeDetails(){
-
-
-	console.log("Hey from function ShowDemo");
-	var x = <?php echo $new_row['price'];?>;
-	document.getElementById("price").innerHTML =  x + " $ ";
-
-//change the text
-
-//change the image
-	var x = "<?php echo $row['image'];?>";
- 	console.log(x);
-  document.getElementById("img").src= x;
-	var user_id = <?php echo $row['MAX(user_id)'];?>;
-	document.getElementById('demo').innerHTML = "the id of the campaing is " + user_id;
-
-}
+// function changeDetails(){
+//
+//
+// 	console.log("Hey from function ShowDemo");
+// 	var x =
+// 	document.getElementById("price").innerHTML =  x + " $ ";
+//
+// //change the text
+//
+// //change the image
+// 	var x =
+//  	console.log(x);
+//   document.getElementById("img").src= x;
+// 	var user_id =
+// 	document.getElementById('demo').innerHTML = "the id of the campaing is " + user_id;
+//
+// }
 
 /*
 function changePrice(){
