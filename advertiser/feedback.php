@@ -370,7 +370,7 @@ if(mysqli_num_rows($result) > 0)
 			var header = "<?php echo $new_row['header'];?>";
 			document.getElementById("header").innerHTML = header;
 
-			let image =
+		
 			document.getElementById("img").src= <?php echo '<img src=data:image;base64,'.$new_row['image'].'>';?>;
 
 
