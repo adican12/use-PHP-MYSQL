@@ -371,7 +371,7 @@ if(mysqli_num_rows($result) > 0)
 			document.getElementById("header").innerHTML = header;
 
 
-			document.getElementById("img").src= '<?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $new_row['image'] ).'"/>';?>'
+			document.getElementById("img").src= '<?php echo '<img src="data:image;base64,'.$new_row['image'].'"/>';?>'
 
 
 	}
