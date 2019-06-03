@@ -119,6 +119,7 @@ if(isset($_REQUEST['unconfirm']))
 	<link rel="stylesheet" href="css/awesome-bootstrap-checkbox.css">
 	<!-- Admin Stye -->
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/button.css">
   <style>
 
 	.errorWrap {
@@ -307,7 +308,8 @@ if(mysqli_num_rows($result) > 0)
 				<input type="number" placeholder="user ID:" name="user_id" class="form-control mb" required>
 
 
-				<button name="submit" type="submit">Click me!</button>
+				<button name="submit" type="submit"> Upload!</button>
+				<button name="submit_one" type="submit">Show Demo </button>
 			</form>
 	</div>
 </div>
