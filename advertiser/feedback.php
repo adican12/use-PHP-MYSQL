@@ -330,24 +330,18 @@ if(mysqli_num_rows($result) > 0)
 		 user_error("Query failed: ".$conn->error."<br />$sql");
 		 echo "false";
 	}
-		$row1= mysqli_fetch_assoc($result);
-		$query = "SELECT image,text,price,header FROM ad WHERE adID = (SELECT MAX(adID) FROM ad)";
-		$res = $conn->query($query);
-		if($res == false) {
-			echo "error the query not good";
-		}
-		$row = mysqli_fetch_assoc($res);
 
-
-	// $query= "SELECT * FROM images";
-	// $res = $conn->query($query);
-	// if($res === false){
-	// 	user_error("Query failed: ".$conn->error."<br />$sql");
-	// 	echo "false";
-	// }
-	// $new_row = mysqli_fetch_assoc($res);
-	//  echo "print the image form db: ".$new_row['image']."<br>";
-	//  echo "print the text of the image form db: ".$new_row['text']."<br>";
+	 $query= "SELECT image,text,price,header FROM ad WHERE adID = (SELECT MAX(adID) FROM ad)";
+	 $res = $conn->query($query);
+	 if($res === false){
+			user_error("Query failed: ".$conn->error."<br />$sql");
+			echo "false";
+	 	}
+	/$new_row = mysqli_fetch_assoc($res);
+	 echo "print the image form db: ".$new_row['image']."<br>";
+	 echo "print the text of the image form db: ".$new_row['text']."<br>";
+	 echo "print the text of the image form db: ".$new_row['price']."<br>";
+	 echo "print the text of the image form db: ".$new_row['header']."<br>";
 
 
 
