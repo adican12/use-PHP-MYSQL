@@ -379,10 +379,10 @@ if(mysqli_num_rows($result) > 0)
 
 }
 */
-
 function changeDetails(){
 
 	//change the price
+	console.log("Hey from function ShowDemo");
 	var x = <?php echo $new_row['price'];?>;
 	document.getElementById("price").innerHTML =  x + " $ ";
 	//change the header
@@ -398,7 +398,9 @@ function changeDetails(){
 	var user_id = <?php echo $row['MAX(user_id)'];?>;
 	document.getElementById('demo').innerHTML = "the id of the campaing is " + user_id;
 
-}/*
+}
+
+/*
 function changePrice(){
 
 }
