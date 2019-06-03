@@ -366,7 +366,7 @@ if(mysqli_num_rows($result) > 0)
 	}
 	</script>
 <script type="text/javascript">
-document.getElementById("img").addEventListener("click", changeDetails);
+//document.getElementById("img").addEventListener("click", changeDetails);
 //document.getElementById("img").addEventListener("click",changeImg);
 //document.getElementById("header").addEventListener("click",changeHeader);
 //document.getElementById("details").addEventListener("click",changeText);
@@ -381,14 +381,15 @@ document.getElementById("img").addEventListener("click", changeDetails);
 */
 
 function changeDetails(){
+
 	//change the price
-	var x = <?php echo $row['price'];?>;
+	var x = <?php echo $new_row['price'];?>;
 	document.getElementById("price").innerHTML =  x + " $ ";
 	//change the header
-	var x = "<?php echo $row['header'];?>";
+	var x = "<?php echo $new_row['header'];?>";
 	document.getElementById("header").innerHTML = x;
 //change the text
-	var x = "<?php$row['text'];?>";
+	var x = "<?php$new_row['text'];?>";
 	document.getElementById("details").innerHTML =x;
 //change the image
 	var x = "<?php echo $row['image'];?>";
