@@ -361,8 +361,8 @@ if(mysqli_num_rows($result) > 0)
 	function showDemo() {
 	//	alert("hello form show Demo function");
 	var x = <?php echo $new_row['price'];?>;
-	console.log(x);
-	//document.getElementById("price").innerHTML =  x + " $ ";
+	//console.log(x);
+	document.getElementById("price").innerHTML =  x + " $ ";
 
 	}
 
