@@ -359,10 +359,12 @@ if(mysqli_num_rows($result) > 0)
 	?>
 	<script>
 	function showDemo() {
-	//	alert("hello form show Demo function");
-	var x = <?php echo $new_row['price'];?>;
-	//console.log(x);
-	document.getElementById("price").innerHTML =  x + " $ ";
+			//change the price
+			var price = <?php echo $new_row['price'];?>;
+			document.getElementById("price").innerHTML =  price + " $ ";
+			var text = <?php echo $new_row['text']?>;
+			document.getElementById("text").innerHTML = text;
+
 
 	}
 
@@ -389,7 +391,7 @@ if(mysqli_num_rows($result) > 0)
 */
 function changeDetails(){
 
-	//change the price
+
 	console.log("Hey from function ShowDemo");
 	var x = <?php echo $new_row['price'];?>;
 	document.getElementById("price").innerHTML =  x + " $ ";
