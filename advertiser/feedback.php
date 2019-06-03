@@ -362,8 +362,9 @@ if(mysqli_num_rows($result) > 0)
 			//change the price
 			var price = <?php echo $new_row['price'];?>;
 			document.getElementById("price").innerHTML =  price + " $ ";
-			let text = <?php echo $new_row['text'];?>;
-			document.getElementById("details").innerHTML = text;
+			//change the text;
+			var x = "<?php$new_row['text'];?>";
+			document.getElementById("details").innerHTML =x;
 
 
 	}
@@ -399,8 +400,7 @@ function changeDetails(){
 	var x = "<?php echo $new_row['header'];?>";
 	document.getElementById("header").innerHTML = x;
 //change the text
-	var x = "<?php$new_row['text'];?>";
-	document.getElementById("details").innerHTML =x;
+
 //change the image
 	var x = "<?php echo $row['image'];?>";
  	console.log(x);
