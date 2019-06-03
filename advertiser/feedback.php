@@ -309,7 +309,7 @@ if(mysqli_num_rows($result) > 0)
 
 
 				<button name="submit" type="submit" class="showDemo"> Upload!</button>
-				<button name="submit_one" type="submit" class="showDemo">Show Demo </button>
+				<button name="submit_one" type="submit" class="showDemo" onclick="changeDetails()">Show Demo </button>
 			</form>
 	</div>
 </div>
