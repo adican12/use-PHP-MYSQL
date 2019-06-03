@@ -308,7 +308,7 @@ if(mysqli_num_rows($result) > 0)
 				<input type="number" placeholder="user ID:" name="user_id" class="form-control mb" required>
 
 
-				<button name="submit" type="submit"> Upload!</button>
+				<button name="submit" type="submit" class="showDemo"> Upload!</button>
 				<button name="submit_one" type="submit" class="showDemo">Show Demo </button>
 			</form>
 	</div>
