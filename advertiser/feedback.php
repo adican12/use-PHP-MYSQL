@@ -145,6 +145,7 @@ if(isset($_REQUEST['unconfirm']))
 	margin-left: 450px;
   text-align: center;
   font-family: arial;
+	border-radius: 20px;
 }
 
 .price {
