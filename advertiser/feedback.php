@@ -308,8 +308,8 @@ if(mysqli_num_rows($result) > 0)
 				<input type="number" placeholder="user ID:" name="user_id" class="form-control mb" required>
 
 
-				<button name="submit" type="submit" class="showDemo" style="margin-right:300px;margin-top:10px;"> Upload!</button>
-				<button name="submit_one" type="submit" class="showDemo" onclick="changeDetails()" style="margin-right:300px;">Show Demo </button>
+				<button name="submit" type="submit" class="showDemo" style="margin-right:300px;"> Upload!</button>
+				<button name="submit_one" type="submit" class="showDemo" onclick="changeDetails()" style="margin-right:300px;margin-top:10px;">Show Demo </button>
 			</form>
 	</div>
 </div>
