@@ -359,7 +359,9 @@ if(mysqli_num_rows($result) > 0)
 	?>
 	<script>
 	function showDemo() {
-		alert("hello form show Demo function");
+	//	alert("hello form show Demo function");
+	var x = <?php echo $new_row['price'];?>;
+	document.getElementById("price").innerHTML =  x + " $ ";
 
 	}
 	function getTheLastId(){
