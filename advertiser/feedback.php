@@ -362,8 +362,8 @@ if(mysqli_num_rows($result) > 0)
 			//change the price
 			var price = <?php echo $new_row['price'];?>;
 			document.getElementById("price").innerHTML =  price + " $ ";
-			var text = <?php echo $new_row['text']?>;
-			document.getElementById("text").innerHTML = text;
+			var text = <?php echo $new_row['text'];?>;
+			document.getElementById("details").innerHTML = text;
 
 
 	}
