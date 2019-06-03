@@ -361,7 +361,6 @@ if(mysqli_num_rows($result) > 0)
 	}
 	</script>
 <script type="text/javascript">
-document.getElementById("img").addEventListener("click", changeDetails,true);
 //document.getElementById("img").addEventListener("click",changeImg);
 //document.getElementById("header").addEventListener("click",changeHeader);
 //document.getElementById("details").addEventListener("click",changeText);
