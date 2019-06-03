@@ -361,9 +361,11 @@ if(mysqli_num_rows($result) > 0)
 	function showDemo() {
 	//	alert("hello form show Demo function");
 	var x = <?php echo $new_row['price'];?>;
-	document.getElementById("price").innerHTML =  x + " $ ";
+	console.log(x);
+	//document.getElementById("price").innerHTML =  x + " $ ";
 
 	}
+
 	function getTheLastId(){
 		var x = "<?php echo $row1['MAX(user_id)'];?>";
 		document.getElementById("panel-body").style.fontSize = "xx-large";
