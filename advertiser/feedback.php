@@ -369,11 +369,7 @@ if(mysqli_num_rows($result) > 0)
 			//change the header
 			var header = "<?php echo $new_row['header'];?>";
 			document.getElementById("header").innerHTML = header;
-
-
-			document.getElementById("img").src = '<?php echo '<img src="data:image;base64,'.$new_row['image'].'"/>';?>'
-
-
+			
 	}
 
 	function getTheLastId(){
