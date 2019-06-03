@@ -343,10 +343,10 @@ if(mysqli_num_rows($result) > 0)
 			echo "false";
 	 	}
 	$new_row = mysqli_fetch_assoc($res);
-	 echo '<img src=data:image;base64,'.$new_row['image'].'>';
-	 echo " <br> print the text of the image form db: ".$new_row['text']."<br>";
-	 echo "print the text of the image form db: ".$new_row['price']."<br>";
-	 echo "print the text of the image form db: ".$new_row['header']."<br>";
+	 // echo '<img src=data:image;base64,'.$new_row['image'].'>';
+	 // echo " <br> print the text of the image form db: ".$new_row['text']."<br>";
+	 // echo "print the text of the image form db: ".$new_row['price']."<br>";
+	 // echo "print the text of the image form db: ".$new_row['header']."<br>";
 
 
 
