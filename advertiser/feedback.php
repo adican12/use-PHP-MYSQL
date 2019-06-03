@@ -337,7 +337,7 @@ if(mysqli_num_rows($result) > 0)
 			user_error("Query failed: ".$conn->error."<br />$sql");
 			echo "false";
 	 	}
-	$new_row = mysqli_fetch_assoc($res);
+	/$new_row = mysqli_fetch_assoc($res);
 	 echo "print the image form db: ".$new_row['image']."<br>";
 	 echo "print the text of the image form db: ".$new_row['text']."<br>";
 	 echo "print the text of the image form db: ".$new_row['price']."<br>";
@@ -375,32 +375,24 @@ document.getElementById("img").addEventListener("click", changeDetails);
 }
 */
 
-/*--------FUNCTION CHANGE DETAILS--------*/
-
 function changeDetails(){
-
-	//----------change the price-----------
-	var price = <?php echo $new_row'price'];?>;
-	document.getElementById("price").innerHTML =  price + " $ ";
-
-	//-----------change the header----------
-	var header = "<?php echo $new_row['header'];?>";
-	document.getElementById("header").innerHTML = header;
-
-//-------------change the text------------
-	var text= "<?php$new_row['text'];?>";
-	document.getElementById("details").innerHTML = text;
-
-//---------------change the image---------------
+	//change the price
+	var x = <?php echo $row['price'];?>;
+	document.getElementById("price").innerHTML =  x + " $ ";
+	//change the header
+	var x = "<?php echo $row['header'];?>";
+	document.getElementById("header").innerHTML = x;
+//change the text
+	var x = "<?php$row['text'];?>";
+	document.getElementById("details").innerHTML =x;
+//change the image
 	var x = "<?php echo $row['image'];?>";
-  document.getElementById("img").src= ;
-
-	//----------------change the banner id----------------
+ 	console.log(x);
+  document.getElementById("img").src= x;
 	var user_id = <?php echo $row['MAX(user_id)'];?>;
 	document.getElementById('demo').innerHTML = "the id of the campaing is " + user_id;
 
-}
-/*
+}/*
 function changePrice(){
 
 }
