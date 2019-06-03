@@ -338,10 +338,10 @@ if(mysqli_num_rows($result) > 0)
 			echo "false";
 	 	}
 	$new_row = mysqli_fetch_assoc($res);
-	  echo "print the image form db: ".$new_row['image']."<br>";
-	  echo "print the text of the image form db: ".$new_row['text']."<br>";
-	  echo "print the text of the image form db: ".$new_row['price']."<br>";
-	  echo "print the text of the image form db: ".$new_row['header']."<br>";
+	 echo "print the image form db: ".$new_row['image']."<br>";
+	 echo "print the text of the image form db: ".$new_row['text']."<br>";
+	 echo "print the text of the image form db: ".$new_row['price']."<br>";
+	 echo "print the text of the image form db: ".$new_row['header']."<br>";
 
 
 
@@ -361,6 +361,7 @@ if(mysqli_num_rows($result) > 0)
 	}
 	</script>
 <script type="text/javascript">
+document.getElementById("img").addEventListener("click", changeDetails);
 //document.getElementById("img").addEventListener("click",changeImg);
 //document.getElementById("header").addEventListener("click",changeHeader);
 //document.getElementById("details").addEventListener("click",changeText);
@@ -391,8 +392,8 @@ function changeDetails(){
 	document.getElementById("details").innerHTML = text;
 
 //---------------change the image---------------
-	let x = "<?php echo $new_row['image'];?>";
-   document.getElementById("img").src;
+	var x = "<?php echo $row['image'];?>";
+  document.getElementById("img").src= ;
 
 	//----------------change the banner id----------------
 	var user_id = <?php echo $row['MAX(user_id)'];?>;
