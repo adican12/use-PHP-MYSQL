@@ -312,8 +312,8 @@ if(mysqli_num_rows($result) > 0)
 			</form>
 
 	</div>
-		<button name="submit_one" type="submit" class="showDemo" onclick="changeDetails()" style="margin-right:310px;margin-top:10px;"> Show Demo </button>
 </div>
+<button class="showDemo" onclick="changeDetails()" style="margin-right:310px;margin-top:10px;"> Show Demo </button>
 
 <div id="result_ad"></div>
 	<div class="card" id="card">
