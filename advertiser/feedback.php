@@ -318,7 +318,7 @@ if(mysqli_num_rows($result) > 0)
 <div id="result_ad"></div>
 	<div class="card" id="card">
 		<h2>DEMO</h2>
-  <img src="images/jeans.jpg" alt="Denim Jeans" style="width:100%" id="img">
+  <img src="images/jeans.jpg" alt="" style="width:100%" id="img">
 
   <h1 id="header">header</h1>
   <p class="price" id="price">$price</p>
@@ -371,7 +371,7 @@ if(mysqli_num_rows($result) > 0)
 			document.getElementById("header").innerHTML = header;
 
 
-			document.getElementById("img").src= <?php echo $new_row['image'];?>
+			document.getElementById("img").innerHTML= '<?php echo '<img src="data:image;base64,'.$new_row['image'].'"/>';?>'
 
 
 	}
