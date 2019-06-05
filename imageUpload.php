@@ -25,11 +25,12 @@ $counter = 0;
     } else {
 
 
-  	if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
-        echo "we here! in the if <br>";
+  	if (move_uploaded_file($_FILES['image']['tmp_name'], $target) == false) {
   		$msg = "Image uploaded successfully";
+      echo .$msg;
   	}else{
   		$msg = "Failed to upload image";
+      echo $msg;
   	}
   }
   }
