@@ -1,7 +1,7 @@
 <?php
   // Create database connection
   include('includes/config.php');
-
+$counter = 0;
 
   // Initialize message variable
   $msg = "";
@@ -17,9 +17,10 @@
   	// image file directory
   	$target = "images/".basename($image);
 
-  	$sql = "INSERT INTO images (image, image_text) VALUES ('$image', '$image_text')";
+  	$sql = "INSERT INTO images (image, image_test) VALUES ('$image', '$image_text')";
   	// execute query
   	if($conn->query($sql) == false) {
+      echo "The number of attempts is :".$counter."<br>";
       echo "____________ERROR_______QUERY______NOT__________GOOD <br>";
     } else {
 
