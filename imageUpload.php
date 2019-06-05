@@ -1,7 +1,7 @@
 <?php
   // Create database connection
   include('includes/config.php');
-
+  echo "we here!<br>";
 
   // Initialize message variable
   $msg = "";
