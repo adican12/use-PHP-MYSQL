@@ -10,7 +10,7 @@
   if (isset($_POST['upload'])) {
   	// Get image name
   	$image = $_FILES['image']['name'];
-    echo "we here!<br>";
+    echo "we here! after the image <br>";
   	// Get text
   	$image_text = mysqli_real_escape_string($conn, $_POST['image_text']);
 
