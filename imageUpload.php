@@ -77,7 +77,7 @@ $counter = 0;
     while ($row = mysqli_fetch_array($result)) {
       echo "<div id='img_div'>";
       echo $row['image'];
-      	echo "<img src='images/".$row['image']."' >";
+      	echo "<img src='../images/".$row['image']."' >";
       	echo "<p>".$row['image_text']."</p>";
       echo "</div>";
     }
