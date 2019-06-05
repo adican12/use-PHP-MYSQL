@@ -1,7 +1,7 @@
 <?php
   // Create database connection
   include('includes/config.php');
-  echo "we here!<br>";
+
 
   // Initialize message variable
   $msg = "";
@@ -10,6 +10,7 @@
   if (isset($_POST['upload'])) {
   	// Get image name
   	$image = $_FILES['image']['name'];
+    echo "we here!<br>";
   	// Get text
   	$image_text = mysqli_real_escape_string($conn, $_POST['image_text']);
 
