@@ -34,6 +34,7 @@ $counter = 0;
   }
   }
   $result = mysqli_query($conn, "SELECT * FROM images");
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -78,7 +79,7 @@ $counter = 0;
       echo "<div id='img_div'>";
       echo $row['image'];
       	echo "<img src='../images/".$row['image']."' >";
-      	echo "<p>".$row['image_text']."</p>";
+      	echo "<p>".$row['image_test']."</p>";
       echo "</div>";
     }
   ?>
