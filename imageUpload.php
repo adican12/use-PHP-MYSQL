@@ -20,9 +20,10 @@
   	$sql = "INSERT INTO images (image, image_text) VALUES ('$image', '$image_text')";
   	// execute query
   	mysqli_query($conn, $sql);
-      echo "we here! after the query <br>";
+
 
   	if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
+        echo "we here! in the if <br>";
   		$msg = "Image uploaded successfully";
   	}else{
   		$msg = "Failed to upload image";
