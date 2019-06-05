@@ -365,3 +365,12 @@ CREATE TABLE `br` (
   `user_id` INT(11) NOT NULL,
   PRIMARY KEY(br)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=0;
+
+
+/*--------------example images*/
+CREATE TABLE `images` (
+  `image_id` INT(11) AUTO_INCREMENT NOT NULL,
+  `image` VARCHAR(255) NOT NULL,
+  `image_test` TEXT NOT NULL,
+  PRIMARY KEY(image_id)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=0;
