@@ -25,7 +25,7 @@ $counter = 0;
     } else {
 
 
-  	if (move_uploaded_file($_FILES['image']['tmp_name'], "$target") == false) {
+  	if (move_uploaded_file(	$image, $target) == false) {
         echo  "Failed to upload image <br>";
   	} else {
 	       echo "Image uploaded successfully <br>";
