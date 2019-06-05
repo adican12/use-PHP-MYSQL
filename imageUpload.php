@@ -20,7 +20,7 @@
   	$sql = "INSERT INTO images (image, image_text) VALUES ('$image', '$image_text')";
   	// execute query
   	mysqli_query($conn, $sql);
-      echo "we here! after the image <br>";
+      echo "we here! after the query <br>";
 
   	if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
   		$msg = "Image uploaded successfully";
