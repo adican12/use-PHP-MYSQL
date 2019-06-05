@@ -26,11 +26,11 @@ $counter = 0;
 
 
   	if (move_uploaded_file($_FILES['image']['tmp_name'], $target) == false) {
-  		$msg = "Image uploaded successfully";
-      echo .$msg;
+  		echo "Image uploaded successfully <br>";
+
   	}else{
-  		$msg = "Failed to upload image";
-      echo $msg;
+  		 echo  "Failed to upload image <br>";
+
   	}
   }
   }
