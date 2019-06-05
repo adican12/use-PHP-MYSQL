@@ -19,7 +19,9 @@
 
   	$sql = "INSERT INTO images (image, image_text) VALUES ('$image', '$image_text')";
   	// execute query
-  	mysqli_query($conn, $sql);
+  	id($conn->query($sql) == false) {
+      echo "____________ERROR_______QUERY______NOT__________GOOD <br>";
+    }
 
 
   	if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
