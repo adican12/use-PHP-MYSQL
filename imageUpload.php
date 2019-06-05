@@ -19,7 +19,7 @@
 
   	$sql = "INSERT INTO images (image, image_text) VALUES ('$image', '$image_text')";
   	// execute query
-  	id($conn->query($sql) == false) {
+  	if($conn->query($sql) == false) {
       echo "____________ERROR_______QUERY______NOT__________GOOD <br>";
     } else {
 
