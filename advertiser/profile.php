@@ -345,7 +345,7 @@ function initMap() {
       }
 
 	</script>
-	<script src="https://maps.googleapis.com/maps/api/js?key=<?php echo $key?>&callback=initMap"></script>
+
 	<!-- <script src=a></script> -->
 	<!--
 // 	var marker_array = [];
