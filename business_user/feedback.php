@@ -244,9 +244,7 @@ if(mysqli_num_rows($result) > 0)
 		if($result == false) {
 			echo "____ERROR___THE__QUERY__FAIELD";
 		}
-		while($row = mysqli_fetch_assoc($result)){
-		echo $row['user_category'];
-	}
+		$row = mysqli_fetch_assoc($result)
 		?>
 		<script>
 
@@ -256,11 +254,11 @@ if(mysqli_num_rows($result) > 0)
 		 var data = {
 				 header: ["Name", "Favorite categories"],
 				 rows: [
-					 [<?php $row['DISTINCT(user_category)'];?>,3],
-					 [<?php $row['DISTINCT(user_category)'];?>, 87000],
-					 [<?php $row['DISTINCT(user_category)'];?>, 175000],
-					 [<?php $row['DISTINCT(user_category)'];?>, 10000],
-					 [<?php $row['DISTINCT(user_category)'];?>, 242000]
+					 [<?php $row['user_category'];?>,3],
+					 [<?php $row['user_category'];?>, 87000],
+					 [<?php $row['user_category'];?>, 175000],
+					 [<?php $row['user_category'];?>, 10000],
+					 [<?php $row['user_category'];?>, 242000]
 		 ]};
 
 		 // create the chart
