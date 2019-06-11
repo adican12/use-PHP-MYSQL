@@ -254,7 +254,7 @@ if(mysqli_num_rows($result) > 0)
 		 var data = {
 				 header: ["Name", "Favorite categories"],
 				 rows: [
-					 [<?php $row['user_category'];?>,3],
+					 [3,<?php $row['user_category'];?>],
 					 [<?php $row['user_category'];?>, 87000],
 					 [<?php $row['user_category'];?>, 175000],
 					 [<?php $row['user_category'];?>, 10000],
