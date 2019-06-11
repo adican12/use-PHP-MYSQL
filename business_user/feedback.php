@@ -255,11 +255,11 @@ if(mysqli_num_rows($result) > 0)
 		 var data = {
 				 header: ["Name", "Favorite categories"],
 				 rows: [
-					 [<?php $row['DISTINCT(user_category)'];?>, 100000],
-					 ["Movies", 87000],
-					 ["Clothing", 175000],
-					 ["T.V Show", 10000],
-					 ["Restaurants", 242000]
+					 [<?php $row['DISTINCT(user_category)'];?>,3],
+					 [<?php $row['DISTINCT(user_category)'];?>, 87000],
+					 ["<?php $row['DISTINCT(user_category)'];?>", 175000],
+					 ["<?php $row['DISTINCT(user_category)'];?>", 10000],
+					 ["<?php $row['DISTINCT(user_category)'];?>", 242000]
 		 ]};
 
 		 // create the chart
