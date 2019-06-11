@@ -252,7 +252,7 @@ if(mysqli_num_rows($result) > 0)
 
 
 		$dataPoints = array(
-	array("y" => 5,"label" => $row['user_category'] ),
+	array("y" => 5,"label" => '$row['user_category']' ),
 	array("y" => 4,"label" => "April" ),
 	array("y" => 3,"label" => "May" ),
 	array("y" => 2,"label" => "June" ),
