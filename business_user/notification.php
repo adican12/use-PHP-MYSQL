@@ -179,7 +179,7 @@ if(mysqli_num_rows($result) > 0)
 
 	?>
 
-			<centre><div class="w3-container" style="margin-left:300px;;"><div class="w3-card-4" style="width:50%;"><center><br><?php echo '<img height = 150px width=150px src=data:image;base64,'.$row['image'].'>';?> <div class="w3-container w3-center"><?php echo "<br>".$row['url'];?></div></h5></br></center></div>
+			<centre><div class="w3-container" style="margin-left:300px;;"><div class="w3-card-4" style="width:50%;"><center><br><?php echo '<img height = 150px width=150px src='.$row['imageURL'].'>';?> <div class="w3-container w3-center"><?php echo "<br>".$row['url'];?></div></h5></br></center></div>
 		</div></centre>
                        <?php $cnt=$cnt+1; }} ?>
                                         </div>
