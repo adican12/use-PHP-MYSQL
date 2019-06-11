@@ -27,9 +27,9 @@ include('includes/config.php');
 //   }
 $image= $_POST['image'];
 $price= $_POST['price'];
-$text = $_POST['text'];
-$header= $_POST['header'];
-$user_id= $_POST['user_id'];
+$description = $_POST['text'];
+$title= $_POST['header'];
+$advID= $_POST['user_id'];
       // declare Variables
 						echo "we here";
             $image =$_FILES['imagefile']['tmp_name'];
@@ -38,8 +38,8 @@ $user_id= $_POST['user_id'];
 
 
 
-$sql = "INSERT INTO `ad`(`text`,`price`,`header`,`user_id`,`image`)
-VALUES('$text','$price','$header','$user_id','$images');";
+$sql = "INSERT INTO `ad`(`description`,`price`,`title`,`advID`,`image`)
+VALUES('$description','$price','$title','$advID','$images');";
 
 if ($conn->query($sql) === TRUE) {
     //echo "New record $text user  created successfully";
