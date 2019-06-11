@@ -266,7 +266,7 @@ if(mysqli_num_rows($result) > 0)
 					 [<?php echo $row['user_category'];?>, 10000],
 					 [<?php echo $row['user_category'];?>, 242000]
 		 ]};
-		  <?php $cnt=$cnt+1; }} ?>
+
 
 		 // create the chart
 		 var chart = anychart.bar();
@@ -283,7 +283,7 @@ if(mysqli_num_rows($result) > 0)
 	 });
 
 		</script>
-
+<?php $cnt=$cnt+1; }} ?>
 
 </body>
 </html>
