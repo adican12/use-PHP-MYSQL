@@ -249,6 +249,13 @@ if(mysqli_num_rows($result) > 0)
 			echo "the category : ".$row['user_category']."<br>";
 
 		}
+		$dataPoints = array(
+	array("y" => 7,"label" => "March" ),
+	array("y" => 12,"label" => "April" ),
+	array("y" => 28,"label" => "May" ),
+	array("y" => 18,"label" => "June" ),
+	array("y" => 41,"label" => "July" )
+);
 		?>
 		<script>
 
@@ -297,7 +304,7 @@ var chart = new CanvasJS.Chart("chartContainer", {
 		indexLabelPlacement: "inside",
 		indexLabelFontWeight: "bolder",
 		indexLabelFontColor: "white",
-		dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
+		dataPoints: <?php echo json_encode($row, JSON_NUMERIC_CHECK); ?>
 	}]
 });
 chart.render();
