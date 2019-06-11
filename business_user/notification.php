@@ -153,7 +153,7 @@ if($result === false)
 	 echo"the false is here <br>";
 } else {
 	while($row=mysqli_fetch_assoc($res)){
-	 echo '<img height = 150px width=100px src=data:image;base64,'.$row['image'].'>';
+	 echo '<img height = 150px width=100px src='.$row['image'].'>';
 	 echo $row['url'];
 	 }
 }
