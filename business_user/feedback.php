@@ -250,9 +250,9 @@ if(mysqli_num_rows($result) > 0)
 		while($row = mysqli_fetch_assoc($result)){
 			echo "the category : ".$row['user_category']."<br>";
 
-		}
+
 		$dataPoints = array(
-	array("y" => 5,"label" => "March" ),
+	array("y" => 5,"label" => $row['user_category'] ),
 	array("y" => 4,"label" => "April" ),
 	array("y" => 3,"label" => "May" ),
 	array("y" => 2,"label" => "June" ),
@@ -292,7 +292,7 @@ if(mysqli_num_rows($result) > 0)
 var chart = new CanvasJS.Chart("container", {
 	animationEnabled: true,
 	title:{
-		text: "Revenue Chart of Acme Corporation"
+		text: "dvertisements the customers were exposed to"
 	},
 	axisY: {
 		title: "advertisements the customers were exposed to",
