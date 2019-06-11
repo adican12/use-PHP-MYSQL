@@ -143,7 +143,7 @@ if(isset($_POST['addCoupon'])) {
 									   <div class="panel-body">
 <?php
 
-$query = "SELECT user_id FROM users WHERE email = '$' "
+// $query = "SELECT user_id FROM users WHERE email = '$' ";
 
 
 $sql = "SELECT imageURL,couponName FROM coupon";
