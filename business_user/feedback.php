@@ -243,11 +243,8 @@ if(mysqli_num_rows($result) > 0)
 		$result = $conn->query($sql);
 		if($result == false) {
 			echo "____ERROR___THE__QUERY__FAIELD";
-		} else {
-			while ($row = mysqli_fetch_assoc($result)) {
-				echo $row['DISTINCT(user_category) ']."<br>";
-			}
-			}
+		}
+		$row = mysqli_fetch_assoc($result);
 		?>
 		<script>
 
