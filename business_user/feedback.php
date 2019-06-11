@@ -148,7 +148,7 @@ if(isset($_REQUEST['unconfirm']))
 						<!-- Zero Configuration Table -->
 						<div class="panel panel-default">
 							<div class="panel-heading">advertisements the customers were exposed to</div>
-							<div id="container" style="width: 100%; height: 100%"></div>
+							<div id="container"></div>
 							<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 							<div class="panel-body">
 							<?php if($error){?><div class="errorWrap" id="msgshow"><?php echo htmlentities($error); ?> </div><?php }
