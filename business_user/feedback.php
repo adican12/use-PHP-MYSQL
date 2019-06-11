@@ -246,7 +246,7 @@ if(mysqli_num_rows($result) > 0)
 		}
 		while($row = mysqli_fetch_assoc($result)){
 		echo "the category : ".$row['user_category']."<br>";
-	}
+
 		?>
 		<script>
 
@@ -276,7 +276,7 @@ if(mysqli_num_rows($result) > 0)
 		 chart.container("container");
 		 chart.draw();
 	 });
-
+}
 		</script>
 
 
