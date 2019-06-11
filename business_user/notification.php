@@ -12,6 +12,7 @@ if(isset($_POST['submit']))
   {
 	$name=$_POST['name'];
 	$email=$_POST['email'];
+	echo $email;
 
 	$sql="UPDATE admin SET username=$name, email=$email";
 	$result = $conn->query($sql);
