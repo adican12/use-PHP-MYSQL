@@ -144,7 +144,8 @@ if(isset($_POST['addCoupon'])) {
 <?php
 
 // $query = "SELECT user_id FROM users WHERE email = '$' ";
-echo $_SESSION['alogin'];
+$email = $_SESSION['alogin'];
+echo $email;
 
 $sql = "SELECT imageURL,couponName FROM coupon";
 $result = $conn->query($sql);
