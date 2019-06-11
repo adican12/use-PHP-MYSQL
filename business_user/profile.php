@@ -167,6 +167,7 @@ echo "false";
 }
 /*while($row = mysqli_fetch_assoc($result)*/
 $row= mysqli_fetch_assoc($result);
+echo "test <br>".$row['COUNT(Gender)'];
  //echo "print someting". $row['COUNT(Gender)']."<br>";
 
 $sql = "SELECT COUNT(Gender) FROM users WHERE gender= 'Female'  OR   gender = 'Famle' ";
