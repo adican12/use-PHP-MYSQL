@@ -251,12 +251,11 @@ if(mysqli_num_rows($result) > 0)
 		<script>
 
 		anychart.onDocumentReady(function() {
-			var row1=[<?php echo $row['user_category'];?>,<?php echo $row['user_category'];?>,<?php echo $row['user_category'];?>,<?php echo $row['user_category'];?>,<?php echo $row['user_category'];?>];
 		 // set the data
 		 var data = {
 				 header: ["Name", "Favorite categories"],
 				 rows: [
-					 ['<?php echo $row['user_category'];?>',3],
+					 [<?php echo $row['user_category'];?>,3],
 					 [<?php echo $row['user_category'];?>, 87000],
 					 [<?php echo $row['user_category'];?>, 175000],
 					 [<?php echo $row['user_category'];?>, 10000],
