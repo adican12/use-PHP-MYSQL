@@ -304,7 +304,7 @@ var chart = new CanvasJS.Chart("chartContainer", {
 		indexLabelPlacement: "inside",
 		indexLabelFontWeight: "bolder",
 		indexLabelFontColor: "white",
-		dataPoints: <?php echo json_encode($row, JSON_NUMERIC_CHECK); ?>
+		dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
 	}]
 });
 chart.render();
