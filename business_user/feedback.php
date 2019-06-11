@@ -251,32 +251,32 @@ if(mysqli_num_rows($result) > 0)
 		?>
 		<script>
 
-		anychart.onDocumentReady(function() {
-
-		 // set the data
-		 var data = {
-				 header: ["Name", "Favorite categories"],
-				 rows: [
-					 [<?php echo $row['user_category'];?>,3],
-					 [<?php echo $row['user_category'];?>, 87000],
-					 [<?php echo $row['user_category'];?>, 175000],
-					 [<?php echo $row['user_category'];?>, 10000],
-					 [<?php echo $row['user_category'];?>, 242000]
-		 ]};
-
-		 // create the chart
-		 var chart = anychart.bar();
-		 chart = anychart.column();
-		 // add the data
-		 chart.data(data);
-
-		 // set the chart title
-		 chart.title("advertisements the customers were exposed to");
-
-		 // draw
-		 chart.container("container");
-		 chart.draw();
-	 });
+		// anychart.onDocumentReady(function() {
+	 //
+		//  // set the data
+		//  var data = {
+		// 		 header: ["Name", "Favorite categories"],
+		// 		 rows: [
+		// 			 [,3],
+		// 			 [, 87000],
+		// 			 [, 175000],
+		// 			 [, 10000],
+		// 			 [, 242000]
+		//  ]};
+	 //
+		//  // create the chart
+		//  var chart = anychart.bar();
+		//  chart = anychart.column();
+		//  // add the data
+		//  chart.data(data);
+	 //
+		//  // set the chart title
+		//  chart.title("advertisements the customers were exposed to");
+	 //
+		//  // draw
+		//  chart.container("container");
+		//  chart.draw();
+	 // });
 
 		</script>
 
