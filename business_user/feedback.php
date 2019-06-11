@@ -301,7 +301,7 @@ var chart = new CanvasJS.Chart("container", {
 	},
 	data: [{
 		type: "bar",
-		yValueFormatString: "$#,##0K",
+		yValueFormatString: "",
 		indexLabel: "{y}",
 		indexLabelPlacement: "inside",
 		indexLabelFontWeight: "bolder",
