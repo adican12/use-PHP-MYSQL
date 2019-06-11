@@ -239,7 +239,7 @@ if(mysqli_num_rows($result) > 0)
 					});
 		</script>
 		<?php
-		$sql = "SELECT DISTINCT(user_category) FROM users";
+		$sql = "SELECT DISTINCT(user_category) FROM users LIMIT 5";
 		$result = $conn->query($sql);
 		if($result == false) {
 			echo "____ERROR___THE__QUERY__FAIELD";
