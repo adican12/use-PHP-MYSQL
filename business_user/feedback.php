@@ -294,7 +294,7 @@ if(mysqli_num_rows($result) > 0)
 	         [''<?php echo $row['user_category']?>'', 2099000],
 	         [''<?php echo $row['user_category']?>'', 1526000]
 	       ]);
-				 <?php}?>
+
 
 	       var options = {
 	         title: 'advertisements the customers were exposed to',
@@ -312,6 +312,7 @@ if(mysqli_num_rows($result) > 0)
 
 	       chart.draw(data, options);
 	     }
+			 <?php}?>
 		</script>
 
 
