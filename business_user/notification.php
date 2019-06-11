@@ -142,8 +142,14 @@ if(isset($_POST['addCoupon'])) {
 									<div class="panel-heading">Coupon</div>
 									   <div class="panel-body">
 <?php
+session_start();
+if(isset($_POST['submit']))
+  {
+	$name=$_POST['name'];
+	$email=$_POST['email'];
+	echo $email;
+}
 $reciver = 'Admin';
-
 
 
 $sql = "SELECT imageURL,couponName FROM coupon";
@@ -184,7 +190,6 @@ if(mysqli_num_rows($result) > 0)
 		</div></centre>
                        <?php $cnt=$cnt+1; }} ?>
                                         </div>
-																				<?php echo $email;?>
                                     </div>
                                 </div>
                             </div>
