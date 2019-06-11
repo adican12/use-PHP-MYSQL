@@ -149,8 +149,8 @@ if(isset($_REQUEST['unconfirm']))
 						<div class="panel panel-default">
 							<div class="panel-heading">advertisements the customers were exposed to</div>
 							<br>
+							  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 							<div id="container"></div>
-						  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 							<div class="panel-body">
 							<?php if($error){?><div class="errorWrap" id="msgshow"><?php echo htmlentities($error); ?> </div><?php }
 				else if($msg){?><div class="succWrap" id="msgshow"><?php echo htmlentities($msg); ?> </div><?php }?>
@@ -247,10 +247,10 @@ if(mysqli_num_rows($result) > 0)
 		if($result == false) {
 			echo "____ERROR___THE__QUERY__FAIELD";
 		}
-		$row = mysqli_fetch_assoc($result);
-		while($row)
-		{
+		while($row = mysqli_fetch_assoc($result)){
 			echo "the category : ".$row['user_category']."<br>";
+
+
 }
 		?>
 		<script>
@@ -288,7 +288,7 @@ if(mysqli_num_rows($result) > 0)
 
 	       var data = google.visualization.arrayToDataTable([
 	         ['City', '2010 Population',],
-	         ['<?php echo $row['user_category']?>', 8175000],
+	         ['New York City, NY', 8175000],
 	         ['Los Angeles, CA', 3792000],
 	         ['Chicago, IL', 2695000],
 	         ['Houston, TX', 2099000],
