@@ -246,7 +246,8 @@ if(mysqli_num_rows($result) > 0)
 		} else {
 			while ($row = mysqli_fetch_assoc($result)) {
 				echo $row['DISTINCT(user_category) ']."<br>";
-
+			}
+			}
 		?>
 		<script>
 
@@ -281,8 +282,7 @@ if(mysqli_num_rows($result) > 0)
 <div width="100%">
 	<?php $row['DISTINCT(user_category)'];?>,
 </div>
-}
-}
+
 </body>
 </html>
 <?php } ?>
