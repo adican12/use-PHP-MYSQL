@@ -249,7 +249,7 @@ if(mysqli_num_rows($result) > 0)
 		}
 		while($row = mysqli_fetch_assoc($result)){
 			echo "the category : ".$row['user_category']."<br>";
-
+		}
 
 
 		?>
@@ -289,12 +289,11 @@ if(mysqli_num_rows($result) > 0)
 	       var data = google.visualization.arrayToDataTable([
 	         ['category', 'top 5',],
 	         ['<?php echo $row['user_category']?>', 5],
-	         [''<?php echo $row['user_category']?>'', 3792000],
-	         [''<?php echo $row['user_category']?>'', 2695000],
-	         [''<?php echo $row['user_category']?>'', 2099000],
-	         [''<?php echo $row['user_category']?>'', 1526000]
+	         ['Los Angeles, CA', 3792000],
+	         ['Chicago, IL', 2695000],
+	         ['Houston, TX', 2099000],
+	         ['Philadelphia, PA', 1526000]
 	       ]);
-
 
 	       var options = {
 	         title: 'advertisements the customers were exposed to',
@@ -312,7 +311,6 @@ if(mysqli_num_rows($result) > 0)
 
 	       chart.draw(data, options);
 	     }
-			 <?php}?>
 		</script>
 
 
