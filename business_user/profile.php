@@ -250,7 +250,7 @@ if($result === false)
 	$row= mysqli_fetch_assoc($result);
 	 echo "print someting". $row['COUNT(Gender)']."<br>";
 -->
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<!-- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> -->
 
 <script type="text/javascript">
 // Load google charts
