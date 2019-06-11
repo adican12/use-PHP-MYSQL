@@ -244,27 +244,24 @@ if(mysqli_num_rows($result) > 0)
 		if($result == false) {
 			echo "____ERROR___THE__QUERY__FAIELD";
 		}
-	
-	$cnt=1;
-	if(mysqli_num_rows($result) > 0) {
-
-										while($row = mysqli_fetch_assoc($result)) {
+		while($row = mysqli_fetch_assoc($result)){
+			echo "the category : ".$row['user_category']."<br>";
+	}
 		?>
 		<script>
 
 		anychart.onDocumentReady(function() {
-
+			var row1=[<?php echo $row['user_category'];?>,<?php echo $row['user_category'];?>,<?php echo $row['user_category'];?>,<?php echo $row['user_category'];?>,<?php echo $row['user_category'];?>];
 		 // set the data
 		 var data = {
 				 header: ["Name", "Favorite categories"],
 				 rows: [
-					 [<?php echo $row['user_category'];?>,3],
+					 [row1[0],3],
 					 [<?php echo $row['user_category'];?>, 87000],
 					 [<?php echo $row['user_category'];?>, 175000],
 					 [<?php echo $row['user_category'];?>, 10000],
 					 [<?php echo $row['user_category'];?>, 242000]
 		 ]};
-
 
 		 // create the chart
 		 var chart = anychart.bar();
@@ -281,7 +278,7 @@ if(mysqli_num_rows($result) > 0)
 	 });
 
 		</script>
-<?php $cnt=$cnt+1; }} ?>
+
 
 </body>
 </html>
