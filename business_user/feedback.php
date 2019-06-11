@@ -245,7 +245,7 @@ if(mysqli_num_rows($result) > 0)
 			echo "____ERROR___THE__QUERY__FAIELD";
 		}
 		while($row = mysqli_fetch_assoc($result)){
-		echo $row['DISTINCT(user_category)'];
+		echo $row['user_category'];
 	}
 		?>
 		<script>
