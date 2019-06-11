@@ -251,11 +251,12 @@ if(mysqli_num_rows($result) > 0)
 		<script>
 
 		anychart.onDocumentReady(function() {
+		
 		 // set the data
 		 var data = {
 				 header: ["Name", "Favorite categories"],
 				 rows: [
-					 [<?php echo $row['user_category'];?>,3],
+					 ['<?php echo $row['user_category'];?>',3],
 					 [<?php echo $row['user_category'];?>, 87000],
 					 [<?php echo $row['user_category'];?>, 175000],
 					 [<?php echo $row['user_category'];?>, 10000],
@@ -263,35 +264,17 @@ if(mysqli_num_rows($result) > 0)
 		 ]};
 
 		 // create the chart
-		 //var chart = anychart.bar();
-		 //chart = anychart.column();
+		 var chart = anychart.bar();
+		 chart = anychart.column();
 		 // add the data
-		 //chart.data(data);
+		 chart.data(data);
 
 		 // set the chart title
-		 //chart.title("advertisements the customers were exposed to");
+		 chart.title("advertisements the customers were exposed to");
 
 		 // draw
-		 //chart.container("container");
-		 //chart.draw();
-		 function drawChart() {
-
-		 var data = google.visualization.arrayToDataTable([
-		 ['Gender', 'How many people use the system'],
-		 ['<?php echo $row['user_category'];?>', 5],
-		 ['<?php echo $row['user_category'];?>',4],
-		 ['<?php echo $row['user_category'];?>',3],
-		 ['<?php echo $row['user_category'];?>',2],
-		 ['<?php echo $row['user_category'];?>',1],
-		 ]);
-
-		 // Optional; add a title and set the width and height of the chart
-		 var options = {'title':'Gender', 'width':550, 'height':400,'is3D': true,};
-
-		 // Display the chart inside the <div> element with id="piechart"
-		 var chart = new google.visualization.BarChart(document.getElementById('container'));
-		 chart.draw(data, options);
-		 }
+		 chart.container("container");
+		 chart.draw();
 	 });
 
 		</script>
