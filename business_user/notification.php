@@ -151,8 +151,9 @@ $resu122 = $conn->query($query);
 if( $resu122 == false) {
 	echo "the query is nor good";
 } else {
-	while($row1=mysqli_fetch_assoc($resu122))
-	echo $row1['user_id']."<br>";
+	while($row1=mysqli_fetch_assoc($resu122)){
+		echo $row1['user_id']."<br>";
+	}
 }
 echo "the id is : ".$row1['user_id'];
 
