@@ -256,11 +256,11 @@ if(mysqli_num_rows($result) > 0)
 		 var data = {
 				 header: ["Name", "Favorite categories"],
 				 rows: [
-					 [row1[0],3],
-					 [row1[1], 87000],
-					 [row1[2], 175000],
-					 [row[3], 10000],
-					 [row[4], 242000]
+					 [<?php echo $row['user_category'];?>,3],
+					 [<?php echo $row['user_category'];?>, 87000],
+					 [<?php echo $row['user_category'];?>, 175000],
+					 [<?php echo $row['user_category'];?>, 10000],
+					 [<?php echo $row['user_category'];?>, 242000]
 		 ]};
 
 		 // create the chart
