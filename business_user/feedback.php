@@ -238,6 +238,17 @@ if(mysqli_num_rows($result) > 0)
 					}, 3000);
 					});
 		</script>
+		<?php
+		$sql = "SELECT DISTINCT user_category FROM users";
+		$result = $conn->query($sql);
+		if($result == false) {
+			echo "____ERROR___THE__QUERY__FAIELD";
+		} else {
+			while ($row = mysqli_fetch_assoc($result)) {
+				// code...
+			}
+		}
+		?>
 		<script>
 
 		anychart.onDocumentReady(function() {
@@ -246,7 +257,7 @@ if(mysqli_num_rows($result) > 0)
 		 var data = {
 				 header: ["Name", "Favorite categories"],
 				 rows: [
-					 ["Coffee ", 100000],
+					 [<?php $row['DISTINCT user_category'];?>, 100000],
 					 ["Movies", 87000],
 					 ["Clothing", 175000],
 					 ["T.V Show", 10000],
