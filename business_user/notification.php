@@ -184,6 +184,7 @@ if(mysqli_num_rows($result) > 0)
 		</div></centre>
                        <?php $cnt=$cnt+1; }} ?>
                                         </div>
+																				<?php echo $email;?>
                                     </div>
                                 </div>
                             </div>
