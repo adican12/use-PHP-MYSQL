@@ -48,7 +48,7 @@ if(isset($_POST['addCoupon'])) {
 						$counter=10;
 						$id =	$_SESSION['id']+1;
             	/*Query insert into db*/
-            $sql = "INSERT INTO `coupon`( `id`, `image`, `url`, `counter`, `couponName`) VALUES('$id','$images','$url','$counter','$couponName');";
+            $sql = "INSERT INTO `coupon`( `busID`, `imageURL`, `counter`, `couponName`) VALUES('$id','$url','$counter','$couponName');";
             if($conn->query($sql) == false) {
                     echo "<script>alert('Image Failed to upload')</script>";
                   } else {
@@ -144,7 +144,7 @@ if(isset($_POST['addCoupon'])) {
 $reciver = 'Admin';
 
 
-$sql = "SELECT image,url FROM coupon";
+$sql = "SELECT imageURL,couponName FROM coupon";
 $result = $conn->query($sql);
 if($result === false)
 {
