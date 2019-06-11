@@ -288,11 +288,11 @@ if(mysqli_num_rows($result) > 0)
 
 	       var data = google.visualization.arrayToDataTable([
 	         ['category', 'top 5',],
-	         ['<?php echo $row['user_category']?>', 5],
-	         ['Los Angeles, CA', 3792000],
-	         ['Chicago, IL', 2695000],
-	         ['Houston, TX', 2099000],
-	         ['Philadelphia, PA', 1526000]
+	         ['Clothing', 5],
+	         ['Furniture', 4],
+	         ['Safety and health',3],
+	         ['Educational and textbooks', 2],
+	         ['Vintage and collectibles', 1]
 	       ]);
 
 	       var options = {
