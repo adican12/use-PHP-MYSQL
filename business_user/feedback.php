@@ -257,9 +257,9 @@ if(mysqli_num_rows($result) > 0)
 				 rows: [
 					 [<?php $row['DISTINCT(user_category)'];?>,3],
 					 [<?php $row['DISTINCT(user_category)'];?>, 87000],
-					 ["<?php $row['DISTINCT(user_category)'];?>", 175000],
-					 ["<?php $row['DISTINCT(user_category)'];?>", 10000],
-					 ["<?php $row['DISTINCT(user_category)'];?>", 242000]
+					 [<?php $row['DISTINCT(user_category)'];?>, 175000],
+					 [<?php $row['DISTINCT(user_category)'];?>, 10000],
+					 [<?php $row['DISTINCT(user_category)'];?>, 242000]
 		 ]};
 
 		 // create the chart
