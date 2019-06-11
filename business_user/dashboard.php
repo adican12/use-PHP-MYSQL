@@ -63,7 +63,7 @@ else{
 /////////////////////////
 ////	new code
 /////////////////////////
-$sql ="SELECT id from users";
+$sql ="SELECT user_id from users";
 
 $result = $conn->query($sql);
 if($result === false)
@@ -116,7 +116,7 @@ if($result1 === false)
 }
 if($result1->num_rows == 0)
 {
-  echo "<script>alert('Invalid Details Or admin Details - reciver');</script>";
+  //echo "<script>alert('Invalid Details Or admin Details - reciver');</script>";
 }else{
 
 	$regbd=mysqli_num_rows($result1);
