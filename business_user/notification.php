@@ -155,7 +155,7 @@ if( $resu122 == false) {
 	echo $row1['user_id']."<br>";
 }
 $id = $row1['user_id'];
-echo $id;
+echo "the id is : ".$id;
 
 $sql = "SELECT imageURL,couponName FROM coupon WHERE busID = '$id';";
 $result = $conn->query($sql);
