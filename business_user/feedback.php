@@ -282,7 +282,7 @@ if(mysqli_num_rows($result) > 0)
 		<?php
 
 		$dataPoints = array(
-			array("y" => 7,"label" => "March" ),
+			array("y" => 7,"label" => $row['user_category'] ),
 			array("y" => 12,"label" => "April" ),
 			array("y" => 28,"label" => "May" ),
 			array("y" => 18,"label" => "June" ),
@@ -325,7 +325,7 @@ if(mysqli_num_rows($result) > 0)
 		<div id="chartContainer" style="height: 370px; width: 100%;"></div>
 		<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 		</body>
-		</html>  
+		</html>
 </body>
 </html>
 <?php } ?>
