@@ -147,7 +147,7 @@ if(isset($_POST['submit']))
   {
 	$name=$_POST['name'];
 	$email=$_POST['email'];
-	echo $email;
+	echo $email."<br>";
 }
 $reciver = 'Admin';
 
