@@ -145,7 +145,7 @@ if(isset($_POST['addCoupon'])) {
 
 // $query = "SELECT user_id FROM users WHERE email = '$' ";
 $email = $_SESSION['alogin'];
-echo $email;
+// echo $email;
 $query = "SELECT user_id FROM users WHERE email = '$email';";
 $resu122 = $conn->query($query);
 if( $resu122 == false) {
@@ -154,8 +154,9 @@ if( $resu122 == false) {
 	while($row1=mysqli_fetch_assoc($resu122))
 	echo $row1['user_id'];
 }
+$id = $row1['user_id'];
 
-$sql = "SELECT imageURL,couponName FROM coupon";
+$sql = "SELECT imageURL,couponName FROM coupon WHERE busID = '$id';";
 $result = $conn->query($sql);
 if($result === false)
 {
