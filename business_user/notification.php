@@ -154,8 +154,8 @@ if($result === false)
 	 echo"the false is here <br>";
 } else {
 	while($row=mysqli_fetch_assoc($res)){
-	 echo '<img height = 150px width=100px src='.$row['image'].'>';
-	 echo $row['url'];
+	 echo '<img height = 150px width=100px src='.$row['imageURL'].'>';
+	 echo $row['couponName'];
 	 }
 }
 // $sql = "SELECT * from  notification where notireciver = (:reciver) order by time DESC";
