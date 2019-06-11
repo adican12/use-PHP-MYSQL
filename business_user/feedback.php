@@ -244,7 +244,7 @@ if(mysqli_num_rows($result) > 0)
 		if($result == false) {
 			echo "____ERROR___THE__QUERY__FAIELD";
 		}
-		$row = mysqli_fetch_assoc($result);
+		while($row = mysqli_fetch_assoc($result)){}
 		?>
 		<script>
 
@@ -254,7 +254,7 @@ if(mysqli_num_rows($result) > 0)
 		 var data = {
 				 header: ["Name", "Favorite categories"],
 				 rows: [
-					 [3,<?php $row['user_category'];?>],
+					 [<?php $row['user_category'];?>,3],
 					 [<?php $row['user_category'];?>, 87000],
 					 [<?php $row['user_category'];?>, 175000],
 					 [<?php $row['user_category'];?>, 10000],
