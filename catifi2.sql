@@ -54,8 +54,8 @@ INSERT INTO `users` ( `name`, `email`, `password`, `gender`, `mobile`, `user_typ
 ('Fitzgerald Huffman','urna@quislectus.com','1638122135199','famle','164498048','advertiser_user','29','2001-10-03',0,'Architectural, engineering, and surveying services'),
 ('Xander Mcdowell','quis@luctuslobortis.edu','1640112449199','famle','8786515875','standard_users','30','2005-5-03',0,'Chemicals and allied products'),
 ('Norman Griffith','ornare@orciPhasellus.com','1658060219199','male','8009943620','advertiser_user','31','1991-6-6',1,'Commercial photography, art, and graphics.'),
-('Reed Rocha','dui@rhoncusid.com','6021919912122','famle','08001111','standard_users','32','2003-11-4',0,'Construction');
-('Aristotle Day','nibh@egestasrhoncusProin.com','1625021854099','famle','07028836641','080011','standard_users','33','1993-4-2',1,'Consulting services'),
+('Reed Rocha','dui@rhoncusid.com','6021919912122','famle','08001111','standard_users','32','2003-11-4',0,'Construction'),
+('Aristotle Day','nibh@egestasrhoncusProin.com','1625021854099','famle','07028836641','standard_users','33','1993-4-2',1,'Consulting services'),
 ('Lyle Rasmussen','imperdiet@luctussit.com','1604062528399','famle','1978476685','advertiser_user','34','2005-11-6',0,'Educational services'),
 ('Amir Hardy','Suspendisse@Aeneangravidanunc.co','1623020878199','male','169776176','business_user','35','1993-12-13',0,'Equipment rentals and leasing services'),
 ('Keegan Marks','interdum@etrisusQuisque.net','1672020547899','male','1357875209','standard_users','36','1986-5-14',1,'Equipment repair services'),
@@ -73,7 +73,7 @@ INSERT INTO `users` ( `name`, `email`, `password`, `gender`, `mobile`, `user_typ
 ('Boris Cotton','consectetuer@faucibusleoin.com','1689091394799','male','7035162673','advertiser_user','48','1979-2-4',1,'Wholesale'),
 ('Bruno Pena','metus@Nullatincidunt.co.uk','1637734992329','male','8006529614','standard_users','49','1973-12-15',0,'Children & clothing'),
 ('Harding Warren','est@euismodet.edu','1606023048399','famle','1445739536','business_user','50','1974-8-3',1,'Men & clothing');
---
+
 
 CREATE TABLE `ad` (
   `adID` INT(11) AUTO_INCREMENT,
@@ -121,8 +121,8 @@ CREATE TABLE `locations`(
   `lng` FLOAT(6) NOT NULL,
   `info` VARCHAR(256) NOT NULL,
   `userID` INT(11) NOT NULL,
-  PRIMARY KEY(locationID),
-  FOREIGN KEY(userID) REFERENCES users(user_id) ON UPDATE CASCADE
+  PRIMARY KEY(`locationID`),
+  FOREIGN KEY(`userID`) REFERENCES users(`user_id`) ON UPDATE CASCADE ON DELETE CASCADE
 )ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1;
 
 
@@ -134,18 +134,17 @@ INSERT INTO `locations` ( `lat`, `lng`, `info`, `userID`) VALUES
 (32.983082,35.195394,'R - Druze food',13),
 (32.050939,34.760524,'R - Cheaper, meat',14),
 (32.165313,34.823261,'M - Fashion, restaurants, bars',19),
-(45.421611,12.376187,'H - Good location away from the crouds'22,'Hotel Russo Palace'),
-(40.68973,-95.788826,'H - Great view',23,'Americas Best Value Inn'),
-(34.664684,-120.115036,'H - Loved this Wonderful Boutique Hotel!',33,'Intermezzo'),
-(34.664684,-120.115036,'H - Loved this Wonderful Boutique Hotel!',35,'Intermezzo'),
-(34.569931,31.680927,'R - Pizza',44,'Pizza Agvania'),
-(34.569944,31.668077,'R - Pizza',48,'Pizza Domino'),
-(34.570004,31.667669,'R - Excellent coffee and cheap',49,'Cofix'),
-(34.570179,31.680931,'R - Excellent coffee And pastries',53,'Roladin'),
-(34.570179,31.668081,'R - Best Pizza',1,'Pizza Hut'),
-(34.570179,31.683613,'R - Best Coffe',2,'Anona Bistro'),
-(34.577431,31.669886,'R - Coffe And breakfasts',3,'Cafe Jow'),
-(34.585051,31.656246,'R - Chip Pizza',8,'Pizza Shemesh');
+(45.421611,12.376187,'H - Good location away from the crouds',22),
+(40.68973,-95.788826,'H - Great view',23),
+(34.664684,-120.115036,'H - Loved this Wonderful Boutique Hotel!',33),
+(34.664684,-120.115036,'H - Loved this Wonderful Boutique Hotel!',35),
+(34.569931,31.680927,'R - Pizza',44),
+(34.569944,31.668077,'R - Pizza',48),
+(34.570004,31.667669,'R - Excellent coffee and cheap',49)
+(34.570179,31.668081,'R - Best Pizza',1),
+(34.570179,31.683613,'R - Best Coffe',2),
+(34.577431,31.669886,'R - Coffe And breakfasts',3),
+(34.585051,31.656246,'R - Chip Pizza',8);
 INSERT INTO `locations`(`lat`,`lng`,`info`,`userID`) VALUES
 (32.187217,34.792008,'R-Excellent coffee and cheap',13),
 (32.164837,34.781041,'R-Coffe And breakfasts',14),
@@ -156,8 +155,7 @@ INSERT INTO `locations`(`lat`,`lng`,`info`,`userID`) VALUES
 (31.835016,35.203752,'R-Coffe And breakfasts',33),
 (32.889647,34.986638,'R-Coffe',35),
 (32.919405,35.002212,'R-Good Food Great View',48),
-(32.135178,34.781334,'H - Loved this Wonderful Boutique Hotel!',49),
-(34.141084,34.797801,'H - Great View 5 Stars',53),
+(32.135178,34.781334,'H - Loved this Wonderful Boutique Hotel!',49)
 (32.134968,34.761612,'H - Good location away from the crouds',1),
 (32.139363,34.836722,'H - Good location away from the crouds',2),
 (31.815342,35.169466,'H - Good location ,Great View ',3),
@@ -180,7 +178,7 @@ CREATE TABLE IF NOT EXISTS `business`(
   `locationID`INT(11) NOT NULL,
   `business_name` VARCHAR(250),
    PRIMARY KEY(`businessID`),
-   FOREIGN KEY (`locationID`) REFERENCES locations(locationID)
+   FOREIGN KEY (`locationID`) REFERENCES locations(locationID)  ON UPDATE CASCADE ON DELETE CASCADE
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1;
 INSERT INTO `business` (`category`,`locationID`,`business_name`) VALUES
 ('Restaurant',2,'Bieta coffe'),
@@ -224,7 +222,7 @@ CREATE TABLE `campaign`(
   `endDate` DATE,
   `locationID` INT(11) NOT NULL,
   PRIMARY KEY(campaignID),
-  FOREIGN KEY(locationID) REFERENCES locations(locationID) ON UPDATE CASCADE
+  FOREIGN KEY(locationID) REFERENCES locations(locationID) ON UPDATE CASCADE ON DELETE CASCADE
 )ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1;
 
 
@@ -270,7 +268,7 @@ CREATE TABLE `coupon`(
   `counter` INT(6) NOT NULL,
   `couponName` VARCHAR(255) NOT NULL,
   PRIMARY KEY(couponID),
-  FOREIGN KEY(busID) REFERENCES users(userID) ON UPDATE CASCADE
+  FOREIGN KEY(busID) REFERENCES users(user_id) ON UPDATE CASCADE ON DELETE CASCADE
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1;
 INSERT INTO `coupon` (`busID`,`imageURL`,`counter`,`couponName`)
 VALUES (1,'https://storage.googleapis.com/catifi1/newImages/Clothing.jpg',3,'Clothing'),
@@ -288,7 +286,7 @@ VALUES (1,'https://storage.googleapis.com/catifi1/newImages/Clothing.jpg',3,'Clo
 (44,'https://storage.googleapis.com/catifi1/newImages/CameraAndPhotographicSupplies.jpg',11,'Camera&Photo'),
 (48,'https://storage.googleapis.com/catifi1/newImages/Furniture.jpg',6,'Furniture'),
 (49,'https://storage.googleapis.com/catifi1/newImages/FictionAndNonfiction.png',6,'FictionAndNonfiction'),
-(53,'https://storage.googleapis.com/catifi1/newImages/StationaryPrintingAndWritingPaper.png',6,'StationaryPrintingAndWritingPaper');
+(3,'https://storage.googleapis.com/catifi1/newImages/StationaryPrintingAndWritingPaper.png',6,'StationaryPrintingAndWritingPaper');
 
 CREATE TABLE `ap`(
   `apID`INT(11) NOT NULL AUTO_INCREMENT,
@@ -296,8 +294,8 @@ CREATE TABLE `ap`(
   `apLng`FLOAT(6) NOT NULL,
   `apPassword` VARCHAR(50) NOT NULL,
   `businessID` INT(11),
-  PRIMARY KEY(`arID`),
-  FOREIGN KEY (`businessID`) REFERENCES business(businessID) ON UPDATE CASCADE
+  PRIMARY KEY(`apID`),
+  FOREIGN KEY (`businessID`) REFERENCES business(businessID) ON UPDATE CASCADE ON DELETE CASCADE
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 
@@ -323,3 +321,54 @@ INSERT INTO `ap`(`apLat`,`apLng`,`apPassword`,`businessID`) VALUES
 (32.187217,34.792008,'catifipassword',19),
 (32.164837,34.781041,'catifipassword',20),
 (32.120992,34.773103,'catifipassword',21);
+
+
+
+/*adding form catifi sql */
+
+
+CREATE TABLE IF NOT EXISTS `admin` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+
+INSERT INTO `admin` (`username`, `email`, `password`) VALUES
+( 'root', 'root@gmail.com', '1');
+
+
+CREATE TABLE IF NOT EXISTS `deleteduser` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `email` varchar(50) NOT NULL,
+  `deltime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+
+
+CREATE TABLE IF NOT EXISTS `feedback` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender` varchar(50) NOT NULL,
+  `reciver` varchar(50) NOT NULL,
+  `title` varchar(100) NOT NULL,
+  `feedbackdata` varchar(500) NOT NULL,
+  `attachment` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+
+
+CREATE TABLE IF NOT EXISTS `notification` (
+  `id` int(11) NOT NULL,
+  `adnotif` varchar(50) NOT NULL,
+  `notireciver` varchar(50) NOT NULL,
+  `notitype` varchar(50) NOT NULL,
+  PRIMARY KEY `id` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+ALTER TABLE `notification`
+  ADD CONSTRAINT `notification_ibfk_1` FOREIGN KEY (`id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;

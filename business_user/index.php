@@ -13,10 +13,10 @@ $password=$_POST['password'];
 ///////////////////
 /// new code
 ///////////////////////////////////////////////////////////////////////
-echo "<br>email: ".$email ."		password: ".$password."<br>";
 
 
-$sql="SELECT UserName,Password FROM `admin` WHERE `UserName`='$email' AND `Password`='$password' ";
+
+$sql="SELECT email,Password FROM `users` WHERE `email`='$email' AND `Password`='$password' ";
 $result = $conn->query($sql);
 if($result === false)
 {
@@ -26,6 +26,7 @@ if($result === false)
 if($result->num_rows == 0)
 {
   echo "<script>alert('Invalid Details Or Account Not Confirmed');</script>";
+  echo "this is here not working";
 }else{
 
   $_SESSION['alogin']=$_POST['username'];
@@ -89,7 +90,7 @@ if($result->num_rows == 0)
 							<div class="col-md-8 col-md-offset-2">
 								<form method="post">
 
-									<label for="" class="text-uppercase text-sm">Your Username </label>
+									<label for="" class="text-uppercase text-sm">Your Email </label>
 									<input type="text" placeholder="Username" name="username" class="form-control mb" required>
 
 									<label for="" class="text-uppercase text-sm">Password</label>

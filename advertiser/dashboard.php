@@ -62,7 +62,7 @@ else{
 /////////////////////////
 ////	new code
 /////////////////////////
-$sql ="SELECT id from users";
+$sql ="SELECT user_id from users";
 
 $result = $conn->query($sql);
 if($result === false)
