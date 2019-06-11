@@ -46,7 +46,7 @@ if(isset($_POST['addCoupon'])) {
             $images = base64_encode(file_get_contents(addslashes($image)));
 						$couponName=$_POST['couponName'];
 						$url =$_POST['url'];
-						$counter=10;
+						$counter=$_POST['counter'];
 						$id =	$_SESSION['id']+1;
             	/*Query insert into db*/
             $sql = "INSERT INTO `coupon`( `busID`, `imageURL`, `counter`, `couponName`) VALUES('$id','$url','$counter','$couponName');";
@@ -219,13 +219,16 @@ if(mysqli_num_rows($result) > 0)
 						<h1 class="text-center text-bold mt-4x"> Create Coupon</h1>
 						<div class="well row pt-2x pb-3x bk-light">
 							<div class="col-md-8 col-md-offset-2">
-								<form method="post" id="createCampaign" enctype="multipart/form-data" name="creatcoupon" action="">
+								<form method="post" id="createCoupon" enctype="multipart/form-data" name="creatcoupon" action="">
 
 									<label for="" class="text-uppercase text-sm"> Coupon Name:</label>
 									<input type="text" placeholder="Coupon Name:" name="couponName" class="form-control mb" required>
 
 									<label for="" class="text-uppercase text-sm"> Image : </label>
 									<input type="file" placeholder="Image" name="imagefile" class="form-control mb" required>
+
+									<label for="" class="text-uppercase text-sm"> Amount of coupon use : </label>
+									<input type="number" placeholder="10" name="counter" class="form-control mb" required>
 
 									<label for="" class="text-uppercase text-sm"> Url: </label>
 									<input type="text" placeholder="www.url.com" name="url" class="form-control mb" required>
