@@ -295,9 +295,9 @@ var chart = new CanvasJS.Chart("container", {
 		text: "Revenue Chart of Acme Corporation"
 	},
 	axisY: {
-		title: "Revenue (in USD)",
-		prefix: "$",
-		suffix:  "k"
+		title: "advertisements the customers were exposed to",
+		prefix: "",
+		suffix:  ""
 	},
 	data: [{
 		type: "bar",
