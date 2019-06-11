@@ -148,6 +148,7 @@ if(isset($_REQUEST['unconfirm']))
 						<div class="panel panel-default">
 							<div class="panel-heading">advertisements the customers were exposed to</div>
 							<div id="container" style="width: 100%; height: 100%"></div>
+							<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 							<div class="panel-body">
 							<?php if($error){?><div class="errorWrap" id="msgshow"><?php echo htmlentities($error); ?> </div><?php }
 				else if($msg){?><div class="succWrap" id="msgshow"><?php echo htmlentities($msg); ?> </div><?php }?>
@@ -277,6 +278,30 @@ if(mysqli_num_rows($result) > 0)
 		//  chart.container("container");
 		//  chart.draw();
 	 // });
+	 window.onload = function() {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	title:{
+		text: "Revenue Chart of Acme Corporation"
+	},
+	axisY: {
+		title: "Revenue (in USD)",
+		prefix: "$",
+		suffix:  "k"
+	},
+	data: [{
+		type: "bar",
+		yValueFormatString: "$#,##0K",
+		indexLabel: "{y}",
+		indexLabelPlacement: "inside",
+		indexLabelFontWeight: "bolder",
+		indexLabelFontColor: "white",
+		dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
+	}]
+});
+chart.render();
+}
 
 		</script>
 
