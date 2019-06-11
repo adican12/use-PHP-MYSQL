@@ -191,8 +191,8 @@ if(mysqli_num_rows($result) > 0)
                 </div>
             </div>
         </div>
-<img src="https://storage.googleapis.com/catifi2/newImages/Accounting.jpg">
 
+<img src="<?php echo $row['imageURL']; ?>" />
 	<script type="text/javascript">
 				 $(document).ready(function () {
 					setTimeout(function() {
