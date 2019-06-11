@@ -247,17 +247,11 @@ if(mysqli_num_rows($result) > 0)
 		if($result == false) {
 			echo "____ERROR___THE__QUERY__FAIELD";
 		}
-		while($row = mysqli_fetch_assoc($result)){
+		$row = mysqli_fetch_assoc($result);
+		while($row)
+		{
 			echo "the category : ".$row['user_category']."<br>";
-
-
-		$dataPoints = array(
-	array("y" => 5,"label" => "March" ),
-	array("y" => 4,"label" => "April" ),
-	array("y" => 3,"label" => "May" ),
-	array("y" => 2,"label" => "June" ),
-	array("y" => 1,"label" => "July" )
-);
+}
 		?>
 		<script>
 
@@ -287,31 +281,36 @@ if(mysqli_num_rows($result) > 0)
 		//  chart.container("container");
 		//  chart.draw();
 	 // });
-	 window.onload = function() {
+	 google.charts.load('current', {packages: ['corechart', 'bar']});
+	 google.charts.setOnLoadCallback(drawBasic);
 
-var chart = new CanvasJS.Chart("container", {
-	animationEnabled: true,
-	title:{
-		text: "dvertisements the customers were exposed to"
-	},
-	axisY: {
-		title: "advertisements the customers were exposed to",
-		prefix: "",
-		suffix:  ""
-	},
-	data: [{
-		type: "bar",
-		yValueFormatString: "",
-		indexLabel: "{y}",
-		indexLabelPlacement: "inside",
-		indexLabelFontWeight: "bolder",
-		indexLabelFontColor: "white",
-		dataPoints: <?php echo json_encode($row['user_category'], JSON_NUMERIC_CHECK); ?>
-	}]
-});
-chart.render();
-}
+	 function drawBasic() {
 
+	       var data = google.visualization.arrayToDataTable([
+	         ['City', '2010 Population',],
+	         ['<?php echo $row['user_category']?>', 8175000],
+	         ['Los Angeles, CA', 3792000],
+	         ['Chicago, IL', 2695000],
+	         ['Houston, TX', 2099000],
+	         ['Philadelphia, PA', 1526000]
+	       ]);
+
+	       var options = {
+	         title: 'advertisements the customers were exposed to',
+	         chartArea: {width: '100%'},
+	         hAxis: {
+	           title: 'advertisements the customers were exposed to',
+	           minValue: 0
+	         },
+	         vAxis: {
+	           title: 'City'
+	         }
+	       };
+
+	       var chart = new google.visualization.BarChart(document.getElementById('container'));
+
+	       chart.draw(data, options);
+	     }
 		</script>
 
 
