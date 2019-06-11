@@ -287,7 +287,7 @@ if(mysqli_num_rows($result) > 0)
 	 // });
 	 window.onload = function() {
 
-var chart = new CanvasJS.Chart("chartContainer", {
+var chart = new CanvasJS.Chart("container", {
 	animationEnabled: true,
 	title:{
 		text: "Revenue Chart of Acme Corporation"
