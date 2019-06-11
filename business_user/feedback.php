@@ -239,7 +239,7 @@ if(mysqli_num_rows($result) > 0)
 					});
 		</script>
 		<?php
-		$sql = "SELECT DISTINCT user_category FROM users";
+		$sql = "SELECT DISTINCT(user_category) FROM users";
 		$result = $conn->query($sql);
 		if($result == false) {
 			echo "____ERROR___THE__QUERY__FAIELD";
@@ -257,7 +257,7 @@ if(mysqli_num_rows($result) > 0)
 		 var data = {
 				 header: ["Name", "Favorite categories"],
 				 rows: [
-					 [<?php $row['DISTINCT user_category'];?>, 100000],
+					 [<?php $row['DISTINCT(user_category)'];?>, 100000],
 					 ["Movies", 87000],
 					 ["Clothing", 175000],
 					 ["T.V Show", 10000],
