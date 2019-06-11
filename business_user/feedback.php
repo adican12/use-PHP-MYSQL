@@ -287,8 +287,8 @@ if(mysqli_num_rows($result) > 0)
 	 function drawBasic() {
 
 	       var data = google.visualization.arrayToDataTable([
-	         ['City', '2010 Population',],
-	         ['New York City, NY', 8175000],
+	         ['category', 'top 5',],
+	         ['<?php echo $row['user_category']?>', 5],
 	         ['Los Angeles, CA', 3792000],
 	         ['Chicago, IL', 2695000],
 	         ['Houston, TX', 2099000],
@@ -297,7 +297,7 @@ if(mysqli_num_rows($result) > 0)
 
 	       var options = {
 	         title: 'advertisements the customers were exposed to',
-	         chartArea: {width: '100%'},
+	         chartArea: {width: '50%'},
 	         hAxis: {
 	           title: 'advertisements the customers were exposed to',
 	           minValue: 0
