@@ -142,12 +142,7 @@ if(isset($_POST['addCoupon'])) {
 									   <div class="panel-body">
 <?php
 $reciver = 'Admin';
-$name=$_POST['name'];
-$email=$_POST['email'];
-$query = "SELECT user_id FROM users WHERE email='$email';"
-if($conn->query($query) == false) {
-	echo "error<br>";
-}
+
 
 
 $sql = "SELECT imageURL,couponName FROM coupon";
