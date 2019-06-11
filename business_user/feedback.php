@@ -148,6 +148,7 @@ if(isset($_REQUEST['unconfirm']))
 						<!-- Zero Configuration Table -->
 						<div class="panel panel-default">
 							<div class="panel-heading">advertisements the customers were exposed to</div>
+							<br>
 							<div id="container"></div>
 							<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 							<div class="panel-body">
