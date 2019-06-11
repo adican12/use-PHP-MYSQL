@@ -299,7 +299,7 @@ if(mysqli_num_rows($result) > 0)
 	         title: 'advertisements the customers were exposed to',
 	         chartArea: {width: '50%'},
 	         hAxis: {
-	           title: 'advertisements the customers were exposed to',
+	           title: 'customers',
 	           minValue: 0
 	         },
 	         vAxis: {
