@@ -245,8 +245,12 @@ if(mysqli_num_rows($result) > 0)
 			echo "____ERROR___THE__QUERY__FAIELD";
 		}
 		while($row = mysqli_fetch_assoc($result)){
-		echo "the category : ".$row['user_category']."<br>";
+			echo "the category : ".$row['user_category']."<br>";
+	}
+	$cnt=1;
+	if(mysqli_num_rows($result) > 0) {
 
+										while($row = mysqli_fetch_assoc($result)) {
 		?>
 		<script>
 
@@ -262,6 +266,7 @@ if(mysqli_num_rows($result) > 0)
 					 [<?php echo $row['user_category'];?>, 10000],
 					 [<?php echo $row['user_category'];?>, 242000]
 		 ]};
+		  <?php $cnt=$cnt+1; }} ?>
 
 		 // create the chart
 		 var chart = anychart.bar();
@@ -276,7 +281,7 @@ if(mysqli_num_rows($result) > 0)
 		 chart.container("container");
 		 chart.draw();
 	 });
-}
+
 		</script>
 
 
