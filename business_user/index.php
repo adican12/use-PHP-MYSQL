@@ -25,7 +25,7 @@ if($result === false)
 }
 if($result->num_rows == 0)
 {
-  echo "<script>alert('Invalid Details Or Account Not Confirmed');</script>";
+  //echo "<script>alert('Invalid Details Or Account Not Confirmed');</script>";
   echo "this is here not working";
 }else{
 
