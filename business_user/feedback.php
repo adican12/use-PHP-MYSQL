@@ -287,7 +287,7 @@ if(mysqli_num_rows($result) > 0)
 	 function drawBasic() {
 
 	       var data = google.visualization.arrayToDataTable([
-	         
+	         ['category', 'top 5'],
 	         ['Clothing', 5],
 	         ['Furniture', 4],
 	         ['Safety and health',3],
