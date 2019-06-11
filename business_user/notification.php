@@ -7,7 +7,7 @@ if(strlen($_SESSION['alogin'])==0)
 header('location:index.php');
 }
 else{
-echo $_SESSION['alogin'];
+
 if(isset($_POST['submit']))
   {
 	$name=$_POST['name'];
@@ -144,7 +144,7 @@ if(isset($_POST['addCoupon'])) {
 <?php
 
 // $query = "SELECT user_id FROM users WHERE email = '$' ";
-
+echo $_SESSION['alogin'];
 
 $sql = "SELECT imageURL,couponName FROM coupon";
 $result = $conn->query($sql);
