@@ -150,7 +150,7 @@ if(isset($_REQUEST['unconfirm']))
 							<div class="panel-heading">advertisements the customers were exposed to</div>
 							<br>
 							<div id="container"></div>
-							<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+						  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 							<div class="panel-body">
 							<?php if($error){?><div class="errorWrap" id="msgshow"><?php echo htmlentities($error); ?> </div><?php }
 				else if($msg){?><div class="succWrap" id="msgshow"><?php echo htmlentities($msg); ?> </div><?php }?>
