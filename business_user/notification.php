@@ -192,7 +192,6 @@ if(mysqli_num_rows($result) > 0)
             </div>
         </div>
 
-<img src="<?php echo $row['imageURL']; ?>">
 	<script type="text/javascript">
 				 $(document).ready(function () {
 					setTimeout(function() {
