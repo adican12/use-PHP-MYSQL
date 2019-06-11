@@ -153,10 +153,8 @@ if( $resu122 == false) {
 } else {
 	while($row1=mysqli_fetch_assoc($resu122)){
 		echo $row1['user_id']."<br>";
-	}
-}
-echo "the id is : ".$row1['user_id'];
-
+		$id = $row1['user_id'];
+		echo "the id is".$id."<br>";
 $sql = "SELECT imageURL,couponName FROM coupon WHERE busID = '$id';";
 $result = $conn->query($sql);
 if($result === false)
@@ -169,6 +167,8 @@ if($result === false)
 	 echo '<img height = 150px width=100px src='.$row['imageURL'].'>';
 	 echo $row['couponName'];
 	 }
+}
+}
 }
 // $sql = "SELECT * from  notification where notireciver = (:reciver) order by time DESC";
 // $query = $dbh -> prepare($sql);
