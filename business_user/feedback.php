@@ -252,11 +252,11 @@ if(mysqli_num_rows($result) > 0)
 
 		}
 		$dataPoints = array(
-	array("y" => 7,"label" => "March" ),
-	array("y" => 12,"label" => "April" ),
-	array("y" => 28,"label" => "May" ),
-	array("y" => 18,"label" => "June" ),
-	array("y" => 41,"label" => "July" )
+	array("y" => 5,"label" => "March" ),
+	array("y" => 4,"label" => "April" ),
+	array("y" => 3,"label" => "May" ),
+	array("y" => 2,"label" => "June" ),
+	array("y" => 1,"label" => "July" )
 );
 		?>
 		<script>
