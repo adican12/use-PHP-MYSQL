@@ -279,7 +279,7 @@ if(mysqli_num_rows($result) > 0)
 
 		</script>
 <div width="100%">
-	<?php $row['DISTINCT(user_category)'];?>,
+	<?php $row['user_category'];?>,
 </div>
 
 </body>
