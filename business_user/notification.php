@@ -210,7 +210,7 @@ if(mysqli_num_rows($result) > 0)
 								<form method="post" id="createCampaign" enctype="multipart/form-data" name="creatcoupon" action="">
 
 									<label for="" class="text-uppercase text-sm"> Coupon Name:</label>
-									<input type="text" placeholder="Campaign Name:" name="couponName" class="form-control mb" required>
+									<input type="text" placeholder="Coupon Name:" name="couponName" class="form-control mb" required>
 
 									<label for="" class="text-uppercase text-sm"> Image : </label>
 									<input type="file" placeholder="Image" name="imagefile" class="form-control mb" required>
