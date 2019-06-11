@@ -148,7 +148,6 @@ if(isset($_REQUEST['unconfirm']))
 						<div class="panel panel-default">
 							<div class="panel-heading">advertisements the customers were exposed to</div>
 							<div id="container" style="width: 100%; height: 100%"></div>
-							<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 							<div class="panel-body">
 							<?php if($error){?><div class="errorWrap" id="msgshow"><?php echo htmlentities($error); ?> </div><?php }
 				else if($msg){?><div class="succWrap" id="msgshow"><?php echo htmlentities($msg); ?> </div><?php }?>
@@ -249,43 +248,15 @@ if(mysqli_num_rows($result) > 0)
 			echo "the category : ".$row['user_category']."<br>";
 	}
 		?>
-
-		<script>
-		window.onload = function() {
-
-		var chart = new CanvasJS.Chart("chartContainer", {
-			animationEnabled: true,
-			title:{
-				text: "Revenue Chart of Acme Corporation"
-			},
-			axisY: {
-				title: "Revenue (in USD)",
-				prefix: "$",
-				suffix:  "k"
-			},
-			data: [{
-				type: "bar",
-				yValueFormatString: "$#,##0K",
-				indexLabel: "{y}",
-				indexLabelPlacement: "inside",
-				indexLabelFontWeight: "bolder",
-				indexLabelFontColor: "white",
-				dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
-			}]
-		});
-		chart.render();
-
-		}
-		</script>
 		<script>
 
 		anychart.onDocumentReady(function() {
-
+		
 		 // set the data
 		 var data = {
 				 header: ["Name", "Favorite categories"],
 				 rows: [
-					 ['<?php echo $row['user_category'];?>',3],
+					 [<?php echo $row['user_category'];?>,3],
 					 [<?php echo $row['user_category'];?>, 87000],
 					 [<?php echo $row['user_category'];?>, 175000],
 					 [<?php echo $row['user_category'];?>, 10000],
@@ -308,27 +279,7 @@ if(mysqli_num_rows($result) > 0)
 
 		</script>
 
-		<?php
 
-		$dataPoints = array(
-			array("y" => 7,"label" =>  $row['user_category'] ),
-			array("y" => 12,"label" => "April" ),
-			array("y" => 28,"label" => "May" ),
-			array("y" => 18,"label" => "June" ),
-			array("y" => 41,"label" => "July" )
-		);
-
-		?>
-		<!DOCTYPE HTML>
-		<html>
-		<head>
-
-		</script>
-		</head>
-		<body>
-
-		</body>
-		</html>
 </body>
 </html>
 <?php } ?>
