@@ -152,7 +152,7 @@ if( $resu122 == false) {
 	echo "the query is nor good";
 } else {
 	while($row1=mysqli_fetch_assoc($resu122))
-	//echo $row1['user_id'];
+	echo $row1['user_id']."<br>";
 }
 $id = $row1['user_id'];
 echo $id;
