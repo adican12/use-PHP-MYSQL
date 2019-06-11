@@ -244,24 +244,35 @@ if(mysqli_num_rows($result) > 0)
 		if($result == false) {
 			echo "____ERROR___THE__QUERY__FAIELD";
 		}
-		while($row = mysqli_fetch_assoc($result)){
-			echo "the category : ".$row['user_category']."<br>";
-	}
+		// while($row = mysqli_fetch_assoc($result)){
+		// 	echo "the category : ".$row['user_category']."<br>";
+		//
+		// }
 		?>
 		<script>
 
 		anychart.onDocumentReady(function() {
-		
+
+			var data = {
+ 				 header: ["Name", "Favorite categories"],
+ 				 rows: [
+					 <?php
+					 while($row = mysqli_fetch_assoc($result)){
+						 echo "[".$row['user_category']."8000,],";
+						 ?>
+						 ["text",3]
+ 		 ]};
+
 		 // set the data
-		 var data = {
-				 header: ["Name", "Favorite categories"],
-				 rows: [
-					 [<?php echo $row['user_category'];?>,3],
-					 [<?php echo $row['user_category'];?>, 87000],
-					 [<?php echo $row['user_category'];?>, 175000],
-					 [<?php echo $row['user_category'];?>, 10000],
-					 [<?php echo $row['user_category'];?>, 242000]
-		 ]};
+		 // var data = {
+			// 	 header: ["Name", "Favorite categories"],
+			// 	 rows: [
+			// 		 [<?php// echo $row['user_category'];?>,3],
+			// 		 [<?php// echo $row['user_category'];?>, 87000],
+			// 		 [<?php// echo $row['user_category'];?>, 175000],
+			// 		 [<?php// echo $row['user_category'];?>, 10000],
+			// 		 [<?php// echo $row['user_category'];?>, 242000]
+		 // ]};
 
 		 // create the chart
 		 var chart = anychart.bar();
