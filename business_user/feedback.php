@@ -244,7 +244,7 @@ if(mysqli_num_rows($result) > 0)
 		if($result == false) {
 			echo "____ERROR___THE__QUERY__FAIELD";
 		}
-		$row = mysqli_fetch_assoc($result)
+		$row = mysqli_fetch_assoc($result);
 		?>
 		<script>
 
