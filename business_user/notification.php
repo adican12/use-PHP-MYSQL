@@ -43,13 +43,13 @@ if(isset($_POST['addCoupon'])) {
 						echo "we here";
             $image =$_FILES['imagefile']['tmp_name'];
             $name = $_FILES['imagefile']['name'];
-            $images = base64_encode(file_get_contents(addslashes($image)));
+            $imageURL = base64_encode(file_get_contents(addslashes($image)));
 						$couponName=$_POST['couponName'];
-						$url =$_POST['url'];
+						// $url =$_POST['url'];
 						$counter=$_POST['counter'];
 						$id =	$_SESSION['id']+1;
             	/*Query insert into db*/
-            $sql = "INSERT INTO `coupon`( `busID`, `imageURL`, `counter`, `couponName`) VALUES('$id','$url','$counter','$couponName');";
+            $sql = "INSERT INTO `coupon`( `busID`, `imageURL`, `counter`, `couponName`) VALUES('$id','$imageURL','$counter','$couponName');";
             if($conn->query($sql) == false) {
                     echo "<script>alert('Image Failed to upload')</script>";
                   } else {
@@ -230,8 +230,7 @@ if(mysqli_num_rows($result) > 0)
 									<label for="" class="text-uppercase text-sm"> Amount of coupon use : </label>
 									<input type="number" placeholder="10" name="counter" class="form-control mb" required>
 
-									<label for="" class="text-uppercase text-sm"> Url: </label>
-									<input type="text" placeholder="www.url.com" name="url" class="form-control mb" required>
+
 
 									<button class="btn btn-primary btn-block" name="addCoupon" type="submit">Click!</button>
 								</form>
