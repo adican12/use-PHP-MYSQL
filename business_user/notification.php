@@ -154,8 +154,7 @@ if( $resu122 == false) {
 	while($row1=mysqli_fetch_assoc($resu122))
 	echo $row1['user_id']."<br>";
 }
-$id = $row1['user_id'];
-echo "the id is : ".$id;
+echo "the id is : ".$row1['user_id'];
 
 $sql = "SELECT imageURL,couponName FROM coupon WHERE busID = '$id';";
 $result = $conn->query($sql);
