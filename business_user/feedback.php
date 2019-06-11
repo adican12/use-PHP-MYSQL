@@ -256,11 +256,11 @@ if(mysqli_num_rows($result) > 0)
 		 var data = {
 				 header: ["Name", "Favorite categories"],
 				 rows: [
-					 [<?php $row['user_category'];?>,3],
-					 [<?php $row['user_category'];?>, 87000],
-					 [<?php $row['user_category'];?>, 175000],
-					 [<?php $row['user_category'];?>, 10000],
-					 [<?php $row['user_category'];?>, 242000]
+					 [<?php echo $row['user_category'];?>,3],
+					 [<?php echo $row['user_category'];?>, 87000],
+					 [<?php echo $row['user_category'];?>, 175000],
+					 [<?php echo $row['user_category'];?>, 10000],
+					 [<?php echo $row['user_category'];?>, 242000]
 		 ]};
 
 		 // create the chart
@@ -278,9 +278,7 @@ if(mysqli_num_rows($result) > 0)
 	 });
 
 		</script>
-<div width="100%">
-	<?php $row['user_category'];?>,
-</div>
+
 
 </body>
 </html>
