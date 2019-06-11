@@ -7,7 +7,7 @@ if(strlen($_SESSION['alogin'])==0)
 header('location:index.php');
 }
 else{
-
+echo $_SESSION['alogin'];
 if(isset($_POST['submit']))
   {
 	$name=$_POST['name'];
@@ -142,14 +142,8 @@ if(isset($_POST['addCoupon'])) {
 									<div class="panel-heading">Coupon</div>
 									   <div class="panel-body">
 <?php
-session_start();
-if(isset($_POST['submit']))
-  {
-	$name=$_POST['name'];
-	$email=$_POST['email'];
-	echo $email."<br>";
-}
-$reciver = 'Admin';
+
+$query = "SELECT user_id FROM users WHERE email = '$' "
 
 
 $sql = "SELECT imageURL,couponName FROM coupon";
