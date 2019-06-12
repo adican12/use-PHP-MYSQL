@@ -133,7 +133,7 @@ else{
 <form method="post" class="form-horizontal" enctype="multipart/form-data">
 
 <div class="form-group">
-	<label class="col-sm-2 control-label">Business Name : <span style="color:red">*</span></label>
+	<label class="col-sm-2 control-label"> Business Name : <span style="color:red">*</span></label>
 	<div class="col-sm-4">
 	<input type="text" name="businessName" class="form-control"   placeholder="Business Name: " required >
 	</div>
@@ -141,9 +141,16 @@ else{
 
 
 <div class="form-group">
-	<label class="col-sm-2 control-label"> Category: <span style="color:red">*</span></label>
+	<label class="col-sm-2 control-label"> Category : <span style="color:red">*</span></label>
 	<div class="col-sm-4">
-	<input type="text" name="category" class="form-control"   placeholder=" Hotel,Restaurant... " required >
+	<input type="text" name="category" class="form-control"   placeholder="Hotel,Restaurant..." required >
+	</div>
+</div>
+
+<div class="form-group">
+	<label class="col-sm-2 control-label"> Acces Point Password: <span style="color:red">*</span></label>
+	<div class="col-sm-4">
+	<input type="password" name="apPassword" class="form-control"   required >
 	</div>
 </div>
 
