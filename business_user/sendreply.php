@@ -38,9 +38,32 @@ if($conn->query($sql) == false) {
 	echo "<script>alert('Sorry Cant Insert to this table :(( ')</script>";
 }
 
-}
-}
+	
 
+	// $sqlnoti="insert into notification (notiuser,notireciver,notitype) values (:notiuser,:notireciver,:notitype)";
+  // $querynoti = $dbh->prepare($sqlnoti);
+	// $querynoti-> bindParam(':notiuser', $sender, PDO::PARAM_STR);
+	// $querynoti-> bindParam(':notireciver',$reciver, PDO::PARAM_STR);
+  // $querynoti-> bindParam(':notitype', $notitype, PDO::PARAM_STR);
+  // $querynoti->execute();
+
+	$sqlfeed="insert into feedback (sender, reciver, feedbackdata) values ($user,$reciver,$description)";
+	$queryfeed = $conn->query($sqlfeed);
+	if($queryfeed === false)
+	{
+		 user_error("Query failed: ".$conn->error."<br />$sqlfeed");
+		 echo "false";
+	}
+
+	// $sql="insert into feedback (sender, reciver, feedbackdata) values (:user,:reciver,:description)";
+	// $query = $dbh->prepare($sql);
+	// $query-> bindParam(':user', $sender, PDO::PARAM_STR);
+	// $query-> bindParam(':reciver', $reciver, PDO::PARAM_STR);
+	// $query-> bindParam(':description', $message, PDO::PARAM_STR);
+  // $query->execute();
+
+	$msg="Feedback Send";
+  }
 ?>
 
 <!doctype html>
