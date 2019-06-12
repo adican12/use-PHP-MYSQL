@@ -37,7 +37,19 @@ $sql = "INSERT INTO `business` (`category`,`business_name`,`user_id`) VALUES ('$
 if($conn->query($sql) == false) {
 	echo "<script>alert('Sorry Cant Insert to this table :(( ')</script>";
 }
+$sql = "SELECT businessID FROM business WHERE user_id = '$user_id'";
+$result = $conn->query($sql);
+if($result == false) {
+	echo "<script>alert('sorry the query not working')</script>";
+}
+$row = mysqli_fetch_assoc($result);
+$businessID	= $row['businessID'];
+echo " the business ID is : ".$businessID."<br>";
 
+$sql = "INSERT INTO ap(apPassword,businessID) VALUES ('$apPassword','$businessID');"
+if($conn->query($sql) == false) {
+		echo "<script>alert('Sorry Cant Insert to this table :(( ')</script>";
+}
 
 
 	// $sqlnoti="insert into notification (notiuser,notireciver,notitype) values (:notiuser,:notireciver,:notitype)";

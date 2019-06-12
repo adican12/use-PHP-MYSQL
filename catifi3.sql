@@ -103,10 +103,11 @@ create table if not exists `business` (
 --
 
 create table if not exists `ap` (
-  `apID` int(11) NOT NULL,
+  `apID` int(11) NOT NULL AUTO_INCREMENT, ,
   `apPassword` varchar(50) NOT NULL,
-  `businessID` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `businessID` int(11) DEFAULT NULL,
+  PRIMARY KEY(`apID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1;
 
 -- --------------------------------------------------------
 -- --------------------------------------------------------
