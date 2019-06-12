@@ -5,7 +5,8 @@
 $servername = "localhost";
 $username = "root";
 $password = "1";
-$dbname = "catifi";
+//$dbname = "catifi";
+$dbname ="adiDB";
 // echo "servername: $servername , user: $username , password: $password , db: $dbname<br>";
 
 // try{

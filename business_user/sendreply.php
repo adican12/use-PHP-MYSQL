@@ -66,7 +66,7 @@ else{
 	<meta name="author" content="">
 	<meta name="theme-color" content="#3e454c">
 
-	<title>Edit Profile</title>
+	<title>Business Manager</title>
 
 	<!-- Font awesome -->
 	<link rel="stylesheet" href="css/font-awesome.min.css">
@@ -84,26 +84,10 @@ else{
 	<link rel="stylesheet" href="css/awesome-bootstrap-checkbox.css">
 	<!-- Admin Stye -->
 	<link rel="stylesheet" href="css/style.css">
+	<link rel = "stylesheet" href = css/main.css
 
 	<script type= "text/javascript" src="../vendor/countries.js"></script>
-	<style>
-	.errorWrap {
-    padding: 10px;
-    margin: 0 0 20px 0;
-	background: #dd3d36;
-	color:#fff;
-    -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
-    box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
-}
-.succWrap{
-    padding: 10px;
-    margin: 0 0 20px 0;
-	background: #5cb85c;
-	color:#fff;
-    -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
-    box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
-}
-		</style>
+
 
 
 </head>
@@ -139,9 +123,9 @@ else{
 					<div class="col-md-12">
 						<div class="row">
 							<div class="col-md-12">
-                            <h2>Reply Feedback</h2>
+                            <center><center><h2>Business Manager</h2></center>
 								<div class="panel panel-default">
-									<div class="panel-heading">Edit Info</div>
+									<div class="panel-heading"><center>Build Your Business></center></div>
 <?php if($error){?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php }
 				else if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
 
@@ -149,9 +133,9 @@ else{
 <form method="post" class="form-horizontal" enctype="multipart/form-data">
 
 <div class="form-group">
-	<label class="col-sm-2 control-label">Email<span style="color:red">*</span></label>
+	<label class="col-sm-2 control-label">Business Name : <span style="color:red">*</span></label>
 	<div class="col-sm-4">
-	<input type="text" name="email" class="form-control" readonly required value="<?php echo $row['replyto'];?>">
+	<input type="text" name="businessName" class="form-control" readonly required value="<?php echo $row['replyto'];?>">
 	</div>
 </div>
 

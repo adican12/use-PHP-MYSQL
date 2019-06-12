@@ -17,7 +17,6 @@ if($result === false)
 {
    user_error("Query failed: ".$conn->error."<br />$sql");
    echo "false";
-   //hello
 }
 if($result->num_rows == 0)
 {
