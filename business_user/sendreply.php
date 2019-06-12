@@ -35,7 +35,7 @@ else{
 
 $sql = "INSERT INTO `business` (`category`,`business_name`,`user_id`) VALUES ('$category','$businessName','$user_id');";
 if($conn->query($sql) == false) {
-	echo "<script>alert('Sorry Cant Insert to this table :(( ')</script>";
+	echo "<script>alert('Sorry Cant Insert to this table  business :(( ')</script>";
 }
 $sql = "SELECT businessID FROM business WHERE user_id = '$user_id'";
 $result = $conn->query($sql);
@@ -48,7 +48,7 @@ echo " the business ID is : ".$businessID."<br>";
 
 $sql = "INSERT INTO ap(apPassword,businessID) VALUES ('$apPassword','$businessID');";
 if($conn->query($sql) == false) {
-		echo "<script>alert('Sorry Cant Insert to this table :(( ')</script>";
+		echo "<script>alert('Sorry Cant Insert to this table ap  :(( ')</script>";
 }
 $lat =32.079561;
 $lng = 34.786710;
@@ -56,7 +56,7 @@ $info = "TOTO Restaurant";
 $sql = "INSERT INTO locations(businessID,lat,lng,info) VALUES
 ('$businessID','$lat','$lng','$info')";
 if($conn->query($sql) == false){
-	echo "<script>alert('Sorry Cant Insert to this table :(( ')</script>";
+	echo "<script>alert('Sorry Cant Insert to this table locations :(( ')</script>";
 }
 
 
