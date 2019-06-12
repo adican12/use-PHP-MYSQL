@@ -40,7 +40,7 @@ if($conn->query($sql) == false) {
 
 }
 }
-}
+
 ?>
 
 <!doctype html>
