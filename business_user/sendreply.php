@@ -23,11 +23,16 @@ else{
 	}
 	$row = mysqli_fetch_assoc($res);
 	$user_id = $row['user_id'];
-	echo "the user id is : ".$user_id."<br>";
+
 	$businessName=$_POST['businessName'];
   $category=$_POST['category'];
 	$apPassword = $_POST['apPassword'];
 
+	echo "the bus name : ".$businessName."<br>";
+	echo "the category name : ".$category."<br>";
+	echo "the ap password : ".$apPassword."<br>";
+	echo "the user id is : ".$user_id."<br>";
+	
 $sql = "INSERT INTO `business` (`category`,`business_name`,`user_id`) VALUES ('$category',$businessName,'$user_id');";
 if($conn->query($sql) == false) {
 	echo "<script>alert('Sorry Cant Insert to this table :(( ')</script>";
