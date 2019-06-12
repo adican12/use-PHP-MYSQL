@@ -1,3 +1,7 @@
+
+
+<link rel =
+
 	<nav class="ts-sidebar">
 			<ul class="ts-sidebar-menu">
 
@@ -14,7 +18,7 @@
 			</li>
 			<li><a href="notification.php"><i class="fa fa-bullseye" aria-hidden="true"></i> &nbsp;  Creat Coupon </a>
 			</li>
-			<li><a href="deleteduser.php"><i class="fa fa-clipboard" aria-hidden="true"></i> &nbsp;Building a marketing strategy</a>
+			<li><a href="deleteduser.php"><i class="fa fa-clipboard" aria-hidden="true"></i> &nbsp;Tips</a>
 			</li>
 			<li><a href="download.php"><i class="fa fa-list-alt"></i> &nbsp;Time to stay in the commercial</a>
 			 </li>
