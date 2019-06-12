@@ -7,7 +7,13 @@ if(strlen($_SESSION['alogin'])==0)
 header('location:index.php');
 }
 else{
- $user_id = $row['user_id'];
+	$email = $_SESSION['alogin'];
+ $sql = "SELECT user_id FROM users WHERE email ='$email'";
+ $res =$conn->query($sql);
+ if( $res== false) {
+	 echo "<script>alert('The ID can not be taken from the table')</script>";
+ }
+ $user_id = mysqli_fetch_assoc($res);
  echo "the user id : ".$user_id."<br>";
 	if(isset($_GET['reply']))
 	{
@@ -22,8 +28,10 @@ else{
 	$apPassword = $_POST['apPassword'];
 
 $sql = "INSERT INTO `business` (`category`,`business_name`,`user_id`) VALUES ('$category',$businessName,'$user_id');";
-	// $sql = "SELECT * from  notification where notireciver = $reciver order by time DESC";
-	$querynoti = $conn->query($sqlnoti);
+if($conn->query($sql) == false) {
+	echo "<script>alert('cant Insert into table business Sorry :( ')</script>";
+}
+
 	if($querynoti === false)
 	{
 		 user_error("Query failed: ".$conn->error."<br />$sqlnoti");
