@@ -15,8 +15,8 @@ else{
 
 	if(isset($_POST['submit']))
   {
-	$reciver=$_POST['email'];
-  $message=$_POST['message'];
+	$businessName=$_POST['businessName'];
+  $category=$_POST['category'];
 	$notitype='Send Message';
 	$sender='Admin';
 
