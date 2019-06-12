@@ -7,11 +7,9 @@ if(isset($_POST['login']))
 {
 $status='1';
 $email=$_POST['email'];
-// $password=md5($_POST['password']);
 $password=$_POST['password'];
 
 //echo "<br>email: ".$email ."		password: ".$password."<br>";
-
 
 $sql="SELECT * FROM `users` WHERE `email`='$email' AND `password`='$password' ";
 $result = $conn->query($sql);
@@ -23,29 +21,23 @@ if($result === false)
 }
 if($result->num_rows == 0)
 {
-
   echo "<script>alert('Invalid Details Or Account Not Confirmed');</script>";
 } else{
-  $_SESSION['alogin'] = $_POST['email'];
-  $row= $result->fetch_array();
-  if($row['user_type'] === 'business_user'){
-    // $_SESSION['alogin'] = $_POST['email'];
-    echo "<script type='text/javascript'> document.location = 'business_user/dashboard.php'; </script>";
-  } else if($row['user_type'] === 'advertiser_user'){
-     $_SESSION['alogin'] = $_POST['email'];
-     echo "hell world form if user_type === advertiser_user";
-    echo "<script type='text/javascript'> document.location = 'advertiser/dashboard.php'; </script>";
-  } else if ($row['user_type'] === 'standard_user'){
-
       $_SESSION['alogin'] = $_POST['email'];
-      echo "<script type='text/javascript'> document.location = 'userdashborad.php'; </script>";
+      $row= $result->fetch_array();
+
+      if($row['user_type'] === 'business_user'){
+          echo "<script type='text/javascript'> document.location = 'business_user/dashboard.php'; </script>";
+      }
+      else if($row['user_type'] === 'advertiser_user'){
+          $_SESSION['alogin'] = $_POST['email'];
+          echo "hell world form if user_type === advertiser_user";
+          echo "<script type='text/javascript'> document.location = 'advertiser/dashboard.php'; </script>";
+      }
+      else if ($row['user_type'] === 'standard_user'){
+          $_SESSION['alogin'] = $_POST['email'];
+          echo "<script type='text/javascript'> document.location = 'userdashborad.php'; </script>";
   }
-
-  // $_SESSION['alogin']=$_POST['username'];
-
-  //$_SESSION['alogin2']="hererge";
-
-  // echo "<script type='text/javascript'> document.location = 'profile.php'; </script>";
   }
 
 }
@@ -59,8 +51,6 @@ if($result->num_rows == 0)
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 	<meta name="description" content="">
 	<meta name="author" content="">
-
-
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/dataTables.bootstrap.min.css">
@@ -69,9 +59,7 @@ if($result->num_rows == 0)
 	<link rel="stylesheet" href="css/fileinput.min.css">
 	<link rel="stylesheet" href="css/awesome-bootstrap-checkbox.css">
 	<link rel="stylesheet" href="css/style.css">
-
 </head>
-
 <body onload="getLocation()">
 	<div class="login-page bk-img">
 		<div class="form-content">
@@ -82,10 +70,8 @@ if($result->num_rows == 0)
 						<div class="well row pt-2x pb-3x bk-light">
 							<div class="col-md-8 col-md-offset-2">
 								<form method="post">
-
 									<label for="" class="text-uppercase text-sm">Your Email</label>
 									<input type="text" placeholder="Email" name="email" class="form-control mb" required>
-
 									<label for="" class="text-uppercase text-sm">Password</label>
 									<input type="password" placeholder="Password" name="password" class="form-control mb" required>
 									<button class="btn btn-primary btn-block" name="login" type="submit">LOGIN</button>
