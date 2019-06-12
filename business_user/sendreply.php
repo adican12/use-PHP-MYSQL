@@ -46,7 +46,7 @@ $row = mysqli_fetch_assoc($result);
 $businessID	= $row['businessID'];
 echo " the business ID is : ".$businessID."<br>";
 
-$sql = "INSERT INTO ap(apPassword,businessID) VALUES ('$apPassword','$businessID');"
+$sql = "INSERT INTO ap(apPassword,businessID) VALUES ('$apPassword','$businessID');";
 if($conn->query($sql) == false) {
 		echo "<script>alert('Sorry Cant Insert to this table :(( ')</script>";
 }
