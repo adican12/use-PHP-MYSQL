@@ -17,7 +17,7 @@ else{
   {
 	$businessName=$_POST['businessName'];
   $category=$_POST['category'];
-	$notitype='Send Message';
+	$apPassword = $_POST['apPassword'];
 	$sender='Admin';
 
 	$sqlnoti="insert into notification (notiuser,notireciver,notitype) values ($notiuser,$notireciver,$notitype)";
