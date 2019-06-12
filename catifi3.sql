@@ -194,6 +194,7 @@ create table if not exists `feedback` (
 
 create table if not exists `locations` (
   `locationID` int(11) NOT NULL AUTO_INCREMENT,
+  `businessID` int(11) NOT NULL,
   `lat` float NOT NULL,
   `lng` float NOT NULL,
   `info` varchar(256) NOT NULL,
