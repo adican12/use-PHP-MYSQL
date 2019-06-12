@@ -2,7 +2,8 @@
 $servername = "localhost";
 $username = "root";
 $password = "1";
-$dbname = "catifi";
+//$dbname = "catifi";
+$dbname = "adiDB";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
