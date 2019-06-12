@@ -193,11 +193,12 @@ create table if not exists `feedback` (
 --
 
 create table if not exists `locations` (
-  `locationID` int(11) NOT NULL,
+  `locationID` int(11) NOT NULL AUTO_INCREMENT,
   `lat` float NOT NULL,
   `lng` float NOT NULL,
-  `info` varchar(256) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `info` varchar(256) NOT NULL,
+  PRIMARY KEY(`locationID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT =1;
 
 
 -- --------------------------------------------------------

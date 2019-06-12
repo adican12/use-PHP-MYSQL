@@ -50,6 +50,14 @@ $sql = "INSERT INTO ap(apPassword,businessID) VALUES ('$apPassword','$businessID
 if($conn->query($sql) == false) {
 		echo "<script>alert('Sorry Cant Insert to this table :(( ')</script>";
 }
+$lat =32.079561;
+$lng = 34.786710;
+$info = "' TOTO Restaurant"
+$sql = "INSERT INTO locations(businessID,lat,lng,info) VALUES
+('$businessID','$lat','$lng','$info')";
+if($conn->query($sql) == false){
+	echo "<script>alert('Sorry Cant Insert to this table :(( ')</script>";
+}
 
 
 	// $sqlnoti="insert into notification (notiuser,notireciver,notitype) values (:notiuser,:notireciver,:notitype)";
