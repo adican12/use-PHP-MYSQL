@@ -13,12 +13,12 @@ $storage = new StorageClient([
     'projectId' => $projectId
 ]);
 //
-// # The name for the new bucket
-$bucketName = 'my-new-bucket';
+// // # The name for the new bucket
+// $bucketName = 'my-new-bucket';
+// //
+// // # Creates the new bucket
+// $bucket = $storage->createBucket($bucketName);
 //
-// # Creates the new bucket
-$bucket = $storage->createBucket($bucketName);
-
-echo 'Bucket ' . $bucket->name() . ' created.';
+// echo 'Bucket ' . $bucket->name() . ' created.';
 echo "<h1>yaron Hatol</h1>";
 ?>
