@@ -139,12 +139,14 @@ else{
 	</div>
 </div>
 
+
 <div class="form-group">
-	<label class="col-sm-2 control-label">Message<span style="color:red">*</span></label>
-	<div class="col-sm-6">
-	<textarea name="message" class="form-control" cols="30" rows="10"></textarea>
+	<label class="col-sm-2 control-label"> Category: <span style="color:red">*</span></label>
+	<div class="col-sm-4">
+	<input type="text" name="category" class="form-control"   placeholder=" Hotel,Restaurant... " required >
 	</div>
 </div>
+
 
 <input type="hidden" name="editid" class="form-control" required value="<?php echo $row['id'];?>">
 
