@@ -123,7 +123,7 @@ else{
 					<div class="col-md-12">
 						<div class="row">
 							<div class="col-md-12">
-                            <h2>Business Manager</h2>
+                            <center><h2>Business Manager</h2></center>
 								<div class="panel panel-default">
 									<div class="panel-heading">Edit Info</div>
 <?php if($error){?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php }
