@@ -33,12 +33,12 @@ else{
 	echo "the ap password : ".$apPassword."<br>";
 	echo "the user id is : ".$user_id."<br>";
 
-$sql = "INSERT INTO `business` (`category`,`business_name`,`user_id`) VALUES ('$category',$businessName,'$user_id');";
+$sql = "INSERT INTO `business` (`category`,`business_name`,`user_id`) VALUES ('$category','$businessName','$user_id');";
 if($conn->query($sql) == false) {
 	echo "<script>alert('Sorry Cant Insert to this table :(( ')</script>";
 }
 
-	
+
 
 	// $sqlnoti="insert into notification (notiuser,notireciver,notitype) values (:notiuser,:notireciver,:notitype)";
   // $querynoti = $dbh->prepare($sqlnoti);
@@ -47,7 +47,7 @@ if($conn->query($sql) == false) {
   // $querynoti-> bindParam(':notitype', $notitype, PDO::PARAM_STR);
   // $querynoti->execute();
 
-	$sqlfeed="insert into feedback (sender, reciver, feedbackdata) values ($user,$reciver,$description)";
+
 	$queryfeed = $conn->query($sqlfeed);
 	if($queryfeed === false)
 	{
@@ -62,7 +62,7 @@ if($conn->query($sql) == false) {
 	// $query-> bindParam(':description', $message, PDO::PARAM_STR);
   // $query->execute();
 
-	$msg="Feedback Send";
+	$msg="Great You build Your Business";
   }
 ?>
 
