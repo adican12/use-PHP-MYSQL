@@ -7,7 +7,8 @@ if(strlen($_SESSION['alogin'])==0)
 header('location:index.php');
 }
 else{
-
+$user_id = $row['user_id'];
+echo "the user id : ".$user_id."<br>";
 	if(isset($_GET['reply']))
 	{
 	$replyto=$_GET['reply'];
@@ -15,12 +16,12 @@ else{
 
 	if(isset($_POST['submit']))
   {
+
 	$businessName=$_POST['businessName'];
   $category=$_POST['category'];
 	$apPassword = $_POST['apPassword'];
-	$sender='Admin';
 
-	$sqlnoti="insert into notification (notiuser,notireciver,notitype) values ($notiuser,$notireciver,$notitype)";
+$sql = "INSERT INTO `business` (`category`,`business_name`,`user_id`) VALUES ('$category',$businessName,'$user_id');"
 	// $sql = "SELECT * from  notification where notireciver = $reciver order by time DESC";
 	$querynoti = $conn->query($sqlnoti);
 	if($querynoti === false)
