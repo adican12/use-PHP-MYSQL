@@ -155,11 +155,10 @@ else{
 </div>
 
 
-<input type="hidden" name="editid" class="form-control" required value="<?php echo $row['id'];?>">
 
 <div class="form-group">
 	<div class="col-sm-8 col-sm-offset-2">
-		<button class="btn btn-primary" name="submit" type="submit">Send Reply</button>
+		<button class="btn btn-primary" name="submit" type="submit">Build!</button>
 	</div>
 </div>
 
