@@ -16,7 +16,7 @@ $storage = new StorageClient([
 // // # The name for the new bucket
 // $bucketName = 'my-new-bucket';
 // //
-$backet = $storage->bucket('catifi2');
+$bucket = $storage->bucket('catifi2');
 // // # Creates the new bucket
 //
 echo 'Bucket ' . $bucket->name() . ' created';
