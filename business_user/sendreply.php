@@ -135,7 +135,7 @@ else{
 <div class="form-group">
 	<label class="col-sm-2 control-label">Business Name : <span style="color:red">*</span></label>
 	<div class="col-sm-4">
-	<input type="text" name="businessName" class="form-control" readonly required value="<?php echo $row['replyto'];?>">
+	<input type="text" name="businessName" class="form-control"   placeholder="Business Name: " required >
 	</div>
 </div>
 
