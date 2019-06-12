@@ -3,7 +3,7 @@
 require __DIR__ . '/vendor/autoload.php';
 
 // # Imports the Google Cloud client library
-// use Google\Cloud\Storage\StorageClient;
+use Google\Cloud\Storage\StorageClient;
 //
 // # Your Google Cloud Platform project ID
 // $projectId = 'YOUR_PROJECT_ID';
