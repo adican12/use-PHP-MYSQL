@@ -7,14 +7,7 @@ if(strlen($_SESSION['alogin'])==0)
 header('location:index.php');
 }
 else{
-	$email = $_SESSION['alogin'];
- $sql = "SELECT user_id FROM users WHERE email ='$email'";
- $res =$conn->query($sql);
- if( $res== false) {
-	 echo "<script>alert('The ID can not be taken from the table')</script>";
- }
- $user_id = mysqli_fetch_assoc($res);
- echo "the user id : ".$user_id."<br>";
+
 	if(isset($_GET['reply']))
 	{
 	$replyto=$_GET['reply'];
@@ -22,14 +15,22 @@ else{
 
 	if(isset($_POST['submit']))
   {
-
+	$email = $_SESSION['alogin'];
+	$query = "SELECT user_id FROM users WHERE email ='$email' ";
+	$res = $conn->query($query);
+	if($res == false) {
+		echo "<script>alert('Sorry Cant find this email')</script>";
+	}
+	$row = mysqli_fetch_assoc($res);
+	$user_id = $row['user_id'];
+	echo "the user id is : ".$user_id."<br>";
 	$businessName=$_POST['businessName'];
   $category=$_POST['category'];
 	$apPassword = $_POST['apPassword'];
 
 $sql = "INSERT INTO `business` (`category`,`business_name`,`user_id`) VALUES ('$category',$businessName,'$user_id');";
 if($conn->query($sql) == false) {
-	echo "<script>alert('cant Insert into table business Sorry :( ')</script>";
+	echo "<script>alert('Sorry Cant Insert to this table :(( ')</script>";
 }
 
 	if($querynoti === false)
