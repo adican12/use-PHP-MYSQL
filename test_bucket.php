@@ -6,7 +6,7 @@ require __DIR__ . '/vendor/autoload.php';
 use Google\Cloud\Storage\StorageClient;
 //
 // # Your Google Cloud Platform project ID
-// $projectId = 'YOUR_PROJECT_ID';
+$projectId = 'catifi';
 //
 // # Instantiates a client
 // $storage = new StorageClient([
