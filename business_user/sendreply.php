@@ -28,10 +28,10 @@ else{
   $category=$_POST['category'];
 	$apPassword = $_POST['apPassword'];
 
-	echo "the bus name : ".$businessName."<br>";
-	echo "the category name : ".$category."<br>";
-	echo "the ap password : ".$apPassword."<br>";
-	echo "the user id is : ".$user_id."<br>";
+	// echo "the bus name : ".$businessName."<br>";
+	// echo "the category name : ".$category."<br>";
+	// echo "the ap password : ".$apPassword."<br>";
+	// echo "the user id is : ".$user_id."<br>";
 
 $sql = "INSERT INTO `business` (`category`,`business_name`,`user_id`) VALUES ('$category','$businessName','$user_id');";
 if($conn->query($sql) == false) {
@@ -44,7 +44,7 @@ if($result == false) {
 }
 $row = mysqli_fetch_assoc($result);
 $businessID	= $row['businessID'];
-echo " the business ID is : ".$businessID."<br>";
+// echo " the business ID is : ".$businessID."<br>";
 
 $sql = "INSERT INTO ap(apPassword,businessID) VALUES ('$apPassword','$businessID');";
 if($conn->query($sql) == false) {
