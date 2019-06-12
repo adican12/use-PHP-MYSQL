@@ -158,7 +158,7 @@ else{
 
 <div class="form-group">
 	<div class="col-sm-8 col-sm-offset-2">
-		<button class="btn btn-primary" name="submit" type="submit" style="width:50%;">Build!</button>
+		<button class="btn btn-primary" name="submit" type="submit" style="width:47%;">Build!</button>
 	</div>
 </div>
 
