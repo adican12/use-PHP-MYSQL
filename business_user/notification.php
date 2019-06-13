@@ -40,7 +40,6 @@ if(isset($_POST['addCoupon'])) {
           echo ' <br> Please Select An Image.<br>';
     } else {
             // declare Variables
-						echo "we here";
             $image =$_FILES['imagefile']['tmp_name'];
             $name = $_FILES['imagefile']['name'];
             $imageURL = base64_encode(file_get_contents(addslashes($image)));
