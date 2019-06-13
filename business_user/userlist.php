@@ -253,7 +253,8 @@ button:active {
 						 <button type="button"   class="btn btn-primary" onclick="myFunction()" > <i class="fa fa-search"></i>      Do you want to look for someone? </button>
 						<div id="myDIV">
 						<form method="post" class="form-horizontal" enctype="multipart/form-data">
-							<label for="" class="text-uppercase text-sm"></label>
+
+							<label for="" class="text-uppercase text-sm"> Search : </label>
 							<input type="search" placeholder="Search: " name="search_customers_fame" class="form-control" required>
 							<br>
 							<button class="btn btn-primary" name="submit" type="submit"> Search! </button>
