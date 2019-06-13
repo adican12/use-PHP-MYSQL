@@ -528,8 +528,8 @@ chart.draw(data, options);
 //     x.style.display = "none";
 //   }
 // }
-$("button").click(function(){
-  $("myDIV").toggle();
+$("#show").click(function(){
+  $("#myDIV").toggle();
 });
 
 </script>
