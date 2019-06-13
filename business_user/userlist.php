@@ -257,7 +257,7 @@ button:active {
 							<label for="" class="text-uppercase text-sm"></label>
 							<input type="search" placeholder="Search: " name="search_customers_fame" class="form-control" required>
 							<br>
-							<button class="btn btn-primary" name="submit" type="submit" style="width:30%"> Search! </button>
+							<button class="btn btn-primary" name="submit" type="submit" style="width:30%; margin-right=10px;"> Search! </button>
 						</form>
 					</div>
 					<?php
