@@ -21,22 +21,21 @@ $bucket = $storage->bucket('catifi2');
 //
 
 
-$target_dir = "newImages/";
-// $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 // $uploadOk = 1;
 // $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 // Check if image file is a actual image or fake image
 if(isset($_POST["submit"])) {
-  echo "submit";
 
-  $file = file_get_contents($_FILES['fileToUpload']['name']);
+  $target_dir = "newImages/";
+  $target_file = $target_dir . basename($_FILES['fileToUpload']['name']);
+
+  $file = file_get_contents($_FILES['fileToUpload']['name'],$target_file);
   $objectName = $_FILES['fileToUpload']['name'];
 
   $object = $bucket->upload($file, [
       'name' => $objectName
   ]);
-
-  // $bucket->upload($file);
+  echo "<br>file uploaded successfully</br>";
 
     // $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
     // if($check !== false) {
