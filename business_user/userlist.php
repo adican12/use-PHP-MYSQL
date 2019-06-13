@@ -280,7 +280,7 @@ button:active {
 
 						<!-- Zero Configuration Table -->
 						<div class="panel panel-default">
-							<div class="panel-heading"> Knowledge of customers</div>
+							<div class="panel-heading"> Meet of customers</div>
 							<div class="panel-body">
 							<?php if($error){?><div class="errorWrap" id="msgshow"><?php echo htmlentities($error); ?> </div><?php }
 				else if($msg){?><div class="succWrap" id="msgshow"><?php echo htmlentities($msg); ?> </div><?php }?>
