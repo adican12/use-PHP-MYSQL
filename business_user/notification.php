@@ -72,24 +72,7 @@ if(isset($_POST['addCoupon'])) {
 
 						//try from stackoverflow
 
-						// get image from Form
-						$gs_name = $_FILES["imagefile"]["tmp_name"];
-						$fileType = $_FILES["imagefile"]["type"];
-						$fileSize = $_FILES["imagefiles"]["size"];
-						$fileErrorMsg = $_FILES["imagefile"]["error"];
-						$fileExt = pathinfo($_FILES['imagefile']['name'], PATHINFO_EXTENSION);
 
-						// change name if you want
-						$fileName = 'foo.jpg';
-
-						// put to cloud storage
-						$image = file_get_contents($gs_name);
-						$options = [ "gs" => [ "Content-Type" => "image/jpeg"]];
-						$ctx = stream_context_create($options);
-						file_put_contents("gs://<catifi>/".$fileName, $gs_name, 0, $ctx);
-
-						// or move
-						$moveResult = move_uploaded_file($gs_name, 'gs://<catifi>/'.$fileName);
 
 
 
