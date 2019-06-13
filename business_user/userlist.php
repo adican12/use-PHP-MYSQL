@@ -528,7 +528,9 @@ chart.draw(data, options);
 //     x.style.display = "none";
 //   }
 // }
-
+$("button").click(function(){
+  $("myDIV").toggle();
+});
 
 </script>
 
