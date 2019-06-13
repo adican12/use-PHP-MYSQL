@@ -42,6 +42,7 @@ if(isset($_POST['addCoupon'])) {
     } else {
             // declare Variables
             $image =$_FILES['imagefile']['tmp_name'];
+						echo "the image is : ".$image."<br>";
             $name = $_FILES['imagefile']['name'];
              $imageURL = file_get_contents(addslashes($image));
 						$couponName=$_POST['couponName'];
