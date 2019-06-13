@@ -47,8 +47,8 @@ if(isset($_POST['addCoupon'])) {
 						$fileName = basename($_FILES["imagefile"]["name"]);
 						$targetFilePath = $targetDir . $fileName;
 						$fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
-						echo $targetFilePath."<br>";
-						echo $fileType."<br>";
+						echo "the target fie is : ".$targetFilePath."<br>";
+						echo "the file type is : ".$fileType."<br>";
             $image =$_FILES['imagefile']['tmp_name'];
 						echo "the image is : ".$image."<br>";
             $name = $_FILES['imagefile']['name'];
@@ -65,7 +65,7 @@ if(isset($_POST['addCoupon'])) {
 						}
 						$row = mysqli_fetch_assoc($result);
 						$busID = $row['user_id'];
-						
+
             	/*Query insert into db*/
             $sql = "INSERT INTO `coupon`( `busID`, `imageURL`, `counter`, `couponName`) VALUES('$busID','$imageURL','$counter','$couponName');";
             if($conn->query($sql) == false) {
