@@ -49,9 +49,13 @@ if(isset($_POST['addCoupon'])) {
 						// $url =$_POST['url'];
 						$counter=$_POST['counter'];
 						$busID =	$_SESSION['alogin'];
-						 $object = $bucket->upload(file_get_contents($image), [
-    				'name' => $objectName
-						 ]);
+						//  $object = $bucket->upload(file_get_contents($image), [
+    				// 'name' => $objectName
+						//  ]);
+						echo "the image is : ".$image."<br>";
+						echo "the coupon Name is : ".$couponName."<br>";
+						echo "the counter is : ".$counter."<br>";
+						echo "the business ID  is : ".$busID."<br>";
             	/*Query insert into db*/
             $sql = "INSERT INTO `coupon`( `busID`, `imageURL`, `counter`, `couponName`) VALUES('$busID','$imageURL','$counter','$couponName');";
             if($conn->query($sql) == false) {
