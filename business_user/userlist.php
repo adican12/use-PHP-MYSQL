@@ -532,7 +532,7 @@ chart.draw(data, options);
 
 $(document).ready(function(){
 	$("#show").click(function(){
-	 $("myDIV").show();
+	 $("myDIV").hide();
  });
 });
 </script>
