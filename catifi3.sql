@@ -117,12 +117,13 @@ create table if not exists `ap` (
 --
 
 create table if not exists `coupon` (
-  `couponID` int(11) NOT NULL,
+  `couponID` int(11) NOT NULL AUTO_INCREMENT,
   `busID` int(11) NOT NULL,
   `imageURL` varchar(255) NOT NULL,
   `counter` int(6) NOT NULL,
-  `couponName` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `couponName` varchar(255) NOT NULL,
+  PRIMARY KEY(`couponID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1;
 
 --
 -- Dumping data for table `coupon`

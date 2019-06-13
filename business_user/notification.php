@@ -42,13 +42,16 @@ if(isset($_POST['addCoupon'])) {
             // declare Variables
             $image =$_FILES['imagefile']['tmp_name'];
             $name = $_FILES['imagefile']['name'];
-            $imageURL = base64_encode(file_get_contents(addslashes($image)));
+             $imageURL = file_get_contents(addslashes($image));
 						$couponName=$_POST['couponName'];
 						// $url =$_POST['url'];
 						$counter=$_POST['counter'];
-						$id =	$_SESSION['id']+1;
+						$busID =	$_SESSION['alogin'];
+						$object = $bucket->upload(file_get_contents($image), [
+    				'name' => $objectName
+						]);
             	/*Query insert into db*/
-            $sql = "INSERT INTO `coupon`( `busID`, `imageURL`, `counter`, `couponName`) VALUES('$id','$imageURL','$counter','$couponName');";
+            $sql = "INSERT INTO `coupon`( `busID`, `imageURL`, `counter`, `couponName`) VALUES('$busID','$imageURL','$counter','$couponName');";
             if($conn->query($sql) == false) {
                     echo "<script>alert('Image Failed to upload')</script>";
                   } else {
