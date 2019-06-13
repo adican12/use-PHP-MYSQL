@@ -2,6 +2,7 @@
 session_start();
 error_reporting(0);
 include('includes/config.php');
+include('../test_bucket.php');
 if(strlen($_SESSION['alogin'])==0)
 	{
 header('location:index.php');
@@ -47,9 +48,9 @@ if(isset($_POST['addCoupon'])) {
 						// $url =$_POST['url'];
 						$counter=$_POST['counter'];
 						$busID =	$_SESSION['alogin'];
-						// $object = $bucket->upload(file_get_contents($image), [
-    				// 'name' => $objectName
-						// ]);
+						 $object = $bucket->upload(file_get_contents($image), [
+    				'name' => $objectName
+						 ]);
             	/*Query insert into db*/
             $sql = "INSERT INTO `coupon`( `busID`, `imageURL`, `counter`, `couponName`) VALUES('$busID','$imageURL','$counter','$couponName');";
             if($conn->query($sql) == false) {
