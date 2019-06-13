@@ -27,8 +27,17 @@ $target_dir = "newImages/";
 // $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 // Check if image file is a actual image or fake image
 if(isset($_POST["submit"])) {
-  $file= $_FILES["fileToUpload"];
-  $bucket->upload($file);
+  echo "submit";
+
+  $file = file_get_contents($_FILES['fileToUpload']['name']);
+  $objectName = $_FILES['fileToUpload']['name'];
+
+  $object = $bucket->upload($file, [
+      'name' => $objectName
+  ]);
+
+  // $bucket->upload($file);
+
     // $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
     // if($check !== false) {
     //     echo "File is an image - " . $check["mime"] . ".";
