@@ -250,7 +250,7 @@ button:active {
 
 
 						<h2 class="page-title">Knowledge of customers</h2>
-						 <button type="button"   class="btn btn-primary" onclick="myFunction()" > <i class="fa fa-search"></i>      Do you want to look for someone? </button>
+						 <button type="button"  id="show"class="btn btn-primary" onclick="myFunction()" > <i class="fa fa-search"></i>      Do you want to look for someone? </button>
 						<div id="myDIV">
 						<form method="post" class="form-horizontal" enctype="multipart/form-data">
 
@@ -529,6 +529,12 @@ function myFunction() {
   }
 }
 
+
+$(document).ready(function(){
+	$("#show").click(function(){
+	 $("myDIV").show();
+ });
+});
 </script>
 
 </body>
