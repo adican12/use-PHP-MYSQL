@@ -30,9 +30,9 @@ if(isset($_POST["submit"])) {
   // $target_file = $target_dir . basename($_FILES['fileToUpload']['name']);
 
   $file = file_get_contents($_FILES['fileToUpload']['name']);
-  $objectName = $_FILES['fileToUpload']['name'];
+  $objectName = $target_dir.$_FILES['fileToUpload']['name'];
 
-  $object = $bucket->upload($target_dir ,  $file, [
+  $object = $bucket->upload( $file, [
       'name' => $objectName
   ]);
   echo "<br>file uploaded successfully</br>";
