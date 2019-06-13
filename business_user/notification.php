@@ -48,7 +48,15 @@ if(isset($_POST['addCoupon'])) {
 						$couponName=$_POST['couponName'];
 						// $url =$_POST['url'];
 						$counter=$_POST['counter'];
-						$busID =	$_SESSION['alogin'];
+
+						$useremail =	$_SESSION['alogin'];
+						$sql = "SELECT user_id FROM users WHERE email = '$useremail';";
+						$result = $conn->query($sql);
+						if($result === false) {
+							echo "ERROR";
+						}
+						$row = mysqli_fetch_assoc($result);
+						$busID = $row['user_id'];
 						//  $object = $bucket->upload(file_get_contents($image), [
     				// 'name' => $objectName
 						//  ]);
