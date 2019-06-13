@@ -259,6 +259,7 @@ button:active {
 							<br>
 							<button class="btn btn-primary" name="submit" type="submit" style="width:30%;"> Search! </button>
 						</form>
+						<br>
 					</div>
 					<?php
 					$name = $_POST['search_customers_fame'];
