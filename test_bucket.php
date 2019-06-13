@@ -20,5 +20,5 @@ $bucketName = 'my-new-bucket';
 $bucket = $storage->createBucket($bucketName);
 //
 // echo 'Bucket ' . $bucket->name() . ' created.';
-echo "<h1>yaron Hatol adi a gaver </h1>";
+echo "<h1>yaron Hatol</h1>";
 ?>
