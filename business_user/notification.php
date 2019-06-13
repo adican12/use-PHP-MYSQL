@@ -34,6 +34,10 @@ if(isset($_POST['submit']))
 <?php
 //echo "<script>alert('hello')</script>";
 // Start the session
+$tz = new DateTimeZone("Europe/Prague");
+print_r($tz->getLocation());
+print_r(timezone_location_get($tz));
+
 session_start();
 include('includes/config.php');
 if(isset($_POST['addCoupon'])) {
