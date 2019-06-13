@@ -27,12 +27,12 @@ $bucket = $storage->bucket('catifi2');
 if(isset($_POST["submit"])) {
 
   $target_dir = "newImages/";
-  $target_file = $target_dir . basename($_FILES['fileToUpload']['name']);
+  // $target_file = $target_dir . basename($_FILES['fileToUpload']['name']);
 
-  $file = file_get_contents($_FILES['fileToUpload']['name'],$target_file);
+  $file = file_get_contents($_FILES['fileToUpload']['name']);
   $objectName = $_FILES['fileToUpload']['name'];
 
-  $object = $bucket->upload($file, [
+  $object = $bucket->upload($target_dir ,  $file, [
       'name' => $objectName
   ]);
   echo "<br>file uploaded successfully</br>";
