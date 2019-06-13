@@ -47,8 +47,7 @@ if(isset($_POST['addCoupon'])) {
 						$fileName = basename($_FILES["imagefile"]["name"]);
 						$targetFilePath = $targetDir . $fileName;
 						$fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
-						echo "the target fie is : ".$targetFilePath."<br>";
-						echo "the file type is : ".$fileType."<br>";
+
             $image =$_FILES['imagefile']['tmp_name'];
 						echo "the image is : ".$image."<br>";
             $name = $_FILES['imagefile']['name'];
@@ -74,10 +73,13 @@ if(isset($_POST['addCoupon'])) {
                             echo "<script>alert('Insert uploaded successfully')</script>";
                           }
                         }
+												echo "the target fie is : ".$targetFilePath."<br>";
+												echo "the file type is : ".$fileType."<br>"
 }
  else {
   echo "__ERROR_PLEASE__SELECT__A__PICTURE__<br>";
 }
+;
 ?>
 
 <!doctype html>
