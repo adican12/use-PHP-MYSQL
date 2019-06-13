@@ -89,7 +89,7 @@ if(isset($_POST['addCoupon'])) {
 						file_put_contents("gs://<catifi>/".$fileName, $gs_name, 0, $ctx);
 
 						// or move
-						$moveResult = move_uploaded_file($gs_name, 'gs://<bucketname>/'.$fileName);
+						$moveResult = move_uploaded_file($gs_name, 'gs://<catifi>/'.$fileName);
 
 
 
