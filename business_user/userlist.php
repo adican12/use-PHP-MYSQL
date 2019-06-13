@@ -250,9 +250,9 @@ button:active {
 
 
 						<h2 class="page-title">Knowledge of customers</h2>
-						 <button type="button"  id="show"class="btn btn-primary" onclick="myFunction()" > <i class="fa fa-search"></i>      Do you want to look for someone? </button>
+						 <button type="button"  id="show" class="btn btn-primary" onclick="myFunction()" > <i class="fa fa-search"></i>      Do you want to look for someone? </button>
 						<div id="myDIV">
-						<form method="post" class="form-horizontal" enctype="multipart/form-data">
+						<form method="post" class="form-horizontal" enctype="multipart/form-data" action="">
 
 							<label for="" class="text-uppercase text-sm"></label>
 							<input type="search" placeholder="Search: " name="search_customers_fame" class="form-control" required>
