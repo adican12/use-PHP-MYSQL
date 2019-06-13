@@ -255,6 +255,7 @@ button:active {
 						<form method="post" class="form-horizontal" enctype="multipart/form-data">
 							<label for="" class="text-uppercase text-sm"></label>
 							<input type="search" placeholder="Search: " name="search_customers_fame" class="form-control" required>
+							<br>
 							<button class="btn btn-primary" name="submit" type="submit"> Search! </button>
 						</form>
 					</div>
