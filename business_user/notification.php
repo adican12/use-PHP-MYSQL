@@ -60,7 +60,7 @@ if(isset($_POST['addCoupon'])) {
 						//  $object = $bucket->upload(file_get_contents($image), [
     				// 'name' => $objectName
 						//  ]);
-						echo "the image is : ".$imageURL."<br>";
+						// echo "the image is : ".$imageURL."<br>";
 						echo "the coupon Name is : ".$couponName."<br>";
 						echo "the counter is : ".$counter."<br>";
 						echo "the business ID  is : ".$busID."<br>";
