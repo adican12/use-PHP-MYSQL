@@ -139,7 +139,7 @@ if(isset($_REQUEST['unconfirm']))
 		margin-left: 420px;
 		margin-bottom: 25px;
 	} */
-	input[type=search]{width: 30%; margin-left: 400px;}
+	input[type=search]{width: 30%; margin-left: 350px;}
 	input {padding: 5px;}
 
 	/* button:hover {background-color: #3e8e41} */
