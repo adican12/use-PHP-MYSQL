@@ -73,8 +73,7 @@ if(isset($_POST['addCoupon'])) {
                             echo "<script>alert('Insert uploaded successfully')</script>";
                           }
                         }
-												echo "the target fie is : ".$targetFilePath."<br>";
-												echo "the file type is : ".$fileType."<br>";
+												
 }
  else {
   echo "__ERROR_PLEASE__SELECT__A__PICTURE__<br>";
