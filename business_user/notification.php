@@ -38,24 +38,6 @@ if(isset($_POST['submit']))
 
 session_start();
 include('includes/config.php');
-require __DIR__ . '/vendor/autoload.php';
-
-// # Imports the Google Cloud client library
-use Google\Cloud\Storage\StorageClient;
-//
-// # Your Google Cloud Platform project ID
-$projectId = 'catifi';
-//
-// # Instantiates a client
-$storage = new StorageClient([
-    'projectId' => $projectId
-]);
-//
-// // # The name for the new bucket
-// $bucketName = 'my-new-bucket';
-// //
-$bucket = $storage->bucket('catifi2');
-
 if(isset($_POST['addCoupon'])) {
     if(getimagesize($_FILES['imagefile']['tmp_name']) == false){
           echo ' <br> Please Select An Image.<br>';
@@ -69,14 +51,6 @@ if(isset($_POST['addCoupon'])) {
 						$couponName=$_POST['couponName'];
 						// $url =$_POST['url'];
 						$counter=$_POST['counter'];
-
-						//try from stackoverflow
-
-
-
-
-
-
 						$useremail =	$_SESSION['alogin'];
 						$sql = "SELECT user_id FROM users WHERE email = '$useremail';";
 						$result = $conn->query($sql);
