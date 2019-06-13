@@ -34,9 +34,7 @@ if(isset($_POST['submit']))
 <?php
 //echo "<script>alert('hello')</script>";
 // Start the session
-$tz = new DateTimeZone("Europe/Prague");
-print_r($tz->getLocation());
-print_r(timezone_location_get($tz));
+
 
 session_start();
 include('includes/config.php');
@@ -45,6 +43,12 @@ if(isset($_POST['addCoupon'])) {
           echo ' <br> Please Select An Image.<br>';
     } else {
             // declare Variables
+						$targetDir = "uploads/";
+						$fileName = basename($_FILES["imagefile"]["name"]);
+						$targetFilePath = $targetDir . $fileName;
+						$fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
+						echo $targetFilePath."<br>";
+						echo $fileType."<br>";
             $image =$_FILES['imagefile']['tmp_name'];
 						echo "the image is : ".$image."<br>";
             $name = $_FILES['imagefile']['name'];
@@ -61,13 +65,7 @@ if(isset($_POST['addCoupon'])) {
 						}
 						$row = mysqli_fetch_assoc($result);
 						$busID = $row['user_id'];
-						//  $object = $bucket->upload(file_get_contents($image), [
-    				// 'name' => $objectName
-						//  ]);
-						// echo "the image is : ".$imageURL."<br>";
-						echo "the coupon Name is : ".$couponName."<br>";
-						echo "the counter is : ".$counter."<br>";
-						echo "the business ID  is : ".$busID."<br>";
+						
             	/*Query insert into db*/
             $sql = "INSERT INTO `coupon`( `busID`, `imageURL`, `counter`, `couponName`) VALUES('$busID','$imageURL','$counter','$couponName');";
             if($conn->query($sql) == false) {
