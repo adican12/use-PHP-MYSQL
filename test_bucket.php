@@ -1,5 +1,5 @@
 <?php
-# Includes the autoloader for libraries installed with composer
+//# Includes the autoloader for libraries installed with composer
 require __DIR__ . '/vendor/autoload.php';
 
 // # Imports the Google Cloud client library
@@ -14,11 +14,11 @@ $storage = new StorageClient([
 ]);
 //
 // // # The name for the new bucket
-$bucketName = 'my-new-bucket';
+// $bucketName = 'my-new-bucket';
 // //
+$bucket = $storage->bucket('catifi2');
 // // # Creates the new bucket
-$bucket = $storage->createBucket($bucketName);
 //
-// echo 'Bucket ' . $bucket->name() . ' created.';
-echo "<h1>yaron Hatol</h1>";
+echo 'Bucket ' . $bucket->name() . ' created';
+echo "<h1>bucket succes</h1>";
 ?>
