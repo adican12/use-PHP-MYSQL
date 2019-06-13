@@ -530,11 +530,6 @@ chart.draw(data, options);
 // }
 
 
-$(document).ready(function(){
-	$("#show").click(function(){
-	 $("myDIV").hide();
- });
-});
 </script>
 
 </body>
