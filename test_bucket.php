@@ -19,16 +19,61 @@ $storage = new StorageClient([
 $bucket = $storage->bucket('catifi2');
 // // # Creates the new bucket
 //
-<<<<<<< HEAD
-echo 'Bucket ' . $bucket->name() . ' created';
-echo "<h1>bucket succes</h1>";
-=======
-<<<<<<< HEAD
-echo 'Bucket ' . $bucket->name() . ' created';
-echo "<h1>bucket succes</h1>";
-=======
-// echo 'Bucket ' . $bucket->name() . ' created.';
-echo "<h1>yaron Hatol adi a gaver </h1>";
->>>>>>> ef6570b3bc58db2a5747e96a717bef32e40683ce
->>>>>>> 7912d7a90fd35c419ae24dab70b477f4237dba61
+
+
+$target_dir = "newImages/";
+$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+$uploadOk = 1;
+$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+// Check if image file is a actual image or fake image
+if(isset($_POST["submit"])) {
+    $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+    if($check !== false) {
+        echo "File is an image - " . $check["mime"] . ".";
+        $uploadOk = 1;
+    } else {
+        echo "File is not an image.";
+        $uploadOk = 0;
+    }
+}
+// Check if file already exists
+if (file_exists($target_file)) {
+    echo "Sorry, file already exists.";
+    $uploadOk = 0;
+}
+// Check file size
+if ($_FILES["fileToUpload"]["size"] > 500000) {
+
+    echo "Sorry, your file is too large.";
+    $uploadOk = 0;
+}
+// Allow certain file formats
+if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+&& $imageFileType != "gif" ) {
+    echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+    $uploadOk = 0;
+}
+// Check if $uploadOk is set to 0 by an error
+if ($uploadOk == 0) {
+    echo "Sorry, your file was not uploaded.";
+// if everything is ok, try to upload file
+} else {
+    if ($bucket->upload(move_uploaded_file($_FILES["fileToUpload"]["tmp_name"])) {
+        echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
+    } else {
+        echo "Sorry, there was an error uploading your file.";
+    }
+}
 ?>
+
+<h1>bucket</h1>
+
+<form action="" method="post" enctype="multipart/form-data">
+  Select image to upload:
+  <input type="file" name="fileToUpload" id="fileToUpload">
+  <input type="submit" value="Upload Image" name="submit">
+</form>
+
+
+</body>
+</html>
