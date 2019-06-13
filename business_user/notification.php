@@ -38,15 +38,29 @@ if(isset($_POST['submit']))
 
 session_start();
 include('includes/config.php');
+require __DIR__ . '/vendor/autoload.php';
+
+// # Imports the Google Cloud client library
+use Google\Cloud\Storage\StorageClient;
+//
+// # Your Google Cloud Platform project ID
+$projectId = 'catifi';
+//
+// # Instantiates a client
+$storage = new StorageClient([
+    'projectId' => $projectId
+]);
+//
+// // # The name for the new bucket
+// $bucketName = 'my-new-bucket';
+// //
+$bucket = $storage->bucket('catifi2');
+
 if(isset($_POST['addCoupon'])) {
     if(getimagesize($_FILES['imagefile']['tmp_name']) == false){
           echo ' <br> Please Select An Image.<br>';
     } else {
             // declare Variables
-						$targetDir = "uploads/";
-						$fileName = basename($_FILES["imagefile"]["name"]);
-						$targetFilePath = $targetDir . $fileName;
-						$fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
 
             $image =$_FILES['imagefile']['tmp_name'];
 						echo "the image is : ".$image."<br>";
@@ -55,6 +69,9 @@ if(isset($_POST['addCoupon'])) {
 						$couponName=$_POST['couponName'];
 						// $url =$_POST['url'];
 						$counter=$_POST['counter'];
+						$bucket->upload(
+    													fopen($image, 'r')
+													);
 
 						$useremail =	$_SESSION['alogin'];
 						$sql = "SELECT user_id FROM users WHERE email = '$useremail';";
@@ -73,7 +90,7 @@ if(isset($_POST['addCoupon'])) {
                             echo "<script>alert('Insert uploaded successfully')</script>";
                           }
                         }
-												
+
 }
  else {
   echo "__ERROR_PLEASE__SELECT__A__PICTURE__<br>";
