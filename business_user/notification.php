@@ -1,6 +1,6 @@
 <?php
 echo "1<br>";
-require __DIR__ . '../vendor/autoload.php';
+require __DIR__ . '/../vendor/autoload.php';
 
 echo "2<br>";
 // # Imports the Google Cloud client library
