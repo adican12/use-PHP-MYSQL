@@ -38,6 +38,35 @@ if(isset($_POST["addCoupon"])) {
       'name' => $objectName
   ]);
   echo "<br>file uploaded successfully</br>";
+      $useremail =	$_SESSION['alogin'];
+       //get the the business ID Who creates the coupon
+       $sql = "SELECT user_id FROM users WHERE email = '$useremail';";
+       $result = $conn->query($sql);
+       if($result === false) {
+       	echo "ERROR";
+       }
+       $row = mysqli_fetch_assoc($result);
+// // declare Variables
+// check if image upload to bucket
+//get coupon name
+        $couponName=$_POST['couponName'];
+// // // get imageurl
+        $imageURL ='https://storage.googleapis.com/catifi2/newImages/'.$file;
+// //  // check the image url
+        echo "the image of the url is : ".$imageURL;
+// //  //get the counter of the coupon
+          $counter=$_POST['counter'];
+
+// // // the business ID
+            $busID = $row['user_id'];
+//
+//       /*Query insert into db*/
+        $sql = "INSERT INTO `coupon`( `busID`, `imageURL`, `counter`, `couponName`) VALUES('$busID','$imageURL','$counter','$couponName');";
+          if($conn->query($sql) == false) {
+              echo "<script>alert('Image Failed to upload')</script>";
+              } else {
+               echo "<script>alert('Insert uploaded successfully')</script>";
+               }
 
     // $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
     // if($check !== false) {
