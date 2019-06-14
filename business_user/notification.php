@@ -43,15 +43,8 @@ if(isset($_POST['addCoupon'])) {
     if(getimagesize($_FILES['imagefile']['tmp_name']) == false){
           echo ' <br> Please Select An Image.<br>';
     } else {
-			// # Your Google Cloud Platform project ID
-			$projectId = 'catifi';
-			//
-			// # Instantiates a client
-			$storage = new StorageClient([
-					'projectId' => $projectId
-			]);
-			$bucket = $storage->bucket('catifi2');
-			
+		
+
 			$target_dir = "coupon/";
 			// $target_file = $target_dir . basename($_FILES['fileToUpload']['name']);
 
