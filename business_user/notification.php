@@ -1,13 +1,19 @@
 <?php
+echo "1<br>";
+require __DIR__ . '/vendor/autoload.php';
+echo "2<br>";
+// # Imports the Google Cloud client library
+use Google\Cloud\Storage\StorageClient;
+echo "3<br>";
+
+//
+
 session_start();
 error_reporting(0);
 include('includes/config.php');
-require __DIR__ . '/vendor/autoload.php';
-
-// # Imports the Google Cloud client library
-use Google\Cloud\Storage\StorageClient;
-//
 // # Your Google Cloud Platform project ID
+echo "4<br>";
+
 $projectId = 'catifi';
 //
 // # Instantiates a client
@@ -16,6 +22,7 @@ $storage = new StorageClient([
 ]);
 
 $bucket = $storage->bucket('catifi2');
+echo "5<br>";
 
 if(strlen($_SESSION['alogin'])==0)
 	{
