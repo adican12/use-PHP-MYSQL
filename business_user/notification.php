@@ -50,7 +50,18 @@ if(isset($_POST['addCoupon'])) {
 			$storage = new StorageClient([
 					'projectId' => $projectId
 			]);
-							$bucket = $storage->bucket('catifi2');
+			$bucket = $storage->bucket('catifi2');
+			
+			$target_dir = "coupon/";
+			// $target_file = $target_dir . basename($_FILES['fileToUpload']['name']);
+
+			$file = file_get_contents($_FILES['imagefile']['name']);
+			$objectName = $target_dir.$_FILES['imagefile']['name'];
+
+			$object = $bucket->upload( $file, [
+					'name' => $objectName
+			]);
+
 							$useremail =	$_SESSION['alogin'];
 							// get the the business ID Who creates the coupon
 							$sql = "SELECT user_id FROM users WHERE email = '$useremail';";
@@ -62,15 +73,7 @@ if(isset($_POST['addCoupon'])) {
             // declare Variables
 
 						// upload image to bucket
-						$target_dir = "coupon/";
-					  // $target_file = $target_dir . basename($_FILES['fileToUpload']['name']);
 
-					  $file = file_get_contents($_FILES['imagefile']['name']);
-					  $objectName = $target_dir.$_FILES['imagefile']['name'];
-
-					  $object = $bucket->upload( $file, [
-					      'name' => $objectName
-					  ]);
 						// check if image upload to bucket
             echo "ok image upload to bucket";
 						// get coupon name
