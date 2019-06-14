@@ -43,18 +43,7 @@ if(isset($_POST['addCoupon'])) {
     if(getimagesize($_FILES['imagefile']['tmp_name']) == false){
           echo ' <br> Please Select An Image.<br>';
     } else {
-
-
-			$target_dir = "coupon/";
-			// $target_file = $target_dir . basename($_FILES['fileToUpload']['name']);
-
-			$file = file_get_contents($_FILES['imagefile']['name']);
-			$objectName = $target_dir.$_FILES['imagefile']['name'];
-
-			$object = $bucket->upload( $file, [
-					'name' => $objectName
-			]);
-				echo "we here";
+			
 							// $useremail =	$_SESSION['alogin'];
 							// // get the the business ID Who creates the coupon
 							// $sql = "SELECT user_id FROM users WHERE email = '$useremail';";
