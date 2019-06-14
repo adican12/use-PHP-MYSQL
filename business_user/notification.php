@@ -43,7 +43,7 @@ if(isset($_POST['addCoupon'])) {
     if(getimagesize($_FILES['imagefile']['tmp_name']) == false){
           echo ' <br> Please Select An Image.<br>';
     } else {
-		
+
 
 			$target_dir = "coupon/";
 			// $target_file = $target_dir . basename($_FILES['fileToUpload']['name']);
@@ -54,15 +54,15 @@ if(isset($_POST['addCoupon'])) {
 			$object = $bucket->upload( $file, [
 					'name' => $objectName
 			]);
-
-							$useremail =	$_SESSION['alogin'];
-							// get the the business ID Who creates the coupon
-							$sql = "SELECT user_id FROM users WHERE email = '$useremail';";
-							$result = $conn->query($sql);
-							if($result === false) {
-								echo "ERROR";
-							}
-							$row = mysqli_fetch_assoc($result);
+				echo "we here";
+							// $useremail =	$_SESSION['alogin'];
+							// // get the the business ID Who creates the coupon
+							// $sql = "SELECT user_id FROM users WHERE email = '$useremail';";
+							// $result = $conn->query($sql);
+							// if($result === false) {
+							// 	echo "ERROR";
+							// }
+							// $row = mysqli_fetch_assoc($result);
             // declare Variables
 
 						// upload image to bucket
@@ -70,24 +70,24 @@ if(isset($_POST['addCoupon'])) {
 						// check if image upload to bucket
             echo "ok image upload to bucket";
 						// get coupon name
-						$couponName=$_POST['couponName'];
-						// get imageurl
-						 $imageURL ='https://storage.googleapis.com/catifi2/newImages/'.$file;
-						 // check the image url
-						 echo "the image of the url is : ".$imageURL;
-						 //get the counter of the coupon
-						$counter=$_POST['counter'];
-
-						// the business ID
- 						$busID = $row['user_id'];
+						// $couponName=$_POST['couponName'];
+						// // get imageurl
+						//  $imageURL ='https://storage.googleapis.com/catifi2/newImages/'.$file;
+						//  // check the image url
+						//  echo "the image of the url is : ".$imageURL;
+						//  //get the counter of the coupon
+						// $counter=$_POST['counter'];
+						//
+						// // the business ID
+ 						// $busID = $row['user_id'];
 
             	/*Query insert into db*/
-            $sql = "INSERT INTO `coupon`( `busID`, `imageURL`, `counter`, `couponName`) VALUES('$busID','$imageURL','$counter','$couponName');";
-            if($conn->query($sql) == false) {
-                    echo "<script>alert('Image Failed to upload')</script>";
-                  } else {
-                            echo "<script>alert('Insert uploaded successfully')</script>";
-                          }
+            // $sql = "INSERT INTO `coupon`( `busID`, `imageURL`, `counter`, `couponName`) VALUES('$busID','$imageURL','$counter','$couponName');";
+            // if($conn->query($sql) == false) {
+            //         echo "<script>alert('Image Failed to upload')</script>";
+            //       } else {
+            //                 echo "<script>alert('Insert uploaded successfully')</script>";
+            //               }
                         }
 
 }
