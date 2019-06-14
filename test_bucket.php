@@ -38,40 +38,40 @@ if(isset($_POST["addCoupon"])) {
       'name' => $objectName
   ]);
   echo "<br>file uploaded successfully</br>";
-      $useremail =	$_SESSION['alogin'];
-       //get the the business ID Who creates the coupon
-       $sql = "SELECT user_id FROM users WHERE email = '$useremail';";
-       $result = $conn->query($sql);
-       if($result === false) {
-       	echo "ERROR";
-       }
-       $row = mysqli_fetch_assoc($result);
-// // declare Variables
-// check if image upload to bucket
-//get coupon name
-        $couponName=$_POST['couponName'];
-// // // get imageurl
-        $imageURL ='https://storage.googleapis.com/catifi2/coupon/'.$_FILES['imagefile']['name'];
-// //  // check the image url
-
-// //  //get the counter of the coupon
-          $counter=$_POST['counter'];
-
-// // // the business ID
-            // $busID = $row['user_id'];
-            $busID = 2;
-      // check all Variables if them ok
-      echo "the business id is  : ".$busID."<br>";
-      echo "the imageurl is : ".$imageURL;
-      echo "the counter is : ".$counter;
-      echo " the coupon name is : ".$couponName;
-//       /*Query insert into db*/
-        $sql = "INSERT INTO `coupon`( `busID`, `imageURL`, `counter`, `couponName`) VALUES('$busID','$imageURL','$counter','$couponName');";
-          if($conn->query($sql) === false) {
-              echo "<script>alert('Image Failed to upload')</script>";
-              } else {
-               echo "<script>alert('Insert uploaded successfully')</script>";
-               }
+//       $useremail =	$_SESSION['alogin'];
+//        //get the the business ID Who creates the coupon
+//        $sql = "SELECT user_id FROM users WHERE email = '$useremail';";
+//        $result = $conn->query($sql);
+//        if($result === false) {
+//        	echo "ERROR";
+//        }
+//        $row = mysqli_fetch_assoc($result);
+// // // declare Variables
+// // check if image upload to bucket
+// //get coupon name
+//         $couponName=$_POST['couponName'];
+// // // // get imageurl
+//         $imageURL ='https://storage.googleapis.com/catifi2/coupon/'.$_FILES['imagefile']['name'];
+// // //  // check the image url
+//
+// // //  //get the counter of the coupon
+//           $counter=$_POST['counter'];
+//
+// // // // the business ID
+//             // $busID = $row['user_id'];
+//             $busID = 2;
+//       // check all Variables if them ok
+//       echo "the business id is  : ".$busID."<br>";
+//       echo "the imageurl is : ".$imageURL;
+//       echo "the counter is : ".$counter;
+//       echo " the coupon name is : ".$couponName;
+// //       /*Query insert into db*/
+//         $sql = "INSERT INTO `coupon`( `busID`, `imageURL`, `counter`, `couponName`) VALUES('$busID','$imageURL','$counter','$couponName');";
+//           if($conn->query($sql) === false) {
+//               echo "<script>alert('Image Failed to upload')</script>";
+//               } else {
+//                echo "<script>alert('Insert uploaded successfully')</script>";
+//                }
 
     // $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
     // if($check !== false) {
@@ -120,8 +120,8 @@ if(isset($_POST["addCoupon"])) {
 
 <form action="" method="post" enctype="multipart/form-data">
   Select image to upload:
-  <input type="file" name="fileToUpload" id="fileToUpload">
-  <input type="submit" value="Upload Image" name="submit">
+  <input type="file" name="imagefile" id="fileToUpload">
+  <input type="submit" value="Upload Image" name="addCoupon">
 </form>
 </body>
 </html>
