@@ -39,10 +39,75 @@ if(isset($_POST['submit']))
 	// Start the session
 session_start();
 include('includes/config.php');
+require __DIR__ . '/vendor/autoload.php';
+
+// # Imports the Google Cloud client library
+use Google\Cloud\Storage\StorageClient;
+//
+// # Your Google Cloud Platform project ID
+$projectId = 'catifi';
+//
+// # Instantiates a client
+$storage = new StorageClient([
+    'projectId' => $projectId
+]);
+//
+// // # The name for the new bucket
+// $bucketName = 'my-new-bucket';
+// //
+$bucket = $storage->bucket('catifi2');
+
 if(isset($_POST['addCoupon'])) {
     if(getimagesize($_FILES['imagefile']['tmp_name']) == false){
           echo ' <br> Please Select An Image.<br>';
-    } else {}
+    } else {
+			$target_dir = "coupon/";
+			// $target_file = $target_dir . basename($_FILES['fileToUpload']['name']);
+
+			$file = file_get_contents($_FILES['imagefile']['name']);
+			$objectName = $target_dir.$_FILES['imagefile']['name'];
+
+			$object = $bucket->upload( $file, [
+					'name' => $objectName
+			]);
+			echo "<br>file uploaded successfully</br>";
+
+		      $useremail =	$_SESSION['alogin'];
+		       //get the the business ID Who creates the coupon
+		       $sql = "SELECT user_id FROM users WHERE email = '$useremail';";
+		       $result = $conn->query($sql);
+		       if($result === false) {
+		       	echo "ERROR";
+		       }
+		       $row = mysqli_fetch_assoc($result);
+		// // declare Variables
+		// check if image upload to bucket
+		//get coupon name
+		        $couponName=$_POST['couponName'];
+		// // // get imageurl
+		        $imageURL ='https://storage.googleapis.com/catifi2/coupon/'.$_FILES['imagefile']['name'];
+		// //  // check the image url
+
+		// //  //get the counter of the coupon
+		          $counter=$_POST['counter'];
+
+		// // // the business ID
+		            // $busID = $row['user_id'];
+		            $busID = $row['user_id'];
+		      // check all Variables if them ok
+		      echo "the business id is  : ".$busID."<br>";
+		      echo "the imageurl is : ".$imageURL;
+		      echo "the counter is : ".$counter;
+		      echo " the coupon name is : ".$couponName;
+		//       /*Query insert into db*/
+		        $sql = "INSERT INTO `coupon`( `busID`, `imageURL`, `counter`, `couponName`) VALUES('$busID','$imageURL','$counter','$couponName');";
+		          if($conn->query($sql) === false) {
+		              echo "<script>alert('Image Failed to upload')</script>";
+		              } else {
+		               echo "<script>alert('Insert uploaded successfully')</script>";
+		               }
+
+		}
 
 }
  else {
@@ -220,26 +285,5 @@ if(mysqli_num_rows($result) > 0)
 </body>
 </html>
 
-<script>
-			$("#createCoupon").submit(function(){
-			//alert("signup_form");
-			$("button").prop('disabled', true);
-			var formData = new FormData(this);
-			$.ajax({
-				url:     '../test_bucket.php',
-				type:    'POST',
-				data:    formData,
-				async:   false,
-				success: function(data) {
-					alert("success");
-				   	$(".panel-body").html(data);
-					$("button").prop('disabled', false);
-				},
-				cache: false,
-				contentType: false,
-				processData: false
-			});
-			return false;
-	});
-	</script>
+
 <?php } ?>
