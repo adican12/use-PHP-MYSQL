@@ -33,15 +33,24 @@ if(isset($_POST['submit']))
 ?>
 <?php
 //echo "<script>alert('hello')</script>";
-// Start the session
-
-
+	// # Imports the Google Cloud client library
+	require __DIR__ . '/vendor/autoload.php';
+	use Google\Cloud\Storage\StorageClient;
+	// Start the session
 session_start();
 include('includes/config.php');
 if(isset($_POST['addCoupon'])) {
     if(getimagesize($_FILES['imagefile']['tmp_name']) == false){
           echo ' <br> Please Select An Image.<br>';
     } else {
+			// # Your Google Cloud Platform project ID
+			$projectId = 'catifi';
+			//
+			// # Instantiates a client
+			$storage = new StorageClient([
+					'projectId' => $projectId
+			]);
+							$bucket = $storage->bucket('catifi2');
 							$useremail =	$_SESSION['alogin'];
 							// get the the business ID Who creates the coupon
 							$sql = "SELECT user_id FROM users WHERE email = '$useremail';";
