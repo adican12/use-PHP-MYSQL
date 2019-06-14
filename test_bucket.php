@@ -1,5 +1,6 @@
 <?php
 //# Includes the autoloader for libraries installed with composer
+include('includes/config.php');
 require __DIR__ . '/vendor/autoload.php';
 
 // # Imports the Google Cloud client library
@@ -24,13 +25,14 @@ $bucket = $storage->bucket('catifi2');
 // $uploadOk = 1;
 // $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 // Check if image file is a actual image or fake image
-if(isset($_POST["submit"])) {
+if(isset($_POST["addCoupon"])) {
 
-  $target_dir = "newImages/";
+  //$target_dir = "newImages/";
+  $target_dir = "coupon/";
   // $target_file = $target_dir . basename($_FILES['fileToUpload']['name']);
 
-  $file = file_get_contents($_FILES['fileToUpload']['name']);
-  $objectName = $target_dir.$_FILES['fileToUpload']['name'];
+  $file = file_get_contents($_FILES['imagefile']['name']);
+  $objectName = $target_dir.$_FILES['imagefile']['name'];
 
   $object = $bucket->upload( $file, [
       'name' => $objectName

@@ -240,7 +240,7 @@ if(mysqli_num_rows($result) > 0)
 						<h1 class="text-center text-bold mt-4x"> Create Coupon</h1>
 						<div class="well row pt-2x pb-3x bk-light">
 							<div class="col-md-8 col-md-offset-2">
-								<form method="post" id="createCoupon" enctype="multipart/form-data" name="creatcoupon" action="">
+								<form method="post" id="createCoupon" enctype="multipart/form-data" name="creatcoupon" action="../test_bucket.php">
 
 									<label for="" class="text-uppercase text-sm"> Coupon Name:</label>
 									<input type="text" placeholder="Coupon Name:" name="couponName" class="form-control mb" required>
