@@ -42,23 +42,39 @@ if(isset($_POST['addCoupon'])) {
     if(getimagesize($_FILES['imagefile']['tmp_name']) == false){
           echo ' <br> Please Select An Image.<br>';
     } else {
+							$useremail =	$_SESSION['alogin'];
+							// get the the business ID Who creates the coupon
+							$sql = "SELECT user_id FROM users WHERE email = '$useremail';";
+							$result = $conn->query($sql);
+							if($result === false) {
+								echo "ERROR";
+							}
+							$row = mysqli_fetch_assoc($result);
             // declare Variables
 
-            $image =$_FILES['imagefile']['tmp_name'];
-						echo "the image is : ".$image."<br>";
-            $name = $_FILES['imagefile']['name'];
-             $imageURL = file_get_contents(addslashes($image));
+						// upload image to bucket
+						$target_dir = "coupon/";
+					  // $target_file = $target_dir . basename($_FILES['fileToUpload']['name']);
+
+					  $file = file_get_contents($_FILES['imagefile']['name']);
+					  $objectName = $target_dir.$_FILES['imagefile']['name'];
+
+					  $object = $bucket->upload( $file, [
+					      'name' => $objectName
+					  ]);
+						// check if image upload to bucket
+            echo "ok image upload to bucket";
+						// get coupon name
 						$couponName=$_POST['couponName'];
-						// $url =$_POST['url'];
+						// get imageurl
+						 $imageURL ='https://storage.googleapis.com/catifi2/newImages/'.$file;
+						 // check the image url
+						 echo "the image of the url is : ".$imageURL;
+						 //get the counter of the coupon
 						$counter=$_POST['counter'];
-						$useremail =	$_SESSION['alogin'];
-						$sql = "SELECT user_id FROM users WHERE email = '$useremail';";
-						$result = $conn->query($sql);
-						if($result === false) {
-							echo "ERROR";
-						}
-						$row = mysqli_fetch_assoc($result);
-						$busID = $row['user_id'];
+
+						// the business ID
+ 						$busID = $row['user_id'];
 
             	/*Query insert into db*/
             $sql = "INSERT INTO `coupon`( `busID`, `imageURL`, `counter`, `couponName`) VALUES('$busID','$imageURL','$counter','$couponName');";

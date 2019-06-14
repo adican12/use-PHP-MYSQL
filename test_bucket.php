@@ -26,15 +26,7 @@ $bucket = $storage->bucket('catifi2');
 // Check if image file is a actual image or fake image
 if(isset($_POST["submit"])) {
 
-  $target_dir = "newImages/";
-  // $target_file = $target_dir . basename($_FILES['fileToUpload']['name']);
 
-  $file = file_get_contents($_FILES['fileToUpload']['name']);
-  $objectName = $target_dir.$_FILES['fileToUpload']['name'];
-
-  $object = $bucket->upload( $file, [
-      'name' => $objectName
-  ]);
   echo "<br>file uploaded successfully</br>";
 
     // $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
