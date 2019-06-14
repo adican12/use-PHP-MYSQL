@@ -1,5 +1,7 @@
 ﻿<?php
 
+require __DIR__ . '/vendor/autoload.php';
+use Google\Cloud\Storage\StorageClient;
 // echo "<br>welcome congif!<br>";
 
 $servername = "localhost";

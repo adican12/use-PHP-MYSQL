@@ -34,8 +34,7 @@ if(isset($_POST['submit']))
 <?php
 //echo "<script>alert('hello')</script>";
 	// # Imports the Google Cloud client library
-	require __DIR__ . '/vendor/autoload.php';
-	use Google\Cloud\Storage\StorageClient;
+
 	//
 	// Start the session
 session_start();
