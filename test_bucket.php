@@ -31,10 +31,10 @@ if(isset($_POST["addCoupon"])) {
   $target_dir = "coupon/";
   // $target_file = $target_dir . basename($_FILES['fileToUpload']['name']);
 
-  $file = file_get_contents($_FILES['imagefile']['name']);
+  $file = file_get_contents($_FILES['imagefile']['tmp_name']);
   // $objectName = $target_dir.$_FILES['imagefile']['name'];
   $objectName = $_FILES['imagefile']['name'];
-  echo "objectName:  $objectName.name";
+  echo "file name : $file";
   $object = $bucket->upload( $file, [
       'name' => $objectName
   ]);
