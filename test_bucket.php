@@ -53,16 +53,20 @@ if(isset($_POST["addCoupon"])) {
 // // // get imageurl
         $imageURL ='https://storage.googleapis.com/catifi2/newImages/'.$_FILES['imagefile']['name'];
 // //  // check the image url
-        echo "the image of the url is : ".$imageURL;
+
 // //  //get the counter of the coupon
           $counter=$_POST['counter'];
 
 // // // the business ID
             $busID = $row['user_id'];
-//
+      // check all Variables if them ok
+      echo "the business id is  : ".$busID."<br>";
+      echo "the imageurl is : ".$imageURL;
+      echo "the counter is : ".$counter;
+      echo " the coupon name is : ".$couponName;
 //       /*Query insert into db*/
         $sql = "INSERT INTO `coupon`( `busID`, `imageURL`, `counter`, `couponName`) VALUES('$busID','$imageURL','$counter','$couponName');";
-          if($conn->query($sql) == false) {
+          if($conn->query($sql) === false) {
               echo "<script>alert('Image Failed to upload')</script>";
               } else {
                echo "<script>alert('Insert uploaded successfully')</script>";
