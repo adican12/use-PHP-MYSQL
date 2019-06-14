@@ -1,19 +1,14 @@
 <?php
-echo "1<br>";
 require __DIR__ . '/../vendor/autoload.php';
 
-echo "2<br>";
 // # Imports the Google Cloud client library
 use Google\Cloud\Storage\StorageClient;
-echo "3<br>";
-
 //
 
 session_start();
 error_reporting(0);
 include('includes/config.php');
 // # Your Google Cloud Platform project ID
-echo "4<br>";
 
 $projectId = 'catifi';
 //
@@ -23,7 +18,6 @@ $storage = new StorageClient([
 ]);
 
 $bucket = $storage->bucket('catifi2');
-echo "5<br>";
 
 if(strlen($_SESSION['alogin'])==0)
 	{
@@ -66,9 +60,9 @@ if(isset($_POST['submit']))
 // //
 
 if(isset($_POST['addCoupon'])) {
-    if(getimagesize($_FILES['imagefile']['tmp_name']) == false){
-          echo ' <br> Please Select An Image.<br>';
-    } else {
+    // if(getimagesize($_FILES['imagefile']['tmp_name']) == false){
+    //       echo ' <br> Please Select An Image.<br>';
+    // } else {
 			$target_dir = "coupon/";
 			// $target_file = $target_dir . basename($_FILES['fileToUpload']['name']);
 
@@ -116,7 +110,7 @@ if(isset($_POST['addCoupon'])) {
 		               echo "<script>alert('Insert uploaded successfully')</script>";
 		               }
 
-		}
+		// }
 
 }
  else {
