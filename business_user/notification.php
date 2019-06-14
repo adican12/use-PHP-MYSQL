@@ -74,15 +74,15 @@ if(isset($_POST['addCoupon'])) {
 			]);
 			echo "<br>file uploaded successfully</br>";
 
-	      $useremail =	$_SESSION['alogin'];
-				echo "useremail: $useremail";
-	       //get the the business ID Who creates the coupon
-	       $sql = "SELECT user_id FROM users WHERE email = '$useremail';";
-	       $result = $conn->query($sql);
-	       if($result === false) {
-	       	echo "ERROR";
-	       }
-	       $row = mysqli_fetch_assoc($result);
+      $useremail =	$_SESSION['alogin'];
+			echo "useremail: $useremail";
+       //get the the business ID Who creates the coupon
+       $sql = "SELECT user_id FROM users WHERE email = '$useremail';";
+       $result = $conn->query($sql);
+       if($result === false) {
+       	echo "ERROR";
+       }
+       $row = mysqli_fetch_assoc($result);
 	// // declare Variables
 	// check if image upload to bucket
 	//get coupon name
