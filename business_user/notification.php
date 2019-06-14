@@ -2,6 +2,20 @@
 session_start();
 error_reporting(0);
 include('includes/config.php');
+require __DIR__ . '/vendor/autoload.php';
+
+// # Imports the Google Cloud client library
+use Google\Cloud\Storage\StorageClient;
+//
+// # Your Google Cloud Platform project ID
+$projectId = 'catifi';
+//
+// # Instantiates a client
+$storage = new StorageClient([
+    'projectId' => $projectId
+]);
+
+$bucket = $storage->bucket('catifi2');
 
 if(strlen($_SESSION['alogin'])==0)
 	{
@@ -30,32 +44,18 @@ if(isset($_POST['submit']))
 	// $query->execute();
 	$msg="Information Updated Successfully";
 }
-?>
-<?php
+
 //echo "<script>alert('hello')</script>";
 	// # Imports the Google Cloud client library
 
 	//
 	// Start the session
-session_start();
-include('includes/config.php');
-require __DIR__ . '/vendor/autoload.php';
-
-// # Imports the Google Cloud client library
-use Google\Cloud\Storage\StorageClient;
-//
-// # Your Google Cloud Platform project ID
-$projectId = 'catifi';
-//
-// # Instantiates a client
-$storage = new StorageClient([
-    'projectId' => $projectId
-]);
+// session_start();
+// include('includes/config.php');
 //
 // // # The name for the new bucket
 // $bucketName = 'my-new-bucket';
 // //
-$bucket = $storage->bucket('catifi2');
 
 if(isset($_POST['addCoupon'])) {
     if(getimagesize($_FILES['imagefile']['tmp_name']) == false){
@@ -72,29 +72,30 @@ if(isset($_POST['addCoupon'])) {
 			]);
 			echo "<br>file uploaded successfully</br>";
 
-		      $useremail =	$_SESSION['alogin'];
-		       //get the the business ID Who creates the coupon
-		       $sql = "SELECT user_id FROM users WHERE email = '$useremail';";
-		       $result = $conn->query($sql);
-		       if($result === false) {
-		       	echo "ERROR";
-		       }
-		       $row = mysqli_fetch_assoc($result);
-		// // declare Variables
-		// check if image upload to bucket
-		//get coupon name
-		        $couponName=$_POST['couponName'];
-		// // // get imageurl
-		        $imageURL ='https://storage.googleapis.com/catifi2/coupon/'.$_FILES['imagefile']['name'];
-		// //  // check the image url
+	      $useremail =	$_SESSION['alogin'];
+				echo "useremail: $useremail";
+	       //get the the business ID Who creates the coupon
+	       $sql = "SELECT user_id FROM users WHERE email = '$useremail';";
+	       $result = $conn->query($sql);
+	       if($result === false) {
+	       	echo "ERROR";
+	       }
+	       $row = mysqli_fetch_assoc($result);
+	// // declare Variables
+	// check if image upload to bucket
+	//get coupon name
+	        $couponName=$_POST['couponName'];
+	// // // get imageurl
+	        $imageURL ='https://storage.googleapis.com/catifi2/coupon/'.$_FILES['imagefile']['name'];
+	// //  // check the image url
 
-		// //  //get the counter of the coupon
-		          $counter=$_POST['counter'];
+	// //  //get the counter of the coupon
+          $counter=$_POST['counter'];
 
-		// // // the business ID
-		            // $busID = $row['user_id'];
-		            $busID = $row['user_id'];
-		      // check all Variables if them ok
+// // // the business ID
+            // $busID = $row['user_id'];
+            $busID = $row['user_id'];
+ 		      // check all Variables if them ok
 		      echo "the business id is  : ".$busID."<br>";
 		      echo "the imageurl is : ".$imageURL;
 		      echo "the counter is : ".$counter;
