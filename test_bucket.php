@@ -34,7 +34,7 @@ if(isset($_POST["addCoupon"])) {
   $file = file_get_contents($_FILES['imagefile']['tmp_name']);
   // $objectName = $target_dir.$_FILES['imagefile']['name'];
   $objectName = $_FILES['imagefile']['name'];
-  echo "file name : $file";
+  
   $object = $bucket->upload( $file, [
       'name' => $objectName
   ]);
