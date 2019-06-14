@@ -58,7 +58,8 @@ if(isset($_POST["addCoupon"])) {
           $counter=$_POST['counter'];
 
 // // // the business ID
-            $busID = $row['user_id'];
+            // $busID = $row['user_id'];
+            $busID = 2;
       // check all Variables if them ok
       echo "the business id is  : ".$busID."<br>";
       echo "the imageurl is : ".$imageURL;
