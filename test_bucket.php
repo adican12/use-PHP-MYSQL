@@ -51,7 +51,7 @@ if(isset($_POST["addCoupon"])) {
 //get coupon name
         $couponName=$_POST['couponName'];
 // // // get imageurl
-        $imageURL ='https://storage.googleapis.com/catifi2/newImages/'.$file;
+        $imageURL ='https://storage.googleapis.com/catifi2/newImages/'.$_FILES['imagefile']['name'];
 // //  // check the image url
         echo "the image of the url is : ".$imageURL;
 // //  //get the counter of the coupon
