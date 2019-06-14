@@ -113,9 +113,9 @@ if(isset($_POST['addCoupon'])) {
 		// }
 
 }
- else {
-  echo "__ERROR_PLEASE__SELECT__A__PICTURE__<br>";
-}
+//  else {
+//   echo "__ERROR_PLEASE__SELECT__A__PICTURE__<br>";
+// }
 
 ?>
 
