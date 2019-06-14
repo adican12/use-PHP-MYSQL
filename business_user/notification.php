@@ -232,7 +232,7 @@ if(mysqli_num_rows($result) > 0)
 				async:   false,
 				success: function(data) {
 					alert("success");
-				   	// $(".panel-body").html(data);
+				   	$(".panel-body").html(data);
 					$("button").prop('disabled', false);
 				},
 				cache: false,
