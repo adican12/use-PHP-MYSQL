@@ -162,9 +162,9 @@ if(isset($_REQUEST['unconfirm']))
                                                 <th>Email</th>
                                                 <th>Gender</th>
                                                 <th>Phone</th>
-                                                <th>Designation</th>
-                                                <th>Account</th>
-											<th>Action</th>
+                                                <th>Birthday</th>
+                                                <th>Category</th>
+
 										</tr>
 								</thead>
 							<tbody>
@@ -207,7 +207,8 @@ if(mysqli_num_rows($result) > 0)
                       <td><?php echo $row['email'];?></td>
                       <td><?php echo $row['gender'];?></td>
                       <td><?php echo $row['mobile'];?></td>
-                      <td><?php echo $row['designation'] ;?>
+                      <td><?php echo $row['birthday'] ;?></td>
+											<td><?php echo $row['user_category'] ;?>
                       <td>
 
                                             <?php if($row['status'] == 1)
