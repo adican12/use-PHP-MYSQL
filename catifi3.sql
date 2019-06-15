@@ -164,18 +164,23 @@ create table if not exists `ad` (
 --
 
 create table if not exists `campaign` (
-  `campaignID` int(11) NOT NULL,
+  `campaignID` int(11) NOT NULL AUTO_INCREMENT,
   `campaignName` varchar(50) NOT NULL,
   `adID` int(11) NOT NULL,
   `gender` varchar(50) NOT NULL,
   `ageMin` int(6) NOT NULL,
   `ageMax` int(6) NOT NULL,
   `budget` float NOT NULL,
-  `category` varchar(50) NOT NULL,
+  `category` varchar(255) NOT NULL,
   `stratingDate` date DEFAULT NULL,
   `endDate` date DEFAULT NULL,
-  `locationID` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `locationID` int(11) NOT NULL,
+  PRIMARY KEY(`campaignID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT =1;
+
+INSERT INTO `campaign`(`campaignName`, `adID`, `gender`, `ageMin`, `ageMax`, `budget`, `category`, `stratingDate`, `endDate`, `locationID`) VALUES 
+('Castro spring',11,'Male',20,40,500,'Clothing','2019-06-03','2019-07-05',1),
+('be',2,'Famle',20,60,800,'Safety and health','2019-06-03','2019-07-05',2);
 
 --
 --
