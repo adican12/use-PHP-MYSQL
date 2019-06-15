@@ -93,6 +93,7 @@ else{
 
 <?php
 $email = $_SESSION['alogin'];
+echo "the email is : ".$email."<br>";
 $sql = "SELECT user_id FROM users WHERE email = '$email'";
 $result = $conn->query($sql);
 if($result === false) {
