@@ -103,13 +103,13 @@ $row =mysqli_fetch_assoc($result);
 $row_two = $row['user_id'];
 echo "the user_id is : ".$row_tow."<br>";
 
-$sql = "SELECT adID FROM ad WHERE advID ='$row_tow' ";
+$sql = "SELECT MAX(adID) FROM ad WHERE advID ='$row_tow' ";
 $result = $conn->query($sql);
 if($result === false) {
 	echo "error";
 }
-while($row = mysqli_fetch_assoc($result)){
-$temp = $row['adID'];
+$row = mysqli_fetch_assoc($result)
+$temp = $row['MAX(adID)'];
 echo "the adID is : ".$temp."<br>";
 
 $sql = "SELECT * FROM campaign WHERE adID ='$temp' ";
@@ -119,7 +119,7 @@ if($result === false)
    user_error("Query failed: ".$conn->error."<br />$sql");
    echo "false";
 }
-}
+
 //
 // $sql = "SELECT * from  deleteduser";
 // $query = $dbh -> prepare($sql);
