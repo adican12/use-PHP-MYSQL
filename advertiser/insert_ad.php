@@ -71,7 +71,7 @@ $bucket = $storage->bucket('catifi2');
 
 							$imageURL ='https://storage.googleapis.com/catifi2/newImages/'.$_FILES['imagefile']['name'];
 
-$sql = "INSERT INTO `ad`(`description`,`price`,`title`,`advID`,`image`,`matcch_per`)
+$sql = "INSERT INTO `ad`(`description`,`price`,`title`,`advID`,`image`,`match_per`)
 VALUES('$description','$price','$title','$advID','$imageURL','$match_per');";
 
 if ($conn->query($sql) === TRUE) {
