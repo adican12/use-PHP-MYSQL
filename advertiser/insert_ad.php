@@ -54,10 +54,13 @@ $bucket = $storage->bucket('catifi2');
 						$row = mysqli_fetch_assoc($results);
 						$advID = $row['user_id'];
 
+						//match_per = 0 , Will change in the future
+						$match_per = 0;
+
 
 
 						echo "we here";
-						$traget_dir = 'newImages/';
+						$target_dir = 'newImages/';
 
 						$file = file_get_contents($_FILES['imagefile']['tmp_name']);
 						$objectName = $target_dir.$_FILES['imagefile']['name'];
@@ -68,8 +71,8 @@ $bucket = $storage->bucket('catifi2');
 
 							$imageURL ='https://storage.googleapis.com/catifi2/newImages/'.$_FILES['imagefile']['name'];
 
-$sql = "INSERT INTO `ad`(`description`,`price`,`title`,`advID`,`image`)
-VALUES('$description','$price','$title','$advID','$imageURL');";
+$sql = "INSERT INTO `ad`(`description`,`price`,`title`,`advID`,`image`,`matcch_per`)
+VALUES('$description','$price','$title','$advID','$imageURL','$match_per');";
 
 if ($conn->query($sql) === TRUE) {
     //echo "New record $text user  created successfully";

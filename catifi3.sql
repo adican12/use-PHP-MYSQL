@@ -131,7 +131,7 @@ create table if not exists `coupon` (
 --
 -- Table structure for table `ad`
 --
-
+/*---------------BEFRO CHANGES--------------*/
 create table if not exists `ad` (
   `adID` int(11) NOT NULL,
   `description` varchar(255) NOT NULL,
@@ -139,9 +139,23 @@ create table if not exists `ad` (
   `title` varchar(255) NOT NULL,
   `advID` int(11) NOT NULL,
   `image` varchar(255) NOT NULL,
-  `match_per` float NOT NULL
+  `match_per` float NOT NULL,
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+/*---------------AFTER  CHANGES--------------*/
+
+/*
+create table if not exists `ad` (
+  `adID` int(11) NOT NULL AUTO_INCREMENT,
+  `description` varchar(255) NOT NULL,
+  `price` float NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `advID` int(11) NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `match_per` float NOT NULL,
+  PRIMARY KEY(`adID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT = 1;
+*/
 --
 -- Dumping data for table `ad`
 --
