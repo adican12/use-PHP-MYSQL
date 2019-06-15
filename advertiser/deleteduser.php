@@ -103,7 +103,7 @@ if($result === false) {
 $row =mysqli_fetch_assoc($result);
 echo "the user_id is form row: ".$row['user_id']."<br>";
 $row_two = $row['user_id'];
-echo "the user_id is : ".$row_tow."<br>";
+echo "the user_id is : ".$row_two."<br>";
 
 $sql = "SELECT MAX(adID) FROM ad WHERE advID ='$row_tow' ";
 $result = $conn->query($sql);
