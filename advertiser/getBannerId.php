@@ -2,7 +2,7 @@
 include('includes/config.php');
 $email = $_POST['email'];
 echo "the email is :" .$email."<br>";
-$sql = "SELECT MAX(user_id),email FROM ad,users WHERE email='$email'; ";
+$sql = "SELECT MAX(users.user_id,ad.advID),email FROM ad,users WHERE email='$email'; ";
 $result = $conn->query($sql);
 if($result === false)
 {
