@@ -336,7 +336,7 @@ if(mysqli_num_rows($result) > 0)
 		 echo "false";
 	}
 	$row1=mysqli_fetch_assoc($result);
-	$row2 = ['user_id'];
+	$row2 = $row1['user_id'];
 	$sql = "SELECT MAX(adID) FROM ad WHERE advID ='$row2'; ";
 	$new_result = $conn->query($sql);
 	if($new_result === false) {
