@@ -19,8 +19,8 @@ if(isset($_POST['submit']))
 	$target_dir = "user/";
 	// $target_file = $target_dir . basename($_FILES['fileToUpload']['name']);
 
-	$file = file_get_contents($_FILES['uploadfile"']['tmp_name']);
-	$objectName = $target_dir.$_FILES['uploadfile"']['name'];
+	$file = file_get_contents($_FILES['uploadfile']['tmp_name']);
+	$objectName = $target_dir.$_FILES['uploadfile']['name'];
 
 	$object = $bucket->upload( $file, [
 			'name' => $objectName
