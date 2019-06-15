@@ -53,7 +53,7 @@ else{
 	<script src="js/fileinput.js"></script>
 	<script src="js/chartData.js"></script>
 	<script src="js/main.js"></script>
-	
+
 
 </head>
 
@@ -92,11 +92,26 @@ else{
 									<tbody>
 
 <?php
-
-$sql = "SELECT * FROM campaign WHERE campaignID BETWEEN 10 and 22";
-
+$email = $_SESSION['alogin'];
+$sql = "SELECT user_id FROM users WHERE email = '$email'";
 $result = $conn->query($sql);
-if($results12 === false)
+if($result === false) {
+	echo "error";
+}
+$row =mysqli_fetch_assoc($result);
+$row_two = $row['user_id'];
+
+$sql = "SELECT adID FROM ad WHERE advID ='$row_tow' ";
+$result = $conn->query($sql);
+if($result === false) {
+	echo "error";
+}
+$row = mysqli_fetch_assoc($result);
+$temp = $row['adID'];
+
+$sql = "SELECT * FROM campaign WHERE adID ='$temp' ";
+$result = $conn->query($sql);
+if($result === false)
 {
    user_error("Query failed: ".$conn->error."<br />$sql");
    echo "false";
