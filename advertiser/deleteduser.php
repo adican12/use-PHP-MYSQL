@@ -94,16 +94,14 @@ else{
 <?php
 
 $email = $_SESSION['alogin'];
-echo "the email is : ".$email."<br>";
 $sql = "SELECT user_id FROM users WHERE email = '$email';";
 $result = $conn->query($sql);
 if($result === false) {
 	echo "error";
 }
 $row =mysqli_fetch_assoc($result);
-echo "the user_id is form row: ".$row['user_id']."<br>";
 $row_two = $row['user_id'];
-echo "the user_id is : ".$row_two."<br>";
+
 
 $sql = "SELECT MAX(adID) FROM ad WHERE advID ='$row_two' ";
 $result = $conn->query($sql);
@@ -112,7 +110,7 @@ if($result === false) {
 }
 $row = mysqli_fetch_assoc($result);
 $temp = $row['MAX(adID)'];
-echo "the adID is : ".$temp."<br>";
+
 
 $sql = "SELECT * FROM campaign WHERE adID ='$temp' ";
 $result = $conn->query($sql);
