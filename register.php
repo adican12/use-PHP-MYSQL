@@ -21,6 +21,7 @@ if(isset($_POST['submit']))
 
 	$file = file_get_contents($_FILES['uploadfile']['tmp_name']);
 	$objectName = $target_dir.$_FILES['uploadfile']['name'];
+	echo "objectName: ".$object."<br>";
 
 	$object = $bucket->upload( $file, [
 			'name' => $objectName
