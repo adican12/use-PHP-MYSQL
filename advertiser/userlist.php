@@ -129,26 +129,8 @@ if(isset($_REQUEST['unconfirm']))
 	<link rel="stylesheet" href="css/awesome-bootstrap-checkbox.css">
 	<!-- Admin Stye -->
 	<link rel="stylesheet" href="css/style.css">
-  <style>
-
-	.errorWrap {
-    padding: 10px;
-    margin: 0 0 20px 0;
-	background: #dd3d36;
-	color:#fff;
-    -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
-    box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
-}
-.succWrap{
-    padding: 10px;
-    margin: 0 0 20px 0;
-	background: #5cb85c;
-	color:#fff;
-    -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
-    box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
-}
-
-		</style>
+<!-- main.css -->
+<link rel="stylesheet" href="css/main.css">
 
 </head>
 
@@ -220,7 +202,7 @@ if(mysqli_num_rows($result) > 0)
 				?>
 										<tr>
 											<td><?php echo $cnt;?></td>
-											<td><img src="../images/<?php echo $row['image'];?>" style="width:50px; border-radius:50%;"/></td>
+											<td><img src="<?php echo $row['image'];?>" style="width:50px; border-radius:50%;"/></td>
                       <td><?php echo $row['name']; ?></td>
                       <td><?php echo $row['email'];?></td>
                       <td><?php echo $row['gender'];?></td>
