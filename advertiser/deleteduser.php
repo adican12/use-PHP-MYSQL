@@ -92,6 +92,7 @@ else{
 									<tbody>
 
 <?php
+include('includes/config.php');
 $email = $_SESSION['alogin'];
 echo "the email is : ".$email."<br>";
 $sql = "SELECT user_id FROM users WHERE email = '$email'";
