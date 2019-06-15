@@ -335,6 +335,7 @@ if(mysqli_num_rows($result) > 0)
 		 user_error("Query failed: ".$conn->error."<br />$sql");
 		 echo "false";
 	}
+	$row1=mysqli_fetch_assoc($result);
 
 	 $query= "SELECT image,description,price,title FROM ad WHERE adID = (SELECT MAX(adID) FROM ad)";
 	 $res = $conn->query($query);
