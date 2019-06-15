@@ -304,8 +304,8 @@ if(mysqli_num_rows($result) > 0)
 				<label for="" class="text-uppercase text-sm"> Header: </label>
 				<input type="text" placeholder="header" name="header" class="form-control mb" required>
 
-				<label for="" class="text-uppercase text-sm"> User ID: </label>
-				<input type="number" placeholder="user ID:" name="user_id" class="form-control mb" required>
+				<label for="" class="text-uppercase text-sm"> User Email: </label>
+				<input type="text" placeholder="User Email:" name="user_email" class="form-control mb" required>
 
 
 				<button name="submit" type="submit" class="showDemo" style="margin-right:300px;"> Upload!</button>
@@ -369,7 +369,7 @@ if(mysqli_num_rows($result) > 0)
 			//change the header
 			var header = "<?php echo $new_row['header'];?>";
 			document.getElementById("header").innerHTML = header;
-			
+
 	}
 
 	function getTheLastId(){
