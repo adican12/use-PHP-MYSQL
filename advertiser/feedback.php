@@ -120,73 +120,76 @@ if(isset($_REQUEST['unconfirm']))
 	<!-- Admin Stye -->
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/button.css">
-  <style>
+	<!-- main.css -->
+	<link rel="stylesheet" href ="css/main.css">
+	<!-- Loading Scripts -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap-select.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.dataTables.min.js"></script>
+	<script src="js/dataTables.bootstrap.min.js"></script>
+	<script src="js/Chart.min.js"></script>
+	<script src="js/fileinput.js"></script>
+	<script src="js/chartData.js"></script>
+	<script src="js/main.js"></script>
+	<script type="text/javascript">
+				 $(document).ready(function () {
+					setTimeout(function() {
+						$('.succWrap').slideUp("slow");
+					}, 3000);
+//add to database new ad
 
-	.errorWrap {
-    padding: 10px;
-    margin: 0 0 20px 0;
-	background: #dd3d36;
-	color:#fff;
-    -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
-    box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
-}
-.succWrap{
-    padding: 10px;
-    margin: 0 0 20px 0;
-	background: #5cb85c;
-	color:#fff;
-    -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
-    box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
-}
+			$("#ad").submit(function(){
+			//alert("signup_form");
+			$("button").prop('disabled', true);
+			var formData = new FormData(this);
+			$.ajax({
+				url:     'insert_ad.php',
+				type:    'POST',
+				data:    formData,
+				async:   false,
+				success: function(data) {
+					alert("success");
+				   	$("#result_ad").html(data);
+					$("button").prop('disabled', false);
+				},
+				cache: false,
+				contentType: false,
+				processData: false
+			});
+			return false;
+	});
+	$("#formButton").click(function(){
+        $("#information").toggle();
+    });
+					});
+		</script>
 
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 300px;
-  margin: auto;
-	margin-left: 450px;
-  text-align: center;
-  font-family: arial;
-	border-radius: 20px;
-}
+		<script>
+		function showDemo() {
+				//change the price
+				var price = <?php echo $new_row['price'];?>;
+				document.getElementById("price").innerHTML =  price + " $ ";
+				//change the text;
+				var text = "<?php echo $new_row['description'];?>";
+				document.getElementById("details").innerHTML =text;
 
-.price {
-  color: grey;
-  font-size: 22px;
-}
+				//change the header
+				var header = "<?php echo $new_row['title'];?>";
+				document.getElementById("header").innerHTML = header;
 
-.card p{}
+				var img ="<?php echo $new_row['image']?>";
+				document.getElementById("img").src = img;
 
-.card button {
-  border: none;
-  outline: 0;
-  padding: 12px;
-  color: white;
-  background-color: #000;
-  text-align: center;
-  cursor: pointer;
-  width: 100%;
-  font-size: 18px;
-}
+		}
 
-.card button:hover {
-  opacity: 0.7;
-}
-.myButton {border-radius: 30px;font-size: 16px; box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);background-color:#F4F6F9;color:black;margin-right:120px;text-align: center;}
-.myButton:hover {color:#3e8e41;}
-.inside-panel-body{
-  max-width: 300px;
-  margin: auto;
-	margin-left: 450px;
-  text-align: center;
-  font-family: arial;}
-.information {margin-left:520px;margin-bottom: 10px;padding: 20px;display:none;}
-.information input{width: 30%;padding: 12px 20px;text-align: center;margin: 8px 0;}
-.information button{border-radius: 30px;font-size: 16px; box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);background-color:#F4F6F9;color:black;margin-left: 45px;}
-.information button:hover {color:#fff;background-color: black;}
-.information .button:active {background-color: #3e8e41;box-shadow: 0 5px #666;transform: translateY(4px);}
-#formButton {border-radius: 30px;font-size: 16px; box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);background-color:#F4F6F9;color:black;margin-left:520px; padding: 20px;margin-bottom: 10px;}
-
-		</style>
+		function getTheLastId(){
+			var x = "<?php echo $row1['MAX(adID)'];?>";
+			document.getElementById("panel-body").style.fontSize = "xx-large";
+			document.getElementById("panel-body").style.textAlign = "center";
+			document.getElementById("panel-body").innerHTML= " Your banner ID is:  " + x + " Please keep your ID in order to use a platform for the campaign";
+		}
+		</script>
 
 </head>
 
@@ -366,141 +369,11 @@ if(mysqli_num_rows($result) > 0)
 		 //echo "<img src =\"".$row['image']."\">";
 
 	?>
-	<script>
-	function showDemo() {
-			//change the price
-			var price = <?php echo $new_row['price'];?>;
-			document.getElementById("price").innerHTML =  price + " $ ";
-			//change the text;
-			var text = "<?php echo $new_row['description'];?>";
-			document.getElementById("details").innerHTML =text;
 
-			//change the header
-			var header = "<?php echo $new_row['title'];?>";
-			document.getElementById("header").innerHTML = header;
 
-			var img ="<?php echo $new_row['image']?>";
-			document.getElementById("img").src = img;
 
-	}
 
-	function getTheLastId(){
-		var x = "<?php echo $row1['MAX(adID)'];?>";
-		document.getElementById("panel-body").style.fontSize = "xx-large";
-		document.getElementById("panel-body").style.textAlign = "center";
-		document.getElementById("panel-body").innerHTML= " Your banner ID is:  " + x + " Please keep your ID in order to use a platform for the campaign";
-	}
-	</script>
-<script type="text/javascript">
-//document.getElementById("img").addEventListener("click", changeDetails);
-//document.getElementById("img").addEventListener("click",changeImg);
-//document.getElementById("header").addEventListener("click",changeHeader);
-//document.getElementById("details").addEventListener("click",changeText);
-/*function changeDeat(){
-	let x =	document.getElementById("ad").submit;
-	var i;
-	for ( i=0; i<x.length;++i){
-		console.log(x[i]);
-	}
 
-}
-*/
-// function changeDetails(){
-//
-//
-// 	console.log("Hey from function ShowDemo");
-// 	var x =
-// 	document.getElementById("price").innerHTML =  x + " $ ";
-//
-// //change the text
-//
-// //change the image
-// 	var x =
-//  	console.log(x);
-//   document.getElementById("img").src= x;
-// 	var user_id =
-// 	document.getElementById('demo').innerHTML = "the id of the campaing is " + user_id;
-//
-// }
-
-/*
-function changePrice(){
-
-}
- function changeHeader(){
-	 var x = "?php echo $row['header'];?>";
-	 document.getElementById("header").innerHTML = x;
- }
- function changeText(){
-	 var x = "?php$row['text'];?>";
-	 document.getElementById("details").innerHTML =x;
- }
-function changeImg(){
- // var x = "?php echo $row['image'];?>";
-	alert(x);
- document.getElementById("img").src= x;
-	//var radios = getElementById("button").value;
-	//if(document.getElementById('coffee').checked)
-	//var x = document.getElementById('coffee').value;
-	//alert(x);
-}
-
-/*function changePrice(){
-  document.getElementById("price").innerHTML = "someting else";
-}*/
-/*
-function myFunction() {
-  var x = document.getElementById("myDIV");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-}*/
-</script>
-
-	<!-- Loading Scripts -->
-	<script src="js/jquery.min.js"></script>
-	<script src="js/bootstrap-select.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/jquery.dataTables.min.js"></script>
-	<script src="js/dataTables.bootstrap.min.js"></script>
-	<script src="js/Chart.min.js"></script>
-	<script src="js/fileinput.js"></script>
-	<script src="js/chartData.js"></script>
-	<script src="js/main.js"></script>
-	<script type="text/javascript">
-				 $(document).ready(function () {
-					setTimeout(function() {
-						$('.succWrap').slideUp("slow");
-					}, 3000);
-//add to database new ad
-
-			$("#ad").submit(function(){
-			//alert("signup_form");
-			$("button").prop('disabled', true);
-			var formData = new FormData(this);
-			$.ajax({
-				url:     'insert_ad.php',
-				type:    'POST',
-				data:    formData,
-				async:   false,
-				success: function(data) {
-					alert("success");
-				   	$("#result_ad").html(data);
-					$("button").prop('disabled', false);
-				},
-				cache: false,
-				contentType: false,
-				processData: false
-			});
-			return false;
-	});
-	$("#formButton").click(function(){
-        $("#information").toggle();
-    });
-					});
-		</script>
 </body>
 </html>
 <?php } ?>
