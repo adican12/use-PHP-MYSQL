@@ -363,12 +363,15 @@ if(mysqli_num_rows($result) > 0)
 			var price = <?php echo $new_row['price'];?>;
 			document.getElementById("price").innerHTML =  price + " $ ";
 			//change the text;
-			var text = "<?php echo $new_row['text'];?>";
+			var text = "<?php echo $new_row['description'];?>";
 			document.getElementById("details").innerHTML =text;
 
 			//change the header
-			var header = "<?php echo $new_row['header'];?>";
+			var header = "<?php echo $new_row['title'];?>";
 			document.getElementById("header").innerHTML = header;
+
+			var img ="<?php echo $new_row['image']?>";
+			document.getElementById("img").src = img;
 
 	}
 
