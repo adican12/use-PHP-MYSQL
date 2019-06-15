@@ -278,7 +278,6 @@ if(mysqli_num_rows($result) > 0)
 <div id="demo"></div>
 	<?php
 	$email = $_SESSION['alogin'];
-	echo "the email is form feedback:".$email."<br>";
 	$sql = "SELECT user_id FROM users WHERE email ='$email'; ";
 	$result = $conn->query($sql);
 	if($result === false)
@@ -303,18 +302,6 @@ if(mysqli_num_rows($result) > 0)
 			echo "false";
 	 	}
 	$new_row = mysqli_fetch_assoc($res);
-	 // echo '<img src=data:image;base64,'.$new_row['image'].'>';
-	 // echo " <br> print the text of the image form db: ".$new_row['text']."<br>";
-	 // echo "print the text of the image form db: ".$new_row['price']."<br>";
-	 // echo "print the text of the image form db: ".$new_row['header']."<br>";
-
-
-
-		//echo "print image: ". $row['image']."<br>";
-		 //echo "print text: ". $row['text']."<br>";
-		 //echo "print price: ". $row['price']."<br>";
-		 //echo "print header: ". $row['header']."<br>";
-		 //echo "<img src =\"".$row['image']."\">";
 
 	?>
 	<script>
