@@ -41,6 +41,7 @@ $birthday=$_POST['birthday'];
 $userCategory = $_POST['category'];
 $image = 'https://storage.googleapis.com/catifi2/user/'.$_FILES['uploadfile"']['name'];
 $user_id = 12;
+$location_id = 1;
 // if(move_uploaded_file($file_loc,$folder.$final_file))
 	// {
 		// $image=$final_file;
@@ -61,8 +62,8 @@ $sender=$email;
 /////////////////////////////////////////////////
 echo "<br>start signup<br>";
 
-$sql = "INSERT INTO `users`(`user_id`,`name`, `email`, `password`, `gender`, `mobile`, `image`,`user_type`, `birthday`,`status`,`user_category`)
-VALUES ('$user_id','$name', '$email', '$password','$gender','$mobileno','$image','$usertype','$birthday',1,'$userCategory')";
+$sql = "INSERT INTO `users`(`user_id`,`name`, `email`, `password`, `gender`, `mobile`, `image`,`user_type`, `birthday`,`status`,`user_category`,`location_id`)
+VALUES ('$user_id','$name', '$email', '$password','$gender','$mobileno','$image','$usertype','$birthday',1,'$userCategory','$location_id')";
 
 if ($conn->query($sql) === TRUE) {
 	echo "<script type='text/javascript'>alert('Registration Sucessfull!');</script>";
