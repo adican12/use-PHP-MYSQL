@@ -1,5 +1,6 @@
 <?php
 include('includes/config.php');
+if(isset($_POST['submitOne'])){
 
 $email = $_POST['email'];
 echo "the email is :" .$email."<br>";
@@ -11,4 +12,7 @@ if($result === false)
    echo "false";
 }
   $row1= mysqli_fetch_assoc($result);
+} else {
+  echo "ERROR ";
+}
 ?>
