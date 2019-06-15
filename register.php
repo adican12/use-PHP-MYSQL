@@ -40,7 +40,7 @@ $mobileno=$_POST['mobileno'];
 $usertype=$_POST['usertype'];
 $birthday=$_POST['birthday'];
 $userCategory = $_POST['category'];
-$image = 'https://storage.googleapis.com/catifi2/user/'.$_FILES['uploadfile"']['name'];
+$image = 'https://storage.googleapis.com/catifi2/user/'.$_FILES['uploadfile']['name'];
 $user_id = 13;
 $location_id = 1;
 // if(move_uploaded_file($file_loc,$folder.$final_file))
