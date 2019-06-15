@@ -132,6 +132,7 @@ if(isset($_REQUEST['unconfirm']))
 	<script src="js/fileinput.js"></script>
 	<script src="js/chartData.js"></script>
 	<script src="js/main.js"></script>
+	<script src = "js/fucntion.js"></script>
 	<script type="text/javascript">
 				 $(document).ready(function () {
 					setTimeout(function() {
@@ -183,7 +184,7 @@ if(isset($_REQUEST['unconfirm']))
 
 		}
 
-		
+
 		</script>
 
 </head>
