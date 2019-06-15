@@ -160,7 +160,7 @@ if(isset($_POST['submit']))
 	<div class="col-sm-4">
 	</div>
 	<div class="col-sm-4 text-center">
-		<img src=<?php echo $row['image'] ;?> style="width:200px; border-radius:50%; margin:10px;">
+		<img src='<?php echo $row['image'] ;?>' style="width:200px; border-radius:50%; margin:10px;">
 		<input type="file" name="image" class="form-control">
 		<input type="hidden" name="image" class="form-control" value="BIHR_Goliath_HD_Extra_2600m_Pack_white.jpg<?php //echo htmlentities($result->image);?>">
 	</div>
