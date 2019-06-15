@@ -100,6 +100,7 @@ if($result === false) {
 }
 $row =mysqli_fetch_assoc($result);
 $row_two = $row['user_id'];
+echo "the user_id is : ".$row_tow['user_id']."<br>";
 
 $sql = "SELECT adID FROM ad WHERE advID ='$row_tow' ";
 $result = $conn->query($sql);
@@ -108,6 +109,7 @@ if($result === false) {
 }
 $row = mysqli_fetch_assoc($result);
 $temp = $row['adID'];
+echo "the adID is : ".$temp."<br>";
 
 $sql = "SELECT * FROM campaign WHERE adID ='$temp' ";
 $result = $conn->query($sql);
