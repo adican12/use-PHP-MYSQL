@@ -105,7 +105,7 @@ echo "the user_id is form row: ".$row['user_id']."<br>";
 $row_two = $row['user_id'];
 echo "the user_id is : ".$row_two."<br>";
 
-$sql = "SELECT MAX(adID) FROM ad WHERE advID ='$row_tow' ";
+$sql = "SELECT MAX(adID) FROM ad WHERE advID ='$row_two' ";
 $result = $conn->query($sql);
 if($result === false) {
 	echo "error";
