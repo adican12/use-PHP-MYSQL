@@ -336,6 +336,14 @@ if(mysqli_num_rows($result) > 0)
 		 echo "false";
 	}
 	$row1=mysqli_fetch_assoc($result);
+	$row2 = ['user_id'];
+	$sql = "SELECT MAX(adID) FROM ad WHERE advID ='$row2'; ";
+	$new_result = $conn->query($sql);
+	if($new_result === false) {
+		echo "error <br>";
+	}
+	$row1 = mysqli_fetch_assoc($new_result);
+
 
 	 $query= "SELECT image,description,price,title FROM ad WHERE adID = (SELECT MAX(adID) FROM ad)";
 	 $res = $conn->query($query);
@@ -377,7 +385,7 @@ if(mysqli_num_rows($result) > 0)
 	}
 
 	function getTheLastId(){
-		var x = "<?php echo $row1['user_id'];?>";
+		var x = "<?php echo $row1['MAX(adID)'];?>";
 		document.getElementById("panel-body").style.fontSize = "xx-large";
 		document.getElementById("panel-body").style.textAlign = "center";
 		document.getElementById("panel-body").innerHTML= " Your banner ID is:  " + x + " Please keep your ID in order to use a platform for the campaign";
