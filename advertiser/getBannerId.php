@@ -1,7 +1,7 @@
 <?php
 include('includes/config.php');
 
-$email = $_SESSION['alogin'];
+$email = $_POST['email'];
 echo "the email is :" .$email."<br>";
 $sql = "SELECT user_id FROM users WHERE email='$email'; ";
 $result = $conn->query($sql);
