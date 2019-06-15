@@ -328,7 +328,7 @@ if(mysqli_num_rows($result) > 0)
 	<?php
 	$email = $_POST['email'];
 	echo "the email is :" .$email."<br>";
-	$sql = "SELECT MAX(user_id) FROM ad ; ";
+	$sql = "SELECT MAX(advID) FROM ad ; ";
 	$result = $conn->query($sql);
 	if($result === false)
 	{
@@ -336,7 +336,7 @@ if(mysqli_num_rows($result) > 0)
 		 echo "false";
 	}
 
-	 $query= "SELECT image,text,price,header FROM ad WHERE adID = (SELECT MAX(adID) FROM ad)";
+	 $query= "SELECT image,description,price,title FROM ad WHERE adID = (SELECT MAX(adID) FROM ad)";
 	 $res = $conn->query($query);
 	 if($res === false){
 			user_error("Query failed: ".$conn->error."<br />$sql");
