@@ -122,70 +122,6 @@ if(isset($_REQUEST['unconfirm']))
 	<link rel="stylesheet" href="css/button.css">
 	<!-- main.css -->
 	<link rel="stylesheet" href ="css/main.css">
-	<!-- Loading Scripts -->
-	<script src="js/jquery.min.js"></script>
-	<script src="js/bootstrap-select.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/jquery.dataTables.min.js"></script>
-	<script src="js/dataTables.bootstrap.min.js"></script>
-	<script src="js/Chart.min.js"></script>
-	<script src="js/fileinput.js"></script>
-	<script src="js/chartData.js"></script>
-	<script src="js/main.js"></script>
-	<script src = "js/fucntion.js"></script>
-	<script type="text/javascript">
-				 $(document).ready(function () {
-					setTimeout(function() {
-						$('.succWrap').slideUp("slow");
-					}, 3000);
-//add to database new ad
-
-			$("#ad").submit(function(){
-			//alert("signup_form");
-			$("button").prop('disabled', true);
-			var formData = new FormData(this);
-			$.ajax({
-				url:     'insert_ad.php',
-				type:    'POST',
-				data:    formData,
-				async:   false,
-				success: function(data) {
-					alert("success");
-				   	$("#result_ad").html(data);
-					$("button").prop('disabled', false);
-				},
-				cache: false,
-				contentType: false,
-				processData: false
-			});
-			return false;
-	});
-	$("#formButton").click(function(){
-        $("#information").toggle();
-    });
-					});
-		</script>
-
-		<script>
-		function showDemo() {
-				//change the price
-				var price = <?php echo $new_row['price'];?>;
-				document.getElementById("price").innerHTML =  price + " $ ";
-				//change the text;
-				var text = "<?php echo $new_row['description'];?>";
-				document.getElementById("details").innerHTML =text;
-
-				//change the header
-				var header = "<?php echo $new_row['title'];?>";
-				document.getElementById("header").innerHTML = header;
-
-				var img ="<?php echo $new_row['image']?>";
-				document.getElementById("img").src = img;
-
-		}
-
-
-		</script>
 
 </head>
 
@@ -365,10 +301,100 @@ if(mysqli_num_rows($result) > 0)
 		 //echo "<img src =\"".$row['image']."\">";
 
 	?>
+	<script>
+	function showDemo() {
+			//change the price
+			var price = <?php echo $new_row['price'];?>;
+			document.getElementById("price").innerHTML =  price + " $ ";
+			//change the text;
+			var text = "<?php echo $new_row['description'];?>";
+			document.getElementById("details").innerHTML =text;
 
+			//change the header
+			var header = "<?php echo $new_row['title'];?>";
+			document.getElementById("header").innerHTML = header;
 
+			var img ="<?php echo $new_row['image']?>";
+			document.getElementById("img").src = img;
 
+	}
 
+	function getTheLastId(){
+		var x = "<?php echo $row1['MAX(adID)'];?>";
+		document.getElementById("panel-body").style.fontSize = "xx-large";
+		document.getElementById("panel-body").style.textAlign = "center";
+		document.getElementById("panel-body").innerHTML= " Your banner ID is:  " + x + " Please keep your ID in order to use a platform for the campaign";
+	}
+	</script>
+<script type="text/javascript">
+//document.getElementById("img").addEventListener("click", changeDetails);
+//document.getElementById("img").addEventListener("click",changeImg);
+//document.getElementById("header").addEventListener("click",changeHeader);
+//document.getElementById("details").addEventListener("click",changeText);
+/*function changeDeat(){
+	let x =	document.getElementById("ad").submit;
+	var i;
+	for ( i=0; i<x.length;++i){
+		console.log(x[i]);
+	}
+
+}
+*/
+// function changeDetails(){
+//
+//
+// 	console.log("Hey from function ShowDemo");
+// 	var x =
+// 	document.getElementById("price").innerHTML =  x + " $ ";
+//
+// //change the text
+//
+// //change the image
+// 	var x =
+//  	console.log(x);
+//   document.getElementById("img").src= x;
+// 	var user_id =
+// 	document.getElementById('demo').innerHTML = "the id of the campaing is " + user_id;
+//
+// }
+
+/*
+function changePrice(){
+
+}
+ function changeHeader(){
+	 var x = "?php echo $row['header'];?>";
+	 document.getElementById("header").innerHTML = x;
+ }
+ function changeText(){
+	 var x = "?php$row['text'];?>";
+	 document.getElementById("details").innerHTML =x;
+ }
+function changeImg(){
+ // var x = "?php echo $row['image'];?>";
+	alert(x);
+ document.getElementById("img").src= x;
+	//var radios = getElementById("button").value;
+	//if(document.getElementById('coffee').checked)
+	//var x = document.getElementById('coffee').value;
+	//alert(x);
+}
+
+/*function changePrice(){
+  document.getElementById("price").innerHTML = "someting else";
+}*/
+/*
+function myFunction() {
+  var x = document.getElementById("myDIV");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}*/
+</script>
+
+	<!-- Loading Scripts -->
 
 </body>
 </html>
