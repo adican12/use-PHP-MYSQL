@@ -326,8 +326,8 @@ if(mysqli_num_rows($result) > 0)
 </div>
 <div id="demo"></div>
 	<?php
-	$email = $_POST['email'];
-	echo "the email is form feedback:" .$email."<br>";
+	$email = $_SESSION['alogin'];
+	echo "the email is form feedback:".$email."<br>";
 	$sql = "SELECT user_id FROM users WHERE email ='$email'; ";
 	$result = $conn->query($sql);
 	if($result === false)
