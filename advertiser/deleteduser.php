@@ -108,7 +108,7 @@ $result = $conn->query($sql);
 if($result === false) {
 	echo "error";
 }
-$row = mysqli_fetch_assoc($result);
+while($row = mysqli_fetch_assoc($result)){
 $temp = $row['adID'];
 echo "the adID is : ".$temp."<br>";
 
@@ -118,6 +118,7 @@ if($result === false)
 {
    user_error("Query failed: ".$conn->error."<br />$sql");
    echo "false";
+}
 }
 //
 // $sql = "SELECT * from  deleteduser";
