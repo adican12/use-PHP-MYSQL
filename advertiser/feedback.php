@@ -327,7 +327,7 @@ if(mysqli_num_rows($result) > 0)
 <div id="demo"></div>
 	<?php
 	$email = $_POST['email'];
-	echo "the email is :" .$email."<br>";
+	echo "the email is form feedback:" .$email."<br>";
 	$sql = "SELECT MAX(advID) FROM ad ; ";
 	$result = $conn->query($sql);
 	if($result === false)
