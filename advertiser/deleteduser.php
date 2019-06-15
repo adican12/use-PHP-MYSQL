@@ -92,15 +92,16 @@ else{
 									<tbody>
 
 <?php
-include('includes/config.php');
+
 $email = $_SESSION['alogin'];
 echo "the email is : ".$email."<br>";
-$sql = "SELECT user_id FROM users WHERE email = '$email'";
+$sql = "SELECT user_id FROM users WHERE email = '$email';";
 $result = $conn->query($sql);
 if($result === false) {
 	echo "error";
 }
 $row =mysqli_fetch_assoc($result);
+echo "the user_id is form row: ".$row['user_id']."<br>";
 $row_two = $row['user_id'];
 echo "the user_id is : ".$row_tow."<br>";
 
