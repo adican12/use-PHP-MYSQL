@@ -342,73 +342,7 @@ if(mysqli_num_rows($result) > 0)
 		document.getElementById("panel-body").innerHTML= " Your banner ID is:  " + x + " Please keep your ID in order to use a platform for the campaign";
 	}
 	</script>
-<script type="text/javascript">
-//document.getElementById("img").addEventListener("click", changeDetails);
-//document.getElementById("img").addEventListener("click",changeImg);
-//document.getElementById("header").addEventListener("click",changeHeader);
-//document.getElementById("details").addEventListener("click",changeText);
-/*function changeDeat(){
-	let x =	document.getElementById("ad").submit;
-	var i;
-	for ( i=0; i<x.length;++i){
-		console.log(x[i]);
-	}
 
-}
-*/
-// function changeDetails(){
-//
-//
-// 	console.log("Hey from function ShowDemo");
-// 	var x =
-// 	document.getElementById("price").innerHTML =  x + " $ ";
-//
-// //change the text
-//
-// //change the image
-// 	var x =
-//  	console.log(x);
-//   document.getElementById("img").src= x;
-// 	var user_id =
-// 	document.getElementById('demo').innerHTML = "the id of the campaing is " + user_id;
-//
-// }
-
-/*
-function changePrice(){
-
-}
- function changeHeader(){
-	 var x = "?php echo $row['header'];?>";
-	 document.getElementById("header").innerHTML = x;
- }
- function changeText(){
-	 var x = "?php$row['text'];?>";
-	 document.getElementById("details").innerHTML =x;
- }
-function changeImg(){
- // var x = "?php echo $row['image'];?>";
-	alert(x);
- document.getElementById("img").src= x;
-	//var radios = getElementById("button").value;
-	//if(document.getElementById('coffee').checked)
-	//var x = document.getElementById('coffee').value;
-	//alert(x);
-}
-
-/*function changePrice(){
-  document.getElementById("price").innerHTML = "someting else";
-}*/
-/*
-function myFunction() {
-  var x = document.getElementById("myDIV");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-}*/
-</script>
 
 
 </body>
