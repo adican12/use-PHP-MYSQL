@@ -172,6 +172,7 @@ if(isset($_REQUEST['unconfirm']))
 							 user_error("Query failed: ".$conn->error."<br />$sql");
 							 echo "false";
 						}
+							echo "<script>alert('we here 3')</script>";
 						$row= mysqli_fetch_assoc($result);
 						//echo($row['name']);
 
