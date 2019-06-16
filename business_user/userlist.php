@@ -169,17 +169,7 @@ if(isset($_REQUEST['unconfirm']))
 							 user_error("Query failed: ".$conn->error."<br />$sql");
 							 echo "false";
 						}
-						while($row= mysqli_fetch_assoc($result)){
-							echo "<table>"
-											echo "<tr>"
-											echo "<td> $row['name']</td>"
-											echo "<td> $row['email']</td>"
-											echo "<td> $row['gender']</td>"
-											echo "<td> $row['mobile']</td>"
-											echo "</tr>"
-											echo "</table>"
-
-						}
+						$row= mysqli_fetch_assoc($result);
 						//echo($row['name']);
 
 						$cnt=1;
