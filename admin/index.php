@@ -15,7 +15,7 @@ $password=$_POST['password'];
 // echo "<br>email: ".$email ."		password: ".$password."<br>";
 
 
-$sql="SELECT UserName,Password FROM `admin` WHERE `UserName`='$email' AND `Password`='$password' ";
+$sql="SELECT email,password FROM `admin` WHERE `email`='$email' AND `password`='$password' ";
 $result = $conn->query($sql);
 if($result === false)
 {
