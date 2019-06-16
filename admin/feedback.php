@@ -151,10 +151,10 @@ if(isset($_REQUEST['unconfirm']))
 									<thead>
 										<tr>
 										    <th>#</th>
-												<th>User Email</th>
-												<th>Rating</th>
-                        <th>Feedback</th>
-                        
+												<th>Description</th>
+												<th>User ID</th>
+
+
 										</tr>
 									</thead>
 
@@ -192,10 +192,8 @@ if(mysqli_num_rows($result) > 0)
 	while($row = mysqli_fetch_assoc($result)) {
 				?>						<tr>
 											<td><?php echo htmlentities($cnt);?></td>
-                      <td><?php echo $row['user_id'];?></td>
-											<td><?php echo $row['title'];?></td>
-                      <td><?php echo $row['feedbackdata'];?></td>
-                      <td><a href="../attachment/<?php echo $row['attachment'];?>" ><?php echo $row['attachment'];?></a></td>
+                      <td><?php echo $row['description'];?></td>
+											<td><?php echo $row['user_id'];?></td>
 
 <td>
 <a href="sendreply.php?reply=<?php echo $result->sender;?>">&nbsp; <i class="fa fa-mail-reply"></i></a>&nbsp;&nbsp;

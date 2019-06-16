@@ -178,7 +178,7 @@ create table if not exists `campaign` (
   PRIMARY KEY(`campaignID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT =1;
 
-INSERT INTO `campaign`(`campaignName`, `adID`, `gender`, `ageMin`, `ageMax`, `budget`, `category`, `stratingDate`, `endDate`, `locationID`) VALUES 
+INSERT INTO `campaign`(`campaignName`, `adID`, `gender`, `ageMin`, `ageMax`, `budget`, `category`, `stratingDate`, `endDate`, `locationID`) VALUES
 ('Castro spring',11,'Male',20,40,500,'Clothing','2019-06-03','2019-07-05',1),
 ('be',2,'Famle',20,60,800,'Safety and health','2019-06-03','2019-07-05',2);
 
@@ -198,13 +198,29 @@ create table if not exists `deleteduser` (
 --
 -- Table structure for table `feedback`
 --
-
+ /*------------befor changes----------*/
+ /*
 create table if not exists `feedback` (
   `feedback_id` int(11) NOT NULL,
-  `ad_id` varchar(50) NOT NULL,
+  `description` varchar(255) NOT NULL,
   `user_id` varchar(50) NOT NULL,
-  `rating` int(100) NOT NULL
+  `adID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+*/
+/*---------------after the changes------------------*/
+create table if not exists `feedback` (
+  `feedback_id` int(11) NOT NULL AUTO_INCREMENT,
+  `description` varchar(255) NOT NULL,
+  `businessID` int(11) NOT NULL
+  `user_id` INT(11) NOT NULL,
+  `adID` int(11) NOT NULL,
+  PRIMARY KEY(`feedback_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1;
+
+INSERT INTO `feedback`(`description`,`businessID`,`user_id`,`adID`) VALUES
+('Great Ad Thanks',0,4,1),
+('Thanks for fixing the problem with the advertisement',0,6,1),
+('Convenient interface, quick coupon creation',1,2,0),
 
 -- --------------------------------------------------------
 
