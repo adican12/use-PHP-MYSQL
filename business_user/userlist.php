@@ -170,14 +170,15 @@ if(isset($_REQUEST['unconfirm']))
 							 echo "false";
 						}
 						while($row= mysqli_fetch_assoc($result)){
-							echo "<table>
-											<tr>
-											<td> $row['name']</td>
-											<td> $row['email']</td>
-											<td> $row['gender']</td>
-											<td> $row['mobile']</td>
-											</tr>
-										</table>"
+							echo "<table>"
+											echo "<tr>"
+											echo "<td> $row['name']</td>"
+											echo "<td> $row['email']</td>"
+											echo "<td> $row['gender']</td>"
+											echo "<td> $row['mobile']</td>"
+											echo "</tr>"
+											echo "</table>"
+
 						}
 						//echo($row['name']);
 
