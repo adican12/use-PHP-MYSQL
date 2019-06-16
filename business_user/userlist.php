@@ -160,7 +160,10 @@ if(isset($_REQUEST['unconfirm']))
 						<br>
 					</div>
 					<?php
+						echo "<script>alert('we here 1')</script>";
 					$name = $_POST['search_customers_fame'];
+					echo "<script>alert('we here 2')</script>";
+					echo "the name is : ".$name."<br>";
 						$sql = "SELECT * FROM  users WHERE name='$name'";
 						$result = $conn->query($sql);
 						if($result === false)
