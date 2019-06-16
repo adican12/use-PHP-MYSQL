@@ -8,18 +8,6 @@ if(isset($_POST['login']))
 $status='1';
 $email=$_POST['email'];
 $password=$_POST['password'];
-$query = "SELECT * FROM admin WHERE email = '$email' AND password = '$password'";
-$res = $conn->query($query);
-if( $res ==== false ){
-  echo "error";
-}
-if($res->num_rows > 0) {
-  $_SESSION['alogin'] = $_POST['email'];
-  $rows = $res->fetch_array();
-  if($rows['email'] === $email){
-    echo "<script type='text/javascript'> document.location = 'admin/dashboard.php'; </script>";
-  }
-}
 
 //echo "<br>email: ".$email ."		password: ".$password."<br>";
 
