@@ -8,6 +8,7 @@ if(isset($_POST['login']))
 $status='1';
 $email=$_POST['email'];
 $password=$_POST['password'];
+//bacl to origin
 
 //echo "<br>email: ".$email ."		password: ".$password."<br>";
 
