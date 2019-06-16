@@ -87,7 +87,7 @@ header("Content-type: application/octet-stream");
 header("Content-Disposition: attachment; filename=".$filename."-report.xls");
 header("Pragma: no-cache");
 header("Expires: 0");
-			$cnt++;
+			
 			}
 	}
 ?>
@@ -99,6 +99,7 @@ header("Expires: 0");
 	<td><?php echo $row['mobile'];?></td>
 	<td><?php echo $row['gender'];?></td>
 	<td><?php echo $row['user_category'];?></td>
+		<?php $cnt=$cnt+1; }} ?>
 
 </tr>
 </table>
