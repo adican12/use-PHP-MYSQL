@@ -71,7 +71,7 @@ else{
 												<th>Birthday</th>
 												<th>Mobile</th>
 												<th>Gender</th>
-												
+
 										</tr>
 									</thead>
 
@@ -107,12 +107,12 @@ if(mysqli_num_rows($result) > 0)
 		?>
 										<tr>
 											<td><?php echo htmlentities($cnt);?></td>
-											<td><?php echo $result['name'];?></td>
-                      <td><?php echo $result['email'];?></td>
-											<td><?php echo $result['birthday'];?></td>
-											<td><?php echo $result['mobile'];?></td>
-											<td><?php echo $result['gender'];?></td>
-											<td><?php echo $result['user_category'];?></td>
+											<td><?php echo $row['name'];?></td>
+                      <td><?php echo $row['email'];?></td>
+											<td><?php echo $row['birthday'];?></td>
+											<td><?php echo $row['mobile'];?></td>
+											<td><?php echo $row['gender'];?></td>
+											<td><?php echo $row['user_category'];?></td>
 
 										</tr>
 										<?php $cnt=$cnt+1; }} ?>
