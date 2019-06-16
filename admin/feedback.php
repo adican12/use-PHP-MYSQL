@@ -107,26 +107,24 @@ if(isset($_REQUEST['unconfirm']))
 	<link rel="stylesheet" href="css/awesome-bootstrap-checkbox.css">
 	<!-- Admin Stye -->
 	<link rel="stylesheet" href="css/style.css">
-  <style>
 
-	.errorWrap {
-    padding: 10px;
-    margin: 0 0 20px 0;
-	background: #dd3d36;
-	color:#fff;
-    -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
-    box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
-}
-.succWrap{
-    padding: 10px;
-    margin: 0 0 20px 0;
-	background: #5cb85c;
-	color:#fff;
-    -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
-    box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
-}
-
-		</style>
+	<!-- Loading Scripts -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap-select.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.dataTables.min.js"></script>
+	<script src="js/dataTables.bootstrap.min.js"></script>
+	<script src="js/Chart.min.js"></script>
+	<script src="js/fileinput.js"></script>
+	<script src="js/chartData.js"></script>
+	<script src="js/main.js"></script>
+	<script type="text/javascript">
+				 $(document).ready(function () {
+					setTimeout(function() {
+						$('.succWrap').slideUp("slow");
+					}, 3000);
+					});
+		</script>
 
 </head>
 
@@ -154,10 +152,9 @@ if(isset($_REQUEST['unconfirm']))
 										<tr>
 										    <th>#</th>
 												<th>User Email</th>
-												<th>Title</th>
+												<th>Rating</th>
                         <th>Feedback</th>
-                        <th>Attachment</th>
-											  <th>Action</th>
+                        
 										</tr>
 									</thead>
 
@@ -167,7 +164,7 @@ if(isset($_REQUEST['unconfirm']))
 $reciver = 'Admin';
 
 
-$sql = "SELECT * from  feedback where reciver = $reciver";
+$sql = "SELECT * from  feedback";
 $result = $conn->query($sql);
 if($result === false)
 {
@@ -195,7 +192,7 @@ if(mysqli_num_rows($result) > 0)
 	while($row = mysqli_fetch_assoc($result)) {
 				?>						<tr>
 											<td><?php echo htmlentities($cnt);?></td>
-                      <td><?php echo $row['sender'];?></td>
+                      <td><?php echo $row['user_id'];?></td>
 											<td><?php echo $row['title'];?></td>
                       <td><?php echo $row['feedbackdata'];?></td>
                       <td><a href="../attachment/<?php echo $row['attachment'];?>" ><?php echo $row['attachment'];?></a></td>
@@ -217,23 +214,7 @@ if(mysqli_num_rows($result) > 0)
 		</div>
 	</div>
 
-	<!-- Loading Scripts -->
-	<script src="js/jquery.min.js"></script>
-	<script src="js/bootstrap-select.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/jquery.dataTables.min.js"></script>
-	<script src="js/dataTables.bootstrap.min.js"></script>
-	<script src="js/Chart.min.js"></script>
-	<script src="js/fileinput.js"></script>
-	<script src="js/chartData.js"></script>
-	<script src="js/main.js"></script>
-	<script type="text/javascript">
-				 $(document).ready(function () {
-					setTimeout(function() {
-						$('.succWrap').slideUp("slow");
-					}, 3000);
-					});
-		</script>
+
 </body>
 </html>
 <?php } ?>
