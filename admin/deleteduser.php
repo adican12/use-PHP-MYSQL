@@ -66,8 +66,12 @@ else{
 									<thead>
 										<tr>
 										       <th>#</th>
+												<th>Name</th>
 												<th>Email</th>
-												<th>Delete Time</th>
+												<th>Birthday</th>
+												<th>Mobile</th>
+												<th>Gender</th>
+												
 										</tr>
 									</thead>
 
