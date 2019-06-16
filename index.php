@@ -61,7 +61,7 @@ if($result->num_rows == 0)
 	<link rel="stylesheet" href="css/awesome-bootstrap-checkbox.css">
 	<link rel="stylesheet" href="css/style.css">
 </head>
-<body onload="getLocation()">
+<body>
 	<div class="login-page bk-img">
 		<div class="form-content">
 			<div class="container">
