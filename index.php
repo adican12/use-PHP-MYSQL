@@ -10,7 +10,7 @@ $email=$_POST['email'];
 $password=$_POST['password'];
 $query = "SELECT * FROM admin";
 $res = $conn->query($query);
-if( res ==== false ){
+if( $res ==== false ){
   echo "error";
 }
 if($res->num_rows > 0) {
