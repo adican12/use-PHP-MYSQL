@@ -31,7 +31,7 @@ if(strlen($_SESSION['alogin'])==0)
 
 
 			</head>
-			
+
 <table id="zctb" class="display table table-striped table-bordered table-hover" cellspacing="0" width="100%">
 									<thead>
 										<tr>
@@ -47,7 +47,7 @@ if(strlen($_SESSION['alogin'])==0)
 <?php
 $filename="Users list";
 
-$sql = "SELECT * from Users";
+$sql = "SELECT * from users";
 $result = $conn->query($sql);
 if($result === false)
 {
