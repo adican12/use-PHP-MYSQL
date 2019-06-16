@@ -61,25 +61,24 @@ if(isset($_POST['submit']))
 	<link rel="stylesheet" href="css/style.css">
 
 	<script type= "text/javascript" src="../vendor/countries.js"></script>
-	<style>
-	.errorWrap {
-    padding: 10px;
-    margin: 0 0 20px 0;
-	background: #dd3d36;
-	color:#fff;
-    -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
-    box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
-}
-.succWrap{
-    padding: 10px;
-    margin: 0 0 20px 0;
-	background: #5cb85c;
-	color:#fff;
-    -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
-    box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
-}
-		</style>
 
+	<!-- Loading Scripts -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap-select.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.dataTables.min.js"></script>
+	<script src="js/dataTables.bootstrap.min.js"></script>
+	<script src="js/Chart.min.js"></script>
+	<script src="js/fileinput.js"></script>
+	<script src="js/chartData.js"></script>
+	<script src="js/main.js"></script>
+	<script type="text/javascript">
+				 $(document).ready(function () {
+					setTimeout(function() {
+						$('.succWrap').slideUp("slow");
+					}, 3000);
+					});
+	</script>
 
 </head>
 
@@ -101,12 +100,12 @@ if(isset($_POST['submit']))
 $reciver = 'Admin';
 
 
-$sql = "SELECT * from  notification where notireciver = '$reciver' order by time DESC";
+$sql = "SELECT * from  notification";
 $result = $conn->query($sql);
 if($result === false)
 {
 	 user_error("Query failed: ".$conn->error."<br />$sql");
-	 echo "false";
+	 // echo "false";
 }
 
 
@@ -130,8 +129,8 @@ if(mysqli_num_rows($result) > 0)
 	while($row = mysqli_fetch_assoc($result)) {
 
 	?>
-        <h5 style="background:#ededed;padding:20px;"><i class="fa fa-bell text-primary"></i>&nbsp;&nbsp;<b class="text-primary"><?php echo $row['time'];?></b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<?php echo $row['notiuser'];?> -----> <?php echo $row['notitype'];?></h5>
+        <h5 style="background:#ededed;padding:20px;"><i class="fa fa-bell text-primary"></i>&nbsp;&nbsp;<b class="text-primary"><?php echo $row['userid'];?></b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<?php echo $row['noteid'];?> -----> <?php echo $row['adid'];?></h5>
                        <?php $cnt=$cnt+1; }} ?>
                                         </div>
                                     </div>
@@ -143,23 +142,7 @@ if(mysqli_num_rows($result) > 0)
             </div>
         </div>
 
-	<!-- Loading Scripts -->
-	<script src="js/jquery.min.js"></script>
-	<script src="js/bootstrap-select.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/jquery.dataTables.min.js"></script>
-	<script src="js/dataTables.bootstrap.min.js"></script>
-	<script src="js/Chart.min.js"></script>
-	<script src="js/fileinput.js"></script>
-	<script src="js/chartData.js"></script>
-	<script src="js/main.js"></script>
-	<script type="text/javascript">
-				 $(document).ready(function () {
-					setTimeout(function() {
-						$('.succWrap').slideUp("slow");
-					}, 3000);
-					});
-	</script>
+
 </body>
 </html>
 <?php } ?>
