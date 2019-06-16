@@ -160,20 +160,25 @@ if(isset($_REQUEST['unconfirm']))
 						<br>
 					</div>
 					<?php
-						echo "<script>alert('we here 1')</script>";
-					$name = $_POST['search_customers_fame'];
-					echo "<script>alert('we here 2')</script>";
-					echo "the name is : ".$name."<br>";
+
+						$name = $_POST['search_customers_fame'];
 						$sql = "SELECT * FROM  users WHERE name='$name'";
 						$result = $conn->query($sql);
 						if($result === false)
 						{
-							echo "<script>alert('the query doesnt working')</script>";
 							 user_error("Query failed: ".$conn->error."<br />$sql");
 							 echo "false";
 						}
-							echo "<script>alert('we here 3')</script>";
-						$row= mysqli_fetch_assoc($result);
+						while($row= mysqli_fetch_assoc($result)){
+							echo "<table>
+											<tr>
+											<td> $row['name']</td>
+											<td> $row['email']</td>
+											<td> $row['gender']</td>
+											<td> $row['mobile']</td>
+											</tr>
+										</table>"
+						}
 						//echo($row['name']);
 
 						$cnt=1;
