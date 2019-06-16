@@ -130,7 +130,7 @@ if(mysqli_num_rows($result) > 0)
 
 	?>
         <h5 style="background:#ededed;padding:20px;"><i class="fa fa-bell text-primary"></i>&nbsp;&nbsp;<b class="text-primary"><?php echo $row[''];?></b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<?php echo $row['userid'];?> -----> <?php echo $row['adid'];?></h5>
+					<?php echo $row['user_id'];?> -----> <?php echo $row['adid'];?></h5>
                        <?php $cnt=$cnt+1; }} ?>
                                         </div>
                                     </div>
