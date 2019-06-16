@@ -91,5 +91,15 @@ header("Expires: 0");
 			}
 	}
 ?>
+<tr>
+	<td><?php echo htmlentities($cnt);?></td>
+	<td><?php echo $row['name'];?></td>
+	<td><?php echo $row['email'];?></td>
+	<td><?php echo $row['birthday'];?></td>
+	<td><?php echo $row['mobile'];?></td>
+	<td><?php echo $row['gender'];?></td>
+	<td><?php echo $row['user_category'];?></td>
+
+</tr>
 </table>
 <?php } ?>
