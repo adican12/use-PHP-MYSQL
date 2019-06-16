@@ -147,7 +147,7 @@ if(isset($_REQUEST['unconfirm']))
 					<div class="col-md-12">
 
 
-						<h2 class="page-title">Knowledge of customers</h2>
+						<h2 class="page-title">Meet Your  Customers</h2>
 						 <button type="button"  id="show" class="btn btn-primary" onclick="myFunction()" > <i class="fa fa-search"></i>      Do you want to look for someone? </button>
 						<div id="myDIV">
 						<form method="post" class="form-horizontal" enctype="multipart/form-data" action="">
@@ -165,6 +165,7 @@ if(isset($_REQUEST['unconfirm']))
 						$result = $conn->query($sql);
 						if($result === false)
 						{
+							echo "<script>alert('the query doesnt working')</script>";
 							 user_error("Query failed: ".$conn->error."<br />$sql");
 							 echo "false";
 						}
