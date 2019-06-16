@@ -9,7 +9,30 @@ if(strlen($_SESSION['alogin'])==0)
 	header("Location: index.php"); //
 	}
 	else{?>
-<table border="1">
+		<!doctype html>
+		<head>
+
+				<!-- Font awesome -->
+				<link rel="stylesheet" href="css/font-awesome.min.css">
+				<!-- Sandstone Bootstrap CSS -->
+				<link rel="stylesheet" href="css/bootstrap.min.css">
+				<!-- Bootstrap Datatables -->
+				<link rel="stylesheet" href="css/dataTables.bootstrap.min.css">
+				<!-- Bootstrap social button library -->
+				<link rel="stylesheet" href="css/bootstrap-social.css">
+				<!-- Bootstrap select -->
+				<link rel="stylesheet" href="css/bootstrap-select.css">
+				<!-- Bootstrap file input -->
+				<link rel="stylesheet" href="css/fileinput.min.css">
+				<!-- Awesome Bootstrap checkbox -->
+				<link rel="stylesheet" href="css/awesome-bootstrap-checkbox.css">
+				<!-- Admin Stye -->
+				<link rel="stylesheet" href="css/style.css">
+
+
+			</head>
+			
+<table id="zctb" class="display table table-striped table-bordered table-hover" cellspacing="0" width="100%">
 									<thead>
 										<tr>
 										<th>#</th>
@@ -57,7 +80,7 @@ echo '
 <td>'.$Email= $row['email'].'</td>
 <td>'.$Gender= $row['gender'].'</td>
 <td>'.$Phone= $row['mobile'].'</td>
-<td>'.$Designation= $row['designation'].'</td>
+<td>'.$birthday= $row['birthday'].'</td>
 </tr>
 ';
 header("Content-type: application/octet-stream");
