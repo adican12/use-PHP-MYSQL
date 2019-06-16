@@ -108,27 +108,12 @@ if(isset($_REQUEST['unconfirm']))
 	<link rel="stylesheet" href="css/awesome-bootstrap-checkbox.css">
 	<!-- Admin Stye -->
 	<link rel="stylesheet" href="css/style.css">
-  <style>
+	<!-- main.css -->
+	<link rel="stylesheet" href="css/main.css">
 
-	.errorWrap {
-    padding: 10px;
-    margin: 0 0 20px 0;
-	background: #dd3d36;
-	color:#fff;
-    -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
-    box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
-}
-.succWrap{
-    padding: 10px;
-    margin: 0 0 20px 0;
-	background: #5cb85c;
-	color:#fff;
-    -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
-    box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
-}
-#container {height: 370px; width: 100%;}
 
-		</style>
+
+
 
 </head>
 
@@ -161,8 +146,8 @@ if(isset($_REQUEST['unconfirm']))
 												<th>User Name</th>
 												<th>Email</th>
                         <th>Gender</th>
-                        <th>Attachment</th>
-											  <th>Action</th>
+                        <th>Category</th>
+											  <th>Birthday</th>
 										</tr>
 									</thead>
 
@@ -204,7 +189,8 @@ if(mysqli_num_rows($result) > 0)
                       <td><?php echo $row['name'];?></td>
 											<td><?php echo $row['email'];?></td>
                       <td><?php echo $row['gender'];?></td>
-                      <td><a href="../attachment/<?php echo $row['attachment'];?>" ><?php echo $row['attachment'];?></a></td>
+                      <td><?php echo $row['user_category'];?></td>
+											<td><?php echo $row['birthday'];?></td>
 
 <td>
 <a href="sendreply.php?reply=<?php echo $result->sender;?>">&nbsp; <i class="fa fa-mail-reply"></i></a>&nbsp;&nbsp;
