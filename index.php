@@ -8,7 +8,6 @@ if(isset($_POST['login']))
 $status='1';
 $email=$_POST['email'];
 $password=$_POST['password'];
-//bacl to origin
 
 //echo "<br>email: ".$email ."		password: ".$password."<br>";
 
@@ -39,7 +38,6 @@ if($result->num_rows == 0)
           echo "<script type='text/javascript'> document.location = 'userdashborad.php'; </script>";
   }
   }
-  }
 
 }
 ?>
@@ -61,7 +59,7 @@ if($result->num_rows == 0)
 	<link rel="stylesheet" href="css/awesome-bootstrap-checkbox.css">
 	<link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body onload="getLocation()">
 	<div class="login-page bk-img">
 		<div class="form-content">
 			<div class="container">
