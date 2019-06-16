@@ -8,7 +8,7 @@ if(isset($_POST['login']))
 $status='1';
 $email=$_POST['email'];
 $password=$_POST['password'];
-$query = "SELECT * FROM admin";
+$query = "SELECT * FROM admin WHERE email = '$email' AND password = '$password'";
 $res = $conn->query($query);
 if( $res ==== false ){
   echo "error";
