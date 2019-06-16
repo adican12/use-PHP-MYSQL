@@ -274,10 +274,10 @@ if(mysqli_num_rows($result) > 0)
 
 	       var data = google.visualization.arrayToDataTable([
 	         ['category', 'top 5'],
-	         ['Clothing', 5],
+	         ['Educational and textbooks', 5],
 	         ['Furniture', 3],
 	         ['Safety and health',4],
-	         ['Educational and textbooks', 1],
+	         ['Clothing', 1],
 	         ['Vintage and collectibles', 2]
 	       ]);
 
