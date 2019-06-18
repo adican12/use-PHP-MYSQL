@@ -125,6 +125,7 @@ foreach($results as $result)
 		user_error("Query failed: ".$conn->error."<br />$sql");
 		echo "false";
 	}
+	echo "<script>alert('adi the cat')</script>";
 	$row = mysqli_num_rows($result);
 ?>
 
