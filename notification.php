@@ -43,6 +43,7 @@ else{
 	<script type= "text/javascript" src="../vendor/countries.js"></script>
 
 	<?php
+	$cnt=1;
 	$sql = " SELECT * FROM  ad";
 	$result = $conn->query($sql);
 	if($result === false)
@@ -50,8 +51,10 @@ else{
 		 user_error("Query failed: ".$conn->error."<br />$sql");
 		 echo "false";
 	}
-		$row= mysqli_fetch_assoc($result);
-		$row1 = print_r($row, true);
+	if(mysqli_num_rows($result) > 0){
+		while($row= mysqli_fetch_assoc($result)){
+
+
 ?>
 
 
@@ -79,10 +82,10 @@ else{
 													   <p id="details"><?php echo $row['description']?></p>
 												 </div>
 											<div class="card1">
-													<img src="<?php echo $row1['image']?>" id="img1" style="width:100%">
-													<h1 id="header">groom's suit</h1>
-													<p class="price" id="price">$120</p>
-													<p id="details">A groom's suit now</p>
+													<img src="<?php echo $row['image']?>" id="img1" style="width:100%">
+													<h1 id="header"><?php echo $row['header']?></h1>
+													<p class="price" id="price"><?php echo $row['price']?>$</p>
+													<p id="details"><?php echo $row['description']?></p>
 											</div>
 											<div class="card2" id="img2" style="width:100%">
 												<img src="https://firebasestorage.googleapis.com/v0/b/firecatwifi.appspot.com/o/images%2Ftelescope.jpg?alt=media&token=68aefae6-8052-44d7-8561-67340cbd2c56" style="width:100%">
@@ -90,6 +93,7 @@ else{
 												<p class="price" id="price">$80</p>
 												<p id="details">Only now the cheapest  telescope!</p>
 											</div>
+											<?php $cnt=$cnt+1; }} ?>
 											<canvas id="line-chart" width="800" height="450"></canvas>
 
 
