@@ -107,6 +107,7 @@ else{
 									<center>
 										<img src="" id="img" style="width:70%" onclick="changeDetails()">
 										<h1 id="couponName">Coffee </h1>
+										<br>
 										<p class="price" id="counter">$4</p>
 
 								</center>
