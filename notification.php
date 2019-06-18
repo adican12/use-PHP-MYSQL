@@ -66,6 +66,7 @@ else{
 
 
  ?>
+ <?php $cnt=$cnt+1; } ?>
 		<div class="content-wrapper">
 			<div class="container-fluid">
 				<div class="row">
@@ -76,7 +77,7 @@ else{
 								<div class="panel panel-default">
 									<div class="panel-heading">Notification</div>
 									   <div class="panel-body">
-<?php $cnt=$cnt+1; } ?>
+
 											 <div class="card">
 														 <img src="<?php echo $row['image']?>" id="img" style="width:100%">
 														 <h1 id="header"><?php echo $row['header']?></h1>
