@@ -42,6 +42,27 @@ else{
 
 	<script type= "text/javascript" src="../vendor/countries.js"></script>
 
+	<!-- Loading Scripts -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap-select.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.dataTables.min.js"></script>
+	<script src="js/dataTables.bootstrap.min.js"></script>
+	<script src="js/Chart.min.js"></script>
+	<script src="js/fileinput.js"></script>
+	<script src="js/chartData.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/function.js"></script>
+	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+	<script type="text/javascript">
+				 $(document).ready(function () {
+					setTimeout(function() {
+						$('.succWrap').slideUp("slow");
+					}, 3000);
+					});
+	</script>
+
 
 
 </head>
@@ -98,10 +119,10 @@ document.getElementById("img2").addEventListener("click", changeDetails);
 function changeDetails(){
 	//change the price
 	var x = <?php echo $row['price'];?>;
-	document.getElementById("price").innerHTML =  x + " $ ";
+	document.getElementById("counter").innerHTML =  x;
 	//change the header
 	var x = "<?php echo $row['header'];?>";
-	document.getElementById("header").innerHTML = x;
+	document.getElementById("couponName").innerHTML = x;
 //change the text
 	var x = "<?php$row['text'];?>";
 	document.getElementById("details").innerHTML =x;
@@ -157,29 +178,7 @@ $cnt=1;
 
         </div>
 
-	<!-- Loading Scripts -->
-	<script src="js/jquery.min.js"></script>
-	<script src="js/bootstrap-select.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/jquery.dataTables.min.js"></script>
-	<script src="js/dataTables.bootstrap.min.js"></script>
-	<script src="js/Chart.min.js"></script>
-	<script src="js/fileinput.js"></script>
-	<script src="js/chartData.js"></script>
-	<script src="js/main.js"></script>
-	<script src="js/function.js"></script>
-	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
-	<script type="text/javascript">
-				 $(document).ready(function () {
-					setTimeout(function() {
-						$('.succWrap').slideUp("slow");
-					}, 3000);
-					});
-	</script>
-	<script>
 
-	</script>
 </body>
 </html>
 <?php }?>
