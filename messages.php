@@ -9,8 +9,19 @@ header('location:index.php');
 else{
 
 	 echo "<script>alert('we here')</script>";
-	
+	$sql = "SELECT coupon.imageURL,coupon.counter,coupon.couponName,users_coupon.user_id FROM coupon,users_coupon WHERE coupon.couponID =users_coupon.coupon_id";
+
+	$result = $conn->query($sql);
+	if($result === false) {
+		user_error("Query failed: ".$conn->error."<br />$sql");
+		echo "false";
+	}
+	$cnt=1;
+	$row= mysqli_fetch_assoc($result);
+	$row['coupon.imageURL'];
+	$row['coupon.counter'];
  ?>
+
 
 <!doctype html>
 <html lang="en" class="no-js">
@@ -98,17 +109,8 @@ else{
 
 <?php
 
-$sql = "SELECT coupon.imageURL,coupon.counter,coupon.couponName,users_coupon.user_id FROM coupon,users_coupon WHERE coupon.couponID =users_coupon.coupon_id";
 
-$result = $conn->query($sql);
-if($result === false) {
-	user_error("Query failed: ".$conn->error."<br />$sql");
-	echo "false";
-}
-$cnt=1;
-$row= mysqli_fetch_assoc($result);
-$row['coupon.imageURL'];
-$row['coupon.counter'];
+
 if($result->rowCount() > 0)
 {
 foreach($results as $result)
