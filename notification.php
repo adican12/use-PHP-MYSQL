@@ -116,7 +116,7 @@ else{
 											 <div class="card">
 														 <img src="<?php echo $row['image']?>" id="img" style="width:100%">
 														 <h1 id="header" class="title"><?php echo $row['title']?></h1>
-													   <p class="price" id="price"><?php echo $row['price']?>$</p>
+													   <p class="price" id="price"><?php echo $row['price']?> $</p>
 													   <p id="details"><?php echo $row['description']?></p>
 												 </div>
 												 <br>
@@ -124,7 +124,7 @@ else{
 											<div class="card1">
 													<img src="<?php echo $row2['image']?>" id="img1" style="width:80%">
 													<h1 id="header" class="title"><?php echo $row2['title']?></h1>
-													<p class="price" id="price"><?php echo $row2['price']?>$</p>
+													<p class="price" id="price"><?php echo $row2['price']?> $</p>
 													<p id="details"><?php echo $row2['description']?></p>
 											</div>
 											<br>
