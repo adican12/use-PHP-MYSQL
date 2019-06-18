@@ -95,7 +95,7 @@ else{
 							<div class="panel-body">
 								<div class="card">
 									<center>
-										<img src="https://firebasestorage.googleapis.com/v0/b/firecatwifi.appspot.com/o/images%2Fcoffee.jpg?alt=media&token=40ea715d-e4de-4d34-9ece-1c1cd247ff79" id="img" style="width:100%">
+										<img src="" id="img" style="width:100%">
 										<h1 id="couponName">Coffee </h1>
 										<p class="price" id="counter">$4</p>
 
