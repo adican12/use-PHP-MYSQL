@@ -90,7 +90,7 @@ else{
 												 </div>
 
 
-										
+
 <?php
 $sql = " SELECT coupon.imageURL,coupon.counter,coupon.couponName,users_coupon.user_id FROM coupon,users_coupon WHERE coupon.couponID =users_coupon.coupon_id";
 $result = $conn->query($sql);
@@ -102,13 +102,7 @@ if($result === false)
 }
 	$row= mysqli_fetch_assoc($result);
 
-$result = $conn->query($sql);
-if($result === false)
-{
-	 user_error("Query failed: ".$conn->error."<br />$sql");
-	 echo "false";
-}
-	$row= mysqli_fetch_assoc($result);
+
 ?>
 
 <script type="text/javascript">
@@ -118,16 +112,16 @@ document.getElementById("img2").addEventListener("click", changeDetails);
 
 function changeDetails(){
 	//change the price
-	var x = <?php echo $row['price'];?>;
+	var x = <?php echo $row['coupon.counter'];?>;
 	document.getElementById("counter").innerHTML =  x;
 	//change the header
-	var x = "<?php echo $row['header'];?>";
+	var x = "<?php echo $row['coupon.couponName'];?>";
 	document.getElementById("couponName").innerHTML = x;
 //change the text
 	var x = "<?php$row['text'];?>";
 	document.getElementById("details").innerHTML =x;
 //change the image
-	var x = "<?php echo $row['image'];?>";
+	var x = "<?php echo $row['coupon.imageURL'];?>";
  	//alert(x);
   document.getElementById("img").src= x;
 }
