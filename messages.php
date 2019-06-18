@@ -95,9 +95,9 @@ if($result === false) {
 	user_error("Query failed: ".$conn->error."<br />$sql");
 	echo "false";
 }
-echo "<script>alert('adi the cat')</script>";
 $cnt=1;
 $row= mysqli_fetch_assoc($result);
+
 if($result->rowCount() > 0)
 {
 foreach($results as $result)
