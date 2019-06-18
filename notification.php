@@ -21,7 +21,7 @@ else{
 	<meta name="author" content="">
 	<meta name="theme-color" content="#3e454c">
 
-	<title>See Coupon</title>
+	<title>Notification</title>
 
 	<!-- Font awesome -->
 	<link rel="stylesheet" href="css/font-awesome.min.css">
@@ -42,27 +42,6 @@ else{
 
 	<script type= "text/javascript" src="../vendor/countries.js"></script>
 
-	<!-- Loading Scripts -->
-	<script src="js/jquery.min.js"></script>
-	<script src="js/bootstrap-select.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/jquery.dataTables.min.js"></script>
-	<script src="js/dataTables.bootstrap.min.js"></script>
-	<script src="js/Chart.min.js"></script>
-	<script src="js/fileinput.js"></script>
-	<script src="js/chartData.js"></script>
-	<script src="js/main.js"></script>
-	<script src="js/function.js"></script>
-	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
-	<script type="text/javascript">
-				 $(document).ready(function () {
-					setTimeout(function() {
-						$('.succWrap').slideUp("slow");
-					}, 3000);
-					});
-	</script>
-
 
 
 </head>
@@ -81,28 +60,42 @@ else{
 								<div class="panel panel-default">
 									<div class="panel-heading">Notification</div>
 									   <div class="panel-body">
-
 											 <div class="card">
 														 <img src="https://firebasestorage.googleapis.com/v0/b/firecatwifi.appspot.com/o/images%2Fcoffee.jpg?alt=media&token=40ea715d-e4de-4d34-9ece-1c1cd247ff79" id="img" style="width:100%">
-														 <h1 id="couponName">Coffee</h1>
-													   <p class="" id="counter">$4</p>
+														 <h1 id="header">Coffee</h1>
+													   <p class="price" id="price">$4</p>
 													   <p id="details">the best new coffee</p>
 												 </div>
-
-
-
+											<div class="card1">
+													<img src="https://firebasestorage.googleapis.com/v0/b/firecatwifi.appspot.com/o/images%2Fsuit.jpg?alt=media&token=b57664cf-84ff-4892-b1f1-c70dc8e1513b" id="img1" style="width:100%">
+													<h1 id="header">groom's suit</h1>
+													<p class="price" id="price">$120</p>
+													<p id="details">A groom's suit now</p>
+											</div>
+											<div class="card2" id="img2" style="width:100%">
+												<img src="https://firebasestorage.googleapis.com/v0/b/firecatwifi.appspot.com/o/images%2Ftelescope.jpg?alt=media&token=68aefae6-8052-44d7-8561-67340cbd2c56" style="width:100%">
+												<h1 id="header"> the best telescope!</h1>
+												<p class="price" id="price">$80</p>
+												<p id="details">Only now the cheapest  telescope!</p>
+											</div>
+											<canvas id="line-chart" width="800" height="450"></canvas>
 <?php
-$sql = " SELECT coupon.imageURL,coupon.counter,coupon.couponName,users_coupon.user_id FROM coupon,users_coupon WHERE coupon.couponID =users_coupon.coupon_id";
+$sql = " SELECT * FROM   ad WHERE id =2";
 $result = $conn->query($sql);
 if($result === false)
 {
 	 user_error("Query failed: ".$conn->error."<br />$sql");
-	 echo " this the false";
-	 echo " the query is not good ";
+	 echo "false";
 }
 	$row= mysqli_fetch_assoc($result);
 
-
+$result = $conn->query($sql);
+if($result === false)
+{
+	 user_error("Query failed: ".$conn->error."<br />$sql");
+	 echo "false";
+}
+	$row= mysqli_fetch_assoc($result);
 ?>
 
 <script type="text/javascript">
@@ -112,16 +105,16 @@ document.getElementById("img2").addEventListener("click", changeDetails);
 
 function changeDetails(){
 	//change the price
-	var x = <?php echo $row['coupon.counter'];?>;
-	document.getElementById("counter").innerHTML =  x;
+	var x = <?php echo $row['price'];?>;
+	document.getElementById("price").innerHTML =  x + " $ ";
 	//change the header
-	var x = "<?php echo $row['coupon.couponName'];?>";
-	document.getElementById("couponName").innerHTML = x;
+	var x = "<?php echo $row['header'];?>";
+	document.getElementById("header").innerHTML = x;
 //change the text
 	var x = "<?php$row['text'];?>";
 	document.getElementById("details").innerHTML =x;
 //change the image
-	var x = "<?php echo $row['coupon.imageURL'];?>";
+	var x = "<?php echo $row['image'];?>";
  	//alert(x);
   document.getElementById("img").src= x;
 }
@@ -172,7 +165,29 @@ $cnt=1;
 
         </div>
 
+	<!-- Loading Scripts -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap-select.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.dataTables.min.js"></script>
+	<script src="js/dataTables.bootstrap.min.js"></script>
+	<script src="js/Chart.min.js"></script>
+	<script src="js/fileinput.js"></script>
+	<script src="js/chartData.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/function.js"></script>
+	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+	<script type="text/javascript">
+				 $(document).ready(function () {
+					setTimeout(function() {
+						$('.succWrap').slideUp("slow");
+					}, 3000);
+					});
+	</script>
+	<script>
 
+	</script>
 </body>
 </html>
 <?php }?>
