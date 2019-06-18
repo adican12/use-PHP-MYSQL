@@ -71,6 +71,14 @@ else{
 		echo "false";
 	}
 	$row2= mysqli_fetch_assoc($result);
+	$adID = $adID+1;
+	$new_sql = "SELECT * FROM  ad WHERE adID ='$adID'";
+	$res = $conn->query($new_sql);
+	if($res === false) {
+		user_error("Query failed: ".$conn->error."<br />$sql");
+		echo "false";
+	}
+	$row3 = mysqli_fetch_assoc($res);
 
 
  ?>
@@ -98,10 +106,10 @@ else{
 													<p id="details"><?php echo $row2['description']?></p>
 											</div>
 											<div class="card2" id="img2" style="width:100%">
-												<img src="https://firebasestorage.googleapis.com/v0/b/firecatwifi.appspot.com/o/images%2Ftelescope.jpg?alt=media&token=68aefae6-8052-44d7-8561-67340cbd2c56" style="width:100%">
-												<h1 id="header"> the best telescope!</h1>
-												<p class="price" id="price">$80</p>
-												<p id="details">Only now the cheapest  telescope!</p>
+												<img src="<?php echo $row3['image']?>" style="width:100%">
+												<h1 id="header"> <?php echo $row3['header']?></h1>
+												<p class="price" id="price"><?php echo $row3['price']?> $</p>
+												<p id="details"><?php echo $row3['description']?></p>
 											</div>
 
 
