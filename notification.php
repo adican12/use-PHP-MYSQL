@@ -51,6 +51,7 @@ else{
 		 echo "false";
 	}
 		$row= mysqli_fetch_assoc($result);
+		$row1 = print_r($row, true);
 ?>
 
 
@@ -78,7 +79,7 @@ else{
 													   <p id="details"><?php echo $row['description']?></p>
 												 </div>
 											<div class="card1">
-													<img src="https://firebasestorage.googleapis.com/v0/b/firecatwifi.appspot.com/o/images%2Fsuit.jpg?alt=media&token=b57664cf-84ff-4892-b1f1-c70dc8e1513b" id="img1" style="width:100%">
+													<img src="<?php echo $row1['image']?>" id="img1" style="width:100%">
 													<h1 id="header">groom's suit</h1>
 													<p class="price" id="price">$120</p>
 													<p id="details">A groom's suit now</p>
