@@ -78,7 +78,7 @@ else{
 			function changeDetails(){
 
 
-				document.getElementById("img").src ="<?php echo $row['imageURL']?>;"
+				document.getElementById("img").src ="<?php echo $row['imageURL']?>"
 				document.getElementById("couponName").innerHTML ='<?php echo $row['couponName']?>';
 				document.getElementById("counter").innerHTML =<?php echo  $row['counter']?>;
 			}
