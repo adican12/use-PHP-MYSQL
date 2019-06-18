@@ -21,7 +21,7 @@ else{
 	echo $row['counter'];
 	echo $row['couponName'];
 	$cnt=1;
-	echo "<script>alert('$row['imageURL']')</script>";
+	echo "<script>alert('we here')</script>";
 
  ?>
 
