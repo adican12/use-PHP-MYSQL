@@ -78,6 +78,10 @@ else{
 							<div class="panel-heading">List Coupons</div>
 							<div class="panel-body">
 								<div class="card">
+									<img src="https://firebasestorage.googleapis.com/v0/b/firecatwifi.appspot.com/o/images%2Fcoffee.jpg?alt=media&token=40ea715d-e4de-4d34-9ece-1c1cd247ff79" id="img" style="width:100%">
+									<h1 id="header">Coffee</h1>
+									<p class="price" id="price">$4</p>
+									<p id="details">the best new coffee</p>
 								</div>
 							<?php if($error){?><div class="errorWrap" id="msgshow"><?php echo htmlentities($error); ?> </div><?php }
 				else if($msg){?><div class="succWrap" id="msgshow"><?php echo htmlentities($msg); ?> </div><?php }?>
