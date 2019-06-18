@@ -118,7 +118,15 @@ foreach($results as $result)
 			</div>
 		</div>
 	</div>
-
+<?php
+	$sql = "SELECT coupon.imageURL,coupon.counter,coupon.couponName,users_coupon.user_id FROM coupon,users_coupon WHERE coupon.couponID =users_coupon.coupon_id";
+	$result = $conn->query($sql);
+	if($result === false) {
+		user_error("Query failed: ".$conn->error."<br />$sql");
+		echo "false";
+	}
+	$row = mysqli_num_rows($result);
+?>
 
 </body>
 </html>
