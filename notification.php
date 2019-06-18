@@ -100,9 +100,9 @@ else{
 													   <p id="details"><?php echo $row['description']?></p>
 												 </div>
 												 <br>
-												 
+
 											<div class="card1">
-													<img src="<?php echo $row2['image']?>" id="img1" style="width:100%">
+													<img src="<?php echo $row2['image']?>" id="img1" style="width:100% height:40px;">
 													<h1 id="header"><?php echo $row2['header']?></h1>
 													<p class="price" id="price"><?php echo $row2['price']?>$</p>
 													<p id="details"><?php echo $row2['description']?></p>
