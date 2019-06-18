@@ -16,10 +16,11 @@ else{
 		user_error("Query failed: ".$conn->error."<br />$sql");
 		echo "false";
 	}
-	$cnt=1;
 	$row= mysqli_fetch_assoc($result);
 	$row['coupon.imageURL'];
 	$row['coupon.counter'];
+	$cnt=1;
+
  ?>
 
 
