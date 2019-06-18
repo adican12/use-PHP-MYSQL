@@ -90,7 +90,7 @@ if($result->num_rows == 0)
 ///////////////////////////////////
 ?>
 													<div class="stat-panel-number h1 "></div>
-													<div class="stat-panel-title text-uppercase">Know your customers</div>
+													<div class="stat-panel-title text-uppercase">Meet your customers</div>
 												</div>
 											</div>
 											<a href="userlist.php" class="block-anchor panel-footer">Full Detail <i class="fa fa-arrow-right"></i></a>
