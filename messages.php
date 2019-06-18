@@ -17,7 +17,7 @@ else{
 		echo "false";
 	}
 	$row= mysqli_fetch_assoc($result);
-	echo $row['coupon.imageURL'];
+	echo $row['imageURL'];
 	echo $row['coupon.counter'];
 	$cnt=1;
 	echo "<script>alert('we here')</script>";
