@@ -81,29 +81,27 @@ else{
 				else if($msg){?><div class="succWrap" id="msgshow"><?php echo htmlentities($msg); ?> </div><?php }?>
 								<table id="zctb" class="display table table-striped table-bordered table-hover" cellspacing="0" width="100%">
 									<thead>
-										
+
 									</thead>
 
 									<tbody>
 
 <?php
-$reciver = $_SESSION['alogin'];
-$sql = "SELECT * from  feedback where reciver = (:reciver)";
-$query = $dbh -> prepare($sql);
-$query-> bindParam(':reciver', $reciver, PDO::PARAM_STR);
-$query->execute();
-$results=$query->fetchAll(PDO::FETCH_OBJ);
+
+$sql = "SELECT coupon.imageURL,coupon.counter,coupon.couponName,users_coupon.user_id FROM coupon,users_coupon WHERE coupon.couponID =users_coupon.coupon_id";
+
+$result = $conn->query($sql);
+if($result === false) {
+	user_error("Query failed: ".$conn->error."<br />$sql");
+	echo "false";
+}
 $cnt=1;
-if($query->rowCount() > 0)
-{
-foreach($results as $result)
-{				?>
-										<tr>
-											<td><?php echo htmlentities($cnt);?></td>
-                                            <td><?php echo htmlentities($result->sender);?></td>
-											<td><?php echo htmlentities($result->feedbackdata);?></td>
-										</tr>
-										<?php $cnt=$cnt+1; }} ?>
+$row= mysqli_fetch_assoc($result);
+
+
+{			?>
+										
+										<?php $cnt=$cnt+1; ?>
 
 									</tbody>
 								</table>
