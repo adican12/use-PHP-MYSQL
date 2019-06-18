@@ -99,12 +99,16 @@ else{
 													   <p class="price" id="price"><?php echo $row['price']?>$</p>
 													   <p id="details"><?php echo $row['description']?></p>
 												 </div>
+												 <br>
+												 
 											<div class="card1">
 													<img src="<?php echo $row2['image']?>" id="img1" style="width:100%">
 													<h1 id="header"><?php echo $row2['header']?></h1>
 													<p class="price" id="price"><?php echo $row2['price']?>$</p>
 													<p id="details"><?php echo $row2['description']?></p>
 											</div>
+											<br>
+
 											<div class="card2" id="img2" style="width:100%">
 												<img src="<?php echo $row3['image']?>" style="width:100%">
 												<h1 id="header"> <?php echo $row3['header']?></h1>
