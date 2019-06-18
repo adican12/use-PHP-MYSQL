@@ -54,19 +54,26 @@ else{
 	<?php include('includes/leftbar.php');?>
 
 	<?php
-	$cnt=1;
-	$sql = " SELECT * FROM  ad";
+	$adID = 1;
+	$sql = " SELECT * FROM  ad WHERE adID ='$adID'";
 	$result = $conn->query($sql);
 	if($result === false)
 	{
 		 user_error("Query failed: ".$conn->error."<br />$sql");
 		 echo "false";
 	}
-		while($row= mysqli_fetch_assoc($result)){
+		$row = mysqli_fetch_assoc($result);
+	$adID = $adID+1;
+	$sql2 =  " SELECT * FROM  ad WHERE adID ='$adID'";
+	$result =$conn->query($sql2);
+	if($result === false) {
+		user_error("Query failed: ".$conn->error."<br />$sql");
+		echo "false";
+	}
+	$row2= mysqli_fetch_assoc($result);
 
 
  ?>
- <?php $cnt=$cnt+1; } ?>
 		<div class="content-wrapper">
 			<div class="container-fluid">
 				<div class="row">
@@ -85,10 +92,10 @@ else{
 													   <p id="details"><?php echo $row['description']?></p>
 												 </div>
 											<div class="card1">
-													<img src="<?php echo $row['image']?>" id="img1" style="width:100%">
-													<h1 id="header"><?php echo $row['header']?></h1>
-													<p class="price" id="price"><?php echo $row['price']?>$</p>
-													<p id="details"><?php echo $row['description']?></p>
+													<img src="<?php echo $row2['image']?>" id="img1" style="width:100%">
+													<h1 id="header"><?php echo $row2['header']?></h1>
+													<p class="price" id="price"><?php echo $row2['price']?>$</p>
+													<p id="details"><?php echo $row2['description']?></p>
 											</div>
 											<div class="card2" id="img2" style="width:100%">
 												<img src="https://firebasestorage.googleapis.com/v0/b/firecatwifi.appspot.com/o/images%2Ftelescope.jpg?alt=media&token=68aefae6-8052-44d7-8561-67340cbd2c56" style="width:100%">
