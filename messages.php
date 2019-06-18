@@ -97,11 +97,16 @@ if($result === false) {
 }
 $cnt=1;
 $row= mysqli_fetch_assoc($result);
-
-
-{			?>
-										
-										<?php $cnt=$cnt+1; ?>
+if($result->rowCount() > 0)
+{
+foreach($results as $result)
+{				?>
+										<tr>
+											<td><?php echo htmlentities($cnt);?></td>
+                                            <td><?php echo htmlentities($result->sender);?></td>
+											<td><?php echo htmlentities($result->feedbackdata);?></td>
+										</tr>
+										<?php $cnt=$cnt+1; }} ?>
 
 									</tbody>
 								</table>
