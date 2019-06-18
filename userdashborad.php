@@ -63,7 +63,7 @@ else{
 /////////////////////////
 ////	new code
 /////////////////////////
-$sql ="SELECT id from users";
+$sql ="SELECT user_id from users";
 
 $result = $conn->query($sql);
 if($result === false)
@@ -112,11 +112,11 @@ $result1 = $conn->query($sql);
 if($result1 === false)
 {
    user_error("Query failed: ".$conn->error."<br />$sql");
-   echo "false";
+   //echo "false";
 }
 if($result1->num_rows == 0)
 {
-  echo "<script>alert('Invalid Details Or admin Details - reciver');</script>";
+  //echo "<script>alert('Invalid Details Or admin Details - reciver');</script>";
 }else{
 
 	$regbd=mysqli_num_rows($result1);
@@ -163,7 +163,7 @@ if($results12 === false)
 }
 if($results12->num_rows == 0)
 {
-  echo "<script>alert('Invalid Details Or admin Details - reciver');</script>";
+  //echo "<script>alert('Invalid Details Or admin Details - reciver');</script>";
 }else{
 
 	$regbd2=mysqli_num_rows($results12);

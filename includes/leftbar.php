@@ -9,7 +9,7 @@
 			</li>
 			<li><a href="notification.php"><i class="fa fa-bell"></i> &nbsp;Notification<sup style="color:red">*</sup></a>
 			</li>
-			<li><a href="notification.php"><i class="fa fa-bell"></i> &nbsp;See Coupons</a>
+			<li><a href="messages.php"><i class="fa fa-bell"></i> &nbsp;See Coupons</a>
 			</li>
 			</ul>
 		</nav>

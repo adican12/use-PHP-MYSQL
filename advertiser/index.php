@@ -75,6 +75,18 @@ if($result->num_rows == 0)
 	<link rel="stylesheet" href="css/fileinput.min.css">
 	<link rel="stylesheet" href="css/awesome-bootstrap-checkbox.css">
 	<link rel="stylesheet" href="css/style.css">
+
+  <!-- Loading Scripts -->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap-select.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.dataTables.min.js"></script>
+  <script src="js/dataTables.bootstrap.min.js"></script>
+  <script src="js/Chart.min.js"></script>
+  <script src="js/fileinput.js"></script>
+  <script src="js/chartData.js"></script>
+  <script src="js/main.js"></script>
+  
 </head>
 
 <body>
@@ -103,16 +115,7 @@ if($result->num_rows == 0)
 		</div>
 	</div>
 
-	<!-- Loading Scripts -->
-	<script src="js/jquery.min.js"></script>
-	<script src="js/bootstrap-select.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/jquery.dataTables.min.js"></script>
-	<script src="js/dataTables.bootstrap.min.js"></script>
-	<script src="js/Chart.min.js"></script>
-	<script src="js/fileinput.js"></script>
-	<script src="js/chartData.js"></script>
-	<script src="js/main.js"></script>
+
 
 </body>
 

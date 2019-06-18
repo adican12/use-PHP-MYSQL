@@ -8,7 +8,23 @@ header('location:index.php');
 }
 else{
 
+
+	$sql = "SELECT coupon.imageURL,coupon.counter,coupon.couponName,users_coupon.user_id FROM coupon,users_coupon WHERE coupon.couponID =users_coupon.coupon_id";
+
+	$result = $conn->query($sql);
+	if($result === false) {
+		user_error("Query failed: ".$conn->error."<br />$sql");
+		echo "false";
+	}
+	$row= mysqli_fetch_assoc($result);
+	echo $row['imageURL'];
+	echo $row['counter'];
+	echo $row['couponName'];
+	$cnt=1;
+	echo "<script>alert('we here')</script>";
+
  ?>
+
 
 <!doctype html>
 <html lang="en" class="no-js">
@@ -39,30 +55,38 @@ else{
 	<link rel="stylesheet" href="css/awesome-bootstrap-checkbox.css">
 	<!-- Admin Stye -->
 	<link rel="stylesheet" href="css/style.css">
-  <style>
+	<!-- Loading Scripts -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap-select.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.dataTables.min.js"></script>
+	<script src="js/dataTables.bootstrap.min.js"></script>
+	<script src="js/Chart.min.js"></script>
+	<script src="js/fileinput.js"></script>
+	<script src="js/chartData.js"></script>
+	<script src="js/main.js"></script>
+	<script type="text/javascript">
+				 $(document).ready(function () {
+					setTimeout(function() {
+						$('.succWrap').slideUp("slow");
+					}, 3000);
+					});
+		</script>
+		<script>
+		document.addEventListener("click", changeDetails);
 
-	.errorWrap {
-    padding: 10px;
-    margin: 0 0 20px 0;
-	background: #dd3d36;
-	color:#fff;
-    -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
-    box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
-}
-.succWrap{
-    padding: 10px;
-    margin: 0 0 20px 0;
-	background: #5cb85c;
-	color:#fff;
-    -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
-    box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
-}
+			function changeDetails(){
 
-		</style>
+
+				document.getElementById("img").src ="<?php echo $row['imageURL']?>"
+				document.getElementById("couponName").innerHTML ='<?php echo $row['couponName']?>';
+				document.getElementById("counter").innerHTML =<?php echo  $row['counter']?>;
+			}
+		</script>
 
 </head>
 
-<body>
+<body >
 	<?php include('includes/header.php');?>
 
 	<div class="ts-main-content">
@@ -73,34 +97,35 @@ else{
 				<div class="row">
 					<div class="col-md-12">
 
-						<h2 class="page-title">Messages</h2>
+						<h2 class="page-title">See Coupons</h2>
 
 						<!-- Zero Configuration Table -->
 						<div class="panel panel-default">
-							<div class="panel-heading">List Users</div>
+							<div class="panel-heading">List Coupons</div>
 							<div class="panel-body">
+								<div class="card">
+									<center>
+										<img src="" id="img" style="width:70%" onclick="changeDetails()"> Just click on the image
+										<h1 id="couponName">Coupon Name </h1>
+										<br>
+										<p class="price" id="counter">Here Counter </p>
+
+								</center>
+								</div>
 							<?php if($error){?><div class="errorWrap" id="msgshow"><?php echo htmlentities($error); ?> </div><?php }
 				else if($msg){?><div class="succWrap" id="msgshow"><?php echo htmlentities($msg); ?> </div><?php }?>
 								<table id="zctb" class="display table table-striped table-bordered table-hover" cellspacing="0" width="100%">
 									<thead>
-										<tr>
-										       <th>#</th>
-												<th>User</th>
-												<th>Message</th>
-										</tr>
+
 									</thead>
 
 									<tbody>
 
 <?php
-$reciver = $_SESSION['alogin'];
-$sql = "SELECT * from  feedback where reciver = (:reciver)";
-$query = $dbh -> prepare($sql);
-$query-> bindParam(':reciver', $reciver, PDO::PARAM_STR);
-$query->execute();
-$results=$query->fetchAll(PDO::FETCH_OBJ);
-$cnt=1;
-if($query->rowCount() > 0)
+
+
+
+if($result->rowCount() > 0)
 {
 foreach($results as $result)
 {				?>
@@ -122,23 +147,8 @@ foreach($results as $result)
 		</div>
 	</div>
 
-	<!-- Loading Scripts -->
-	<script src="js/jquery.min.js"></script>
-	<script src="js/bootstrap-select.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/jquery.dataTables.min.js"></script>
-	<script src="js/dataTables.bootstrap.min.js"></script>
-	<script src="js/Chart.min.js"></script>
-	<script src="js/fileinput.js"></script>
-	<script src="js/chartData.js"></script>
-	<script src="js/main.js"></script>
-	<script type="text/javascript">
-				 $(document).ready(function () {
-					setTimeout(function() {
-						$('.succWrap').slideUp("slow");
-					}, 3000);
-					});
-		</script>
+
+
 </body>
 </html>
 <?php } ?>

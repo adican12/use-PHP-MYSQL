@@ -39,26 +39,21 @@ else{
 	<link rel="stylesheet" href="css/awesome-bootstrap-checkbox.css">
 	<!-- Admin Stye -->
 	<link rel="stylesheet" href="css/style.css">
-  <style>
+  <!-- main css -->
+	<link rel ="stylesheet" href = "css/main.css">
 
-	.errorWrap {
-    padding: 10px;
-    margin: 0 0 20px 0;
-	background: #dd3d36;
-	color:#fff;
-    -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
-    box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
-}
-.succWrap{
-    padding: 10px;
-    margin: 0 0 20px 0;
-	background: #5cb85c;
-	color:#fff;
-    -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
-    box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
-}
 
-		</style>
+	<!-- Loading Scripts -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap-select.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.dataTables.min.js"></script>
+	<script src="js/dataTables.bootstrap.min.js"></script>
+	<script src="js/Chart.min.js"></script>
+	<script src="js/fileinput.js"></script>
+	<script src="js/chartData.js"></script>
+	<script src="js/main.js"></script>
+
 
 </head>
 
@@ -98,10 +93,28 @@ else{
 
 <?php
 
-$sql = "SELECT * FROM campaign WHERE campaignID BETWEEN 10 and 22";
-
+$email = $_SESSION['alogin'];
+$sql = "SELECT user_id FROM users WHERE email = '$email';";
 $result = $conn->query($sql);
-if($results12 === false)
+if($result === false) {
+	echo "error";
+}
+$row =mysqli_fetch_assoc($result);
+$row_two = $row['user_id'];
+
+
+$sql = "SELECT MAX(adID) FROM ad WHERE advID ='$row_two' ";
+$result = $conn->query($sql);
+if($result === false) {
+	echo "error";
+}
+$row = mysqli_fetch_assoc($result);
+$temp = $row['MAX(adID)'];
+
+
+$sql = "SELECT * FROM campaign WHERE adID ='$temp' ";
+$result = $conn->query($sql);
+if($result === false)
 {
    user_error("Query failed: ".$conn->error."<br />$sql");
    echo "false";
@@ -145,16 +158,7 @@ if(mysqli_num_rows($result) > 0)
 		</div>
 	</div>
 
-	<!-- Loading Scripts -->
-	<script src="js/jquery.min.js"></script>
-	<script src="js/bootstrap-select.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/jquery.dataTables.min.js"></script>
-	<script src="js/dataTables.bootstrap.min.js"></script>
-	<script src="js/Chart.min.js"></script>
-	<script src="js/fileinput.js"></script>
-	<script src="js/chartData.js"></script>
-	<script src="js/main.js"></script>
+
 	<script type="text/javascript">
 				 $(document).ready(function () {
 					setTimeout(function() {

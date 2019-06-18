@@ -39,26 +39,7 @@ else{
 	<link rel="stylesheet" href="css/awesome-bootstrap-checkbox.css">
 	<!-- Admin Stye -->
 	<link rel="stylesheet" href="css/style.css">
-  <style>
 
-	.errorWrap {
-    padding: 10px;
-    margin: 0 0 20px 0;
-	background: #dd3d36;
-	color:#fff;
-    -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
-    box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
-}
-.succWrap{
-    padding: 10px;
-    margin: 0 0 20px 0;
-	background: #5cb85c;
-	color:#fff;
-    -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
-    box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
-}
-
-		</style>
 
 </head>
 
@@ -85,8 +66,12 @@ else{
 									<thead>
 										<tr>
 										       <th>#</th>
+												<th>Name</th>
 												<th>Email</th>
-												<th>Delete Time</th>
+												<th>Birthday</th>
+												<th>Mobile</th>
+												<th>Gender</th>
+
 										</tr>
 									</thead>
 
@@ -94,7 +79,7 @@ else{
 
 <?php
 
-$sql = "SELECT * from  deleteduser";
+$sql = "SELECT * from  users";
 
 $result = $conn->query($sql);
 if($results12 === false)
@@ -122,8 +107,13 @@ if(mysqli_num_rows($result) > 0)
 		?>
 										<tr>
 											<td><?php echo htmlentities($cnt);?></td>
-                                            <td><?php echo $result['email'];?></td>
-											<td><?php echo $result['deltime'];?></td>
+											<td><?php echo $row['name'];?></td>
+                      <td><?php echo $row['email'];?></td>
+											<td><?php echo $row['birthday'];?></td>
+											<td><?php echo $row['mobile'];?></td>
+											<td><?php echo $row['gender'];?></td>
+											<td><?php echo $row['user_category'];?></td>
+
 										</tr>
 										<?php $cnt=$cnt+1; }} ?>
 

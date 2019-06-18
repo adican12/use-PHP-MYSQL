@@ -1,13 +1,33 @@
 <?php
+require __DIR__ . '/vendor/autoload.php';
+
+use Google\Cloud\Storage\StorageClient;
+
+$projectId = 'catifi';
+//
+// # Instantiates a client
+$storage = new StorageClient([
+    'projectId' => $projectId
+]);
+
+$bucket = $storage->bucket('catifi2');
+
 include('includes/config.php');
 if(isset($_POST['submit']))
 {
 
-$file = $_FILES['image']['name'];
-// $file_loc = $_FILES['image']['tmp_name'];
-// $folder="images/".basename($file);
-// $new_file_name = strtolower($file);
-// $final_file=str_replace(' ','-',$new_file_name);
+	$target_dir = "user/";
+	// $target_file = $target_dir . basename($_FILES['fileToUpload']['name']);
+
+	$file = file_get_contents($_FILES['uploadfile']['tmp_name']);
+	$objectName = $target_dir.$_FILES['uploadfile']['name'];
+	echo "objectName: ".$object."<br>";
+
+	$object = $bucket->upload( $file, [
+			'name' => $objectName
+	]);
+	echo "<br>file uploaded successfully</br>";
+
 
 
 
@@ -20,12 +40,14 @@ $mobileno=$_POST['mobileno'];
 $usertype=$_POST['usertype'];
 $birthday=$_POST['birthday'];
 $userCategory = $_POST['category'];
-
+$image = 'https://storage.googleapis.com/catifi2/user/'.$_FILES['uploadfile']['name'];
+$user_id = 13;
+$location_id = 1;
 // if(move_uploaded_file($file_loc,$folder.$final_file))
 	// {
 		// $image=$final_file;
 		//$image="asdasdasdasdasdasd";
-		$imgContent = addslashes(file_get_contents($file));
+
 
     // }
 $notitype='Create Account';
@@ -41,8 +63,8 @@ $sender=$email;
 /////////////////////////////////////////////////
 echo "<br>start signup<br>";
 
-$sql = "INSERT INTO `users`(`name`, `email`, `password`, `gender`, `mobile`, `image`,`user_type`, `birthday`,`status`,`user_category`)
-VALUES ('$name', '$email', '$password','$gender','$mobileno','$imgContent','$usertype','$birthday',1,'$userCategory')";
+$sql = "INSERT INTO `users`(`user_id`,`name`, `email`, `password`, `gender`, `mobile`, `image`,`user_type`, `birthday`,`status`,`user_category`,`location_id`)
+VALUES ('$user_id','$name', '$email', '$password','$gender','$mobileno','$image','$usertype','$birthday',1,'$userCategory','$location_id')";
 
 if ($conn->query($sql) === TRUE) {
 	echo "<script type='text/javascript'>alert('Registration Sucessfull!');</script>";

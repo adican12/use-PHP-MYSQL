@@ -131,7 +131,7 @@ create table if not exists `coupon` (
 --
 -- Table structure for table `ad`
 --
-
+/*---------------BEFRO CHANGES--------------*/
 create table if not exists `ad` (
   `adID` int(11) NOT NULL,
   `description` varchar(255) NOT NULL,
@@ -139,9 +139,23 @@ create table if not exists `ad` (
   `title` varchar(255) NOT NULL,
   `advID` int(11) NOT NULL,
   `image` varchar(255) NOT NULL,
-  `match_per` float NOT NULL
+  `match_per` float NOT NULL,
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+/*---------------AFTER  CHANGES--------------*/
+
+/*
+create table if not exists `ad` (
+  `adID` int(11) NOT NULL AUTO_INCREMENT,
+  `description` varchar(255) NOT NULL,
+  `price` float NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `advID` int(11) NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `match_per` float NOT NULL,
+  PRIMARY KEY(`adID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT = 1;
+*/
 --
 -- Dumping data for table `ad`
 --
@@ -150,18 +164,23 @@ create table if not exists `ad` (
 --
 
 create table if not exists `campaign` (
-  `campaignID` int(11) NOT NULL,
+  `campaignID` int(11) NOT NULL AUTO_INCREMENT,
   `campaignName` varchar(50) NOT NULL,
   `adID` int(11) NOT NULL,
   `gender` varchar(50) NOT NULL,
   `ageMin` int(6) NOT NULL,
   `ageMax` int(6) NOT NULL,
   `budget` float NOT NULL,
-  `category` varchar(50) NOT NULL,
+  `category` varchar(255) NOT NULL,
   `stratingDate` date DEFAULT NULL,
   `endDate` date DEFAULT NULL,
-  `locationID` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `locationID` int(11) NOT NULL,
+  PRIMARY KEY(`campaignID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT =1;
+
+INSERT INTO `campaign`(`campaignName`, `adID`, `gender`, `ageMin`, `ageMax`, `budget`, `category`, `stratingDate`, `endDate`, `locationID`) VALUES
+('Castro spring',11,'Male',20,40,500,'Clothing','2019-06-03','2019-07-05',1),
+('be',2,'Famle',20,60,800,'Safety and health','2019-06-03','2019-07-05',2);
 
 --
 --
@@ -179,13 +198,29 @@ create table if not exists `deleteduser` (
 --
 -- Table structure for table `feedback`
 --
-
+ /*------------befor changes----------*/
+ /*
 create table if not exists `feedback` (
   `feedback_id` int(11) NOT NULL,
-  `ad_id` varchar(50) NOT NULL,
+  `description` varchar(255) NOT NULL,
   `user_id` varchar(50) NOT NULL,
-  `rating` int(100) NOT NULL
+  `adID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+*/
+/*---------------after the changes------------------*/
+create table if not exists `feedback` (
+  `feedback_id` int(11) NOT NULL AUTO_INCREMENT,
+  `description` varchar(255) NOT NULL,
+  `businessID` int(11) NOT NULL
+  `user_id` INT(11) NOT NULL,
+  `adID` int(11) NOT NULL,
+  PRIMARY KEY(`feedback_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1;
+
+INSERT INTO `feedback`(`description`,`businessID`,`user_id`,`adID`) VALUES
+('Great Ad Thanks',0,4,1),
+('Thanks for fixing the problem with the advertisement',0,6,1),
+('Convenient interface, quick coupon creation',1,2,0),
 
 -- --------------------------------------------------------
 

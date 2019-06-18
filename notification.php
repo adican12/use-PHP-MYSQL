@@ -21,7 +21,7 @@ else{
 	<meta name="author" content="">
 	<meta name="theme-color" content="#3e454c">
 
-	<title>Notifications</title>
+	<title>Notification</title>
 
 	<!-- Font awesome -->
 	<link rel="stylesheet" href="css/font-awesome.min.css">
@@ -41,65 +41,7 @@ else{
 	<link rel="stylesheet" href="css/style.css">
 
 	<script type= "text/javascript" src="../vendor/countries.js"></script>
-	<style>
-	.errorWrap {
-    padding: 10px;
-    margin: 0 0 20px 0;
-	background: #dd3d36;
-	color:#fff;
-    -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
-    box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
 
-}
-.succWrap{
-    padding: 10px;
-    margin: 0 0 20px 0;
-	background: #5cb85c;
-	color:#fff;
-    -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
-    box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
-}
-.card{
-
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 300px;
-  margin: auto;
-	margin-left: 350px;
-  text-align: center;
-  font-family: arial;
-	height: 400px;
-	padding: 10px;
- border: 5px solid gray;
-}
-
-.card1{
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-	 max-width: 300px;
-	 margin: auto;
-	 margin-left: 350px;
-	 text-align: center;
-	 font-family: arial;
-	 height: 400px;
-	 padding: 10px;
-   border: 5px solid gray;
-	 margin-top: 45px;
-
- }
-
-.card2{
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-	 max-width: 300px;
-	 margin: auto;
-	 margin-left: 350px;
-	 text-align: center;
-	 font-family: arial;
-	 height: 400px;
-	 padding: 10px;
- border: 5px solid gray;
-  margin-top: 45px;
-}
-
-		</style>
 
 
 </head>

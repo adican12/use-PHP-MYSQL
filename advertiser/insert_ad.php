@@ -1,6 +1,20 @@
 <?php
+require __DIR__ . '/../vendor/autoload.php';
+// # Imports the Google Cloud client library
+use Google\Cloud\Storage\StorageClient;
+
 session_start();
 include('includes/config.php');
+
+$projectId = 'catifi';
+//
+// # Instantiates a client
+$storage = new StorageClient([
+    'projectId' => $projectId
+]);
+
+$bucket = $storage->bucket('catifi2');
+
 //gloab var
 // $msg = "";
 //
@@ -25,21 +39,40 @@ include('includes/config.php');
 //   } else {
 //     $msg = "EROOR CANT UPLOADING IMAGE TO DATABASE";
 //   }
-$image= $_POST['image'];
-$price= $_POST['price'];
-$description = $_POST['text'];
-$title= $_POST['header'];
-$advID= $_POST['user_id'];
-      // declare Variables
+
+    // declare Variables
+						$price= $_POST['price'];
+						$description = $_POST['text'];
+						$title= $_POST['header'];
+						$email= $_POST['user_email'];
+						// get the user_id of the adver
+						$sql = "SELECT user_id FROM users WHERE email = '$email';";
+						$results = $conn->query($sql);
+						if($results === false) {
+							echo "___EROOR___";
+						}
+						$row = mysqli_fetch_assoc($results);
+						$advID = $row['user_id'];
+
+						//match_per = 0 , Will change in the future
+						$match_per = 0;
+
+
+
 						echo "we here";
-            $image =$_FILES['imagefile']['tmp_name'];
-            $name = $_FILES['imagefile']['name'];
-            $images = base64_encode(file_get_contents(addslashes($image)));
+						$target_dir = 'newImages/';
 
+						$file = file_get_contents($_FILES['imagefile']['tmp_name']);
+						$objectName = $target_dir.$_FILES['imagefile']['name'];
 
+						$object = $bucket->upload( $file, [
+								'name' => $objectName
+						]);
 
-$sql = "INSERT INTO `ad`(`description`,`price`,`title`,`advID`,`image`)
-VALUES('$description','$price','$title','$advID','$images');";
+							$imageURL ='https://storage.googleapis.com/catifi2/newImages/'.$_FILES['imagefile']['name'];
+
+$sql = "INSERT INTO `ad`(`description`,`price`,`title`,`advID`,`image`,`match_per`)
+VALUES('$description','$price','$title','$advID','$imageURL','$match_per');";
 
 if ($conn->query($sql) === TRUE) {
     //echo "New record $text user  created successfully";

@@ -96,3 +96,6 @@ button:active {
 
 input[type=search]{width: 30%; margin-left: 350px;}
 input {padding: 5px;}
+
+
+#container {height: 370px; width: 100%;}

@@ -66,25 +66,20 @@ if(isset($_POST['submit']))
 	<link rel="stylesheet" href="css/style.css">
 
 	<script type= "text/javascript" src="../vendor/countries.js"></script>
-	<style>
-	.errorWrap {
-    padding: 10px;
-    margin: 0 0 20px 0;
-	background: #dd3d36;
-	color:#fff;
-    -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
-    box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
-}
-.succWrap{
-    padding: 10px;
-    margin: 0 0 20px 0;
-	background: #5cb85c;
-	color:#fff;
-    -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
-    box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
-}
-		</style>
+		<!-- main.css -->
+	<link rel="stylesheet" href="css/main.css">
 
+
+		<!-- Loading Scripts -->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap-select.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/jquery.dataTables.min.js"></script>
+		<script src="js/dataTables.bootstrap.min.js"></script>
+		<script src="js/Chart.min.js"></script>
+		<script src="js/fileinput.js"></script>
+		<script src="js/chartData.js"></script>
+		<script src="js/main.js"></script>
 
 </head>
 
@@ -132,19 +127,10 @@ if(isset($_POST['submit']))
 						echo "false";
 				 }
 
-				 // $result = $result->fetch_array();
 
-				 ///////////////////////////////
-				 //// original code
-				 ///////////////////////////////
-				 // $sql = "SELECT * from  users ";
-				 // $query = $dbh -> prepare($sql);
-				 // $query->execute();
-				 // $results=$query->fetchAll(PDO::FETCH_OBJ);
-				 ///////////////////////////////
 				 $cnt=1;
 
-				 ///////////////////////////////
+
 
 
 				 if(mysqli_num_rows($result) > 0)
@@ -184,74 +170,10 @@ if(isset($_POST['submit']))
 													 </tbody>
 												 </table>
 <!-- <?php
-// session_start();
-// ++$_SESSION['id'];
-// ++$_SESSION['adID'];
-// error_reporting(0);
-// $id = $_SESSION['id'] +1;
-// $adID = $_SESSION['adID'] +1;
-//
-// 	$campaignName = $_POST['campaignName'];
-// 	$budget = $_POST['budget'];
-// 	$gender = $_POST['gender'];
-// 	$stratDate = $_POST['stratDate'];
-// 	$endDate = $_POST['endDate'];
-// 	$category = $_POST['category'];
-// 	$ageMin = $_POST['ageMin'];
-// 	$ageMax = $_POST['ageMax'];
-// echo "the id is = ".$id."<br>";
-// echo "the adID is = ".$adID;
-//
-//   // echo "Campagin Name:".$campaignName."<br>"."the budget is : ".$budget."<br>"."the gender is: ".$gender."<br>";
-//   // echo "the strat date of the campaign is : ".$stratDate."<br>"."the end date of the campaign is : ".$endDate."<br>";
-//   // echo "the category is : " .$category;
-//
-//  	$sql = "INSERT INTO `campaign`(`campaignName`,`id`,`adID`,`gender`,`ageMin`,`ageMax`,`budget`,`category`,`stratingDate`,`endDate`)
-//  	VALUES('$campaignName','$id','$adID','$gender','$ageMin','$ageMax','$budget','$category','$stratDate','$endDate');";
-//  	if ($conn->query($sql) === TRUE) {
-//  		echo "<script type='text/javascript'>alert('Insert  Sucessfull!');</script>";
-//  		echo "<script type='text/javascript'> document.location = 'notification.php'; </script>";
-//  	} else { 		echo "Error: " . $sql . "<br>" . $conn->error;
-// 		echo "<script type='text/javascript'>alert('ERROR   INSTERT!');</script>";
-// 		$error="Something went wrong. Please try again";
-//  	}
-//
 
-
-
-// $sql = "SELECT * from  notification where notireciver = '$reciver' order by time DESC";
-// $result = $conn->query($sql);
-// if($result === false)
-// {
-// 	 user_error("Query failed: ".$conn->error."<br />$sql");
-// 	 echo "false";
-// 	 echo "here the false2";
-// }
-
-
-// $sql = "SELECT * from  notification where notireciver = (:reciver) order by time DESC";
-// $query = $dbh -> prepare($sql);
-// $query-> bindParam(':reciver', $reciver, PDO::PARAM_STR);
-// $query->execute();
-// $results=$query->fetchAll(PDO::FETCH_OBJ);
-
-// $sql = "SELECT * FROM campaign";
-// if ($result = $conn->query($sql) === TRUE) {
-//  	echo "<script type='text/javascript'>alert('Insert  Sucessfull!');</script>";
-//  	echo "<script type='text/javascript'> document.location = 'notification.php'; </script>";
-//  	} else {
-// 		echo "Error: " . $sql . "<br>" . $conn->error;
-// 		echo "<script type='text/javascript'>alert('ERROR   INSTERT!');</script>";
-//   }
-//
-// $row = $result->fetch_assoc()) ;
 
 $cnt=1;
-//
-// if($query->rowCount() > 0)
-// {
-// foreach($results as $result)
-// {
+
 
 if(mysqli_num_rows($result) > 0)
 {
@@ -272,16 +194,7 @@ if(mysqli_num_rows($result) > 0)
             </div>
         </div>
 
-	<!-- Loading Scripts -->
-	<script src="js/jquery.min.js"></script>
-	<script src="js/bootstrap-select.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/jquery.dataTables.min.js"></script>
-	<script src="js/dataTables.bootstrap.min.js"></script>
-	<script src="js/Chart.min.js"></script>
-	<script src="js/fileinput.js"></script>
-	<script src="js/chartData.js"></script>
-	<script src="js/main.js"></script>
+
 
 
 	<div class="form-content">
@@ -325,7 +238,7 @@ if(mysqli_num_rows($result) > 0)
 									<input type="number" placeholder="Select the location you want to advertise" name="category" class="form-control mb" required>
 									<br>
 
-									<label for="" class="text-uppercase text-sm"> Banner: </label>
+									<label for="" class="text-uppercase text-sm"> Banner ID: </label>
 									<input type="number" placeholder="Select the banner You Create" name="category" class="form-control mb" required>
 									<br>
 
