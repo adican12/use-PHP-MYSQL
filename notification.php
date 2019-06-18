@@ -51,11 +51,8 @@ else{
 		 echo "false";
 	}
 		$row= mysqli_fetch_assoc($result);
+?>
 
-	while($row){
-
-
-	?>
 
 
 </head>
@@ -93,7 +90,7 @@ else{
 												<p id="details">Only now the cheapest  telescope!</p>
 											</div>
 											<canvas id="line-chart" width="800" height="450"></canvas>
-										<?php $cnt = $cnt+1}?>
+
 
 <script type="text/javascript">
 //document.getElementById("img").addEventListener("click", changeDetails);
