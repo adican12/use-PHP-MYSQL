@@ -139,9 +139,9 @@ foreach($results as $result)
 
 <script>
 	function changeDetails(){
-		document.getElementById("img").src ="<?php $row['coupon.imageURL']?>";
-		document.getElementById("couponName").innerHTML =<?php $row['coupon.couponName']?>;
-		document.getElementById("counter").innerHTML =<?php $row['coupon.counter']?>;
+		document.getElementById("img").src ="<?php $row['imageURL']?>";
+		document.getElementById("couponName").innerHTML =<?php $row['couponName']?>;
+		document.getElementById("counter").innerHTML =<?php $row['counter']?>;
 	}
 </script>
 </body>
