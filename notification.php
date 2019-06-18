@@ -80,7 +80,7 @@ else{
 											</div>
 											<canvas id="line-chart" width="800" height="450"></canvas>
 <?php
-$sql = " SELECT * FROM   ad WHERE id =2";
+$sql = " SELECT * FROM  ad";
 $result = $conn->query($sql);
 if($result === false)
 {
@@ -89,13 +89,7 @@ if($result === false)
 }
 	$row= mysqli_fetch_assoc($result);
 
-$result = $conn->query($sql);
-if($result === false)
-{
-	 user_error("Query failed: ".$conn->error."<br />$sql");
-	 echo "false";
-}
-	$row= mysqli_fetch_assoc($result);
+
 ?>
 
 <script type="text/javascript">
@@ -111,10 +105,10 @@ function changeDetails(){
 	var x = "<?php echo $row['header'];?>";
 	document.getElementById("header").innerHTML = x;
 //change the text
-	var x = "<?php$row['text'];?>";
+	var x = "<?php echo $row['description']?>";
 	document.getElementById("details").innerHTML =x;
 //change the image
-	var x = "<?php echo $row['image'];?>";
+	var x = "<?php echo $row['image']?>";
  	//alert(x);
   document.getElementById("img").src= x;
 }
