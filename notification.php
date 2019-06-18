@@ -90,7 +90,7 @@ else{
 												 </div>
 
 
-											<canvas id="line-chart" width="800" height="450"></canvas>
+										
 <?php
 $sql = " SELECT coupon.imageURL,coupon.counter,coupon.couponName,users_coupon.user_id FROM coupon,users_coupon WHERE coupon.couponID =users_coupon.coupon_id";
 $result = $conn->query($sql);
