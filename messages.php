@@ -8,7 +8,7 @@ header('location:index.php');
 }
 else{
 
-	 echo "<script>alert('we here')</script>";
+
 	$sql = "SELECT coupon.imageURL,coupon.counter,coupon.couponName,users_coupon.user_id FROM coupon,users_coupon WHERE coupon.couponID =users_coupon.coupon_id";
 
 	$result = $conn->query($sql);
@@ -20,6 +20,7 @@ else{
 	echo $row['coupon.imageURL'];
 	echo $row['coupon.counter'];
 	$cnt=1;
+	echo "<script>alert('we here')</script>";
 
  ?>
 
