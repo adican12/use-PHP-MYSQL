@@ -72,10 +72,10 @@ if(isset($_POST['addCoupon'])) {
 			$object = $bucket->upload( $file, [
 					'name' => $objectName
 			]);
-			echo "<br>file uploaded successfully</br>";
+			// echo "<br>file uploaded successfully</br>";
 
       $useremail =	$_SESSION['alogin'];
-			echo "useremail: $useremail";
+			// echo "useremail: $useremail";
        //get the the business ID Who creates the coupon
        $sql = "SELECT user_id FROM users WHERE email = '$useremail';";
        $result = $conn->query($sql);
@@ -98,10 +98,10 @@ if(isset($_POST['addCoupon'])) {
             // $busID = $row['user_id'];
             $busID = $row['user_id'];
  		      // check all Variables if them ok
-		      echo "the business id is  : ".$busID."<br>";
-		      echo "the imageurl is : ".$imageURL;
-		      echo "the counter is : ".$counter;
-		      echo " the coupon name is : ".$couponName;
+		      // echo "the business id is  : ".$busID."<br>";
+		      // echo "the imageurl is : ".$imageURL;
+		      // echo "the counter is : ".$counter;
+		      // echo " the coupon name is : ".$couponName;
 		//       /*Query insert into db*/
 		        $sql = "INSERT INTO `coupon`( `busID`, `imageURL`, `counter`, `couponName`) VALUES('$busID','$imageURL','$counter','$couponName');";
 		          if($conn->query($sql) === false) {
