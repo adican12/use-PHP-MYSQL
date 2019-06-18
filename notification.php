@@ -42,6 +42,20 @@ else{
 
 	<script type= "text/javascript" src="../vendor/countries.js"></script>
 
+	<?php
+	$sql = " SELECT * FROM  ad";
+	$result = $conn->query($sql);
+	if($result === false)
+	{
+		 user_error("Query failed: ".$conn->error."<br />$sql");
+		 echo "false";
+	}
+		$row= mysqli_fetch_assoc($result);
+
+	while($row){
+
+
+	?>
 
 
 </head>
@@ -60,11 +74,11 @@ else{
 								<div class="panel panel-default">
 									<div class="panel-heading">Notification</div>
 									   <div class="panel-body">
-											 <div class="card" oncload="changeDetails()">
-														 <img src="https://firebasestorage.googleapis.com/v0/b/firecatwifi.appspot.com/o/images%2Fcoffee.jpg?alt=media&token=40ea715d-e4de-4d34-9ece-1c1cd247ff79" id="img" style="width:100%">
-														 <h1 id="header">Coffee</h1>
-													   <p class="price" id="price">$4</p>
-													   <p id="details">the best new coffee</p>
+											 <div class="card">
+														 <img src="<?php echo $row['image']?>" id="img" style="width:100%">
+														 <h1 id="header"><?php echo $row['header']?></h1>
+													   <p class="price" id="price"><?php echo $row['price']?>$</p>
+													   <p id="details"><?php echo $row['description']?></p>
 												 </div>
 											<div class="card1">
 													<img src="https://firebasestorage.googleapis.com/v0/b/firecatwifi.appspot.com/o/images%2Fsuit.jpg?alt=media&token=b57664cf-84ff-4892-b1f1-c70dc8e1513b" id="img1" style="width:100%">
@@ -79,18 +93,7 @@ else{
 												<p id="details">Only now the cheapest  telescope!</p>
 											</div>
 											<canvas id="line-chart" width="800" height="450"></canvas>
-<?php
-$sql = " SELECT * FROM  ad";
-$result = $conn->query($sql);
-if($result === false)
-{
-	 user_error("Query failed: ".$conn->error."<br />$sql");
-	 echo "false";
-}
-	$row= mysqli_fetch_assoc($result);
-
-
-?>
+										<?php $cnt = $cnt+1}?>
 
 <script type="text/javascript">
 //document.getElementById("img").addEventListener("click", changeDetails);
