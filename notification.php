@@ -102,7 +102,7 @@ else{
 												 <br>
 
 											<div class="card1">
-													<img src="<?php echo $row2['image']?>" id="img1" style="width:100% height:40px;">
+													<img src="<?php echo $row2['image']?>" id="img1" style="width:100% ">
 													<h1 id="header"><?php echo $row2['header']?></h1>
 													<p class="price" id="price"><?php echo $row2['price']?>$</p>
 													<p id="details"><?php echo $row2['description']?></p>
@@ -117,7 +117,7 @@ else{
 											</div>
 
 
-											<canvas id="line-chart" width="800" height="450"></canvas>
+										
 
 
 <script type="text/javascript">
