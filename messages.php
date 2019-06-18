@@ -95,7 +95,7 @@ else{
 							<div class="panel-body">
 								<div class="card">
 									<center>
-										<img src="" id="img" style="width:100%">
+										<img src="" id="img" style="width:70%">
 										<h1 id="couponName">Coffee </h1>
 										<p class="price" id="counter">$4</p>
 
