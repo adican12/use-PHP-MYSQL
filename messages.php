@@ -77,7 +77,7 @@ else{
 						<div class="panel panel-default">
 							<div class="panel-heading">List Coupons</div>
 							<div class="panel-body">
-								<div id="card">
+								<div class="card">
 								</div>
 							<?php if($error){?><div class="errorWrap" id="msgshow"><?php echo htmlentities($error); ?> </div><?php }
 				else if($msg){?><div class="succWrap" id="msgshow"><?php echo htmlentities($msg); ?> </div><?php }?>
