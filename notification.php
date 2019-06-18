@@ -42,20 +42,7 @@ else{
 
 	<script type= "text/javascript" src="../vendor/countries.js"></script>
 
-	<?php
-	$cnt=1;
-	$sql = " SELECT * FROM  ad";
-	$result = $conn->query($sql);
-	if($result === false)
-	{
-		 user_error("Query failed: ".$conn->error."<br />$sql");
-		 echo "false";
-	}
-	if(mysqli_num_rows($result) > 0){
-		while($row= mysqli_fetch_assoc($result)){
 
-
-?>
 
 
 
@@ -65,6 +52,7 @@ else{
 	<?php include('includes/header.php');?>
 	<div class="ts-main-content">
 	<?php include('includes/leftbar.php');?>
+
 	<?php
 	$cnt=1;
 	$sql = " SELECT * FROM  ad";
