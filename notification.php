@@ -41,7 +41,7 @@ else{
 	<link rel="stylesheet" href="css/style.css">
 
 	<script type= "text/javascript" src="../vendor/countries.js"></script>
-	
+
 
 
 </head>
@@ -60,27 +60,18 @@ else{
 								<div class="panel panel-default">
 									<div class="panel-heading">Notification</div>
 									   <div class="panel-body">
+
 											 <div class="card">
 														 <img src="https://firebasestorage.googleapis.com/v0/b/firecatwifi.appspot.com/o/images%2Fcoffee.jpg?alt=media&token=40ea715d-e4de-4d34-9ece-1c1cd247ff79" id="img" style="width:100%">
-														 <h1 id="header">Coffee</h1>
-													   <p class="price" id="price">$4</p>
+														 <h1 id="couponName">Coffee</h1>
+													   <p class="" id="counter">$4</p>
 													   <p id="details">the best new coffee</p>
 												 </div>
-											<div class="card1">
-													<img src="https://firebasestorage.googleapis.com/v0/b/firecatwifi.appspot.com/o/images%2Fsuit.jpg?alt=media&token=b57664cf-84ff-4892-b1f1-c70dc8e1513b" id="img1" style="width:100%">
-													<h1 id="header">groom's suit</h1>
-													<p class="price" id="price">$120</p>
-													<p id="details">A groom's suit now</p>
-											</div>
-											<div class="card2" id="img2" style="width:100%">
-												<img src="https://firebasestorage.googleapis.com/v0/b/firecatwifi.appspot.com/o/images%2Ftelescope.jpg?alt=media&token=68aefae6-8052-44d7-8561-67340cbd2c56" style="width:100%">
-												<h1 id="header"> the best telescope!</h1>
-												<p class="price" id="price">$80</p>
-												<p id="details">Only now the cheapest  telescope!</p>
-											</div>
+											
+
 											<canvas id="line-chart" width="800" height="450"></canvas>
 <?php
-$sql = " SELECT * FROM   ad WHERE id =2";
+$sql = " SELECT coupon.imageURL,coupon.counter,coupon.couponName,users_coupon.user_id FROM coupon,users_coupon WHERE coupon.couponID =users_coupon.coupon_id";
 $result = $conn->query($sql);
 if($result === false)
 {
