@@ -82,7 +82,7 @@ else{
 										<img src="https://firebasestorage.googleapis.com/v0/b/firecatwifi.appspot.com/o/images%2Fcoffee.jpg?alt=media&token=40ea715d-e4de-4d34-9ece-1c1cd247ff79" id="img" style="width:100%">
 										<h1 id="couponName">Coffee</h1>
 										<p class="price" id="counter">$4</p>
-										
+
 								</center>
 								</div>
 							<?php if($error){?><div class="errorWrap" id="msgshow"><?php echo htmlentities($error); ?> </div><?php }
@@ -105,7 +105,8 @@ if($result === false) {
 }
 $cnt=1;
 $row= mysqli_fetch_assoc($result);
-
+$row['coupon.imageURL'];
+$row['coupon.counter'];
 if($result->rowCount() > 0)
 {
 foreach($results as $result)
@@ -127,17 +128,7 @@ foreach($results as $result)
 			</div>
 		</div>
 	</div>
-<?php
 
-	$sql = "SELECT coupon.imageURL,coupon.counter,coupon.couponName,users_coupon.user_id FROM coupon,users_coupon WHERE coupon.couponID =users_coupon.coupon_id";
-	$result = $conn->query($sql);
-	if($result === false) {
-		user_error("Query failed: ".$conn->error."<br />$sql");
-		echo "false";
-	}
-
-	$row = mysqli_num_rows($result);
-?>
 <script>
 	function changeDetails(){
 		document.getElementById("img").src ="<?php $row['coupon.imageURL']?>";
