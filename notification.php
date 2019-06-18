@@ -62,7 +62,6 @@ else{
 		 user_error("Query failed: ".$conn->error."<br />$sql");
 		 echo "false";
 	}
-	if(mysqli_num_rows($result) > 0){
 		while($row= mysqli_fetch_assoc($result)){
 
 
@@ -96,7 +95,7 @@ else{
 												<p class="price" id="price">$80</p>
 												<p id="details">Only now the cheapest  telescope!</p>
 											</div>
-											<?php $cnt=$cnt+1; }} ?>
+											<?php $cnt=$cnt+1; } ?>
 
 											<canvas id="line-chart" width="800" height="450"></canvas>
 
