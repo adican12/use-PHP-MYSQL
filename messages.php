@@ -140,6 +140,7 @@ foreach($results as $result)
 <script>
 	function changeDetails(){
 		var x = <?php $row['imageURL']?>;
+		console.log(x);
 		document.getElementById("img").src =<?php echo $row['imageURL']?>;
 		document.getElementById("couponName").innerHTML ='someting';
 		document.getElementById("counter").innerHTML =<?php echo  $row['counter']?>;
