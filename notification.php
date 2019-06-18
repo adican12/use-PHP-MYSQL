@@ -67,7 +67,7 @@ else{
 													   <p class="" id="counter">$4</p>
 													   <p id="details">the best new coffee</p>
 												 </div>
-											
+
 
 											<canvas id="line-chart" width="800" height="450"></canvas>
 <?php
@@ -76,7 +76,8 @@ $result = $conn->query($sql);
 if($result === false)
 {
 	 user_error("Query failed: ".$conn->error."<br />$sql");
-	 echo "false";
+	 echo " this the false";
+	 echo " the query is not good ";
 }
 	$row= mysqli_fetch_assoc($result);
 
