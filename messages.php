@@ -74,6 +74,7 @@ else{
 		</script>
 		<script>
 		document.addEventListener("click", changeDetails);
+
 			function changeDetails(){
 
 				var x = <?php $row['imageURL']?>;
