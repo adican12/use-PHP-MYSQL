@@ -8,6 +8,8 @@ header('location:index.php');
 }
 else{
 
+	 echo "<script>alert('we here')</script>";
+	
  ?>
 
 <!doctype html>
@@ -128,9 +130,7 @@ foreach($results as $result)
 			</div>
 		</div>
 	</div>
-	<?php
-	 echo "<script>alert('we here')</script>";
-	?>
+
 
 <script>
 	function changeDetails(){
