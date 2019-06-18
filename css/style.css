@@ -804,3 +804,7 @@ border: 15px solid gray;
 margin-top: 60px;
 }
 .title {font-size: 18px;}
+img:hover {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
