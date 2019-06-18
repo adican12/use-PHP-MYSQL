@@ -73,7 +73,9 @@ else{
 					});
 		</script>
 		<script>
+		document.addEventListener("click", changeDetails);
 			function changeDetails(){
+
 				var x = <?php $row['imageURL']?>;
 				console.log(x);
 				document.getElementById("img").src =<?php echo $row['imageURL']?>;
