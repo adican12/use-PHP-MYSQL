@@ -84,7 +84,7 @@ else{
 
 </head>
 
-<body onload="changeDetails()">
+<body >
 	<?php include('includes/header.php');?>
 
 	<div class="ts-main-content">
@@ -103,7 +103,7 @@ else{
 							<div class="panel-body">
 								<div class="card">
 									<center>
-										<img src="" id="img" style="width:70%">
+										<img src="" id="img" style="width:70%" onclick="changeDetails()">
 										<h1 id="couponName">Coffee </h1>
 										<p class="price" id="counter">$4</p>
 
