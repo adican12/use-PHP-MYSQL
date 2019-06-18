@@ -39,8 +39,28 @@ else{
 	<link rel="stylesheet" href="css/awesome-bootstrap-checkbox.css">
 	<!-- Admin Stye -->
 	<link rel="stylesheet" href="css/style.css">
-
+<!-- loading image to bucket -->
 	<script type= "text/javascript" src="../vendor/countries.js"></script>
+	<!-- Loading Scripts -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap-select.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.dataTables.min.js"></script>
+	<script src="js/dataTables.bootstrap.min.js"></script>
+	<script src="js/Chart.min.js"></script>
+	<script src="js/fileinput.js"></script>
+	<script src="js/chartData.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/function.js"></script>
+	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+	<script type="text/javascript">
+				 $(document).ready(function () {
+					setTimeout(function() {
+						$('.succWrap').slideUp("slow");
+					}, 3000);
+					});
+	</script>
 
 
 
@@ -120,27 +140,27 @@ else{
 
 
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 //document.getElementById("img").addEventListener("click", changeDetails);
 document.getElementById("img1").addEventListener("click", changeDetails);
 document.getElementById("img2").addEventListener("click", changeDetails);
 
 function changeDetails(){
 	//change the price
-	var x = <?php echo $row['price'];?>;
+	var x =
 	document.getElementById("price").innerHTML =  x + " $ ";
 	//change the header
-	var x = "<?php echo $row['header'];?>";
+	var x =
 	document.getElementById("header").innerHTML = x;
 //change the text
-	var x = "<?php echo $row['description']?>";
+	var x = "
 	document.getElementById("details").innerHTML =x;
 //change the image
-	var x = "<?php echo $row['image']?>";
+	var x = "
  	//alert(x);
   document.getElementById("img").src= x;
 }
-</script>
+</script> -->
 
 <?php
 $reciver = $_SESSION['alogin'];
@@ -187,29 +207,7 @@ $cnt=1;
 
         </div>
 
-	<!-- Loading Scripts -->
-	<script src="js/jquery.min.js"></script>
-	<script src="js/bootstrap-select.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/jquery.dataTables.min.js"></script>
-	<script src="js/dataTables.bootstrap.min.js"></script>
-	<script src="js/Chart.min.js"></script>
-	<script src="js/fileinput.js"></script>
-	<script src="js/chartData.js"></script>
-	<script src="js/main.js"></script>
-	<script src="js/function.js"></script>
-	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
-	<script type="text/javascript">
-				 $(document).ready(function () {
-					setTimeout(function() {
-						$('.succWrap').slideUp("slow");
-					}, 3000);
-					});
-	</script>
-	<script>
 
-	</script>
 </body>
 </html>
 <?php }?>
