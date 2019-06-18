@@ -53,13 +53,14 @@ $bucket = $storage->bucket('catifi2');
 						}
 						$row = mysqli_fetch_assoc($results);
 						$advID = $row['user_id'];
+            echo "the advID is : ".$row['user_id'];
 
 						//match_per = 0 , Will change in the future
 						$match_per = 0;
 
 
 
-						echo "we here";
+
 						$target_dir = 'newImages/';
 
 						$file = file_get_contents($_FILES['imagefile']['tmp_name']);
