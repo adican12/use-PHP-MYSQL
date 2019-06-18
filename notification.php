@@ -122,7 +122,7 @@ else{
 												 <br>
 
 											<div class="card1">
-													<img src="<?php echo $row2['image']?>" id="img1" style="width:50%">
+													<img src="<?php echo $row2['image']?>" id="img1" style="width:80%">
 													<h1 id="header" class="title"><?php echo $row2['title']?></h1>
 													<p class="price" id="price"><?php echo $row2['price']?>$</p>
 													<p id="details"><?php echo $row2['description']?></p>
