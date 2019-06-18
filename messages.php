@@ -95,6 +95,7 @@ if($result === false) {
 	user_error("Query failed: ".$conn->error."<br />$sql");
 	echo "false";
 }
+echo "<script>alert('adi the cat')</script>";
 $cnt=1;
 $row= mysqli_fetch_assoc($result);
 if($result->rowCount() > 0)
@@ -119,7 +120,7 @@ foreach($results as $result)
 		</div>
 	</div>
 <?php
-echo "<script>alert('adi the cat')</script>";
+
 	$sql = "SELECT coupon.imageURL,coupon.counter,coupon.couponName,users_coupon.user_id FROM coupon,users_coupon WHERE coupon.couponID =users_coupon.coupon_id";
 	$result = $conn->query($sql);
 	if($result === false) {
