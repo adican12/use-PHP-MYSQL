@@ -60,7 +60,7 @@ else{
 
 </head>
 
-<body>
+<body onload="changeDetails()">
 	<?php include('includes/header.php');?>
 
 	<div class="ts-main-content">
@@ -80,9 +80,9 @@ else{
 								<div class="card">
 									<center>
 										<img src="https://firebasestorage.googleapis.com/v0/b/firecatwifi.appspot.com/o/images%2Fcoffee.jpg?alt=media&token=40ea715d-e4de-4d34-9ece-1c1cd247ff79" id="img" style="width:100%">
-										<h1 id="header">Coffee</h1>
-										<p class="price" id="price">$4</p>
-										<p id="details">the best new coffee</p>
+										<h1 id="couponName">Coffee</h1>
+										<p class="price" id="counter">$4</p>
+										
 								</center>
 								</div>
 							<?php if($error){?><div class="errorWrap" id="msgshow"><?php echo htmlentities($error); ?> </div><?php }
@@ -138,7 +138,13 @@ foreach($results as $result)
 
 	$row = mysqli_num_rows($result);
 ?>
-
+<script>
+	function changeDetails(){
+		document.getElementById("img").src ="<?php $row['coupon.imageURL']?>";
+		document.getElementById("couponName").innerHTML =<?php $row['coupon.couponName']?>;
+		document.getElementById("counter").innerHTML =<?php $row['coupon.counter']?>;
+	}
+</script>
 </body>
 </html>
 <?php } ?>
