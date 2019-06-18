@@ -169,8 +169,8 @@ $sql = "SELECT * from  ad where id in(2,32,33)";
 $result = $conn->query($sql);
 if($result === false)
 {
-	 user_error("Query failed: ".$conn->error."<br />$sql");
-	 echo "false";
+	 // user_error("Query failed: ".$conn->error."<br />$sql");
+	 // echo "false";
 }
 
 //
