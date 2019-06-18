@@ -22,6 +22,8 @@ else{
 	<meta name="theme-color" content="#3e454c">
 
 	<title>Notification</title>
+	<!-- google fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Playfair+Display&display=swap" rel="stylesheet">
 
 	<!-- Font awesome -->
 	<link rel="stylesheet" href="css/font-awesome.min.css">
@@ -117,7 +119,7 @@ else{
 														 <img src="<?php echo $row['image']?>" id="img" style="width:100%">
 														 <h1 id="header" class="title"><?php echo $row['title']?></h1>
 													   <p class="price" id="price"><?php echo $row['price']?> $</p>
-													   <p id="details"><?php echo $row['description']?></p>
+													   <p  class="description"><?php echo $row['description']?></p>
 												 </div>
 												 <br>
 
@@ -125,7 +127,7 @@ else{
 													<img src="<?php echo $row2['image']?>" id="img1" style="width:80%">
 													<h1 id="header" class="title"><?php echo $row2['title']?></h1>
 													<p class="price" id="price"><?php echo $row2['price']?> $</p>
-													<p id="details"><?php echo $row2['description']?></p>
+													<p  class="description"><?php echo $row2['description']?></p>
 											</div>
 											<br>
 
@@ -133,7 +135,7 @@ else{
 												<img src="<?php echo $row3['image']?>" style="width:100%">
 												<h1 id="header" class="title"> <?php echo $row3['title']?></h1>
 												<p class="price" id="price"><?php echo $row3['price']?> $</p>
-												<p id="details"><?php echo $row3['description']?></p>
+												<p  class="description"><?php echo $row3['description']?></p>
 											</div>
 
 

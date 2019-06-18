@@ -805,3 +805,5 @@ margin-top: 60px;
 }
 .title {font-size: 22px;}
 img:hover {-webkit-transform: scaleX(-1);transform: scaleX(-1);}
+
+.description {font-family: 'Playfair Display', serif;}
