@@ -105,7 +105,7 @@ else{
 							<div class="panel-body">
 								<div class="card">
 									<center>
-										<img src="https://storage.googleapis.com/catifi2/coupon/coffe.jpg" id="img" style="width:70%" onclick="changeDetails()"> Just click on the image
+										<img src="" id="img" style="width:70%" onclick="changeDetails()"> Just click on the image
 										<h1 id="couponName">Coupon Name </h1>
 										<br>
 										<p class="price" id="counter">Here Counter </p>
