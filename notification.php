@@ -75,6 +75,20 @@ else{
 								<div class="panel panel-default">
 									<div class="panel-heading">Notification</div>
 									   <div class="panel-body">
+											 <?php
+											 $cnt=1;
+											 $sql = " SELECT * FROM  ad";
+											 $result = $conn->query($sql);
+											 if($result === false)
+											 {
+													user_error("Query failed: ".$conn->error."<br />$sql");
+													echo "false";
+											 }
+											 if(mysqli_num_rows($result) > 0){
+												 while($row= mysqli_fetch_assoc($result)){
+
+
+											?>
 											 <div class="card">
 														 <img src="<?php echo $row['image']?>" id="img" style="width:100%">
 														 <h1 id="header"><?php echo $row['header']?></h1>
@@ -94,6 +108,7 @@ else{
 												<p id="details">Only now the cheapest  telescope!</p>
 											</div>
 											<?php $cnt=$cnt+1; }} ?>
+
 											<canvas id="line-chart" width="800" height="450"></canvas>
 
 
