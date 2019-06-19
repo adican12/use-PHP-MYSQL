@@ -27,6 +27,7 @@ else{
 		echo "false";
 	}
 	$row= mysqli_fetch_assoc($result);
+	//new querys
 	$sql = "SELECT * FROM coupon WHERE couponID IN(SELECT coupon_id FROM users_coupon WHERE user_id ='$user_id')";
 
 	$result = $conn->query($sql);
@@ -120,7 +121,7 @@ else{
 									<center>
 										<img src="<?php echo $new_row['imageURL']?>" style="width:80%">
 										<h1 class="title"> <?php echo $new_row['couponName']?> </h1>
-										<br>
+										<br>																				
 										<p class="price" ><?php echo $new_row['counter']?> </p>
 									</center>
 								</div>
