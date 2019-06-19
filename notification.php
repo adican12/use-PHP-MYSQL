@@ -88,6 +88,21 @@ else{
 						$('.succWrap').slideUp("slow");
 					}, 3000);
 					});
+
+
+					 changeRate(null, 3);
+
+					 function changeRate(element, rate=null){
+					   if(rate == null){
+					     let id = $(element).attr('for');
+					     let rateAux = $('#'+id).val();
+					     $('#rate').val(rateAux);
+					   }else{
+					     let rateAux = $("#rate").val();
+					     $("#lblStar"+rateAux).click();
+					   }
+					   console.log($('#rate').val());
+					 }
 	</script>
 
 
