@@ -112,6 +112,7 @@ if(isset($_POST['submit']))
 																												 <th>Campaign start date</th>
 																												 <th>Campaign end date</th>
 																												 <th>Location</th>
+																												 <th>edit</th>
 														 </tr>
 												 </thead>
 											 <tbody>
