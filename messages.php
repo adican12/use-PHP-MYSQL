@@ -25,17 +25,12 @@ else{
 		user_error("Query failed: ".$conn->error."<br />$sql");
 		echo "false";
 	}
-	// $row= mysqli_fetch_assoc($result);
-	// echo $row['imageURL'];
-	// echo $row['counter'];
-	// echo $row['couponName'];
-	$cnt=1;
+	$row= mysqli_fetch_assoc($result);
+	echo $row['imageURL'];
+	echo $row['counter'];
+	echo $row['couponName'];
 	// echo "<script>alert('we here')</script>";
 
-	if(mysqli_num_rows($result) > 0)
-	{
-
-		while($row = mysqli_fetch_assoc($result)) {
  ?>
 
 
