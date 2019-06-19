@@ -96,8 +96,8 @@ if(isset($_POST['addCoupon'])) {
 
 // // // the business ID
             // $busID = $row['user_id'];
-            $busID = $row['user_id'];
-            $sql = "SELECT businessID FROM business WHERE businessID = '$busID'";
+            $user_id = $row['user_id'];
+            $sql = "SELECT businessID FROM business WHERE user_id= '$user_id'";
             $res = $conn->query($sql);
             if($res === false) {
               echo "error";
