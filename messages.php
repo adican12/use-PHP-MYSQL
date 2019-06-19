@@ -105,10 +105,10 @@ else{
 							<div class="panel-body">
 								<div class="card">
 									<center>
-										<img src="" id="img" style="width:70%" onclick="changeDetails()"> Just click on the image
-										<h1 id="couponName"> Coupon Name </h1>
+										<img src="<?php echo $row['imageURL']?>" style="width:80%">
+										<h1 class="title"> <?php echo $row['couponName']?> </h1>
 										<br>
-										<p class="price" id="counter">Here Counter </p>
+										<p class="price" ><?php echo $row['counter']?> </p>
 
 								</center>
 								</div>
