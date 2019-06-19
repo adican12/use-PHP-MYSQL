@@ -158,64 +158,16 @@ else{
 													   <p  class="description"><?php echo $row['description']?></p>
 											</div>
 											<br>
-											
 
-
-
-
-
-
-<!-- <script type="text/javascript">
-//document.getElementById("img").addEventListener("click", changeDetails);
-document.getElementById("img1").addEventListener("click", changeDetails);
-document.getElementById("img2").addEventListener("click", changeDetails);
-
-function changeDetails(){
-	//change the price
-	var x =
-	document.getElementById("price").innerHTML =  x + " $ ";
-	//change the header
-	var x =
-	document.getElementById("header").innerHTML = x;
-//change the text
-	var x = "
-	document.getElementById("details").innerHTML =x;
-//change the image
-	var x = "
- 	//alert(x);
-  document.getElementById("img").src= x;
-}
-</script> -->
 
 <?php
-$reciver = $_SESSION['alogin'];
 
-$sql = "SELECT * from  ad where id in(2,32,33)";
-$result = $conn->query($sql);
-if($result === false)
-{
-	 // user_error("Query failed: ".$conn->error."<br />$sql");
-	 // echo "false";
-}
 
-//
-// $sql = "SELECT * from  notification where notireciver = (:reciver) order by time DESC";
-// $query = $dbh -> prepare($sql);
-// $query-> bindParam(':reciver', $reciver, PDO::PARAM_STR);
-// $query->execute();
-// $results=$query->fetchAll(PDO::FETCH_OBJ);
+
 
 $cnt=1;
 
-// if($query->rowCount() > 0)
-// {
-// foreach($results as $result)
-// {
 
-// if(mysqli_num_rows($result) > 0)
-// {
-// 	while($row = mysqli_fetch_assoc($result))
-// 	{
 //
 // 	?>
 <!-- //         <h5 style="background:#ededed;padding:20px;"><i class="fa fa-bell text-primary"></i>&nbsp;&nbsp;<b class="text-primary"><?php echo $row['time'];?></b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $row['notiuser'];?> ----->
