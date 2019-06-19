@@ -35,7 +35,7 @@ else{
 		user_error("Query failed: ".$conn->error."<br />$sql");
 		echo "false";
 	}
-	$new_row = $result = $conn->query($sql);
+	$new_row = mysqli_fetch_assoc($result);
 	$cnt=1;
 	// echo "<script>alert('we here')</script>";
 
@@ -121,7 +121,7 @@ else{
 									<center>
 										<img src="<?php echo $new_row['imageURL']?>" style="width:80%">
 										<h1 class="title"> <?php echo $new_row['couponName']?> </h1>
-										<br>																				
+										<br>
 										<p class="price" ><?php echo $new_row['counter']?> </p>
 									</center>
 								</div>
