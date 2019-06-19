@@ -98,7 +98,7 @@ else{
 										user_error("Query failed: ".$conn->error."<br />$sql");
 										echo "false";
 									}
-									while($row= mysqli_fetch_assoc($result)){
+									while($row= mysqli_fetch_array($result)){
 											$cnt = 1;
 
 									// echo "<script>alert('we here')</script>";?>
