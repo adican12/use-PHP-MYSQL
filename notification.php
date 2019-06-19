@@ -79,7 +79,8 @@ else{
 
 	$email = $_SESSION['alogin'];
 	$querys = "SELECT user_id FROM users WHERE email ='$email'";
-	if($res = $conn->query($querys) === false) {
+	$res = $conn->query($querys);
+	if($res === false) {
 		user_error("Query failed: ".$conn->error."<br />$sql");
 		echo "false";
 	}
