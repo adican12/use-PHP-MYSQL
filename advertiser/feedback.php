@@ -255,6 +255,9 @@ if(mysqli_num_rows($result) > 0)
 				<label for="" class="text-uppercase text-sm"> Header: </label>
 				<input type="text" placeholder="header" name="header" class="form-control mb" required>
 
+				<label for="" class="text-uppercase text-sm"> URL : </label>
+				<input type="text" placeholder="wwww.someting.com" name="url" class="form-control mb" required>
+
 				<label for="" class="text-uppercase text-sm"> User Email: </label>
 				<input type="text" placeholder="User Email:" name="user_email" class="form-control mb" required>
 
@@ -274,6 +277,7 @@ if(mysqli_num_rows($result) > 0)
   <h1 id="header">header</h1>
   <p class="price" id="price">$price</p>
   <p id="details">Some text about the jeans..</p>
+	<a href="#" style="text-decoration:none;"></a>
 </div>
 <div id="demo"></div>
 	<?php
@@ -319,6 +323,8 @@ if(mysqli_num_rows($result) > 0)
 
 			var img ="<?php echo $new_row['image']?>";
 			document.getElementById("img").src = img;
+			var url = "<?php echo $row['url']?>";
+			document.getElementById("url").href = url;
 
 	}
 
