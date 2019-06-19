@@ -807,6 +807,7 @@ margin-top: 60px;
 img:hover {-webkit-transform: scaleX(-1);transform: scaleX(-1);}
 
 .description {font-family: 'Playfair Display', serif;}
+.ad_rate {font-size:22px;font-family: 'Playfair Display', serif;}
 
 
 /* Modified from: https://github.com/mukulkant/Star-rating-using-pure-css */
