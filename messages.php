@@ -7,29 +7,7 @@ if(strlen($_SESSION['alogin'])==0)
 header('location:index.php');
 }
 else{
-	$email = $_SESSION['alogin'];
-	$query = "SELECT user_id FROM users WHERE email = '$email'";
-	$res = $conn->query($query);
-	if($res === false) {
-		user_error("Query failed: ".$conn->error."<br />$sql");
-		echo "false";
-	}
-	$temp = mysqli_fetch_assoc($res);
-	$user_id = $temp['user_id'];
 
-
-
-	$sql = "SELECT * FROM coupon WHERE couponID IN(SELECT coupon_id FROM users_coupon WHERE user_id ='$user_id')";
-
-	$result = $conn->query($sql);
-	if($result === false) {
-		user_error("Query failed: ".$conn->error."<br />$sql");
-		echo "false";
-	}
-	while($row= mysqli_fetch_assoc($result)){
-	//new querys
-
-	// echo "<script>alert('we here')</script>";
 
  ?>
 
@@ -101,7 +79,29 @@ else{
 						<div class="panel panel-default">
 							<div class="panel-heading">List Coupons</div>
 							<div class="panel-body">
-								<?php 	$cnt=1;?>
+								<?php 		$email = $_SESSION['alogin'];
+									$query = "SELECT user_id FROM users WHERE email = '$email'";
+									$res = $conn->query($query);
+									if($res === false) {
+										user_error("Query failed: ".$conn->error."<br />$sql");
+										echo "false";
+									}
+									$temp = mysqli_fetch_assoc($res);
+									$user_id = $temp['user_id'];
+
+
+
+									$sql = "SELECT * FROM coupon WHERE couponID IN(SELECT coupon_id FROM users_coupon WHERE user_id ='$user_id')";
+
+									$result = $conn->query($sql);
+									if($result === false) {
+										user_error("Query failed: ".$conn->error."<br />$sql");
+										echo "false";
+									}
+									while($row= mysqli_fetch_assoc($result)){
+											$cnt = 1;
+
+									// echo "<script>alert('we here')</script>";?>
 								<div class="card">
 									<center>
 										<img src="<?php echo $row['imageURL']?>" style="width:80%">
