@@ -98,8 +98,9 @@ else{
 										user_error("Query failed: ".$conn->error."<br />$sql");
 										echo "false";
 									}
+									$cnt = 1;
 									while($row= mysqli_fetch_array($result)){
-											$cnt = 1;
+
 
 									// echo "<script>alert('we here')</script>";?>
 								<div class="card">
