@@ -19,7 +19,8 @@ else{
 
 
 
-	$sql = "SELECT * FROM coupon WHERE couponID IN(SELECT couponID FROM users_coupon WHERE user_id = '$user_id')";
+	$sql = "SELECT * FROM coupon WHERE couponID IN(SELECT coupon_id FROM users_coupon WHERE user_id ='$user_id')";
+
 	$result = $conn->query($sql);
 	if($result === false) {
 		user_error("Query failed: ".$conn->error."<br />$sql");
