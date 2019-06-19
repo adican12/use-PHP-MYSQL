@@ -7,10 +7,19 @@ if(strlen($_SESSION['alogin'])==0)
 header('location:index.php');
 }
 else{
+	$email = $_SESSION['alogin'];
+	$query = "SELECT user_id FROM users WHERE email = '$email'";
+	$res = $conn->query($query);
+	if($res === false) {
+		user_error("Query failed: ".$conn->error."<br />$sql");
+		echo "false";
+	}
+	$temp = mysqli_fetch_assoc($res);
+	$user_id = $temp['user_id'];
 
 
-	$sql = "SELECT coupon.imageURL,coupon.counter,coupon.couponName,users_coupon.user_id FROM coupon,users_coupon WHERE coupon.couponID =users_coupon.coupon_id";
 
+	$sql = "SELECT * FROM coupon WHERE couponID IN(SELECT couponID FROM users_coupon WHERE user_id = '$user_id')";
 	$result = $conn->query($sql);
 	if($result === false) {
 		user_error("Query failed: ".$conn->error."<br />$sql");
@@ -72,17 +81,7 @@ else{
 					}, 3000);
 					});
 		</script>
-		<script>
-		document.addEventListener("click", changeDetails);
 
-			function changeDetails(){
-
-
-				document.getElementById("img").src ="<?php echo $row['imageURL']?>"
-				document.getElementById("couponName").innerHTML ='<?php echo $row['couponName']?>';
-				document.getElementById("counter").innerHTML =<?php echo  $row['counter']?>;
-			}
-		</script>
 
 </head>
 
