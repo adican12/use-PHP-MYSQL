@@ -112,14 +112,6 @@ else{
 										<p class="price" ><?php echo $row['counter']?> </p>
 									</center>
 								</div>
-								<div class="card1">
-									<center>
-										<img src="<?php echo $new_row['imageURL']?>" style="width:80%">
-										<h1 class="title"> <?php echo $new_row['couponName']?> </h1>
-										<br>
-										<p class="price" ><?php echo $new_row['counter']?> </p>
-									</center>
-								</div>
 							<?php $cnt= $cnt+1;}}?>
 							<?php if($error){?><div class="errorWrap" id="msgshow"><?php echo htmlentities($error); ?> </div><?php }
 				else if($msg){?><div class="succWrap" id="msgshow"><?php echo htmlentities($msg); ?> </div><?php }?>
