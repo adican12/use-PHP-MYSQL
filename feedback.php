@@ -228,13 +228,7 @@ if(isset($_POST['submit']))
 	<textarea class="form-control" rows="5" name="description"></textarea>
 	</div>
 </div>
-
-<div class="form-group">
-	<div class="col-sm-8 col-sm-offset-2">
-		<button class="btn btn-primary" name="submit" type="submit">Send</button>
-	</div>
-</div>
-
+<br>
 <div class="rate">
 	<input type="hidden" id="rate" value="" />
 	<input type="radio" id="star5" name="rate" value="5" />
@@ -248,6 +242,15 @@ if(isset($_POST['submit']))
 	<input type="radio" id="star1" name="rate" value="1" />
 	<label onclick="changeRate(this)" id="lblStar4" for="star1" title="text">1 star</label>
 </div>
+<br>
+
+<div class="form-group">
+	<div class="col-sm-8 col-sm-offset-2">
+		<button class="btn btn-primary" name="submit" type="submit">Send</button>
+	</div>
+</div>
+
+
 
 </form>
 									</div>
