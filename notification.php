@@ -76,8 +76,17 @@ else{
 	<?php include('includes/leftbar.php');?>
 
 	<?php
-	$adID = 1;
-	$sql = "SELECT * FROM ad WHERE adID in(SELECT adid FROM notification WHERE user_id =7)";
+	$email = $_SESSION['alogin'];
+	$querys = "SELECT user_id FROM user WHERE email ='$email'";
+	if($res = $conn->query($querys) === false) {
+		user_error("Query failed: ".$conn->error."<br />$sql");
+		echo "false";
+	}
+	$temp = mysqli_fetch_assoc($res);
+	$user_id = $temp['user_id'];
+	echo "the user id is : "$user_id."<br>";
+
+	$sql = "SELECT * FROM ad WHERE adID in(SELECT adid FROM notification WHERE user_id ='$user_id')";
 	$result = $conn->query($sql);
 	if($result === false)
 	{
@@ -85,22 +94,22 @@ else{
 		 echo "false";
 	}
 		$row = mysqli_fetch_assoc($result);
-	$adID = $adID+1;
-	$sql2 =  " SELECT * FROM  ad WHERE adID ='$adID'";
-	$result =$conn->query($sql2);
-	if($result === false) {
-		user_error("Query failed: ".$conn->error."<br />$sql");
-		echo "false";
-	}
-	$row2= mysqli_fetch_assoc($result);
-	$adID = $adID+1;
-	$new_sql = "SELECT * FROM  ad WHERE adID ='$adID'";
-	$res = $conn->query($new_sql);
-	if($res === false) {
-		user_error("Query failed: ".$conn->error."<br />$sql");
-		echo "false";
-	}
-	$row3 = mysqli_fetch_assoc($res);
+	// $adID = $adID+1;
+	// $sql2 =  " SELECT * FROM  ad WHERE adID ='$adID'";
+	// $result =$conn->query($sql2);
+	// if($result === false) {
+	// 	user_error("Query failed: ".$conn->error."<br />$sql");
+	// 	echo "false";
+	// }
+	// $row2= mysqli_fetch_assoc($result);
+	// $adID = $adID+1;
+	// $new_sql = "SELECT * FROM  ad WHERE adID ='$adID'";
+	// $res = $conn->query($new_sql);
+	// if($res === false) {
+	// 	user_error("Query failed: ".$conn->error."<br />$sql");
+	// 	echo "false";
+	// }
+	// $row3 = mysqli_fetch_assoc($res);
 
 
  ?>
