@@ -277,7 +277,7 @@ if(mysqli_num_rows($result) > 0)
   <h1 id="header">header</h1>
   <p class="price" id="price">$price</p>
   <p id="details">Some text about the jeans..</p>
-	<a href="#" style="text-decoration:none;">try this</a>
+	<a href="#" style="text-decoration:none;" id="url">try this</a>
 </div>
 <div id="demo"></div>
 	<?php
