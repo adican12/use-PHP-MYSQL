@@ -144,8 +144,8 @@ if(isset($_POST['submit']))
 			padding: 0;
 	}
 	.rate {
-			float: left;
-			height: 46px;
+			margin: auto;
+			width: 80%;
 			padding: 0 10px;
 	}
 	.rate:not(:checked) > input {
