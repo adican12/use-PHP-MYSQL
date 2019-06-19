@@ -106,7 +106,7 @@ else{
 								<div class="card">
 									<center>
 										<img src="" id="img" style="width:70%" onclick="changeDetails()"> Just click on the image
-										<h1 id="couponName">Coupon Name </h1>
+										<h1 id="couponName"> Coupon Name </h1>
 										<br>
 										<p class="price" id="counter">Here Counter </p>
 
