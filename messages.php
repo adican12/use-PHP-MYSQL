@@ -25,10 +25,7 @@ else{
 		user_error("Query failed: ".$conn->error."<br />$sql");
 		echo "false";
 	}
-	$row= mysqli_fetch_assoc($result);
-	echo $row['imageURL'];
-	echo $row['counter'];
-	echo $row['couponName'];
+
 	$cnt=1;
 	// echo "<script>alert('we here')</script>";
 
@@ -118,14 +115,17 @@ else{
 
 if($result->rowCount() > 0)
 {
-foreach($results as $result)
+while($row= mysqli_fetch_assoc($result)){
+echo $row['imageURL'];
+echo $row['counter'];
+echo $row['couponName'];)
 {				?>
 										<tr>
 											<td><?php echo htmlentities($cnt);?></td>
                                             <td><?php echo htmlentities($result->sender);?></td>
 											<td><?php echo htmlentities($result->feedbackdata);?></td>
 										</tr>
-										<?php $cnt=$cnt+1; }} ?>
+
 
 									</tbody>
 								</table>
@@ -142,7 +142,7 @@ foreach($results as $result)
 
 				</center>
 				</div>
-
+<?php $cnt=$cnt+1; }}} ?>
 			</div>
 		</div>
 	</div>
