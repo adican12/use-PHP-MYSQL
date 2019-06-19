@@ -230,7 +230,7 @@ if(isset($_POST['submit']))
 </div>
 <br>
 <div class="rate">
-	<label class="col-sm-1 control-label"> Please rate your ads </label>
+	
 	<input type="hidden" id="rate" value="" />
 	<input type="radio" id="star5" name="rate" value="5" />
 	<label onclick="changeRate(this)" id="lblStar4" for="star5" title="text">5 stars</label>
