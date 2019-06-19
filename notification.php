@@ -120,7 +120,7 @@ else{
 														 <h1 id="header" class="title"><?php echo $row['title']?></h1>
 													   <p class="price" id="price"><?php echo $row['price']?> $</p>
 													   <p  class="description"><?php echo $row['description']?></p>
-												 </div>
+											</div>
 												 <br>
 
 											<div class="card1">
