@@ -23,9 +23,10 @@ else{
 			user_error("Query failed: ".$conn->error."<br />$sql");
 			echo "false";
 		}
+		$cnt = 1;
 		 if(mysqli_num_rows($result) > 0){
 		while($row = mysqli_fetch_assoc($result)) {
-			$cnt = 1;
+
 
 
 ?>
