@@ -151,21 +151,6 @@ else{
 											</div>
 												 <br>
 
-											<div class="card1">
-													<img src="" id="img1" style="width:80%">
-													<h1 id="header" class="title"></h1>
-													<p class="price" id="price"> $</p>
-													<p  class="description"></p>
-											</div>
-											<br>
-
-											<div class="card2" >
-												<img src="" style="width:100%">
-												<h1 id="header" class="title"></h1>
-												<p class="price" id="price"> $</p>
-												<p  class="description"></p>
-											</div>
-
 
 
 
