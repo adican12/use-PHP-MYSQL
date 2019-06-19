@@ -193,6 +193,8 @@ if(isset($_REQUEST['unconfirm']))
 																								<th>Gender</th>
 																								<th>Phoen Number</th>
 																								<th>Birthday</th>
+																								<th>#</th>
+																								<th>Edit</th>
 										</tr>
 								</thead>
 							<tbody>
@@ -203,7 +205,7 @@ if(isset($_REQUEST['unconfirm']))
 ///////////////////////////////
 ///// new code
 ///////////////////////////////
-$sql = "SELECT * FROM  users WHERE user_type = 'standard_users' OR 'standard_user'";
+$sql = "SELECT * FROM  users WHERE user_type ='standard_user'";
 $result = $conn->query($sql);
 if($result === false)
 {
