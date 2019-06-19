@@ -14,6 +14,16 @@ else{
 			user_error("Query failed: ".$conn->error."<br />$sql");
 			echo "false";
 		}
+		$row = mysqli_fetch_assoc($result);
+		$user_id = $row['user_id'];
+		// new query to get all the notification
+		$sql = "SELECT * FROM ad WHERE adID in(SELECT adid FROM notification WHERE user_id ='$user_id')";
+		$result = $conn->query($sql);
+		if($result === false){
+			user_error("Query failed: ".$conn->error."<br />$sql");
+			echo "false";
+		}
+		$row = mysqli_fetch_assoc($result);
 
 ?>
 
