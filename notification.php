@@ -77,7 +77,7 @@ else{
 
 	<?php
 	$adID = 1;
-	$sql = " SELECT * FROM  ad WHERE adID ='$adID'";
+	$sql = " SELECT * FROM  ad WHERE adID = in(SELECT adid FROM notification WHERE user_id =7)";
 	$result = $conn->query($sql);
 	if($result === false)
 	{
