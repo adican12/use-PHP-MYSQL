@@ -149,7 +149,7 @@ if(isset($_POST['submit']))
 															 <td><?php echo $row['category'];?></td>
 															 <td><?php echo $row['stratingDate'];?></td>
 															 <td><?php echo $row['endDate'];?></td>
-															 <td><?php echo $row['location_id'];?></td>
+															 <td><?php echo $row['locationID'];?></td>
 															 <td>
 
 																										 <?php if($row['status'] == 1)
