@@ -7,6 +7,9 @@ if(strlen($_SESSION['alogin'])==0)
 header('location:index.php');
 }
 else{
+	echo "we here <br>";
+		$email = $_SESSION['alogin'];
+		echo "the email is : ".$email."<br>";
 ?>
 
 <!doctype html>
@@ -76,9 +79,7 @@ else{
 	<?php include('includes/leftbar.php');?>
 
 	<?php
-echo "we here <br>";
-	$email = $_SESSION['alogin'];
-	echo "the email is : ".$email."<br>";
+
 	// $querys = "SELECT user_id FROM users WHERE email ='$email'";
 	// $res = $conn->query($querys);
 	// if($res  === false) {
