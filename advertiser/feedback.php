@@ -323,7 +323,7 @@ if(mysqli_num_rows($result) > 0)
 
 			var img ="<?php echo $new_row['image']?>";
 			document.getElementById("img").src = img;
-			var url = "<?php echo $row['url']?>";
+			var url = "<?php echo $new_row['url']?>";
 			consloe.log(url);
 
 			document.getElementById("url").href = url;
