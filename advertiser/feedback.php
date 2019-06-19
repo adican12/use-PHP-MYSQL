@@ -299,7 +299,7 @@ if(mysqli_num_rows($result) > 0)
 	$row1 = mysqli_fetch_assoc($new_result);
 
 
-	 $query= "SELECT image,description,price,title FROM ad WHERE adID = (SELECT MAX(adID) FROM ad)";
+	 $query= "SELECT image,description,price,title,url FROM ad WHERE adID = (SELECT MAX(adID) FROM ad)";
 	 $res = $conn->query($query);
 	 if($res === false){
 			user_error("Query failed: ".$conn->error."<br />$sql");
@@ -324,6 +324,7 @@ if(mysqli_num_rows($result) > 0)
 			var img ="<?php echo $new_row['image']?>";
 			document.getElementById("img").src = img;
 			var url = "<?php echo $row['url']?>";
+
 			document.getElementById("url").href = url;
 
 	}
