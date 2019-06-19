@@ -172,7 +172,7 @@ if(isset($_REQUEST['unconfirm']))
 ///////////////////////////////
 ///// new code
 ///////////////////////////////
-$sql = "SELECT * from  users ";
+$sql = "SELECT * from  users WHERE user_type='standard_user' ";
 $result = $conn->query($sql);
 if($result === false)
 {
