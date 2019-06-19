@@ -76,8 +76,9 @@ else{
 	<?php include('includes/leftbar.php');?>
 
 	<?php
+
 	$email = $_SESSION['alogin'];
-	$querys = "SELECT user_id FROM user WHERE email ='$email'";
+	$querys = "SELECT user_id FROM users WHERE email ='$email'";
 	if($res = $conn->query($querys) === false) {
 		user_error("Query failed: ".$conn->error."<br />$sql");
 		echo "false";
