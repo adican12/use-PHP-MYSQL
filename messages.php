@@ -28,7 +28,7 @@ else{
 	}
 	while($row= mysqli_fetch_assoc($result)){
 	//new querys
-	$cnt=0;
+
 	// echo "<script>alert('we here')</script>";
 
  ?>
@@ -101,6 +101,7 @@ else{
 						<div class="panel panel-default">
 							<div class="panel-heading">List Coupons</div>
 							<div class="panel-body">
+								<?php 	$cnt=1;?>
 								<div class="card">
 									<center>
 										<img src="<?php echo $row['imageURL']?>" style="width:80%">
