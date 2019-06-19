@@ -23,7 +23,10 @@ else{
 			user_error("Query failed: ".$conn->error."<br />$sql");
 			echo "false";
 		}
-		$row = mysqli_fetch_assoc($result);
+		 if(mysqli_num_rows($result) > 0){
+		while($row = mysqli_fetch_assoc($result)) {
+			$cnt = 1;
+
 
 ?>
 
@@ -150,6 +153,7 @@ else{
 													   <p  class="description"><?php echo $row['description']?></p>
 											</div>
 												 <br>
+												 <?php $cnt = $cnt+1 }}?>
 
 
 
