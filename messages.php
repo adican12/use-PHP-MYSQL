@@ -28,7 +28,7 @@ else{
 	}
 	while($row= mysqli_fetch_assoc($result)){
 	//new querys
-	$cnt=1;
+	$cnt=0;
 	// echo "<script>alert('we here')</script>";
 
  ?>
