@@ -184,6 +184,13 @@ function setRating(){
 
 <div class="panel-body">
 <form method="post" class="form-horizontal" enctype="multipart/form-data">
+	<div class="stars" data-rating="3">
+  <span class="star">&nbsp;</span>
+  <span class="star">&nbsp;</span>
+  <span class="star">&nbsp;</span>
+  <span class="star">&nbsp;</span>
+  <span class="star">&nbsp;</span>
+</div>
 
 <div class="form-group">
     <input type="hidden" name="user" value="<?php// echo htmlentities($result->email); ?>">
