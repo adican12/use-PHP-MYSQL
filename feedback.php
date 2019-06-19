@@ -233,7 +233,7 @@ if(isset($_POST['submit']))
 <div class="rate">
 	<div class="form-group">
 		<label class="col-sm-2 control-label" style="font-size:25px;">rate ad<span style="color:red">*</span></label>
-
+	</div>
 	<input type="hidden" id="rate" value="" />
 	<input type="radio" id="star5" name="rate" value="5" />
 	<label onclick="changeRate(this)" id="lblStar4" for="star5" title="text">5 stars</label>
@@ -246,7 +246,7 @@ if(isset($_POST['submit']))
 	<input type="radio" id="star1" name="rate" value="1" />
 	<label onclick="changeRate(this)" id="lblStar4" for="star1" title="text">1 star</label>
 </div>
-</div>
+
 <br>
 
 <div class="form-group">
