@@ -108,12 +108,11 @@ else{
 									<center>
 										<img src="<?php echo $row['imageURL']?>" style="width:80%">
 										<h1 class="title"> <?php echo $row['couponName']?> </h1>
-										<br>
 										<p class="price" ><?php echo $row['counter']?> </p>
 									</center>
 								</div>
 								<br>
-								
+
 							<?php $cnt= $cnt+1;}}?>
 							<?php if($error){?><div class="errorWrap" id="msgshow"><?php echo htmlentities($error); ?> </div><?php }
 				else if($msg){?><div class="succWrap" id="msgshow"><?php echo htmlentities($msg); ?> </div><?php }?>
