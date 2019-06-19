@@ -145,7 +145,7 @@ if(isset($_POST['submit']))
 	}
 	.rate {
 			float: left;
-			height: 4px;
+			height: 46px;
 			padding: 0 10px;
 	}
 	.rate:not(:checked) > input {
@@ -207,19 +207,7 @@ if(isset($_POST['submit']))
 
 <div class="panel-body">
 <form method="post" class="form-horizontal" enctype="multipart/form-data">
-	<div class="rate">
-    <input type="hidden" id="rate" value="" />
-    <input type="radio" id="star5" name="rate" value="5" />
-    <label onclick="changeRate(this)" id="lblStar4" for="star5" title="text">5 stars</label>
-    <input type="radio" id="star4" name="rate" value="4" />
-    <label onclick="changeRate(this)" id="lblStar4" for="star4" title="text">4 stars</label>
-    <input type="radio" id="star3" name="rate" value="3" />
-    <label onclick="changeRate(this)" id="lblStar4" for="star3" title="text">3 stars</label>
-    <input type="radio" id="star2" name="rate" value="2" />
-    <label onclick="changeRate(this)" id="lblStar4" for="star2" title="text">2 stars</label>
-    <input type="radio" id="star1" name="rate" value="1" />
-    <label onclick="changeRate(this)" id="lblStar4" for="star1" title="text">1 star</label>
-  </div>
+
 
 <div class="form-group">
     <input type="hidden" name="user" value="<?php// echo htmlentities($result->email); ?>">
@@ -245,6 +233,20 @@ if(isset($_POST['submit']))
 	<div class="col-sm-8 col-sm-offset-2">
 		<button class="btn btn-primary" name="submit" type="submit">Send</button>
 	</div>
+</div>
+
+<div class="rate">
+	<input type="hidden" id="rate" value="" />
+	<input type="radio" id="star5" name="rate" value="5" />
+	<label onclick="changeRate(this)" id="lblStar4" for="star5" title="text">5 stars</label>
+	<input type="radio" id="star4" name="rate" value="4" />
+	<label onclick="changeRate(this)" id="lblStar4" for="star4" title="text">4 stars</label>
+	<input type="radio" id="star3" name="rate" value="3" />
+	<label onclick="changeRate(this)" id="lblStar4" for="star3" title="text">3 stars</label>
+	<input type="radio" id="star2" name="rate" value="2" />
+	<label onclick="changeRate(this)" id="lblStar4" for="star2" title="text">2 stars</label>
+	<input type="radio" id="star1" name="rate" value="1" />
+	<label onclick="changeRate(this)" id="lblStar4" for="star1" title="text">1 star</label>
 </div>
 
 </form>
