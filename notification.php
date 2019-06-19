@@ -158,12 +158,7 @@ else{
 													   <p  class="description"><?php echo $row['description']?></p>
 											</div>
 											<br>
-											<div class="card1">
-												<img src="<?php echo $new_row['image']?>" style="width:80%">
-												<h1 class="title"><?php echo $new_row['title']?></h1>
-												<p class="price"><?php echo $new_row['price']?> $ </p>
-												<p class="description"><?php echo $new_row['description']?></p>
-											</div>
+											
 
 
 
