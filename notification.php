@@ -7,9 +7,14 @@ if(strlen($_SESSION['alogin'])==0)
 header('location:index.php');
 }
 else{
-	echo "we here <br>";
 		$email = $_SESSION['alogin'];
-		echo "the email is : ".$email."<br>";
+		$sql = "SELECT user_id FROM users WHERE email ='$email'";
+		$result = $conn->query($sql);
+		if($result === false) {
+			user_error("Query failed: ".$conn->error."<br />$sql");
+			echo "false";
+		}
+
 ?>
 
 <!doctype html>
