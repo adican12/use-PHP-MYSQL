@@ -26,16 +26,8 @@ else{
 		user_error("Query failed: ".$conn->error."<br />$sql");
 		echo "false";
 	}
-	$row= mysqli_fetch_assoc($result);
+	while($row= mysqli_fetch_assoc($result)){
 	//new querys
-	$sql = "SELECT * FROM coupon WHERE couponID IN(SELECT coupon_id FROM users_coupon WHERE user_id ='$user_id')";
-
-	$result = $conn->query($sql);
-	if($result === false) {
-		user_error("Query failed: ".$conn->error."<br />$sql");
-		echo "false";
-	}
-	$new_row = mysqli_fetch_assoc($result);
 	$cnt=1;
 	// echo "<script>alert('we here')</script>";
 
@@ -125,6 +117,7 @@ else{
 										<p class="price" ><?php echo $new_row['counter']?> </p>
 									</center>
 								</div>
+							<?php }?>
 							<?php if($error){?><div class="errorWrap" id="msgshow"><?php echo htmlentities($error); ?> </div><?php }
 				else if($msg){?><div class="succWrap" id="msgshow"><?php echo htmlentities($msg); ?> </div><?php }?>
 								<table id="zctb" class="display table table-striped table-bordered table-hover" cellspacing="0" width="100%">
