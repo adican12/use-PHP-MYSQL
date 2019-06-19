@@ -29,6 +29,7 @@ else{
 	echo $row['imageURL'];
 	echo $row['counter'];
 	echo $row['couponName'];
+	$cnt=1;
 	// echo "<script>alert('we here')</script>";
 
  ?>
