@@ -78,15 +78,16 @@ else{
 	<?php
 
 	$email = $_SESSION['alogin'];
-	$querys = "SELECT user_id FROM users WHERE email ='$email'";
-	$res = $conn->query($querys);
-	if($res  === false) {
-		user_error("Query failed: ".$conn->error."<br />$sql");
-		echo "false";
-	}
-	$temp = mysqli_fetch_assoc($res);
-	$user_id = $temp['user_id'];
-	echo "the user id is : "$user_id."<br>";
+	echo "the email is : ".$email."<br>";
+	// $querys = "SELECT user_id FROM users WHERE email ='$email'";
+	// $res = $conn->query($querys);
+	// if($res  === false) {
+	// 	user_error("Query failed: ".$conn->error."<br />$sql");
+	// 	echo "false";
+	// }
+	// $temp = mysqli_fetch_assoc($res);
+	// $user_id = $temp['user_id'];
+	// echo "the user id is : "$user_id."<br>";
 
 	// $sql = "SELECT * FROM ad WHERE adID in(SELECT adid FROM notification WHERE user_id ='$user_id')";
 	// $result = $conn->query($sql);
