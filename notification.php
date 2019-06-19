@@ -23,10 +23,14 @@ else{
 			user_error("Query failed: ".$conn->error."<br />$sql");
 			echo "false";
 		}
-		$cnt = 1;
-		 if(mysqli_num_rows($result) > 0){
-		while($row = mysqli_fetch_assoc($result)) {
-
+		$row = mysqli_fetch_assoc($result);
+		$sql = "SELECT * FROM ad WHERE adID in(SELECT adid FROM notification WHERE user_id ='$user_id')";
+		$result = $conn->query($sql);
+		if($result === false){
+			user_error("Query failed: ".$conn->error."<br />$sql");
+			echo "false";
+		}
+		$new_row = mysqli_fetch_assoc($result);
 
 
 ?>
@@ -153,8 +157,14 @@ else{
 													   <p class="price" id="price"><?php echo $row['price']?> $</p>
 													   <p  class="description"><?php echo $row['description']?></p>
 											</div>
-												 <br>
-												 <?php $cnt = $cnt+1 }}?>
+											<br>
+											<div class="card1">
+												<img src="<?php echo $new_row['image']?>" style="width:80%">
+												<h1 class="title"><?php echo $new_row['title']?></h1>
+												<p class="price"><?php echo $new_row['price']?> $ </p>
+												<p class="description"><?php echo $new_row['description']?></p>
+											</div>
+
 
 
 
