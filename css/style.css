@@ -808,21 +808,40 @@ img:hover {-webkit-transform: scaleX(-1);transform: scaleX(-1);}
 
 .description {font-family: 'Playfair Display', serif;}
 
-.star{
-  color: goldenrod;
-  font-size: 2.0rem;
-  padding: 0 1rem; /* space out the stars */
+.rate {
+    float: left;
+    height: 46px;
+    padding: 0 10px;
 }
-.star::before{
-  content: '\2606';
-  cursor: pointer;
+.rate:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
 }
-.star:hover::before{
-  /* the :hover should come first */
-  content: '\2605';
-  color: #bada55;
+.rate:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:5rem;
+    color:#ccc;
 }
-.star.rated::before{
-  /* the :hover should come first */
-  content: '\2605';
+.rate:not(:checked) > label:before {
+    content: '★ ';
 }
+.rate > input:checked ~ label {
+    color: #ffc700;
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #deb217;
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+}
+
+/* Modified from: https://github.com/mukulkant/Star-rating-using-pure-css */
