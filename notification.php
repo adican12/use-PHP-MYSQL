@@ -76,7 +76,7 @@ else{
 	<?php include('includes/leftbar.php');?>
 
 	<?php
-echo "we here <br>"
+echo "we here <br>";
 	$email = $_SESSION['alogin'];
 	echo "the email is : ".$email."<br>";
 	// $querys = "SELECT user_id FROM users WHERE email ='$email'";
