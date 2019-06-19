@@ -102,15 +102,7 @@ else{
 						<div class="panel panel-default">
 							<div class="panel-heading">List Coupons</div>
 							<div class="panel-body">
-								<div class="card">
-									<center>
-										<img src="<?php echo $row['imageURL']?>" style="width:80%">
-										<h1 class="title"> <?php echo $row['couponName']?> </h1>
-										<br>
-										<p class="price" ><?php echo $row['counter']?> </p>
 
-								</center>
-								</div>
 							<?php if($error){?><div class="errorWrap" id="msgshow"><?php echo htmlentities($error); ?> </div><?php }
 				else if($msg){?><div class="succWrap" id="msgshow"><?php echo htmlentities($msg); ?> </div><?php }?>
 								<table id="zctb" class="display table table-striped table-bordered table-hover" cellspacing="0" width="100%">
@@ -140,6 +132,15 @@ foreach($results as $result)
 							</div>
 						</div>
 					</div>
+				</div>
+				<div class="card">
+					<center>
+						<img src="<?php echo $row['imageURL']?>" style="width:80%">
+						<h1 class="title"> <?php echo $row['couponName']?> </h1>
+						<br>
+						<p class="price" ><?php echo $row['counter']?> </p>
+
+				</center>
 				</div>
 
 			</div>
