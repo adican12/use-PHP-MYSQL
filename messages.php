@@ -112,6 +112,8 @@ else{
 										<p class="price" ><?php echo $row['counter']?> </p>
 									</center>
 								</div>
+								<br>
+								
 							<?php $cnt= $cnt+1;}}?>
 							<?php if($error){?><div class="errorWrap" id="msgshow"><?php echo htmlentities($error); ?> </div><?php }
 				else if($msg){?><div class="succWrap" id="msgshow"><?php echo htmlentities($msg); ?> </div><?php }?>
