@@ -117,7 +117,7 @@ else{
 										<p class="price" ><?php echo $new_row['counter']?> </p>
 									</center>
 								</div>
-							<?php }?>
+							<?php $cnt= $cnt+1;}?>
 							<?php if($error){?><div class="errorWrap" id="msgshow"><?php echo htmlentities($error); ?> </div><?php }
 				else if($msg){?><div class="succWrap" id="msgshow"><?php echo htmlentities($msg); ?> </div><?php }?>
 								<table id="zctb" class="display table table-striped table-bordered table-hover" cellspacing="0" width="100%">
