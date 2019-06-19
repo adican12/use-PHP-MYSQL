@@ -135,18 +135,18 @@ else{
 												 <br>
 
 											<div class="card1">
-													<img src="<?php echo $row2['image']?>" id="img1" style="width:80%">
-													<h1 id="header" class="title"><?php echo $row2['title']?></h1>
-													<p class="price" id="price"><?php echo $row2['price']?> $</p>
-													<p  class="description"><?php echo $row2['description']?></p>
+													<img src="" id="img1" style="width:80%">
+													<h1 id="header" class="title"></h1>
+													<p class="price" id="price"> $</p>
+													<p  class="description"></p>
 											</div>
 											<br>
 
 											<div class="card2" >
-												<img src="<?php echo $row3['image']?>" style="width:100%">
-												<h1 id="header" class="title"> <?php echo $row3['title']?></h1>
-												<p class="price" id="price"><?php echo $row3['price']?> $</p>
-												<p  class="description"><?php echo $row3['description']?></p>
+												<img src="" style="width:100%">
+												<h1 id="header" class="title"></h1>
+												<p class="price" id="price"> $</p>
+												<p  class="description"></p>
 											</div>
 
 
