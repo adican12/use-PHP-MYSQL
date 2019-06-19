@@ -14,7 +14,7 @@ include('includes/config.php');
 	$ageMin = $_POST['ageMin'];
 	$ageMax = $_POST['ageMax'];
   $adID = $_POST['adID'];
-  $location=$_POST['location_id'];
+  $location_id=$_POST['location_id'];
 
 
 	 echo "the adID is = ".$adID."<br>";
