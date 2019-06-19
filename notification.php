@@ -80,7 +80,7 @@ else{
 	$email = $_SESSION['alogin'];
 	$querys = "SELECT user_id FROM users WHERE email ='$email'";
 	$res = $conn->query($querys);
-	if($res === false) {
+	if($res  === false) {
 		user_error("Query failed: ".$conn->error."<br />$sql");
 		echo "false";
 	}
@@ -96,22 +96,22 @@ else{
 		 echo "false";
 	}
 		$row = mysqli_fetch_assoc($result);
-	// $adID = $adID+1;
-	// $sql2 =  " SELECT * FROM  ad WHERE adID ='$adID'";
-	// $result =$conn->query($sql2);
-	// if($result === false) {
-	// 	user_error("Query failed: ".$conn->error."<br />$sql");
-	// 	echo "false";
-	// }
-	// $row2= mysqli_fetch_assoc($result);
-	// $adID = $adID+1;
-	// $new_sql = "SELECT * FROM  ad WHERE adID ='$adID'";
-	// $res = $conn->query($new_sql);
-	// if($res === false) {
-	// 	user_error("Query failed: ".$conn->error."<br />$sql");
-	// 	echo "false";
-	// }
-	// $row3 = mysqli_fetch_assoc($res);
+	$adID = $adID+1;
+	$sql2 =  " SELECT * FROM  ad WHERE adID ='$adID'";
+	$result =$conn->query($sql2);
+	if($result === false) {
+		user_error("Query failed: ".$conn->error."<br />$sql");
+		echo "false";
+	}
+	$row2= mysqli_fetch_assoc($result);
+	$adID = $adID+1;
+	$new_sql = "SELECT * FROM  ad WHERE adID ='$adID'";
+	$res = $conn->query($new_sql);
+	if($res === false) {
+		user_error("Query failed: ".$conn->error."<br />$sql");
+		echo "false";
+	}
+	$row3 = mysqli_fetch_assoc($res);
 
 
  ?>
