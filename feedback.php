@@ -232,7 +232,7 @@ if(isset($_POST['submit']))
 
 <div class="rate">
 	<div class="form-group">
-		<label class="col-sm-2 control-label"> rate ad <span style="color:red">*</span></label>
+		<label class="col-sm-2 control-label" style="font-size:25px;"> rate ad <span style="color:red">*</span></label>
 	</div>
 	<input type="hidden" id="rate" value="" />
 	<input type="radio" id="star5" name="rate" value="5" />
