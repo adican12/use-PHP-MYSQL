@@ -137,7 +137,7 @@ foreach($results as $result)
                                             <td><?php echo htmlentities($result->sender);?></td>
 											<td><?php echo htmlentities($result->feedbackdata);?></td>
 										</tr>
-										<?php $cnt=$cnt+1; }}}} ?>
+										<?php $cnt=$cnt+1; }} ?>
 
 									</tbody>
 								</table>
