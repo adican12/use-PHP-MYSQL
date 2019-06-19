@@ -25,10 +25,17 @@ else{
 		user_error("Query failed: ".$conn->error."<br />$sql");
 		echo "false";
 	}
-
+	// $row= mysqli_fetch_assoc($result);
+	// echo $row['imageURL'];
+	// echo $row['counter'];
+	// echo $row['couponName'];
 	$cnt=1;
 	// echo "<script>alert('we here')</script>";
 
+	if(mysqli_num_rows($result) > 0)
+	{
+
+		while($row = mysqli_fetch_assoc($result)) {
  ?>
 
 
@@ -99,7 +106,16 @@ else{
 						<div class="panel panel-default">
 							<div class="panel-heading">List Coupons</div>
 							<div class="panel-body">
+								<div class="card">
+									<center>
+										<img src="<?php echo $row['imageURL']?>" style="width:80%">
+										<h1 class="title"> <?php echo $row['couponName']?> </h1>
+										<br>
+										<p class="price" ><?php echo $row['counter']?> </p>
 
+								</center>
+								</div>
+								<?php $cnt = $cnt+1}}?>
 							<?php if($error){?><div class="errorWrap" id="msgshow"><?php echo htmlentities($error); ?> </div><?php }
 				else if($msg){?><div class="succWrap" id="msgshow"><?php echo htmlentities($msg); ?> </div><?php }?>
 								<table id="zctb" class="display table table-striped table-bordered table-hover" cellspacing="0" width="100%">
@@ -115,17 +131,14 @@ else{
 
 if($result->rowCount() > 0)
 {
-while($row= mysqli_fetch_assoc($result)){
-echo $row['imageURL'];
-echo $row['counter'];
-echo $row['couponName'];)
+foreach($results as $result)
 {				?>
 										<tr>
 											<td><?php echo htmlentities($cnt);?></td>
                                             <td><?php echo htmlentities($result->sender);?></td>
 											<td><?php echo htmlentities($result->feedbackdata);?></td>
 										</tr>
-
+										<?php $cnt=$cnt+1; }} ?>
 
 									</tbody>
 								</table>
@@ -133,16 +146,7 @@ echo $row['couponName'];)
 						</div>
 					</div>
 				</div>
-				<div class="card">
-					<center>
-						<img src="<?php echo $row['imageURL']?>" style="width:80%">
-						<h1 class="title"> <?php echo $row['couponName']?> </h1>
-						<br>
-						<p class="price" ><?php echo $row['counter']?> </p>
 
-				</center>
-				</div>
-<?php $cnt=$cnt+1; }}} ?>
 			</div>
 		</div>
 	</div>
