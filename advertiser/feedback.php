@@ -265,7 +265,7 @@ if(mysqli_num_rows($result) > 0)
 				<button name="submit" type="submit" class="btn btn-primary" style="margin-right:300px;padding: 14px 55px; "  onclick="showDemo()" > Upload!</button>
 			</form>
 	</div>
-	<button class="btn btn-primary" onclick="showDemo()" style="margin-right:300px;margin-top:10px;padding: 14px 50px;"> Show Demo </button>
+
 </div>
 
 
@@ -279,6 +279,7 @@ if(mysqli_num_rows($result) > 0)
   <p id="details">Some text about the jeans..</p>
 
 </div>
+<button class="btn btn-primary" onclick="showDemo()" style="margin-right:300px;margin-top:10px;padding: 14px 50px;"> Show Demo </button>
 <div id="demo"></div>
 	<?php
 	$email = $_SESSION['alogin'];
