@@ -265,7 +265,7 @@ if(mysqli_num_rows($result) > 0)
 				<button name="submit" type="submit" class="btn btn-primary" style="margin-right:300px;padding: 14px 55px;"> Upload!</button>
 			</form>
 	</div>
-	<button class="btn btn-primary" onclick="showDemo()" style="margin-right:310px;margin-top:10px;padding: 14px 55px;"> Show Demo </button>
+	<button class="btn btn-primary" onclick="showDemo()" style="margin-right:300px;margin-top:10px;padding: 14px 55px;"> Show Demo </button>
 </div>
 
 
