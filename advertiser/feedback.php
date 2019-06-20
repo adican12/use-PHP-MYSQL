@@ -237,7 +237,7 @@ if(mysqli_num_rows($result) > 0)
 			</div>
 		</div>
 	</div>
-	<button type="button" id="formButton" class="btn btn-primary">Create a new banner!</button>
+	<button type="button" id="formButton" class="btn btn-primary" >Create a new banner!</button>
 <div class="information" id="information">
 	 <h6><strong>Please enter information to create an advertisement</strong></h6>
 	 <div class="form-content">
