@@ -277,9 +277,9 @@ if(mysqli_num_rows($result) > 0)
   <h1 id="header">header</h1>
   <p class="price" id="price">$price</p>
   <p id="details">Some text about the jeans..</p>
-
-</div>
 <button class="btn btn-primary" onclick="showDemo()" style="margin-right:300px;margin-top:10px;padding: 14px 50px;"> Show Demo </button>
+</div>
+
 <div id="demo"></div>
 	<?php
 	$email = $_SESSION['alogin'];
