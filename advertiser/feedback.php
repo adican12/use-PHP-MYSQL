@@ -237,7 +237,7 @@ if(mysqli_num_rows($result) > 0)
 			</div>
 		</div>
 	</div>
-	<button type="button" id="formButton" class="showDemo">Create a new banner!</button>
+	<button type="button" id="formButton" class="btn btn-primary">Create a new banner!</button>
 <div class="information" id="information">
 	 <h6><strong>Please enter information to create an advertisement</strong></h6>
 	 <div class="form-content">
@@ -262,10 +262,10 @@ if(mysqli_num_rows($result) > 0)
 				<input type="text" placeholder="User Email:" name="user_email" class="form-control mb" required>
 
 
-				<button name="submit" type="submit" class="showDemo" style="margin-right:300px;"> Upload!</button>
+				<button name="submit" type="submit" class="btn btn-primary" style="margin-right:300px;"> Upload!</button>
 			</form>
 	</div>
-	<button class="showDemo" onclick="showDemo()" style="margin-right:310px;margin-top:10px;"> Show Demo </button>
+	<button class="btn btn-primary" onclick="showDemo()" style="margin-right:310px;margin-top:10px;"> Show Demo </button>
 </div>
 
 
