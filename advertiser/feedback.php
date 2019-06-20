@@ -272,12 +272,12 @@ if(mysqli_num_rows($result) > 0)
 <div id="result_ad"></div>
 	<div class="card" id="card">
 		<h2>DEMO</h2>
-  <img src="images/jeans.jpg" alt="" style="width:100%" id="img">
+  <a href="#" style="text-decoration:none;" id="url"><img src="images/jeans.jpg" alt="" style="width:100%" id="img"></a>
 
   <h1 id="header">header</h1>
   <p class="price" id="price">$price</p>
   <p id="details">Some text about the jeans..</p>
-	<a href="#" style="text-decoration:none;" id="url">try this</a>
+
 </div>
 <div id="demo"></div>
 	<?php
