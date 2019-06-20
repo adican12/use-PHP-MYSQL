@@ -262,7 +262,7 @@ if(mysqli_num_rows($result) > 0)
 				<input type="text" placeholder="User Email:" name="user_email" class="form-control mb" required>
 
 
-				<button name="submit" type="submit" class="btn btn-primary" style="margin-right:300px;"> Upload!</button>
+				<button name="submit" type="submit" class="btn btn-primary" style="margin-right:300px; width:15%"> Upload!</button>
 			</form>
 	</div>
 	<button class="btn btn-primary" onclick="showDemo()" style="margin-right:310px;margin-top:10px;"> Show Demo </button>
