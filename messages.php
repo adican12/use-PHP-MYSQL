@@ -9,20 +9,6 @@ header('location:index.php');
 else{
 
 
-	$sql = "SELECT coupon.imageURL,coupon.counter,coupon.couponName,users_coupon.user_id FROM coupon,users_coupon WHERE coupon.couponID =users_coupon.coupon_id";
-
-	$result = $conn->query($sql);
-	if($result === false) {
-		user_error("Query failed: ".$conn->error."<br />$sql");
-		echo "false";
-	}
-	$row= mysqli_fetch_assoc($result);
-	echo $row['imageURL'];
-	echo $row['counter'];
-	echo $row['couponName'];
-	$cnt=1;
-	echo "<script>alert('we here')</script>";
-
  ?>
 
 
@@ -37,7 +23,7 @@ else{
 	<meta name="author" content="">
 	<meta name="theme-color" content="#3e454c">
 
-	<title>Messages</title>
+	<title>See Coupon</title>
 
 	<!-- Font awesome -->
 	<link rel="stylesheet" href="css/font-awesome.min.css">
@@ -72,17 +58,7 @@ else{
 					}, 3000);
 					});
 		</script>
-		<script>
-		document.addEventListener("click", changeDetails);
 
-			function changeDetails(){
-
-
-				document.getElementById("img").src ="<?php echo $row['imageURL']?>"
-				document.getElementById("couponName").innerHTML ='<?php echo $row['couponName']?>';
-				document.getElementById("counter").innerHTML =<?php echo  $row['counter']?>;
-			}
-		</script>
 
 </head>
 
@@ -103,15 +79,41 @@ else{
 						<div class="panel panel-default">
 							<div class="panel-heading">List Coupons</div>
 							<div class="panel-body">
+								<?php 		$email = $_SESSION['alogin'];
+									$query = "SELECT user_id FROM users WHERE email = '$email'";
+									$res = $conn->query($query);
+									if($res === false) {
+										user_error("Query failed: ".$conn->error."<br />$sql");
+										echo "false";
+									}
+									$temp = mysqli_fetch_assoc($res);
+									$user_id = $temp['user_id'];
+
+
+
+									$sql = "SELECT * FROM coupon WHERE couponID IN(SELECT coupon_id FROM users_coupon WHERE user_id ='$user_id')";
+
+									$result = $conn->query($sql);
+									if($result === false) {
+										user_error("Query failed: ".$conn->error."<br />$sql");
+										echo "false";
+									}
+									$cnt = 1;
+									if(mysqli_num_rows($result) > 0) {
+									while($row= mysqli_fetch_array($result)){
+
+
+									// echo "<script>alert('we here')</script>";?>
 								<div class="card">
 									<center>
-										<img src="" id="img" style="width:70%" onclick="changeDetails()"> Just click on the image
-										<h1 id="couponName">Coupon Name </h1>
-										<br>
-										<p class="price" id="counter">Here Counter </p>
-
-								</center>
+										<img src="<?php echo $row['imageURL']?>" style="width:80%">
+										<h1 class="title"> <?php echo $row['couponName']?> </h1>
+										<p class="price" ><?php echo $row['counter']?> </p>
+									</center>
 								</div>
+								<br>
+
+							<?php $cnt= $cnt+1;}}?>
 							<?php if($error){?><div class="errorWrap" id="msgshow"><?php echo htmlentities($error); ?> </div><?php }
 				else if($msg){?><div class="succWrap" id="msgshow"><?php echo htmlentities($msg); ?> </div><?php }?>
 								<table id="zctb" class="display table table-striped table-bordered table-hover" cellspacing="0" width="100%">

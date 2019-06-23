@@ -7,6 +7,32 @@ if(strlen($_SESSION['alogin'])==0)
 header('location:index.php');
 }
 else{
+		$email = $_SESSION['alogin'];
+		$sql = "SELECT user_id FROM users WHERE email ='$email'";
+		$result = $conn->query($sql);
+		if($result === false) {
+			user_error("Query failed: ".$conn->error."<br />$sql");
+			echo "false";
+		}
+		$row = mysqli_fetch_assoc($result);
+		$user_id = $row['user_id'];
+		// new query to get all the notification
+		$sql = "SELECT * FROM ad WHERE adID in(SELECT adid FROM notification WHERE user_id ='$user_id')";
+		$result = $conn->query($sql);
+		if($result === false){
+			user_error("Query failed: ".$conn->error."<br />$sql");
+			echo "false";
+		}
+		$row = mysqli_fetch_assoc($result);
+		$sql = "SELECT * FROM ad WHERE adID in(SELECT adid FROM notification WHERE user_id ='$user_id')";
+		$result = $conn->query($sql);
+		if($result === false){
+			user_error("Query failed: ".$conn->error."<br />$sql");
+			echo "false";
+		}
+		$new_row = mysqli_fetch_assoc($result);
+
+
 ?>
 
 <!doctype html>
@@ -22,6 +48,8 @@ else{
 	<meta name="theme-color" content="#3e454c">
 
 	<title>Notification</title>
+	<!-- google fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Playfair+Display&display=swap" rel="stylesheet">
 
 	<!-- Font awesome -->
 	<link rel="stylesheet" href="css/font-awesome.min.css">
@@ -39,132 +67,8 @@ else{
 	<link rel="stylesheet" href="css/awesome-bootstrap-checkbox.css">
 	<!-- Admin Stye -->
 	<link rel="stylesheet" href="css/style.css">
-
+<!-- loading image to bucket -->
 	<script type= "text/javascript" src="../vendor/countries.js"></script>
-
-
-
-</head>
-
-<body>
-	<?php include('includes/header.php');?>
-	<div class="ts-main-content">
-	<?php include('includes/leftbar.php');?>
-		<div class="content-wrapper">
-			<div class="container-fluid">
-				<div class="row">
-					<div class="col-md-12">
-						<h3 class="page-title">Notifications</h3>
-						<div class="row">
-							<div class="col-md-12">
-								<div class="panel panel-default">
-									<div class="panel-heading">Notification</div>
-									   <div class="panel-body">
-											 <div class="card">
-														 <img src="https://firebasestorage.googleapis.com/v0/b/firecatwifi.appspot.com/o/images%2Fcoffee.jpg?alt=media&token=40ea715d-e4de-4d34-9ece-1c1cd247ff79" id="img" style="width:100%">
-														 <h1 id="header">Coffee</h1>
-													   <p class="price" id="price">$4</p>
-													   <p id="details">the best new coffee</p>
-												 </div>
-											<div class="card1">
-													<img src="https://firebasestorage.googleapis.com/v0/b/firecatwifi.appspot.com/o/images%2Fsuit.jpg?alt=media&token=b57664cf-84ff-4892-b1f1-c70dc8e1513b" id="img1" style="width:100%">
-													<h1 id="header">groom's suit</h1>
-													<p class="price" id="price">$120</p>
-													<p id="details">A groom's suit now</p>
-											</div>
-											<div class="card2" id="img2" style="width:100%">
-												<img src="https://firebasestorage.googleapis.com/v0/b/firecatwifi.appspot.com/o/images%2Ftelescope.jpg?alt=media&token=68aefae6-8052-44d7-8561-67340cbd2c56" style="width:100%">
-												<h1 id="header"> the best telescope!</h1>
-												<p class="price" id="price">$80</p>
-												<p id="details">Only now the cheapest  telescope!</p>
-											</div>
-											<canvas id="line-chart" width="800" height="450"></canvas>
-<?php
-$sql = " SELECT * FROM   ad WHERE id =2";
-$result = $conn->query($sql);
-if($result === false)
-{
-	 user_error("Query failed: ".$conn->error."<br />$sql");
-	 echo "false";
-}
-	$row= mysqli_fetch_assoc($result);
-
-$result = $conn->query($sql);
-if($result === false)
-{
-	 user_error("Query failed: ".$conn->error."<br />$sql");
-	 echo "false";
-}
-	$row= mysqli_fetch_assoc($result);
-?>
-
-<script type="text/javascript">
-//document.getElementById("img").addEventListener("click", changeDetails);
-document.getElementById("img1").addEventListener("click", changeDetails);
-document.getElementById("img2").addEventListener("click", changeDetails);
-
-function changeDetails(){
-	//change the price
-	var x = <?php echo $row['price'];?>;
-	document.getElementById("price").innerHTML =  x + " $ ";
-	//change the header
-	var x = "<?php echo $row['header'];?>";
-	document.getElementById("header").innerHTML = x;
-//change the text
-	var x = "<?php$row['text'];?>";
-	document.getElementById("details").innerHTML =x;
-//change the image
-	var x = "<?php echo $row['image'];?>";
- 	//alert(x);
-  document.getElementById("img").src= x;
-}
-</script>
-
-<?php
-$reciver = $_SESSION['alogin'];
-
-$sql = "SELECT * from  ad where id in(2,32,33)";
-$result = $conn->query($sql);
-if($result === false)
-{
-	 user_error("Query failed: ".$conn->error."<br />$sql");
-	 echo "false";
-}
-
-//
-// $sql = "SELECT * from  notification where notireciver = (:reciver) order by time DESC";
-// $query = $dbh -> prepare($sql);
-// $query-> bindParam(':reciver', $reciver, PDO::PARAM_STR);
-// $query->execute();
-// $results=$query->fetchAll(PDO::FETCH_OBJ);
-
-$cnt=1;
-
-// if($query->rowCount() > 0)
-// {
-// foreach($results as $result)
-// {
-
-// if(mysqli_num_rows($result) > 0)
-// {
-// 	while($row = mysqli_fetch_assoc($result))
-// 	{
-//
-// 	?>
-<!-- //         <h5 style="background:#ededed;padding:20px;"><i class="fa fa-bell text-primary"></i>&nbsp;&nbsp;<b class="text-primary"><?php echo $row['time'];?></b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $row['notiuser'];?> ----->
-<!-- // 					<?php echo $row['text'];?></h5> -->
-<!-- //                        <?php.$cnt=$cnt+1; }} ?> -->
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
 	<!-- Loading Scripts -->
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap-select.min.js"></script>
@@ -184,10 +88,105 @@ $cnt=1;
 						$('.succWrap').slideUp("slow");
 					}, 3000);
 					});
-	</script>
-	<script>
 
+					
 	</script>
+
+
+
+
+
+</head>
+
+<body>
+	<?php include('includes/header.php');?>
+	<div class="ts-main-content">
+	<?php include('includes/leftbar.php');?>
+
+	<?php
+
+	// $querys = "SELECT user_id FROM users WHERE email ='$email'";
+	// $res = $conn->query($querys);
+	// if($res  === false) {
+	// 	user_error("Query failed: ".$conn->error."<br />$sql");
+	// 	echo "false";
+	// }
+	// $temp = mysqli_fetch_assoc($res);
+	// $user_id = $temp['user_id'];
+	// echo "the user id is : "$user_id."<br>";
+
+	// $sql = "SELECT * FROM ad WHERE adID in(SELECT adid FROM notification WHERE user_id ='$user_id')";
+	// $result = $conn->query($sql);
+	// if($result === false)
+	// {
+	// 	 user_error("Query failed: ".$conn->error."<br />$sql");
+	// 	 echo "false";
+	// }
+	// 	$row = mysqli_fetch_assoc($result);
+	// $adID = $adID+1;
+	// $sql2 =  " SELECT * FROM  ad WHERE adID ='$adID'";
+	// $result =$conn->query($sql2);
+	// if($result === false) {
+	// 	user_error("Query failed: ".$conn->error."<br />$sql");
+	// 	echo "false";
+	// }
+	// $row2= mysqli_fetch_assoc($result);
+	// $adID = $adID+1;
+	// $new_sql = "SELECT * FROM  ad WHERE adID ='$adID'";
+	// $res = $conn->query($new_sql);
+	// if($res === false) {
+	// 	user_error("Query failed: ".$conn->error."<br />$sql");
+	// 	echo "false";
+	// }
+	// $row3 = mysqli_fetch_assoc($res);
+
+
+ ?>
+		<div class="content-wrapper">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-12">
+						<h3 class="page-title">Notifications</h3>
+						<div class="row">
+							<div class="col-md-12">
+								<div class="panel panel-default">
+									<div class="panel-heading">Notification</div>
+									   <div class="panel-body">
+
+											 <div class="card">
+														 <img src="<?php echo $row['image']?>" id="img" style="width:80%">
+														 <h1  class="title"><?php echo $row['title']?></h1>
+													   <p class="price" id="price"><?php echo $row['price']?> $</p>
+													   <p  class="description"><?php echo $row['description']?></p>
+											</div>
+											<br>
+
+
+<?php
+
+
+
+
+$cnt=1;
+
+
+//
+// 	?>
+<!-- //         <h5 style="background:#ededed;padding:20px;"><i class="fa fa-bell text-primary"></i>&nbsp;&nbsp;<b class="text-primary"><?php echo $row['time'];?></b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $row['notiuser'];?> ----->
+<!-- // 					<?php echo $row['text'];?></h5> -->
+<!-- //                        <?php.$cnt=$cnt+1; }} ?> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
 </body>
 </html>
 <?php }?>

@@ -74,6 +74,7 @@ if(isset($_POST['submit']))
 
 ?>
 
+
 <!doctype html>
 <html lang="en" class="no-js">
 
@@ -121,7 +122,63 @@ if(isset($_POST['submit']))
 						$('.succWrap').slideUp("slow");
 					}, 3000);
 					});
+
+
+					 changeRate(null, 3);
+
+					 function changeRate(element, rate=null){
+					   if(rate == null){
+					     let id = $(element).attr('for');
+					     let rateAux = $('#'+id).val();
+					     $('#rate').val(rateAux);
+					   }else{
+					     let rateAux = $("#rate").val();
+					     $("#lblStar"+rateAux).click();
+					   }
+					   console.log($('#rate').val());
+					 }
 	</script>
+	<style>
+	*{
+			margin: 0;
+			padding: 0;
+	}
+	.rate {
+			margin: auto;
+			width: 50%;
+			padding: 0 10px;
+	}
+	.rate:not(:checked) > input {
+			position:absolute;
+			top:-9999px;
+	}
+	.rate:not(:checked) > label {
+			float:right;
+			width:1em;
+			overflow:hidden;
+			white-space:nowrap;
+			cursor:pointer;
+			font-size:5rem;
+			color:#ccc;
+	}
+	.rate:not(:checked) > label:before {
+			content: '★ ';
+	}
+	.rate > input:checked ~ label {
+			color: #ffc700;
+	}
+	.rate:not(:checked) > label:hover,
+	.rate:not(:checked) > label:hover ~ label {
+			color: #deb217;
+	}
+	.rate > input:checked + label:hover,
+	.rate > input:checked + label:hover ~ label,
+	.rate > input:checked ~ label:hover,
+	.rate > input:checked ~ label:hover ~ label,
+	.rate > label:hover ~ input:checked ~ label {
+			color: #c59b08;
+	}
+	</style>
 
 
 </head>
@@ -151,6 +208,7 @@ if(isset($_POST['submit']))
 <div class="panel-body">
 <form method="post" class="form-horizontal" enctype="multipart/form-data">
 
+
 <div class="form-group">
     <input type="hidden" name="user" value="<?php// echo htmlentities($result->email); ?>">
 	<label class="col-sm-2 control-label">Title<span style="color:red">*</span></label>
@@ -170,12 +228,34 @@ if(isset($_POST['submit']))
 	<textarea class="form-control" rows="5" name="description"></textarea>
 	</div>
 </div>
+<br>
+
+<div class="rate">
+	<div class="form-group">
+		<label class="col-sm-2 control-label" style="font-size:25px;">rate ad<span style="color:red">*</span></label>
+	</div>
+	<input type="hidden" id="rate" value="" />
+	<input type="radio" id="star5" name="rate" value="5" />
+	<label onclick="changeRate(this)" id="lblStar4" for="star5" title="text">5 stars</label>
+	<input type="radio" id="star4" name="rate" value="4" />
+	<label onclick="changeRate(this)" id="lblStar4" for="star4" title="text">4 stars</label>
+	<input type="radio" id="star3" name="rate" value="3" />
+	<label onclick="changeRate(this)" id="lblStar4" for="star3" title="text">3 stars</label>
+	<input type="radio" id="star2" name="rate" value="2" />
+	<label onclick="changeRate(this)" id="lblStar4" for="star2" title="text">2 stars</label>
+	<input type="radio" id="star1" name="rate" value="1" />
+	<label onclick="changeRate(this)" id="lblStar4" for="star1" title="text">1 star</label>
+</div>
+
+<br>
 
 <div class="form-group">
 	<div class="col-sm-8 col-sm-offset-2">
 		<button class="btn btn-primary" name="submit" type="submit">Send</button>
 	</div>
 </div>
+
+
 
 </form>
 									</div>

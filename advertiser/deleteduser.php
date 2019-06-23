@@ -100,25 +100,15 @@ if($result === false) {
 	echo "error";
 }
 $row =mysqli_fetch_assoc($result);
-$row_two = $row['user_id'];
+$user_id = $row['user_id'];
 
 
-$sql = "SELECT MAX(adID) FROM ad WHERE advID ='$row_two' ";
+$sql = "SELECT * FROM campaign WHERE adID IN(SELECT adID FROM ad WHERE advID = '$user_id') ";
 $result = $conn->query($sql);
 if($result === false) {
 	echo "error";
 }
-$row = mysqli_fetch_assoc($result);
-$temp = $row['MAX(adID)'];
 
-
-$sql = "SELECT * FROM campaign WHERE adID ='$temp' ";
-$result = $conn->query($sql);
-if($result === false)
-{
-   user_error("Query failed: ".$conn->error."<br />$sql");
-   echo "false";
-}
 //
 // $sql = "SELECT * from  deleteduser";
 // $query = $dbh -> prepare($sql);

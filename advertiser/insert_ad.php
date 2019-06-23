@@ -45,6 +45,7 @@ $bucket = $storage->bucket('catifi2');
 						$description = $_POST['text'];
 						$title= $_POST['header'];
 						$email= $_POST['user_email'];
+            $url = $_POST['url'];
 						// get the user_id of the adver
 						$sql = "SELECT user_id FROM users WHERE email = '$email';";
 						$results = $conn->query($sql);
@@ -53,13 +54,14 @@ $bucket = $storage->bucket('catifi2');
 						}
 						$row = mysqli_fetch_assoc($results);
 						$advID = $row['user_id'];
+            echo "the advID is : ".$row['user_id'];
 
 						//match_per = 0 , Will change in the future
 						$match_per = 0;
 
 
 
-						echo "we here";
+
 						$target_dir = 'newImages/';
 
 						$file = file_get_contents($_FILES['imagefile']['tmp_name']);
@@ -71,8 +73,8 @@ $bucket = $storage->bucket('catifi2');
 
 							$imageURL ='https://storage.googleapis.com/catifi2/newImages/'.$_FILES['imagefile']['name'];
 
-$sql = "INSERT INTO `ad`(`description`,`price`,`title`,`advID`,`image`,`match_per`)
-VALUES('$description','$price','$title','$advID','$imageURL','$match_per');";
+$sql = "INSERT INTO `ad`(`description`,`price`,`title`,`advID`,`image`,`match_per`,`url`)
+VALUES('$description','$price','$title','$advID','$imageURL','$match_per','$url');";
 
 if ($conn->query($sql) === TRUE) {
     //echo "New record $text user  created successfully";

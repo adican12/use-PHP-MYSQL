@@ -63,8 +63,8 @@ $sender=$email;
 /////////////////////////////////////////////////
 echo "<br>start signup<br>";
 
-$sql = "INSERT INTO `users`(`user_id`,`name`, `email`, `password`, `gender`, `mobile`, `image`,`user_type`, `birthday`,`status`,`user_category`,`location_id`)
-VALUES ('$user_id','$name', '$email', '$password','$gender','$mobileno','$image','$usertype','$birthday',1,'$userCategory','$location_id')";
+$sql = "INSERT INTO `users`(`name`, `email`, `password`, `gender`, `mobile`, `image`,`user_type`, `birthday`,`status`,`user_category`,`location_id`)
+VALUES ('$name', '$email', '$password','$gender','$mobileno','$image','$usertype','$birthday',1,'$userCategory','$location_id')";
 
 if ($conn->query($sql) === TRUE) {
 	echo "<script type='text/javascript'>alert('Registration Sucessfull!');</script>";

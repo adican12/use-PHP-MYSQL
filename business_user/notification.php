@@ -96,7 +96,14 @@ if(isset($_POST['addCoupon'])) {
 
 // // // the business ID
             // $busID = $row['user_id'];
-            $busID = $row['user_id'];
+            $user_id = $row['user_id'];
+            $sql = "SELECT businessID FROM business WHERE user_id= '$user_id'";
+            $res = $conn->query($sql);
+            if($res === false) {
+              echo "error";
+            }
+            $row = mysqli_fetch_assoc($res);
+            $busID = $row['businessID'];
  		      // check all Variables if them ok
 		      // echo "the business id is  : ".$busID."<br>";
 		      // echo "the imageurl is : ".$imageURL;

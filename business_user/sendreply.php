@@ -52,7 +52,7 @@ if($conn->query($sql) == false) {
 }
 $lat =32.079561;
 $lng = 34.786710;
-$info = "TOTO Restaurant";
+$info = $businessName;
 $sql = "INSERT INTO locations(businessID,lat,lng,info) VALUES
 ('$businessID','$lat','$lng','$info')";
 if($conn->query($sql) == false){

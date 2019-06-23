@@ -237,16 +237,16 @@ if(mysqli_num_rows($result) > 0)
 			</div>
 		</div>
 	</div>
-	<button type="button" id="formButton" class="showDemo">Create a new banner!</button>
+	<button type="button" id="formButton" class="btn btn-primary" style="margin-left:550px;">Create a new banner!</button>
 <div class="information" id="information">
 	 <h6><strong>Please enter information to create an advertisement</strong></h6>
 	 <div class="form-content">
 			<form id="ad" method="post">
 				<!-- <input type="file" name="file" value="Please select a picture" id="fileToUpload"> -->
-					<label for="" class="text-uppercase text-sm"> Image:</label>
+					<label for="" class="text-uppercase text-sm"> Image: </label>
 				<input type="file" name="imagefile" value="image" style="padding:10px;" class="form-control mb" required> <br>
 
-				<label for="" class="text-uppercase text-sm"> Price:</label>
+				<label for="" class="text-uppercase text-sm"> Price: </label>
 				<input type="text" placeholder="Price:" name="price" class="form-control mb" required>
 
 				<label for="" class="text-uppercase text-sm"> Text: </label>
@@ -255,26 +255,31 @@ if(mysqli_num_rows($result) > 0)
 				<label for="" class="text-uppercase text-sm"> Header: </label>
 				<input type="text" placeholder="header" name="header" class="form-control mb" required>
 
+				<label for="" class="text-uppercase text-sm"> URL : </label>
+				<input type="text" placeholder="wwww.someting.com" name="url" class="form-control mb" required>
+
 				<label for="" class="text-uppercase text-sm"> User Email: </label>
 				<input type="text" placeholder="User Email:" name="user_email" class="form-control mb" required>
 
-
-				<button name="submit" type="submit" class="showDemo" style="margin-right:300px;"> Upload!</button>
+				<br>
+				<button name="submit" type="submit" class="btn btn-primary" style="margin-right:300px;padding: 14px 55px; "  onclick="showDemo()" > Upload!</button>
 			</form>
 	</div>
-	<button class="showDemo" onclick="showDemo()" style="margin-right:310px;margin-top:10px;"> Show Demo </button>
+
 </div>
 
 
 <div id="result_ad"></div>
 	<div class="card" id="card">
 		<h2>DEMO</h2>
-  <img src="images/jeans.jpg" alt="" style="width:100%" id="img">
+  <a href="#" style="text-decoration:none;" id="url"><img src="images/jeans.jpg" alt="" style="width:100%" id="img"></a>
 
   <h1 id="header">header</h1>
   <p class="price" id="price">$price</p>
   <p id="details">Some text about the jeans..</p>
+<button class="btn btn-primary" onclick="showDemo()" style="margin-right:300px;margin-top:10px;padding: 14px 50px;"> Show Demo </button>
 </div>
+
 <div id="demo"></div>
 	<?php
 	$email = $_SESSION['alogin'];
@@ -295,7 +300,7 @@ if(mysqli_num_rows($result) > 0)
 	$row1 = mysqli_fetch_assoc($new_result);
 
 
-	 $query= "SELECT image,description,price,title FROM ad WHERE adID = (SELECT MAX(adID) FROM ad)";
+	 $query= "SELECT image,description,price,title,url FROM ad WHERE adID = (SELECT MAX(adID) FROM ad)";
 	 $res = $conn->query($query);
 	 if($res === false){
 			user_error("Query failed: ".$conn->error."<br />$sql");
@@ -319,6 +324,10 @@ if(mysqli_num_rows($result) > 0)
 
 			var img ="<?php echo $new_row['image']?>";
 			document.getElementById("img").src = img;
+			var url = "<?php echo $new_row['url']?>";
+			console.log(url);
+
+			document.getElementById("url").href = url;
 
 	}
 

@@ -773,8 +773,8 @@ margin-left: 350px;
 text-align: center;
 font-family: arial;
 height: 400px;
-padding: 10px;
-border: 5px solid gray;
+padding: 20px;
+border: 15px solid gray;
 }
 
 .card1{
@@ -785,8 +785,8 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
  text-align: center;
  font-family: arial;
  height: 400px;
- padding: 10px;
- border: 5px solid gray;
+ padding: 20px;
+ border: 15px solid gray;
  margin-top: 45px;
 
 }
@@ -798,8 +798,18 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
  margin-left: 350px;
  text-align: center;
  font-family: arial;
- height: 400px;
+ height: 450px;
  padding: 10px;
-border: 5px solid gray;
-margin-top: 45px;
+border: 15px solid gray;
+margin-top: 60px;
 }
+.title {font-size: 22px;}
+img:hover {-webkit-transform: scaleX(-1);transform: scaleX(-1);}
+
+.description {font-family: 'Playfair Display', serif;}
+.ad_rate {font-size:25px;font-family: 'Playfair Display', serif;}
+
+
+/* Modified from: https://github.com/mukulkant/Star-rating-using-pure-css */
+
+/* Modified from: https://github.com/mukulkant/Star-rating-using-pure-css */

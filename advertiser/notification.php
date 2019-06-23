@@ -112,6 +112,7 @@ if(isset($_POST['submit']))
 																												 <th>Campaign start date</th>
 																												 <th>Campaign end date</th>
 																												 <th>Location</th>
+																												 <th>edit</th>
 														 </tr>
 												 </thead>
 											 <tbody>
@@ -148,7 +149,7 @@ if(isset($_POST['submit']))
 															 <td><?php echo $row['category'];?></td>
 															 <td><?php echo $row['stratingDate'];?></td>
 															 <td><?php echo $row['endDate'];?></td>
-															 <td><?php echo $row['location_id'];?></td>
+															 <td><?php echo $row['locationID'];?></td>
 															 <td>
 
 																										 <?php if($row['status'] == 1)
@@ -216,10 +217,10 @@ if(mysqli_num_rows($result) > 0)
 									<label for="" class="text-uppercase text-sm"> Gender: </label>
 									<input type="text" placeholder="Male/Famle/Both" name="gender" class="form-control mb" required>
 
-									<label for="" class="text-uppercase text-sm"> ageMin: </label>
+									<label for="" class="text-uppercase text-sm"> age Min: </label>
 									<input type="number" placeholder="25-" name="ageMin" class="form-control mb" required>
 
-									<label for="" class="text-uppercase text-sm"> ageMax: </label>
+									<label for="" class="text-uppercase text-sm"> age Max: </label>
 									<input type="number" placeholder="-30" name="ageMax" class="form-control mb" required>
 
 
@@ -235,11 +236,11 @@ if(mysqli_num_rows($result) > 0)
 									<br>
 
 									<label for="" class="text-uppercase text-sm"> Location: </label>
-									<input type="number" placeholder="Select the location you want to advertise" name="category" class="form-control mb" required>
+									<input type="number" placeholder="Select the location you want to advertise" name="location_id" class="form-control mb" required>
 									<br>
 
 									<label for="" class="text-uppercase text-sm"> Banner ID: </label>
-									<input type="number" placeholder="Select the banner You Create" name="category" class="form-control mb" required>
+									<input type="number" placeholder="Select the banner You Create" name="adID" class="form-control mb" required>
 									<br>
 
 									<button class="btn btn-primary btn-block" name="addCampin" type="submit" onload="loadCamp()">Click!</button>
