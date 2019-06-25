@@ -236,8 +236,7 @@ if(mysqli_num_rows($result) > 0)
 									<br>
 
 									<label for="" class="text-uppercase text-sm"> Location: </label>
-									<input type="number" placeholder="Select the location you want to advertise" name="location_id" class="form-control mb" required>
-									<select name="locations">
+									<select name="locations" class="form-control mb" required>
 									  <option value="telAviv">Tel-Aviv</option>
 									  <option value="jerusalem">Jerusalem</option>
 									  <option value="beerSheva<">Beer Sheva</option>
