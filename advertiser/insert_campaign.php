@@ -35,6 +35,33 @@ echo $adID;
    echo "the category is : ".$category."<br>";
    echo "this is the location: ".$location_id."<br>";
 
+   switch($location_id) {
+    case 'haifa':
+      $location_id = 3100000;
+      break;
+    case 'tel_aviv':
+      $location_id = 6100000;
+      break;
+    case 'eilat':
+      $location_id = 88805;
+      break;
+    case 'ramat_gan':
+      $location_id = 5200100;
+      break;
+    case 'givatayim':
+      $location_id = 5310000;
+      break;
+    case 'beer_sheva':
+      $location_id = 8400100;
+      break;
+    case 'jerusalem':
+      $location_id = 9100000;
+      break;
+    default:
+      echo "Sorry You Cant Publish Campagin Here <br>";
+      break;
+  }
+
  $sql = "INSERT INTO `campaign`(`campaignName`,`adID`,`gender`,`ageMin`,`ageMax`,`budget`,`category`,`stratingDate`,`endDate`,`locationID`)
  	 VALUES('$campaignName','$adID','$gender','$ageMin','$ageMax','$budget','$category','$stratDate','$endDate','$location_id');";
  	if ($conn->query($sql) === TRUE) {

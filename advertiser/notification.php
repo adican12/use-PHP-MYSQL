@@ -237,12 +237,12 @@ if(mysqli_num_rows($result) > 0)
 
 									<label for="" class="text-uppercase text-sm"> Location: </label>
 									<select name="locations" class="form-control mb" required>
-									  <option value="telAviv">Tel-Aviv</option>
+									  <option value="tel_aviv">Tel-Aviv</option>
 									  <option value="jerusalem">Jerusalem</option>
-									  <option value="beerSheva<">Beer Sheva</option>
+									  <option value="beer_sheva<">Beer Sheva</option>
 									  <option value="haifa">Haifa</option>
 										<option value="eilat">Eilat</option>
-										<option value="ramatGan">Ramat Gan</option>
+										<option value="ramat_gan">Ramat Gan</option>
 										<option value="givatayim">Givatayim</option>
 									</select>
 									<br>
