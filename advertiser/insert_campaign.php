@@ -32,8 +32,8 @@ echo $adID;
    echo "the gender is: ".$gender."<br>";
    echo "the strat date of the campaign is : ".$stratDate."<br>";
    echo "the end date of the campaign is : ".$endDate."<br>";
-   echo "the category is : " .$category."<br>";
-   echo "this is the location".$location_id."<br>";
+   echo "the category is : ".$category."<br>";
+   echo "this is the location: ".$location_id."<br>";
 
  $sql = "INSERT INTO `campaign`(`campaignName`,`adID`,`gender`,`ageMin`,`ageMax`,`budget`,`category`,`stratingDate`,`endDate`,`locationID`)
  	 VALUES('$campaignName','$adID','$gender','$ageMin','$ageMax','$budget','$category','$stratDate','$endDate','$location_id');";
