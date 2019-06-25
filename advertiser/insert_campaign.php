@@ -27,9 +27,12 @@ echo $adID;
 
 
 	 echo "the adID is = ".$adID."<br>";
-   echo "Campagin Name:".$campaignName."<br>"."the budget is : ".$budget."<br>"."the gender is: ".$gender."<br>";
-   echo "the strat date of the campaign is : ".$stratDate."<br>"."the end date of the campaign is : ".$endDate."<br>";
-   echo "the category is : " .$category;
+   echo "Campagin Name:".$campaignName."<br>";
+   echo "the budget is : ".$budget."<br>";
+   echo "the gender is: ".$gender."<br>";
+   echo "the strat date of the campaign is : ".$stratDate."<br>";
+   echo "the end date of the campaign is : ".$endDate."<br>";
+   echo "the category is : " .$category."<br>";
    echo "this is the location".$location_id."<br>";
 
  $sql = "INSERT INTO `campaign`(`campaignName`,`adID`,`gender`,`ageMin`,`ageMax`,`budget`,`category`,`stratingDate`,`endDate`,`locationID`)
