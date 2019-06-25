@@ -22,7 +22,8 @@ echo $adID;
 	$ageMin = $_POST['ageMin'];
 	$ageMax = $_POST['ageMax'];
   // $adID = $_POST['adID'];
-  $location_id=$_POST['location_id'];
+  $location_id=$_POST['locations'];
+  echo "this is the location".$location_id."<br>";
 
 
 	 echo "the adID is = ".$adID."<br>";
