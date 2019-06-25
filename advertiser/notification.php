@@ -239,8 +239,7 @@ if(mysqli_num_rows($result) > 0)
 									<input type="number" placeholder="Select the location you want to advertise" name="location_id" class="form-control mb" required>
 									<br>
 
-									<label for="" class="text-uppercase text-sm"> Banner ID: </label>
-									<input type="number" placeholder="Select the banner You Create" name="adID" class="form-control mb" required>
+									
 									<br>
 
 									<button class="btn btn-primary btn-block" name="addCampin" type="submit" onload="loadCamp()">Click!</button>
