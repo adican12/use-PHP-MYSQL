@@ -23,13 +23,14 @@ echo $adID;
 	$ageMax = $_POST['ageMax'];
   // $adID = $_POST['adID'];
   $location_id=$_POST['locations'];
-  echo "this is the location".$location_id."<br>";
+
 
 
 	 echo "the adID is = ".$adID."<br>";
    echo "Campagin Name:".$campaignName."<br>"."the budget is : ".$budget."<br>"."the gender is: ".$gender."<br>";
    echo "the strat date of the campaign is : ".$stratDate."<br>"."the end date of the campaign is : ".$endDate."<br>";
    echo "the category is : " .$category;
+   echo "this is the location".$location_id."<br>";
 
  $sql = "INSERT INTO `campaign`(`campaignName`,`adID`,`gender`,`ageMin`,`ageMax`,`budget`,`category`,`stratingDate`,`endDate`,`locationID`)
  	 VALUES('$campaignName','$adID','$gender','$ageMin','$ageMax','$budget','$category','$stratDate','$endDate','$location_id');";
