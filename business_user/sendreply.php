@@ -184,6 +184,20 @@ if($conn->query($sql) == false){
 	<input type="password" name="apPassword" class="form-control"   required >
 	</div>
 </div>
+<div class="form-group">
+	<label for="" class="col-sm-2 control-label"> Location:  <span style="color:red">*</span> </label>
+	<div class="col-sm-4">
+		<select name="locations" class="form-control mb" required>
+			<option value="tel_aviv">Tel-Aviv</option>
+			<option value="jerusalem">Jerusalem</option>
+			<option value="beer_sheva<">Beer Sheva</option>
+			<option value="haifa">Haifa</option>
+			<option value="eilat">Eilat</option>
+			<option value="ramat_gan">Ramat Gan</option>
+			<option value="givatayim">Givatayim</option>
+		</select>
+	</div>
+</div>
 
 
 
