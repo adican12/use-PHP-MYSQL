@@ -237,9 +237,18 @@ if(mysqli_num_rows($result) > 0)
 
 									<label for="" class="text-uppercase text-sm"> Location: </label>
 									<input type="number" placeholder="Select the location you want to advertise" name="location_id" class="form-control mb" required>
+									<select name="locations">
+									  <option value="telAviv">Tel-Aviv</option>
+									  <option value="jerusalem">Jerusalem</option>
+									  <option value="beerSheva<">Beer Sheva</option>
+									  <option value="haifa">Haifa</option>
+										<option value="eilat">Eilat</option>
+										<option value="ramatGan">Ramat Gan</option>
+										<option value="givatayim">Givatayim</option>
+									</select>
 									<br>
 
-									
+
 									<br>
 
 									<button class="btn btn-primary btn-block" name="addCampin" type="submit" onload="loadCamp()">Click!</button>
