@@ -230,7 +230,7 @@ if($conn->query($sql) == false){
 <div class="form-group">
 	<label class="col-sm-2 control-label"> Acces Point Password: <span style="color:red">*</span></label>
 	<div class="col-sm-4">
-	<input type="password" name="apPassword" class="form-control"   required >
+	<input type="password" name="apPassword" class="form-control"   required placeholder="password" >
 	</div>
 </div>
 <div class="form-group">
