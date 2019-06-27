@@ -27,6 +27,52 @@ else{
 	$businessName=$_POST['businessName'];
   $category=$_POST['category'];
 	$apPassword = $_POST['apPassword'];
+	$location_id=$_POST['locations'];
+
+	$lat = 0;
+	$lng = 0;
+	switch($location_id) {
+		case 'tel_aviv':
+			$location_id = 1;
+			$lat = 32.109333;
+			$lng = 34.855499;
+			break;
+
+	 case 'haifa':
+		 $location_id = 2;
+		 $lat = 32.794044;
+		 $lng = 34.989571;
+		 break;
+
+	 case 'eilat':
+		 $location_id = 3;
+		 $lat = 29.55805;
+		 $lng = 34.94821;
+		 break;
+	 case 'ramat_gan':
+		 $location_id = 4;
+		 $lat = 32.08227;
+		 $lng = 34.81065;
+		 break;
+	 case 'givatayim':
+		 $location_id = 5;
+		 $lat = 32.07225;
+		 $lng = 34.81253;
+		 break;
+	 case 'beer_sheva':
+		 $location_id =6;
+		 $lat = 31.25181;
+		 $lng = 34.7913;
+		 break;
+	 case 'jerusalem':
+		 $location_id = 7;
+		 $lat = 31.771959;
+		 $lng = 35.217018;
+		 break;
+	 default:
+		 echo "Sorry You Cant Publish Campagin Here <br>";
+		 break;
+ }
 
 	// echo "the bus name : ".$businessName."<br>";
 	// echo "the category name : ".$category."<br>";
@@ -50,9 +96,12 @@ $sql = "INSERT INTO ap(apPassword,businessID) VALUES ('$apPassword','$businessID
 if($conn->query($sql) == false) {
 		echo "<script>alert('Sorry Cant Insert to this table ap  :(( ')</script>";
 }
+
 $lat =32.079561;
 $lng = 34.786710;
+
 $info = $businessName;
+
 $sql = "INSERT INTO locations(businessID,lat,lng,info) VALUES
 ('$businessID','$lat','$lng','$info')";
 if($conn->query($sql) == false){
@@ -160,7 +209,7 @@ if($conn->query($sql) == false){
 <?php if($error){?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php }
 				else if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
 
-									<div class="panel-body">
+									<center><div class="panel-body">
 <form method="post" class="form-horizontal" enctype="multipart/form-data">
 
 <div class="form-group">
@@ -181,9 +230,24 @@ if($conn->query($sql) == false){
 <div class="form-group">
 	<label class="col-sm-2 control-label"> Acces Point Password: <span style="color:red">*</span></label>
 	<div class="col-sm-4">
-	<input type="password" name="apPassword" class="form-control"   required >
+	<input type="password" name="apPassword" class="form-control"   required placeholder="password" >
 	</div>
 </div>
+<div class="form-group">
+	<label for="" class="col-sm-2 control-label"> Location:  <span style="color:red">*</span> </label>
+	<div class="col-sm-4">
+		<select name="locations" class="form-control mb" required>
+			<option value="tel_aviv">Tel-Aviv</option>
+			<option value="jerusalem">Jerusalem</option>
+			<option value="beer_sheva<">Beer Sheva</option>
+			<option value="haifa">Haifa</option>
+			<option value="eilat">Eilat</option>
+			<option value="ramat_gan">Ramat Gan</option>
+			<option value="givatayim">Givatayim</option>
+		</select>
+	</div>
+</div>
+</center>
 
 
 

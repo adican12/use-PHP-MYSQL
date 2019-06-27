@@ -2,7 +2,7 @@
 <?php
 session_start();
 $_SESSION['id']=+1;
-$_SESSION['adID']=+1;
+
 echo "Session variables are set.";
 error_reporting(0);
 include('includes/config.php');
@@ -236,11 +236,18 @@ if(mysqli_num_rows($result) > 0)
 									<br>
 
 									<label for="" class="text-uppercase text-sm"> Location: </label>
-									<input type="number" placeholder="Select the location you want to advertise" name="location_id" class="form-control mb" required>
+									<select name="locations" class="form-control mb" required>
+									  <option value="tel_aviv">Tel-Aviv</option>
+									  <option value="jerusalem">Jerusalem</option>
+									  <option value="beer_sheva<">Beer Sheva</option>
+									  <option value="haifa">Haifa</option>
+										<option value="eilat">Eilat</option>
+										<option value="ramat_gan">Ramat Gan</option>
+										<option value="givatayim">Givatayim</option>
+									</select>
 									<br>
 
-									<label for="" class="text-uppercase text-sm"> Banner ID: </label>
-									<input type="number" placeholder="Select the banner You Create" name="adID" class="form-control mb" required>
+
 									<br>
 
 									<button class="btn btn-primary btn-block" name="addCampin" type="submit" onload="loadCamp()">Click!</button>
