@@ -209,7 +209,7 @@ if($conn->query($sql) == false){
 <?php if($error){?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php }
 				else if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
 
-									<div class="panel-body">
+									<center><div class="panel-body"></center>
 <form method="post" class="form-horizontal" enctype="multipart/form-data">
 
 <div class="form-group">
