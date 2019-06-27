@@ -133,7 +133,3 @@
 // //[ { val: 0.963795681875635, p: 'Gene Seymour' },
 //   { val: 0.7470178808339965, p: 'adiadi' },
 //   { val: 0.66284898035987, p: 'omeromer' } ]
-
-
-const brain = require("brain.js");
-console.log("hello");
