@@ -49,7 +49,7 @@ if(isset($_POST['submit']))
 
 	<!-- Font awesome -->
 	<link rel="stylesheet" href="css/font-awesome.min.css">
-	<link rel="stylesheet" href="css/css/form.css"
+	<link rel="stylesheet" href="css/css/form.css">
 	<!-- Sandstone Bootstrap CSS -->
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<!-- Bootstrap Datatables -->
