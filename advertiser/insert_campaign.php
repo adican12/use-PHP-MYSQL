@@ -36,26 +36,28 @@ echo $adID;
    echo "this is the location: ".$location_id."<br>";
 
    switch($location_id) {
+     case 'tel_aviv':
+       $location_id =1;
+       break;
+
     case 'haifa':
-      $location_id = 3100000;
+      $location_id = 2;
       break;
-    case 'tel_aviv':
-      $location_id = 6100000;
-      break;
+
     case 'eilat':
-      $location_id = 88805;
+      $location_id =3;
       break;
     case 'ramat_gan':
-      $location_id = 5200100;
+      $location_id =4;
       break;
     case 'givatayim':
-      $location_id = 5310000;
+      $location_id = 5;
       break;
     case 'beer_sheva':
-      $location_id = 8400100;
+      $location_id =6;
       break;
     case 'jerusalem':
-      $location_id = 9100000;
+      $location_id = 7;
       break;
     default:
       echo "Sorry You Cant Publish Campagin Here <br>";
