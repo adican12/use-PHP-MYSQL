@@ -135,5 +135,5 @@
 //   { val: 0.66284898035987, p: 'omeromer' } ]
 
 
-const brain = required("brain.js");
+const brain = require("brain.js");
 console.log("hello");
