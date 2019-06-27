@@ -27,6 +27,52 @@ else{
 	$businessName=$_POST['businessName'];
   $category=$_POST['category'];
 	$apPassword = $_POST['apPassword'];
+	$location_id=$_POST['locations'];
+
+	$lat = 0;
+	$lng = 0;
+	switch($location_id) {
+		case 'tel_aviv':
+			$location_id = 1;
+			$lat = 32.109333;
+			$lng = 34.855499;
+			break;
+
+	 case 'haifa':
+		 $location_id = 2;
+		 $lat = 32.794044;
+		 $lng = 34.989571;
+		 break;
+
+	 case 'eilat':
+		 $location_id = 3;
+		 $lat = 29.55805;
+		 $lng = 34.94821;
+		 break;
+	 case 'ramat_gan':
+		 $location_id = 4;
+		 $lat = 32.08227;
+		 $lng = 34.81065;
+		 break;
+	 case 'givatayim':
+		 $location_id = 5;
+		 $lat = 32.07225;
+		 $lng = 34.81253;
+		 break;
+	 case 'beer_sheva':
+		 $location_id =6;
+		 $lat = 31.25181;
+		 $lng = 34.7913;
+		 break;
+	 case 'jerusalem':
+		 $location_id = 7;
+		 $lat = 31.771959;
+		 $lng = 35.217018;
+		 break;
+	 default:
+		 echo "Sorry You Cant Publish Campagin Here <br>";
+		 break;
+ }
 
 	// echo "the bus name : ".$businessName."<br>";
 	// echo "the category name : ".$category."<br>";
@@ -50,9 +96,12 @@ $sql = "INSERT INTO ap(apPassword,businessID) VALUES ('$apPassword','$businessID
 if($conn->query($sql) == false) {
 		echo "<script>alert('Sorry Cant Insert to this table ap  :(( ')</script>";
 }
+
 $lat =32.079561;
 $lng = 34.786710;
+
 $info = $businessName;
+
 $sql = "INSERT INTO locations(businessID,lat,lng,info) VALUES
 ('$businessID','$lat','$lng','$info')";
 if($conn->query($sql) == false){
