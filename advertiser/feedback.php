@@ -160,14 +160,7 @@ if(isset($_REQUEST['unconfirm']))
 							<div class="panel-body" id="panel-body">
 							<?php if($error){?><div class="errorWrap" id="msgshow"><?php echo htmlentities($error); ?> </div><?php }
 				else if($msg){?><div class="succWrap" id="msgshow"><?php echo htmlentities($msg); ?> </div><?php }?>
-				<form method="post" enctype="multipart/form-data" action="">
-					<br>
-					<label class="col-sm-1 control-label"> Please enter the email <span style="color:red">*</span></label>
-					<div class="col-sm-5">
-					<input type="text" name="email" class="form-control"  placeholder="user@gmail.com" required>
-					</div>
-					<button type="submit" onclick="getTheLastId()" class="btn btn-primary" name="submitOne">Click me to get the banner ID</button>
-				</form>
+				
 
 								<!-- <table id="zctb" class="display table table-striped table-bordered table-hover" cellspacing="0" width="100%">
 									<thead>

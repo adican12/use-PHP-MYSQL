@@ -8,7 +8,7 @@
 			</li>
 			<li><a href="profile.php"><i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp;Maps- See places to publish</a>
 			</li>
-			<li><a href="feedback.php"><i class="fa fa-paint-brush" aria-hidden="true"></i>&nbsp;creating banners</a>
+			<li><a href="feedback.php"><i class="fa fa-paint-brush" aria-hidden="true"></i>&nbsp;Creating banners</a>
 			</li>
 			<li><a href="notification.php"><i class="fa fa-paint-brush" aria-hidden="true"></i>  &nbsp; Creat campaign </a>
 			</li>
