@@ -1,6 +1,6 @@
 <?php
 session_start();
-$emailOne = $_SESSION['aloging'];
+$emailOne = $_SESSION['alogin'];
 require __DIR__ . '/../vendor/autoload.php';
 // # Imports the Google Cloud client library
 use Google\Cloud\Storage\StorageClient;
