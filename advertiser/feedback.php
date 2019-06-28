@@ -160,7 +160,7 @@ if(isset($_REQUEST['unconfirm']))
 							<div class="panel-body" id="panel-body">
 							<?php if($error){?><div class="errorWrap" id="msgshow"><?php echo htmlentities($error); ?> </div><?php }
 				else if($msg){?><div class="succWrap" id="msgshow"><?php echo htmlentities($msg); ?> </div><?php }?>
-				
+
 
 								<!-- <table id="zctb" class="display table table-striped table-bordered table-hover" cellspacing="0" width="100%">
 									<thead>
@@ -251,8 +251,7 @@ if(mysqli_num_rows($result) > 0)
 				<label for="" class="text-uppercase text-sm"> URL : </label>
 				<input type="text" placeholder="wwww.someting.com" name="url" class="form-control mb" required>
 
-				<label for="" class="text-uppercase text-sm"> User Email: </label>
-				<input type="text" placeholder="User Email:" name="user_email" class="form-control mb" required>
+				
 
 				<br>
 				<button name="submit" type="submit" class="btn btn-primary" style="margin-right:300px;padding: 14px 55px; "  onclick="showDemo()" > Upload!</button>
