@@ -236,22 +236,22 @@ if(mysqli_num_rows($result) > 0)
 	 <div class="form-content">
 			<form id="ad" method="post">
 				<!-- <input type="file" name="file" value="Please select a picture" id="fileToUpload"> -->
-					<label for="" class="text-uppercase text-sm"> Image: </label>
+					<label for="" class="text-uppercase text-sm"> Image : </label>
 				<input type="file" name="imagefile" value="image" style="padding:10px;" class="form-control mb" required> <br>
 
-				<label for="" class="text-uppercase text-sm"> Price: </label>
+				<label for="" class="text-uppercase text-sm"> Price : </label>
 				<input type="text" placeholder="Price:" name="price" class="form-control mb" required>
 
-				<label for="" class="text-uppercase text-sm"> Text: </label>
+				<label for="" class="text-uppercase text-sm"> Text : </label>
 				<input type="text" placeholder="Text" name="text" class="form-control mb" required>
 
-				<label for="" class="text-uppercase text-sm"> Header: </label>
+				<label for="" class="text-uppercase text-sm"> Header : </label>
 				<input type="text" placeholder="header" name="header" class="form-control mb" required>
 
-				<label for="" class="text-uppercase text-sm"> URL : </label>
+				<label for="" class="text-uppercase text-sm"> Redirect URL  : </label>
 				<input type="text" placeholder="wwww.someting.com" name="url" class="form-control mb" required>
 
-				
+
 
 				<br>
 				<button name="submit" type="submit" class="btn btn-primary" style="margin-right:300px;padding: 14px 55px; "  onclick="showDemo()" > Upload!</button>
