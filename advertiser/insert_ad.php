@@ -1,4 +1,6 @@
 <?php
+session_start();
+$emailOne = $_SESSION['aloging'];
 require __DIR__ . '/../vendor/autoload.php';
 // # Imports the Google Cloud client library
 use Google\Cloud\Storage\StorageClient;
@@ -41,6 +43,7 @@ $bucket = $storage->bucket('catifi2');
 //   }
 
     // declare Variables
+    echo "the email is : ".$emailOne;
 						$price= $_POST['price'];
 						$description = $_POST['text'];
 						$title= $_POST['header'];
