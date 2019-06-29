@@ -266,7 +266,7 @@ if(mysqli_num_rows($result) > 0)
 									if($res === false) {
 										echo "_____ERROR____".$conn->error."<br>";
 									}
-									$cnt=1;
+									$cnt=0;
 									while($row = mysqli_fetch_assoc($res))
 										{
 																		?>
@@ -278,7 +278,7 @@ if(mysqli_num_rows($result) > 0)
 									  <option value="<?php echo $row['title'];?>"> <?php echo $row['title'];?> </option>
 										<option value="<?php echo $row['title'];?>"><?php echo $row['title'];?></option>
 									</select>
-									<?php}?>
+									<?php$cnt=$cnt+1;}?>
 
 									<br>
 
