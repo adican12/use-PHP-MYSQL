@@ -150,6 +150,18 @@ if(isset($_POST['submit']))
 					 while($row = mysqli_fetch_assoc($result)) {
 						 	if($row['locationID'] == 4) {
 								$row['locationID'] = 'Ramat Gan';
+							} else if($row['locationID'] == 1) {
+								$row['locationID'] = 'Tel-Aviv';
+							} else if($row['locationID'] == 3) {
+								$row['locationID'] = 'Eilat';
+							} else if($row['locationID'] == 2) {
+								$row['locationID'] = 'Haifa';
+							} else if($row['locationID'] == 5) {
+								$row['locationID'] = 'Givatayim';
+							} else if($row['locationID'] == 6) {
+								$row['locationID'] = 'Beer Sheva';
+							} else {
+								$row['locationID'] = 'Jerusalem';
 							}
 								 ?>
 														 <tr>
