@@ -3,15 +3,15 @@ include('includes/config.php');
  session_start();
 
 // error_reporting(0);
-
-$sql = "SELECT MAX(adID) FROM ad";
-$result = $conn->query($sql);
-if($result === false) {
-	echo "<script>alert('_____ERROR____')</script>";
-}
-$row = mysqli_fetch_assoc($result);
-$adID=$row['MAX(adID)'];
-echo $adID;
+// 
+// $sql = "SELECT MAX(adID) FROM ad";
+// $result = $conn->query($sql);
+// if($result === false) {
+// 	echo "<script>alert('_____ERROR____')</script>";
+// }
+// $row = mysqli_fetch_assoc($result);
+// $adID=$row['MAX(adID)'];
+// echo $adID;
 
 	$campaignName = $_POST['campaignName'];
 	$budget = $_POST['budget'];
