@@ -270,11 +270,11 @@ if(mysqli_num_rows($result) > 0)
 									?>
 									<label for="" class="text-uppercase text-sm"> Please choose the ad name: </label>
 									<select name="banners" class="form-control mb" required>
-									  <option value="<?php echo $row['title'];?>"> Wine </option>
-									  <option value="<?php echo $row['title'];?>"> New shirt </option>
-									  <option value="<?php echo $row['title'];?>?"> Cinema </option>
-									  <option value="<?php echo $row['title'];?>"> Matsuda </option>
-										<option value="<?php echo $row['title'];?>">Telescope</option>
+									  <option value="<?php echo $row['title'];?>"> <?php echo $row['title'];?> </option>
+									  <option value="<?php echo $row['title'];?>"> <?php echo $row['title'];?> </option>
+									  <option value="<?php echo $row['title'];?>?"><?php echo $row['title'];?> </option>
+									  <option value="<?php echo $row['title'];?>"> <?php echo $row['title'];?> </option>
+										<option value="<?php echo $row['title'];?>"><?php echo $row['title'];?></option>
 									</select>
 									<br>
 
