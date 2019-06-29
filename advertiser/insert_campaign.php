@@ -26,6 +26,7 @@ echo $adID;
   $baneers = $_POST['banners'];
 
 // new query
+echo "the banners is : ".$baneers."<br>"; 
 $querys = "SELECT adID FROM ad WHERE title = '$banners'";
 $result = $conn->query($querys);
 if($result === false) {
