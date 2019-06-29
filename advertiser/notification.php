@@ -273,8 +273,9 @@ if(mysqli_num_rows($result) > 0)
 									<label for="" class="text-uppercase text-sm"> Please choose the ad name: </label>
 									<select name="banners" class="form-control mb" required>
 									  <option value="<?php echo $row['title'];?>"> <?php echo $row['title'];?> </option>
+										<?php $cnt =$cnt+1;}?>
 									</select>
-									<?php $cnt =$cnt+1;}?>
+
 									<br>
 
 
