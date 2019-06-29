@@ -257,7 +257,7 @@ if(mysqli_num_rows($result) > 0)
 
 
 									<label for="" class="text-uppercase text-sm"> Category: </label>
-									<input type="text" placeholder="Fashion\Restaurant\movie\And more..."name="category" class="form-control mb" required>
+									<input type="text" placeholder="Clothing\Digital Content\And more..."name="category" class="form-control mb" required>
 									<br>
 
 									<label for="" class="text-uppercase text-sm"> Location: </label>
