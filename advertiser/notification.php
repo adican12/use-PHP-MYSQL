@@ -260,6 +260,16 @@ if(mysqli_num_rows($result) > 0)
 									<input type="text" placeholder="Clothing\Digital Content\And more..."name="category" class="form-control mb" required>
 									<br>
 
+									<label for="" class="text-uppercase text-sm"> Please choose the ad name: </label>
+									<select name="banners" class="form-control mb" required>
+									  <option value="wine"> Wine </option>
+									  <option value="new_shirt"> New shirt </option>
+									  <option value="cinema"> Cinema </option>
+									  <option value="matsuda"> Matsuda </option>
+										<option value="telescope">Telescope</option>
+									</select>
+									<br>
+
 									<label for="" class="text-uppercase text-sm"> Location: </label>
 									<select name="locations" class="form-control mb" required>
 									  <option value="tel_aviv">Tel-Aviv</option>

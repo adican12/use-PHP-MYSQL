@@ -23,6 +23,17 @@ echo $adID;
 	$ageMax = $_POST['ageMax'];
   // $adID = $_POST['adID'];
   $location_id=$_POST['locations'];
+  $baneers = $_POST['banners'];
+
+// new query
+$querys = "SELECT MAX(adID) FROM ad WHERE title = '$banners'";
+$result = $conn->query($querys);
+if($result === false) {
+  echo "_____ERROR____".$conn->error."<br>";
+}
+$row = mysqli_fetch_assoc($result);
+$adID =$row['MAX(adID)'];
+echo "the adID is : ".$adID."<br>";
 
 
 
