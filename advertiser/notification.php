@@ -148,6 +148,9 @@ if(isset($_POST['submit']))
 				 {
 
 					 while($row = mysqli_fetch_assoc($result)) {
+						 	if($row['locationID'] == 4) {
+								$row['locationID'] = 'Ramat Gan';
+							}
 								 ?>
 														 <tr>
 															 <td><?php echo $cnt;?></td>
