@@ -26,7 +26,7 @@ echo $adID;
   $baneers = $_POST['banners'];
 
 // new query
-$querys = "SELECT MAX(adID) FROM ad WHERE title = '$banners'";
+$querys = "SELECT adID FROM ad WHERE title = '$banners'";
 $result = $conn->query($querys);
 if($result === false) {
   echo "_____ERROR____".$conn->error."<br>";
