@@ -120,7 +120,17 @@ if(isset($_POST['submit']))
 				 ///////////////////////////////
 				 ///// new code
 				 ///////////////////////////////
-				 $sql = "SELECT * from  campaign Limit 10; ";
+				 /*line 124 get the user email*/
+				 $email = $_SESSION['alogin'];
+				 /*----query to get user id-----*/
+				 $sql = "SELECT user_id FROM users WHERE email = '$email'";
+				 $res = $conn->query($sql);
+				 if($res === false) {
+					 echo "__ERROR__".$conn->error."<br>";
+				 }
+				 $resOne = mysqli_fetch_assoc($res);
+				 $row = $resOne['user_id'];
+				 $sql = "SELECT * FROM  campaign WHERE adID ='$row'";
 				 $result = $conn->query($sql);
 				 if($result === false)
 				 {
