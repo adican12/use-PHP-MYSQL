@@ -26,14 +26,14 @@ echo $adID;
   $baneers = $_POST['banners'];
 
 // new query
-echo "the banners is : ".$baneers."<br>"; 
+echo "the banners is : ".$baneers."<br>";
 $querys = "SELECT adID FROM ad WHERE title = '$banners'";
 $result = $conn->query($querys);
 if($result === false) {
   echo "_____ERROR____".$conn->error."<br>";
 }
 $row = mysqli_fetch_assoc($result);
-$adID =$row['MAX(adID)'];
+$adID =$row['adID'];
 echo "the adID is : ".$adID."<br>";
 
 
