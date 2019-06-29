@@ -266,8 +266,10 @@ if(mysqli_num_rows($result) > 0)
 									if($res === false) {
 										echo "_____ERROR____".$conn->error."<br>";
 									}
+									$cnt = 1;
 									$row = mysqli_fetch_assoc($res);
-									?>
+									while($row = mysqli_fetch_assoc($result)) {
+																		?>
 									<label for="" class="text-uppercase text-sm"> Please choose the ad name: </label>
 									<select name="banners" class="form-control mb" required>
 									  <option value="<?php echo $row['title'];?>"> <?php echo $row['title'];?> </option>
@@ -277,6 +279,9 @@ if(mysqli_num_rows($result) > 0)
 										<option value="<?php echo $row['title'];?>"><?php echo $row['title'];?></option>
 									</select>
 									<br>
+									<?php $cnt=$cnt+1; }} ?>
+
+
 
 									<label for="" class="text-uppercase text-sm"> Location: </label>
 									<select name="locations" class="form-control mb" required>
