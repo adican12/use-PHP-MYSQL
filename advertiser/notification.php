@@ -273,13 +273,11 @@ if(mysqli_num_rows($result) > 0)
 									<label for="" class="text-uppercase text-sm"> Please choose the ad name: </label>
 									<select name="banners" class="form-control mb" required>
 										<?php
-										while ($row = mysql_fetch_array($res))
-										{
+										while ($row = mysqli_fetch_assoc($res)){
 										    echo "<option value='".$row['title']."'>'".$row['title']."'</option>";
 										}
 										?>
 									</select>
-									<?php }?>
 									<br>
 
 
