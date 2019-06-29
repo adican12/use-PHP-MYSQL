@@ -260,13 +260,21 @@ if(mysqli_num_rows($result) > 0)
 									<input type="text" placeholder="Clothing\Digital Content\And more..."name="category" class="form-control mb" required>
 									<br>
 
+									<?php
+									$sql = "SELECT title FROM ad";
+									$res = $conn->query($sql);
+									if($res === false) {
+										echo "_____ERROR____".$conn->error."<br>";
+									}
+									$row = mysqli_fetch_assoc($res);
+									?>
 									<label for="" class="text-uppercase text-sm"> Please choose the ad name: </label>
 									<select name="banners" class="form-control mb" required>
-									  <option value="wine"> Wine </option>
-									  <option value="new_shirt"> New shirt </option>
-									  <option value="cinema"> Cinema </option>
-									  <option value="matsuda"> Matsuda </option>
-										<option value="telescope">Telescope</option>
+									  <option value="<?php echo $row['title'];?>"> Wine </option>
+									  <option value="<?php echo $row['title'];?>"> New shirt </option>
+									  <option value="<?php echo $row['title'];?>?"> Cinema </option>
+									  <option value="<?php echo $row['title'];?>"> Matsuda </option>
+										<option value="<?php echo $row['title'];?>">Telescope</option>
 									</select>
 									<br>
 
