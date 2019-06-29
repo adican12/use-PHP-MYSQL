@@ -278,6 +278,7 @@ if(mysqli_num_rows($result) > 0)
 									  <option value="<?php echo $row['title'];?>"> <?php echo $row['title'];?> </option>
 										<option value="<?php echo $row['title'];?>"><?php echo $row['title'];?></option>
 									</select>
+									<?php}?>
 
 									<br>
 
