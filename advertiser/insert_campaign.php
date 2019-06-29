@@ -27,7 +27,8 @@ include('includes/config.php');
 
 // new query
 echo "the banners is : ".$baneers."<br>";
-$querys = "SELECT adID FROM ad WHERE title ='$banners'";
+$querys = "SELECT adID FROM ad WHERE title ='$baneers'";
+
 $result = $conn->query($querys);
 if($result === false) {
   echo "_____ERROR____".$conn->error."<br>";
