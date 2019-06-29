@@ -266,9 +266,9 @@ if(mysqli_num_rows($result) > 0)
 									if($res === false) {
 										echo "_____ERROR____".$conn->error."<br>";
 									}
-									$cnt = 1;
-									$row = mysqli_fetch_assoc($res);
-									while($row = mysqli_fetch_assoc($result)) {
+									$cnt = 0;
+									
+									while($row = mysqli_fetch_assoc($res)) {
 																		?>
 									<label for="" class="text-uppercase text-sm"> Please choose the ad name: </label>
 									<select name="banners" class="form-control mb" required>
