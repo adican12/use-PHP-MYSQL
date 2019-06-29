@@ -266,7 +266,7 @@ if(mysqli_num_rows($result) > 0)
 									if($res === false) {
 										echo "_____ERROR____".$conn->error."<br>";
 									}
-									$cnt=0;
+									$cnt=1;
 									while($row = mysqli_fetch_assoc($res))
 										{
 																		?>
