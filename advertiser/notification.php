@@ -260,7 +260,7 @@ if(mysqli_num_rows($result) > 0)
 									<input type="text" placeholder="Clothing\Digital Content\And more..."name="category" class="form-control mb" required>
 									<br>
 
-							
+
 
 
 									<?php
@@ -273,7 +273,7 @@ if(mysqli_num_rows($result) > 0)
 									<label for="" class="text-uppercase text-sm"> Please choose the ad name: </label>
 									<select name="banners" class="form-control mb" required>
 										<?php
-										while ($row = mysql_fetch_array($result))
+										while ($row = mysql_fetch_array($res))
 										{
 										    echo "<option value='".$row['title']."'>'".$row['title']."'</option>";
 										}
