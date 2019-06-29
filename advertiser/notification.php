@@ -274,7 +274,7 @@ if(mysqli_num_rows($result) > 0)
 									<select name="banners" class="form-control mb" required>
 										<?php
 										while ($row = mysqli_fetch_assoc($res)){
-										    echo "<option value='".$row['title']."'>'".$row['title']."'</option>";
+										    echo "<option value='".$row['title']."'>".$row['title']."</option>";
 										}
 										?>
 									</select>
