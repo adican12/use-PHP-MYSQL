@@ -91,11 +91,11 @@ if(isset($_POST['submit']))
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col-md-12">
-						<h3 class="page-title"> Creat campaign </h3>
+						<h3 class="page-title"> Create campaign </h3>
 						<div class="row">
 							<div class="col-md-12">
 								<div class="panel panel-default">
-									<div class="panel-heading"> Creat campaign </div>
+									<div class="panel-heading"> Create campaign </div>
 									   <div class="panel-body" id="panel-body">
 											 <?php if($error){?><div class="errorWrap" id="msgshow"><?php echo htmlentities($error); ?> </div><?php }
 								 else if($msg){?><div class="succWrap" id="msgshow"><?php echo htmlentities($msg); ?> </div><?php }?>

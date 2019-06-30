@@ -10,7 +10,7 @@
 			</li>
 			<li><a href="feedback.php"><i class="fa fa-paint-brush" aria-hidden="true"></i>&nbsp;Creating banners</a>
 			</li>
-			<li><a href="notification.php"><i class="fa fa-paint-brush" aria-hidden="true"></i>  &nbsp; Creat campaign </a>
+			<li><a href="notification.php"><i class="fa fa-paint-brush" aria-hidden="true"></i>  &nbsp; Create campaign </a>
 			</li>
 			<li><a href="deleteduser.php"><i class=" fa fa-building" aria-hidden="true"></i> &nbsp; Advertising campaign</a>
 			</li>
